@@ -33,5 +33,9 @@ export const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
 
 export function Game(_props: GameProps) {
   // TODO: useReducer over GameState; render current round UI or <Results/>.
-  return <section data-stub="Game" style={{ padding: 16 }}>Game goes here.</section>
+  return (
+    <section data-stub="Game" style={{ padding: 16 }}>
+      Game goes here.
+    </section>
+  )
 }
