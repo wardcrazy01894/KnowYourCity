@@ -1,0 +1,26 @@
+:root {
+  --bg: #0f1720;
+  --fg: #f5f7fa;
+  --accent: #f4b400;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* The Leaflet map must have an explicit height or it renders 0px tall. */
+.map-container {
+  width: 100%;
+  height: 60vh;
+  min-height: 320px;
+}
