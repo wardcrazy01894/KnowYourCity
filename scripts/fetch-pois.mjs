@@ -20,7 +20,9 @@
 import { writeFile } from 'node:fs/promises'
 
 /** St. Pete bounding box [south, west, north, east]. Confirm with Alex. */
-export const ST_PETE_BBOX = /** @type {const} */ ([27.62, -82.78, 27.86, -82.58])
+export const ST_PETE_BBOX = /** @type {const} */ ([
+  27.62, -82.78, 27.86, -82.58,
+])
 
 const OVERPASS_ENDPOINT = 'https://overpass-api.de/api/interpreter'
 
@@ -74,9 +76,20 @@ async function main() {
   const candidates = [] // <- filled by the steps above
   await writeFile(
     new URL('../data/candidates.json', import.meta.url),
-    JSON.stringify({ version: 1, city: 'St. Petersburg, FL', generatedFrom: query, locations: candidates }, null, 2),
+    JSON.stringify(
+      {
+        version: 1,
+        city: 'St. Petersburg, FL',
+        generatedFrom: query,
+        locations: candidates,
+      },
+      null,
+      2,
+    ),
   )
-  console.log(`Wrote ${candidates.length} candidates. Now curate → public/locations.json`)
+  console.log(
+    `Wrote ${candidates.length} candidates. Now curate → public/locations.json`,
+  )
 }
 
 // Only run when invoked directly, not when imported by tests.

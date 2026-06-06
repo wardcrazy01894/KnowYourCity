@@ -36,5 +36,9 @@ export function buildShareString(
 
 export function Results(_props: ResultsProps) {
   // TODO: render summary + breakdown + Copy button (navigator.clipboard).
-  return <section data-stub="Results" style={{ padding: 16 }}>Results go here.</section>
+  return (
+    <section data-stub="Results" style={{ padding: 16 }}>
+      Results go here.
+    </section>
+  )
 }

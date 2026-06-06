@@ -23,15 +23,25 @@ export interface PersistedState {
 
 /** Returns persisted state, or a fresh default on miss/corruption/version skew. */
 export function loadState(): PersistedState {
-  // TODO: read KEY from localStorage, JSON.parse in try/catch, validate
-  // `version === STORAGE_VERSION`, else return defaultState().
-  throw new Error('not implemented')
+  try {
+    const raw = localStorage.getItem(KEY)
+    if (!raw) return defaultState()
+    const parsed = JSON.parse(raw) as PersistedState
+    if (parsed?.version !== STORAGE_VERSION) return defaultState()
+    return parsed
+  } catch {
+    // Corrupt JSON, disabled storage, etc. — never throw on read.
+    return defaultState()
+  }
 }
 
 /** Persists state. Swallow quota/serialization errors (best-effort). */
-export function saveState(_state: PersistedState): void {
-  // TODO
-  throw new Error('not implemented')
+export function saveState(state: PersistedState): void {
+  try {
+    localStorage.setItem(KEY, JSON.stringify(state))
+  } catch {
+    // Quota exceeded / private mode — best-effort, ignore.
+  }
 }
 
 export function defaultState(): PersistedState {
