@@ -15,6 +15,9 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] **Persistence polish (M5)** — resume an in-progress day, streak/history UI.
 - [ ] **Deploy (M7)** — GitHub Pages (needs repo public or Pages-on-private;
       awaiting Alex's go-ahead to publish).
+- [ ] **Enforce branch protection** — needs the repo to be public (Free plan) or
+      GitHub Pro. Once decided, run `bash scripts/protect-main.sh`. Until then
+      the PR workflow is convention-only (see CLAUDE.md).
 
 ## Later / nice-to-have
 - [ ] Photo rounds (fill `photoUrl` from Wikimedia Commons; e.g. Don CeSar).

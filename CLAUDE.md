@@ -4,17 +4,24 @@ A daily map-guessing game for local landmarks (St. Petersburg, FL first).
 See `docs/PLAN.md` for architecture and `docs/DATA-SOURCING.md` for the data
 pipeline. This file is the contract for how changes get made.
 
-## Branch & PR workflow (enforced by branch protection)
+## Branch & PR workflow
 
-- **`main` is protected.** No direct pushes — everything lands via a Pull
-  Request. This is enforced on GitHub (including for admins).
-- Every PR must pass required status checks before it can merge:
+- **All changes land via a Pull Request — never push directly to `main`.**
+- Every PR runs these CI checks (and must be green before merge):
   - **build / typecheck / lint** — `npm ci`, `tsc --noEmit`, `eslint`,
     `prettier --check`, `vite build`.
+  - **test** — `vitest run`.
   - **secret scan** — gitleaks over the branch history.
-- Branches are **deleted automatically on merge**. Use short-lived feature
-  branches: `feat/…`, `fix/…`, `chore/…`, `docs/…`.
+- Branches are **deleted automatically on merge** (`delete_branch_on_merge` is
+  on). Use short-lived feature branches: `feat/…`, `fix/…`, `chore/…`, `docs/…`.
 - Prefer **squash merge** to keep `main` history linear and readable.
+
+> ⚠️ **Enforcement is not yet active.** GitHub branch protection requires a
+> **public** repo on the Free plan (or GitHub Pro). This repo is currently
+> private, so the rules above are convention-only and CI is informational, not a
+> hard gate. To make them enforced: make the repo public, then run
+> `bash scripts/protect-main.sh`. Until then, treat the PR flow as mandatory by
+> discipline.
 
 ## Docs stay current in the same PR
 
