@@ -57,6 +57,14 @@ export const NATIONAL_CHAIN =
 /** Known-closed spots (OSM can lag). Extend as needed. */
 export const CLOSED = /sea salt|red mesa|locale market|farmtable/i
 
+/**
+ * Spots whose OSM name is stale (rebranded) — dropped here so the rebuild
+ * doesn't reintroduce the old name as a duplicate of the corrected manual entry
+ * in data/stpete-manual.json. e.g. "La Carreta Bakery" → "Mi Carreta Restaurant
+ * and Bakery" (2705 54th Ave N), now carried as a manual must-include.
+ */
+export const RENAMED_IN_OSM = /la carreta bakery/i
+
 function categoryFor(amenity) {
   if (amenity === 'cafe') return 'cafe'
   if (['bar', 'pub', 'biergarten', 'brewery'].includes(amenity)) return 'bar'
@@ -131,7 +139,12 @@ export function foodLocationsFromElements(elements) {
   for (const el of elements ?? []) {
     const t = el.tags || {}
     if (!t.name) continue
-    if (NATIONAL_CHAIN.test(t.name) || CLOSED.test(t.name)) continue
+    if (
+      NATIONAL_CHAIN.test(t.name) ||
+      CLOSED.test(t.name) ||
+      RENAMED_IN_OSM.test(t.name)
+    )
+      continue
     const category = categoryFor(t.amenity || t.craft || '')
     // Bars get a free pass; restaurants/cafés must look established.
     if (category !== 'bar' && !hasEstablishedSignal(t)) continue
