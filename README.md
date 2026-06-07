@@ -28,8 +28,9 @@ close you got. Share your result Wordle-style.
 - 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
-> **Status:** playable and feature-complete for v1. Next up: more places + a
-> GitHub Pages deploy. See [`BACKLOG.md`](BACKLOG.md).
+> **Status:** playable and feature-complete for v1; GitHub Pages auto-deploy is
+> wired (flip Settings → Pages → Source = GitHub Actions to go live). Next up:
+> more places + photos. See [`BACKLOG.md`](BACKLOG.md).
 
 ---
 
@@ -89,14 +90,19 @@ token (no credit card needed).
 
 ## ☁️ Deploy (GitHub Pages)
 
-```bash
-npm run build
-npm run deploy       # pushes dist/ to the gh-pages branch
-```
+**Auto-deploy (recommended):** every push to `main` builds and publishes via
+`.github/workflows/deploy.yml`. One-time setup: repo Settings → Pages → Source =
+**GitHub Actions**. The site's public client config bakes in from repo
+**Variables** (Settings → Secrets and variables → Actions → Variables):
+`VITE_BUG_ENDPOINT`, `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN`. If
+unset, the build still works and the bug form falls back to a prefilled issue.
 
-Enable Pages (branch `gh-pages`) → lives at
-`https://wardcrazy01894.github.io/KnowYourLocals/`.
-(`vite.config.ts` already sets the correct `base`.)
+**Manual alternative:** `npm run build && npm run deploy` pushes `dist/` to a
+`gh-pages` branch (requires `.env.local` for the bug endpoint/Turnstile, and
+Pages Source set to the `gh-pages` branch instead of Actions).
+
+Site lives at `https://wardcrazy01894.github.io/KnowYourLocals/`
+(`vite.config.ts` already sets the correct `base`).
 
 ## 🛠️ Development
 
@@ -105,7 +111,7 @@ Enable Pages (branch `gh-pages`) → lives at
 the failing test first (`/tdd-cycle` skill). See [`CLAUDE.md`](CLAUDE.md).
 
 ```bash
-npm run typecheck && npm run lint && npm test && npm run build   # the CI gate
+npm run typecheck && npm run lint && npm run format:check && npm test && npm run build   # the CI gate
 ```
 
 ## 📄 Attribution
