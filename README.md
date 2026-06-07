@@ -28,9 +28,9 @@ close you got. Share your result Wordle-style.
 - 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
-> **Status:** playable and feature-complete for v1; GitHub Pages auto-deploy is
-> wired and self-enabling — it goes live on the next push to `main`. Next up:
-> more places + photos. See [`BACKLOG.md`](BACKLOG.md).
+> **Status:** **live** at <https://wardcrazy01894.github.io/KnowYourLocals/> —
+> auto-deploys on every push to `main` (see [`docs/OPERATIONS.md`](docs/OPERATIONS.md)).
+> Next up: more places + photos. See [`BACKLOG.md`](BACKLOG.md).
 
 ---
 
@@ -127,6 +127,7 @@ npm run typecheck && npm run lint && npm run format:check && npm test && npm run
 | File | What |
 |------|------|
 | [`docs/PLAN.md`](docs/PLAN.md) | Architecture, milestones, game mechanics. |
+| [`docs/OPERATIONS.md`](docs/OPERATIONS.md) | Live URL, deploy, env/Variables, worker — runbook. |
 | [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md) | How the dataset is built & curated. |
 | [`docs/QUESTIONS-FOR-ALEX.md`](docs/QUESTIONS-FOR-ALEX.md) | Decisions log. |
 | [`BACKLOG.md`](BACKLOG.md) | What's next (more places, photos, multi-city). |
