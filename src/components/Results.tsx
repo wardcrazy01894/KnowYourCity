@@ -69,18 +69,18 @@ export function Results({
 }: ResultsProps) {
   const [copied, setCopied] = useState(false)
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
+  // Compute once so the copied text and the preview below can never diverge.
+  const shareText = buildShareString(
+    cityShort,
+    dateKey,
+    results,
+    totalScore,
+    shareSiteUrl(),
+  )
 
   async function copy() {
     try {
-      await navigator.clipboard.writeText(
-        buildShareString(
-          cityShort,
-          dateKey,
-          results,
-          totalScore,
-          shareSiteUrl(),
-        ),
-      )
+      await navigator.clipboard.writeText(shareText)
       log.info('Results', 'copied share string')
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
@@ -141,13 +141,7 @@ export function Results({
           fontSize: 14,
         }}
       >
-        {buildShareString(
-          cityShort,
-          dateKey,
-          results,
-          totalScore,
-          shareSiteUrl(),
-        )}
+        {shareText}
       </pre>
     </section>
   )
