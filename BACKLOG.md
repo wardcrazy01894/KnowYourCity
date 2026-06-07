@@ -4,12 +4,14 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Grow the St. Pete dataset to ~200** — the launch target. Currently ~76
-      (≈22 restaurants, 19 bars, 5 cafés, ~30 landmarks). Several best-of spots
-      are pending OSM coordinates (Olivia, Birch & Vine, Bar Mezzo, Tequila
-      Daisy, Perry's Porch, Daycation, …) — add coords + re-run the matcher.
-      Keep curating single-location, currently-open locals. Apply Alex's
-      must-include / banned lists when ready.
+- [x] **St. Pete dataset** — now ~519 (inclusive food/drink via `fetch-food` +
+      curated landmarks). Target comfortably met.
+- [ ] **Precise popularity filter** — current inclusion uses an OSM
+      "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
+      Yelp/Google integration (ToS forbids storing their data long-term); the
+      license-clean alternative is the Foursquare OS Places open dataset.
+- [ ] **Closed-spot cleanup** — inclusive OSM pulls can include a few stale
+      entries; maintain a per-city ban list / extend `CLOSED`.
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.
