@@ -41,8 +41,19 @@ export function bugReportUrl(ctx: ReportContext = {}, message = ''): string {
   )}&body=${encodeURIComponent(body)}`
 }
 
+export interface SubmitOptions {
+  /** Attach recent session logs (default true). */
+  includeLogs?: boolean
+  /** Cloudflare Turnstile token, when the widget is enabled. */
+  turnstileToken?: string
+}
+
 /** The JSON body POSTed to the bug endpoint. Pure + testable. */
-export function buildReportPayload(message: string, ctx: ReportContext = {}) {
+export function buildReportPayload(
+  message: string,
+  ctx: ReportContext = {},
+  opts: SubmitOptions = {},
+) {
   return {
     message: message.trim(),
     context: {
@@ -51,7 +62,8 @@ export function buildReportPayload(message: string, ctx: ReportContext = {}) {
       url: typeof location !== 'undefined' ? location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
     },
-    logs: dumpLogs().slice(-4000),
+    logs: opts.includeLogs === false ? '' : dumpLogs().slice(-4000),
+    turnstileToken: opts.turnstileToken,
   }
 }
 
@@ -71,13 +83,14 @@ export interface SubmitResult {
 export async function submitBugReport(
   message: string,
   ctx: ReportContext = {},
+  opts: SubmitOptions = {},
 ): Promise<SubmitResult> {
   const endpoint = import.meta.env.VITE_BUG_ENDPOINT
   if (!endpoint) return { ok: false, fallbackUrl: bugReportUrl(ctx, message) }
   const r = await fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(buildReportPayload(message, ctx)),
+    body: JSON.stringify(buildReportPayload(message, ctx, opts)),
   })
   if (!r.ok) throw new Error(`Bug endpoint HTTP ${r.status}`)
   const data = (await r.json().catch(() => ({}))) as { url?: string }
