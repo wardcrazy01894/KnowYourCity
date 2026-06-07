@@ -1,0 +1,82 @@
+{
+  "note": "Must-include entries merged into public/locations.stpete.json by build-city (not in OSM, or curated). Committed source — edit here, not the generated file.",
+  "locations": [
+    {
+      "id": "3-daughters-brewing",
+      "name": "3 Daughters Brewing",
+      "lat": 27.769048,
+      "lng": -82.662598,
+      "category": "bar",
+      "clue": "A large, popular craft brewery with a big taproom.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "good-night-john-boy",
+      "name": "Good Night John Boy",
+      "lat": 27.771578,
+      "lng": -82.635726,
+      "category": "bar",
+      "clue": "A downtown dance bar/nightlife spot.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap Nominatim"
+    },
+    {
+      "id": "kahunas",
+      "name": "Kahuna's",
+      "lat": 27.86703,
+      "lng": -82.62853,
+      "category": "bar",
+      "clue": "A Gandy-area bar in north St. Pete.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "my-rich-uncle",
+      "name": "My Rich Uncle",
+      "lat": 27.771901,
+      "lng": -82.636624,
+      "category": "bar",
+      "clue": "A downtown cocktail lounge.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap Nominatim"
+    },
+    {
+      "id": "north-shore-kickball-fields",
+      "name": "North Shore Park Kickball Fields",
+      "lat": 27.7857,
+      "lng": -82.6265,
+      "category": "park",
+      "clue": "The open rec/kickball fields at North Shore Park.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Manual (approx.)"
+    },
+    {
+      "id": "the-don-cesar",
+      "name": "The Don CeSar",
+      "lat": 27.7077,
+      "lng": -82.7411,
+      "category": "landmark",
+      "clue": "The 'Pink Palace' — a historic 1928 resort hotel on the Gulf beach.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Wikidata CC0"
+    },
+    {
+      "id": "welcome-to-the-farm",
+      "name": "Welcome to the Farm",
+      "lat": 27.771814,
+      "lng": -82.636379,
+      "category": "bar",
+      "clue": "A downtown bar on 1st Ave N.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "ParkWhiz (approx.)"
+    }
+  ]
+}
