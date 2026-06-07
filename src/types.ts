@@ -7,7 +7,7 @@
  * STORAGE_VERSION in src/lib/storage.ts.
  */
 
-/** A single guessable place. Mirrors one entry in public/locations.json. */
+/** A single guessable place. Mirrors one entry in a public/locations.<city>.json. */
 export interface Location {
   /** Stable kebab-case slug, unique within the city. Used as a localStorage key. */
   id: string
@@ -43,7 +43,7 @@ export type LocationCategory =
   | 'venue'
   | 'other'
 
-/** The full bundled dataset shape (public/locations.json). */
+/** The full bundled dataset shape (public/locations.<city>.json). */
 export interface LocationsFile {
   version: number
   city: string

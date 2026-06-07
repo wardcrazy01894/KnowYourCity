@@ -16,8 +16,8 @@
  * ── Stability tradeoff (read this) ───────────────────────────────────────────
  * Selection is a pure function of (dateKey, list). The PRNG is seeded ONLY by
  * the date, and we shuffle a COPY of the list ordered by `id` (sorted), so the
- * result is stable across browsers. BUT: if you add/remove/reorder locations in
- * locations.json, the shuffle for every date changes — past and future puzzles
+ * result is stable across browsers. BUT: if you add/remove/reorder locations in a
+ * city's locations file, the shuffle for every date changes — past and future puzzles
  * shift. For a friends game that's acceptable (nobody re-checks yesterday).
  * If that ever matters, freeze a per-date selection into a committed manifest
  * instead. See docs/PLAN.md §"Daily selection integrity".
@@ -54,7 +54,7 @@ function matchesSlot(slot: RoundSlot, loc: Location): boolean {
   return loc.category === slot
 }
 
-/** Default city timezone (St. Pete). Each future city carries its own. */
+/** Default city timezone (St. Pete); each city in cities.json carries its own. */
 export const DEFAULT_TIMEZONE = 'America/New_York'
 
 /**
@@ -120,7 +120,7 @@ export function selectDailyLocations(
 ): Location[] {
   if (all.length < count) {
     throw new Error(
-      `Need at least ${count} locations, got ${all.length}. Add more to locations.json.`,
+      `Need at least ${count} locations, got ${all.length}. Add more to the city's locations file.`,
     )
   }
   // Deterministic shuffle: sort by id (so source order doesn't matter), then
