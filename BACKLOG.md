@@ -57,6 +57,16 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] Scoring/difficulty tuning pass after real playtests (constants in
       `scoring.ts`).
 - [ ] About/attribution panel (OSM ODbL + imagery credit) visible in the UI.
+- [ ] **Share results: show numbers, not just colors** — the Wordle-style share
+      is currently an emoji/color grid. Consider including the actual per-round
+      scores (and the day's total, e.g. `420/500`) alongside or instead of the
+      color squares, for people who want the real number. Keep it compact and
+      spoiler-free (no place names). `buildShareString` in
+      `src/components/Results.tsx`.
+- [ ] **Share results: link to the site** — append the game URL to the share
+      text so a shared result is clickable and drives new players (use the
+      deployed Pages/custom-domain URL, not localhost). Pair with the numeric
+      share above.
 - [ ] Optional backend for shared online leaderboards.
 
 ## Done
