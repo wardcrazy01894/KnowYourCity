@@ -4,18 +4,22 @@ compatibility_date = "2024-11-01"
 
 [vars]
 GH_REPO = "wardcrazy01894/KnowYourLocals"
-# REQUIRED for production: set this to your site's origin so the worker rejects
-# cross-origin browser requests. Use "*" only for local testing.
+# REQUIRED for production: your site origin (worker rejects other browser origins).
 ALLOWED_ORIGIN = "https://wardcrazy01894.github.io"
 
-# --- Secrets (do NOT put values here; set with `wrangler secret put NAME`) ----
-# GH_TOKEN         fine-grained PAT, Issues: read & write, this repo only
-# TURNSTILE_SECRET optional — enables Cloudflare Turnstile bot verification
+# Per-IP rate limit — GA binding, needs NO account resource (just this config).
+# 5 reports / 60s per IP. This satisfies the worker's fail-closed check out of
+# the box, so a fresh deploy is not wide-open. Requires Wrangler >= 4.36.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
 
-# --- Optional per-IP rate limit -----------------------------------------------
-# Create a KV namespace and bind it as RL to cap reports per IP/hour:
-#   wrangler kv namespace create RL
-# then uncomment (with the printed id):
-# [[kv_namespaces]]
-# binding = "RL"
-# id = "<kv-namespace-id>"
+  [ratelimits.simple]
+  limit = 5
+  period = 60
+
+# --- Secrets (set with `wrangler secret put NAME`; never commit values) -------
+# GH_TOKEN         fine-grained PAT, Issues: read & write, this repo only
+# TURNSTILE_SECRET optional but recommended for a public repo — enables the
+#                  Cloudflare Turnstile bot check (also set VITE_TURNSTILE_SITEKEY
+#                  in the app).

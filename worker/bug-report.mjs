@@ -77,6 +77,16 @@ export default {
     if (request.method !== 'POST')
       return json({ error: 'method not allowed' }, 405, headers)
 
+    // Fail CLOSED: refuse to operate unless at least one anti-abuse control is
+    // configured (a rate limiter or Turnstile). Prevents an accidental
+    // wide-open, spammable deploy. See worker/README.md.
+    if (!env.RATE_LIMITER && !env.RL && !env.TURNSTILE_SECRET)
+      return json(
+        { error: 'reporting disabled: configure a rate limit or Turnstile' },
+        503,
+        headers,
+      )
+
     // Server-side Origin allowlist (CORS headers alone are browser-only and
     // don't stop curl; this stops XSS-pivot from other origins in a browser).
     const origin = request.headers.get('Origin')
@@ -95,8 +105,13 @@ export default {
 
     const ip = request.headers.get('CF-Connecting-IP') || 'unknown'
 
-    // Per-IP rate limit (defense in depth) if a KV namespace `RL` is bound.
-    if (env.RL) {
+    // Per-IP rate limit. Prefer Cloudflare's native Rate Limiting binding;
+    // fall back to a KV counter if an `RL` namespace is bound instead.
+    if (env.RATE_LIMITER) {
+      const { success } = await env.RATE_LIMITER.limit({ key: ip })
+      if (!success)
+        return json({ error: 'rate limited, try later' }, 429, headers)
+    } else if (env.RL) {
       const key = `rl:${ip}`
       const n = parseInt((await env.RL.get(key)) || '0', 10)
       if (n >= RL_MAX_PER_HOUR)

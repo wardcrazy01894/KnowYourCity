@@ -8,11 +8,16 @@ The app uses it when `VITE_BUG_ENDPOINT` points at the deployed worker URL. If
 that var is unset, the app falls back to opening a prefilled GitHub "new issue"
 page, so this is **optional** — set it up when you want one-click reporting.
 
+The worker **fails closed**: it won't create issues unless an anti-abuse control
+is configured. A per-IP **rate limit is on by default** (the `[[ratelimits]]`
+block in `wrangler.toml` — no account resource needed), so a fresh deploy is not
+wide-open. Turnstile is recommended on top for a public repo.
+
 ## Deploy (one time, free tier)
 
-1. Install Wrangler and log in:
+1. Install Wrangler (**>= 4.36**, for the rate-limit binding) and log in:
    ```bash
-   npm i -g wrangler
+   npm i -g wrangler@latest
    wrangler login
    ```
 2. Create a **fine-grained personal access token** on GitHub with
@@ -23,36 +28,39 @@ page, so this is **optional** — set it up when you want one-click reporting.
    wrangler deploy
    ```
    Wrangler prints a URL like `https://kyl-bug.<you>.workers.dev`.
+   (`ALLOWED_ORIGIN` and the rate limit are already set in `wrangler.toml`.)
 4. Set the app env and rebuild/redeploy the site:
    ```
    VITE_BUG_ENDPOINT=https://kyl-bug.<you>.workers.dev
    ```
-5. (Recommended) In `wrangler.toml`, set `ALLOWED_ORIGIN` to your site's origin
-   (e.g. `https://wardcrazy01894.github.io`) and `wrangler deploy` again.
+   That's the minimum to go live safely (rate-limited + injection-hardened).
 
 ## ⚠️ Before you make the site public — abuse hardening
 
-This is a public, unauthenticated endpoint (its URL is in the shipped JS). Without
-the steps below, anyone who finds it could spam GitHub issues. The worker already
-**neutralizes content injection** (defangs `@mentions` and code fences so reports
-can't ping people or break out of the issue body), **drops off-site URLs**,
-enforces an **Origin allowlist**, and **caps payload size** — but you should also:
+This is a public, unauthenticated endpoint (its URL is in the shipped JS). The
+worker is hardened against the main abuse vectors out of the box:
 
-1. **Set `ALLOWED_ORIGIN`** to your real site origin (done in `wrangler.toml`).
-2. **Turn on a bot check (recommended).** Create a free
+- **Fails closed** — refuses to run without a rate limit or Turnstile configured.
+- **Rate limit ON by default** — 5 reports / IP / 60s (`[[ratelimits]]`).
+- **Content injection** — defangs `@mentions` and code fences (no pinging users,
+  no breaking out of the issue body).
+- **Phishing** — drops off-site `url`s; **Origin allowlist**; **payload caps**.
+
+Recommended hardening on top (especially since reports are filed to the **public**
+repo):
+
+1. **Turn on Turnstile (strongly recommended).** Create a free
    [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) widget:
    - `wrangler secret put TURNSTILE_SECRET` (the Turnstile *secret* key)
    - set `VITE_TURNSTILE_SITEKEY` in the app to the Turnstile *site* key
-   The form then shows a check and the worker rejects unverified posts.
-3. **Add a per-IP rate limit (recommended).** `wrangler kv namespace create RL`
-   and uncomment the `[[kv_namespaces]]` block — caps reports to 5/IP/hour.
-4. **Consider a private triage repo.** Point `GH_REPO` at a *private* repo so any
-   spam/abusive content that slips through isn't world-visible. You can copy
-   genuine reports to the public repo manually.
+   The form then shows a check and the worker rejects unverified posts. This is
+   the real defense against scripted spam (the rate limit is per-IP, so a botnet
+   can still trickle in without it).
+2. **Or use a private triage repo.** Point `GH_REPO` at a *private* repo so any
+   spam that slips through isn't world-visible; copy genuine reports over.
 
-Until Turnstile **or** the KV rate limit is in place, prefer leaving
-`VITE_BUG_ENDPOINT` unset — the app falls back to the prefilled GitHub issue page,
-which requires a human GitHub login and so can't be scripted.
+The rate limit alone makes a fresh deploy non-trivial to abuse, but for a public
+issue tracker, add Turnstile before sharing widely.
 
 ## Notes
 - Token is a Worker **secret**, never committed. Use a **fine-grained PAT,
