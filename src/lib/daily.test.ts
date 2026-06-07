@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  getUtcDateKey,
+  getDateKey,
   hashStringToSeed,
   mulberry32,
   selectDailyLocations,
@@ -19,11 +19,25 @@ function makeLocations(n: number): Location[] {
   }))
 }
 
-describe('getUtcDateKey', () => {
-  it('formats as YYYY-MM-DD in UTC', () => {
-    expect(getUtcDateKey(new Date('2026-06-06T23:30:00Z'))).toBe('2026-06-06')
-    // 00:30 UTC on the 7th is still the 7th even if local is the 6th.
-    expect(getUtcDateKey(new Date('2026-06-07T00:30:00Z'))).toBe('2026-06-07')
+describe('getDateKey (America/New_York, DST-aware)', () => {
+  it('rolls over at midnight Eastern, not UTC', () => {
+    // June = EDT (UTC-4); Eastern midnight is 04:00 UTC.
+    // 03:59 UTC is still the previous Eastern day.
+    expect(getDateKey(new Date('2026-06-07T03:59:00Z'))).toBe('2026-06-06')
+    // 04:00 UTC is the new Eastern day.
+    expect(getDateKey(new Date('2026-06-07T04:00:00Z'))).toBe('2026-06-07')
+  })
+
+  it('handles standard time too (EST, UTC-5)', () => {
+    // January = EST (UTC-5); Eastern midnight is 05:00 UTC.
+    expect(getDateKey(new Date('2026-01-07T04:59:00Z'))).toBe('2026-01-06')
+    expect(getDateKey(new Date('2026-01-07T05:00:00Z'))).toBe('2026-01-07')
+  })
+
+  it('formats as YYYY-MM-DD', () => {
+    expect(getDateKey(new Date('2026-06-07T12:00:00Z'))).toMatch(
+      /^\d{4}-\d{2}-\d{2}$/,
+    )
   })
 })
 

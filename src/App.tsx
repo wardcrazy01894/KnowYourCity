@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from 'react'
 import type { LocationsFile, Location } from './types'
-import { getUtcDateKey, selectDailyLocations } from './lib/daily'
+import { getDateKey, selectDailyLocations } from './lib/daily'
 import { Game } from './components/Game'
 
 // The curated dataset (produced by scripts/fetch-pois.mjs + manual curation).
@@ -30,7 +30,7 @@ async function loadLocations(): Promise<LocationsFile> {
 export function App() {
   const [today, setToday] = useState<Location[] | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const dateKey = getUtcDateKey()
+  const dateKey = getDateKey()
 
   useEffect(() => {
     loadLocations()
@@ -45,7 +45,7 @@ export function App() {
     <main>
       <header style={{ padding: '12px 16px' }}>
         <h1 style={{ margin: 0, fontSize: 20 }}>Know Your Locals — St. Pete</h1>
-        <small style={{ opacity: 0.7 }}>Daily puzzle · {dateKey} (UTC)</small>
+        <small style={{ opacity: 0.7 }}>Daily puzzle · {dateKey} (ET)</small>
       </header>
       <Game dateKey={dateKey} locations={today} />
     </main>

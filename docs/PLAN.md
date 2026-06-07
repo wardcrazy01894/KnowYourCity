@@ -108,7 +108,9 @@ effectively done; M2/M3/M4/M5/M6 remain.
 ## 5. Game mechanics detail
 
 ### 5.1 Deterministic daily selection (`src/lib/daily.ts` — implemented)
-- `getUtcDateKey()` → `"YYYY-MM-DD"` from `toISOString()`.
+- `getDateKey()` → `"YYYY-MM-DD"` for the city's timezone (`America/New_York`),
+  so the puzzle rolls over at **midnight Eastern**, DST-aware (via `Intl`).
+  Each future city carries its own IANA timezone.
 - `hashStringToSeed(dateKey)` (cyrb53) → 32-bit seed.
 - `mulberry32(seed)` → PRNG; Fisher–Yates shuffle of the **id-sorted** list;
   take first 5. Same date + same list ⇒ identical 5 in identical order, in every
@@ -123,17 +125,17 @@ instead of reshuffling. Not worth it for v1.
 
 ### 5.3 List size vs repetition
 5 unique places/day. With **N** curated locations, you can run ~`N/5` days
-before a place *must* repeat, and repeats feel frequent well before that. Target
-**≥ 60 locations** (≈ enough that repeats are rare for a couple months); 100+ is
-better. The pipeline (M2) should comfortably yield this for St. Pete.
+before a place *must* repeat, and repeats feel frequent well before that.
+**Launch target per city: ~200 locations** (so repeats are rare); ~30 is fine
+while prototyping. Restaurants/bars/cafés are currently mostly excluded by the
+notability filter and are a deliberate area to expand toward that 200.
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
-City-scale, **not** GeoGuessr's global constant:
-- ≤ **75 m** → full **5000**.
-- ≥ **12 km** → **0**.
-- between → exponential decay (`DECAY_SCALE_M = 1500`).
-- Perfect day = **25,000**. All four constants are first-draft; tune after
-  playtest (see QUESTIONS-FOR-ALEX.md).
+Per-round score is on a **0–100 scale** (perfect day = **500**), linear:
+- ≤ **100 m** → **100**.
+- ≥ **3 km** → **0**.
+- between → linear falloff. Constants (`PERFECT_RADIUS_M`, `ZERO_DISTANCE_M`)
+  are tunable after playtest.
 
 ### 5.5 Round flow (`Game`)
 `guessing` → submit → `revealed` (truth marker + distance line) → next →
@@ -149,11 +151,16 @@ returning players.
 ### 5.7 Share string (`Results.buildShareString`, pure)
 ```
 Know Your Locals — St. Pete
-2026-06-06 · 21,430/25,000
+2026-06-06 · 428/500
 🟩🟩🟩🟨⬛
 ```
-Emoji tiers by round score (🟩≥4000 🟨≥2000 🟧≥500 ⬛<500). No coordinates →
-no spoilers. Copied via `navigator.clipboard`.
+Emoji tiers by round score on the 0–100 scale (🟩≥80 🟨≥50 🟧≥20 ⬛<20). No
+coordinates → no spoilers. Copied via `navigator.clipboard`.
+
+### 5.8 Clues
+Each location has an optional one-line `clue`. **Hidden by default** in v1
+(`SHOW_CLUES = false` in `Game.tsx`) for more challenge; kept in the data so it
+can be toggled on or made a per-game setting later.
 
 ---
 
@@ -194,7 +201,8 @@ that withholds coordinates until after submit (future work).
 
 ## 8. Deployment
 
-**Local dev:** `npm install` then `npm run dev` → http://localhost:5173 .
+**Local dev:** `npm install` then `npm run dev` →
+http://localhost:5173/KnowYourLocals/ (Vite serves under the Pages `base`).
 
 **GitHub Pages:**
 1. `vite.config.ts` already sets `base: '/KnowYourLocals/'`.
@@ -202,12 +210,26 @@ that withholds coordinates until after submit (future work).
    or add a GitHub Actions workflow on push to `main`.
 3. Enable Pages → branch `gh-pages` in repo settings. App lives at
    `https://wardcrazy01894.github.io/KnowYourLocals/`.
-4. Repo is currently **private**; flip to public (or use Pages-on-private) when
-   ready to share. For a custom domain later, add a `CNAME` and set `base: '/'`.
+4. Repo is **public** with branch protection enforced. App will live at
+   `https://wardcrazy01894.github.io/KnowYourLocals/`. For a custom domain later,
+   add a `CNAME` and set `base: '/'`.
 
 ---
 
-## 9. Risks / open decisions
-Tracked for Alex in `docs/QUESTIONS-FOR-ALEX.md`. Headlines: UTC-vs-local
-rollover, scoring difficulty tuning, exact bbox, must-include landmarks,
-Esri-vs-Mapbox tiles, and how many locations to curate before launch.
+## 9. Future direction: multi-city
+v1 is St. Pete only, but the intended shape is **many cities** (Ann Arbor,
+Seattle, Chicago, …). The landing page becomes a **city/region picker** (search
+your city) that routes into that city's game. Each city is just data:
+
+```
+City = { id, name, timeZone, bounds, locationsUrl }
+```
+
+The engine is already city-agnostic — `getDateKey(now, timeZone)` and
+`selectDailyLocations(list, dateKey)` take their inputs as params. To add a city
+you mainly need: a bounds box, an IANA timezone, and a curated `locations.json`
+(~200 places) from the same Overpass pipeline. See `BACKLOG.md`.
+
+## 10. Decisions & open items
+Resolved decisions are recorded in `docs/QUESTIONS-FOR-ALEX.md`. Still open:
+must-include / banned lists per city, and growing each city to ~200 places.
