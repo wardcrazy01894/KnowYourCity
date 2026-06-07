@@ -9,6 +9,7 @@
 
 import type { DayRecord, GameState } from '../types'
 import { log } from './log'
+import { shouldStartFresh } from './devmode'
 
 export const STORAGE_VERSION = 1
 const KEY = 'kyl:v' + STORAGE_VERSION
@@ -79,28 +80,14 @@ export function clearState(): void {
 }
 
 /**
- * Pure decision: should this page load start from a clean slate?
- *  - `?keep`            → never reset (opt out, even in dev)
- *  - `?fresh` / `?reset`→ always reset (handy on the live site too)
- *  - otherwise          → reset only in dev (`isDev`)
- */
-export function shouldStartFresh(search: string, isDev: boolean): boolean {
-  const params = new URLSearchParams(search)
-  if (params.has('keep')) return false
-  return params.has('fresh') || params.has('reset') || isDev
-}
-
-/**
- * Dev convenience: in `npm run dev`, every load starts FRESH so you can iterate
- * by just hitting refresh. Opt out with `?keep`. In the production build this is
- * OFF unless `?fresh`/`?reset` is present. Returns true if it cleared. Call once
- * at startup, before any component reads state.
+ * Clears saved progress on load when the URL asks for it (`?reset`/`?fresh`/
+ * `?shuffle`) — see src/lib/devmode.ts. Default loads persist. Returns true if
+ * it cleared. Call once at startup, before any component reads state.
  */
 export function applyStartupReset(): boolean {
   if (typeof window === 'undefined') return false
-  if (!shouldStartFresh(window.location.search, import.meta.env.DEV))
-    return false
+  if (!shouldStartFresh(window.location.search)) return false
   clearState()
-  log.info('storage', 'startup reset: cleared saved state (dev/fresh mode)')
+  log.info('storage', 'startup reset: cleared saved state')
   return true
 }

@@ -38,11 +38,15 @@ Handy URL params (client-side only):
 
 | Param | Effect |
 |-------|--------|
-| _(none, in `npm run dev`)_ | **Resets on every refresh** so you can replay freely. |
-| `?keep` | Keep saved progress/streak in dev (opt out of the auto-reset). |
-| `?fresh` / `?reset` | Force a one-time reset (works on the live build too). |
-| `?date=YYYY-MM-DD` | Play a specific day's puzzle (different set) without waiting. |
+| _(none)_ | Normal: today's 5; **progress persists** across refreshes. |
+| `?reset` | Same 5 for the day, but **wipes progress every refresh** so you restart from the beginning (replay the same set). |
+| `?shuffle` | A **brand-new random 5 every refresh** — keep trying different sets. |
+| `?date=YYYY-MM-DD` | Play a specific day's puzzle (persists). |
 | `?debug` | Verbose `debug` logging in the console. |
+
+So: open `…/KnowYourLocals/?reset` to debug one fixed set restarting each refresh,
+or `…/KnowYourLocals/?shuffle` to get fresh spots each refresh. `?fresh` is an
+alias of `?reset`.
 
 Debugging: every session logs to the console with a `[KYL]` prefix. Run
 **`kylDumpLogs()`** in the browser console to print the full session log and copy
