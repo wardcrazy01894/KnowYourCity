@@ -15,10 +15,10 @@ import type { Guess, Location } from '../types'
 export const MAX_ROUND_SCORE = 100
 
 /** Within this distance you get full marks. */
-export const PERFECT_RADIUS_M = 100
+export const PERFECT_RADIUS_M = 300
 
 /** At/beyond this distance the round scores 0. */
-export const ZERO_DISTANCE_M = 3000
+export const ZERO_DISTANCE_M = 5000
 
 const EARTH_RADIUS_M = 6_371_000
 

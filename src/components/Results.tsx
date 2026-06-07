@@ -9,6 +9,7 @@ import { useState } from 'react'
 import type { RoundResult } from '../types'
 import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
 import { ROUNDS_PER_DAY } from '../lib/daily'
+import { log } from '../lib/log'
 
 export interface ResultsProps {
   dateKey: string
@@ -54,10 +55,12 @@ export function Results({
       await navigator.clipboard.writeText(
         buildShareString(dateKey, results, totalScore),
       )
+      log.info('Results', 'copied share string')
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-    } catch {
+    } catch (e) {
       // Clipboard blocked — no-op; the text is visible below anyway.
+      log.warn('Results', 'clipboard copy failed', { error: String(e) })
     }
   }
 

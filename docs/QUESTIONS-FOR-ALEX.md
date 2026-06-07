@@ -22,9 +22,9 @@ applied. Open follow-ups live in `BACKLOG.md`.
    to place the pin (maptap-style). *Applied: already the behavior — map fits the
    full bounds on each round, min/max zoom allow zooming in to building level.*
 
-6. **Scoring** — **0–100 per round**: 100 within 100 m, then **linear** down to
-   0 at 3 km. *Applied: rewrote `scoring.ts` (`MAX_ROUND_SCORE=100`,
-   `PERFECT_RADIUS_M=100`, `ZERO_DISTANCE_M=3000`, linear). Share emoji tiers
+6. **Scoring** — **0–100 per round**, **linear**: 100 within **300 m**, down to
+   0 at **5 km**. *Applied: `scoring.ts` (`MAX_ROUND_SCORE=100`,
+   `PERFECT_RADIUS_M=300`, `ZERO_DISTANCE_M=5000`, linear). Share emoji tiers
    rescaled (🟩≥80 🟨≥50 🟧≥20 ⬛<20). Perfect day = 500.*
 
 7. **Clues** — **no clues by default** for now. *Applied: `SHOW_CLUES=false` in

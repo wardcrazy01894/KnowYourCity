@@ -132,8 +132,8 @@ notability filter and are a deliberate area to expand toward that 200.
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
 Per-round score is on a **0–100 scale** (perfect day = **500**), linear:
-- ≤ **100 m** → **100**.
-- ≥ **3 km** → **0**.
+- ≤ **300 m** → **100**.
+- ≥ **5 km** → **0**.
 - between → linear falloff. Constants (`PERFECT_RADIUS_M`, `ZERO_DISTANCE_M`)
   are tunable after playtest.
 
@@ -161,6 +161,18 @@ coordinates → no spoilers. Copied via `navigator.clipboard`.
 Each location has an optional one-line `clue`. **Hidden by default** in v1
 (`SHOW_CLUES = false` in `Game.tsx`) for more challenge; kept in the data so it
 can be toggled on or made a per-game setting later.
+
+### 5.9 Local testing & logging
+URL params (all client-side, no build flags):
+- `?date=YYYY-MM-DD` — play any day's puzzle (different set) for testing.
+- dev (`npm run dev`) **resets on every refresh** so you can replay; `?keep`
+  opts out. On the live build, `?fresh` / `?reset` force a one-time reset.
+- `?debug` (or `localStorage kyl:debug='1'`) enables verbose `debug` logs.
+
+Logging (`src/lib/log.ts`): `[KYL]`-prefixed console output + an in-memory ring
+buffer + uncaught-error/rejection capture. In the browser console,
+`kylDumpLogs()` prints the full session log and copies it to the clipboard — the
+intended way to capture a repro and hand it to a developer.
 
 ---
 
