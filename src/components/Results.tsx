@@ -3,19 +3,12 @@
  *
  * Shows total score (x / 25,000), a per-round breakdown (distance + score),
  * current/best streak, and a "Copy result" button.
- *
- * Share string design (no map spoilers, emoji bar per round). Example:
- *
- *   Know Your Locals — St. Pete
- *   2026-06-06 · 21,430/25,000
- *   🟩🟩🟩🟨⬛
- *   knowyourlocals.gg
- *
- * Emoji tiers by round score: 🟩 ≥4000, 🟨 ≥2000, 🟧 ≥500, ⬛ <500.
- * buildShareString is a pure function so it can be unit-tested.
  */
 
+import { useState } from 'react'
 import type { RoundResult } from '../types'
+import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
+import { ROUNDS_PER_DAY } from '../lib/daily'
 
 export interface ResultsProps {
   dateKey: string
@@ -24,21 +17,103 @@ export interface ResultsProps {
   streak: { current: number; best: number }
 }
 
-/** Pure: builds the clipboard share text from a finished day's results. */
-export function buildShareString(
-  _dateKey: string,
-  _results: RoundResult[],
-  _totalScore: number,
-): string {
-  // TODO: map each result.score → emoji tier, assemble the block above.
-  throw new Error('not implemented')
+/** Emoji tier for a single round score. */
+export function scoreEmoji(score: number): string {
+  if (score >= 4000) return '🟩'
+  if (score >= 2000) return '🟨'
+  if (score >= 500) return '🟧'
+  return '⬛'
 }
 
-export function Results(_props: ResultsProps) {
-  // TODO: render summary + breakdown + Copy button (navigator.clipboard).
+/** Pure: builds the clipboard share text from a finished day's results. */
+export function buildShareString(
+  dateKey: string,
+  results: RoundResult[],
+  totalScore: number,
+): string {
+  const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
+  const bar = results.map((r) => scoreEmoji(r.score)).join('')
+  return [
+    'Know Your Locals — St. Pete',
+    `${dateKey} · ${totalScore.toLocaleString('en-US')}/${maxTotal.toLocaleString('en-US')}`,
+    bar,
+  ].join('\n')
+}
+
+export function Results({
+  dateKey,
+  results,
+  totalScore,
+  streak,
+}: ResultsProps) {
+  const [copied, setCopied] = useState(false)
+  const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(
+        buildShareString(dateKey, results, totalScore),
+      )
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // Clipboard blocked — no-op; the text is visible below anyway.
+    }
+  }
+
   return (
-    <section data-stub="Results" style={{ padding: 16 }}>
-      Results go here.
+    <section style={{ padding: 16, maxWidth: 560, margin: '0 auto' }}>
+      <h2 style={{ marginBottom: 4 }}>Done for today!</h2>
+      <p style={{ fontSize: 28, fontWeight: 700, margin: '4px 0' }}>
+        {totalScore.toLocaleString('en-US')}{' '}
+        <span style={{ fontSize: 16, opacity: 0.6 }}>
+          / {maxTotal.toLocaleString('en-US')}
+        </span>
+      </p>
+      <p style={{ opacity: 0.8, marginTop: 0 }}>
+        🔥 Streak {streak.current} (best {streak.best})
+      </p>
+
+      <ol style={{ paddingLeft: 20, lineHeight: 1.6 }}>
+        {results.map((r, i) => (
+          <li key={r.location.id}>
+            {scoreEmoji(r.score)} <strong>{r.location.name}</strong> —{' '}
+            {formatDistance(r.distanceMeters)} ·{' '}
+            {r.score.toLocaleString('en-US')} pts
+            {i === results.length - 1 ? '' : ''}
+          </li>
+        ))}
+      </ol>
+
+      <button
+        onClick={copy}
+        style={{
+          marginTop: 12,
+          padding: '10px 16px',
+          fontSize: 16,
+          fontWeight: 600,
+          borderRadius: 8,
+          border: 'none',
+          background: '#f4b400',
+          color: '#0f1720',
+          cursor: 'pointer',
+        }}
+      >
+        {copied ? 'Copied!' : 'Copy result'}
+      </button>
+
+      <pre
+        style={{
+          marginTop: 16,
+          padding: 12,
+          background: '#0b1118',
+          borderRadius: 8,
+          whiteSpace: 'pre-wrap',
+          fontSize: 14,
+        }}
+      >
+        {buildShareString(dateKey, results, totalScore)}
+      </pre>
     </section>
   )
 }

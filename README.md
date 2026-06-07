@@ -12,21 +12,25 @@ scored by how close you were. Share your result Wordle-style.
 - **No server** — "same 5 for everyone" is computed from the date (seeded RNG).
 - Built with **React + TypeScript + Vite + Leaflet**.
 
-> Status: scaffolded. The deterministic core (daily selection, scoring) and all
-> types are implemented; the map, game flow, results, and data pipeline are
-> stubbed. See [`docs/PLAN.md`](docs/PLAN.md) for the full plan and milestones,
-> and [`docs/QUESTIONS-FOR-ALEX.md`](docs/QUESTIONS-FOR-ALEX.md) for decisions
-> I need from you.
+> Status: **playable**. A full 5-round daily game runs on the sample data —
+> satellite map, pin-drop guessing, distance scoring, reveal, end-of-day results
+> with a Wordle-style share string, and streaks saved locally. Next up is the
+> real St. Pete dataset (the `fetch-pois` pipeline is still a stub). See
+> [`docs/PLAN.md`](docs/PLAN.md) for the plan, [`BACKLOG.md`](BACKLOG.md) for
+> what's next, and [`docs/QUESTIONS-FOR-ALEX.md`](docs/QUESTIONS-FOR-ALEX.md) for
+> decisions I need from you.
 
 ## Quick start
 
 ```bash
 npm install
-npm run dev          # → http://localhost:5173
+npm run dev          # → http://localhost:5173/KnowYourLocals/
 ```
 
-The app loads `public/locations.sample.json` (5 real St. Pete landmarks) so it
-runs before the full dataset exists.
+Vite serves under the `/KnowYourLocals/` base path (so the same build works on
+GitHub Pages) — use the full URL it prints. The app loads
+`public/locations.sample.json` (5 real St. Pete landmarks) so it's playable
+before the full dataset exists.
 
 ## Build the location dataset
 
