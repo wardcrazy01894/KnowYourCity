@@ -4,6 +4,28 @@
   "attribution": "Locations © OpenStreetMap contributors (ODbL) and Wikidata (CC0). Satellite imagery © Esri / Maxar.",
   "locations": [
     {
+      "id": "3-daughters-brewing",
+      "name": "3 Daughters Brewing",
+      "lat": 27.769048,
+      "lng": -82.662598,
+      "category": "bar",
+      "clue": "A large, popular craft brewery with a big taproom.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "400-beach-seafood-tap-house",
+      "name": "400 Beach Seafood & Tap House",
+      "lat": 27.777371,
+      "lng": -82.631548,
+      "category": "restaurant",
+      "clue": "A seafood & tap house facing the downtown waterfront.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "al-lang-stadium",
       "name": "Al Lang Stadium",
       "lat": 27.7683,
@@ -13,6 +35,39 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "bad-mother",
+      "name": "Bad Mother",
+      "lat": 27.770013,
+      "lng": -82.636382,
+      "category": "cafe",
+      "clue": "An independent coffee shop downtown.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "bandit-coffee",
+      "name": "Bandit Coffee",
+      "lat": 27.770743,
+      "lng": -82.669531,
+      "category": "cafe",
+      "clue": "An independent coffee shop on Central Avenue.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "bella-brava",
+      "name": "Bella Brava",
+      "lat": 27.7737,
+      "lng": -82.632919,
+      "category": "restaurant",
+      "clue": "A New World Italian trattoria on Beach Drive.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "boyd-hill-nature-preserve",
@@ -26,6 +81,50 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
+      "id": "brick-mortar",
+      "name": "Brick & Mortar",
+      "lat": 27.77138,
+      "lng": -82.64105,
+      "category": "restaurant",
+      "clue": "An acclaimed farm-to-table restaurant in the EDGE District.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "cage-brewing",
+      "name": "Cage Brewing",
+      "lat": 27.770466,
+      "lng": -82.660509,
+      "category": "bar",
+      "clue": "A craft brewery & event space in the Warehouse Arts District.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "cassis",
+      "name": "Cassis",
+      "lat": 27.773313,
+      "lng": -82.633105,
+      "category": "restaurant",
+      "clue": "A French-American brasserie on Beach Drive.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "central-coffee-shoppe",
+      "name": "Central Coffee Shoppe",
+      "lat": 27.770906,
+      "lng": -82.640853,
+      "category": "cafe",
+      "clue": "A long-running breakfast diner on Central Avenue.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "chihuly-collection",
       "name": "Chihuly Collection",
       "lat": 27.7708,
@@ -37,12 +136,67 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "cycle-brewing",
+      "name": "Cycle Brewing",
+      "lat": 27.770906,
+      "lng": -82.640922,
+      "category": "bar",
+      "clue": "A downtown craft brewery known for barrel-aged beers.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "driftwood-roastery",
+      "name": "Driftwood Roastery",
+      "lat": 27.770944,
+      "lng": -82.644365,
+      "category": "cafe",
+      "clue": "A local coffee roaster downtown.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "duncan-mcclellan-gallery",
       "name": "Duncan McClellan Gallery",
       "lat": 27.765193,
       "lng": -82.665352,
       "category": "museum",
       "clue": "A renowned glass-art gallery in the Warehouse Arts District.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "emerald-bar",
+      "name": "Emerald Bar",
+      "lat": 27.770905,
+      "lng": -82.641174,
+      "category": "bar",
+      "clue": "A legendary Central Avenue dive bar since 1947.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "fergs-sports-bar-grill",
+      "name": "Ferg's Sports Bar & Grill",
+      "lat": 27.770797,
+      "lng": -82.652385,
+      "category": "bar",
+      "clue": "A sprawling sports bar across from the ballpark.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "first-street-coffee",
+      "name": "First Street Coffee",
+      "lat": 27.767488,
+      "lng": -82.634205,
+      "category": "cafe",
+      "clue": "A downtown specialty coffee shop.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -70,12 +224,56 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
+      "id": "fourth-street-shrimp-store",
+      "name": "Fourth Street Shrimp Store",
+      "lat": 27.782141,
+      "lng": -82.638799,
+      "category": "restaurant",
+      "clue": "A quirky old-school seafood market & diner on 4th Street.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "great-explorations-childrens-museum",
       "name": "Great Explorations Children's Museum",
       "lat": 27.790358,
       "lng": -82.637904,
       "category": "museum",
       "clue": "A hands-on children’s museum next to Sunken Gardens.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "green-bench-brewing-co",
+      "name": "Green Bench Brewing Co.",
+      "lat": 27.771713,
+      "lng": -82.650672,
+      "category": "bar",
+      "clue": "One of St. Pete's flagship craft breweries.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "grove-surf-coffee",
+      "name": "Grove Surf + Coffee",
+      "lat": 27.74107,
+      "lng": -82.751218,
+      "category": "cafe",
+      "clue": "A surf shop and coffee bar near the beach.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "il-ritorno",
+      "name": "Il Ritorno",
+      "lat": 27.771462,
+      "lng": -82.639599,
+      "category": "restaurant",
+      "clue": "A modern, award-winning Italian spot downtown.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -125,6 +323,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "mandarin-hide",
+      "name": "Mandarin Hide",
+      "lat": 27.771391,
+      "lng": -82.636117,
+      "category": "bar",
+      "clue": "A craft cocktail bar on Central Avenue.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "mangrove-bay-golf-course",
       "name": "Mangrove Bay Golf Course",
       "lat": 27.833389,
@@ -158,12 +367,89 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "north-shore-kickball-fields",
+      "name": "North Shore Park Kickball Fields",
+      "lat": 27.7857,
+      "lng": -82.6265,
+      "category": "park",
+      "clue": "The open rec/kickball fields at North Shore Park.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Manual (approx.)"
+    },
+    {
+      "id": "north-shore-volleyball-courts",
+      "name": "North Shore Park Volleyball Courts",
+      "lat": 27.782942,
+      "lng": -82.624619,
+      "category": "park",
+      "clue": "Sand volleyball courts at North Shore Park on the downtown waterfront.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "old-northeast-tavern",
+      "name": "Old Northeast Tavern",
+      "lat": 27.779571,
+      "lng": -82.635738,
+      "category": "bar",
+      "clue": "A neighborhood pub in the Historic Old Northeast.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "parkshore-grill",
+      "name": "Parkshore Grill",
+      "lat": 27.775197,
+      "lng": -82.632466,
+      "category": "restaurant",
+      "clue": "An upscale American restaurant on Beach Drive.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "pasadena-yacht-country-club",
       "name": "Pasadena Yacht & Country Club",
       "lat": 27.750868,
       "lng": -82.721695,
       "category": "golf_course",
       "clue": "A gated golf & yacht country club near Gulfport.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "ringside-cafe",
+      "name": "Ringside Cafe",
+      "lat": 27.771578,
+      "lng": -82.635726,
+      "category": "bar",
+      "clue": "A historic live-music and jazz bar.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "saint-pete-brewing-company",
+      "name": "Saint Pete Brewing Company",
+      "lat": 27.771893,
+      "lng": -82.641033,
+      "category": "bar",
+      "clue": "A downtown craft brewery & taproom.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "skyway-jacks",
+      "name": "Skyway Jack's",
+      "lat": 27.743545,
+      "lng": -82.679843,
+      "category": "restaurant",
+      "clue": "A beloved no-frills breakfast institution.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -202,6 +488,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "stillwaters-tavern",
+      "name": "Stillwaters Tavern",
+      "lat": 27.774162,
+      "lng": -82.632808,
+      "category": "restaurant",
+      "clue": "A gastropub on Beach Drive downtown.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "sunken-gardens",
       "name": "Sunken Gardens",
       "lat": 27.790043,
@@ -219,6 +516,50 @@
       "lng": -82.624868,
       "category": "museum",
       "clue": "A marine-education center out on the St. Pete Pier.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "ted-peters-smoked-fish",
+      "name": "Ted Peters Smoked Fish",
+      "lat": 27.755996,
+      "lng": -82.736917,
+      "category": "restaurant",
+      "clue": "A roadside institution famous for smoked mullet & German potato salad.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-ale-and-the-witch",
+      "name": "The Ale and the Witch",
+      "lat": 27.773918,
+      "lng": -82.633613,
+      "category": "bar",
+      "clue": "A craft-beer courtyard bar tucked off Central Avenue.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-canopy",
+      "name": "The Canopy",
+      "lat": 27.776045,
+      "lng": -82.632129,
+      "category": "bar",
+      "clue": "A rooftop bar atop The Birchwood with skyline views.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-chattaway",
+      "name": "The Chattaway",
+      "lat": 27.748311,
+      "lng": -82.638332,
+      "category": "restaurant",
+      "clue": "A historic open-air burger joint in a former trolley stop.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -252,6 +593,17 @@
       "lng": -82.634756,
       "category": "museum",
       "clue": "Western & wildlife art behind a carved-canyon entryway downtown.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-moon-under-water",
+      "name": "The Moon Under Water",
+      "lat": 27.775843,
+      "lng": -82.632037,
+      "category": "restaurant",
+      "clue": "A British-India-themed pub on Beach Drive.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"

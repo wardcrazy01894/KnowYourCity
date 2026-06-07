@@ -36,6 +36,8 @@ export type LocationCategory =
   | 'park'
   | 'landmark'
   | 'restaurant'
+  | 'bar'
+  | 'cafe'
   | 'golf_course'
   | 'plaza'
   | 'venue'

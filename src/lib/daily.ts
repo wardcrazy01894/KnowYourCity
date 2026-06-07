@@ -1,9 +1,10 @@
 /**
  * Deterministic daily location selection.
  *
- * GOAL: every player who loads the game on a given UTC calendar day sees the
- * SAME 5 locations in the SAME order, with NO backend. Achieved by hashing the
- * UTC date string into a seed and driving a seeded PRNG.
+ * GOAL: every player who loads the game on a given day sees the SAME 5 locations
+ * in the SAME order, with NO backend. Achieved by hashing the date string (in
+ * the city's timezone) into a seed and driving a seeded PRNG, then filling a
+ * fixed per-category round plan (see CATEGORY_PLAN).
  *
  * ── Timezone (read this) ──────────────────────────────────────────────────────
  * The "day" rolls over at midnight in the city's timezone, NOT the player's
@@ -22,9 +23,36 @@
  * instead. See docs/PLAN.md §"Daily selection integrity".
  */
 
-import type { Location } from '../types'
+import type { Location, LocationCategory } from '../types'
 
 export const ROUNDS_PER_DAY = 5
+
+/**
+ * The fixed shape of a daily game: one of each category, in this order.
+ * `landmark` means "anything that isn't a bar/cafe/restaurant"; `wildcard` is
+ * any remaining location. If a bucket is empty/exhausted, that slot falls back
+ * to any remaining location so we always return a full set.
+ */
+export type RoundSlot = 'cafe' | 'restaurant' | 'bar' | 'landmark' | 'wildcard'
+export const CATEGORY_PLAN: RoundSlot[] = [
+  'cafe',
+  'restaurant',
+  'bar',
+  'landmark',
+  'wildcard',
+]
+
+const FOOD_DRINK: ReadonlySet<LocationCategory> = new Set<LocationCategory>([
+  'cafe',
+  'restaurant',
+  'bar',
+])
+
+function matchesSlot(slot: RoundSlot, loc: Location): boolean {
+  if (slot === 'wildcard') return true
+  if (slot === 'landmark') return !FOOD_DRINK.has(loc.category)
+  return loc.category === slot
+}
 
 /** Default city timezone (St. Pete). Each future city carries its own. */
 export const DEFAULT_TIMEZONE = 'America/New_York'
@@ -73,13 +101,15 @@ export function mulberry32(seed: number): () => number {
 }
 
 /**
- * Deterministically pick `count` locations for the given UTC date key.
+ * Deterministically pick `count` locations for the given date key, one per slot
+ * in CATEGORY_PLAN (cafe → restaurant → bar → landmark → wildcard).
  *
  * Implementation notes:
  *  - Input list is first sorted by `id` so ordering in the source file does not
  *    affect output (only membership does).
  *  - Fisher–Yates shuffle driven by a date-seeded mulberry32.
- *  - Returns the first `count` of the shuffled array.
+ *  - Each plan slot takes the first shuffled location of its category, falling
+ *    back to any remaining location when that bucket is empty.
  *
  * @throws if the pool has fewer than `count` items.
  */
@@ -93,11 +123,32 @@ export function selectDailyLocations(
       `Need at least ${count} locations, got ${all.length}. Add more to locations.json.`,
     )
   }
+  // Deterministic shuffle: sort by id (so source order doesn't matter), then
+  // Fisher–Yates with a date-seeded PRNG. Same date + list ⇒ identical result
+  // in every browser. No Math.random().
   const pool = [...all].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
   const rand = mulberry32(hashStringToSeed(dateKey))
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(rand() * (i + 1))
     ;[pool[i], pool[j]] = [pool[j], pool[i]]
   }
-  return pool.slice(0, count)
+
+  // Fill each slot from its category, falling back to any remaining location so
+  // we always return a full set (e.g. a dataset with no cafés still works).
+  const plan = CATEGORY_PLAN.slice(0, count)
+  const used = new Set<string>()
+  const chosen: Location[] = []
+  for (const slot of plan) {
+    const pick =
+      pool.find((l) => !used.has(l.id) && matchesSlot(slot, l)) ??
+      pool.find((l) => !used.has(l.id))
+    if (!pick) {
+      throw new Error(
+        `Could not fill ${count} rounds from ${all.length} locations.`,
+      )
+    }
+    used.add(pick.id)
+    chosen.push(pick)
+  }
+  return chosen
 }

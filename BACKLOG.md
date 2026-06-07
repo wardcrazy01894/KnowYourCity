@@ -4,10 +4,10 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Grow the St. Pete dataset to ~200** — the launch target. Currently ~29.
-      Most restaurants/bars/cafés are filtered out by the notability gate; loosen
-      it (e.g. include popular ones, not just wiki-linked) and curate more from
-      `data/candidates.json`. Apply Alex's must-include / banned lists when ready.
+- [ ] **Grow the St. Pete dataset to ~200** — the launch target. Currently ~61
+      (landmarks + independent cafés/restaurants/bars). Keep curating more
+      single-location locals from a broad Overpass pull. Apply Alex's
+      must-include / banned lists when ready.
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.

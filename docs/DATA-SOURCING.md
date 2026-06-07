@@ -138,16 +138,37 @@ only if it's missing (see `src/App.tsx`), so no code change is needed.
 > Re-running the pipeline regenerates `candidates.json`, **not**
 > `locations.json` — your curation is never clobbered.
 
-### Status: first curation done
-`public/locations.json` currently holds **29 curated St. Pete landmarks**
-(museums, venues like Tropicana Field, golf courses, parks like Fort De Soto,
-the Don CeSar, etc.), built from a live Overpass run (369 raw → 94 candidates →
-29 hand-picked) plus one manual add. A vitest guard (`src/lib/locations.test.ts`)
-fails the build if any location lands outside the play bounds or ids collide.
-To grow it: re-run `npm run fetch-pois`, then add more entries from
-`data/candidates.json`. Note the script sets a descriptive `User-Agent` and
-falls back across Overpass mirrors (the public servers 406 without a UA and
-often return a busy error under load).
+### Status: ~61 curated locations
+`public/locations.json` holds **~61 curated St. Pete places**:
+- **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
+  parks (Fort De Soto, North Shore volleyball/kickball), the Don CeSar, etc.
+- **Food & drink** (independent, single-location only): cafés (Bandit, Bad
+  Mother, Central Coffee Shoppe…), restaurants (Brick & Mortar, Il Ritorno, Ted
+  Peters, Fourth Street Shrimp…), bars/breweries (Green Bench, Cycle, Emerald
+  Bar, Mandarin Hide, Ferg's…). Chains / multi-location spots are excluded.
+
+The daily game picks **one of each** in order: **cafe → restaurant → bar →
+landmark → wildcard** (`CATEGORY_PLAN` in `src/lib/daily.ts`). A vitest guard
+(`src/lib/locations.test.ts`) fails the build if a location is out of bounds, an
+id collides, or the curated set can no longer fill that plan.
+
+### Category buckets
+The pipeline tags each row with a `category`. For round selection:
+`cafe`, `restaurant`, `bar` are the food/drink buckets; **everything else**
+(`attraction`, `museum`, `park`, `landmark`, `venue`, `golf_course`, `plaza`,
+`other`) counts as a **landmark**.
+
+### Adding food/drink
+Most independent eateries lack a `wikipedia`/`wikidata` tag, so they don't come
+through the notability-gated `fetch-pois` query. To add them, run a broader
+Overpass query (`amenity=restaurant|bar|cafe|pub`, `craft=brewery`) for the
+bbox, then **hand-pick single-location locals** (exclude anything with a `brand`
+tag or multiple sites). Use OSM's coordinates so they're accurate.
+
+To grow further: re-run `npm run fetch-pois`, add more from
+`data/candidates.json`. The script sets a descriptive `User-Agent` and falls back
+across Overpass mirrors (the public servers 406 without a UA and often return a
+busy error under load).
 
 ---
 
