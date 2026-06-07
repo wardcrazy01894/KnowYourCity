@@ -4,14 +4,15 @@
  */
 
 import { CITIES } from '../lib/cities'
-import { bugReportUrl } from '../lib/report'
 
 export function CityPicker({
   onPick,
   onSearch,
+  onReport,
 }: {
   onPick: (id: string) => void
   onSearch: () => void
+  onReport: () => void
 }) {
   return (
     <main
@@ -75,14 +76,18 @@ export function CityPicker({
         >
           🔎 Is a place in the game?
         </button>
-        <a
-          href={bugReportUrl()}
-          target="_blank"
-          rel="noreferrer"
-          style={{ color: '#7fb2ff' }}
+        <button
+          onClick={onReport}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#7fb2ff',
+            cursor: 'pointer',
+            font: 'inherit',
+          }}
         >
           🐛 Report a bug
-        </a>
+        </button>
       </div>
     </main>
   )

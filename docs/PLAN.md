@@ -190,9 +190,12 @@ intended way to capture a repro and hand it to a developer.
 - **Dataset search** (`DatasetSearch` + `src/lib/search.ts`): pick a city, type a
   name, and see if it's in that city's list (autocomplete via `searchLocations`,
   exact check via `isIncluded`). Reachable from the picker and the game header.
-- **Report a bug** (`src/lib/report.ts`): opens a prefilled GitHub issue with
-  city / puzzle date / URL / browser and a nudge to paste `kylDumpLogs()`. No
-  backend; players need a GitHub account to submit.
+- **Report a bug** (`BugReport` + `src/lib/report.ts`): an in-app form — type
+  what broke, hit send. If `VITE_BUG_ENDPOINT` is set it POSTs to a serverless
+  function (`worker/`, a Cloudflare Worker holding the GitHub token) that **files
+  a GitHub issue** with city/date/URL/browser + session logs attached. If not
+  configured, it falls back to opening a prefilled GitHub issue page. The token
+  is never in the client bundle.
 
 ### 5.10 Sound feedback
 On each reveal, `playScoreSound(score)` (`src/lib/sound.ts`) plays a synthesized
