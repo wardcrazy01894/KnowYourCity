@@ -68,10 +68,10 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       color squares, for people who want the real number. Keep it compact and
       spoiler-free (no place names). `buildShareString` in
       `src/components/Results.tsx`.
-- [ ] **Share results: link to the site** — append the game URL to the share
-      text so a shared result is clickable and drives new players (use the
-      deployed Pages/custom-domain URL, not localhost). Pair with the numeric
-      share above.
+- [x] **Share results: link to the site** — the share text now ends with the
+      game URL (`shareSiteUrl()` = origin + Vite `base`, so it's correct on Pages
+      and a future custom domain). See `buildShareString` in
+      `src/components/Results.tsx`.
 - [ ] Optional backend for shared online leaderboards.
 
 ## Done

@@ -28,20 +28,36 @@ export function scoreEmoji(score: number): string {
   return '⬛'
 }
 
-/** Pure: builds the clipboard share text from a finished day's results. */
+/**
+ * Pure: builds the clipboard share text from a finished day's results.
+ * When `url` is given, it's appended as the last line so a shared result links
+ * back to the game (drives new players). Callers pass the site's own URL.
+ */
 export function buildShareString(
   cityShort: string,
   dateKey: string,
   results: RoundResult[],
   totalScore: number,
+  url?: string,
 ): string {
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   const bar = results.map((r) => scoreEmoji(r.score)).join('')
-  return [
+  const lines = [
     `Know Your Locals — ${cityShort}`,
     `${dateKey} · ${totalScore.toLocaleString('en-US')}/${maxTotal.toLocaleString('en-US')}`,
     bar,
-  ].join('\n')
+  ]
+  if (url) lines.push(url)
+  return lines.join('\n')
+}
+
+/**
+ * The game's own absolute URL, for the share text. Uses the current origin +
+ * Vite `base`, so it's correct on Pages (`…github.io/KnowYourLocals/`) and on a
+ * future custom domain without hardcoding.
+ */
+export function shareSiteUrl(): string {
+  return window.location.origin + import.meta.env.BASE_URL
 }
 
 export function Results({
@@ -57,7 +73,13 @@ export function Results({
   async function copy() {
     try {
       await navigator.clipboard.writeText(
-        buildShareString(cityShort, dateKey, results, totalScore),
+        buildShareString(
+          cityShort,
+          dateKey,
+          results,
+          totalScore,
+          shareSiteUrl(),
+        ),
       )
       log.info('Results', 'copied share string')
       setCopied(true)
@@ -119,7 +141,13 @@ export function Results({
           fontSize: 14,
         }}
       >
-        {buildShareString(cityShort, dateKey, results, totalScore)}
+        {buildShareString(
+          cityShort,
+          dateKey,
+          results,
+          totalScore,
+          shareSiteUrl(),
+        )}
       </pre>
     </section>
   )

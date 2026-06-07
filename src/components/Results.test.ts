@@ -49,4 +49,17 @@ describe('buildShareString', () => {
     const s = buildShareString('St. Pete', '2026-06-06', results, 285)
     expect([...s.split('\n')[2]].length).toBe(results.length)
   })
+
+  it('appends the site URL as the last line when given one', () => {
+    const url = 'https://wardcrazy01894.github.io/KnowYourLocals/'
+    const s = buildShareString('St. Pete', '2026-06-06', results, 285, url)
+    const lines = s.split('\n')
+    expect(lines).toHaveLength(4)
+    expect(lines[3]).toBe(url)
+  })
+
+  it('omits the URL line when none is given', () => {
+    const s = buildShareString('St. Pete', '2026-06-06', results, 285)
+    expect(s.split('\n')).toHaveLength(3)
+  })
 })
