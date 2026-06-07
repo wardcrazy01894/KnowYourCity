@@ -2600,14 +2600,14 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "la-carreta-bakery",
-      "name": "La Carreta Bakery",
+      "id": "mi-carreta-restaurant-and-bakery",
+      "name": "Mi Carreta Restaurant and Bakery",
       "lat": 27.821556,
       "lng": -82.670566,
       "category": "restaurant",
-      "clue": null,
+      "clue": "Family-run Colombian and Latin American plates with a bakery counter of fresh pan and pastries (formerly La Carreta Bakery).",
       "photoUrl": null,
-      "source": "overpass",
+      "source": "manual",
       "attribution": "OpenStreetMap ODbL"
     },
     {

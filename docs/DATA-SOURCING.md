@@ -204,6 +204,10 @@ Inclusion rules (current):
 - **No closed spots** — `CLOSED` denylist (Sea Salt, Red Mesa, Locale…). Note:
   with an inclusive OSM pull, a few stale/closed entries can slip through; add
   any you spot to `CLOSED` and re-merge, or maintain a per-city ban list.
+- **Rebranded spots** — `RENAMED_IN_OSM` drops names that OSM still has under an
+  old brand (e.g. "La Carreta Bakery" → "Mi Carreta Restaurant and Bakery"); the
+  corrected name is carried as a must-include in `data/<city>-manual.json` so a
+  rebuild shows the current name once, not a stale duplicate.
 - Spots not yet in OpenStreetMap have no trusted coordinates and are left out
   until added to OSM (or supplied manually, like Kahuna's & 3 Daughters here).
 
