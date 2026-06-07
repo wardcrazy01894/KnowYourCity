@@ -4,17 +4,6 @@
   "attribution": "Locations © OpenStreetMap contributors (ODbL) and Wikidata (CC0). Satellite imagery © Esri / Maxar.",
   "locations": [
     {
-      "id": "3-daughters-brewing",
-      "name": "3 Daughters Brewing",
-      "lat": 27.769048,
-      "lng": -82.662598,
-      "category": "bar",
-      "clue": "A large, popular craft brewery with a big taproom.",
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "400-beach-seafood-tap-house",
       "name": "400 Beach Seafood & Tap House",
       "lat": 27.777371,
@@ -35,6 +24,28 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "alesia",
+      "name": "Alesia",
+      "lat": 27.770669,
+      "lng": -82.738203,
+      "category": "restaurant",
+      "clue": "A unique French-Vietnamese restaurant near Pasadena.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "allelo",
+      "name": "Allelo",
+      "lat": 27.775499,
+      "lng": -82.632368,
+      "category": "restaurant",
+      "clue": "A Mediterranean-Aegean restaurant on Beach Drive.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "bad-mother",
@@ -125,12 +136,34 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "ceviche-tapas-bar",
+      "name": "Ceviche Tapas Bar",
+      "lat": 27.77142,
+      "lng": -82.633518,
+      "category": "restaurant",
+      "clue": "A long-running Spanish tapas bar known for its sangria.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "chihuly-collection",
       "name": "Chihuly Collection",
       "lat": 27.7708,
       "lng": -82.644268,
       "category": "museum",
       "clue": "A permanent home for Dale Chihuly's blown-glass art on Central Ave.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "copper-shaker",
+      "name": "Copper Shaker",
+      "lat": 27.772299,
+      "lng": -82.634944,
+      "category": "bar",
+      "clue": "A craft cocktail bar known for its Old Fashioneds.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -164,6 +197,17 @@
       "lng": -82.665352,
       "category": "museum",
       "clue": "A renowned glass-art gallery in the Warehouse Arts District.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "elliott-aster",
+      "name": "Elliott Aster",
+      "lat": 27.777922,
+      "lng": -82.62967,
+      "category": "restaurant",
+      "clue": "Coastal fine dining near the Vinoy.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -224,12 +268,34 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
+      "id": "fortu",
+      "name": "Fortu",
+      "lat": 27.842061,
+      "lng": -82.76282,
+      "category": "restaurant",
+      "clue": "Pan-Asian dining with A5 wagyu in the Ponce de Leon Hotel.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "fourth-street-shrimp-store",
       "name": "Fourth Street Shrimp Store",
       "lat": 27.782141,
       "lng": -82.638799,
       "category": "restaurant",
       "clue": "A quirky old-school seafood market & diner on 4th Street.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "frescos-waterfront-bistro",
+      "name": "Fresco's Waterfront Bistro",
+      "lat": 27.773236,
+      "lng": -82.631436,
+      "category": "restaurant",
+      "clue": "A waterfront seafood bistro by the downtown marina.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -257,12 +323,23 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "grove-surf-coffee",
-      "name": "Grove Surf + Coffee",
-      "lat": 27.74107,
-      "lng": -82.751218,
-      "category": "cafe",
-      "clue": "A surf shop and coffee bar near the beach.",
+      "id": "gulfport-brewery-eatery",
+      "name": "Gulfport Brewery + Eatery",
+      "lat": 27.739953,
+      "lng": -82.708164,
+      "category": "bar",
+      "clue": "A neighborhood brewpub in Gulfport.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "ichicoro-ane",
+      "name": "Ichicoro Ane",
+      "lat": 27.770099,
+      "lng": -82.636409,
+      "category": "restaurant",
+      "clue": "A downtown ramen bar.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -400,6 +477,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "overflow-brewing-company",
+      "name": "Overflow Brewing Company",
+      "lat": 27.771842,
+      "lng": -82.644577,
+      "category": "bar",
+      "clue": "A craft brewery known for its sours.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "parkshore-grill",
       "name": "Parkshore Grill",
       "lat": 27.775197,
@@ -422,12 +510,56 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "pee-pas-garage-craft-brewery",
+      "name": "Pee-Pa's Garage Craft Brewery",
+      "lat": 27.830276,
+      "lng": -82.700431,
+      "category": "bar",
+      "clue": "A quirky craft brewery in a former auto shop.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "pier-teaki",
+      "name": "Pier Teaki",
+      "lat": 27.773714,
+      "lng": -82.622514,
+      "category": "bar",
+      "clue": "A tiki rooftop bar atop the St. Pete Pier.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "ringside-cafe",
       "name": "Ringside Cafe",
       "lat": 27.771578,
       "lng": -82.635726,
       "category": "bar",
       "clue": "A historic live-music and jazz bar.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "rubys-elixir",
+      "name": "Ruby's Elixir",
+      "lat": 27.771554,
+      "lng": -82.636903,
+      "category": "bar",
+      "clue": "A downtown jazz & blues bar open late.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "saigon-blonde",
+      "name": "Saigon Blonde",
+      "lat": 27.771389,
+      "lng": -82.636747,
+      "category": "bar",
+      "clue": "A Vietnamese-inspired cocktail bar downtown.",
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -508,6 +640,17 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "sushi-sho-rexley",
+      "name": "Sushi Sho Rexley",
+      "lat": 27.774016,
+      "lng": -82.635757,
+      "category": "restaurant",
+      "clue": "A tiny downtown omakase sushi counter.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "tampa-bay-watch-discovery-center",
@@ -631,6 +774,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "trophy-fish",
+      "name": "Trophy Fish",
+      "lat": 27.770756,
+      "lng": -82.661433,
+      "category": "restaurant",
+      "clue": "A casual seafood spot in the Grand Central District.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "tropicana-field",
       "name": "Tropicana Field",
       "lat": 27.768127,
@@ -662,6 +816,17 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "welton-brewing-co",
+      "name": "Welton Brewing Co.",
+      "lat": 27.845293,
+      "lng": -82.729437,
+      "category": "bar",
+      "clue": "A New-England-style brewpub & oyster bar.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "woodson-african-american-museum",
