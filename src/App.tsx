@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import type { LocationsFile, Location } from './types'
 import { getDateKey, selectDailyLocations } from './lib/daily'
 import { shouldShuffle } from './lib/devmode'
+import { isMuted, setMuted } from './lib/sound'
 import { log } from './lib/log'
 import { Game } from './components/Game'
 
@@ -76,7 +77,14 @@ function resolveMode(): Mode {
 export function App() {
   const [today, setToday] = useState<Location[] | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [muted, setMutedState] = useState(isMuted())
   const { dateKey, selectionSeed, label } = resolveMode()
+
+  function toggleMute() {
+    const next = !muted
+    setMuted(next)
+    setMutedState(next)
+  }
 
   useEffect(() => {
     log.info('App', `resolving puzzle`, { dateKey, selectionSeed })
@@ -97,17 +105,44 @@ export function App() {
 
   return (
     <main>
-      <header style={{ padding: '12px 16px' }}>
-        <h1 style={{ margin: 0, fontSize: 20 }}>Know Your Locals — St. Pete</h1>
-        <small style={{ opacity: 0.7 }}>
-          Daily puzzle · {label}
-          {import.meta.env.DEV && (
-            <span style={{ color: '#f4b400' }}>
-              {' '}
-              · dev: ?reset restart · ?shuffle random
-            </span>
-          )}
-        </small>
+      <header
+        style={{
+          padding: '12px 16px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          gap: 8,
+        }}
+      >
+        <div>
+          <h1 style={{ margin: 0, fontSize: 20 }}>
+            Know Your Locals — St. Pete
+          </h1>
+          <small style={{ opacity: 0.7 }}>
+            Daily puzzle · {label}
+            {import.meta.env.DEV && (
+              <span style={{ color: '#f4b400' }}>
+                {' '}
+                · dev: ?reset restart · ?shuffle random
+              </span>
+            )}
+          </small>
+        </div>
+        <button
+          onClick={toggleMute}
+          aria-label={muted ? 'Unmute sounds' : 'Mute sounds'}
+          title={muted ? 'Unmute sounds' : 'Mute sounds'}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: 'var(--fg)',
+            fontSize: 20,
+            cursor: 'pointer',
+            lineHeight: 1,
+          }}
+        >
+          {muted ? '🔇' : '🔊'}
+        </button>
       </header>
       <Game dateKey={dateKey} locations={today} />
     </main>

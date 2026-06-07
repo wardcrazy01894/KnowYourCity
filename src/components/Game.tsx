@@ -16,6 +16,7 @@ import type { GameState, Guess, Location, RoundResult } from '../types'
 import { MapGuess } from './MapGuess'
 import { Results } from './Results'
 import { scoreGuess, formatDistance } from '../lib/scoring'
+import { playScoreSound } from '../lib/sound'
 import { log } from '../lib/log'
 import {
   loadState,
@@ -128,6 +129,7 @@ export function Game({ dateKey, locations }: GameProps) {
       distanceMeters: Math.round(distanceMeters),
       score,
     })
+    playScoreSound(score)
     const result: RoundResult = {
       location: currentLocation,
       guess,
