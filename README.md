@@ -23,8 +23,9 @@ close you got. Share your result Wordle-style.
 - 🔁 **No server** — "same 5 for everyone" is computed from the date (seeded RNG).
 - 🔊 **Sound feedback** — a triumphant arpeggio for a perfect 100, down to a
   womp-womp for a bad miss (🔊/🔇 to mute).
-- 🧭 **Real local spots** — ~76 curated St. Pete landmarks, restaurants, bars &
-  cafés (single-location independents only).
+- 🧭 **Real local spots** — landmarks, restaurants, bars & cafés per city.
+- 🔎 **"Is my place in the game?"** — search a city's list with autocomplete.
+- 🐛 **Report a bug** — opens a prefilled GitHub issue (no backend needed).
 
 > **Status:** playable and feature-complete for v1. Next up: more places + a
 > GitHub Pages deploy. See [`BACKLOG.md`](BACKLOG.md).

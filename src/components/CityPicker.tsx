@@ -4,8 +4,15 @@
  */
 
 import { CITIES } from '../lib/cities'
+import { bugReportUrl } from '../lib/report'
 
-export function CityPicker({ onPick }: { onPick: (id: string) => void }) {
+export function CityPicker({
+  onPick,
+  onSearch,
+}: {
+  onPick: (id: string) => void
+  onSearch: () => void
+}) {
   return (
     <main
       style={{
@@ -53,6 +60,29 @@ export function CityPicker({ onPick }: { onPick: (id: string) => void }) {
             </div>
           </button>
         ))}
+      </div>
+
+      <div style={{ marginTop: 20, fontSize: 14, display: 'flex', gap: 16 }}>
+        <button
+          onClick={onSearch}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#7fb2ff',
+            cursor: 'pointer',
+            font: 'inherit',
+          }}
+        >
+          🔎 Is a place in the game?
+        </button>
+        <a
+          href={bugReportUrl()}
+          target="_blank"
+          rel="noreferrer"
+          style={{ color: '#7fb2ff' }}
+        >
+          🐛 Report a bug
+        </a>
       </div>
     </main>
   )
