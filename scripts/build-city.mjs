@@ -102,6 +102,32 @@ async function main() {
   for (const f of [...cafes, ...bars, ...rests].sort(bySignal)) add(f)
   for (const l of landmarks) add(l)
 
+  // Merge committed manual must-includes (data/<id>-manual.json) — entries not
+  // in OSM, or hand-curated. These BYPASS the target cap so a rebuild never
+  // drops them. Dedupe by id and normalized name; keep in-bounds.
+  let manual = []
+  try {
+    const raw = await readFile(
+      new URL(`../data/${id}-manual.json`, import.meta.url),
+      'utf8',
+    )
+    manual = JSON.parse(raw).locations ?? []
+  } catch {
+    /* no manual file for this city — fine */
+  }
+  for (const m of manual) {
+    const nm = norm(m.name)
+    if (!m.id || usedIds.has(m.id) || usedNorms.has(nm)) continue
+    if (m.lat < s || m.lat > n || m.lng < w || m.lng > e) {
+      console.warn('manual entry out of bounds, skipped:', m.name)
+      continue
+    }
+    usedIds.add(m.id)
+    usedNorms.add(nm)
+    out.push(m)
+  }
+  if (manual.length) console.log(`  merged ${manual.length} manual entries`)
+
   out.sort((a, b) => a.name.localeCompare(b.name))
   const byCat = {}
   for (const l of out) byCat[l.category] = (byCat[l.category] || 0) + 1

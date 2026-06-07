@@ -75,6 +75,7 @@ export function App() {
   const [muted, setMutedState] = useState(isMuted())
   const [searching, setSearching] = useState(false)
   const [reporting, setReporting] = useState(false)
+  const [attribution, setAttribution] = useState('')
 
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
@@ -87,6 +88,7 @@ export function App() {
     loadLocations(city.id)
       .then((file) => {
         if (!live) return
+        setAttribution(file.attribution || '')
         const picks = selectDailyLocations(file.locations, mode.selectionSeed)
         log.info('App', 'picks', { picks: picks.map((p) => p.name) })
         setToday(picks)
@@ -247,6 +249,25 @@ export function App() {
         bounds={city.bounds}
         locations={today}
       />
+      <footer
+        style={{
+          padding: '10px 16px 20px',
+          fontSize: 11,
+          opacity: 0.55,
+          textAlign: 'center',
+        }}
+      >
+        {attribution ||
+          'Locations © OpenStreetMap contributors (ODbL). Imagery © Esri / Maxar.'}{' '}
+        <a
+          href="https://www.openstreetmap.org/copyright"
+          target="_blank"
+          rel="noreferrer"
+          style={{ color: 'inherit' }}
+        >
+          OSM
+        </a>
+      </footer>
     </main>
   )
 }
