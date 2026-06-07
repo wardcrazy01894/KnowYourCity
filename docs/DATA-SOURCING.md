@@ -138,10 +138,14 @@ only if it's missing (see `src/App.tsx`), so no code change is needed.
 > Re-running the pipeline regenerates `candidates.json`, **not**
 > `locations.json` — your curation is never clobbered.
 
-### Status: ~519 locations
-`public/locations.json` holds **~519 St. Pete places** — ~30 curated landmarks
-plus an **inclusive** pull of established, non-national-chain restaurants/bars/
-cafés in the (widened) bounding box (≈375 restaurants, 62 bars, 51 cafés). The
+### Status: ~609 locations
+`public/locations.stpete.json` holds **~609 St. Pete places** — ~30 curated
+landmarks plus an **inclusive** pull of non-national-chain restaurants/bars/cafés
+in the (widened) bounding box (≈394 restaurants, **130 bars**, 54 cafés). Bars
+are pulled even without an "established" tag signal (many dives carry no tags);
+restaurants/cafés still require one. A few well-known bars not in OSM (Good Night
+John Boy, My Rich Uncle, Welcome to the Farm) were added manually via geocoded
+addresses. The
 box was widened to `[27.62, -82.80, 27.90, -82.58]` (north to Gandy, west to the
 beaches) to capture more known spots; `ST_PETE_BOUNDS` matches it.
 

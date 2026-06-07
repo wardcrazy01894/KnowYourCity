@@ -12,8 +12,10 @@
  *   - drop genuine NATIONAL chains (McDonald's, Starbucks, …). Local mini-chains
  *     people know (Hawkers, 3 Daughters, Datz, Mazzaro's…) are kept.
  *   - drop known-closed spots (Sea Salt, Red Mesa, …)
- *   - require an "established business" signal: website / opening_hours / cuisine
- *     / phone / wikidata (filters out bare, half-mapped nodes)
+ *   - require an "established business" signal (website / opening_hours / cuisine
+ *     / phone / wikidata) for RESTAURANTS & CAFÉS only — this filters out bare,
+ *     half-mapped eateries. BARS/PUBS/BREWERIES are kept even without it (many
+ *     real dive bars carry almost no tags, and we want broad bar coverage).
  *   - dedupe by name (keep first occurrence)
  *
  * NOTE on "≥100 Yelp reviews": Yelp/Google review counts can't be stored in the
@@ -130,7 +132,9 @@ export function foodLocationsFromElements(elements) {
     const t = el.tags || {}
     if (!t.name) continue
     if (NATIONAL_CHAIN.test(t.name) || CLOSED.test(t.name)) continue
-    if (!hasEstablishedSignal(t)) continue
+    const category = categoryFor(t.amenity || t.craft || '')
+    // Bars get a free pass; restaurants/cafés must look established.
+    if (category !== 'bar' && !hasEstablishedSignal(t)) continue
     if (seen.has(t.name)) continue
     seen.add(t.name)
     const lat = el.lat ?? el.center?.lat
@@ -141,7 +145,7 @@ export function foodLocationsFromElements(elements) {
       name: t.name,
       lat: Number(lat.toFixed(6)),
       lng: Number(lng.toFixed(6)),
-      category: categoryFor(t.amenity || t.craft || ''),
+      category,
       clue: null,
       photoUrl: null,
       source: 'overpass',

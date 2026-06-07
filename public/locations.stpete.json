@@ -26,6 +26,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "400-beach-seafood",
+      "name": "400 Beach Seafood",
+      "lat": 27.777371,
+      "lng": -82.631548,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "400-beach-seafood-tap-house",
       "name": "400 Beach Seafood & Tap House",
       "lat": 27.777371,
@@ -42,6 +53,28 @@
       "lat": 27.893303,
       "lng": -82.687311,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "49th-street-pub",
+      "name": "49th Street Pub",
+      "lat": 27.780176,
+      "lng": -82.700745,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "4th-street-pub",
+      "name": "4th Street Pub",
+      "lat": 27.821499,
+      "lng": -82.638326,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -224,10 +257,32 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "babalu",
+      "name": "Babalu",
+      "lat": 27.856366,
+      "lng": -82.639153,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "baby-turtle-beach-club",
       "name": "Baby Turtle Beach Club",
       "lat": 27.733369,
       "lng": -82.74832,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "back-bar",
+      "name": "Back Bar",
+      "lat": 27.892828,
+      "lng": -82.660624,
       "category": "bar",
       "clue": null,
       "photoUrl": null,
@@ -241,6 +296,17 @@
       "lng": -82.636382,
       "category": "cafe",
       "clue": "An independent coffee shop downtown.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "ballpark-and-rec",
+      "name": "Ballpark and Rec",
+      "lat": 27.768939,
+      "lng": -82.65235,
+      "category": "bar",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -284,6 +350,28 @@
       "lat": 27.771382,
       "lng": -82.644085,
       "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "bar-moxy",
+      "name": "Bar Moxy",
+      "lat": 27.771002,
+      "lng": -82.651364,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "bar548",
+      "name": "Bar@548",
+      "lat": 27.770905,
+      "lng": -82.64111,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -367,6 +455,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "beerbusters-movie-bar-bottle-shop",
+      "name": "Beerbusters Movie Bar & Bottle Shop",
+      "lat": 27.838716,
+      "lng": -82.733196,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "bella-brava",
       "name": "Bella Brava",
       "lat": 27.7737,
@@ -411,6 +510,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "big-storm-brewing-co",
+      "name": "Big Storm Brewing Co.",
+      "lat": 27.887457,
+      "lng": -82.699623,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "big-storm-coffee-creamery",
       "name": "Big Storm Coffee & Creamery",
       "lat": 27.889368,
@@ -437,6 +547,17 @@
       "name": "Black Crow Coffee",
       "lat": 27.770439,
       "lng": -82.662786,
+      "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "black-crow-coffee-shop",
+      "name": "Black Crow Coffee Shop",
+      "lat": 27.779779,
+      "lng": -82.635734,
       "category": "cafe",
       "clue": null,
       "photoUrl": null,
@@ -471,6 +592,17 @@
       "lat": 27.785691,
       "lng": -82.781149,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "boardwalk-tavern",
+      "name": "Boardwalk Tavern",
+      "lat": 27.820875,
+      "lng": -82.669286,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -565,6 +697,17 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
+      "id": "brandys-lounge",
+      "name": "Brandy's Lounge",
+      "lat": 27.837835,
+      "lng": -82.63912,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "brewburgers",
       "name": "Brewburgers",
       "lat": 27.729952,
@@ -603,6 +746,17 @@
       "lat": 27.839763,
       "lng": -82.689353,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "buildings-pub",
+      "name": "Building's Pub",
+      "lat": 27.839444,
+      "lng": -82.710697,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -697,6 +851,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "cactus-charlies-lounge",
+      "name": "Cactus Charlie's Lounge",
+      "lat": 27.775929,
+      "lng": -82.679659,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "caddys-madeira-beach",
       "name": "Caddy's Madeira Beach",
       "lat": 27.794996,
@@ -723,6 +888,17 @@
       "name": "Caddy's Saint Pete Beach",
       "lat": 27.730633,
       "lng": -82.742499,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "cafe",
+      "name": "Cafe",
+      "lat": 27.712887,
+      "lng": -82.685415,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -884,6 +1060,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "carmelitas-mexican-restaurant",
+      "name": "Carmelita's Mexican Restaurant",
+      "lat": 27.828682,
+      "lng": -82.729004,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "casita-taqueria",
       "name": "Casita Taqueria",
       "lat": 27.797011,
@@ -901,6 +1088,17 @@
       "lng": -82.633105,
       "category": "restaurant",
       "clue": "A French-American brasserie on Beach Drive.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "cassis-american-brasserie",
+      "name": "Cassis American Brasserie",
+      "lat": 27.773313,
+      "lng": -82.633105,
+      "category": "restaurant",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -954,6 +1152,17 @@
       "name": "Central Pizza",
       "lat": 27.838179,
       "lng": -82.700176,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "ceviche",
+      "name": "Ceviche",
+      "lat": 27.77142,
+      "lng": -82.633518,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -1192,6 +1401,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "clock-tower-sports-bar-grill",
+      "name": "Clock Tower Sports Bar & Grill",
+      "lat": 27.76932,
+      "lng": -82.767528,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "club-house-restaurant",
       "name": "Club House Restaurant",
       "lat": 27.870733,
@@ -1229,6 +1449,17 @@
       "name": "Coney Island",
       "lat": 27.852804,
       "lng": -82.639026,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "coney-island-grill",
+      "name": "Coney Island Grill",
+      "lat": 27.774375,
+      "lng": -82.64698,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -1285,6 +1516,17 @@
       "lat": 27.893156,
       "lng": -82.660227,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "cowboy-corral-bar-and-grill",
+      "name": "Cowboy Corral Bar and Grill",
+      "lat": 27.893363,
+      "lng": -82.721097,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -1566,6 +1808,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "el-agave-bar",
+      "name": "El Agave Bar",
+      "lat": 27.735411,
+      "lng": -82.747273,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "el-cap",
       "name": "El Cap",
       "lat": 27.804185,
@@ -1698,6 +1951,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "finleys-irish-pub",
+      "name": "Finley's Irish Pub",
+      "lat": 27.895813,
+      "lng": -82.745122,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "fire-water",
       "name": "Fire Water",
       "lat": 27.771242,
@@ -1746,6 +2010,17 @@
       "name": "Five Bucks Drinkery",
       "lat": 27.839533,
       "lng": -82.70131,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "flamingo-sports-bar",
+      "name": "Flamingo Sports Bar",
+      "lat": 27.783998,
+      "lng": -82.646972,
       "category": "bar",
       "clue": null,
       "photoUrl": null,
@@ -1803,6 +2078,17 @@
       "lng": -82.76282,
       "category": "restaurant",
       "clue": "Pan-Asian dining with A5 wagyu in the Ponce de Leon Hotel.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "fortunato-italian-pizzeria",
+      "name": "Fortunato Italian Pizzeria",
+      "lat": 27.842061,
+      "lng": -82.76282,
+      "category": "restaurant",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -1940,6 +2226,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "georgies-alibi",
+      "name": "Georgie's Alibi",
+      "lat": 27.774322,
+      "lng": -82.675717,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "german-american-society-biergarten",
       "name": "German American Society Biergarten",
       "lat": 27.845273,
@@ -1973,6 +2270,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "gigis-italian-restaurants",
+      "name": "Gigi's Italian Restaurants",
+      "lat": 27.768977,
+      "lng": -82.768614,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "glory-days-grill",
       "name": "Glory Days Grill",
       "lat": 27.809623,
@@ -1993,6 +2301,17 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "good-night-john-boy",
+      "name": "Good Night John Boy",
+      "lat": 27.771578,
+      "lng": -82.635726,
+      "category": "bar",
+      "clue": "A downtown dance bar/nightlife spot.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap Nominatim"
     },
     {
       "id": "goodfellas-pizza-wings",
@@ -2044,6 +2363,17 @@
       "lat": 27.769096,
       "lng": -82.635761,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "great-bay-distributors",
+      "name": "Great Bay Distributors",
+      "lat": 27.895623,
+      "lng": -82.763199,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -2149,6 +2479,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "habibi-lounge",
+      "name": "Habibi Lounge",
+      "lat": 27.768696,
+      "lng": -82.643468,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "hangar-restaurant-and-flight-lounge",
       "name": "Hangar Restaurant and Flight Lounge",
       "lat": 27.76469,
@@ -2176,6 +2517,17 @@
       "lat": 27.803181,
       "lng": -82.745143,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "harrys-beach-bar",
+      "name": "Harry’s Beach Bar",
+      "lat": 27.72742,
+      "lng": -82.743878,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -2237,11 +2589,44 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "hooks-sushi-bar-and-thai-food",
+      "name": "Hook's Sushi Bar and Thai Food",
+      "lat": 27.844993,
+      "lng": -82.639122,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "hookah",
+      "name": "Hookah",
+      "lat": 27.821391,
+      "lng": -82.727062,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "hooters",
       "name": "Hooters",
       "lat": 27.784748,
       "lng": -82.782073,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "hops-props",
+      "name": "Hops & Props",
+      "lat": 27.773798,
+      "lng": -82.630755,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -2369,6 +2754,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "independent",
+      "name": "Independent",
+      "lat": 27.771346,
+      "lng": -82.649457,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "indian-bistro",
       "name": "Indian Bistro",
       "lat": 27.723235,
@@ -2391,12 +2787,34 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "irish-31-pub-house-eatery",
+      "name": "Irish 31 Pub House & Eatery",
+      "lat": 27.843111,
+      "lng": -82.792076,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "isla-del-sol",
       "name": "Isla Del Sol",
       "lat": 27.710822,
       "lng": -82.714633,
       "category": "golf_course",
       "clue": "A golf & yacht club on an island community south of downtown.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "jacks",
+      "name": "Jack's",
+      "lat": 27.828106,
+      "lng": -82.649174,
+      "category": "restaurant",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -2422,6 +2840,28 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "jimmy-bs-beach-bar",
+      "name": "Jimmy B's Beach Bar",
+      "lat": 27.732804,
+      "lng": -82.747879,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "jimmys-sports-bar",
+      "name": "Jimmy's Sports Bar",
+      "lat": 27.804078,
+      "lng": -82.679883,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "jinju",
@@ -2490,6 +2930,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "katiki",
+      "name": "Ka'Tiki",
+      "lat": 27.753184,
+      "lng": -82.763606,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "kahunas",
       "name": "Kahuna's",
       "lat": 27.86703,
@@ -2505,6 +2956,17 @@
       "name": "Kahwa Coffee",
       "lat": 27.816127,
       "lng": -82.754504,
+      "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "kahwa-coffee-north",
+      "name": "Kahwa Coffee North",
+      "lat": 27.777416,
+      "lng": -82.635366,
       "category": "cafe",
       "clue": null,
       "photoUrl": null,
@@ -2732,6 +3194,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "lanas-downtown-lounge",
+      "name": "Lana's Downtown Lounge",
+      "lat": 27.769075,
+      "lng": -82.768535,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "lanna-thai-sushi-restuarant",
       "name": "Lanna Thai & Sushi Restuarant",
       "lat": 27.816153,
@@ -2787,6 +3260,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "level-11",
+      "name": "Level 11",
+      "lat": 27.725801,
+      "lng": -82.743154,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "leverocks",
       "name": "Leverock's",
       "lat": 27.761641,
@@ -2835,6 +3319,17 @@
       "name": "Lonni's",
       "lat": 27.894425,
       "lng": -82.669411,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "lonnis-sandwiches",
+      "name": "Lonni's Sandwiches",
+      "lat": 27.771378,
+      "lng": -82.639096,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -2908,11 +3403,55 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "lucky-star-lounge",
+      "name": "Lucky Star Lounge",
+      "lat": 27.770688,
+      "lng": -82.671071,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "macdintons-irish-pub",
+      "name": "MacDinton's Irish Pub",
+      "lat": 27.771899,
+      "lng": -82.636381,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "mad-beach-craft-brewing-company",
+      "name": "Mad Beach Craft Brewing Company",
+      "lat": 27.786638,
+      "lng": -82.783447,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "mad-hatters-ethnobotanical-tea-bar",
       "name": "Mad Hatter's Ethnobotanical Tea Bar",
       "lat": 27.814506,
       "lng": -82.671,
       "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "mad-pub",
+      "name": "Mad Pub",
+      "lat": 27.786373,
+      "lng": -82.783054,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -2985,6 +3524,28 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "mastrys",
+      "name": "Mastry's",
+      "lat": 27.77139,
+      "lng": -82.636181,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "mastrys-brewing-co",
+      "name": "Mastry’s Brewing Co.",
+      "lat": 27.744606,
+      "lng": -82.751273,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "maxiland-bakery",
       "name": "Maxiland Bakery",
       "lat": 27.772202,
@@ -3011,6 +3572,17 @@
       "name": "McAuley's Pub",
       "lat": 27.770863,
       "lng": -82.653933,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "mcnastys-bar-and-grill",
+      "name": "McNasty's Bar and Grill",
+      "lat": 27.734562,
+      "lng": -82.746017,
       "category": "bar",
       "clue": null,
       "photoUrl": null,
@@ -3139,6 +3711,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "my-rich-uncle",
+      "name": "My Rich Uncle",
+      "lat": 27.771901,
+      "lng": -82.636624,
+      "category": "bar",
+      "clue": "A downtown cocktail lounge.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap Nominatim"
+    },
+    {
       "id": "nashs-hot-chicken",
       "name": "Nash's Hot Chicken",
       "lat": 27.77132,
@@ -3187,6 +3770,17 @@
       "name": "New China",
       "lat": 27.821931,
       "lng": -82.712668,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "new-china-beach",
+      "name": "New China Beach",
+      "lat": 27.892846,
+      "lng": -82.720262,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -3331,6 +3925,17 @@
       "lat": 27.753452,
       "lng": -82.636722,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "one-night-stand",
+      "name": "One Night Stand",
+      "lat": 27.772301,
+      "lng": -82.634821,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -3711,10 +4316,43 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "pipos-cuban-cafe",
+      "name": "Pipo's Cuban Cafe",
+      "lat": 27.863143,
+      "lng": -82.638407,
+      "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "pipos-togo",
+      "name": "Pipo's ToGo",
+      "lat": 27.771469,
+      "lng": -82.638678,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "pitas-republic",
       "name": "Pita's Republic",
       "lat": 27.866895,
       "lng": -82.644773,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "lat": 27.89357,
+      "lng": -82.74532,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -3749,6 +4387,17 @@
       "lat": 27.838774,
       "lng": -82.685154,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "players-sports-bar",
+      "name": "Players Sports Bar",
+      "lat": 27.733635,
+      "lng": -82.74628,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -3975,6 +4624,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "riptides",
+      "name": "Riptides",
+      "lat": 27.743898,
+      "lng": -82.751554,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "rockstar-donuts",
       "name": "Rockstar Donuts",
       "lat": 27.891623,
@@ -4008,6 +4668,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "room-901",
+      "name": "Room 901",
+      "lat": 27.770466,
+      "lng": -82.647053,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "roses",
       "name": "Rose’s",
       "lat": 27.77089,
@@ -4025,6 +4696,17 @@
       "lng": -82.636903,
       "category": "bar",
       "clue": "A downtown jazz & blues bar open late.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "rum-runners",
+      "name": "Rum Runners",
+      "lat": 27.726447,
+      "lng": -82.743218,
+      "category": "bar",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -4140,6 +4822,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "saltys-tiki-bar-beach-lounge",
+      "name": "Salty‘s Tiki Bar & Beach Lounge",
+      "lat": 27.729799,
+      "lng": -82.745755,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "sams-sushi",
       "name": "Sam's Sushi",
       "lat": 27.836649,
@@ -4189,6 +4882,17 @@
       "lat": 27.760473,
       "lng": -82.735173,
       "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "scrounge-lounge-beach-bar",
+      "name": "Scrounge Lounge Beach Bar",
+      "lat": 27.74142,
+      "lng": -82.751606,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -4255,6 +4959,17 @@
       "lat": 27.83957,
       "lng": -82.724736,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "shadracks",
+      "name": "Shadracks",
+      "lat": 27.687917,
+      "lng": -82.737329,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -4393,6 +5108,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "softails-pub",
+      "name": "Softails Pub",
+      "lat": 27.827298,
+      "lng": -82.78743,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "sonic",
       "name": "Sonic",
       "lat": 27.841971,
@@ -4408,6 +5134,17 @@
       "name": "Sonny's",
       "lat": 27.839675,
       "lng": -82.693494,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "sonnys-real-pit-bbq",
+      "name": "Sonny's Real Pit BBQ",
+      "lat": 27.804789,
+      "lng": -82.747892,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -4492,6 +5229,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "spring-garden-family-restaurant",
+      "name": "Spring Garden Family Restaurant",
+      "lat": 27.828113,
+      "lng": -82.648332,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "squeeze-juice-works",
       "name": "Squeeze Juice Works",
       "lat": 27.770486,
@@ -4541,6 +5289,17 @@
       "lat": 27.812505,
       "lng": -82.754566,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "steel-city-brewhouse",
+      "name": "Steel City Brewhouse",
+      "lat": 27.866532,
+      "lng": -82.64338,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -4701,6 +5460,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "swigwam-beach-bar",
+      "name": "Swigwam Beach Bar",
+      "lat": 27.742367,
+      "lng": -82.749088,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "swingers-patio-bar-grill",
       "name": "Swingers Patio Bar & Grill",
       "lat": 27.771273,
@@ -4729,6 +5499,17 @@
       "lng": -82.624868,
       "category": "museum",
       "clue": "A marine-education center out on the St. Pete Pier.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "taphouse-61",
+      "name": "Taphouse 61",
+      "lat": 27.77124,
+      "lng": -82.661445,
+      "category": "bar",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -4822,6 +5603,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "thai-am-2",
+      "name": "Thai-Am # 2",
+      "lat": 27.787289,
+      "lng": -82.784632,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "the-ale-and-the-witch",
       "name": "The Ale and the Witch",
       "lat": 27.773918,
@@ -4888,6 +5680,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "the-cabana-bar",
+      "name": "The Cabana Bar",
+      "lat": 27.731136,
+      "lng": -82.746528,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "the-campus-grind",
       "name": "The Campus Grind",
       "lat": 27.763328,
@@ -4905,6 +5708,17 @@
       "lng": -82.632129,
       "category": "bar",
       "clue": "A rooftop bar atop The Birchwood with skyline views.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-canopy-at-birchwood",
+      "name": "The Canopy at Birchwood",
+      "lat": 27.776045,
+      "lng": -82.632129,
+      "category": "bar",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -4976,6 +5790,17 @@
       "attribution": "Wikidata CC0"
     },
     {
+      "id": "the-drunken-clam",
+      "name": "The Drunken Clam",
+      "lat": 27.720635,
+      "lng": -82.739311,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "the-floribbean",
       "name": "The Floribbean",
       "lat": 27.770839,
@@ -5014,6 +5839,39 @@
       "lat": 27.771726,
       "lng": -82.638277,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-galley-a-st-pete-tavern",
+      "name": "The Galley - A St. Pete Tavern",
+      "lat": 27.771798,
+      "lng": -82.636917,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-garage-on-central",
+      "name": "The Garage On Central",
+      "lat": 27.771244,
+      "lng": -82.670513,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-getaway",
+      "name": "The Getaway",
+      "lat": 27.870616,
+      "lng": -82.611281,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -5097,6 +5955,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "the-liquid-therapy-bar",
+      "name": "The Liquid Therapy Bar",
+      "lat": 27.839468,
+      "lng": -82.726467,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "the-lure-ono",
       "name": "The Lure Ono",
       "lat": 27.771355,
@@ -5146,6 +6015,17 @@
       "lat": 27.833132,
       "lng": -82.699641,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-sandbar",
+      "name": "The Sandbar",
+      "lat": 27.731822,
+      "lng": -82.747406,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -5245,6 +6125,17 @@
       "lat": 27.773354,
       "lng": -82.633535,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "thirsty-first",
+      "name": "Thirsty First",
+      "lat": 27.772277,
+      "lng": -82.634439,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -5438,6 +6329,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "undertow",
+      "name": "Undertow",
+      "lat": 27.715643,
+      "lng": -82.739327,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "urban",
       "name": "Urban",
       "lat": 27.771365,
@@ -5504,12 +6406,34 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "welcome-to-the-farm",
+      "name": "Welcome to the Farm",
+      "lat": 27.771814,
+      "lng": -82.636379,
+      "category": "bar",
+      "clue": "A downtown bar on 1st Ave N.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "ParkWhiz (approx.)"
+    },
+    {
       "id": "welton-brewing-co",
       "name": "Welton Brewing Co.",
       "lat": 27.845293,
       "lng": -82.729437,
       "category": "bar",
       "clue": "A New-England-style brewpub & oyster bar.",
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "welton-brewing-company-and-oyster-bar",
+      "name": "Welton Brewing Company and Oyster Bar",
+      "lat": 27.845293,
+      "lng": -82.729437,
+      "category": "bar",
+      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
@@ -5548,11 +6472,33 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "where-else-tavern",
+      "name": "Where Else Tavern",
+      "lat": 27.822155,
+      "lng": -82.712677,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "wild-child",
       "name": "Wild Child",
       "lat": 27.770793,
       "lng": -82.670371,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "wild-willys",
+      "name": "Wild Willy's",
+      "lat": 27.89318,
+      "lng": -82.745289,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -5570,11 +6516,33 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "willards-tap-house",
+      "name": "Willard's Tap House",
+      "lat": 27.886106,
+      "lng": -82.762678,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "willie-jewells-old-school-bar-b-q",
       "name": "Willie Jewell’s Old School Bar-B-Q",
       "lat": 27.893998,
       "lng": -82.764344,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "willys-burger-and-booze",
+      "name": "Willy's Burger and Booze",
+      "lat": 27.740517,
+      "lng": -82.753319,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -5607,6 +6575,17 @@
       "name": "Winghouse",
       "lat": 27.842263,
       "lng": -82.686461,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "winghouse-of-saint-petersburg",
+      "name": "Winghouse of Saint Petersburg",
+      "lat": 27.831495,
+      "lng": -82.638348,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -5685,6 +6664,17 @@
       "lat": 27.770942,
       "lng": -82.655324,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "zbar",
+      "name": "Zbar",
+      "lat": 27.825897,
+      "lng": -82.680006,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
