@@ -53,6 +53,10 @@ repo):
    [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) widget:
    - `wrangler secret put TURNSTILE_SECRET` (the Turnstile *secret* key)
    - set `VITE_TURNSTILE_SITEKEY` in the app to the Turnstile *site* key
+   - **add your live hostname to the widget's allowed Hostnames** in the
+     Turnstile dashboard (e.g. `wardcrazy01894.github.io`). If the hostname
+     isn't listed, the check fails on the live site and the fail-closed worker
+     rejects every report. (Verified working from the live Pages site 2026-06-07.)
    The form then shows a check and the worker rejects unverified posts. This is
    the real defense against scripted spam (the rate limit is per-IP, so a botnet
    can still trickle in without it).

@@ -57,6 +57,11 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] Scoring/difficulty tuning pass after real playtests (constants in
       `scoring.ts`).
 - [ ] About/attribution panel (OSM ODbL + imagery credit) visible in the UI.
+- [ ] **Prod-harden the bug worker's origin allowlist** — drop the `localhost`
+      entries from `ALLOWED_ORIGIN` in `worker/wrangler.toml` once dev no longer
+      needs them, so only the live Pages origin can use the public endpoint.
+      (Deferred 2026-06-07; low priority — the per-IP rate limit + Turnstile
+      already gate abuse.)
 - [ ] **Share results: show numbers, not just colors** — the Wordle-style share
       is currently an emoji/color grid. Consider including the actual per-round
       scores (and the day's total, e.g. `420/500`) alongside or instead of the
