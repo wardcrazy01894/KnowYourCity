@@ -1,0 +1,57 @@
+[
+  {
+    "id": "stpete",
+    "name": "St. Petersburg, FL",
+    "short": "St. Pete",
+    "timeZone": "America/New_York",
+    "bounds": [
+      [27.62, -82.8],
+      [27.9, -82.58]
+    ],
+    "target": 520
+  },
+  {
+    "id": "statecollege",
+    "name": "State College, PA",
+    "short": "State College",
+    "timeZone": "America/New_York",
+    "bounds": [
+      [40.74, -77.95],
+      [40.84, -77.78]
+    ],
+    "target": 80
+  },
+  {
+    "id": "annarbor",
+    "name": "Ann Arbor, MI",
+    "short": "Ann Arbor",
+    "timeZone": "America/Detroit",
+    "bounds": [
+      [42.22, -83.83],
+      [42.33, -83.66]
+    ],
+    "target": 100
+  },
+  {
+    "id": "seattle",
+    "name": "Seattle, WA",
+    "short": "Seattle",
+    "timeZone": "America/Los_Angeles",
+    "bounds": [
+      [47.5, -122.46],
+      [47.74, -122.24]
+    ],
+    "target": 200
+  },
+  {
+    "id": "chicago",
+    "name": "Chicago, IL",
+    "short": "Chicago",
+    "timeZone": "America/Chicago",
+    "bounds": [
+      [41.74, -87.8],
+      [42.02, -87.58]
+    ],
+    "target": 200
+  }
+]

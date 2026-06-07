@@ -16,15 +16,14 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.
 
-## The multi-city vision (bigger arc)
-- [ ] **City/region picker landing page** — the homepage becomes "what area are
-      you playing?" (search your city), which routes into that city's daily game.
-- [ ] **Multi-city support** — generalize from St. Pete to many cities
-      (Ann Arbor, Seattle, Chicago, …). Model each as data:
-      `City = { id, name, timeZone, bounds, locationsUrl }`. The engine is
-      already city-agnostic (`getDateKey(now, timeZone)`,
-      `selectDailyLocations(list, dateKey)`); mainly needs a city registry, the
-      picker UI, routing, and a curated ~200-place `locations.json` per city.
+## Multi-city (shipped — extend as desired)
+- [x] **City picker + 5 cities** — St. Pete, State College, Ann Arbor, Seattle,
+      Chicago, via `cities.json` + `build-city`. Picker landing screen; per-city
+      bounds/timezone/streaks.
+- [ ] **More cities / region search** — add to `cities.json` + `build-city`. A
+      type-to-search picker would scale better than buttons past ~10 cities.
+- [ ] **Tune city bounds** — a few were eyeballed (esp. Seattle/Chicago which are
+      large); refine to taste.
 
 ## Soon
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside

@@ -15,6 +15,7 @@
     "format:check": "prettier --check .",
     "fetch-pois": "node scripts/fetch-pois.mjs",
     "fetch-food": "node scripts/fetch-food.mjs",
+    "build-city": "node scripts/build-city.mjs",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {

@@ -171,23 +171,25 @@ export function toLocation(el) {
   }
 }
 
+/** Filter + map raw Overpass elements → notable landmark Location candidates. */
+export function poiLocationsFromElements(elements) {
+  const byId = new Map()
+  for (const el of elements ?? []) {
+    if (!isNotable(el)) continue
+    const loc = toLocation(el)
+    if (!loc || !loc.id) continue
+    if (!byId.has(loc.id)) byId.set(loc.id, loc) // keep first occurrence
+  }
+  return [...byId.values()].sort((a, b) => a.name.localeCompare(b.name))
+}
+
 async function main() {
   const query = buildOverpassQuery()
   console.log('Querying Overpass…')
   const data = await fetchOverpass(query)
   const elements = data.elements ?? []
   console.log(`Overpass returned ${elements.length} raw elements.`)
-
-  const byId = new Map()
-  for (const el of elements) {
-    if (!isNotable(el)) continue
-    const loc = toLocation(el)
-    if (!loc || !loc.id) continue
-    if (!byId.has(loc.id)) byId.set(loc.id, loc) // keep first occurrence
-  }
-  const candidates = [...byId.values()].sort((a, b) =>
-    a.name.localeCompare(b.name),
-  )
+  const candidates = poiLocationsFromElements(elements)
 
   await mkdir(new URL('../data/', import.meta.url), { recursive: true })
   await writeFile(

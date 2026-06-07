@@ -3,9 +3,9 @@
 # 🗺️ Know Your Locals
 
 **A daily "where is it?" map-guessing game for local landmarks** — like
-[maptap.gg](https://maptap.gg) / GeoGuessr Daily, but for one city at a time.
+[maptap.gg](https://maptap.gg) / GeoGuessr Daily, but for your city.
 
-🌴 First city: **St. Petersburg, FL**
+🌎 Cities: **St. Petersburg · State College · Ann Arbor · Seattle · Chicago**
 
 [![CI](https://github.com/wardcrazy01894/KnowYourLocals/actions/workflows/ci.yml/badge.svg)](https://github.com/wardcrazy01894/KnowYourLocals/actions/workflows/ci.yml)
 &nbsp;·&nbsp; React + TypeScript + Vite + Leaflet
@@ -15,8 +15,8 @@
 
 ---
 
-Each day **everyone gets the same 5 places**. You see a place's name (e.g.
-_Sunken Gardens_), drop a pin on a satellite map of St. Pete, and score by how
+Pick a city, then each day **everyone gets the same 5 places**. You see a place's
+name (e.g. _Sunken Gardens_), drop a pin on a satellite map, and score by how
 close you got. Share your result Wordle-style.
 
 - 💸 **$0 to run** — free satellite tiles, free POI data, no backend, no card.
@@ -66,14 +66,17 @@ Add a query param to the URL:
 🐞 **Reporting a bug?** Run **`kylDumpLogs()`** in the browser console — it prints
 the full session log and copies it to your clipboard. Paste that in.
 
-## 🗃️ Building the location dataset
+## 🗃️ Cities & datasets
+
+Cities are defined once in [`cities.json`](cities.json) (id, name, timezone,
+bounds, target size). Each city's data lives at `public/locations.<id>.json`.
 
 ```bash
-npm run fetch-pois   # OpenStreetMap (Overpass) → data/candidates.json
+npm run build-city -- seattle   # landmarks + inclusive food → public/locations.seattle.json
 ```
 
-Then hand-curate `data/candidates.json` into `public/locations.json`. Full
-process — including the food/drink curation rules — in
+To **add a city**: append it to `cities.json`, then run `build-city`. Full
+process — landmark notability + food/drink curation rules — in
 [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md).
 
 ## 🛰️ Optional: sharper imagery

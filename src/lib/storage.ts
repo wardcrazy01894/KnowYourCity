@@ -12,7 +12,9 @@ import { log } from './log'
 import { shouldStartFresh } from './devmode'
 
 export const STORAGE_VERSION = 1
-const KEY = 'kyl:v' + STORAGE_VERSION
+const PREFIX = 'kyl:v' + STORAGE_VERSION
+/** Streak/history/resume are per-city, so the key is namespaced by city id. */
+const keyFor = (cityId: string) => `${PREFIX}:${cityId}`
 
 export interface PersistedState {
   version: number
@@ -23,10 +25,10 @@ export interface PersistedState {
   streak: { current: number; best: number; lastPlayedDateKey: string | null }
 }
 
-/** Returns persisted state, or a fresh default on miss/corruption/version skew. */
-export function loadState(): PersistedState {
+/** Returns persisted state for a city, or a fresh default on miss/corruption. */
+export function loadState(cityId: string): PersistedState {
   try {
-    const raw = localStorage.getItem(KEY)
+    const raw = localStorage.getItem(keyFor(cityId))
     if (!raw) return defaultState()
     const parsed = JSON.parse(raw) as PersistedState
     if (parsed?.version !== STORAGE_VERSION) {
@@ -36,11 +38,6 @@ export function loadState(): PersistedState {
       })
       return defaultState()
     }
-    log.debug('storage', 'loaded state', {
-      streak: parsed.streak?.current,
-      history: parsed.history?.length,
-      hasCurrent: Boolean(parsed.current),
-    })
     return parsed
   } catch (e) {
     // Corrupt JSON, disabled storage, etc. — never throw on read.
@@ -49,11 +46,10 @@ export function loadState(): PersistedState {
   }
 }
 
-/** Persists state. Swallow quota/serialization errors (best-effort). */
-export function saveState(state: PersistedState): void {
+/** Persists a city's state. Swallow quota/serialization errors (best-effort). */
+export function saveState(cityId: string, state: PersistedState): void {
   try {
-    localStorage.setItem(KEY, JSON.stringify(state))
-    log.debug('storage', 'saved state')
+    localStorage.setItem(keyFor(cityId), JSON.stringify(state))
   } catch (e) {
     // Quota exceeded / private mode — best-effort, ignore.
     log.warn('storage', 'save failed (quota/private mode?)', {
@@ -70,10 +66,15 @@ export function defaultState(): PersistedState {
   }
 }
 
-/** Remove all persisted KYL state. Used by the dev fresh-start helper. */
+/** Remove all persisted per-city game state (used by the dev fresh-start helper). */
 export function clearState(): void {
   try {
-    localStorage.removeItem(KEY)
+    const toRemove: string[] = []
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i)
+      if (k && k.startsWith(PREFIX + ':')) toRemove.push(k)
+    }
+    toRemove.forEach((k) => localStorage.removeItem(k))
   } catch (e) {
     log.warn('storage', 'clear failed', { error: String(e) })
   }

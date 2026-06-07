@@ -1,26 +1,29 @@
 import { describe, it, expect } from 'vitest'
 import type { LocationsFile } from '../types'
 import { ROUNDS_PER_DAY, selectDailyLocations } from './daily'
-import curated from '../../public/locations.json'
-import sample from '../../public/locations.sample.json'
+import { CITIES } from './cities'
+import stpete from '../../public/locations.stpete.json'
+import statecollege from '../../public/locations.statecollege.json'
+import annarbor from '../../public/locations.annarbor.json'
+import seattle from '../../public/locations.seattle.json'
+import chicago from '../../public/locations.chicago.json'
 
-// Mirror of ST_PETE_BOUNDS in src/components/Game.tsx. Kept inline so this test
-// doesn't import the React/Leaflet module chain (Leaflet needs `window`).
-// [[south, west], [north, east]]
-const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
-  [27.62, -82.8],
-  [27.9, -82.58],
-]
+const DATASETS: Record<string, LocationsFile> = {
+  stpete: stpete as unknown as LocationsFile,
+  statecollege: statecollege as unknown as LocationsFile,
+  annarbor: annarbor as unknown as LocationsFile,
+  seattle: seattle as unknown as LocationsFile,
+  chicago: chicago as unknown as LocationsFile,
+}
 
-// Guard the shipped datasets so a bad curation can't merge.
-const datasets: Array<[string, LocationsFile]> = [
-  ['locations.json', curated as unknown as LocationsFile],
-  ['locations.sample.json', sample as unknown as LocationsFile],
-]
+const FOOD = new Set(['cafe', 'restaurant', 'bar'])
 
-for (const [label, data] of datasets) {
-  describe(`dataset ${label}`, () => {
-    it('has at least one full day of locations', () => {
+for (const city of CITIES) {
+  describe(`dataset: ${city.id}`, () => {
+    const data = DATASETS[city.id]
+
+    it('exists and has at least a full day of locations', () => {
+      expect(data, `no dataset bundled for ${city.id}`).toBeTruthy()
       expect(data.locations.length).toBeGreaterThanOrEqual(ROUNDS_PER_DAY)
     })
 
@@ -29,44 +32,35 @@ for (const [label, data] of datasets) {
       expect(new Set(ids).size).toBe(ids.length)
     })
 
-    it('every location is inside the St. Pete play bounds', () => {
-      const [[s, w], [n, e]] = ST_PETE_BOUNDS
+    it('every location is inside the city bounds with finite coords', () => {
+      const [[s, w], [n, e]] = city.bounds
       for (const l of data.locations) {
+        expect(Number.isFinite(l.lat) && Number.isFinite(l.lng)).toBe(true)
         expect(l.lat, `${l.name} lat`).toBeGreaterThanOrEqual(s)
         expect(l.lat, `${l.name} lat`).toBeLessThanOrEqual(n)
         expect(l.lng, `${l.name} lng`).toBeGreaterThanOrEqual(w)
         expect(l.lng, `${l.name} lng`).toBeLessThanOrEqual(e)
-      }
-    })
-
-    it('every location has id, name, and finite coords', () => {
-      for (const l of data.locations) {
-        expect(l.id).toBeTruthy()
-        expect(l.name).toBeTruthy()
-        expect(Number.isFinite(l.lat)).toBe(true)
-        expect(Number.isFinite(l.lng)).toBe(true)
+        expect(l.id && l.name).toBeTruthy()
       }
     })
 
     it('has an attribution string', () => {
       expect(data.attribution).toBeTruthy()
     })
+
+    it('can fill the cafe→restaurant→bar→landmark→wildcard plan across dates', () => {
+      for (const dateKey of ['2026-06-06', '2026-09-01', '2026-12-25']) {
+        const picks = selectDailyLocations(
+          data.locations,
+          `${city.id}:${dateKey}`,
+        )
+        expect(picks).toHaveLength(5)
+        expect(picks[0].category).toBe('cafe')
+        expect(picks[1].category).toBe('restaurant')
+        expect(picks[2].category).toBe('bar')
+        expect(FOOD.has(picks[3].category)).toBe(false)
+        expect(new Set(picks.map((p) => p.id)).size).toBe(5)
+      }
+    })
   })
 }
-
-describe('curated dataset supports the daily category plan', () => {
-  const curatedFile = curated as unknown as LocationsFile
-  const FOOD = new Set(['cafe', 'restaurant', 'bar'])
-
-  for (const dateKey of ['2026-06-06', '2026-07-01', '2026-12-25']) {
-    it(`fills coffee/restaurant/bar/landmark/wildcard for ${dateKey}`, () => {
-      const picks = selectDailyLocations(curatedFile.locations, dateKey)
-      expect(picks).toHaveLength(5)
-      expect(picks[0].category).toBe('cafe')
-      expect(picks[1].category).toBe('restaurant')
-      expect(picks[2].category).toBe('bar')
-      expect(FOOD.has(picks[3].category)).toBe(false) // landmark = non-food
-      expect(new Set(picks.map((p) => p.id)).size).toBe(5)
-    })
-  }
-})

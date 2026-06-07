@@ -164,6 +164,17 @@ The pipeline tags each row with a `category`. For round selection:
 (`attraction`, `museum`, `park`, `landmark`, `venue`, `golf_course`, `plaza`,
 `other`) counts as a **landmark**.
 
+### Multiple cities — `npm run build-city -- <id>`
+`scripts/build-city.mjs` generates a whole city's `public/locations.<id>.json` in
+one shot: it runs the landmark query (`fetch-pois` logic) and the inclusive food
+query (`fetch-food` logic) for the city's bbox, then **balances** the mix
+(~30% landmarks / 18% cafés / 22% bars / 30% restaurants), ranks food by the
+established-business signal, dedupes, filters to in-bounds, and caps to the
+city's `target`. Cities are defined once in the root `cities.json` (read by both
+this script and the app via `src/lib/cities.ts`). Current cities: St. Pete (~519,
+built via fetch-food + curation), State College (~80), Ann Arbor (~100),
+Seattle (~200), Chicago (~200).
+
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
 `fetch-pois` misses them. `scripts/fetch-food.mjs` does an **inclusive** pull
