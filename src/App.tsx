@@ -13,9 +13,11 @@ import { getDateKey, selectDailyLocations } from './lib/daily'
 import { getCity, cityDataUrl, type City } from './lib/cities'
 import { shouldShuffle } from './lib/devmode'
 import { isMuted, setMuted } from './lib/sound'
+import { bugReportUrl } from './lib/report'
 import { log } from './lib/log'
 import { Game } from './components/Game'
 import { CityPicker } from './components/CityPicker'
+import { DatasetSearch } from './components/DatasetSearch'
 
 const CITY_KEY = 'kyl:city'
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
@@ -71,6 +73,7 @@ export function App() {
   const [today, setToday] = useState<Location[] | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [muted, setMutedState] = useState(isMuted())
+  const [searching, setSearching] = useState(false)
 
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
@@ -123,7 +126,15 @@ export function App() {
     setMutedState(next)
   }
 
-  if (!city || !mode) return <CityPicker onPick={pickCity} />
+  if (searching)
+    return (
+      <DatasetSearch
+        onClose={() => setSearching(false)}
+        initialCityId={cityId}
+      />
+    )
+  if (!city || !mode)
+    return <CityPicker onPick={pickCity} onSearch={() => setSearching(true)} />
   if (error) return <main style={{ padding: 24 }}>Failed to load: {error}</main>
   if (!today) return <main style={{ padding: 24 }}>Loading…</main>
 
@@ -164,6 +175,29 @@ export function App() {
               </span>
             )}
           </small>
+          <div style={{ marginTop: 4, fontSize: 12, display: 'flex', gap: 12 }}>
+            <button
+              onClick={() => setSearching(true)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#7fb2ff',
+                cursor: 'pointer',
+                padding: 0,
+                font: 'inherit',
+              }}
+            >
+              🔎 is a place in the game?
+            </button>
+            <a
+              href={bugReportUrl({ city: city.name, date: mode.dateKey })}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: '#7fb2ff' }}
+            >
+              🐛 report a bug
+            </a>
+          </div>
         </div>
         <button
           onClick={toggleMute}

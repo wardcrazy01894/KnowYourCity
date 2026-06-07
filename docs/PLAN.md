@@ -186,6 +186,14 @@ buffer + uncaught-error/rejection capture. In the browser console,
 `kylDumpLogs()` prints the full session log and copies it to the clipboard — the
 intended way to capture a repro and hand it to a developer.
 
+### 5.10b Utilities: dataset search + bug report
+- **Dataset search** (`DatasetSearch` + `src/lib/search.ts`): pick a city, type a
+  name, and see if it's in that city's list (autocomplete via `searchLocations`,
+  exact check via `isIncluded`). Reachable from the picker and the game header.
+- **Report a bug** (`src/lib/report.ts`): opens a prefilled GitHub issue with
+  city / puzzle date / URL / browser and a nudge to paste `kylDumpLogs()`. No
+  backend; players need a GitHub account to submit.
+
 ### 5.10 Sound feedback
 On each reveal, `playScoreSound(score)` (`src/lib/sound.ts`) plays a synthesized
 cue by tier — **perfect** (100): bright arpeggio; **good** (green, ≥80): rising
