@@ -67,9 +67,12 @@ npm run build        # typecheck + vite build (what CI runs)
 npm run fetch-pois   # rebuild data/candidates.json from OpenStreetMap
 ```
 
-Run `npm run typecheck && npm run lint && npm test && npm run build` before
-opening a PR — that's exactly what CI gates on. A PostToolUse hook
-auto-formats/lints TS files on edit (`.claude/hooks/lint-on-edit.sh`).
+Run `npm run typecheck && npm run lint && npm run format:check && npm test &&
+npm run build` before opening a PR — that's exactly what CI gates on. Don't drop
+`format:check`: CI runs `prettier --check` separately, and `npm run build`/`lint`
+do **not** cover it, so a formatting-only diff can pass locally and still fail CI.
+A PostToolUse hook auto-formats/lints TS files on edit
+(`.claude/hooks/lint-on-edit.sh`), but it doesn't touch other file types.
 
 ## Secrets
 
