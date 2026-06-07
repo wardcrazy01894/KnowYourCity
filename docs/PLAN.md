@@ -103,7 +103,7 @@ KnowYourLocals/
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |
 | **M6** | Results + Wordle-style share string | ✅ done |
-| **M7** | Deploy to GitHub Pages | 🟡 workflow shipped (`deploy.yml`); flip Pages Source = GitHub Actions to activate |
+| **M7** | Deploy to GitHub Pages | 🟡 self-enabling workflow shipped (`deploy.yml`); goes live on next push to `main` |
 
 v1 is feature-complete and playable. Remaining work (grow dataset, photos,
 multi-city, deploy) is tracked in `BACKLOG.md`. CI gates every PR with
@@ -254,10 +254,11 @@ http://localhost:5173/KnowYourLocals/ (Vite serves under the Pages `base`).
 **GitHub Pages:**
 1. `vite.config.ts` already sets `base: '/KnowYourLocals/'`.
 2. **Auto-deploy** via `.github/workflows/deploy.yml` on every push to `main`.
-   One-time: repo Settings → Pages → Source = **GitHub Actions**. Public client
-   config (`VITE_BUG_ENDPOINT`, `VITE_TURNSTILE_SITEKEY`, optional
-   `VITE_MAPBOX_TOKEN`) is read from repo **Variables** so it bakes into the
-   build; unset is fine (bug form falls back to a prefilled issue).
+   It **self-enables Pages** on first run (`configure-pages` `enablement: true`),
+   so no manual Settings toggle. Public client config (`VITE_BUG_ENDPOINT`,
+   `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN`) is read from repo
+   **Variables** so it bakes into the build; unset is fine (bug form falls back
+   to a prefilled issue).
 3. **Manual alternative:** `npm run deploy` (uses `gh-pages` to push `dist/` to a
    `gh-pages` branch); then set Pages Source = `gh-pages` branch instead.
 4. App lives at `https://wardcrazy01894.github.io/KnowYourLocals/`. Repo is
