@@ -11,11 +11,12 @@
  * persist on every transition; update the streak when the day finishes.
  */
 
-import { useState, type CSSProperties } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import type { GameState, Guess, Location, RoundResult } from '../types'
 import { MapGuess } from './MapGuess'
 import { Results } from './Results'
 import { scoreGuess, formatDistance } from '../lib/scoring'
+import { log } from '../lib/log'
 import {
   loadState,
   saveState,
@@ -77,6 +78,17 @@ export function Game({ dateKey, locations }: GameProps) {
   const [guess, setGuess] = useState<Guess | null>(null)
   const [streak, setStreak] = useState(() => loadState().streak)
 
+  useEffect(() => {
+    const resumed = game.phase !== 'guessing' || game.results.length > 0
+    log.info('Game', resumed ? 'resumed today’s game' : 'started new game', {
+      dateKey,
+      round: game.roundIndex + 1,
+      phase: game.phase,
+    })
+    // Log once on mount.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const currentLocation = game.locations[game.roundIndex]
   const lastResult: RoundResult | undefined =
     game.results[game.results.length - 1]
@@ -110,6 +122,12 @@ export function Game({ dateKey, locations }: GameProps) {
   function submitGuess() {
     if (game.phase !== 'guessing' || !guess) return
     const { distanceMeters, score } = scoreGuess(currentLocation, guess)
+    log.info('Game', 'guess submitted', {
+      round: game.roundIndex + 1,
+      name: currentLocation.name,
+      distanceMeters: Math.round(distanceMeters),
+      score,
+    })
     const result: RoundResult = {
       location: currentLocation,
       guess,
@@ -129,6 +147,7 @@ export function Game({ dateKey, locations }: GameProps) {
     if (game.phase !== 'revealed') return
     if (isLastRound) {
       const next: GameState = { ...game, phase: 'finished' }
+      log.info('Game', 'day finished', { dateKey, totalScore })
       setGame(next)
       persist(next, true)
     } else {

@@ -29,8 +29,25 @@ npm run dev          # → http://localhost:5173/KnowYourLocals/
 
 Vite serves under the `/KnowYourLocals/` base path (so the same build works on
 GitHub Pages) — use the full URL it prints. The app loads
-`public/locations.sample.json` (5 real St. Pete landmarks) so it's playable
-before the full dataset exists.
+`public/locations.json` (curated St. Pete landmarks), falling back to the small
+bundled sample if it's missing.
+
+## Local testing
+
+Handy URL params (client-side only):
+
+| Param | Effect |
+|-------|--------|
+| _(none, in `npm run dev`)_ | **Resets on every refresh** so you can replay freely. |
+| `?keep` | Keep saved progress/streak in dev (opt out of the auto-reset). |
+| `?fresh` / `?reset` | Force a one-time reset (works on the live build too). |
+| `?date=YYYY-MM-DD` | Play a specific day's puzzle (different set) without waiting. |
+| `?debug` | Verbose `debug` logging in the console. |
+
+Debugging: every session logs to the console with a `[KYL]` prefix. Run
+**`kylDumpLogs()`** in the browser console to print the full session log and copy
+it to your clipboard — paste that when reporting an issue. Production builds
+never auto-reset (only `?fresh`/`?reset` do).
 
 ## Build the location dataset
 

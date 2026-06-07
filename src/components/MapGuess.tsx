@@ -20,6 +20,7 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import type { Guess, Location } from '../types'
+import { log } from '../lib/log'
 
 export interface MapGuessProps {
   /** Bounding box the map is locked to, [[south, west], [north, east]]. */
@@ -42,6 +43,7 @@ const ESRI_ATTR =
 
 function makeTileLayer(): L.TileLayer {
   const token = import.meta.env.VITE_MAPBOX_TOKEN
+  log.debug('MapGuess', `tile provider: ${token ? 'mapbox' : 'esri'}`)
   if (token) {
     return L.tileLayer(
       `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/512/{z}/{x}/{y}@2x?access_token=${token}`,
@@ -89,13 +91,20 @@ export function MapGuess({
       minZoom: 11,
       zoomControl: true,
     })
-    makeTileLayer().addTo(map)
+    const tiles = makeTileLayer()
+    tiles.on('tileerror', () => log.debug('MapGuess', 'tile failed to load'))
+    tiles.addTo(map)
     map.fitBounds(bounds)
     map.on('click', (e: L.LeafletMouseEvent) => {
       if (lockedRef.current) return
+      log.debug('MapGuess', 'guess placed', {
+        lat: e.latlng.lat,
+        lng: e.latlng.lng,
+      })
       onGuessRef.current({ lat: e.latlng.lat, lng: e.latlng.lng })
     })
     mapRef.current = map
+    log.debug('MapGuess', 'map initialized')
     return () => {
       map.remove()
       mapRef.current = null
