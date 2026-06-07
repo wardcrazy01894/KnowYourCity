@@ -35,7 +35,7 @@ gh api -X PUT "repos/$REPO/branches/main/protection" --input - <<'JSON'
   "allow_force_pushes": false,
   "allow_deletions": false,
   "required_linear_history": false,
-  "required_conversation_resolution": false
+  "required_conversation_resolution": true
 }
 JSON
 

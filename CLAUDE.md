@@ -16,10 +16,15 @@ pipeline. This file is the contract for how changes get made.
   on). Use short-lived feature branches: `feat/…`, `fix/…`, `chore/…`, `docs/…`.
 - Prefer **squash merge** to keep `main` history linear and readable.
 
-> ✅ **Enforced.** The repo is public and branch protection is active: `main`
-> rejects direct pushes, requires the three checks above (strict / up-to-date),
-> applies to admins too, and blocks force-pushes/deletions. Re-apply or audit
-> with `bash scripts/protect-main.sh`.
+> ✅ **Enforced.** The repo is public and branch protection is active on `main`:
+> all three CI checks above are **required** and **strict** (branch must be up to
+> date), **conversation resolution is required** (no unresolved PR threads),
+> rules **apply to admins**, and force-pushes/deletions are blocked. Re-apply or
+> audit with `bash scripts/protect-main.sh`.
+>
+> Required approvals are **0** on purpose: this is a solo repo and GitHub won't
+> let you approve your own PR, so requiring an approval would make every PR
+> unmergeable. CI is the gate. Bump it to 1 if a second maintainer joins.
 
 ## Docs stay current in the same PR
 
