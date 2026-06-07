@@ -17,10 +17,8 @@
 
 import { mkdir, writeFile } from 'node:fs/promises'
 
-/** St. Pete bounding box [south, west, north, east]. Confirm with Alex. */
-export const ST_PETE_BBOX = /** @type {const} */ ([
-  27.62, -82.78, 27.86, -82.58,
-])
+/** St. Pete bounding box [south, west, north, east] — matches ST_PETE_BOUNDS. */
+export const ST_PETE_BBOX = /** @type {const} */ ([27.62, -82.8, 27.9, -82.58])
 
 /** Public Overpass instances, tried in order (with retries) if one is busy. */
 const OVERPASS_ENDPOINTS = [

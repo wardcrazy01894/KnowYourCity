@@ -8,8 +8,8 @@ import sample from '../../public/locations.sample.json'
 // doesn't import the React/Leaflet module chain (Leaflet needs `window`).
 // [[south, west], [north, east]]
 const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
-  [27.62, -82.78],
-  [27.86, -82.58],
+  [27.62, -82.8],
+  [27.9, -82.58],
 ]
 
 // Guard the shipped datasets so a bad curation can't merge.

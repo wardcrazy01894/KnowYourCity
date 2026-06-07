@@ -31,11 +31,12 @@ export interface GameProps {
   locations: Location[]
 }
 
-// St. Pete play area — locks the map so guesses stay in-bounds.
-// TODO: confirm/adjust with Alex (docs/QUESTIONS-FOR-ALEX.md).
+// St. Pete play area — locks the map so guesses stay in-bounds. Widened north
+// to ~27.90 (Gandy/north St. Pete) and west to -82.80 (beaches) so more known
+// spots fall inside. [[south, west], [north, east]]
 export const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
-  [27.62, -82.78],
-  [27.86, -82.58],
+  [27.62, -82.8],
+  [27.9, -82.58],
 ]
 
 // Clues are kept in the dataset but hidden by default for more challenge.

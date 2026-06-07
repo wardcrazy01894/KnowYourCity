@@ -138,15 +138,20 @@ only if it's missing (see `src/App.tsx`), so no code change is needed.
 > Re-running the pipeline regenerates `candidates.json`, **not**
 > `locations.json` — your curation is never clobbered.
 
-### Status: ~76 curated locations
-`public/locations.json` holds **~76 curated St. Pete places** (≈22 restaurants,
-19 bars/breweries, 5 cafés, plus ~30 landmarks):
+### Status: ~519 locations
+`public/locations.json` holds **~519 St. Pete places** — ~30 curated landmarks
+plus an **inclusive** pull of established, non-national-chain restaurants/bars/
+cafés in the (widened) bounding box (≈375 restaurants, 62 bars, 51 cafés). The
+box was widened to `[27.62, -82.80, 27.90, -82.58]` (north to Gandy, west to the
+beaches) to capture more known spots; `ST_PETE_BOUNDS` matches it.
+
+Earlier hand-picked highlights (with clues):
 - **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
   parks (Fort De Soto, North Shore volleyball/kickball), the Don CeSar, etc.
-- **Food & drink** (independent, single-location only): cafés (Bandit, Bad
-  Mother, Central Coffee Shoppe…), restaurants (Brick & Mortar, Il Ritorno, Ted
-  Peters, Fourth Street Shrimp…), bars/breweries (Green Bench, Cycle, Emerald
-  Bar, Mandarin Hide, Ferg's…). Chains / multi-location spots are excluded.
+- **Food & drink**: cafés (Bandit, ParaDeco, Central Coffee Shoppe…),
+  restaurants (Brick & Mortar, Il Ritorno, Ted Peters, Chile Verde, Hawkers,
+  Floribbean…), bars/breweries (Green Bench, Cycle, Emerald Bar, 3 Daughters,
+  Kahuna's…). Local mini-chains are welcome; only national chains are excluded.
 
 The daily game picks **one of each** in order: **cafe → restaurant → bar →
 landmark → wildcard** (`CATEGORY_PLAN` in `src/lib/daily.ts`). A vitest guard
@@ -159,25 +164,29 @@ The pipeline tags each row with a `category`. For round selection:
 (`attraction`, `museum`, `park`, `landmark`, `venue`, `golf_course`, `plaza`,
 `other`) counts as a **landmark**.
 
-### Adding food/drink
-Most independent eateries lack a `wikipedia`/`wikidata` tag, so they don't come
-through the notability-gated `fetch-pois` query. To add them, run a broader
-Overpass query (`amenity=restaurant|bar|cafe|pub`, `craft=brewery`) for the
-bbox, then **hand-pick single-location locals** (exclude anything with a `brand`
-tag or multiple sites). Use OSM's coordinates so they're accurate.
+### Adding food/drink — `npm run fetch-food`
+Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
+`fetch-pois` misses them. `scripts/fetch-food.mjs` does an **inclusive** pull
+instead: every `restaurant|bar|cafe|pub|fast_food|brewery` in the bbox that is
+(a) not a genuine **national chain** (McDonald's, Starbucks… — local mini-chains
+like Hawkers / 3 Daughters are kept), (b) not known-closed, and (c) has an
+"established business" signal (website / hours / cuisine / phone / wikidata).
+Output → `data/food-candidates.json`; merge into `public/locations.json`.
 
-The current food/drink set was cross-referenced against "best of St. Pete" lists
-(Eater, Tampa Bay Times, Michelin, ilovetheburg, Visit St. Pete) and filtered to
-**open, single-location** spots. Two rules are strict:
-- **No multi-location / chains** — excluded e.g. Kahwa, Black Crow, 3 Daughters,
-  Grove Surf, Acropolis, Casita, Mazzaro's, Bonefish, Ford's Garage, Voodoo.
-- **No closed spots** — excluded e.g. Sea Salt, Red Mesa, Locale Market.
+**On "≥100 Yelp reviews":** Yelp/Google review counts can't be stored in the repo
+without breaking their API terms (same reason we skip Google for POIs). OSM is
+ODbL (storable), so the established-business signal is the license-clean proxy. A
+true review threshold would need a paid Yelp/Google integration — see BACKLOG.
 
-Notable spots from the best-of lists that weren't in OpenStreetMap yet (so have
-no trusted coordinates) are intentionally **left out until coords exist** — e.g.
-Olivia, Birch & Vine, Bar Mezzo, Tequila Daisy, Pinellas Ale Works, Grand
-Central Brewhouse, Daycation, Perry's Porch, Coffee Concrete. Add them to OSM (or
-supply coords) and re-run the matcher to include them.
+Inclusion rules (current):
+- **Include local mini-chains** people know (Hawkers, 3 Daughters, Datz…) —
+  only genuine **national chains** are excluded (`NATIONAL_CHAIN` in
+  `fetch-food.mjs`).
+- **No closed spots** — `CLOSED` denylist (Sea Salt, Red Mesa, Locale…). Note:
+  with an inclusive OSM pull, a few stale/closed entries can slip through; add
+  any you spot to `CLOSED` and re-merge, or maintain a per-city ban list.
+- Spots not yet in OpenStreetMap have no trusted coordinates and are left out
+  until added to OSM (or supplied manually, like Kahuna's & 3 Daughters here).
 
 To grow further: re-run `npm run fetch-pois`, add more from
 `data/candidates.json`. The script sets a descriptive `User-Agent` and falls back
