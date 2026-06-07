@@ -5,8 +5,8 @@
     "short": "St. Pete",
     "timeZone": "America/New_York",
     "bounds": [
-      [27.62, -82.8],
-      [27.9, -82.58]
+      [27.62, -82.78],
+      [27.87, -82.58]
     ],
     "target": 520
   },
