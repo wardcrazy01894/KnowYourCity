@@ -4,8 +4,10 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [x] **St. Pete dataset** — now ~609 (inclusive food/drink via `fetch-food` +
-      curated landmarks). Target comfortably met.
+- [x] **St. Pete dataset** — now ~516 (inclusive food/drink via `fetch-food` +
+      curated landmarks). Target comfortably met. (Trimmed from ~609 when the
+      map bounds were tightened back to a close-in zoom; far-beach outliers that
+      fell outside the play box were dropped — see *Widen the bbox?* below.)
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
       Yelp/Google integration (ToS forbids storing their data long-term); the
@@ -39,6 +41,19 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 ## Later / nice-to-have
 - [ ] **Custom domain** — Alex wants one eventually (name TBD; maybe a `.gg`).
       Add a `CNAME` and set Vite `base: '/'`.
+- [ ] **Difficulty tiers (named, not "easy/medium/hard")** — let the player pick
+      how deep-cut the day's places are, from instantly-recognizable to
+      only-a-regular-would-know. Proposed ladder (creative names, tune later):
+      **Postcard** (marquee landmarks everyone knows — Don CeSar, Tropicana
+      Field, Sunken Gardens) → **Local** (well-known spots + notable
+      restaurants/bars) → **Insider** (neighborhood favorites) → **Deep Cut /
+      Legend** (obscure small restaurants, dive bars, the long tail). Implement
+      by scoring each location's "obscurity" (e.g. presence of a
+      `wikipedia`/`wikidata` tag, `category`, and a future popularity signal —
+      see *Precise popularity filter* above) into a tier, then filter the daily
+      pool by the chosen tier. Selection stays deterministic per day; tier just
+      narrows the candidate set (and could feed the share string so friends
+      compare tiers). Bigger datasets per city make the hard tiers viable.
 - [ ] Scoring/difficulty tuning pass after real playtests (constants in
       `scoring.ts`).
 - [ ] About/attribution panel (OSM ODbL + imagery credit) visible in the UI.
