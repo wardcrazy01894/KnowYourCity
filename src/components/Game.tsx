@@ -42,7 +42,7 @@ export const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
 // Flip to true (or make it a setting) to show the one-line hint under the name.
 const SHOW_CLUES = false
 
-/** UTC date key for the day before `dateKey`. */
+/** Calendar date key (YYYY-MM-DD) for the day before `dateKey`. */
 function previousDateKey(dateKey: string): string {
   const d = new Date(dateKey + 'T00:00:00Z')
   d.setUTCDate(d.getUTCDate() - 1)

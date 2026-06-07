@@ -72,7 +72,7 @@ export type GamePhase = 'guessing' | 'revealed' | 'finished'
 
 /** Full state of today's game session (also the shape persisted to localStorage). */
 export interface GameState {
-  /** UTC date key, "YYYY-MM-DD" — see src/lib/daily.ts:getUtcDateKey. */
+  /** Date key, "YYYY-MM-DD" in the city's timezone — see daily.ts:getDateKey. */
   dateKey: string
   /** The 5 locations selected for today, in play order. */
   locations: Location[]
