@@ -112,9 +112,14 @@ effectively done; M2/M3/M4/M5/M6 remain.
   so the puzzle rolls over at **midnight Eastern**, DST-aware (via `Intl`).
   Each future city carries its own IANA timezone.
 - `hashStringToSeed(dateKey)` (cyrb53) → 32-bit seed.
-- `mulberry32(seed)` → PRNG; Fisher–Yates shuffle of the **id-sorted** list;
-  take first 5. Same date + same list ⇒ identical 5 in identical order, in every
-  browser. No `Math.random()`.
+- `mulberry32(seed)` → PRNG; Fisher–Yates shuffle of the **id-sorted** list.
+  Same date + same list ⇒ identical picks in identical order, every browser.
+  No `Math.random()`.
+- **Round structure** (`CATEGORY_PLAN`): the 5 rounds are filled by category in
+  order — **cafe → restaurant → bar → landmark → wildcard**, where *landmark* =
+  anything that isn't a cafe/restaurant/bar, and *wildcard* = any remaining. If a
+  bucket is empty, that slot falls back to any remaining location so a full set
+  is always returned.
 
 ### 5.2 Daily selection integrity (the honest tradeoff)
 Selection is a pure function of `(dateKey, list)`. **If you edit the location

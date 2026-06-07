@@ -5,7 +5,7 @@ import {
   mulberry32,
   selectDailyLocations,
 } from './daily'
-import type { Location } from '../types'
+import type { Location, LocationCategory } from '../types'
 
 function makeLocations(n: number): Location[] {
   return Array.from({ length: n }, (_, i) => ({
@@ -17,6 +17,18 @@ function makeLocations(n: number): Location[] {
     source: 'manual' as const,
     attribution: 'test',
   }))
+}
+
+function loc(id: string, category: LocationCategory): Location {
+  return {
+    id,
+    name: id,
+    lat: 27.77,
+    lng: -82.63,
+    category,
+    source: 'manual',
+    attribution: 'test',
+  }
 }
 
 describe('getDateKey (America/New_York, DST-aware)', () => {
@@ -91,5 +103,51 @@ describe('selectDailyLocations', () => {
     expect(() =>
       selectDailyLocations(makeLocations(3), '2026-06-06', 5),
     ).toThrow()
+  })
+})
+
+describe('selectDailyLocations category plan', () => {
+  const pool = [
+    ...['c1', 'c2', 'c3'].map((i) => loc(i, 'cafe')),
+    ...['r1', 'r2', 'r3'].map((i) => loc(i, 'restaurant')),
+    ...['b1', 'b2', 'b3'].map((i) => loc(i, 'bar')),
+    ...['m1', 'm2', 'm3'].map((i) => loc(i, 'museum')),
+    ...['p1', 'p2'].map((i) => loc(i, 'park')),
+    ...['g1', 'g2'].map((i) => loc(i, 'golf_course')),
+  ]
+  const NON_FOOD: LocationCategory[] = [
+    'attraction',
+    'museum',
+    'park',
+    'landmark',
+    'venue',
+    'golf_course',
+    'plaza',
+    'other',
+  ]
+
+  it('orders rounds: coffee, restaurant, bar, landmark, wildcard', () => {
+    const picks = selectDailyLocations(pool, '2026-06-06')
+    expect(picks).toHaveLength(5)
+    expect(picks[0].category).toBe('cafe')
+    expect(picks[1].category).toBe('restaurant')
+    expect(picks[2].category).toBe('bar')
+    expect(NON_FOOD).toContain(picks[3].category) // landmark = not food/drink
+    expect(new Set(picks.map((p) => p.id)).size).toBe(5)
+  })
+
+  it('is deterministic for the same date', () => {
+    const a = selectDailyLocations(pool, '2026-06-06').map((l) => l.id)
+    const b = selectDailyLocations(pool, '2026-06-06').map((l) => l.id)
+    expect(a).toEqual(b)
+  })
+
+  it('falls back to fill slots when a category bucket is empty', () => {
+    const onlyLandmarks = ['x1', 'x2', 'x3', 'x4', 'x5', 'x6'].map((i) =>
+      loc(i, 'museum'),
+    )
+    const picks = selectDailyLocations(onlyLandmarks, '2026-06-06')
+    expect(picks).toHaveLength(5)
+    expect(new Set(picks.map((l) => l.id)).size).toBe(5)
   })
 })

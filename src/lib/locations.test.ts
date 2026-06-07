@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import type { LocationsFile } from '../types'
-import { ROUNDS_PER_DAY } from './daily'
+import { ROUNDS_PER_DAY, selectDailyLocations } from './daily'
 import curated from '../../public/locations.json'
 import sample from '../../public/locations.sample.json'
 
@@ -53,3 +53,20 @@ for (const [label, data] of datasets) {
     })
   })
 }
+
+describe('curated dataset supports the daily category plan', () => {
+  const curatedFile = curated as unknown as LocationsFile
+  const FOOD = new Set(['cafe', 'restaurant', 'bar'])
+
+  for (const dateKey of ['2026-06-06', '2026-07-01', '2026-12-25']) {
+    it(`fills coffee/restaurant/bar/landmark/wildcard for ${dateKey}`, () => {
+      const picks = selectDailyLocations(curatedFile.locations, dateKey)
+      expect(picks).toHaveLength(5)
+      expect(picks[0].category).toBe('cafe')
+      expect(picks[1].category).toBe('restaurant')
+      expect(picks[2].category).toBe('bar')
+      expect(FOOD.has(picks[3].category)).toBe(false) // landmark = non-food
+      expect(new Set(picks.map((p) => p.id)).size).toBe(5)
+    })
+  }
+})
