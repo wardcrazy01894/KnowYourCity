@@ -138,8 +138,9 @@ only if it's missing (see `src/App.tsx`), so no code change is needed.
 > Re-running the pipeline regenerates `candidates.json`, **not**
 > `locations.json` — your curation is never clobbered.
 
-### Status: ~61 curated locations
-`public/locations.json` holds **~61 curated St. Pete places**:
+### Status: ~76 curated locations
+`public/locations.json` holds **~76 curated St. Pete places** (≈22 restaurants,
+19 bars/breweries, 5 cafés, plus ~30 landmarks):
 - **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
   parks (Fort De Soto, North Shore volleyball/kickball), the Don CeSar, etc.
 - **Food & drink** (independent, single-location only): cafés (Bandit, Bad
@@ -164,6 +165,19 @@ through the notability-gated `fetch-pois` query. To add them, run a broader
 Overpass query (`amenity=restaurant|bar|cafe|pub`, `craft=brewery`) for the
 bbox, then **hand-pick single-location locals** (exclude anything with a `brand`
 tag or multiple sites). Use OSM's coordinates so they're accurate.
+
+The current food/drink set was cross-referenced against "best of St. Pete" lists
+(Eater, Tampa Bay Times, Michelin, ilovetheburg, Visit St. Pete) and filtered to
+**open, single-location** spots. Two rules are strict:
+- **No multi-location / chains** — excluded e.g. Kahwa, Black Crow, 3 Daughters,
+  Grove Surf, Acropolis, Casita, Mazzaro's, Bonefish, Ford's Garage, Voodoo.
+- **No closed spots** — excluded e.g. Sea Salt, Red Mesa, Locale Market.
+
+Notable spots from the best-of lists that weren't in OpenStreetMap yet (so have
+no trusted coordinates) are intentionally **left out until coords exist** — e.g.
+Olivia, Birch & Vine, Bar Mezzo, Tequila Daisy, Pinellas Ale Works, Grand
+Central Brewhouse, Daycation, Perry's Porch, Coffee Concrete. Add them to OSM (or
+supply coords) and re-run the matcher to include them.
 
 To grow further: re-run `npm run fetch-pois`, add more from
 `data/candidates.json`. The script sets a descriptive `User-Agent` and falls back

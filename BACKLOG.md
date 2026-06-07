@@ -4,9 +4,11 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Grow the St. Pete dataset to ~200** — the launch target. Currently ~61
-      (landmarks + independent cafés/restaurants/bars). Keep curating more
-      single-location locals from a broad Overpass pull. Apply Alex's
+- [ ] **Grow the St. Pete dataset to ~200** — the launch target. Currently ~76
+      (≈22 restaurants, 19 bars, 5 cafés, ~30 landmarks). Several best-of spots
+      are pending OSM coordinates (Olivia, Birch & Vine, Bar Mezzo, Tequila
+      Daisy, Perry's Porch, Daycation, …) — add coords + re-run the matcher.
+      Keep curating single-location, currently-open locals. Apply Alex's
       must-include / banned lists when ready.
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
