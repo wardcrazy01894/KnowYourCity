@@ -4,9 +4,18 @@ compatibility_date = "2024-11-01"
 
 [vars]
 GH_REPO = "wardcrazy01894/KnowYourLocals"
-# For local dev you can use "*"; in production set your Pages origin, e.g.
-# ALLOWED_ORIGIN = "https://wardcrazy01894.github.io"
-ALLOWED_ORIGIN = "*"
+# REQUIRED for production: set this to your site's origin so the worker rejects
+# cross-origin browser requests. Use "*" only for local testing.
+ALLOWED_ORIGIN = "https://wardcrazy01894.github.io"
 
-# GH_TOKEN is a SECRET — do not put it here. Set it with:
-#   wrangler secret put GH_TOKEN
+# --- Secrets (do NOT put values here; set with `wrangler secret put NAME`) ----
+# GH_TOKEN         fine-grained PAT, Issues: read & write, this repo only
+# TURNSTILE_SECRET optional — enables Cloudflare Turnstile bot verification
+
+# --- Optional per-IP rate limit -----------------------------------------------
+# Create a KV namespace and bind it as RL to cap reports per IP/hour:
+#   wrangler kv namespace create RL
+# then uncomment (with the printed id):
+# [[kv_namespaces]]
+# binding = "RL"
+# id = "<kv-namespace-id>"

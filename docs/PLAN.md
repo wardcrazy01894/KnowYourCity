@@ -195,7 +195,10 @@ intended way to capture a repro and hand it to a developer.
   function (`worker/`, a Cloudflare Worker holding the GitHub token) that **files
   a GitHub issue** with city/date/URL/browser + session logs attached. If not
   configured, it falls back to opening a prefilled GitHub issue page. The token
-  is never in the client bundle.
+  is never in the client bundle. The worker is hardened for a public endpoint:
+  defangs `@mentions`/code-fences, Origin allowlist, payload caps, optional
+  Cloudflare Turnstile + per-IP KV rate limit. Go-live checklist in
+  `worker/README.md`.
 
 ### 5.10 Sound feedback
 On each reveal, `playScoreSound(score)` (`src/lib/sound.ts`) plays a synthesized

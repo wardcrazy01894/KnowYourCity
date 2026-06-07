@@ -35,4 +35,13 @@ describe('buildReportPayload', () => {
     expect(p.context.date).toBe('2026-06-06')
     expect(typeof p.logs).toBe('string')
   })
+
+  it('omits logs when includeLogs is false', () => {
+    expect(buildReportPayload('x', {}, { includeLogs: false }).logs).toBe('')
+  })
+
+  it('carries the turnstile token when provided', () => {
+    const p = buildReportPayload('x', {}, { turnstileToken: 'tok123' })
+    expect(p.turnstileToken).toBe('tok123')
+  })
 })

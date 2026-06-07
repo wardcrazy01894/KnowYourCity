@@ -2,13 +2,28 @@
  * BugReport — type what went wrong, hit send. If a bug endpoint is configured
  * (VITE_BUG_ENDPOINT → the worker/ function) it files a GitHub issue directly;
  * otherwise it opens a prefilled GitHub issue page with your text.
+ *
+ * If VITE_TURNSTILE_SITEKEY is set, a Cloudflare Turnstile bot check is shown and
+ * its token is sent (the worker verifies it). Logs are attached only if the user
+ * leaves the checkbox on — and the report becomes a (public, by default) issue,
+ * so the form warns against pasting sensitive info.
  */
 
-import { useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { submitBugReport, type ReportContext } from '../lib/report'
 import { log } from '../lib/log'
 
 type Status = 'idle' | 'sending' | 'done' | 'error'
+
+const TURNSTILE_KEY = import.meta.env.VITE_TURNSTILE_SITEKEY
+
+interface TurnstileApi {
+  getResponse: (id?: string) => string | undefined
+}
+function getTurnstileToken(): string | undefined {
+  const w = window as unknown as { turnstile?: TurnstileApi }
+  return w.turnstile?.getResponse()
+}
 
 export function BugReport({
   onClose,
@@ -18,19 +33,41 @@ export function BugReport({
   context: ReportContext
 }) {
   const [message, setMessage] = useState('')
+  const [includeLogs, setIncludeLogs] = useState(true)
   const [status, setStatus] = useState<Status>('idle')
   const [resultUrl, setResultUrl] = useState<string | null>(null)
+  const widgetRef = useRef<HTMLDivElement | null>(null)
+
+  // Load the Turnstile widget script once, when a site key is configured.
+  useEffect(() => {
+    if (!TURNSTILE_KEY) return
+    const id = 'cf-turnstile-script'
+    if (document.getElementById(id)) return
+    const s = document.createElement('script')
+    s.id = id
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+    s.async = true
+    s.defer = true
+    document.head.appendChild(s)
+  }, [])
 
   async function send() {
     if (!message.trim() || status === 'sending') return
+    const turnstileToken = TURNSTILE_KEY ? getTurnstileToken() : undefined
+    if (TURNSTILE_KEY && !turnstileToken) {
+      setStatus('error')
+      return
+    }
     setStatus('sending')
     try {
-      const res = await submitBugReport(message, context)
+      const res = await submitBugReport(message, context, {
+        includeLogs,
+        turnstileToken,
+      })
       if (res.ok) {
         setResultUrl(res.url ?? null)
         setStatus('done')
       } else if (res.fallbackUrl) {
-        // No backend configured — hand off to the prefilled GitHub issue page.
         log.info('BugReport', 'no endpoint; opening prefilled issue')
         window.open(res.fallbackUrl, '_blank', 'noopener')
         setStatus('done')
@@ -43,17 +80,7 @@ export function BugReport({
 
   return (
     <main style={{ padding: 16, maxWidth: 560, margin: '0 auto' }}>
-      <button
-        onClick={onClose}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#7fb2ff',
-          cursor: 'pointer',
-          padding: 0,
-          font: 'inherit',
-        }}
-      >
+      <button onClick={onClose} style={link}>
         ← back
       </button>
 
@@ -79,7 +106,6 @@ export function BugReport({
         <>
           <p style={{ marginTop: 0, opacity: 0.75 }}>
             Tell us what happened — what you did and what went wrong.
-            Browser/page details are attached automatically.
           </p>
           <textarea
             autoFocus
@@ -98,9 +124,43 @@ export function BugReport({
               resize: 'vertical',
             }}
           />
+
+          <label
+            style={{
+              display: 'flex',
+              gap: 8,
+              alignItems: 'center',
+              fontSize: 14,
+              marginTop: 8,
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={includeLogs}
+              onChange={(e) => setIncludeLogs(e.target.checked)}
+            />
+            Attach diagnostic info (page, browser, recent actions) — helps
+            debugging
+          </label>
+          <p style={{ fontSize: 12, opacity: 0.6, marginTop: 4 }}>
+            Your report is sent to the project's issue tracker (may be public).
+            Please don't include personal or sensitive info.
+          </p>
+
+          {TURNSTILE_KEY && (
+            <div
+              ref={widgetRef}
+              className="cf-turnstile"
+              data-sitekey={TURNSTILE_KEY}
+              style={{ marginTop: 8 }}
+            />
+          )}
+
           {status === 'error' && (
             <p style={{ color: '#e74c3c' }}>
-              Couldn't send — please try again in a moment.
+              {TURNSTILE_KEY
+                ? "Couldn't send — complete the check and try again."
+                : "Couldn't send — please try again in a moment."}
             </p>
           )}
           <button
@@ -116,6 +176,14 @@ export function BugReport({
   )
 }
 
+const link: CSSProperties = {
+  background: 'transparent',
+  border: 'none',
+  color: '#7fb2ff',
+  cursor: 'pointer',
+  padding: 0,
+  font: 'inherit',
+}
 const btn: CSSProperties = {
   marginTop: 12,
   padding: '10px 16px',
