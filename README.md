@@ -89,14 +89,19 @@ token (no credit card needed).
 
 ## ☁️ Deploy (GitHub Pages)
 
-```bash
-npm run build
-npm run deploy       # pushes dist/ to the gh-pages branch
-```
+**Auto-deploy (recommended):** every push to `main` builds and publishes via
+`.github/workflows/deploy.yml`. One-time setup: repo Settings → Pages → Source =
+**GitHub Actions**. The site's public client config bakes in from repo
+**Variables** (Settings → Secrets and variables → Actions → Variables):
+`VITE_BUG_ENDPOINT`, `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN`. If
+unset, the build still works and the bug form falls back to a prefilled issue.
 
-Enable Pages (branch `gh-pages`) → lives at
-`https://wardcrazy01894.github.io/KnowYourLocals/`.
-(`vite.config.ts` already sets the correct `base`.)
+**Manual alternative:** `npm run build && npm run deploy` pushes `dist/` to a
+`gh-pages` branch (requires `.env.local` for the bug endpoint/Turnstile, and
+Pages Source set to the `gh-pages` branch instead of Actions).
+
+Site lives at `https://wardcrazy01894.github.io/KnowYourLocals/`
+(`vite.config.ts` already sets the correct `base`).
 
 ## 🛠️ Development
 
@@ -105,7 +110,7 @@ Enable Pages (branch `gh-pages`) → lives at
 the failing test first (`/tdd-cycle` skill). See [`CLAUDE.md`](CLAUDE.md).
 
 ```bash
-npm run typecheck && npm run lint && npm test && npm run build   # the CI gate
+npm run typecheck && npm run lint && npm run format:check && npm test && npm run build   # the CI gate
 ```
 
 ## 📄 Attribution
