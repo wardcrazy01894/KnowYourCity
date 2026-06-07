@@ -1,7 +1,6 @@
 /**
  * App shell: loads the bundled locations, computes today's selection, and
- * renders the Game. This is a STUB wired enough to show the data flow; the
- * heavy lifting lives in Game.tsx / MapGuess.tsx / Results.tsx.
+ * renders the Game.
  */
 
 import { useEffect, useState } from 'react'
@@ -9,9 +8,24 @@ import type { LocationsFile, Location } from './types'
 import { getUtcDateKey, selectDailyLocations } from './lib/daily'
 import { Game } from './components/Game'
 
-// During v1 we ship locations.sample.json; the data pipeline will produce the
-// full locations.json that replaces it. The path respects Vite's `base`.
-const DATA_URL = import.meta.env.BASE_URL + 'locations.sample.json'
+// The curated dataset (produced by scripts/fetch-pois.mjs + manual curation).
+// Falls back to the small bundled sample if it isn't present yet. Paths respect
+// Vite's `base`.
+const BASE = import.meta.env.BASE_URL
+const DATA_URL = BASE + 'locations.json'
+const FALLBACK_URL = BASE + 'locations.sample.json'
+
+async function loadLocations(): Promise<LocationsFile> {
+  for (const url of [DATA_URL, FALLBACK_URL]) {
+    try {
+      const r = await fetch(url)
+      if (r.ok) return (await r.json()) as LocationsFile
+    } catch {
+      // try next
+    }
+  }
+  throw new Error('No locations file found')
+}
 
 export function App() {
   const [today, setToday] = useState<Location[] | null>(null)
@@ -19,8 +33,7 @@ export function App() {
   const dateKey = getUtcDateKey()
 
   useEffect(() => {
-    fetch(DATA_URL)
-      .then((r) => r.json() as Promise<LocationsFile>)
+    loadLocations()
       .then((file) => setToday(selectDailyLocations(file.locations, dateKey)))
       .catch((e) => setError(String(e)))
   }, [dateKey])

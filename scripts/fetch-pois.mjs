@@ -13,18 +13,61 @@
  *      locations.json directly — curation is deliberate.
  *
  * Run: `npm run fetch-pois`  (Node 18+, uses global fetch)
- *
- * This is a STUB: query + filter contracts are defined; bodies are TODO.
  */
 
-import { writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 
 /** St. Pete bounding box [south, west, north, east]. Confirm with Alex. */
 export const ST_PETE_BBOX = /** @type {const} */ ([
   27.62, -82.78, 27.86, -82.58,
 ])
 
-const OVERPASS_ENDPOINT = 'https://overpass-api.de/api/interpreter'
+/** Public Overpass instances, tried in order (with retries) if one is busy. */
+const OVERPASS_ENDPOINTS = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.kumi.systems/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter',
+]
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+
+/**
+ * POST the query to each endpoint, retrying on transient busy/timeout errors.
+ * Overpass annoyingly returns HTTP 200 with an HTML error body when overloaded,
+ * so we also detect that and treat it as a retryable failure.
+ */
+async function fetchOverpass(query) {
+  let lastErr
+  for (const endpoint of OVERPASS_ENDPOINTS) {
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            // Overpass requires a descriptive User-Agent or it returns 406/429.
+            'User-Agent':
+              'KnowYourLocals/0.1 (https://github.com/wardcrazy01894/KnowYourLocals)',
+            Accept: 'application/json',
+          },
+          body: 'data=' + encodeURIComponent(query),
+        })
+        const text = await res.text()
+        if (!res.ok || !text.trimStart().startsWith('{')) {
+          throw new Error(
+            `busy/!ok (HTTP ${res.status}) from ${endpoint}: ${text.slice(0, 120).replace(/\s+/g, ' ')}`,
+          )
+        }
+        return JSON.parse(text)
+      } catch (err) {
+        lastErr = err
+        console.warn(`  ${endpoint} attempt ${attempt} failed: ${err.message}`)
+        await sleep(attempt * 3000)
+      }
+    }
+  }
+  throw lastErr ?? new Error('All Overpass endpoints failed')
+}
 
 /**
  * Overpass QL. Pulls nodes+ways+relations for the allowlisted tags inside the
@@ -54,26 +97,101 @@ export const NAME_DENYLIST = [
   /u-?haul/i,
 ]
 
+/**
+ * Tag classes that are inherently notable enough to keep even without a
+ * wikipedia/wikidata link. (leisure=park is intentionally excluded — too many
+ * mundane pocket parks; parks only survive via a wiki link.)
+ */
+function hasNotableTag(tags) {
+  if (!tags) return false
+  if (
+    /^(attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium)$/.test(
+      tags.tourism ?? '',
+    )
+  )
+    return true
+  if (/^(golf_course|stadium|marina)$/.test(tags.leisure ?? '')) return true
+  if (tags.historic) return true
+  if (tags.building === 'stadium') return true
+  if (/^(theatre|arts_centre)$/.test(tags.amenity ?? '')) return true
+  return false
+}
+
 /** True if an Overpass element is notable enough to keep. */
-export function isNotable(_el) {
-  // TODO: require tags.name; keep if wikipedia/wikidata present OR tag class is
-  // inherently notable (museum/attraction/golf_course/historic/stadium);
-  // reject if name matches NAME_DENYLIST.
-  throw new Error('not implemented')
+export function isNotable(el) {
+  const tags = el?.tags
+  const name = tags?.name
+  if (!name) return false
+  if (NAME_DENYLIST.some((re) => re.test(name))) return false
+  if (tags.wikipedia || tags.wikidata) return true
+  return hasNotableTag(tags)
+}
+
+/** Infer our coarse category bucket from OSM tags. */
+function inferCategory(tags) {
+  if (tags.tourism === 'museum' || tags.tourism === 'gallery') return 'museum'
+  if (tags.leisure === 'golf_course') return 'golf_course'
+  if (tags.leisure === 'park') return 'park'
+  if (tags.leisure === 'stadium' || tags.building === 'stadium') return 'venue'
+  if (tags.amenity === 'theatre' || tags.amenity === 'arts_centre')
+    return 'venue'
+  if (/^(restaurant|bar|cafe)$/.test(tags.amenity ?? '')) return 'restaurant'
+  if (tags.historic) return 'landmark'
+  if (tags.tourism) return 'attraction'
+  return 'other'
+}
+
+function slugify(name) {
+  return name
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/[\s_]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
 }
 
 /** Map an Overpass element → our Location candidate (id, name, lat, lng, …). */
-export function toLocation(_el) {
-  // TODO: slugify name → id; read lat/lng (el.lat/el.lon or el.center);
-  // infer category from tags; clue left empty for human; set source/attribution.
-  throw new Error('not implemented')
+export function toLocation(el) {
+  const tags = el.tags
+  const lat = el.lat ?? el.center?.lat
+  const lng = el.lon ?? el.center?.lon
+  if (lat == null || lng == null) return null
+  return {
+    id: slugify(tags.name),
+    name: tags.name,
+    lat: Number(lat.toFixed(6)),
+    lng: Number(lng.toFixed(6)),
+    category: inferCategory(tags),
+    clue: null, // human writes this during curation
+    photoUrl: null,
+    source: 'overpass',
+    attribution: tags.wikidata
+      ? 'OpenStreetMap ODbL; Wikidata CC0'
+      : 'OpenStreetMap ODbL',
+  }
 }
 
 async function main() {
   const query = buildOverpassQuery()
-  // TODO: POST `data=${encodeURIComponent(query)}` to OVERPASS_ENDPOINT,
-  // parse .elements, filter with isNotable, map with toLocation, de-dupe by id.
-  const candidates = [] // <- filled by the steps above
+  console.log('Querying Overpass…')
+  const data = await fetchOverpass(query)
+  const elements = data.elements ?? []
+  console.log(`Overpass returned ${elements.length} raw elements.`)
+
+  const byId = new Map()
+  for (const el of elements) {
+    if (!isNotable(el)) continue
+    const loc = toLocation(el)
+    if (!loc || !loc.id) continue
+    if (!byId.has(loc.id)) byId.set(loc.id, loc) // keep first occurrence
+  }
+  const candidates = [...byId.values()].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  )
+
+  await mkdir(new URL('../data/', import.meta.url), { recursive: true })
   await writeFile(
     new URL('../data/candidates.json', import.meta.url),
     JSON.stringify(
@@ -88,7 +206,7 @@ async function main() {
     ),
   )
   console.log(
-    `Wrote ${candidates.length} candidates. Now curate → public/locations.json`,
+    `Wrote ${candidates.length} candidates to data/candidates.json. Now curate → public/locations.json`,
   )
 }
 

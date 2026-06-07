@@ -131,11 +131,23 @@ Open `data/candidates.json` and produce `public/locations.json` by hand:
 - Aim for **≥ 60 locations** (100+ better) so daily repeats are rare — see
   PLAN.md §5.3.
 
-Then set the file's top-level `attribution` and `version`, and the app picks it
-up (swap `App.tsx`'s `DATA_URL` from `locations.sample.json` to `locations.json`).
+Then set the file's top-level `attribution` and `version`. The app loads
+`public/locations.json` automatically and falls back to `locations.sample.json`
+only if it's missing (see `src/App.tsx`), so no code change is needed.
 
 > Re-running the pipeline regenerates `candidates.json`, **not**
 > `locations.json` — your curation is never clobbered.
+
+### Status: first curation done
+`public/locations.json` currently holds **29 curated St. Pete landmarks**
+(museums, venues like Tropicana Field, golf courses, parks like Fort De Soto,
+the Don CeSar, etc.), built from a live Overpass run (369 raw → 94 candidates →
+29 hand-picked) plus one manual add. A vitest guard (`src/lib/locations.test.ts`)
+fails the build if any location lands outside the play bounds or ids collide.
+To grow it: re-run `npm run fetch-pois`, then add more entries from
+`data/candidates.json`. Note the script sets a descriptive `User-Agent` and
+falls back across Overpass mirrors (the public servers 406 without a UA and
+often return a busy error under load).
 
 ---
 
