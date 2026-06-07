@@ -28,8 +28,9 @@ close you got. Share your result Wordle-style.
 - 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
-> **Status:** playable and feature-complete for v1. Next up: more places + a
-> GitHub Pages deploy. See [`BACKLOG.md`](BACKLOG.md).
+> **Status:** playable and feature-complete for v1; GitHub Pages auto-deploy is
+> wired (flip Settings → Pages → Source = GitHub Actions to go live). Next up:
+> more places + photos. See [`BACKLOG.md`](BACKLOG.md).
 
 ---
 

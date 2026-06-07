@@ -45,15 +45,17 @@ jobs:
       - name: Install dependencies (locked)
         run: npm ci
 
+      # Before the build so a misconfigured Pages source (Settings → Pages →
+      # Source must be "GitHub Actions") fails fast instead of after the build.
+      - name: Configure Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
       - name: Build (vite)
         run: npm run build
         env:
           VITE_BUG_ENDPOINT: ${{ vars.VITE_BUG_ENDPOINT }}
           VITE_TURNSTILE_SITEKEY: ${{ vars.VITE_TURNSTILE_SITEKEY }}
           VITE_MAPBOX_TOKEN: ${{ vars.VITE_MAPBOX_TOKEN }}
-
-      - name: Configure Pages
-        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3

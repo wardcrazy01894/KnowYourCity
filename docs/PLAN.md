@@ -82,7 +82,7 @@ KnowYourLocals/
 │   ├─ lib/                     daily · scoring · storage · devmode · sound · log
 │   │                           (+ co-located *.test.ts; locations.test.ts guards data)
 │   └─ components/              Game · MapGuess · Results (+ Results.test.ts)
-├─ .github/                     workflows/ci.yml · pull_request_template.md
+├─ .github/                     workflows/ci.yml · workflows/deploy.yml · pull_request_template.md
 ├─ .claude/                     settings.json · hooks/ · skills/tdd-cycle/
 └─ docs/
     ├─ PLAN.md (this file)
@@ -103,7 +103,7 @@ KnowYourLocals/
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |
 | **M6** | Results + Wordle-style share string | ✅ done |
-| **M7** | Deploy to GitHub Pages | ⏳ pending (see BACKLOG) |
+| **M7** | Deploy to GitHub Pages | 🟡 workflow shipped (`deploy.yml`); flip Pages Source = GitHub Actions to activate |
 
 v1 is feature-complete and playable. Remaining work (grow dataset, photos,
 multi-city, deploy) is tracked in `BACKLOG.md`. CI gates every PR with
