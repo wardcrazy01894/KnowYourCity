@@ -18,6 +18,12 @@ const DATASETS: Record<string, LocationsFile> = {
 
 const FOOD = new Set(['cafe', 'restaurant', 'bar'])
 
+describe('city/dataset registry sync', () => {
+  it('every city in cities.json has a bundled dataset (and vice versa)', () => {
+    expect(Object.keys(DATASETS).sort()).toEqual(CITIES.map((c) => c.id).sort())
+  })
+})
+
 for (const city of CITIES) {
   describe(`dataset: ${city.id}`, () => {
     const data = DATASETS[city.id]

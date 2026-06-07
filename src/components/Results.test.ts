@@ -37,16 +37,16 @@ describe('buildShareString', () => {
     result(10, 'E'),
   ]
 
-  it('has the title, scored line, and an emoji bar', () => {
-    const s = buildShareString('2026-06-06', results, 285)
+  it('has the title (with city), scored line, and an emoji bar', () => {
+    const s = buildShareString('Seattle', '2026-06-06', results, 285)
     const lines = s.split('\n')
-    expect(lines[0]).toBe('Know Your Locals — St. Pete')
+    expect(lines[0]).toBe('Know Your Locals — Seattle')
     expect(lines[1]).toBe('2026-06-06 · 285/500')
     expect(lines[2]).toBe('🟩🟩🟨🟧⬛')
   })
 
   it('has one emoji per round', () => {
-    const s = buildShareString('2026-06-06', results, 285)
+    const s = buildShareString('St. Pete', '2026-06-06', results, 285)
     expect([...s.split('\n')[2]].length).toBe(results.length)
   })
 })

@@ -28,7 +28,10 @@
 const MAX_BODY_BYTES = 20_000
 const MAX_MESSAGE = 2_000
 const MAX_LOGS = 6_000
-const RL_MAX_PER_HOUR = 5
+// KV-fallback rate limit: max reports per IP per RL_WINDOW_SECONDS. Kept in step
+// with the native [[ratelimits]] binding (5 per 60s) in wrangler.toml.
+const RL_MAX = 5
+const RL_WINDOW_SECONDS = 60
 
 /** ALLOWED_ORIGIN may be "*" or a comma-separated list of origins. */
 function allowedOrigins(env) {
@@ -129,9 +132,11 @@ export default {
     } else if (env.RL) {
       const key = `rl:${ip}`
       const n = parseInt((await env.RL.get(key)) || '0', 10)
-      if (n >= RL_MAX_PER_HOUR)
+      if (n >= RL_MAX)
         return json({ error: 'rate limited, try later' }, 429, headers)
-      await env.RL.put(key, String(n + 1), { expirationTtl: 3600 })
+      await env.RL.put(key, String(n + 1), {
+        expirationTtl: RL_WINDOW_SECONDS,
+      })
     }
 
     let body

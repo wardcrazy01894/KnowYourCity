@@ -133,7 +133,9 @@ function inferCategory(tags) {
   if (tags.leisure === 'stadium' || tags.building === 'stadium') return 'venue'
   if (tags.amenity === 'theatre' || tags.amenity === 'arts_centre')
     return 'venue'
-  if (/^(restaurant|bar|cafe)$/.test(tags.amenity ?? '')) return 'restaurant'
+  if (tags.amenity === 'cafe') return 'cafe'
+  if (tags.amenity === 'bar' || tags.amenity === 'pub') return 'bar'
+  if (tags.amenity === 'restaurant') return 'restaurant'
   if (tags.historic) return 'landmark'
   if (tags.tourism) return 'attraction'
   return 'other'

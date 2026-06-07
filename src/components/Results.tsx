@@ -12,6 +12,8 @@ import { ROUNDS_PER_DAY } from '../lib/daily'
 import { log } from '../lib/log'
 
 export interface ResultsProps {
+  /** City label for the share card, e.g. "Seattle". */
+  cityShort: string
   dateKey: string
   results: RoundResult[]
   totalScore: number
@@ -28,6 +30,7 @@ export function scoreEmoji(score: number): string {
 
 /** Pure: builds the clipboard share text from a finished day's results. */
 export function buildShareString(
+  cityShort: string,
   dateKey: string,
   results: RoundResult[],
   totalScore: number,
@@ -35,13 +38,14 @@ export function buildShareString(
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   const bar = results.map((r) => scoreEmoji(r.score)).join('')
   return [
-    'Know Your Locals — St. Pete',
+    `Know Your Locals — ${cityShort}`,
     `${dateKey} · ${totalScore.toLocaleString('en-US')}/${maxTotal.toLocaleString('en-US')}`,
     bar,
   ].join('\n')
 }
 
 export function Results({
+  cityShort,
   dateKey,
   results,
   totalScore,
@@ -53,7 +57,7 @@ export function Results({
   async function copy() {
     try {
       await navigator.clipboard.writeText(
-        buildShareString(dateKey, results, totalScore),
+        buildShareString(cityShort, dateKey, results, totalScore),
       )
       log.info('Results', 'copied share string')
       setCopied(true)
@@ -115,7 +119,7 @@ export function Results({
           fontSize: 14,
         }}
       >
-        {buildShareString(dateKey, results, totalScore)}
+        {buildShareString(cityShort, dateKey, results, totalScore)}
       </pre>
     </section>
   )

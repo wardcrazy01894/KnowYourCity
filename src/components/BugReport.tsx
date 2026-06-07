@@ -65,7 +65,10 @@ export function BugReport({
         turnstileToken,
       })
       if (res.ok) {
-        setResultUrl(res.url ?? null)
+        // Only render the link if it's actually a github.com issue URL.
+        const safe =
+          res.url && res.url.startsWith('https://github.com/') ? res.url : null
+        setResultUrl(safe)
         setStatus('done')
       } else if (res.fallbackUrl) {
         log.info('BugReport', 'no endpoint; opening prefilled issue')
