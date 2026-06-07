@@ -1,7 +1,7 @@
 /**
  * Results — end-of-day summary + Wordle-style shareable string.
  *
- * Shows total score (x / 25,000), a per-round breakdown (distance + score),
+ * Shows total score (x / 500), a per-round breakdown (distance + score),
  * current/best streak, and a "Copy result" button.
  */
 
