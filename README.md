@@ -25,7 +25,8 @@ close you got. Share your result Wordle-style.
   womp-womp for a bad miss (🔊/🔇 to mute).
 - 🧭 **Real local spots** — landmarks, restaurants, bars & cafés per city.
 - 🔎 **"Is my place in the game?"** — search a city's list with autocomplete.
-- 🐛 **Report a bug** — opens a prefilled GitHub issue (no backend needed).
+- 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
+  issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
 > **Status:** playable and feature-complete for v1. Next up: more places + a
 > GitHub Pages deploy. See [`BACKLOG.md`](BACKLOG.md).

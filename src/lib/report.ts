@@ -1,23 +1,32 @@
 /**
- * Bug reporting — no backend, so "Report a bug" opens a prefilled GitHub issue
- * on the public repo with useful context (city, puzzle date, URL, browser) and a
- * nudge to paste `kylDumpLogs()` output. Players need a GitHub account to submit.
+ * Bug reporting.
+ *
+ * The app is static, so it can't hold a GitHub token. Two paths:
+ *  1. If `VITE_BUG_ENDPOINT` is set, `submitBugReport` POSTs the report to that
+ *     serverless function (see `worker/`), which creates a GitHub issue using a
+ *     token kept server-side. The user just types and hits send.
+ *  2. Otherwise it falls back to opening a PREFILLED GitHub "new issue" page
+ *     (`bugReportUrl`) with the user's text — works today, needs a GH account.
  */
+
+import { dumpLogs } from './log'
 
 export const REPO_URL = 'https://github.com/wardcrazy01894/KnowYourLocals'
 
-export function bugReportUrl(
-  ctx: { city?: string; date?: string } = {},
-): string {
+export interface ReportContext {
+  city?: string
+  date?: string
+}
+
+/** Prefilled GitHub new-issue URL (fallback path / no backend). */
+export function bugReportUrl(ctx: ReportContext = {}, message = ''): string {
   const href = typeof location !== 'undefined' ? location.href : ''
   const ua = typeof navigator !== 'undefined' ? navigator.userAgent : ''
-  const title = '[bug] '
+  const title = '[bug] ' + (message.split('\n')[0] || '').slice(0, 80)
   const body = [
     '**What happened?**',
     '',
-    '',
-    '**What did you expect?**',
-    '',
+    message || '',
     '',
     '---',
     `City: ${ctx.city ?? '?'}`,
@@ -25,9 +34,52 @@ export function bugReportUrl(
     `URL: ${href}`,
     `Browser: ${ua}`,
     '',
-    '_Tip: run `kylDumpLogs()` in the browser console (F12) and paste the output here._',
+    '_Tip: run `kylDumpLogs()` in the browser console (F12) and paste the output._',
   ].join('\n')
   return `${REPO_URL}/issues/new?title=${encodeURIComponent(
     title,
   )}&body=${encodeURIComponent(body)}`
+}
+
+/** The JSON body POSTed to the bug endpoint. Pure + testable. */
+export function buildReportPayload(message: string, ctx: ReportContext = {}) {
+  return {
+    message: message.trim(),
+    context: {
+      city: ctx.city ?? null,
+      date: ctx.date ?? null,
+      url: typeof location !== 'undefined' ? location.href : '',
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+    },
+    logs: dumpLogs().slice(-4000),
+  }
+}
+
+export interface SubmitResult {
+  ok: boolean
+  /** Created issue URL when the backend handled it. */
+  url?: string
+  /** Prefilled issue URL to open when there's no backend. */
+  fallbackUrl?: string
+}
+
+/**
+ * Submit a bug report. With a configured endpoint, creates the issue server-side
+ * and resolves `{ ok: true, url }`. Without one, resolves `{ ok: false,
+ * fallbackUrl }` so the UI can open the prefilled issue page instead.
+ */
+export async function submitBugReport(
+  message: string,
+  ctx: ReportContext = {},
+): Promise<SubmitResult> {
+  const endpoint = import.meta.env.VITE_BUG_ENDPOINT
+  if (!endpoint) return { ok: false, fallbackUrl: bugReportUrl(ctx, message) }
+  const r = await fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(buildReportPayload(message, ctx)),
+  })
+  if (!r.ok) throw new Error(`Bug endpoint HTTP ${r.status}`)
+  const data = (await r.json().catch(() => ({}))) as { url?: string }
+  return { ok: true, url: data.url }
 }

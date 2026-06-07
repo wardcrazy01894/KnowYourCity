@@ -13,11 +13,11 @@ import { getDateKey, selectDailyLocations } from './lib/daily'
 import { getCity, cityDataUrl, type City } from './lib/cities'
 import { shouldShuffle } from './lib/devmode'
 import { isMuted, setMuted } from './lib/sound'
-import { bugReportUrl } from './lib/report'
 import { log } from './lib/log'
 import { Game } from './components/Game'
 import { CityPicker } from './components/CityPicker'
 import { DatasetSearch } from './components/DatasetSearch'
+import { BugReport } from './components/BugReport'
 
 const CITY_KEY = 'kyl:city'
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
@@ -74,6 +74,7 @@ export function App() {
   const [error, setError] = useState<string | null>(null)
   const [muted, setMutedState] = useState(isMuted())
   const [searching, setSearching] = useState(false)
+  const [reporting, setReporting] = useState(false)
 
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
@@ -126,6 +127,13 @@ export function App() {
     setMutedState(next)
   }
 
+  if (reporting)
+    return (
+      <BugReport
+        onClose={() => setReporting(false)}
+        context={{ city: city?.name, date: mode?.dateKey }}
+      />
+    )
   if (searching)
     return (
       <DatasetSearch
@@ -134,7 +142,13 @@ export function App() {
       />
     )
   if (!city || !mode)
-    return <CityPicker onPick={pickCity} onSearch={() => setSearching(true)} />
+    return (
+      <CityPicker
+        onPick={pickCity}
+        onSearch={() => setSearching(true)}
+        onReport={() => setReporting(true)}
+      />
+    )
   if (error) return <main style={{ padding: 24 }}>Failed to load: {error}</main>
   if (!today) return <main style={{ padding: 24 }}>Loading…</main>
 
@@ -189,14 +203,19 @@ export function App() {
             >
               🔎 is a place in the game?
             </button>
-            <a
-              href={bugReportUrl({ city: city.name, date: mode.dateKey })}
-              target="_blank"
-              rel="noreferrer"
-              style={{ color: '#7fb2ff' }}
+            <button
+              onClick={() => setReporting(true)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#7fb2ff',
+                cursor: 'pointer',
+                padding: 0,
+                font: 'inherit',
+              }}
             >
               🐛 report a bug
-            </a>
+            </button>
           </div>
         </div>
         <button
