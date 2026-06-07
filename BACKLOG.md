@@ -4,9 +4,10 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Real St. Pete dataset (M2)** — implement `scripts/fetch-pois.mjs`
-      (Overpass), curate `public/locations.json` to ~60+ notable landmarks,
-      switch the app off `locations.sample.json`.
+- [ ] **Grow the dataset** — 29 curated landmarks now ship; expand toward ~60+
+      for rarer repeats (re-run `npm run fetch-pois`, curate more from
+      `data/candidates.json`). Consider widening the bbox to recapture the Old
+      Sunshine Skyway pier and north-county courses that fell just outside.
 
 ## Soon
 - [ ] **Persistence polish (M5)** — history/stats UI (resume mid-day + streaks
@@ -31,3 +32,6 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [x] Playable game (M3+M4+M6): Leaflet satellite map, pin-drop guessing,
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
+- [x] Data pipeline (M2): Overpass fetch script + 29 curated St. Pete landmarks
+      in public/locations.json; app loads it with a sample fallback; dataset
+      validated by a test.
