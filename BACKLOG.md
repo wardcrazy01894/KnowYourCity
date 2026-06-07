@@ -39,6 +39,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       Pages Actions workflow.
 
 ## Later / nice-to-have
+- [ ] **Custom domain** — Alex wants one eventually (name TBD; maybe a `.gg`).
+      Add a `CNAME` and set Vite `base: '/'`.
 - [ ] **Difficulty tiers (named, not "easy/medium/hard")** — let the player pick
       how deep-cut the day's places are, from instantly-recognizable to
       only-a-regular-would-know. Proposed ladder (creative names, tune later):

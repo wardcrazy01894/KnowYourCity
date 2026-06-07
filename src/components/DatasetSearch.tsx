@@ -63,28 +63,30 @@ export function DatasetSearch({
 
       <h2 style={{ margin: '8px 0 4px' }}>Is a place in the game?</h2>
       <p style={{ marginTop: 0, opacity: 0.75 }}>
-        Search a city's list to see if a spot is included. Don't see it?{' '}
-        {onRequestAdd ? (
-          <button
-            onClick={() =>
-              onRequestAdd(addLocationRequestMessage(query, cityShort))
-            }
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: '#7fb2ff',
-              cursor: 'pointer',
-              padding: 0,
-              font: 'inherit',
-              textDecoration: 'underline',
-            }}
-          >
-            Report a bug to request it
-          </button>
-        ) : (
-          'Report a bug to request it'
+        Search a city's list to see if a spot is included.
+        {onRequestAdd && (
+          <>
+            {' '}
+            Don't see it?{' '}
+            <button
+              onClick={() =>
+                onRequestAdd(addLocationRequestMessage(query, cityShort))
+              }
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#7fb2ff',
+                cursor: 'pointer',
+                padding: 0,
+                font: 'inherit',
+                textDecoration: 'underline',
+              }}
+            >
+              Report a bug to request it
+            </button>
+            .
+          </>
         )}
-        .
       </p>
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>

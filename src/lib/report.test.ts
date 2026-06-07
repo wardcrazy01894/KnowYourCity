@@ -43,6 +43,12 @@ describe('addLocationRequestMessage', () => {
     )
   })
 
+  it('strips embedded double-quotes so the wrapping quotes never nest', () => {
+    const m = addLocationRequestMessage('Joe\'s "Famous" Diner', 'St. Pete')
+    expect(m).not.toContain('""')
+    expect(m).toContain('"Joe\'s Famous Diner"')
+  })
+
   it('falls back to a generic request when no name is given', () => {
     const m = addLocationRequestMessage('   ', 'St. Pete')
     expect(m.toLowerCase()).toContain('add')

@@ -27,7 +27,8 @@ export function addLocationRequestMessage(
   name: string,
   cityShort: string,
 ): string {
-  const place = name.trim()
+  // Strip embedded double-quotes so they can't nest inside the wrapping quotes.
+  const place = name.replace(/"/g, '').trim()
   return place
     ? `Please add "${place}" to the ${cityShort} game.`
     : `I'd like to request a place be added to the ${cityShort} game: `
