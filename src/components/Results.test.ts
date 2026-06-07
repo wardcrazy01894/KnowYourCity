@@ -16,37 +16,37 @@ function result(score: number, name: string): RoundResult {
 }
 
 describe('scoreEmoji', () => {
-  it('maps scores to tiers', () => {
-    expect(scoreEmoji(5000)).toBe('🟩')
-    expect(scoreEmoji(4000)).toBe('🟩')
-    expect(scoreEmoji(3999)).toBe('🟨')
-    expect(scoreEmoji(2000)).toBe('🟨')
-    expect(scoreEmoji(1999)).toBe('🟧')
-    expect(scoreEmoji(500)).toBe('🟧')
-    expect(scoreEmoji(499)).toBe('⬛')
+  it('maps scores to tiers (0-100 scale)', () => {
+    expect(scoreEmoji(100)).toBe('🟩')
+    expect(scoreEmoji(80)).toBe('🟩')
+    expect(scoreEmoji(79)).toBe('🟨')
+    expect(scoreEmoji(50)).toBe('🟨')
+    expect(scoreEmoji(49)).toBe('🟧')
+    expect(scoreEmoji(20)).toBe('🟧')
+    expect(scoreEmoji(19)).toBe('⬛')
     expect(scoreEmoji(0)).toBe('⬛')
   })
 })
 
 describe('buildShareString', () => {
   const results = [
-    result(5000, 'A'),
-    result(4200, 'B'),
-    result(2500, 'C'),
-    result(800, 'D'),
-    result(100, 'E'),
+    result(100, 'A'),
+    result(85, 'B'),
+    result(60, 'C'),
+    result(30, 'D'),
+    result(10, 'E'),
   ]
 
   it('has the title, scored line, and an emoji bar', () => {
-    const s = buildShareString('2026-06-06', results, 12600)
+    const s = buildShareString('2026-06-06', results, 285)
     const lines = s.split('\n')
     expect(lines[0]).toBe('Know Your Locals — St. Pete')
-    expect(lines[1]).toBe('2026-06-06 · 12,600/25,000')
+    expect(lines[1]).toBe('2026-06-06 · 285/500')
     expect(lines[2]).toBe('🟩🟩🟨🟧⬛')
   })
 
   it('has one emoji per round', () => {
-    const s = buildShareString('2026-06-06', results, 12600)
+    const s = buildShareString('2026-06-06', results, 285)
     expect([...s.split('\n')[2]].length).toBe(results.length)
   })
 })

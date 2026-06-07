@@ -17,11 +17,11 @@ export interface ResultsProps {
   streak: { current: number; best: number }
 }
 
-/** Emoji tier for a single round score. */
+/** Emoji tier for a single round score (0–100 scale). */
 export function scoreEmoji(score: number): string {
-  if (score >= 4000) return '🟩'
-  if (score >= 2000) return '🟨'
-  if (score >= 500) return '🟧'
+  if (score >= 80) return '🟩'
+  if (score >= 50) return '🟨'
+  if (score >= 20) return '🟧'
   return '⬛'
 }
 

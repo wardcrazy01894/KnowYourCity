@@ -5,13 +5,12 @@
  * SAME 5 locations in the SAME order, with NO backend. Achieved by hashing the
  * UTC date string into a seed and driving a seeded PRNG.
  *
- * ── Timezone tradeoff (read this) ─────────────────────────────────────────────
- * The "day" is the UTC calendar day, not the player's local day. A player in
- * St. Pete (UTC-4/-5) gets a new puzzle at 7pm/8pm local, not at local midnight.
- * This is intentional: it's the only way two people in different timezones agree
- * on "today's puzzle" without a server. If we later decide everyone should roll
- * over at St. Pete midnight, change getUtcDateKey to apply a fixed -5h offset
- * (America/New_York is DST-variable, so a fixed offset is the simple choice).
+ * ── Timezone (read this) ──────────────────────────────────────────────────────
+ * The "day" rolls over at midnight in the city's timezone, NOT the player's
+ * local timezone and NOT UTC. For St. Pete that's America/New_York (handles
+ * EST/EDT automatically). So everyone — wherever they are — gets the same puzzle
+ * keyed to St. Pete's calendar day. When we add more cities each will carry its
+ * own IANA timezone and call getDateKey(now, city.timeZone).
  *
  * ── Stability tradeoff (read this) ───────────────────────────────────────────
  * Selection is a pure function of (dateKey, list). The PRNG is seeded ONLY by
@@ -27,12 +26,19 @@ import type { Location } from '../types'
 
 export const ROUNDS_PER_DAY = 5
 
+/** Default city timezone (St. Pete). Each future city carries its own. */
+export const DEFAULT_TIMEZONE = 'America/New_York'
+
 /**
- * Returns the current UTC calendar day as "YYYY-MM-DD".
- * Pure given `now`; defaults to wall clock.
+ * Returns the calendar day in the given IANA timezone as "YYYY-MM-DD".
+ * Uses the en-CA locale (which formats as YYYY-MM-DD) so the puzzle rolls over
+ * at midnight in that timezone, DST included. Pure given `now`.
  */
-export function getUtcDateKey(now: Date = new Date()): string {
-  return now.toISOString().slice(0, 10)
+export function getDateKey(
+  now: Date = new Date(),
+  timeZone: string = DEFAULT_TIMEZONE,
+): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone }).format(now)
 }
 
 /**

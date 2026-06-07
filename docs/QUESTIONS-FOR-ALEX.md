@@ -1,64 +1,49 @@
-# Questions for Alex
+# Decisions (answered by Alex, 2026-06-06)
 
-Nothing here blocks me from starting to build — these are decisions and inputs
-that will make the game *better/correct*. Answer whenever; I've noted my default
-if you don't.
+These were the open questions; this records the answers and how they were
+applied. Open follow-ups live in `BACKLOG.md`.
 
-## A. Map tiles — Esri (zero key) vs Mapbox (free key)
-- **Default:** Esri World Imagery, no key, works immediately, satellite to ~zoom
-  19 (building-level in downtown St. Pete).
-- **Upgrade:** a free Mapbox token (no credit card) → sharper imagery, zoom to
-  22. Token is visible in the shipped JS, so I'd restrict it to your domain.
-- **Q1:** Want me to start Esri-only and you grab a Mapbox token later if the
-  imagery feels soft? *(My default: yes, Esri-only first.)*
+## Resolved
 
-## B. The play area (bounding box)
-- I'm using St. Pete box `S 27.62, W -82.78, N 27.86, E -82.58` for both the
-  data pull and the map's pan limits.
-- **Q2:** Is that the right footprint? Should it include **St. Pete Beach / the
-  Don CeSar** (that's ~`27.70, -82.74`, just outside a tight city box — the
-  current box already includes it) and Gulfport? Or stay tighter to the city
-  proper? *(My default: keep the box above; it covers the Don CeSar.)*
+1. **Map tiles** — Esri-only (free, no key) for now; add a Mapbox token later if
+   imagery feels soft. *Applied: no change; Mapbox path stays optional via
+   `VITE_MAPBOX_TOKEN`.*
 
-## C. Must-include landmarks
-- **Q3:** List any places you definitely want in the game even if the auto-pull
-  misses them (I'll force-include). Starters already in the sample: Sunken
-  Gardens, The Don CeSar, Vinoy Park, St. Pete Pier, The Dalí Museum.
-- **Q4:** Anything you want **banned** (e.g. too obscure, private, or you just
-  don't like it)?
+2. **Bounding box** — keep the current St. Pete box for now; it's easy to change
+   later. *Applied: unchanged. (See the multi-city plan — bbox becomes per-city
+   data.)*
 
-## D. Difficulty / feel
-- **Q5:** Should the map start **zoomed out** (whole city — harder) or
-  **mid-zoom** (easier)? *(Default: start showing the whole play area.)*
-- **Q6:** Scoring is first-draft: full 5000 within **75 m**, zero past **12 km**,
-  smooth decay between (perfect day = 25,000). Want it more forgiving or more
-  punishing? *(Default: ship these, tune after we both play a few.)*
-- **Q7:** Show the optional **clue** under each name by default, or only on
-  request / never? *(Default: show a short clue.)*
+3 & 4. **Must-include / banned places** — none yet; Alex will provide lists
+   later. Each city should aim for **~200 places** (lots of restaurants/bars are
+   currently filtered out and should be added). *Applied: launch target updated
+   to ~200 in PLAN/BACKLOG; the curation step takes force-include/ban lists.*
 
-## E. Daily rollover timezone
-- The "same 5 for everyone" trick keys off the **UTC** date, so a new puzzle
-  appears ~7–8pm St. Pete time, not at local midnight.
-- **Q8:** Fine to keep UTC (simplest, what Wordle-likes do)? Or should the day
-  roll over at **St. Pete midnight** (I'd hardcode a -5h offset; slight DST
-  quirk)? *(Default: UTC.)*
+5. **Starting zoom** — start showing the **whole city**, let the player zoom in
+   to place the pin (maptap-style). *Applied: already the behavior — map fits the
+   full bounds on each round, min/max zoom allow zooming in to building level.*
 
-## F. How many places before launch
-- **Q9:** Good with me curating **~60–100** notable St. Pete places (rarer
-  repeats) before we call it "done enough" to share? Or launch sooner with
-  fewer and grow it? *(Default: aim for ~60, but the app is playable as soon as
-  there are 5+.)*
+6. **Scoring** — **0–100 per round**: 100 within 100 m, then **linear** down to
+   0 at 3 km. *Applied: rewrote `scoring.ts` (`MAX_ROUND_SCORE=100`,
+   `PERFECT_RADIUS_M=100`, `ZERO_DISTANCE_M=3000`, linear). Share emoji tiers
+   rescaled (🟩≥80 🟨≥50 🟧≥20 ⬛<20). Perfect day = 500.*
 
-## G. Hosting / sharing later
-- **Q10:** When ready, host free at
-  `https://wardcrazy01894.github.io/KnowYourLocals/` (needs the repo public or
-  Pages-on-private), or do you want a **custom domain** (e.g. a `.gg` to match
-  maptap)? I can wire either. *(Default: github.io first, domain later.)*
-- **Q11:** Repo is **private** right now. Flip to public when you want Pages the
-  easy way? *(Default: leave private until you say go.)*
+7. **Clues** — **no clues by default** for now. *Applied: `SHOW_CLUES=false` in
+   `Game.tsx`; clues remain in the data for later.*
 
-## H. Scope confirmations (just check my assumptions)
-- v1 = **St. Pete only**, **text name → pin**, **no photos**, **no backend /
-  leaderboard**. Photos and a future leaderboard are designed-for but not built.
-- **Q12:** Any of that you'd reprioritize? (e.g. you'd rather have photos in
-  v1 for a few marquee places like the Don CeSar.)
+8. **Daily rollover** — switch at **midnight US Eastern**. *Applied: `getDateKey`
+   uses `America/New_York` via `Intl` (DST-aware). Header shows "(ET)".*
+
+9. **Dataset size** — **~200 before launch** (more is better); anything is fine
+   while prototyping. *Applied: target documented; current shipped set is ~29.*
+
+10. **Hosting** — free `github.io` for now (it is free for public repos); a
+    **custom domain later** (name TBD). *Applied: repo made public; documented.*
+
+11. **Photos in v1** — keep **v1 text-only**; photos are a backlog item.
+    *Applied: backlog updated; `photoUrl` field already in the schema.*
+
+## Still needed from Alex (later)
+- Per-city **must-include** and **banned** lists.
+- Whether to widen the St. Pete bbox to recapture the Old Sunshine Skyway pier
+  and north-county golf (both fell just outside the current box).
+- The eventual custom domain name.

@@ -16,12 +16,10 @@ pipeline. This file is the contract for how changes get made.
   on). Use short-lived feature branches: `feat/…`, `fix/…`, `chore/…`, `docs/…`.
 - Prefer **squash merge** to keep `main` history linear and readable.
 
-> ⚠️ **Enforcement is not yet active.** GitHub branch protection requires a
-> **public** repo on the Free plan (or GitHub Pro). This repo is currently
-> private, so the rules above are convention-only and CI is informational, not a
-> hard gate. To make them enforced: make the repo public, then run
-> `bash scripts/protect-main.sh`. Until then, treat the PR flow as mandatory by
-> discipline.
+> ✅ **Enforced.** The repo is public and branch protection is active: `main`
+> rejects direct pushes, requires the three checks above (strict / up-to-date),
+> applies to admins too, and blocks force-pushes/deletions. Re-apply or audit
+> with `bash scripts/protect-main.sh`.
 
 ## Docs stay current in the same PR
 

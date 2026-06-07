@@ -4,34 +4,54 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Grow the dataset** — 29 curated landmarks now ship; expand toward ~60+
-      for rarer repeats (re-run `npm run fetch-pois`, curate more from
-      `data/candidates.json`). Consider widening the bbox to recapture the Old
-      Sunshine Skyway pier and north-county courses that fell just outside.
+- [ ] **Grow the St. Pete dataset to ~200** — the launch target. Currently ~29.
+      Most restaurants/bars/cafés are filtered out by the notability gate; loosen
+      it (e.g. include popular ones, not just wiki-linked) and curate more from
+      `data/candidates.json`. Apply Alex's must-include / banned lists when ready.
+- [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
+      Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
+      which fell just outside. Bounds also gate the play-area map.
+
+## The multi-city vision (bigger arc)
+- [ ] **City/region picker landing page** — the homepage becomes "what area are
+      you playing?" (search your city), which routes into that city's daily game.
+- [ ] **Multi-city support** — generalize from St. Pete to many cities
+      (Ann Arbor, Seattle, Chicago, …). Model each as data:
+      `City = { id, name, timeZone, bounds, locationsUrl }`. The engine is
+      already city-agnostic (`getDateKey(now, timeZone)`,
+      `selectDailyLocations(list, dateKey)`); mainly needs a city registry, the
+      picker UI, routing, and a curated ~200-place `locations.json` per city.
 
 ## Soon
-- [ ] **Persistence polish (M5)** — history/stats UI (resume mid-day + streaks
-      already work; surface a stats panel and an "already played today" view).
-- [ ] **Deploy (M7)** — GitHub Pages (needs repo public or Pages-on-private;
-      awaiting Alex's go-ahead to publish).
-- [ ] **Enforce branch protection** — needs the repo to be public (Free plan) or
-      GitHub Pro. Once decided, run `bash scripts/protect-main.sh`. Until then
-      the PR workflow is convention-only (see CLAUDE.md).
+- [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside
+      the name. `photoUrl` is already in the schema; source from Wikimedia
+      Commons (free). v1 stays text-only by decision.
+- [ ] **Persistence / stats UI** — surface a stats panel + an "already played
+      today" view (resume mid-day + streaks already work under the hood).
+- [ ] **Deploy to GitHub Pages** — publish at
+      `wardcrazy01894.github.io/KnowYourLocals/` (free for public repos). Add a
+      Pages Actions workflow.
 
 ## Later / nice-to-have
-- [ ] Photo rounds (fill `photoUrl` from Wikimedia Commons; e.g. Don CeSar).
-- [ ] Difficulty tuning pass after playtest (scoring constants, start zoom).
-- [ ] About/attribution panel (OSM ODbL + imagery credit) in the UI.
+- [ ] **Custom domain** — Alex wants one eventually (name TBD; maybe a `.gg`).
+      Add a `CNAME` and set Vite `base: '/'`.
+- [ ] Scoring/difficulty tuning pass after real playtests (constants in
+      `scoring.ts`).
+- [ ] About/attribution panel (OSM ODbL + imagery credit) visible in the UI.
 - [ ] Optional backend for shared online leaderboards.
-- [ ] Second city beyond St. Pete.
 
 ## Done
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
-- [x] Deterministic daily selection + city-scale scoring (with unit tests).
-- [x] CI (typecheck/lint/format/build/test/secret-scan) + branch protection.
+- [x] Deterministic daily selection (midnight-Eastern, DST-aware) + 0–100 linear
+      scoring, with unit tests.
+- [x] CI (typecheck/lint/format/build/test/secret-scan).
+- [x] Repo public + branch protection enforced (PR-only, required checks,
+      delete-on-merge) — `scripts/protect-main.sh`.
 - [x] Playable game (M3+M4+M6): Leaflet satellite map, pin-drop guessing,
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
 - [x] Data pipeline (M2): Overpass fetch script + 29 curated St. Pete landmarks
       in public/locations.json; app loads it with a sample fallback; dataset
       validated by a test.
+- [x] Applied Alex's decisions: 0–100 linear scoring, midnight-ET rollover,
+      clues hidden by default, whole-city start zoom.

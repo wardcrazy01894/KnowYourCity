@@ -1,29 +1,24 @@
 /**
  * Distance + scoring for a single round.
  *
- * ── Why not GeoGuessr's formula? ─────────────────────────────────────────────
- * GeoGuessr scores on a planet-wide scale (5000 pts, decay constant ~2000 km),
- * so at city scale (max realistic error ~15 km) every guess would peg near max.
- * We retune for a single city: full marks if you're basically on the building,
- * a smooth exponential falloff over the city, and zero once you're absurdly off.
+ * Scoring is on a 0–100 scale per round (so a perfect 5-round day = 500):
+ *  - within PERFECT_RADIUS_M of the truth → 100 (you basically nailed it)
+ *  - linear falloff from there
+ *  - 0 once you're ZERO_DISTANCE_M or more away
  *
- * Tunables below are first-draft and meant to be adjusted after playtesting —
- * see docs/QUESTIONS-FOR-ALEX.md (difficulty tuning).
+ * These constants are tunable after playtesting — see docs/PLAN.md §scoring.
  */
 
 import type { Guess, Location } from '../types'
 
-/** Max points for one round (so a perfect 5-round day = 25,000). */
-export const MAX_ROUND_SCORE = 5000
+/** Max points for one round (0–100 scale). A perfect 5-round day = 500. */
+export const MAX_ROUND_SCORE = 100
 
-/** Within this distance you get full marks (you basically nailed it). */
-export const PERFECT_RADIUS_M = 75
+/** Within this distance you get full marks. */
+export const PERFECT_RADIUS_M = 100
 
-/** Beyond this distance the round scores 0. */
-export const ZERO_DISTANCE_M = 12_000
-
-/** Controls falloff steepness between PERFECT_RADIUS_M and ZERO_DISTANCE_M. */
-export const DECAY_SCALE_M = 1_500
+/** At/beyond this distance the round scores 0. */
+export const ZERO_DISTANCE_M = 3000
 
 const EARTH_RADIUS_M = 6_371_000
 
@@ -44,17 +39,15 @@ export function haversineMeters(
 }
 
 /**
- * Map a distance (meters) to an integer score in [0, MAX_ROUND_SCORE].
- *  - distance <= PERFECT_RADIUS_M       → MAX_ROUND_SCORE
- *  - distance >= ZERO_DISTANCE_M        → 0
- *  - between                            → exponential decay
+ * Map a distance (meters) to an integer score in [0, MAX_ROUND_SCORE] with a
+ * linear falloff between PERFECT_RADIUS_M and ZERO_DISTANCE_M.
  */
 export function scoreForDistance(distanceMeters: number): number {
   if (distanceMeters <= PERFECT_RADIUS_M) return MAX_ROUND_SCORE
   if (distanceMeters >= ZERO_DISTANCE_M) return 0
-  const over = distanceMeters - PERFECT_RADIUS_M
-  const raw = MAX_ROUND_SCORE * Math.exp(-over / DECAY_SCALE_M)
-  return Math.round(raw)
+  const frac =
+    (ZERO_DISTANCE_M - distanceMeters) / (ZERO_DISTANCE_M - PERFECT_RADIUS_M)
+  return Math.round(MAX_ROUND_SCORE * frac)
 }
 
 /** Convenience: score a guess against a location, returning distance + score. */

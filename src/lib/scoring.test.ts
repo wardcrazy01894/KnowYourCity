@@ -44,8 +44,18 @@ describe('scoreForDistance', () => {
     expect(scoreForDistance(ZERO_DISTANCE_M + 5000)).toBe(0)
   })
 
+  it('is on a 0-100 scale', () => {
+    expect(MAX_ROUND_SCORE).toBe(100)
+    expect(scoreForDistance(0)).toBe(100)
+  })
+
+  it('falls off linearly (midpoint distance ≈ half score)', () => {
+    const mid = (PERFECT_RADIUS_M + ZERO_DISTANCE_M) / 2
+    expect(scoreForDistance(mid)).toBe(50)
+  })
+
   it('decreases monotonically with distance', () => {
-    const samples = [100, 500, 1000, 2000, 4000, 8000].map(scoreForDistance)
+    const samples = [150, 500, 1000, 1500, 2000, 2500].map(scoreForDistance)
     for (let i = 1; i < samples.length; i++) {
       expect(samples[i]).toBeLessThan(samples[i - 1])
     }

@@ -36,6 +36,10 @@ export const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
   [27.86, -82.58],
 ]
 
+// Clues are kept in the dataset but hidden by default for more challenge.
+// Flip to true (or make it a setting) to show the one-line hint under the name.
+const SHOW_CLUES = false
+
 /** UTC date key for the day before `dateKey`. */
 function previousDateKey(dateKey: string): string {
   const d = new Date(dateKey + 'T00:00:00Z')
@@ -170,7 +174,7 @@ export function Game({ dateKey, locations }: GameProps) {
       </div>
 
       <h2 style={{ margin: '8px 0 2px' }}>{currentLocation.name}</h2>
-      {currentLocation.clue && (
+      {SHOW_CLUES && currentLocation.clue && (
         <p style={{ marginTop: 0, opacity: 0.8 }}>{currentLocation.clue}</p>
       )}
       <p style={{ marginTop: 0, fontSize: 14, opacity: 0.6 }}>
