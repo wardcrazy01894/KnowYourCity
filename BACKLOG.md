@@ -22,8 +22,9 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       bounds/timezone/streaks.
 - [ ] **More cities / region search** — add to `cities.json` + `build-city`. A
       type-to-search picker would scale better than buttons past ~10 cities.
-- [ ] **Tune city bounds** — a few were eyeballed (esp. Seattle/Chicago which are
-      large); refine to taste.
+- [ ] **Tune city bounds** — State College & Ann Arbor tightened to the
+      campus/downtown core (less farmland). Seattle/Chicago boxes are still
+      broad; refine to taste and re-run `build-city`.
 
 ## Soon
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside

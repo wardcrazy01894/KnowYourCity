@@ -4,220 +4,11 @@
   "attribution": "Locations © OpenStreetMap contributors (ODbL) and Wikidata (CC0). Satellite imagery © Esri / Maxar.",
   "locations": [
     {
-      "id": "103rd-engineers-memorial-fountain",
-      "name": "103rd Engineers Memorial Fountain",
-      "lat": 40.780785,
-      "lng": -77.796304,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "103rd-medical-battalion-memorial",
-      "name": "103rd Medical Battalion Memorial",
-      "lat": 40.781135,
-      "lng": -77.794074,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "107th-field-artillery-memorial",
-      "name": "107th Field Artillery Memorial",
-      "lat": 40.780932,
-      "lng": -77.794768,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "108th-field-artillery-memorial",
-      "name": "108th Field Artillery Memorial",
-      "lat": 40.780786,
-      "lng": -77.794175,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "108th-machine-gun-battalion-memorial",
-      "name": "108th Machine Gun Battalion Memorial",
-      "lat": 40.781052,
-      "lng": -77.794033,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "109th-field-artillery-train-wreck-memorial",
-      "name": "109th Field Artillery Train Wreck Memorial",
-      "lat": 40.781096,
-      "lng": -77.795695,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "109th-infantry-field-artillery-memorial",
-      "name": "109th Infantry Field Artillery Memorial",
-      "lat": 40.781324,
-      "lng": -77.794084,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "109th-infantry-memorial",
-      "name": "109th Infantry Memorial",
-      "lat": 40.781153,
-      "lng": -77.794936,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "109th-machine-gun-battalion",
-      "name": "109th Machine Gun Battalion",
-      "lat": 40.78098,
-      "lng": -77.793995,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "110th-infantry-memorial",
-      "name": "110th Infantry Memorial",
-      "lat": 40.781137,
-      "lng": -77.794649,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "111th-infantry-memorial",
-      "name": "111th Infantry Memorial",
-      "lat": 40.78088,
-      "lng": -77.79418,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "112th-infantry-memorial",
-      "name": "112th Infantry Memorial",
-      "lat": 40.780726,
-      "lng": -77.794004,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "112th-machine-gun-battalion-memorial",
-      "name": "112th Machine Gun Battalion Memorial",
-      "lat": 40.780149,
-      "lng": -77.796614,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "1st-lieutenant-henry-lami-memorial",
-      "name": "1st Lieutenant Henry Lami Memorial",
-      "lat": 40.781216,
-      "lng": -77.793926,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "28th-division-global-war-on-terror-monument",
-      "name": "28th Division Global War on Terror Monument",
-      "lat": 40.781268,
-      "lng": -77.794997,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "28th-division-memorial",
-      "name": "28th Division Memorial",
-      "lat": 40.779455,
-      "lng": -77.795223,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "28th-signal-battalion",
-      "name": "28th Signal Battalion",
-      "lat": 40.781147,
-      "lng": -77.795297,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "2nd-brigade-combat-team-memorial",
-      "name": "2nd Brigade Combat Team Memorial",
-      "lat": 40.781138,
-      "lng": -77.795496,
-      "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "3-dots",
       "name": "3 Dots",
       "lat": 40.794264,
       "lng": -77.859384,
       "category": "museum",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "45-howitzer",
-      "name": "4.5\" Howitzer",
-      "lat": 40.780906,
-      "lng": -77.796481,
-      "category": "attraction",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -239,6 +30,17 @@
       "name": "A's Pub",
       "lat": 40.793884,
       "lng": -77.86115,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "adams-apple",
+      "name": "Adam's Apple",
+      "lat": 40.795382,
+      "lng": -77.859446,
       "category": "bar",
       "clue": null,
       "photoUrl": null,
@@ -301,6 +103,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "atom-first-seen",
+      "name": "Atom First \"Seen\"",
+      "lat": 40.798727,
+      "lng": -77.861811,
+      "category": "landmark",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "bagel-crust-beaver",
       "name": "Bagel Crust - Beaver",
       "lat": 40.792168,
@@ -310,6 +123,17 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "beaver-stadium",
+      "name": "Beaver Stadium",
+      "lat": 40.812081,
+      "lng": -77.856074,
+      "category": "venue",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "big-bowl-noodle-house",
@@ -334,11 +158,11 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "boal-city-brewing",
-      "name": "Boal City Brewing",
-      "lat": 40.779369,
-      "lng": -77.797219,
-      "category": "bar",
+      "id": "blue-course",
+      "name": "Blue Course",
+      "lat": 40.786393,
+      "lng": -77.883662,
+      "category": "golf_course",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -367,15 +191,15 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "brothers-pizza-itailian-restaurant",
-      "name": "Brothers Pizza & Itailian Restaurant",
-      "lat": 40.829093,
-      "lng": -77.806395,
-      "category": "restaurant",
+      "id": "bryce-jordan-center",
+      "name": "Bryce Jordan Center",
+      "lat": 40.808583,
+      "lng": -77.855449,
+      "category": "venue",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "cafe-210-west",
@@ -389,11 +213,66 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "cafe-alina",
+      "name": "Cafe Alina",
+      "lat": 40.797985,
+      "lng": -77.855861,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "cafe-wow",
       "name": "Cafe Wow",
       "lat": 40.795944,
       "lng": -77.859076,
       "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "camelot",
+      "name": "Camelot",
+      "lat": 40.789077,
+      "lng": -77.857692,
+      "category": "landmark",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "centre-furnace",
+      "name": "Centre Furnace",
+      "lat": 40.805241,
+      "lng": -77.843469,
+      "category": "landmark",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "centre-furnace-mansion",
+      "name": "Centre Furnace Mansion",
+      "lat": 40.806671,
+      "lng": -77.842145,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "centre-hills-country-club",
+      "name": "Centre Hills Country Club",
+      "lat": 40.793,
+      "lng": -77.821986,
+      "category": "golf_course",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -466,6 +345,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "discovery-space",
+      "name": "Discovery Space",
+      "lat": 40.802018,
+      "lng": -77.882318,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "doggies-pub",
       "name": "Doggie's Pub",
       "lat": 40.795044,
@@ -477,11 +367,66 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "douglas-albert-gallery",
+      "name": "Douglas Albert Gallery",
+      "lat": 40.795599,
+      "lng": -77.859452,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "edwin-w-zoller-gallery",
+      "name": "Edwin W. Zoller Gallery",
+      "lat": 40.8009,
+      "lng": -77.865264,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "ems-museum-and-art-gallery",
+      "name": "EMS Museum and Art Gallery",
+      "lat": 40.794143,
+      "lng": -77.865447,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "faculty-cottages",
+      "name": "Faculty Cottages",
+      "lat": 40.799813,
+      "lng": -77.861772,
+      "category": "landmark",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "fiddlehead",
       "name": "Fiddlehead",
       "lat": 40.793592,
       "lng": -77.862498,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "general-james-a-beaver-memorial",
+      "name": "General James A. Beaver Memorial",
+      "lat": 40.8123,
+      "lng": -77.85415,
+      "category": "landmark",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -510,6 +455,28 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "highlands-historic-district",
+      "name": "Highlands Historic District",
+      "lat": 40.793002,
+      "lng": -77.853149,
+      "category": "landmark",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "holmes-foster-park",
+      "name": "Holmes-Foster Park",
+      "lat": 40.783163,
+      "lng": -77.864831,
+      "category": "park",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
       "id": "india-pavilion",
       "name": "India Pavilion",
       "lat": 40.795415,
@@ -532,11 +499,11 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "jl-farm-cidery",
-      "name": "J.L. Farm & Cidery",
-      "lat": 40.751489,
-      "lng": -77.855129,
-      "category": "bar",
+      "id": "john-i-thompson-grain-elevator-and-coal-sheds",
+      "name": "John I. Thompson Grain Elevator and Coal Sheds",
+      "lat": 40.810529,
+      "lng": -77.817242,
+      "category": "landmark",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -554,15 +521,15 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "legends-pub",
-      "name": "Legends Pub",
-      "lat": 40.831895,
-      "lng": -77.844927,
-      "category": "bar",
+      "id": "lion-shrine",
+      "name": "Lion Shrine",
+      "lat": 40.796805,
+      "lng": -77.868936,
+      "category": "attraction",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "lions-den",
@@ -592,6 +559,17 @@
       "lat": 40.793677,
       "lng": -77.860156,
       "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "lt-michael-p-murphy-penn-state-veterans-plaza",
+      "name": "Lt. Michael P. Murphy Penn State Veterans Plaza",
+      "lat": 40.797333,
+      "lng": -77.862884,
+      "category": "landmark",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -631,6 +609,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "penn-steaks",
+      "name": "Penn Steaks",
+      "lat": 40.795046,
+      "lng": -77.859928,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "phyrst",
       "name": "Phyrst",
       "lat": 40.793749,
@@ -647,17 +636,6 @@
       "lat": 40.796841,
       "lng": -77.857243,
       "category": "restaurant",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "pump-station-cafe",
-      "name": "Pump Station Cafe",
-      "lat": 40.778863,
-      "lng": -77.79277,
-      "category": "cafe",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -752,6 +730,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "the-brewery",
+      "name": "The Brewery",
+      "lat": 40.794939,
+      "lng": -77.858655,
+      "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "the-cheese-shoppe",
       "name": "The Cheese Shoppe",
       "lat": 40.795483,
@@ -774,11 +763,11 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "the-field-burger-tap",
-      "name": "The Field Burger & Tap",
-      "lat": 40.824292,
-      "lng": -77.900491,
-      "category": "restaurant",
+      "id": "the-press-cider-and-craft-beverage-tap-house",
+      "name": "The Press Cider and Craft Beverage Tap House",
+      "lat": 40.797304,
+      "lng": -77.857317,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -823,6 +812,17 @@
       "lat": 40.7976,
       "lng": -77.855157,
       "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "vibe-coffee-co",
+      "name": "Vibe Coffee Co.",
+      "lat": 40.790776,
+      "lng": -77.86407,
+      "category": "cafe",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",

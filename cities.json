@@ -16,8 +16,8 @@
     "short": "State College",
     "timeZone": "America/New_York",
     "bounds": [
-      [40.74, -77.95],
-      [40.84, -77.78]
+      [40.77, -77.9],
+      [40.82, -77.81]
     ],
     "target": 80
   },
@@ -27,8 +27,8 @@
     "short": "Ann Arbor",
     "timeZone": "America/Detroit",
     "bounds": [
-      [42.22, -83.83],
-      [42.33, -83.66]
+      [42.25, -83.79],
+      [42.31, -83.7]
     ],
     "target": 100
   },

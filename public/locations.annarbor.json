@@ -4,6 +4,17 @@
   "attribution": "Locations © OpenStreetMap contributors (ODbL) and Wikidata (CC0). Satellite imagery © Esri / Maxar.",
   "locations": [
     {
+      "id": "19-drips",
+      "name": "19 Drips",
+      "lat": 42.273744,
+      "lng": -83.777618,
+      "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "afternoon-delight",
       "name": "Afternoon Delight",
       "lat": 42.279615,
@@ -53,17 +64,6 @@
       "lat": 42.278511,
       "lng": -83.746038,
       "category": "landmark",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "annas-house",
-      "name": "Anna's House",
-      "lat": 42.244315,
-      "lng": -83.741775,
-      "category": "restaurant",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -125,17 +125,6 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
-      "id": "bambu",
-      "name": "Bambu",
-      "lat": 42.25551,
-      "lng": -83.693423,
-      "category": "cafe",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "bandemer-park",
       "name": "Bandemer Park",
       "lat": 42.299263,
@@ -167,28 +156,6 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "barton-hills-country-club",
-      "name": "Barton Hills Country Club",
-      "lat": 42.326127,
-      "lng": -83.766768,
-      "category": "golf_course",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "baxter-park",
-      "name": "Baxter Park",
-      "lat": 42.2985,
-      "lng": -83.693795,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "bearclaw-coffee-co",
@@ -224,17 +191,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "bicentennial-park",
-      "name": "Bicentennial Park",
-      "lat": 42.232163,
-      "lng": -83.702412,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
       "id": "bills-beer-garden",
       "name": "Bill's Beer Garden",
       "lat": 42.27982,
@@ -246,11 +202,11 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "blaze-pizza",
-      "name": "Blaze Pizza",
-      "lat": 42.247353,
-      "lng": -83.758591,
-      "category": "restaurant",
+      "id": "blue-leprechaun",
+      "name": "Blue Leprechaun",
+      "lat": 42.274904,
+      "lng": -83.733596,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -277,17 +233,6 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "buhr-park",
-      "name": "Buhr Park",
-      "lat": 42.248506,
-      "lng": -83.710572,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "burger-one",
@@ -345,28 +290,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "clinton-park",
-      "name": "Clinton Park",
-      "lat": 42.239942,
-      "lng": -83.720779,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
-      "id": "cobblestone-farm",
-      "name": "Cobblestone Farm",
-      "lat": 42.245597,
-      "lng": -83.710584,
-      "category": "museum",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
       "id": "connor-oneils",
       "name": "Connor O'Neils",
       "lat": 42.278913,
@@ -393,17 +316,6 @@
       "name": "Deborah Gimbel Memorial Overlook",
       "lat": 42.277417,
       "lng": -83.724079,
-      "category": "attraction",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "decode",
-      "name": "Decode",
-      "lat": 42.244675,
-      "lng": -83.696865,
       "category": "attraction",
       "clue": null,
       "photoUrl": null,
@@ -444,17 +356,6 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
-      "id": "earhart-west-park",
-      "name": "Earhart West Park",
-      "lat": 42.285562,
-      "lng": -83.688868,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
       "id": "earthen-jar",
       "name": "Earthen Jar",
       "lat": 42.279116,
@@ -477,28 +378,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "ellsworth-park",
-      "name": "Ellsworth Park",
-      "lat": 42.230843,
-      "lng": -83.708985,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
-      "id": "esch-park",
-      "name": "Esch Park",
-      "lat": 42.248133,
-      "lng": -83.726347,
-      "category": "park",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
       "id": "espresso-royale",
       "name": "Espresso Royale",
       "lat": 42.280026,
@@ -510,10 +389,10 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "folkstone-park",
-      "name": "Folkstone Park",
-      "lat": 42.294845,
-      "lng": -83.686023,
+      "id": "frisinger-park",
+      "name": "Frisinger Park",
+      "lat": 42.259974,
+      "lng": -83.734972,
       "category": "park",
       "clue": null,
       "photoUrl": null,
@@ -532,11 +411,44 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "fuller-park",
+      "name": "Fuller Park",
+      "lat": 42.288398,
+      "lng": -83.732114,
+      "category": "park",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "garden-homes-park",
+      "name": "Garden Homes Park",
+      "lat": 42.296536,
+      "lng": -83.777349,
+      "category": "park",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
       "id": "good-time-charleys",
       "name": "Good Time Charley's",
       "lat": 42.274819,
       "lng": -83.734845,
       "category": "bar",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "grand-grounds",
+      "name": "Grand Grounds",
+      "lat": 42.281979,
+      "lng": -83.727464,
+      "category": "cafe",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -554,6 +466,28 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "hollway-field",
+      "name": "Hollway Field",
+      "lat": 42.259646,
+      "lng": -83.752125,
+      "category": "venue",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "holocaust-memorial",
+      "name": "Holocaust Memorial",
+      "lat": 42.280594,
+      "lng": -83.737463,
+      "category": "landmark",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "hopcat",
       "name": "HopCat",
       "lat": 42.27893,
@@ -563,6 +497,28 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "hunt-park",
+      "name": "Hunt Park",
+      "lat": 42.291782,
+      "lng": -83.751808,
+      "category": "park",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "island-park",
+      "name": "Island Park",
+      "lat": 42.289595,
+      "lng": -83.729678,
+      "category": "park",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "jerusalem-garden",
@@ -609,6 +565,39 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "kelsey-museum-of-archaeology",
+      "name": "Kelsey Museum of Archaeology",
+      "lat": 42.276744,
+      "lng": -83.741394,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "kempf-house-museum",
+      "name": "Kempf House Museum",
+      "lat": 42.278989,
+      "lng": -83.744387,
+      "category": "museum",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+    },
+    {
+      "id": "leslie-park-golf-course",
+      "name": "Leslie Park Golf Course",
+      "lat": 42.307491,
+      "lng": -83.722547,
+      "category": "golf_course",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "lucky-kitchen",
       "name": "Lucky Kitchen",
       "lat": 42.298362,
@@ -625,6 +614,17 @@
       "lat": 42.275122,
       "lng": -83.735647,
       "category": "cafe",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "mash",
+      "name": "mash",
+      "lat": 42.280547,
+      "lng": -83.746731,
+      "category": "bar",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -653,32 +653,21 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "montys-public-house",
-      "name": "Monty's Public House",
-      "lat": 42.244724,
-      "lng": -83.697484,
-      "category": "bar",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "mothfire-brewing-co",
-      "name": "Mothfire Brewing Co.",
-      "lat": 42.228908,
-      "lng": -83.741729,
-      "category": "bar",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "nagomi-sushi",
       "name": "Nagomi Sushi",
       "lat": 42.297951,
       "lng": -83.722966,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "neopapalis",
+      "name": "Neopapalis",
+      "lat": 42.277718,
+      "lng": -83.742879,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -745,6 +734,39 @@
       "name": "Pilar’s Tamales",
       "lat": 42.273694,
       "lng": -83.777555,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "pizza-pazza",
+      "name": "Pizza Pazza",
+      "lat": 42.284545,
+      "lng": -83.746403,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "plate-sushi-chicken",
+      "name": "Plate Sushi & Chicken",
+      "lat": 42.290596,
+      "lng": -83.737354,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "playa-bowls",
+      "name": "Playa Bowls",
+      "lat": 42.274881,
+      "lng": -83.734431,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
@@ -878,17 +900,6 @@
       "lat": 42.279272,
       "lng": -83.741601,
       "category": "restaurant",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "socotra-coffee-house",
-      "name": "Socotra Coffee House",
-      "lat": 42.244732,
-      "lng": -83.697565,
-      "category": "cafe",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -1082,21 +1093,10 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "yotsuba-japanese-restaurant-bar",
-      "name": "Yotsuba Japanese Restaurant & Bar",
-      "lat": 42.255139,
-      "lng": -83.681112,
-      "category": "restaurant",
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "zingermans-coffee-company",
-      "name": "Zingerman's Coffee Company",
-      "lat": 42.232426,
-      "lng": -83.748305,
+      "id": "york-food-drink",
+      "name": "YORK Food & Drink",
+      "lat": 42.257698,
+      "lng": -83.728046,
       "category": "cafe",
       "clue": null,
       "photoUrl": null,
