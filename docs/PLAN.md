@@ -168,10 +168,11 @@ Each location has an optional one-line `clue`. **Hidden by default** in v1
 can be toggled on or made a per-game setting later.
 
 ### 5.9 Local testing & logging
-URL params (all client-side, no build flags):
-- `?date=YYYY-MM-DD` — play any day's puzzle (different set) for testing.
-- dev (`npm run dev`) **resets on every refresh** so you can replay; `?keep`
-  opts out. On the live build, `?fresh` / `?reset` force a one-time reset.
+URL params (all client-side, no build flags; see `src/lib/devmode.ts`):
+- _(none)_ — normal: today's 5, progress persists.
+- `?reset` (alias `?fresh`) — same 5 for the day, wipe progress every refresh.
+- `?shuffle` (alias `?random`) — a brand-new random 5 every refresh.
+- `?date=YYYY-MM-DD` — play a specific day's puzzle.
 - `?debug` (or `localStorage kyl:debug='1'`) enables verbose `debug` logs.
 
 Logging (`src/lib/log.ts`): `[KYL]`-prefixed console output + an in-memory ring
