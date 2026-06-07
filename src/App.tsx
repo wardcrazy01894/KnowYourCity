@@ -75,6 +75,7 @@ export function App() {
   const [muted, setMutedState] = useState(isMuted())
   const [searching, setSearching] = useState(false)
   const [reporting, setReporting] = useState(false)
+  const [reportPrefill, setReportPrefill] = useState('')
   const [attribution, setAttribution] = useState('')
 
   const city = getCity(cityId)
@@ -138,8 +139,12 @@ export function App() {
   if (reporting)
     return (
       <BugReport
-        onClose={() => setReporting(false)}
+        onClose={() => {
+          setReporting(false)
+          setReportPrefill('')
+        }}
         context={{ city: city?.name, date: mode?.dateKey }}
+        initialMessage={reportPrefill}
       />
     )
   if (searching)
@@ -147,6 +152,11 @@ export function App() {
       <DatasetSearch
         onClose={() => setSearching(false)}
         initialCityId={cityId}
+        onRequestAdd={(prefill) => {
+          setReportPrefill(prefill)
+          setSearching(false)
+          setReporting(true)
+        }}
       />
     )
   if (!city || !mode)
@@ -154,7 +164,10 @@ export function App() {
       <CityPicker
         onPick={pickCity}
         onSearch={() => setSearching(true)}
-        onReport={() => setReporting(true)}
+        onReport={() => {
+          setReportPrefill('')
+          setReporting(true)
+        }}
       />
     )
   if (error) return <main style={{ padding: 24 }}>Failed to load: {error}</main>
@@ -212,7 +225,10 @@ export function App() {
               🔎 is a place in the game?
             </button>
             <button
-              onClick={() => setReporting(true)}
+              onClick={() => {
+                setReportPrefill('')
+                setReporting(true)
+              }}
               style={{
                 background: 'transparent',
                 border: 'none',

@@ -28,11 +28,14 @@ function getTurnstileToken(): string | undefined {
 export function BugReport({
   onClose,
   context,
+  initialMessage = '',
 }: {
   onClose: () => void
   context: ReportContext
+  /** Prefill the textarea (e.g. a "please add this place" request). */
+  initialMessage?: string
 }) {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState(initialMessage)
   const [includeLogs, setIncludeLogs] = useState(true)
   const [status, setStatus] = useState<Status>('idle')
   const [resultUrl, setResultUrl] = useState<string | null>(null)

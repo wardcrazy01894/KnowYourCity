@@ -18,6 +18,21 @@ export interface ReportContext {
   date?: string
 }
 
+/**
+ * Prefill text for the bug-report form when someone wants a place ADDED to the
+ * game (e.g. from the "is a place in the game?" search). Names the spot when we
+ * have it so the request is actionable.
+ */
+export function addLocationRequestMessage(
+  name: string,
+  cityShort: string,
+): string {
+  const place = name.trim()
+  return place
+    ? `Please add "${place}" to the ${cityShort} game.`
+    : `I'd like to request a place be added to the ${cityShort} game: `
+}
+
 /** Prefilled GitHub new-issue URL (fallback path / no backend). */
 export function bugReportUrl(ctx: ReportContext = {}, message = ''): string {
   const href = typeof location !== 'undefined' ? location.href : ''
