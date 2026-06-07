@@ -71,7 +71,7 @@ function slugify(name) {
     .replace(/^-|-$/g, '')
 }
 
-async function fetchOverpass(query) {
+export async function fetchOverpass(query) {
   let lastErr
   for (const ep of OVERPASS_ENDPOINTS)
     for (let a = 1; a <= 3; a++)
@@ -111,12 +111,22 @@ export function hasEstablishedSignal(tags) {
   )
 }
 
-async function main() {
-  console.log('Querying Overpass for food/drink…')
-  const data = await fetchOverpass(buildFoodQuery())
+/** Count of "established business" signals on an element (richness ranking). */
+export function signalScore(tags) {
+  return [
+    tags.website || tags['contact:website'],
+    tags.opening_hours,
+    tags.cuisine,
+    tags.phone || tags['contact:phone'],
+    tags.wikidata,
+  ].filter(Boolean).length
+}
+
+/** Filter + map raw Overpass elements → food/drink Location candidates. */
+export function foodLocationsFromElements(elements) {
   const seen = new Set()
   const out = []
-  for (const el of data.elements ?? []) {
+  for (const el of elements ?? []) {
     const t = el.tags || {}
     if (!t.name) continue
     if (NATIONAL_CHAIN.test(t.name) || CLOSED.test(t.name)) continue
@@ -136,8 +146,19 @@ async function main() {
       photoUrl: null,
       source: 'overpass',
       attribution: 'OpenStreetMap ODbL',
+      _signal: signalScore(t),
     })
   }
+  return out
+}
+
+async function main() {
+  console.log('Querying Overpass for food/drink…')
+  const data = await fetchOverpass(buildFoodQuery())
+  const out = foodLocationsFromElements(data.elements).map(
+    // eslint-disable-next-line no-unused-vars
+    ({ _signal, ...l }) => l,
+  )
   out.sort((a, b) => a.name.localeCompare(b.name))
   await mkdir(new URL('../data/', import.meta.url), { recursive: true })
   await writeFile(

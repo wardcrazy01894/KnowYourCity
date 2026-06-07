@@ -26,18 +26,15 @@ import {
 } from '../lib/storage'
 
 export interface GameProps {
+  /** City id — namespaces saved state so streaks are per-city. */
+  cityId: string
+  /** Calendar date key (YYYY-MM-DD) in the city's timezone. */
   dateKey: string
+  /** Map play bounds for this city, [[south, west], [north, east]]. */
+  bounds: [[number, number], [number, number]]
   /** The 5 locations selected for today (from selectDailyLocations). */
   locations: Location[]
 }
-
-// St. Pete play area — locks the map so guesses stay in-bounds. Widened north
-// to ~27.90 (Gandy/north St. Pete) and west to -82.80 (beaches) so more known
-// spots fall inside. [[south, west], [north, east]]
-export const ST_PETE_BOUNDS: [[number, number], [number, number]] = [
-  [27.62, -82.8],
-  [27.9, -82.58],
-]
 
 // Clues are kept in the dataset but hidden by default for more challenge.
 // Flip to true (or make it a setting) to show the one-line hint under the name.
@@ -71,14 +68,14 @@ function freshGame(dateKey: string, locations: Location[]): GameState {
   return { dateKey, locations, roundIndex: 0, results: [], phase: 'guessing' }
 }
 
-export function Game({ dateKey, locations }: GameProps) {
+export function Game({ cityId, dateKey, bounds, locations }: GameProps) {
   const [game, setGame] = useState<GameState>(() => {
-    const p = loadState()
+    const p = loadState(cityId)
     if (p.current && p.current.dateKey === dateKey) return p.current
     return freshGame(dateKey, locations)
   })
   const [guess, setGuess] = useState<Guess | null>(null)
-  const [streak, setStreak] = useState(() => loadState().streak)
+  const [streak, setStreak] = useState(() => loadState(cityId).streak)
 
   useEffect(() => {
     const resumed = game.phase !== 'guessing' || game.results.length > 0
@@ -99,7 +96,7 @@ export function Game({ dateKey, locations }: GameProps) {
 
   /** Persist the game; on finalize, also record the day + bump the streak. */
   function persist(next: GameState, finalize = false) {
-    const p = loadState()
+    const p = loadState(cityId)
     let history = p.history
     let st = p.streak
     if (finalize && !history.some((h) => h.dateKey === next.dateKey)) {
@@ -118,7 +115,12 @@ export function Game({ dateKey, locations }: GameProps) {
       st = nextStreak(p.streak, next.dateKey)
       setStreak(st)
     }
-    saveState({ version: STORAGE_VERSION, current: next, history, streak: st })
+    saveState(cityId, {
+      version: STORAGE_VERSION,
+      current: next,
+      history,
+      streak: st,
+    })
   }
 
   function submitGuess() {
@@ -206,7 +208,7 @@ export function Game({ dateKey, locations }: GameProps) {
       </p>
 
       <MapGuess
-        bounds={ST_PETE_BOUNDS}
+        bounds={bounds}
         guess={guess}
         onGuessChange={setGuess}
         locked={revealed}
