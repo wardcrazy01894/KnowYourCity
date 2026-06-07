@@ -180,6 +180,14 @@ buffer + uncaught-error/rejection capture. In the browser console,
 `kylDumpLogs()` prints the full session log and copies it to the clipboard — the
 intended way to capture a repro and hand it to a developer.
 
+### 5.10 Sound feedback
+On each reveal, `playScoreSound(score)` (`src/lib/sound.ts`) plays a synthesized
+cue by tier — **perfect** (100): bright arpeggio; **good** (green, ≥80): rising
+chime; **mid** (yellow, ≥50): single note; **womp** (<50): descending womp-womp.
+Sounds are generated with the Web Audio API (no audio files to bundle/license),
+created on the submit click (satisfies browser autoplay rules). A 🔊/🔇 header
+toggle mutes them (persisted in `localStorage`). `scoreTier` is pure + tested.
+
 ---
 
 ## 6. Map integration (`MapGuess`)

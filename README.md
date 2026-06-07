@@ -10,6 +10,8 @@ scored by how close you were. Share your result Wordle-style.
 
 - **$0 to run** — free satellite tiles, free POI data, no backend, no credit card.
 - **No server** — "same 5 for everyone" is computed from the date (seeded RNG).
+- **Sound feedback** — a synthesized cue on each guess (a triumphant arpeggio for
+  a perfect 100, down to a womp-womp for a bad miss); 🔊/🔇 toggle to mute.
 - Built with **React + TypeScript + Vite + Leaflet**.
 
 > Status: **playable**. A full 5-round daily game runs on the sample data —
