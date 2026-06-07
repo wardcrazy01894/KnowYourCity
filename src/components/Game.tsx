@@ -28,6 +28,8 @@ import {
 export interface GameProps {
   /** City id — namespaces saved state so streaks are per-city. */
   cityId: string
+  /** City label for the results/share card, e.g. "Seattle". */
+  cityShort: string
   /** Calendar date key (YYYY-MM-DD) in the city's timezone. */
   dateKey: string
   /** Map play bounds for this city, [[south, west], [north, east]]. */
@@ -68,14 +70,22 @@ function freshGame(dateKey: string, locations: Location[]): GameState {
   return { dateKey, locations, roundIndex: 0, results: [], phase: 'guessing' }
 }
 
-export function Game({ cityId, dateKey, bounds, locations }: GameProps) {
-  const [game, setGame] = useState<GameState>(() => {
-    const p = loadState(cityId)
-    if (p.current && p.current.dateKey === dateKey) return p.current
-    return freshGame(dateKey, locations)
-  })
+export function Game({
+  cityId,
+  cityShort,
+  dateKey,
+  bounds,
+  locations,
+}: GameProps) {
+  // One read of saved state at mount, shared by both the game + streak init.
+  const [initial] = useState(() => loadState(cityId))
+  const [game, setGame] = useState<GameState>(() =>
+    initial.current && initial.current.dateKey === dateKey
+      ? initial.current
+      : freshGame(dateKey, locations),
+  )
   const [guess, setGuess] = useState<Guess | null>(null)
-  const [streak, setStreak] = useState(() => loadState(cityId).streak)
+  const [streak, setStreak] = useState(initial.streak)
 
   useEffect(() => {
     const resumed = game.phase !== 'guessing' || game.results.length > 0
@@ -170,6 +180,7 @@ export function Game({ cityId, dateKey, bounds, locations }: GameProps) {
   if (game.phase === 'finished') {
     return (
       <Results
+        cityShort={cityShort}
         dateKey={game.dateKey}
         results={game.results}
         totalScore={totalScore}

@@ -81,18 +81,24 @@ export function App() {
 
   useEffect(() => {
     if (!city || !mode) return
+    let live = true // ignore a resolved fetch if the city changed meanwhile
     setToday(null)
     setError(null)
     loadLocations(city.id)
       .then((file) => {
+        if (!live) return
         const picks = selectDailyLocations(file.locations, mode.selectionSeed)
         log.info('App', 'picks', { picks: picks.map((p) => p.name) })
         setToday(picks)
       })
       .catch((e) => {
+        if (!live) return
         log.error('App', 'failed to load puzzle', { error: String(e) })
         setError(String(e))
       })
+    return () => {
+      live = false
+    }
     // mode.selectionSeed captures city + date/shuffle.
   }, [city, mode?.selectionSeed]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -236,6 +242,7 @@ export function App() {
       </header>
       <Game
         cityId={city.id}
+        cityShort={city.short}
         dateKey={mode.dateKey}
         bounds={city.bounds}
         locations={today}

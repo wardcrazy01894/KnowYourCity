@@ -152,6 +152,11 @@ export function MapGuess({
     if (!reveal) return
 
     const truth: L.LatLngExpression = [reveal.location.lat, reveal.location.lng]
+    // Use a text node, NOT a raw string — Leaflet's bindTooltip(string) assigns
+    // innerHTML, which would execute HTML in a location name (stored XSS). A
+    // span + textContent is safe regardless of the name's content.
+    const label = document.createElement('span')
+    label.textContent = reveal.location.name
     truthMarkerRef.current = L.circleMarker(truth, {
       radius: 9,
       color: '#ffffff',
@@ -160,7 +165,7 @@ export function MapGuess({
       fillOpacity: 1,
     })
       .addTo(map)
-      .bindTooltip(reveal.location.name, { permanent: true, direction: 'top' })
+      .bindTooltip(label, { permanent: true, direction: 'top' })
       .openTooltip()
 
     if (guess) {
