@@ -38,8 +38,8 @@
     "short": "Seattle",
     "timeZone": "America/Los_Angeles",
     "bounds": [
-      [47.5, -122.46],
-      [47.74, -122.24]
+      [47.55, -122.42],
+      [47.69, -122.29]
     ],
     "target": 200
   },
