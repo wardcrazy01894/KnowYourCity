@@ -19,6 +19,8 @@ Confirm every doc affected by this change is current in the same PR:
 
 ## Checklist
 
-- [ ] `npm run typecheck`, `npm run lint`, `npm run build` pass locally
+- [ ] **TDD**: tests were written first (red → green) for any behavior change
+      — or N/A (pure data/docs)
+- [ ] `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` pass locally
 - [ ] No secrets committed (tokens go in `.env.local`)
 - [ ] Branch will be deleted on merge
