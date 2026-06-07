@@ -30,9 +30,29 @@ const MAX_MESSAGE = 2_000
 const MAX_LOGS = 6_000
 const RL_MAX_PER_HOUR = 5
 
-function cors(env) {
+/** ALLOWED_ORIGIN may be "*" or a comma-separated list of origins. */
+function allowedOrigins(env) {
+  return (env.ALLOWED_ORIGIN || '*')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+}
+function originAllowed(env, origin) {
+  const list = allowedOrigins(env)
+  return list.includes('*') || (origin && list.includes(origin))
+}
+function cors(env, origin) {
+  const list = allowedOrigins(env)
+  // Reflect the request origin when it's allowed (can't use "*" + a specific
+  // list); fall back to the first configured origin.
+  const allow = list.includes('*')
+    ? '*'
+    : origin && list.includes(origin)
+      ? origin
+      : list[0] || '*'
   return {
-    'Access-Control-Allow-Origin': env.ALLOWED_ORIGIN || '*',
+    'Access-Control-Allow-Origin': allow,
+    Vary: 'Origin',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
@@ -72,7 +92,8 @@ async function verifyTurnstile(token, secret, ip) {
 
 export default {
   async fetch(request, env) {
-    const headers = cors(env)
+    const origin = request.headers.get('Origin')
+    const headers = cors(env, origin)
     if (request.method === 'OPTIONS') return new Response(null, { headers })
     if (request.method !== 'POST')
       return json({ error: 'method not allowed' }, 405, headers)
@@ -89,13 +110,7 @@ export default {
 
     // Server-side Origin allowlist (CORS headers alone are browser-only and
     // don't stop curl; this stops XSS-pivot from other origins in a browser).
-    const origin = request.headers.get('Origin')
-    if (
-      env.ALLOWED_ORIGIN &&
-      env.ALLOWED_ORIGIN !== '*' &&
-      origin &&
-      origin !== env.ALLOWED_ORIGIN
-    )
+    if (origin && !originAllowed(env, origin))
       return json({ error: 'forbidden origin' }, 403, headers)
 
     // Reject oversized bodies before parsing.
@@ -147,12 +162,12 @@ export default {
     // Keep the reported URL only if it's from our own site (else it's a
     // potential attacker-planted phishing link in a public issue).
     const url = String(ctx.url ?? '')
-    const safeUrl =
-      env.ALLOWED_ORIGIN && env.ALLOWED_ORIGIN !== '*'
-        ? url.startsWith(env.ALLOWED_ORIGIN)
-          ? url
-          : '(omitted)'
-        : defang(url)
+    const origins = allowedOrigins(env)
+    const safeUrl = origins.includes('*')
+      ? defang(url)
+      : origins.some((o) => url.startsWith(o))
+        ? url
+        : '(omitted)'
 
     const title =
       '[bug] ' +
