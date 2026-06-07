@@ -29,7 +29,7 @@ close you got. Share your result Wordle-style.
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
 > **Status:** playable and feature-complete for v1; GitHub Pages auto-deploy is
-> wired (flip Settings → Pages → Source = GitHub Actions to go live). Next up:
+> wired and self-enabling — it goes live on the next push to `main`. Next up:
 > more places + photos. See [`BACKLOG.md`](BACKLOG.md).
 
 ---
@@ -91,11 +91,14 @@ token (no credit card needed).
 ## ☁️ Deploy (GitHub Pages)
 
 **Auto-deploy (recommended):** every push to `main` builds and publishes via
-`.github/workflows/deploy.yml`. One-time setup: repo Settings → Pages → Source =
-**GitHub Actions**. The site's public client config bakes in from repo
-**Variables** (Settings → Secrets and variables → Actions → Variables):
-`VITE_BUG_ENDPOINT`, `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN`. If
-unset, the build still works and the bug form falls back to a prefilled issue.
+`.github/workflows/deploy.yml`, which **enables Pages itself** on first run
+(`configure-pages` with `enablement: true`) — no manual Settings toggle. The
+site's public client config bakes in from repo **Variables** (Settings → Secrets
+and variables → Actions → Variables): `VITE_BUG_ENDPOINT`,
+`VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN` (leave it unset to use the
+free, keyless Esri satellite tiles). If the bug vars are unset, the build still
+works and the bug form falls back to a prefilled issue. (If your account blocks
+API-enabling Pages, fall back to Settings → Pages → Source = GitHub Actions.)
 
 **Manual alternative:** `npm run build && npm run deploy` pushes `dist/` to a
 `gh-pages` branch (requires `.env.local` for the bug endpoint/Turnstile, and
