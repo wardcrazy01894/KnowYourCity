@@ -98,7 +98,7 @@ KnowYourLocals/
 |---|-----------|--------|
 | **M0** | Scaffold: Vite+React+TS, deps, `npm run dev` | ✅ done |
 | **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests) | ✅ done |
-| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete ~609; 4 more cities) | ✅ done |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete ~516; 4 more cities) | ✅ done |
 | **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds | ✅ done |
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |

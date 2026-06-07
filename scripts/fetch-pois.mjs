@@ -18,7 +18,9 @@
 import { mkdir, writeFile } from 'node:fs/promises'
 
 /** St. Pete bounding box [south, west, north, east] — matches the stpete bounds in cities.json. */
-export const ST_PETE_BBOX = /** @type {const} */ ([27.62, -82.8, 27.9, -82.58])
+export const ST_PETE_BBOX = /** @type {const} */ ([
+  27.62, -82.78, 27.87, -82.58,
+])
 
 /** Public Overpass instances, tried in order (with retries) if one is busy. */
 const OVERPASS_ENDPOINTS = [

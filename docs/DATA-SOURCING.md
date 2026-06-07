@@ -31,8 +31,8 @@ each dataset's top-level `attribution` field.
 
 ## 1. Fetch — Overpass query
 
-Each city's bounding box comes from `cities.json` (the example below uses an
-older St. Pete box; the live one is `[27.62,-82.80,27.90,-82.58]`).
+Each city's bounding box comes from `cities.json` (the live St. Pete box is
+`[27.62,-82.78,27.87,-82.58]`, used in the example below).
 
 The landmark query lives in `scripts/fetch-pois.mjs` → `buildOverpassQuery()`. It
 requests an **allowlist** of high-signal tags only:
@@ -40,12 +40,12 @@ requests an **allowlist** of high-signal tags only:
 ```overpassql
 [out:json][timeout:60];
 (
-  nwr["tourism"~"attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium"](27.62,-82.78,27.86,-82.58);
-  nwr["leisure"~"golf_course|park|stadium|marina"](27.62,-82.78,27.86,-82.58);
-  nwr["historic"](27.62,-82.78,27.86,-82.58);
-  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikidata"](27.62,-82.78,27.86,-82.58);
-  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikipedia"](27.62,-82.78,27.86,-82.58);
-  nwr["building"="stadium"](27.62,-82.78,27.86,-82.58);
+  nwr["tourism"~"attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium"](27.62,-82.78,27.87,-82.58);
+  nwr["leisure"~"golf_course|park|stadium|marina"](27.62,-82.78,27.87,-82.58);
+  nwr["historic"](27.62,-82.78,27.87,-82.58);
+  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikidata"](27.62,-82.78,27.87,-82.58);
+  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikipedia"](27.62,-82.78,27.87,-82.58);
+  nwr["building"="stadium"](27.62,-82.78,27.87,-82.58);
 );
 out center tags;
 ```
@@ -140,16 +140,18 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
-### Status: ~609 locations
-`public/locations.stpete.json` holds **~609 St. Pete places** — ~30 curated
+### Status: ~516 locations
+`public/locations.stpete.json` holds **~516 St. Pete places** — ~30 curated
 landmarks plus an **inclusive** pull of non-national-chain restaurants/bars/cafés
-in the (widened) bounding box (≈394 restaurants, **130 bars**, 54 cafés). Bars
+in the bounding box (≈326 restaurants, **109 bars**, 50 cafés). Bars
 are pulled even without an "established" tag signal (many dives carry no tags);
 restaurants/cafés still require one. A few well-known bars not in OSM (Good Night
 John Boy, My Rich Uncle, Welcome to the Farm) were added manually via geocoded
-addresses. The
-box was widened to `[27.62, -82.80, 27.90, -82.58]` (north to Gandy, west to the
-beaches) to capture more known spots; the stpete `bounds` in cities.json match it.
+addresses. The box is `[27.62, -82.78, 27.87, -82.58]` — a close-in frame over
+the city and inner beaches (the north edge reaches Kahuna's); the stpete `bounds`
+in cities.json match it, and the in-bounds guard drops anything past it. The map
+locks pan/zoom to this box, so a tighter frame deliberately trades a few far-flung
+beach spots for a closer starting view.
 
 Earlier hand-picked highlights (with clues):
 - **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
@@ -177,7 +179,7 @@ query (`fetch-food` logic) for the city's bbox, then **balances** the mix
 (~30% landmarks / 18% cafés / 22% bars / 30% restaurants), ranks food by the
 established-business signal, dedupes, filters to in-bounds, and caps to the
 city's `target`. Cities are defined once in the root `cities.json` (read by both
-this script and the app via `src/lib/cities.ts`). Current cities: St. Pete (~609,
+this script and the app via `src/lib/cities.ts`). Current cities: St. Pete (~516,
 built via fetch-food + curation), State College (~80), Ann Arbor (~100),
 Seattle (~200), Chicago (~200).
 

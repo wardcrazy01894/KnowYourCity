@@ -30,8 +30,8 @@
 
 import { mkdir, writeFile } from 'node:fs/promises'
 
-/** Expanded St. Pete bbox [south, west, north, east] — matches stpete bounds in cities.json. */
-export const FOOD_BBOX = /** @type {const} */ ([27.62, -82.8, 27.9, -82.58])
+/** St. Pete bbox [south, west, north, east] — matches stpete bounds in cities.json. */
+export const FOOD_BBOX = /** @type {const} */ ([27.62, -82.78, 27.87, -82.58])
 
 const OVERPASS_ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
