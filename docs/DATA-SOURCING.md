@@ -31,8 +31,8 @@ each dataset's top-level `attribution` field.
 
 ## 1. Fetch — Overpass query
 
-Each city's bounding box comes from `cities.json` (the example below uses an
-older St. Pete box; the live one is `[27.62,-82.78,27.87,-82.58]`).
+Each city's bounding box comes from `cities.json` (the live St. Pete box is
+`[27.62,-82.78,27.87,-82.58]`, used in the example below).
 
 The landmark query lives in `scripts/fetch-pois.mjs` → `buildOverpassQuery()`. It
 requests an **allowlist** of high-signal tags only:
@@ -40,12 +40,12 @@ requests an **allowlist** of high-signal tags only:
 ```overpassql
 [out:json][timeout:60];
 (
-  nwr["tourism"~"attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium"](27.62,-82.78,27.86,-82.58);
-  nwr["leisure"~"golf_course|park|stadium|marina"](27.62,-82.78,27.86,-82.58);
-  nwr["historic"](27.62,-82.78,27.86,-82.58);
-  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikidata"](27.62,-82.78,27.86,-82.58);
-  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikipedia"](27.62,-82.78,27.86,-82.58);
-  nwr["building"="stadium"](27.62,-82.78,27.86,-82.58);
+  nwr["tourism"~"attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium"](27.62,-82.78,27.87,-82.58);
+  nwr["leisure"~"golf_course|park|stadium|marina"](27.62,-82.78,27.87,-82.58);
+  nwr["historic"](27.62,-82.78,27.87,-82.58);
+  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikidata"](27.62,-82.78,27.87,-82.58);
+  nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikipedia"](27.62,-82.78,27.87,-82.58);
+  nwr["building"="stadium"](27.62,-82.78,27.87,-82.58);
 );
 out center tags;
 ```
