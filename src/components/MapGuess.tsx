@@ -88,13 +88,18 @@ export function MapGuess({
     const map = L.map(containerRef.current, {
       maxBounds: bounds,
       maxBoundsViscosity: 1,
-      minZoom: 11,
       zoomControl: true,
     })
     const tiles = makeTileLayer()
     tiles.on('tileerror', () => log.debug('MapGuess', 'tile failed to load'))
     tiles.addTo(map)
     map.fitBounds(bounds)
+    // The initial fit-to-bounds is the WIDEST allowed view — lock minZoom to it
+    // so players can't zoom out past the city box. (Recompute on resize so the
+    // floor stays correct across viewport sizes.)
+    const lockMinZoom = () => map.setMinZoom(map.getBoundsZoom(bounds))
+    lockMinZoom()
+    map.on('resize', lockMinZoom)
     map.on('click', (e: L.LeafletMouseEvent) => {
       if (lockedRef.current) return
       log.debug('MapGuess', 'guess placed', {
