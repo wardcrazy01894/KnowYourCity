@@ -35,13 +35,13 @@ close you got. Share your result Wordle-style.
 
 ## 🎮 How to play
 
-1. A place **name** appears over a satellite map of St. Pete.
+1. A place **name** appears over a satellite map of your chosen city.
 2. **Click the map** where you think it is (zoom in for precision).
 3. **Submit** → the real spot is revealed with your distance and score (0–100).
 4. Five rounds — **☕ coffee → 🍽️ restaurant → 🍺 bar → 🏛️ landmark → 🎲 wildcard** —
    then a results screen with your total /500, streak, and a copyable share.
 
-New puzzle daily at **midnight Eastern**.
+New puzzle daily at **midnight in the city's timezone**.
 
 ## 🚀 Quick start
 

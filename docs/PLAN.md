@@ -14,7 +14,7 @@ credit card).
 
 ## 1. Core concept (v1)
 
-- Each **UTC day**, every player gets the **same 5 St. Pete places**.
+- Each **day** (rolling over at midnight in the city's timezone), everyone gets the **same 5 places** for that city.
 - For each place we show its **name** (+ optional one-line clue). No photo yet.
 - Player drops **one pin** on a **satellite map** of St. Pete.
 - Score = distance-based, GeoGuessr-style decay, retuned for city scale.
@@ -31,7 +31,7 @@ shared online leaderboards, accounts, multiple cities. The data schema and a
 
 ```
 Browser (static site, no backend)
- ├─ public/locations.json        ← curated St. Pete dataset (committed)
+ ├─ public/locations.<id>.json   ← per-city curated datasets (committed)
  ├─ lib/daily.ts                 ← date → seed → pick the day's 5 (by category)
  ├─ lib/scoring.ts               ← haversine + 0–100 linear score
  ├─ lib/storage.ts               ← localStorage: streak/history/resume
@@ -69,8 +69,8 @@ KnowYourLocals/
 ├─ .env.example            optional VITE_MAPBOX_TOKEN
 ├─ README.md · CLAUDE.md · BACKLOG.md
 ├─ public/
-│   ├─ locations.json           curated dataset (the one the app uses)
-│   └─ locations.sample.json    fallback sample so it runs without the dataset
+│   ├─ locations.<id>.json      per-city datasets (stpete, seattle, …)
+│   └─ (cities.json at repo root is the city registry)
 ├─ scripts/
 │   ├─ fetch-pois.mjs           Overpass → data/candidates.json
 │   └─ protect-main.sh          (re)apply branch protection
@@ -98,7 +98,7 @@ KnowYourLocals/
 |---|-----------|--------|
 | **M0** | Scaffold: Vite+React+TS, deps, `npm run dev` | ✅ done |
 | **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests) | ✅ done |
-| **M2** | Data pipeline + curated `locations.json` (~76 places) | ✅ done (growing toward ~200) |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete ~609; 4 more cities) | ✅ done |
 | **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds | ✅ done |
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |
@@ -137,9 +137,9 @@ instead of reshuffling. Not worth it for v1.
 ### 5.3 List size vs repetition
 5 unique places/day. With **N** curated locations, you can run ~`N/5` days
 before a place *must* repeat, and repeats feel frequent well before that.
-**Launch target per city: ~200 locations** (so repeats are rare); ~30 is fine
-while prototyping. Restaurants/bars/cafés are currently mostly excluded by the
-notability filter and are a deliberate area to expand toward that 200.
+**Launch target per city: ~200 locations** (so repeats are rare). Food & drink
+(restaurants/bars/cafés) is the bulk of each city's dataset — pulled inclusively
+by `fetch-food` — alongside notable landmarks from `fetch-pois`.
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
 Per-round score is on a **0–100 scale** (perfect day = **500**), linear:
@@ -161,7 +161,7 @@ returning players.
 
 ### 5.7 Share string (`Results.buildShareString`, pure)
 ```
-Know Your Locals — St. Pete
+Know Your Locals — <City>
 2026-06-06 · 428/500
 🟩🟩🟩🟨⬛
 ```
@@ -224,13 +224,14 @@ toggle mutes them (persisted in `localStorage`). `scoreTier` is pure + tested.
   - **Optional — Mapbox Satellite** when `VITE_MAPBOX_TOKEN` is set: sharper,
     zoom to 22. Free tier, no credit card; token is public in the bundle, so
     restrict it by URL in the Mapbox dashboard.
-- **Bounds:** lock to St. Pete with `maxBounds` (`ST_PETE_BOUNDS` in `Game.tsx`)
-  so players can't pan away. Confirm the box with Alex.
+- **Bounds:** each city's `bounds` (from `cities.json`) is passed to `MapGuess`
+  as `maxBounds`, and `minZoom` is locked to the fit-to-bounds view, so players
+  can't pan or zoom out past the city box.
 - **Interaction:** click to place/move one pin; "Submit" freezes it. On reveal,
   draw the truth marker + a polyline to the guess, labelled with the distance.
 
 ### Anti-cheat (deliberate non-goal)
-The answers ship in `locations.json` and are readable in devtools. For a friends
+The answers ship in the per-city `locations.<id>.json` and are readable in devtools. For a friends
 game this is **acceptable and intentional** — we will not add obfuscation
 theater. If a public competitive version ever needs it, that requires a backend
 that withholds coordinates until after submit (future work).

@@ -4,7 +4,7 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [x] **St. Pete dataset** — now ~519 (inclusive food/drink via `fetch-food` +
+- [x] **St. Pete dataset** — now ~609 (inclusive food/drink via `fetch-food` +
       curated landmarks). Target comfortably met.
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
@@ -22,9 +22,9 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       bounds/timezone/streaks.
 - [ ] **More cities / region search** — add to `cities.json` + `build-city`. A
       type-to-search picker would scale better than buttons past ~10 cities.
-- [ ] **Tune city bounds** — State College & Ann Arbor tightened to the
-      campus/downtown core (less farmland). Seattle/Chicago boxes are still
-      broad; refine to taste and re-run `build-city`.
+- [ ] **Tune city bounds** — State College, Ann Arbor & Seattle tightened to the
+      core. Chicago's box is still fairly broad; refine to taste and re-run
+      `build-city`.
 
 ## Soon
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside
@@ -54,8 +54,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [x] Playable game (M3+M4+M6): Leaflet satellite map, pin-drop guessing,
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
-- [x] Data pipeline (M2): Overpass fetch script + 29 curated St. Pete landmarks
-      in public/locations.json; app loads it with a sample fallback; dataset
-      validated by a test.
+- [x] Data pipeline (M2): Overpass scripts (fetch-pois / fetch-food /
+      build-city) → per-city `public/locations.<id>.json` (St. Pete ~609 +
+      4 cities); the app loads the selected city's file; validated by a test.
 - [x] Applied Alex's decisions: 0–100 linear scoring, midnight-ET rollover,
       clues hidden by default, whole-city start zoom.

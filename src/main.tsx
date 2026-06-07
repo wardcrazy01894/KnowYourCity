@@ -7,8 +7,9 @@ import 'leaflet/dist/leaflet.css'
 import './index.css'
 
 installLogging(import.meta.env.VITE_APP_VERSION ?? '0.1.0')
-// Dev: start fresh on every refresh (opt out with ?keep). No-op in production
-// unless ?fresh/?reset is present. Must run before React reads stored state.
+// Clear saved progress when the URL asks (?reset / ?fresh / ?shuffle / ?random).
+// Default loads persist. Must run before React reads stored state. See
+// src/lib/devmode.ts.
 applyStartupReset()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

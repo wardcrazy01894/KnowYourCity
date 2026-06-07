@@ -8,7 +8,7 @@
  *      inherently notable e.g. tourism=museum/attraction, leisure=golf_course).
  *   3. Drop obvious chains/mundane via a name denylist (laundromat, Great Clips…).
  *   4. Normalise to the Location schema; emit data/candidates.json.
- *   5. A HUMAN then curates candidates.json → public/locations.json
+ *   5. A HUMAN then curates candidates.json → a per-city public/locations.<id>.json
  *      (fix names, write clues, delete junk). The script never writes
  *      locations.json directly — curation is deliberate.
  *
@@ -17,7 +17,7 @@
 
 import { mkdir, writeFile } from 'node:fs/promises'
 
-/** St. Pete bounding box [south, west, north, east] — matches ST_PETE_BOUNDS. */
+/** St. Pete bounding box [south, west, north, east] — matches the stpete bounds in cities.json. */
 export const ST_PETE_BBOX = /** @type {const} */ ([27.62, -82.8, 27.9, -82.58])
 
 /** Public Overpass instances, tried in order (with retries) if one is busy. */
@@ -208,7 +208,7 @@ async function main() {
     ),
   )
   console.log(
-    `Wrote ${candidates.length} candidates to data/candidates.json. Now curate → public/locations.json`,
+    `Wrote ${candidates.length} candidates to data/candidates.json. Now curate (or use build-city) → public/locations.<id>.json`,
   )
 }
 

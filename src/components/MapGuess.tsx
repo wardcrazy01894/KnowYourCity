@@ -11,7 +11,7 @@
  *  - If VITE_MAPBOX_TOKEN is set: Mapbox Satellite (sharper, zoom to ~22).
  *
  * The map is locked to `bounds` (maxBounds + viscosity) so players can't pan
- * away from St. Pete.
+ * away from the city's play area.
  *
  * Anti-cheat note: answers live in the bundled JSON and are readable via
  * devtools. For a friends game that's acceptable and intentional.

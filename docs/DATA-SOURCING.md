@@ -1,4 +1,4 @@
-# Data Sourcing — building `locations.json`
+# Data Sourcing — building the per-city location datasets
 
 How we turn "all the stuff in St. Pete" into a curated list of **notable,
 interesting** places (attractions, museums, golf courses, famous plazas,
@@ -6,7 +6,7 @@ well-known restaurants) while keeping out the mundane (laundromats, chain
 salons, storage units).
 
 The pipeline is **fetch → filter → human-curate**. A script proposes
-candidates; a human makes the final `public/locations.json`. We never auto-ship
+candidates; a human (or `build-city`) makes the final per-city `public/locations.<id>.json`. We never auto-ship
 a raw scrape — curation is what makes the game good.
 
 ---
@@ -19,21 +19,22 @@ a raw scrape — curation is what makes the game good.
 | **Wikidata / Wikipedia** | free | none | CC0 (public domain) | notability signal + landmark descriptions |
 
 Both are free, no API key, no credit card. (Google Places was rejected: its ToS
-forbids storing place data beyond 30 days, which a committed `locations.json`
+forbids storing place data beyond 30 days, which a committed dataset
 inherently does.) See the comparison the project was scoped from.
 
 **Licensing obligation:** the shipped app must display
 `Locations © OpenStreetMap contributors` (ODbL). Wikidata-derived facts are CC0
 (no attribution required, but we credit anyway). This string lives in
-`locations.json.attribution` and is rendered in the app footer/about.
+each dataset's top-level `attribution` field.
 
 ---
 
 ## 1. Fetch — Overpass query
 
-Bounding box (St. Pete, **confirm with Alex**): `S 27.62, W -82.78, N 27.86, E -82.58`.
+Each city's bounding box comes from `cities.json` (the example below uses an
+older St. Pete box; the live one is `[27.62,-82.80,27.90,-82.58]`).
 
-The exact query lives in `scripts/fetch-pois.mjs` → `buildOverpassQuery()`. It
+The landmark query lives in `scripts/fetch-pois.mjs` → `buildOverpassQuery()`. It
 requests an **allowlist** of high-signal tags only:
 
 ```overpassql
@@ -118,7 +119,7 @@ both a node and a way).
 
 ## 4. Curate — the human step (the important one)
 
-Open `data/candidates.json` and produce `public/locations.json` by hand:
+Open `data/candidates.json` and produce a per-city `public/locations.<id>.json` (build-city automates this):
 
 - **Delete junk** the filters missed (boring parks, duplicates, defunct places).
 - **Fix display names** ("The Don CeSar", not "Don Cesar Hotel (historic)").
@@ -132,11 +133,12 @@ Open `data/candidates.json` and produce `public/locations.json` by hand:
   PLAN.md §5.3.
 
 Then set the file's top-level `attribution` and `version`. The app loads
-`public/locations.json` automatically and falls back to `locations.sample.json`
-only if it's missing (see `src/App.tsx`), so no code change is needed.
+`public/locations.<id>.json` for the selected city (see `cityDataUrl` in
+`src/lib/cities.ts`); there is no sample fallback.
 
-> Re-running the pipeline regenerates `candidates.json`, **not**
-> `locations.json` — your curation is never clobbered.
+> Re-running the pipeline regenerates `candidates.json`, **not** the curated
+> `locations.<id>.json` — your curation is never clobbered. (`build-city`
+> regenerates a city's file in full, so keep any manual entries reproducible.)
 
 ### Status: ~609 locations
 `public/locations.stpete.json` holds **~609 St. Pete places** — ~30 curated
@@ -147,7 +149,7 @@ restaurants/cafés still require one. A few well-known bars not in OSM (Good Nig
 John Boy, My Rich Uncle, Welcome to the Farm) were added manually via geocoded
 addresses. The
 box was widened to `[27.62, -82.80, 27.90, -82.58]` (north to Gandy, west to the
-beaches) to capture more known spots; `ST_PETE_BOUNDS` matches it.
+beaches) to capture more known spots; the stpete `bounds` in cities.json match it.
 
 Earlier hand-picked highlights (with clues):
 - **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
@@ -175,7 +177,7 @@ query (`fetch-food` logic) for the city's bbox, then **balances** the mix
 (~30% landmarks / 18% cafés / 22% bars / 30% restaurants), ranks food by the
 established-business signal, dedupes, filters to in-bounds, and caps to the
 city's `target`. Cities are defined once in the root `cities.json` (read by both
-this script and the app via `src/lib/cities.ts`). Current cities: St. Pete (~519,
+this script and the app via `src/lib/cities.ts`). Current cities: St. Pete (~609,
 built via fetch-food + curation), State College (~80), Ann Arbor (~100),
 Seattle (~200), Chicago (~200).
 
@@ -186,7 +188,7 @@ instead: every `restaurant|bar|cafe|pub|fast_food|brewery` in the bbox that is
 (a) not a genuine **national chain** (McDonald's, Starbucks… — local mini-chains
 like Hawkers / 3 Daughters are kept), (b) not known-closed, and (c) has an
 "established business" signal (website / hours / cuisine / phone / wikidata).
-Output → `data/food-candidates.json`; merge into `public/locations.json`.
+Output → `data/food-candidates.json`; merge into a per-city `public/locations.<id>.json`.
 
 **On "≥100 Yelp reviews":** Yelp/Google review counts can't be stored in the repo
 without breaking their API terms (same reason we skip Google for POIs). OSM is

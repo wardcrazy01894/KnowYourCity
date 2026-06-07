@@ -25,12 +25,12 @@
  * paid Yelp/Google integration (see BACKLOG).
  *
  * Output: data/food-candidates.json (gitignored). Merge into
- * public/locations.json — see docs/DATA-SOURCING.md. Run: `npm run fetch-food`.
+ * public/locations.<id>.json — see docs/DATA-SOURCING.md. Run: `npm run fetch-food`.
  */
 
 import { mkdir, writeFile } from 'node:fs/promises'
 
-/** Expanded St. Pete bbox [south, west, north, east] — matches ST_PETE_BOUNDS. */
+/** Expanded St. Pete bbox [south, west, north, east] — matches stpete bounds in cities.json. */
 export const FOOD_BBOX = /** @type {const} */ ([27.62, -82.8, 27.9, -82.58])
 
 const OVERPASS_ENDPOINTS = [
