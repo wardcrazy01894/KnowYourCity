@@ -33,6 +33,9 @@ const CACHE = new URL(`../data/fame-${CITY}.json`, import.meta.url)
 
 const EASY_PCT = 0.2 // top 20% by fame -> easy
 const HARD_PCT = 0.35 // bottom 35% -> hard ; middle 45% -> medium
+// Fallback fame for a location with no fame record (shouldn't happen if the pass
+// ran on this exact dataset) — median so it lands in the medium bucket.
+const MEDIAN_FAME_FALLBACK = 50
 
 const slug = (s) =>
   s
@@ -97,7 +100,7 @@ for (const loc of orig) {
     // no fame record -> keep with median difficulty (shouldn't happen if the
     // fame pass ran on this dataset)
     audit.noFame.push(`${loc.name} (${loc.id})`)
-    cleaned.push({ ...bare, _fame: 50 })
+    cleaned.push({ ...bare, _fame: MEDIAN_FAME_FALLBACK })
     continue
   }
   if (f.status === 'closed') {

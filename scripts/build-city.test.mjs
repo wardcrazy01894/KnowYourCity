@@ -94,5 +94,7 @@ describe('composeLocations', () => {
       city: CITY(3),
     })
     expect(out.find((l) => l.id === 'must')).toBeTruthy()
+    // 3 capped landmarks + 1 manual that bypassed the cap
+    expect(out.length).toBe(4)
   })
 })

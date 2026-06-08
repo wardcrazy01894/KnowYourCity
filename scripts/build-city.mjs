@@ -153,7 +153,17 @@ async function main() {
   }
 
   const out = composeLocations({ landmarks, food, manual, city })
-  if (manual.length) console.log(`  merged ${manual.length} manual entries`)
+  if (manual.length) {
+    // Warn loudly if a curated must-include was dropped (e.g. out-of-bounds /
+    // bad coords) — composeLocations silently filters, so surface it here.
+    const kept = new Set(out.map((l) => l.id))
+    const dropped = manual.filter((m) => !kept.has(m.id))
+    console.log(
+      `  merged ${manual.length - dropped.length}/${manual.length} manual entries`,
+    )
+    for (const m of dropped)
+      console.warn(`  ⚠ manual entry dropped (out-of-bounds or dup): ${m.name}`)
+  }
 
   out.sort((a, b) => a.name.localeCompare(b.name))
   const byCat = {}
