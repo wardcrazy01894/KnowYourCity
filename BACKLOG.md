@@ -20,9 +20,9 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       percentile bucketing (narrow-easy 20/45/35). Driven by the
       `add-or-update-city` skill + `scripts/fame-workflow.template.md`. (Still
       optional: fold it directly into `build-city` so a rebuild auto-enriches in one
-      step.) **Note:** the +19 St. Pete parks/lakes from `scripts/add-parks.mjs`
-      carry hand-assigned difficulty — fold them into St. Pete's next fame
-      re-bucketing pass.
+      step.) **Note:** the +19 St. Pete parks/lakes (a one-off import, now living
+      in `data/stpete-manual.json`) carry hand-assigned difficulty — fold them
+      into St. Pete's next fame re-bucketing pass.
 - [x] **St. Pete dataset** — inclusive food/drink via `fetch-food` + curated
       landmarks. Peaked at ~516; the fame+status pass (PR #40) then **trimmed it
       to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1
