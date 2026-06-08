@@ -17,6 +17,13 @@ export interface Location {
   lng: number
   /** Coarse bucket used for filtering/curation; not shown as a hint by default. */
   category: LocationCategory
+  /**
+   * Guessing difficulty, derived from a city-relative fame score (see the fame
+   * pass in docs/DATA-SOURCING.md). Drives the daily 2-easy/2-medium/1-hard plan.
+   * Optional because cities are enriched one at a time — a dataset without it
+   * falls back to the legacy category plan. See src/lib/daily.ts.
+   */
+  difficulty?: Difficulty
   /** Optional one-line hint shown under the name. */
   clue?: string | null
   /**
@@ -29,6 +36,9 @@ export interface Location {
   /** Per-row attribution string (license obligation). */
   attribution: string
 }
+
+/** Guessing difficulty, from easiest (most locally famous) to hardest (obscure). */
+export type Difficulty = 'easy' | 'medium' | 'hard'
 
 export type LocationCategory =
   | 'attraction'

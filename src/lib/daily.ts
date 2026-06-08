@@ -23,9 +23,25 @@
  * instead. See docs/PLAN.md §"Daily selection integrity".
  */
 
-import type { Location, LocationCategory } from '../types'
+import type { Difficulty, Location, LocationCategory } from '../types'
 
 export const ROUNDS_PER_DAY = 5
+
+/**
+ * The difficulty shape of a daily game: two easy, two medium, one hard, in this
+ * order (gentle warm-up → hardest finisher). Engages only when EVERY location in
+ * the city's list carries a `difficulty`; otherwise we fall back to CATEGORY_PLAN.
+ * The proportion mirrors the bucket sizing (see docs/PLAN.md) so each difficulty
+ * recycles at a similar cadence. Within each slot we still prefer a fresh
+ * category (see fillByDifficulty) so days don't turn into five restaurants.
+ */
+export const DIFFICULTY_PLAN: Difficulty[] = [
+  'easy',
+  'easy',
+  'medium',
+  'medium',
+  'hard',
+]
 
 /**
  * The fixed shape of a daily game: one of each category, in this order.
@@ -133,8 +149,19 @@ export function selectDailyLocations(
     ;[pool[i], pool[j]] = [pool[j], pool[i]]
   }
 
-  // Fill each slot from its category, falling back to any remaining location so
-  // we always return a full set (e.g. a dataset with no cafés still works).
+  // Use the difficulty plan once a city is fully enriched; otherwise the legacy
+  // category plan. (Cities are enriched one at a time — see docs/DATA-SOURCING.md.)
+  return all.every((l) => l.difficulty != null)
+    ? fillByDifficulty(pool, count)
+    : fillByCategory(pool, count)
+}
+
+/**
+ * Fill each slot from its category (cafe → restaurant → bar → landmark →
+ * wildcard), falling back to any remaining location so we always return a full
+ * set (e.g. a dataset with no cafés still works).
+ */
+function fillByCategory(pool: Location[], count: number): Location[] {
   const plan = CATEGORY_PLAN.slice(0, count)
   const used = new Set<string>()
   const chosen: Location[] = []
@@ -143,11 +170,40 @@ export function selectDailyLocations(
       pool.find((l) => !used.has(l.id) && matchesSlot(slot, l)) ??
       pool.find((l) => !used.has(l.id))
     if (!pick) {
-      throw new Error(
-        `Could not fill ${count} rounds from ${all.length} locations.`,
-      )
+      throw new Error(`Could not fill ${count} rounds from ${pool.length}.`)
     }
     used.add(pick.id)
+    chosen.push(pick)
+  }
+  return chosen
+}
+
+/**
+ * Fill each slot from DIFFICULTY_PLAN (easy, easy, medium, medium, hard). Within
+ * a slot we "layer both" constraints: prefer a location of the slot's difficulty
+ * whose category hasn't appeared yet today, so the day stays varied. If a
+ * difficulty bucket runs short, fall back to any remaining location (still
+ * preferring a fresh category) so we always return a full set.
+ */
+function fillByDifficulty(pool: Location[], count: number): Location[] {
+  const plan = DIFFICULTY_PLAN.slice(0, count)
+  const used = new Set<string>()
+  const usedCategories = new Set<LocationCategory>()
+  const chosen: Location[] = []
+  for (const difficulty of plan) {
+    const ofDifficulty = pool.filter(
+      (l) => !used.has(l.id) && l.difficulty === difficulty,
+    )
+    const pick =
+      ofDifficulty.find((l) => !usedCategories.has(l.category)) ??
+      ofDifficulty[0] ??
+      pool.find((l) => !used.has(l.id) && !usedCategories.has(l.category)) ??
+      pool.find((l) => !used.has(l.id))
+    if (!pick) {
+      throw new Error(`Could not fill ${count} rounds from ${pool.length}.`)
+    }
+    used.add(pick.id)
+    usedCategories.add(pick.category)
     chosen.push(pick)
   }
   return chosen

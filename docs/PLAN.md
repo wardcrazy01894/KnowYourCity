@@ -121,11 +121,34 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
 - `mulberry32(seed)` → PRNG; Fisher–Yates shuffle of the **id-sorted** list.
   Same date + same list ⇒ identical picks in identical order, every browser.
   No `Math.random()`.
-- **Round structure** (`CATEGORY_PLAN`): the 5 rounds are filled by category in
-  order — **cafe → restaurant → bar → landmark → wildcard**, where *landmark* =
-  anything that isn't a cafe/restaurant/bar, and *wildcard* = any remaining. If a
-  bucket is empty, that slot falls back to any remaining location so a full set
-  is always returned.
+- **Round structure** — two plans, chosen automatically:
+  - **Difficulty plan** (`DIFFICULTY_PLAN`, default): when **every** location in
+    the city carries a `difficulty`, the 5 rounds run **easy → easy → medium →
+    medium → hard** (gentle warm-up, hardest finisher). Within each slot we *layer
+    both* constraints — prefer a location of that difficulty whose **category**
+    hasn't appeared yet today — so a day doesn't turn into five restaurants. If a
+    difficulty bucket runs short, the slot falls back to any remaining location
+    (still preferring a fresh category).
+  - **Category plan** (`CATEGORY_PLAN`, legacy fallback): for cities **not yet
+    enriched** with difficulty, the 5 rounds are filled by category in order —
+    **cafe → restaurant → bar → landmark → wildcard** (*landmark* = anything that
+    isn't a cafe/restaurant/bar; *wildcard* = any remaining). Empty buckets fall
+    back to any remaining location.
+  - Either way a full set of 5 is always returned. Cities are enriched one at a
+    time (St. Petersburg first); see §5.3b and `docs/DATA-SOURCING.md`.
+
+### 5.1b Difficulty (`difficulty: 'easy' | 'medium' | 'hard'`)
+Each location's difficulty is the **inverse of its local fame** — how many
+residents would instantly recognise it. Fame is scored 0–100 by a one-time
+**agentic web-research pass** (TripAdvisor "things to do"/"best of" presence,
+Google/Yelp review counts *relative to the city*, Wikipedia) and bucketed by
+**city-relative percentile** so every city has enough of each tier to fill the
+plan. We use a **narrow-easy split — top 20% easy / next 45% medium / bottom 35%
+hard** (St. Pete only has ~10 truly iconic spots, so a wider "easy" would label
+neighbourhood dives as easy; narrow-easy keeps "easy" closer to "everyone knows
+it" while still leaving ~76 easy spots). Fame is calibrated to **down-weight
+tourist/critic fame** (Michelin/James Beard/TripAdvisor rank, lore-only
+Wikipedia) and **up-weight raw local ubiquity** — see `docs/DATA-SOURCING.md`.
 
 ### 5.2 Daily selection integrity (the honest tradeoff)
 Selection is a pure function of `(dateKey, list)`. **If you edit the location
@@ -140,6 +163,14 @@ before a place *must* repeat, and repeats feel frequent well before that.
 **Launch target per city: ~200 locations** (so repeats are rare). Food & drink
 (restaurants/bars/cafés) is the bulk of each city's dataset — pulled inclusively
 by `fetch-food` — alongside notable landmarks from `fetch-pois`.
+
+### 5.3b Difficulty rollout (per city)
+Difficulty is added **one city at a time** (each needs its own fame pass). A city
+without it keeps the legacy category plan, so partial rollout is safe.
+**Status: St. Petersburg enriched; the other four pending.** Re-run a city's pass
+when its dataset changes materially, and any newly-added locations must be scored
+too (the percentile buckets are city-relative, so they shift when membership
+changes — same tradeoff as §5.2).
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
 Per-round score is on a **0–100 scale** (perfect day = **500**), linear:

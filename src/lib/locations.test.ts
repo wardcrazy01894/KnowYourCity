@@ -17,6 +17,7 @@ const DATASETS: Record<string, LocationsFile> = {
 }
 
 const FOOD = new Set(['cafe', 'restaurant', 'bar'])
+const DIFFICULTIES = new Set(['easy', 'medium', 'hard'])
 
 describe('city/dataset registry sync', () => {
   it('every city in cities.json has a bundled dataset (and vice versa)', () => {
@@ -54,18 +55,42 @@ for (const city of CITIES) {
       expect(data.attribution).toBeTruthy()
     })
 
-    it('can fill the cafe→restaurant→bar→landmark→wildcard plan across dates', () => {
+    const enriched = data.locations.some((l) => l.difficulty != null)
+
+    it('difficulty, when used, is present and valid on every location', () => {
+      if (!enriched) return // city not yet run through the fame pass
+      for (const l of data.locations) {
+        expect(
+          DIFFICULTIES.has(l.difficulty as string),
+          `${l.name} difficulty=${l.difficulty}`,
+        ).toBe(true)
+      }
+    })
+
+    it('fills a valid daily plan across dates', () => {
       for (const dateKey of ['2026-06-06', '2026-09-01', '2026-12-25']) {
         const picks = selectDailyLocations(
           data.locations,
           `${city.id}:${dateKey}`,
         )
         expect(picks).toHaveLength(5)
-        expect(picks[0].category).toBe('cafe')
-        expect(picks[1].category).toBe('restaurant')
-        expect(picks[2].category).toBe('bar')
-        expect(FOOD.has(picks[3].category)).toBe(false)
         expect(new Set(picks.map((p) => p.id)).size).toBe(5)
+        if (enriched) {
+          // Difficulty plan: two easy, two medium, one hard.
+          expect(picks.map((p) => p.difficulty)).toEqual([
+            'easy',
+            'easy',
+            'medium',
+            'medium',
+            'hard',
+          ])
+        } else {
+          // Legacy category plan: cafe → restaurant → bar → landmark → wildcard.
+          expect(picks[0].category).toBe('cafe')
+          expect(picks[1].category).toBe('restaurant')
+          expect(picks[2].category).toBe('bar')
+          expect(FOOD.has(picks[3].category)).toBe(false)
+        }
       }
     })
   })
