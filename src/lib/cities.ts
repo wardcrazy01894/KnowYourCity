@@ -16,8 +16,8 @@ export interface City {
   timeZone: string
   /** Map/play bounds [[south, west], [north, east]]. */
   bounds: [[number, number], [number, number]]
-  /** Rough dataset size target (used by the build script). */
-  target: number
+  /** Rough dataset size target (used by the build script). `null` = uncapped. */
+  target: number | null
 }
 
 export const CITIES: City[] = citiesData as unknown as City[]

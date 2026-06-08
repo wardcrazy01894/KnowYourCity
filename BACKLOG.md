@@ -4,23 +4,25 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Difficulty rollout — other 4 cities.** St. Pete SHIPPED (PR #40): every
-      location has an `easy`/`medium`/`hard` `difficulty` (inverse of local fame,
-      from a fame+status web-research pass), and the daily game runs **2 easy →
-      2 medium → 1 hard** (layering category variety). **Seattle, Chicago, Ann
-      Arbor & State College still use the legacy cafe→…→wildcard plan** until each
-      gets its own pass (~1.3M agent-tokens each; needs 1M-context subagent
-      credits enabled). Run them one at a time. See `docs/PLAN.md` §5.1b/§5.3b,
-      `docs/DATA-SOURCING.md` §4b, and the memory note `difficulty-rating-research`.
-- [ ] **Generalize difficulty enrichment.** The St. Pete pass was a one-off
-      (`scripts/apply-difficulty-stpete.mjs`, deliberately refuses to re-run).
-      Fold fame-scoring + status cleanup + city-relative percentile bucketing
-      (narrow-easy 20/45/35) into `build-city` so newly-added locations get scored
-      and re-bucketed automatically. (Buckets are city-relative, so adding rows
-      shifts them — same stability tradeoff as daily selection.) **Note:** the +19
-      parks/lakes added by `scripts/add-parks.mjs` (St. Pete, from player reports)
-      carry **hand-assigned** difficulty, not fame-derived — fold them into the
-      first generalized re-bucketing pass.
+- [ ] **Difficulty rollout — other 3 cities.** St. Pete (PR #40) and **State
+      College** SHIPPED: every location has an `easy`/`medium`/`hard` `difficulty`
+      (inverse of local fame, from a fame+status web-research pass), and the daily
+      game runs **2 easy → 2 medium → 1 hard** (layering category variety).
+      **Seattle, Chicago & Ann Arbor still use the legacy cafe→…→wildcard plan**
+      until each gets its own pass (needs 1M-context subagent credits enabled, OR a
+      standard-context session — see memory `subagents-need-standard-context`). Use
+      the **`add-or-update-city` skill** — it runs the whole flow. See
+      `docs/PLAN.md` §5.1b/§5.3b, `docs/DATA-SOURCING.md` §4b, and memory
+      `difficulty-rating-research`.
+- [x] **Generalize difficulty enrichment.** `scripts/apply-difficulty.mjs <city>`
+      is the generalized, re-runnable successor to the St. Pete one-off — status
+      cleanup (closed/junk/national-chains/renames) + de-dupe + city-relative
+      percentile bucketing (narrow-easy 20/45/35). Driven by the
+      `add-or-update-city` skill + `scripts/fame-workflow.template.md`. (Still
+      optional: fold it directly into `build-city` so a rebuild auto-enriches in one
+      step.) **Note:** the +19 St. Pete parks/lakes from `scripts/add-parks.mjs`
+      carry hand-assigned difficulty — fold them into St. Pete's next fame
+      re-bucketing pass.
 - [x] **St. Pete dataset** — inclusive food/drink via `fetch-food` + curated
       landmarks. Peaked at ~516; the fame+status pass (PR #40) then **trimmed it
       to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1
@@ -97,6 +99,12 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] Optional backend for shared online leaderboards.
 
 ## Done
+- [x] **State College enriched + uncapped + parks fix** — removed the size cap
+      (`target: null` → `composeLocations` keeps everything in-bounds), re-fetched
+      (80 → 282), ran the fame pass, enriched to **234** (47 easy / 105 medium / 82
+      hard). Also fixed park under-fetching in `fetch-pois` (named green spaces no
+      longer need a wiki tag) → **2 → 46 parks**. Tooling: `apply-difficulty.mjs`,
+      `add-or-update-city` skill, `build-city.test.mjs`, `fetch-pois.test.mjs`.
 - [x] **Difficulty system (St. Pete)** — per-location easy/medium/hard from a
       fame+status web-research pass, calibrated to a human local's blind ratings;
       daily plan switched to 2 easy → 2 medium → 1 hard; St. Pete cleaned 516→382.
