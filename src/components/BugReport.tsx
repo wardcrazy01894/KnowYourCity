@@ -18,11 +18,14 @@ type Status = 'idle' | 'sending' | 'done' | 'error'
 const TURNSTILE_KEY = import.meta.env.VITE_TURNSTILE_SITEKEY
 
 interface TurnstileApi {
+  render: (el: HTMLElement, opts: { sitekey: string }) => string
+  remove: (id: string) => void
+  reset: (id?: string) => void
   getResponse: (id?: string) => string | undefined
 }
-function getTurnstileToken(): string | undefined {
+function getTurnstileToken(widgetId?: string): string | undefined {
   const w = window as unknown as { turnstile?: TurnstileApi }
-  return w.turnstile?.getResponse()
+  return w.turnstile?.getResponse(widgetId)
 }
 
 export function BugReport({
@@ -40,23 +43,71 @@ export function BugReport({
   const [status, setStatus] = useState<Status>('idle')
   const [resultUrl, setResultUrl] = useState<string | null>(null)
   const widgetRef = useRef<HTMLDivElement | null>(null)
+  const widgetIdRef = useRef<string | undefined>(undefined)
 
-  // Load the Turnstile widget script once, when a site key is configured.
+  // Render the Turnstile widget explicitly each time the form mounts, and
+  // remove it on unmount. Turnstile's implicit mode only auto-renders
+  // `.cf-turnstile` elements that exist when the script first loads; in this
+  // SPA the form is unmounted on close and a fresh container is mounted on
+  // reopen, so without an explicit render the second open shows no widget
+  // until a full page refresh. We load the API in `render=explicit` mode so
+  // nothing auto-renders and we fully control the lifecycle.
   useEffect(() => {
     if (!TURNSTILE_KEY) return
-    const id = 'cf-turnstile-script'
-    if (document.getElementById(id)) return
-    const s = document.createElement('script')
-    s.id = id
-    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
-    s.async = true
-    s.defer = true
-    document.head.appendChild(s)
+    const sitekey: string = TURNSTILE_KEY
+    let cancelled = false
+    let pollTimer: ReturnType<typeof setInterval> | undefined
+
+    const scriptId = 'cf-turnstile-script'
+    if (!document.getElementById(scriptId)) {
+      const s = document.createElement('script')
+      s.id = scriptId
+      s.src =
+        'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+      s.async = true
+      s.defer = true
+      document.head.appendChild(s)
+    }
+
+    // Render once the API is available and the container is in the DOM.
+    function tryRender(): boolean {
+      if (cancelled) return true
+      const w = window as unknown as { turnstile?: TurnstileApi }
+      if (!w.turnstile || !widgetRef.current) return false
+      if (widgetIdRef.current === undefined) {
+        widgetIdRef.current = w.turnstile.render(widgetRef.current, {
+          sitekey,
+        })
+      }
+      return true
+    }
+
+    if (!tryRender()) {
+      pollTimer = setInterval(() => {
+        if (tryRender() && pollTimer) clearInterval(pollTimer)
+      }, 150)
+    }
+
+    return () => {
+      cancelled = true
+      if (pollTimer) clearInterval(pollTimer)
+      const w = window as unknown as { turnstile?: TurnstileApi }
+      if (widgetIdRef.current !== undefined) {
+        try {
+          w.turnstile?.remove(widgetIdRef.current)
+        } catch {
+          // Widget may already be gone; nothing to clean up.
+        }
+        widgetIdRef.current = undefined
+      }
+    }
   }, [])
 
   async function send() {
     if (!message.trim() || status === 'sending') return
-    const turnstileToken = TURNSTILE_KEY ? getTurnstileToken() : undefined
+    const turnstileToken = TURNSTILE_KEY
+      ? getTurnstileToken(widgetIdRef.current)
+      : undefined
     if (TURNSTILE_KEY && !turnstileToken) {
       setStatus('error')
       return
@@ -153,14 +204,7 @@ export function BugReport({
             Please don't include personal or sensitive info.
           </p>
 
-          {TURNSTILE_KEY && (
-            <div
-              ref={widgetRef}
-              className="cf-turnstile"
-              data-sitekey={TURNSTILE_KEY}
-              style={{ marginTop: 8 }}
-            />
-          )}
+          {TURNSTILE_KEY && <div ref={widgetRef} style={{ marginTop: 8 }} />}
 
           {status === 'error' && (
             <p style={{ color: '#e74c3c' }}>
