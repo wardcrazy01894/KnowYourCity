@@ -4,16 +4,32 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [x] **St. Pete dataset** — now ~516 (inclusive food/drink via `fetch-food` +
-      curated landmarks). Target comfortably met. (Trimmed from ~609 when the
-      map bounds were tightened back to a close-in zoom; far-beach outliers that
-      fell outside the play box were dropped — see *Widen the bbox?* below.)
+- [ ] **Difficulty rollout — other 4 cities.** St. Pete SHIPPED (PR #40): every
+      location has an `easy`/`medium`/`hard` `difficulty` (inverse of local fame,
+      from a fame+status web-research pass), and the daily game runs **2 easy →
+      2 medium → 1 hard** (layering category variety). **Seattle, Chicago, Ann
+      Arbor & State College still use the legacy cafe→…→wildcard plan** until each
+      gets its own pass (~1.3M agent-tokens each; needs 1M-context subagent
+      credits enabled). Run them one at a time. See `docs/PLAN.md` §5.1b/§5.3b,
+      `docs/DATA-SOURCING.md` §4b, and the memory note `difficulty-rating-research`.
+- [ ] **Generalize difficulty enrichment.** The St. Pete pass was a one-off
+      (`scripts/apply-difficulty-stpete.mjs`, deliberately refuses to re-run).
+      Fold fame-scoring + status cleanup + city-relative percentile bucketing
+      (narrow-easy 20/45/35) into `build-city` so newly-added locations get scored
+      and re-bucketed automatically. (Buckets are city-relative, so adding rows
+      shifts them — same stability tradeoff as daily selection.)
+- [x] **St. Pete dataset** — inclusive food/drink via `fetch-food` + curated
+      landmarks. Peaked at ~516; the fame+status pass (PR #40) then **trimmed it
+      to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1
+      renamed-to-closed; updated 15 renames; merged 1 dupe).
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
       Yelp/Google integration (ToS forbids storing their data long-term); the
       license-clean alternative is the Foursquare OS Places open dataset.
 - [ ] **Closed-spot cleanup** — inclusive OSM pulls can include a few stale
-      entries; maintain a per-city ban list / extend `CLOSED`.
+      entries; maintain a per-city ban list / extend `CLOSED`. (St. Pete swept by
+      the fame+status pass in PR #40 — 133 closed/junk removed; the other cities
+      get the same sweep as part of their difficulty rollout above.)
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.
@@ -41,9 +57,12 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 ## Later / nice-to-have
 - [ ] **Custom domain** — Alex wants one eventually (name TBD; maybe a `.gg`).
       Add a `CNAME` and set Vite `base: '/'`.
-- [ ] **Difficulty tiers (named, not "easy/medium/hard")** — let the player pick
-      how deep-cut the day's places are, from instantly-recognizable to
-      only-a-regular-would-know. Proposed ladder (creative names, tune later):
+- [ ] **Difficulty tiers (named, not "easy/medium/hard")** — the base
+      easy/medium/hard difficulty SHIPPED (PR #40) and drives the daily ramp; this
+      item is now the *optional* polish of renaming/expanding those into a
+      player-pickable ladder. Let the player pick how deep-cut the day's places
+      are, from instantly-recognizable to only-a-regular-would-know. Proposed
+      ladder (creative names, tune later):
       **Postcard** (marquee landmarks everyone knows — Don CeSar, Tropicana
       Field, Sunken Gardens) → **Local** (well-known spots + notable
       restaurants/bars) → **Insider** (neighborhood favorites) → **Deep Cut /
@@ -75,6 +94,10 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] Optional backend for shared online leaderboards.
 
 ## Done
+- [x] **Difficulty system (St. Pete)** — per-location easy/medium/hard from a
+      fame+status web-research pass, calibrated to a human local's blind ratings;
+      daily plan switched to 2 easy → 2 medium → 1 hard; St. Pete cleaned 516→382.
+      PR #40. (Rollout to other cities tracked under *In progress / next*.)
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
 - [x] Deterministic daily selection (midnight-Eastern, DST-aware) + 0–100 linear
       scoring, with unit tests.
