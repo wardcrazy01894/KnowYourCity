@@ -239,7 +239,8 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities: St. Pete (~401, enriched), State College (~234, **uncapped +
-enriched**), Ann Arbor (~100), Seattle (~200), Chicago (~200).
+enriched**), Ann Arbor (~340, **uncapped + enriched**), Seattle (~200),
+Chicago (~200).
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
