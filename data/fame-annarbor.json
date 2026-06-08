@@ -1,0 +1,4022 @@
+[
+  {
+    "id": "42e-plaza",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no evidence of a real public park or plaza by this name in Ann Arbor"
+  },
+  {
+    "id": "19-drips",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 79,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "confirmed closed by late 2025; space is now Rotisserie King"
+  },
+  {
+    "id": "a-wagyu-bbq",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Korean BBQ on Plymouth Rd specializing in A5 Wagyu"
+  },
+  {
+    "id": "afternoon-delight",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 402,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved local breakfast/lunch cafe on E Liberty, open since 1978"
+  },
+  {
+    "id": "ahmos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open at Stone School Rd; downtown E Huron location closed"
+  },
+  {
+    "id": "alley-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 101,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open; 130+ year old downtown institution on W Liberty St"
+  },
+  {
+    "id": "allmendinger-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open 8-acre city park southwest of downtown, renovated 2023"
+  },
+  {
+    "id": "ama-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 165,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open family-owned breakfast/lunch spot on S State St since 2014"
+  },
+  {
+    "id": "amadeus",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 187,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Central European restaurant on E Washington with live classical music"
+  },
+  {
+    "id": "amers-delicatessen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 211,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open 30+ year UMich staple on State St; Church St location closed"
+  },
+  {
+    "id": "ann-arbor-golf-and-outing-club",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open private 9-hole golf club across from Michigan Stadium since 1899"
+  },
+  {
+    "id": "ann-arbor-hands-on-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 112,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open interactive science museum in historic 1882 firehouse on E Ann St"
+  },
+  {
+    "id": "ann-arbor-michigan-global-position",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 6,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no evidence of a named public landmark by this exact title in Ann Arbor"
+  },
+  {
+    "id": "anthonys-gourmet-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 176,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open local Chicago-style deep dish pizza chain since 1988, two Ann Arbor locations"
+  },
+  {
+    "id": "anthonys-pizza",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no evidence of a distinct 'Anthony's Pizza' separate from Anthony's Gourmet Pizza in Ann Arbor"
+  },
+  {
+    "id": "argo-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open 22-acre city park along Huron River with canoe livery and Argo Cascades"
+  },
+  {
+    "id": "argus-farm-stop-packard-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 33,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open local-food cafe/market on Packard St; Wikipedia article covers Argus Farm Stop brand"
+  },
+  {
+    "id": "argus-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 25,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open free museum dedicated to Argus camera company history on W William St"
+  },
+  {
+    "id": "aroma-indian-cuisine",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 109,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "confirmed closed circa 2024 per Yelp and Ann Arbor Observer"
+  },
+  {
+    "id": "ashleys-ann-arbor",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 507,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1983; Michigan's oldest craft beer bar and downtown institution on S State St"
+  },
+  {
+    "id": "asian-legend",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 214,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Taiwanese/Szechuan restaurant on E William St, active reviews through 2026"
+  },
+  {
+    "id": "aventura",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1011,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular Spanish tapas bar on E Washington St, open since 2013, updated June 2026"
+  },
+  {
+    "id": "baba-dari",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 160,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "successor to longtime Ali Baba's on Packard St, active reviews through April 2026"
+  },
+  {
+    "id": "backroom-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 54,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "late-night pizza-by-the-slice spot on Church St connected to The Brown Jug, active December 2025"
+  },
+  {
+    "id": "bader-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 1.5-acre neighborhood park off Provincial Drive, operates as city park"
+  },
+  {
+    "id": "bandemer-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "38-acre Huron River park with disc golf and trails, B2B tunnel extension opened November 2025"
+  },
+  {
+    "id": "bandemer-park-disc-golf",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 1227,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "free 9-hole disc golf course within Bandemer Park, constructed 2007, still active"
+  },
+  {
+    "id": "bao-boys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 123,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Asian fusion spot at York Yard on Packard St, open Wed-Sat as of mid-2025"
+  },
+  {
+    "id": "bao-space",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 67,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "handmade Asian bao bun shop on N Main St, active reviews November 2025"
+  },
+  {
+    "id": "barbour-gymnasium",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic U-M women's gym demolished in 1977 to make way for Chemistry Building expansion"
+  },
+  {
+    "id": "barton-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "98-acre Huron River park; most trails closed until June 2027 due to construction but park remains open"
+  },
+  {
+    "id": "bearclaw-coffee-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "drive-thru coffee and mobile catering on Washtenaw Ave, active reviews June 2025"
+  },
+  {
+    "id": "beckley-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "3-acre north-side neighborhood park on Argo Drive with petanque court and Underground Railroad history"
+  },
+  {
+    "id": "belize-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "half-acre Water Hill neighborhood park dedicated in 1975, named for Ann Arbor's sister city"
+  },
+  {
+    "id": "bennys-family-dining",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 250,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "longtime breakfast/lunch spot on S Industrial Hwy, open daily 7am-3pm since 2000"
+  },
+  {
+    "id": "berts-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "U-M M|Dining cafe inside Shapiro Library (UGLi) on South University, open to public"
+  },
+  {
+    "id": "biggby-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "Michigan-founded coffee chain with 450+ locations in 13 states; has Wikipedia article"
+  },
+  {
+    "id": "bills-beer-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 500,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved seasonal outdoor beer garden on S Ashley St, won Best Bar 2025, open mid-March to mid-November"
+  },
+  {
+    "id": "bird-hills-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "largest city natural area at 146 acres, forested hilly trails west of downtown along Huron River"
+  },
+  {
+    "id": "black-diesel-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 180,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "third-wave pour-over coffee bar on E Stadium Blvd, active reviews October 2025"
+  },
+  {
+    "id": "black-pond-woods-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 144,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active city-owned nature area with AllTrails listing and a2gov page"
+  },
+  {
+    "id": "blazin-coops-nashville-hot-chicken",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "operating at 1800 Plymouth Rd; started as food truck, now brick-and-mortar"
+  },
+  {
+    "id": "blm-mead-cider",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown taproom at 100 S 4th Ave actively operating with seasonal on-tap menu"
+  },
+  {
+    "id": "blue-apple",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UM dining café inside Bursley Hall on North Campus, limited to dorm-area students"
+  },
+  {
+    "id": "blue-leprechaun",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Irish sports pub at 1220 S University Ave, established 2008, near Big House"
+  },
+  {
+    "id": "blue-nile-ethiopian",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 333,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running Ethiopian institution since 1984 at 221 E Washington St"
+  },
+  {
+    "id": "blue-tractor",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 650,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "closed ~May 2024 for remodel and concept change; Yelp marked closed as of December 2025"
+  },
+  {
+    "id": "bluffs-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 105,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active city-owned nature area along North Main St, popular hiking destination"
+  },
+  {
+    "id": "bodega-bros",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 45,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "24/7 NYC-style deli at 715 N University Ave, relatively new"
+  },
+  {
+    "id": "bonchon",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 35,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "permanently closed April 27, 2026 after 15 months due to franchisee-franchisor dispute"
+  },
+  {
+    "id": "broadway-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 156,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Korean and hoagie staple since 1986 at 1139 Broadway St"
+  },
+  {
+    "id": "broadway-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "5-acre city park along Huron River, primarily serves as a fenced dog park"
+  },
+  {
+    "id": "broadway-park-west",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "new 7-acre riverfront park opened September 2025 on remediated former industrial land"
+  },
+  {
+    "id": "bromley-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2.5-acre neighborhood park in northeast Ann Arbor, originally called North Campus Heights Park"
+  },
+  {
+    "id": "brueggers-bagels",
+    "status": "renamed",
+    "currentName": "Einstein Bros. Bagels",
+    "fameScore": 35,
+    "reviewCount": 130,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "S Main location converting to Einstein Bros. Bagels in 2026; N University Ave location closing permanently"
+  },
+  {
+    "id": "btb-burrito",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 235,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Packard St location closed Feb 2026 but S University Ave location remains open"
+  },
+  {
+    "id": "burger-one",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 82,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "halal burger restaurant at 1771 Plymouth Rd, local Michigan chain"
+  },
+  {
+    "id": "burns-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 120,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "well-known 15-acre neighborhood park purchased by city in 1910, anchors its own neighborhood"
+  },
+  {
+    "id": "burr-oak-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 3.3-acre neighborhood park on west side of Ann Arbor"
+  },
+  {
+    "id": "bursley-dining-hall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 60,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "only dining hall on UM North Campus inside Bursley Hall; Wikipedia article covers the building"
+  },
+  {
+    "id": "cafe-felix",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 335,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "closed after 20+ years on Main St; founder moved to SC around 2017, sold and confirmed closed per Yelp"
+  },
+  {
+    "id": "cafe-verde",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "cafe inside People's Food Co-op in Kerrytown; still operating per 2026 listings"
+  },
+  {
+    "id": "cafe-zola",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 1012,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running downtown cafe/bistro at 112 W Washington; active as of December 2025"
+  },
+  {
+    "id": "cantina",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 107,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "student bar and taqueria at 1140 S University; active per March 2026 Yelp update"
+  },
+  {
+    "id": "cardamom",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 594,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Indian restaurant on Plymouth Rd near North Campus; operating since 2013, Yelp updated June 2026"
+  },
+  {
+    "id": "casa-dominicks",
+    "status": "open",
+    "currentName": "Dominick's",
+    "fameScore": 70,
+    "reviewCount": 248,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved outdoor patio Italian spot since 1960 at 812 Monroe; often listed simply as Dominick's"
+  },
+  {
+    "id": "caseys-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 247,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood bar and grill on Depot St near train station; Yelp updated May 2026"
+  },
+  {
+    "id": "cedar-bend-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "19-acre city nature area along Huron River; listed on a2gov.org and AllTrails"
+  },
+  {
+    "id": "chans-garden",
+    "status": "open",
+    "currentName": "Chan Garden",
+    "fameScore": 30,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Chinese restaurant on W Liberty; branded as Chan Garden with active website"
+  },
+  {
+    "id": "chapala-mexican-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 299,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "won Best Mexican Food in Michigan Daily Best of Ann Arbor 2025; downtown on N Main St"
+  },
+  {
+    "id": "chelas-restaurant-taqueria",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 483,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular Mexican taqueria on S Maple Rd; Yelp updated June 2026, two locations"
+  },
+  {
+    "id": "chicago-reds",
+    "status": "open",
+    "currentName": "Chicago Red's Windy City Hot Dogs",
+    "fameScore": 28,
+    "reviewCount": 19,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Vienna Beef hot dog counter inside Amer's Deli on S State St; Yelp updated February 2026"
+  },
+  {
+    "id": "churchill-downs-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.18-acre neighborhood park in SW Ann Arbor off Steeplechase Dr; city-maintained"
+  },
+  {
+    "id": "cloverdale-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.75-acre neighborhood park on N side of Ann Arbor near Pontiac Trail; city-maintained"
+  },
+  {
+    "id": "comet-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 305,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved independent coffee shop in historic Nickels Arcade; Yelp updated December 2025"
+  },
+  {
+    "id": "community-food-forest-at-leslie-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "public food forest project in Leslie Park started 2020; active community programming"
+  },
+  {
+    "id": "community-gardens",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "generic name matching multiple Project Grow garden sites citywide; no single distinct public place"
+  },
+  {
+    "id": "concessions",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 3,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no identifiable Ann Arbor restaurant or venue by this name; appears to be a generic category term"
+  },
+  {
+    "id": "condado-tacos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national chain (30th location) at 401 E Liberty; opened March 2023, currently operating"
+  },
+  {
+    "id": "connor-oneils",
+    "status": "open",
+    "currentName": "Conor O'Neill's",
+    "fameScore": 60,
+    "reviewCount": 315,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "authentic Irish pub on S Main St since the 1990s; correct spelling is Conor (not Connor), Yelp updated May 2026"
+  },
+  {
+    "id": "cosa-sabrosa",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 158,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Mexican restaurant operating inside the Zal Gaz Grotto Club on W Stadium Blvd"
+  },
+  {
+    "id": "cottage-inn-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 400,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor-founded regional Michigan/Ohio/Indiana pizza chain with multiple Ann Arbor locations; original downtown location closed 2023"
+  },
+  {
+    "id": "crary-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 6,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "tiny 1.3-acre city park donated in 2007, minimally developed with a bench and grassy field"
+  },
+  {
+    "id": "crazy-wisdom-tearoom",
+    "status": "renamed",
+    "currentName": "Upstairs at Crazy Wisdom",
+    "fameScore": 55,
+    "reviewCount": 180,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "tearoom did not reopen post-pandemic; space rebranded as Upstairs at Crazy Wisdom events/music venue; bookstore remains open"
+  },
+  {
+    "id": "creal-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.5-acre neighborhood park with playground, basketball court, and informal dog area"
+  },
+  {
+    "id": "crisler-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 82,
+    "reviewCount": 1200,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "University of Michigan indoor arena built 1967, home of UM basketball and gymnastics, capacity 12,721"
+  },
+  {
+    "id": "cupsnchai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 32,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "South Asian cafe serving karak chai and street food, small local operation with Canton and Ann Arbor locations"
+  },
+  {
+    "id": "curious-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "specialty micro-roaster cafe at 100 S 4th Ave with limited hours, focused on coffee education and high-end brewing"
+  },
+  {
+    "id": "curry-on",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 269,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "fast-casual Indian restaurant on Plymouth Rd open since 2012, weekday lunch hours only"
+  },
+  {
+    "id": "deborah-gimbel-memorial-overlook",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "named overlook with benches inside Nichols Arboretum, recognized as a Pokémon Go landmark but otherwise obscure by name"
+  },
+  {
+    "id": "depot-plaza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor's smallest park property, a small corner green space at Main St and Depot St acquired in 1967"
+  },
+  {
+    "id": "dessous",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 98,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "subterranean Indian-French fusion restaurant on S Main St, marked closed on Yelp as of 2026"
+  },
+  {
+    "id": "detroit-observatory",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 250,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "historic 1854 observatory on UM campus, on National Register of Historic Places, free admission, open select days"
+  },
+  {
+    "id": "detroit-street-filling-station",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 370,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "plant-based vegan restaurant in Kerrytown operating since 2017 in a converted 1925 filling station"
+  },
+  {
+    "id": "devonshire-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 3,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.16-acre connector path between Devonshire Road and Geddes Avenue, adjacent to Gallup Park"
+  },
+  {
+    "id": "dicken-elementary-plant-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "school garden at Dicken Elementary used as an outdoor classroom; P.L.A.N.T. stands for Planting, Learning, and Appreciating Nature's Treasures"
+  },
+  {
+    "id": "dicken-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 7,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "half-acre undeveloped mowed grass field on Maple Rd, named after Ann Arbor educator Carrie L. Dicken"
+  },
+  {
+    "id": "dicken-woods-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "10-acre city natural area with loop trail acquired in 2004 after community effort to prevent development, near Dicken Elementary"
+  },
+  {
+    "id": "dimos-deli-donuts",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 275,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved local deli and donut shop on W Stadium Blvd, open Wed-Sat mornings, rated 4.8 stars"
+  },
+  {
+    "id": "ding-tea",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 55,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Taiwanese bubble tea international franchise at 607 E William, marked closed on Yelp as of February 2026"
+  },
+  {
+    "id": "don-juan-mexican-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 2013 at W Stadium Blvd strip mall, steady local following"
+  },
+  {
+    "id": "douglas-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 2.5-acre city park near Washtenaw and Baldwin, low profile"
+  },
+  {
+    "id": "dr-harold-j-lockett-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "renamed from Winchell Park in December 2021; official city park on Winchell Ave"
+  },
+  {
+    "id": "earthen-jar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 270,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running vegetarian Indian buffet-by-pound on S 5th Ave, expanding to Ypsilanti"
+  },
+  {
+    "id": "east-quad-dining-hall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active UM campus dining hall following $116M renovation of East Quad"
+  },
+  {
+    "id": "eat-thai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "new Thai restaurant opened late 2024 on S Main St, still building local recognition"
+  },
+  {
+    "id": "eberwhite-woods",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 180,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved 29-acre city forest owned by Ann Arbor Public Schools, open to public"
+  },
+  {
+    "id": "echelon-kitchen-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 190,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "opened Feb 2025 at 200 S Main, 2026 James Beard semifinalist and Hour Detroit Best New Restaurant"
+  },
+  {
+    "id": "eda-u-gerstacker-grove",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "4-acre UM North Campus outdoor gathering space completed 2016, known mainly to campus community"
+  },
+  {
+    "id": "edible-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small community demonstration garden at Greenview Nature Area, very niche"
+  },
+  {
+    "id": "eisenhower-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "10-acre greenway adjacent to I-94 in southwest Ann Arbor, low public profile"
+  },
+  {
+    "id": "el-harissa-market-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 220,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "North African-Mediterranean deli and gelateria on N Maple Rd since 2013"
+  },
+  {
+    "id": "el-limon",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Mexican-Lebanese fusion on Plymouth Rd, small but actively reviewed as of 2026"
+  },
+  {
+    "id": "espresso-royale",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed all locations in 2020 due to COVID; was a 33-year Ann Arbor institution"
+  },
+  {
+    "id": "eula-d-marcks-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small courtyard garden on north side of UM Michigan League, named for 1961 benefactor"
+  },
+  {
+    "id": "evergreen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 550,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running Chinese restaurant since 1992 on Plymouth Rd, flagship of Evergreen Restaurant Group"
+  },
+  {
+    "id": "evergreen-downtown",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newer fast-casual downtown outpost of Evergreen at 208 W Liberty St, opened ~2021"
+  },
+  {
+    "id": "fair-glen-commons-private-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 4,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no meaningful public web presence; likely a private HOA greenspace with no public access"
+  },
+  {
+    "id": "felch-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic UM campus green near Rackham/Power Center, now often called Raoul Wallenberg Plaza area"
+  },
+  {
+    "id": "fireside-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UM campus cafe in Pierpont Commons open weekday lunches, known mainly to UM community"
+  },
+  {
+    "id": "fireside-roast",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no web presence found under 'Fireside Roast'; closest match is the UMich Fireside Café dining hall at Pierpont Commons, but that is not called 'Fireside Roast'"
+  },
+  {
+    "id": "first-bite",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 210,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open at 108 S Main St since 2017; healthy breakfast and lunch spot with local following"
+  },
+  {
+    "id": "fleetwood-diner",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 448,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "iconic 24-hour diner open since 1949 at 300 S Ashley St; longtime local institution"
+  },
+  {
+    "id": "forsythe-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 0.33-acre city park at Packard and Arch with basketball half-court; low neighborhood profile"
+  },
+  {
+    "id": "franks-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 125,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "classic Greek-diner-style breakfast spot at 334 Maynard St open since 1969; beloved longtime local gem"
+  },
+  {
+    "id": "frasers-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 147,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood sports bar and pub at 2045 Packard open since 1962; solid local institution near Michigan Stadium"
+  },
+  {
+    "id": "frisinger-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "3.6-acre neighborhood park at Stadium Blvd and Woodbury; functional but low citywide recognition"
+  },
+  {
+    "id": "frita-batidos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 2521,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "celebrated Cuban street food spot at 117 W Washington since 2010; perennial 'best burger' winner and major local favorite"
+  },
+  {
+    "id": "fritz-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 16,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "5-acre wooded neighborhood park on Pauline with oak-hickory woodland; known mainly to nearby residents"
+  },
+  {
+    "id": "fuller-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "60-acre recreation area at 1519 Fuller Rd with outdoor pool and athletic fields; well-known for summer pool use"
+  },
+  {
+    "id": "furstenberg-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "38-acre nature area at 2626 Fuller Rd adjacent to Gallup Park with boardwalk trails; recognized by outdoor regulars"
+  },
+  {
+    "id": "garden-homes-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "11-acre northwest neighborhood park with disc golf and trails; limited citywide name recognition"
+  },
+  {
+    "id": "george-washington-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small triangular park at Washtenaw and Hill famous for 'The Rock' painted landmark; well-known to UM community"
+  },
+  {
+    "id": "get-away-n-play-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UMich C.S. Mott Children's Hospital dining facility; essentially unknown outside the hospital campus"
+  },
+  {
+    "id": "ginger-deli",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Vietnamese deli at 203 E Liberty opened 2021 with a second North Campus location; growing but still relatively new"
+  },
+  {
+    "id": "good-time-charleys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 226,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UM-adjacent bar and grill at 1140 S University Ave open since 1979; beloved campus-area institution known for fishbowls and Styx"
+  },
+  {
+    "id": "gourmet-garden",
+    "status": "renamed",
+    "currentName": "Hot Pot Chen",
+    "fameScore": 20,
+    "reviewCount": 75,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "renamed to Hot Pot Chen around 2017 under new ownership; still operating at 2255 W Stadium Blvd"
+  },
+  {
+    "id": "grand-grounds",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Aramark-operated coffee bar in C.S. Mott Children's Hospital lobby; serves Zingerman's coffee but known only to hospital visitors"
+  },
+  {
+    "id": "grange-kitchen-and-bar",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 329,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "closed after 12 years in business; Yelp confirmed closed as of May 2026"
+  },
+  {
+    "id": "gratzi",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 399,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed; Italian restaurant at 326 S Main St operated from 1987 until recently closing indefinitely"
+  },
+  {
+    "id": "graydon-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small 1.12-acre neighborhood park, renamed from Rose White Park in 2020; open and maintained by city"
+  },
+  {
+    "id": "greenview-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Active 20-acre nature area managed jointly by Ann Arbor Public Schools and City of Ann Arbor"
+  },
+  {
+    "id": "grizzly-peak-brewing-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 666,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Long-running Ann Arbor brewpub open since 1995 at 120 W Washington St, still active in 2026"
+  },
+  {
+    "id": "haifa-falafel",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 455,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Popular made-to-order Mediterranean/falafel spot on Washtenaw Ave, updated on Yelp May 2026"
+  },
+  {
+    "id": "hannah-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small wooded ravine nature area; city-owned and accessible with trails"
+  },
+  {
+    "id": "hanover-square",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor's oldest half-acre park at Packard and S Division; open public space with benches and sculpture"
+  },
+  {
+    "id": "hansen-nature-area",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 54,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "City announced rename in March 2026 due to racially restrictive covenant; new name not yet finalized as of June 2026"
+  },
+  {
+    "id": "happy-wok",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 122,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Chinese takeout restaurant on W Stadium Blvd, Yelp updated April 2026, actively operating"
+  },
+  {
+    "id": "hazel-coffee-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 17,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "New brick-and-mortar cafe opened fall 2025 on Packard St after five years as mobile catering operation"
+  },
+  {
+    "id": "hearsay-brewery",
+    "status": "open",
+    "currentName": "hear.say brewing",
+    "fameScore": 25,
+    "reviewCount": 13,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Microbrewery and improv theater on W Liberty St; formally styled hear.say brewing, Yelp updated May 2026"
+  },
+  {
+    "id": "heathdale-collection",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Named valley and plant collection within Nichols Arboretum featuring Appalachian ericaceous shrubs; open and maintained by UM"
+  },
+  {
+    "id": "heidelberg-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 165,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Longtime Ann Arbor German restaurant open since 1961 at 215 N Main St, Yelp updated March 2026"
+  },
+  {
+    "id": "hello-faz-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 137,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Halal pizza shop on W Liberty St with roots back to 1972 Ypsilanti location; Yelp updated May 2026"
+  },
+  {
+    "id": "hibachi-san",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 14,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Poke bowl and Japanese food counter in Pierpont Commons (UM North Campus), low public review count"
+  },
+  {
+    "id": "hilltop-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "7.7-acre wooded nature area on west side, accessible via Kuebler Langford Nature Area; city-owned since 2006"
+  },
+  {
+    "id": "hola-seoul",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 160,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Korean-Mexican fusion restaurant on N University Ave, Yelp updated May 2026, active"
+  },
+  {
+    "id": "holidays-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 124,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Family-owned comfort food diner on W Stadium Blvd since 1997; Yelp updated April 2026"
+  },
+  {
+    "id": "hollway-field",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Pioneer High School athletic field and home to AFC Ann Arbor; historically named for coach Lou Hollway"
+  },
+  {
+    "id": "hollywood-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small 3-acre wooded neighborhood park in northwest Ann Arbor, city-owned since 1961"
+  },
+  {
+    "id": "holocaust-memorial",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Leonard Baskin bronze sculpture dedicated 1994 at Raoul Wallenberg Plaza on UM campus; first such memorial at a US public university"
+  },
+  {
+    "id": "homes-brewery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 360,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open craft brewery and taproom on Jackson Ave, well-reviewed local favorite"
+  },
+  {
+    "id": "hopcat",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 538,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "regional Michigan-founded bar/restaurant chain; Ann Arbor student staple on Maynard St"
+  },
+  {
+    "id": "hungry-howies",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 150,
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "open national pizza franchise with 550+ US locations, Michigan-founded chain"
+  },
+  {
+    "id": "hunt-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open 7-acre city neighborhood park in Water Hill with playground and sports courts"
+  },
+  {
+    "id": "huron-highlands-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open small 1.67-acre neighborhood park off Skydale Road on city's north side"
+  },
+  {
+    "id": "huron-parkway-right-of-way",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open linear greenway trail corridor used for walking, running, and cycling"
+  },
+  {
+    "id": "hyperion-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 64,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Ypsilanti-based local roaster with Ann Arbor cafe at 111 W Liberty since 2021"
+  },
+  {
+    "id": "iggys-eggies",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 31,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open breakfast and brunch spot at 611 E Liberty, relatively new with modest local profile"
+  },
+  {
+    "id": "ingalls-mall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open ceremonial UM central campus open space between Rackham and Burton Tower, no own Wikipedia article"
+  },
+  {
+    "id": "iroquois-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open small city park at 1404 Iroquois Ave formally named in 2004, minimal public profile"
+  },
+  {
+    "id": "isalita",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 637,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "closed December 23 2024 after 12 years; space converting to Mani Next Door"
+  },
+  {
+    "id": "island-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open 5.6-acre Huron River island park with historic 1905 Greek Revival shelter"
+  },
+  {
+    "id": "izzys-hoagie-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 109,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open long-running local sub shop at 1924 W Stadium Blvd"
+  },
+  {
+    "id": "jamaican-jerk-pit",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 248,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Caribbean restaurant at 314 S Thayer run by native Jamaican Robert Campbell"
+  },
+  {
+    "id": "jasmine",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 21,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open bubble tea and eatery at 340 Maynard St, relatively new with small review footprint"
+  },
+  {
+    "id": "jerusalem-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 337,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open beloved Middle Eastern family restaurant in downtown since 1987"
+  },
+  {
+    "id": "jets-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "open national pizza franchise with 425+ locations in 22 states, Michigan-founded"
+  },
+  {
+    "id": "joes-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 228,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open NYC-brand NY-style pizza at 1107 S University, first location outside NYC; Wikipedia covers the NYC brand"
+  },
+  {
+    "id": "jolly-pumpkin",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 1079,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open Michigan craft brewery and cafe at 311 S Main, well-known local institution with multiple Michigan locations"
+  },
+  {
+    "id": "juicy-kitchen",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 388,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "closed since September 2025 fire, nearing reopening as of June 2 2026 but not yet confirmed open"
+  },
+  {
+    "id": "kanbu-sushi-downtown",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 117,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open at 241 E Liberty St; formerly Momo Sushi Downtown"
+  },
+  {
+    "id": "kangs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 243,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running home-style Korean restaurant on S University Ave, 30+ years"
+  },
+  {
+    "id": "kelly-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "0.54-acre city neighborhood park on Patricia Ave, west Ann Arbor"
+  },
+  {
+    "id": "kelsey-museum-of-archaeology",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 350,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "free University of Michigan archaeology museum on S State St, open Tue–Sun"
+  },
+  {
+    "id": "kempf-house-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 50,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "1853 Greek Revival historic house museum on S Division St, open limited Sunday hours"
+  },
+  {
+    "id": "kimchi-box",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Michigan-regional Korean fast-casual on Plymouth Rd; multi-location but not national"
+  },
+  {
+    "id": "knights-downtown-steakhouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 320,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open at 600 E Liberty St downtown, across from Michigan Theater"
+  },
+  {
+    "id": "kosmos-bopshop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 91,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "consolidated to 308 S Ashley St location; Kerrytown location closed Dec 2024"
+  },
+  {
+    "id": "krazy-jims-blimpy-burger",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 75,
+    "reviewCount": 348,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic Ann Arbor burger joint since 1953; briefly closed Mar–May 2026 for renovations under new ownership, now reopened"
+  },
+  {
+    "id": "kuebler-langford-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "31-acre city nature area on Huron River Drive with hiking and mountain biking trails"
+  },
+  {
+    "id": "la-serre",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 24,
+    "reviewCount": 36,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "French-inspired brasserie inside The Vanguard hotel, opened recently"
+  },
+  {
+    "id": "lab-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 274,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular indie cafe at 505 E Liberty St known for pour-overs and art showcases"
+  },
+  {
+    "id": "lan-city-noodle-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "hand-pulled noodle restaurant at 1235 S University Ave, open as of 2026"
+  },
+  {
+    "id": "lansdowne-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2.6-acre city neighborhood park on Lans Way near Seventh St, acquired 1963"
+  },
+  {
+    "id": "las-vegas-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 9,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2-acre city neighborhood park on Las Vegas Drive in southwest Ann Arbor"
+  },
+  {
+    "id": "lawton-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "5.28-acre city park next to Lawton Elementary School with baseball diamond"
+  },
+  {
+    "id": "leslie-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "large 38-acre park off Dhu Varren Rd with trails, pickleball, and sledding hill"
+  },
+  {
+    "id": "leslie-park-golf-course",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "award-winning municipal 18-hole course at 2120 Traver Rd, Golf Digest's #1 muni in Michigan"
+  },
+  {
+    "id": "leslie-science-nature-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 23,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "50-acre nature education center at 1831 Traver Rd with raptor enclosures and hiking trails"
+  },
+  {
+    "id": "leslie-woods-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 22,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "23-acre mature oak-hickory woodland on Upland Drive south of Leslie Park Golf Course"
+  },
+  {
+    "id": "liberty-plaza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active city-owned downtown plaza with regular summer events and public art"
+  },
+  {
+    "id": "longshore-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 2.25-acre neighborhood park near Argo Canoe Livery, low citywide name recognition"
+  },
+  {
+    "id": "lowertown-bar-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood coffee-by-day cocktail-bar-by-night spot on Broadway serving Ann Arbor's Northside"
+  },
+  {
+    "id": "lucky-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 144,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "North Campus Chinese restaurant established 1993, known for healthy oil-free cooking"
+  },
+  {
+    "id": "m-36-coffee-roasters",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local roaster in the former Espresso Royale space on S University, opened during COVID"
+  },
+  {
+    "id": "madras-masala",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 532,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved Ann Arbor South Indian institution since 2003, relocated to Packard St after 2023 fire destroyed original Maynard St location"
+  },
+  {
+    "id": "madras-masala-express",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 17,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newer fast-casual second location on Broadway opened after the 2023 Maynard fire, still building reviews"
+  },
+  {
+    "id": "maizies",
+    "status": "open",
+    "currentName": "Maizie's Kitchen and Market",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UM-operated cafe on the ground floor of Michigan League serving the campus community weekdays"
+  },
+  {
+    "id": "mama-satto",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 135,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Japanese sushi and noodle bar on N University Ave near Central Campus"
+  },
+  {
+    "id": "manchester-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "compact 1.5-acre city park between Washtenaw Ave and County Farm Park, minimal public profile"
+  },
+  {
+    "id": "mani-osteria-and-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 1124,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "well-established downtown Italian restaurant since 2011, named Best Romantic Dinner five consecutive years"
+  },
+  {
+    "id": "markley-dining-hall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UM residential dining hall in Mary Markley Hall, recognized by students but low broad local fame"
+  },
+  {
+    "id": "maryfield-wildwood-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "4.55-acre west-side neighborhood park with wooded ravine trail, low citywide name recognition"
+  },
+  {
+    "id": "mash",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown bourbon and whiskey bar with live music on E Washington, open Thu-Sat"
+  },
+  {
+    "id": "meadowbrook-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 2.18-acre southwest neighborhood park near Lawton Elementary, minimal name recognition"
+  },
+  {
+    "id": "mercys-at-the-bell-tower",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 42,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "French-Asian restaurant in Bell Tower Hotel closed (Yelp marked closed); operated approximately 2010-2014"
+  },
+  {
+    "id": "michigan-league",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic 1929 UM student union building on Central Campus housing dining, the Lydia Mendelssohn Theatre, and an inn"
+  },
+  {
+    "id": "michigan-stadium",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 97,
+    "reviewCount": 157,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "the Big House, largest stadium in the US and third-largest in the world, capacity 107,601"
+  },
+  {
+    "id": "michigan-theater",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 85,
+    "reviewCount": 300,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic 1928 movie palace on State Street, now a non-profit arts venue hosting the Ann Arbor Film Festival"
+  },
+  {
+    "id": "michigans-first-jewish-cemetery-site",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1983 state historical marker at E Huron and Fletcher commemorating Michigan's first Jewish burial ground established 1848-49"
+  },
+  {
+    "id": "mighty-good-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Local specialty roaster active at Mercantile (N Main St) and other locations; some older satellite locations closed but brand is live"
+  },
+  {
+    "id": "miller-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "22-acre city nature area on the west side; low local name recognition outside the immediate neighborhood"
+  },
+  {
+    "id": "minys-mexican-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Independent Mexican restaurant at 1141 Broadway; relatively new, growing local following"
+  },
+  {
+    "id": "miss-kim",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 375,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Zingerman's Community of Businesses Korean restaurant by Chef Ji Hye Kim; nationally recognized and a local food institution"
+  },
+  {
+    "id": "mister-spots",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 166,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor institution since 1986 famous for buffalo wings and cheesesteaks; two-location mini-chain (Ann Arbor + Bowling Green OH), not a national chain"
+  },
+  {
+    "id": "mitchell-field",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "U-M athletic complex on Fuller Road with turf fields, sand volleyball, and the B2B Trail; recognized mainly by students and athletes"
+  },
+  {
+    "id": "mixtwood-pomona-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Sub-half-acre neighborhood playground at Mixtwood St and Pomona Rd; virtually unknown outside the immediate block"
+  },
+  {
+    "id": "mochinut",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 55,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National mochi-donut and corn-dog franchise at Plymouth Rd; open as of 2026"
+  },
+  {
+    "id": "moge-tee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 52,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National/international bubble-tea chain (Shanghai-founded, many US locations) at 2603 Plymouth Rd; open as of 2026"
+  },
+  {
+    "id": "moka-and-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 22,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Yemeni-specialty cafe mini-chain (NY-based, 11+ locations including several Michigan cities); Ann Arbor location at 333 S Main opened recently"
+  },
+  {
+    "id": "mosher-jordan-dining-hall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "U-M Hill Area dining hall known locally as 'Mo-Jo'; recognized by students and alumni but limited off-campus name recognition"
+  },
+  {
+    "id": "mr-yuns-tower-deli",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Hidden-gem Korean counter-deli tucked inside a convenience store at Tower Plaza on Fuller Ct; cult following but obscure to most locals"
+  },
+  {
+    "id": "mujo-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "U-M Duderstadt Center cafe on North Campus; hours follow academic calendar, known mainly to engineering/art students"
+  },
+  {
+    "id": "museum-on-main",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Washtenaw County Historical Society's 1830s house museum at 500 N Main; open Sat-Sun and by appointment, modest local recognition"
+  },
+  {
+    "id": "mushroom-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.5-acre southwest-side neighborhood park named for concrete mushroom sculptures dating to 1962; hyperlocal recognition only"
+  },
+  {
+    "id": "nagomi-sushi",
+    "status": "open",
+    "currentName": "Nagomi Sushi & Noodle",
+    "fameScore": 45,
+    "reviewCount": 229,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Plymouth Rd (North Campus) location is open under the name Nagomi Sushi & Noodle; the downtown location at E Liberty St is permanently closed"
+  },
+  {
+    "id": "namaste-flavours",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 167,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Independent Indian restaurant at 400 S Division St; steady local presence with lunch buffet"
+  },
+  {
+    "id": "native-american-land-gift",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Commemorative plaque on U-M central campus (Ingalls Mall) honoring the 1817 Native American land grant; a landmark, not a venue, with very limited name recognition"
+  },
+  {
+    "id": "nelson-meade-county-farm-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 120,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "141-acre Washtenaw County park at Washtenaw and Platt; widely used for trails, community gardens, and the Project Grow plots; has a Wikipedia article"
+  },
+  {
+    "id": "neopapalis",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 331,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Pizza restaurant at 500 E William St permanently closed; Yelp listing updated as closed March 2026"
+  },
+  {
+    "id": "new-york-pizza-depot",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 395,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Independent NY-style pizza shop near campus, open since at least early 2000s"
+  },
+  {
+    "id": "newport-creek-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Tiny 1-acre city nature area in northwest Ann Arbor, dedicated 1998, very obscure"
+  },
+  {
+    "id": "nichols-arboretum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 85,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Beloved UMich arboretum known as 'the Arb,' open since 1907, iconic Ann Arbor landmark"
+  },
+  {
+    "id": "nickels-arcade",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Historic 1918 covered arcade on State St, listed on National Register of Historic Places"
+  },
+  {
+    "id": "no-thai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 260,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Local fast-casual Thai chain with 5 Ann Arbor locations founded 2005, regional mini-chain"
+  },
+  {
+    "id": "noodles-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain with 2 open Ann Arbor locations; State St campus location closed April 2026"
+  },
+  {
+    "id": "noori-chicken",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 18,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Small Korean fried chicken franchise with 6+ locations in multiple states"
+  },
+  {
+    "id": "north-main-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small city park near Kerrytown and Zingerman's, purchased 1976, limited regional profile"
+  },
+  {
+    "id": "north-quad-dining-hall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UMich dining hall in North Quad residential complex, recognized mainly by students and alumni"
+  },
+  {
+    "id": "north-star-lounge",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 18,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Intimate vegan music venue bar run by Detroit Street Filling Station team, open Wed–Sat"
+  },
+  {
+    "id": "northeast-tower-tisch",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Northeast tower section of the Tisch/Angell Hall complex on central campus, recognized mainly by students"
+  },
+  {
+    "id": "northside-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 385,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Beloved neighborhood breakfast diner on Broadway since 1993, strong local following"
+  },
+  {
+    "id": "northside-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small 5.2-acre neighborhood park on Pontiac Trail established 1939, modest local footprint"
+  },
+  {
+    "id": "northwest-tower-ross",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Northwest tower section of Ross School of Business complex, known to business students and faculty"
+  },
+  {
+    "id": "oakridge-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 7,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small undeveloped 8-acre oak-hickory nature area off Huron Parkway, no trails or amenities"
+  },
+  {
+    "id": "old-german",
+    "status": "renamed",
+    "currentName": "The Cellar at Grizzly Peak",
+    "fameScore": 38,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Original Old German closed 1995; revived 2013 in Grizzly Peak basement, later rebranded as The Cellar at Grizzly Peak"
+  },
+  {
+    "id": "old-town-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 147,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Iconic downtown townie bar since 1972 (site dates to 1898), called Ann Arbor's last surviving townie bar"
+  },
+  {
+    "id": "onder-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 7,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small 4.2-acre wooded nature area purchased 2007, no trails or amenities, very obscure"
+  },
+  {
+    "id": "one-bowl",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 209,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Asian cuisine restaurant on S University Ave since around 2016, formerly Saigon Garden"
+  },
+  {
+    "id": "pacific-rim",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 602,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Upscale pan-Asian restaurant Pacific Rim by Kana on W Liberty St since 1995, highly rated local institution"
+  },
+  {
+    "id": "palio",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 477,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1991 on S Main St, upscale Italian trattoria with rooftop patio"
+  },
+  {
+    "id": "palmer-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 150,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "1952 Frank Lloyd Wright Usonian home available for tours and overnight rental; Wikipedia article under 'William Palmer Residence'"
+  },
+  {
+    "id": "pancheros-mexican-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Midwest-based burrito chain with at least one active Ann Arbor location (Pittsfield); campus location closed"
+  },
+  {
+    "id": "panda-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 128,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local Chinese takeout on N Maple Rd, open and active"
+  },
+  {
+    "id": "paris-bahn-mi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 38,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Vietnamese banh mi and boba shop near UM campus on E William St; small multi-city chain"
+  },
+  {
+    "id": "peony-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "W.E. Upjohn Peony Garden at Nichols Arboretum; one of the largest peony collections in North America, draws 100K+ visitors annually"
+  },
+  {
+    "id": "pilars-tamales",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 196,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved Salvadoran tamale shop operating 22+ years on W Liberty St"
+  },
+  {
+    "id": "pioneer-woods-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "44-acre nature area with trails on Ann Arbor Public Schools land, managed by city and Friends of Greenview"
+  },
+  {
+    "id": "pita-kabob-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 199,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "halal Mediterranean shawarma and kabob spot on E William St near UM campus"
+  },
+  {
+    "id": "pita-king",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 87,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Middle Eastern restaurant on E Stadium Blvd, open since 2014"
+  },
+  {
+    "id": "pizza-bobs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor institution since 1972, known for the Chipati; recently relocated to 800 S State St"
+  },
+  {
+    "id": "pizza-cat-max",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Pizza Cat's Ann Arbor outpost at 640 Packard St marked closed on Yelp as of April 2026"
+  },
+  {
+    "id": "pizza-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 585,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "family-owned Ann Arbor staple since 1986 on Church St, open until 4am nightly"
+  },
+  {
+    "id": "pizza-pazza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 24,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "wood-fired Neapolitan pizzeria at Kerrytown Market & Shops, transitioned from food truck"
+  },
+  {
+    "id": "plate-sushi-chicken",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Japanese-Korean fusion spot on Broadway St serving sushi, Korean fried chicken, and bento boxes"
+  },
+  {
+    "id": "playa-bowls",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national açaí bowl chain on S University Ave near UM campus"
+  },
+  {
+    "id": "plymouth-parkway-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "6-acre city park along Plymouth Rd with creek and playground, land gifted to city in 1927"
+  },
+  {
+    "id": "poke-poke",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 83,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "poke bowl restaurant on S State St near UM; operates as Poke Poke - Sushi Unrolled"
+  },
+  {
+    "id": "pollinator-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "demonstration pollinator garden within Greenview Nature Area; no standalone identity or significant public profile"
+  },
+  {
+    "id": "postmans-rest-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 16,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small city park at Vinewood and Wayne St, named for mail carriers who watched over a solitary resident; park established after 1965"
+  },
+  {
+    "id": "potbellys-sandwich-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 76,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national chain, open at multiple Ann Arbor locations including 300 S State St"
+  },
+  {
+    "id": "pretzel-bell",
+    "status": "open",
+    "currentName": "The Pretzel Bell",
+    "fameScore": 62,
+    "reviewCount": 335,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "revived ~2016 at 226 S Main St after original closed 1985; deep historical name recognition among longtime locals"
+  },
+  {
+    "id": "professors-monument",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1846 cenotaph near Hatcher Library on U-M central campus; known mainly to U-M history enthusiasts"
+  },
+  {
+    "id": "project-grow-gardens",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active community garden network with 22 sites and 350+ plots across Ann Arbor"
+  },
+  {
+    "id": "q-bakehouse-market",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 57,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood Asian American bakery opened 2023 on west side; growing but still niche audience"
+  },
+  {
+    "id": "qahwah-house-ann-arbor",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 22,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Yemeni coffee chain with 29+ US locations across 11 states; Ann Arbor location at 211 N Maple Rd"
+  },
+  {
+    "id": "quickly",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 59,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "bubble tea and Taiwanese snack cafe on S University; won Michigan Daily Best Boba 2025"
+  },
+  {
+    "id": "rappourt",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 244,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "family-owned craft beer gastropub on north side at 2721 Plymouth Rd; solid neighborhood following"
+  },
+  {
+    "id": "ray-fisher-stadium",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "U-M Wolverines baseball stadium in continuous use since 1923; named for legendary coach in 1967"
+  },
+  {
+    "id": "rays-red-hots",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 114,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Chicago-style hot dog stand at 629 E University; confirmed closed per Yelp updated June 2026"
+  },
+  {
+    "id": "real-seafood-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 505,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor seafood institution since 1975 at 341 S Main; small regional chain (MI + OH locations)"
+  },
+  {
+    "id": "recess-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "children's play and coffee cafe opened September 2025 at 208 S Ashley; too new for broad local recognition"
+  },
+  {
+    "id": "red-hawk-bar-and-grill",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 230,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved State Street bar and grill closed May 3, 2025 after 33 years due to post-pandemic economic pressures"
+  },
+  {
+    "id": "revive",
+    "status": "open",
+    "currentName": "Revive + Replenish",
+    "fameScore": 24,
+    "reviewCount": 62,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "health-focused sandwich and coffee cafe at 619 E University; daytime-only, modest local profile"
+  },
+  {
+    "id": "ricewood",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 186,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Asian-Southern BBQ rice bowl spot at 1928 Packard St; cult following for brisket bowls"
+  },
+  {
+    "id": "ricewood-bbq",
+    "status": "open",
+    "currentName": "Ricewood",
+    "fameScore": 42,
+    "reviewCount": 186,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "same establishment as Ricewood at 1928 Packard St; 'Ricewood BBQ' is an alternate name for the same restaurant"
+  },
+  {
+    "id": "rich-j-c",
+    "status": "open",
+    "currentName": "Rich J.C. Korean Restaurant",
+    "fameScore": 44,
+    "reviewCount": 230,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "longtime Korean mom-and-pop on S University Ave since 2000 (location serving Korean food since 1972)"
+  },
+  {
+    "id": "ricks-american-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 67,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "iconic U-M college bar and dance club since 1979; named one of top 25 college bars in America"
+  },
+  {
+    "id": "riverside-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "15-acre City of Ann Arbor park along Huron River with B2B Trail access; well-known neighborhood greenspace"
+  },
+  {
+    "id": "riverwood-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 4.82-acre city nature area in northwest Ann Arbor established 1998; obscure outside immediate neighborhood"
+  },
+  {
+    "id": "roeda-studio",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 14,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor location at 319 S Main St closed early 2022 after 17 years; Grand Rapids location and online shop remain open"
+  },
+  {
+    "id": "roos-roast",
+    "status": "open",
+    "currentName": "RoosRoast Coffee",
+    "fameScore": 72,
+    "reviewCount": 346,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Beloved local roaster operating since 2005; two Ann Arbor cafes plus farmers market stand; 'roos-roast' is an alternate slug for the same business"
+  },
+  {
+    "id": "roosroast-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 346,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Solar-powered local roastery at 1155 Rosewood St, deep Ann Arbor institution since 2005, known for Lobster Butter Love blend"
+  },
+  {
+    "id": "sadako",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 353,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Long-running family-owned Japanese/sushi spot on South University Ave, reliable neighborhood fixture"
+  },
+  {
+    "id": "saica",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 133,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Asian fusion (Japanese/Korean/Thai) restaurant established 1998 at 1733 Plymouth Rd, steady but lower-profile"
+  },
+  {
+    "id": "sallade-house-1850",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "No evidence of a standalone publicly-named landmark called 'Sallade House 1850'; Sallade family connected to the Wilson-Wahr House but that is not the recognized name"
+  },
+  {
+    "id": "savas",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 1521,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Popular State Street restaurant and bar established 2007, grown to 300 seats, well-known downtown Ann Arbor spot"
+  },
+  {
+    "id": "scio-ridge-land-conservancy",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "90-acre conservancy adjacent to Uplands subdivision; trails maintained by HOA dues, not a widely known public park"
+  },
+  {
+    "id": "scorekeepers",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 79,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Long-standing downtown sports bar at 310 Maynard St, locally nicknamed 'Skeeps', well-known to UM students and alumni"
+  },
+  {
+    "id": "sculpture-plaza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small downtown plaza at 4th Ave & Catherine St near Kerrytown, features the Kerrytown Arch sculpture; city-maintained public space"
+  },
+  {
+    "id": "seva",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 296,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor vegetarian institution since 1973; Detroit location closed Feb 2025 but Ann Arbor location at 2541 Jackson Ave remains open"
+  },
+  {
+    "id": "shalimar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 464,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Long-established North Indian restaurant on Main Street, popular lunch buffet, called 'Main Street's favorite Indian restaurant' in 2025 Restaurant Week coverage"
+  },
+  {
+    "id": "sharetea",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 49,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Taiwanese bubble tea franchise with 500+ locations in 18 countries and 135+ US locations; Ann Arbor unit at 310 S State St"
+  },
+  {
+    "id": "side-biscuit",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 72,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Newer local spot at 1232 Packard St specializing in chicken wings and scratch biscuits with weekly rotating sauces"
+  },
+  {
+    "id": "slurping-turtle",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 729,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Japanese ramen and sushi restaurant at 608 E Liberty, opened Ann Arbor 2014; small multi-city concept (also Chicago, Columbus) but not a national chain"
+  },
+  {
+    "id": "songbird-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 440,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Cozy American cafe and coffee shop at 2707 Plymouth Rd, known for sandwiches and baked goods, open daily for breakfast/lunch"
+  },
+  {
+    "id": "sottinis-sub-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 77,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Family-owned sub shop at 205 S 4th Ave since 1980, long-standing Kerrytown-area lunch spot"
+  },
+  {
+    "id": "south-maple-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "City-owned 7.83-acre park at 2655 W Liberty Rd with playground, tennis/pickleball courts, and ball fields; neighborhood park with low citywide name-recognition"
+  },
+  {
+    "id": "south-quad-dining-hall",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "UM's largest dining hall serving up to 8,000 meals/day at 600 E Madison; well-known to students and alumni but limited broader local recognition"
+  },
+  {
+    "id": "south-university-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 16,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Half-acre city park at South University Ave and Walnut St, renovated 2012-2013; small neighborhood green space with low standalone name-recognition"
+  },
+  {
+    "id": "southeast-tower",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "No identifiable Ann Arbor landmark or public place consistently known by this name found in search results"
+  },
+  {
+    "id": "southwest-tower-levine",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "No identifiable Ann Arbor public attraction named Southwest Tower or Levine Tower found in search results"
+  },
+  {
+    "id": "spencer",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 216,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open fine-dining wine bar and restaurant at 113 E Liberty St with monthly prix-fixe menu"
+  },
+  {
+    "id": "spiedo",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 94,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open Mediterranean rotisserie and griddle restaurant at 307 S 5th Ave"
+  },
+  {
+    "id": "stapp-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open 8-acre city nature area on Huron Parkway named for UM environmental education professor"
+  },
+  {
+    "id": "stars-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 206,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open Middle Eastern cafe and coffee shop at 2575 Jackson Ave"
+  },
+  {
+    "id": "stray-hen-cafe",
+    "status": "renamed",
+    "currentName": "The Hen",
+    "fameScore": 25,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Rebranded from Stray Hen Cafe to The Hen; open for breakfast and lunch at 403 E Washington St"
+  },
+  {
+    "id": "sunset-brooks-nature-area",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open 7.82-acre city nature area between Sunset Road and M-14 in northwest Ann Arbor"
+  },
+  {
+    "id": "sunset-point",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "No specific Ann Arbor public place named Sunset Point found; may be informal overlook name with no official designation"
+  },
+  {
+    "id": "sweetgreen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 38,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Open national salad chain at 311 S State St; first Michigan location opened 2022"
+  },
+  {
+    "id": "sweetwaters-coffee-tea",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ann Arbor-founded local coffee chain (Kerrytown, 1993); multiple Ann Arbor locations open"
+  },
+  {
+    "id": "sweetwaters",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Duplicate entry for Sweetwaters Coffee and Tea; same status — open Ann Arbor-founded national franchise chain"
+  },
+  {
+    "id": "tang-palace",
+    "status": "renamed",
+    "currentName": "Palace Tang",
+    "fameScore": 22,
+    "reviewCount": 57,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Operating under the name Palace Tang (唐宫) at 1771 Plymouth Rd; Sichuan hot-pot restaurant"
+  },
+  {
+    "id": "taq-taqueria-restaurant-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 180,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open craft taco and cocktail bar at 120 E Liberty St in downtown Ann Arbor"
+  },
+  {
+    "id": "taste-of-india-suvai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open authentic South Indian restaurant at 217 S State St with buffet; operating 13+ years"
+  },
+  {
+    "id": "tea-ninja",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Closed August 2025 after 5 years; space being taken over by Caffeena Coffee"
+  },
+  {
+    "id": "teahaus",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 278,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open specialty tea shop and lounge at 204-206 N 4th Ave with 200+ fine teas"
+  },
+  {
+    "id": "the-ark",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 83,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Open since 1965; North America's oldest non-profit acoustic music club at 316 S Main St with 300+ shows per year"
+  },
+  {
+    "id": "the-black-pearl",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open upscale seafood restaurant at 302 S Main St with heated greenhouse dining patio"
+  },
+  {
+    "id": "the-blind-pig-8-ball-saloon",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 83,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Open since 1971; legendary live music venue and bar at 208 S 1st St cited in Rolling Stone; Nirvana's self-described all-time favorite venue"
+  },
+  {
+    "id": "the-broken-egg",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 218,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed March 2020; Yelp confirmed closed, 'for lease' signs appeared shortly after"
+  },
+  {
+    "id": "the-brown-jug",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1936 on South University Ave, iconic U-M football-themed bar and grill"
+  },
+  {
+    "id": "the-chop-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 600,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1998, upscale steakhouse operated by local Mainstreet Ventures group"
+  },
+  {
+    "id": "the-diag",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 93,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic central campus gathering space; brass Block M at center; has own Wikipedia article"
+  },
+  {
+    "id": "the-earle",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 424,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1977, beloved fine-dining institution with live jazz and 1,400+ wine selections"
+  },
+  {
+    "id": "the-garage-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 17,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open but seasonal (closed winters), attached to Pizza House on Church St with 32 rotating taps"
+  },
+  {
+    "id": "the-great-greek",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 84,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national franchise under United Franchise Group with 100+ locations nationwide"
+  },
+  {
+    "id": "the-grotto-watering-hole",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 237,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open on S Ashley St, 36 rotating craft taps, BYOF policy; local watering hole"
+  },
+  {
+    "id": "the-hen-on-the-fly",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "carry-out/delivery satellite of The Hen restaurant at 1906 Packard, opened 2024"
+  },
+  {
+    "id": "the-jagged-fork",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 416,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open on S Main St; Michigan regional mini-chain with locations in Grosse Pointe, Rochester Hills, Lathrup Village, and Ann Arbor"
+  },
+  {
+    "id": "the-jefferson-market",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood breakfast/brunch cafe operating in a 1920s-era building on W Jefferson; Wed–Sun only"
+  },
+  {
+    "id": "the-last-word",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 330,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open cocktail and whiskey speakeasy on W Huron St, award-winning bar program"
+  },
+  {
+    "id": "the-little-store",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 16,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed; Yelp updated September 2025 marks it as closed"
+  },
+  {
+    "id": "the-lunch-room-bakery-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 70,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open vegan bakery and cafe at 2200 Fuller Ct, Mon–Fri; known local plant-based institution"
+  },
+  {
+    "id": "the-original-cottage-inn-pizza",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 186,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "flagship 512 E William St location permanently closed per Yelp Feb 2026; Cottage Inn brand (regional chain) continues at other Ann Arbor locations"
+  },
+  {
+    "id": "the-ponds-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 2.23-acre city park on south side of Ann Arbor, acquired 1989; low name-recognition outside immediate neighborhood"
+  },
+  {
+    "id": "the-ravens-club",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 369,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 2011 on S Main St, cocktail bar and dinner restaurant with strong local following"
+  },
+  {
+    "id": "the-wave-field",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1995 Maya Lin earthen sculpture on North Campus; well-known to U-M community and local art enthusiasts"
+  },
+  {
+    "id": "the-west-end-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 159,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1995 on W Liberty St, modern American cuisine, rated highly on Tripadvisor"
+  },
+  {
+    "id": "thurston-nature-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "23.96-acre nature education area on NE side of Ann Arbor; managed by Ann Arbor Public Schools since 1967; locally known but not widely named"
+  },
+  {
+    "id": "tianchu-restaurant",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 191,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed per Yelp (updated April 2026), was a Chinese restaurant at 613 E William St"
+  },
+  {
+    "id": "tienda-la-libertad",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Mexican restaurant and grocery at 2231 W Liberty St, family-owned"
+  },
+  {
+    "id": "tios-mexican-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 365,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 1986, family-owned institution at 401 E Liberty St, known for Mount Nacheesmo nachos"
+  },
+  {
+    "id": "tk-wu",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 296,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open fine Chinese restaurant at 510 E Liberty St, downtown Ann Arbor"
+  },
+  {
+    "id": "tmaz-taqueria-dexter",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 110,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open second location of family-owned Tmaz Taqueria at 2529 Dexter Ave, opened after Packard St original"
+  },
+  {
+    "id": "toarminas-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "open Michigan-wide chain with 20+ locations including two in Ann Arbor (West Stadium and Packard)"
+  },
+  {
+    "id": "tomukun-korean-bbq-noodle-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 514,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Korean BBQ and noodle bar at 505 E Liberty St, well-reviewed Ann Arbor staple"
+  },
+  {
+    "id": "totoro-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 356,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since 2003 at 215 S State St, voted Best Sushi in Ann Arbor five consecutive years by Michigan Daily"
+  },
+  {
+    "id": "triangle-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no City of Ann Arbor park by this name confirmed in a2gov listings; may be an informal or private green space"
+  },
+  {
+    "id": "tuebingen-parkway",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small city fitness/trail park on Tuebingen Pkwy near Traverwood Library, managed by Ann Arbor Parks & Recreation"
+  },
+  {
+    "id": "turkish-village-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "closed after only about one month in operation at 120 E Liberty St; space became Solana brunch café"
+  },
+  {
+    "id": "twigs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open University of Michigan dining hall at Oxford Houses (619 Oxford Rd), student-facing cafeteria"
+  },
+  {
+    "id": "two-songs-bakery-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Korean-inspired gluten-free/vegan bakery at 1958 S Industrial Hwy, run by mother-daughter team"
+  },
+  {
+    "id": "umma-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open cafe inside University of Michigan Museum of Art, accessible to public with free museum admission"
+  },
+  {
+    "id": "union-rec",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 181,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open coffee shop, bar and Latin-American fusion restaurant at 545 S Main St"
+  },
+  {
+    "id": "unitea",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 44,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open at 522 E William St near campus; reimagined in 2025 as Vietnamese-inspired cafe under new ownership"
+  },
+  {
+    "id": "university-of-michigan-golf-course",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open Alister MacKenzie-designed course (est. 1931) at 500 E Stadium Blvd, open to public and hosts NCAA events"
+  },
+  {
+    "id": "university-of-michigan-museum-of-art",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 800,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open flagship university art museum (UMMA) at 525 S State St, free admission, 20,000+ works"
+  },
+  {
+    "id": "university-of-michigan-museum-of-natural-history",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 600,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "open natural history museum in Biological Sciences Building on central campus, free admission, dinosaur exhibits"
+  },
+  {
+    "id": "uplift",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open since fall 2024 as Ann Arbor's only full-time dedicated queer bar at 210 S 1st St"
+  },
+  {
+    "id": "venue-by-4m",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 87,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open multi-use restaurant, coworking and events space near Michigan Stadium"
+  },
+  {
+    "id": "vertex-coffee-roasters",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 54,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open queer- and woman-owned specialty cafe on S University Ave, second location in Ypsilanti opened 2024"
+  },
+  {
+    "id": "veterans-memorial-sports-complex",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "EF-1 tornado on April 15 2026 collapsed a wall; ice arena will not reopen for 2026-27 season and park remains closed pending storm recovery"
+  },
+  {
+    "id": "victors",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "upscale hotel restaurant in Campus Inn closed as of early 2026 per Yelp"
+  },
+  {
+    "id": "vinology",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 566,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "established downtown wine-bar and event space, open on S Main St"
+  },
+  {
+    "id": "virginia-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "5-acre Old West Side neighborhood park with playground and sports field"
+  },
+  {
+    "id": "waterworks-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "tiny 1.48-acre downtown-adjacent park with native gardens; land acquired 1927"
+  },
+  {
+    "id": "wellington-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.19-acre Arborview neighborhood park with playground and softball diamond"
+  },
+  {
+    "id": "west-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "26-acre park near downtown with historic 1938 WPA bandshell, wetlands, and community gardens"
+  },
+  {
+    "id": "wheeler-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Kerrytown-area park named for Ann Arbor's first Black mayor; hosts annual Juneteenth and Pride Picnic events"
+  },
+  {
+    "id": "winewood-thaler-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.72-acre west-side neighborhood park with two small play areas"
+  },
+  {
+    "id": "wolverine-state-brewing-co",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 281,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "taproom closed March 2025 for renovation under new ownership; planned fall 2025 reopen has not been confirmed and Yelp still marks closed as of late 2025"
+  },
+  {
+    "id": "woodbury-gardens-dog-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "private dog-park amenity inside Woodbury Gardens apartment complex, not an official city public park"
+  },
+  {
+    "id": "woodbury-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2.5-acre city neighborhood park with tennis courts and playground near Stadium Blvd"
+  },
+  {
+    "id": "wsg-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "artist-owned contemporary Michigan art gallery operating for 26+ years, now at 306 S Main St"
+  },
+  {
+    "id": "wurster-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "5.5-acre Old West Side park with Champion Trees and sand volleyball court"
+  },
+  {
+    "id": "yogurt-rush",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 14,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "self-serve frozen yogurt counter operating inside Amer's Deli on S State St"
+  },
+  {
+    "id": "york-food-drink",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "open indie cafe, wine and charcuterie spot with outdoor fire pits on Packard St"
+  },
+  {
+    "id": "yost-ice-arena",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 88,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "historic 1923 U-M hockey arena; roof damaged in April 2026 tornado but home games scheduled for fall 2026-27 season"
+  },
+  {
+    "id": "zingermans-deli",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 92,
+    "reviewCount": 2818,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic Ann Arbor deli open since 1982 at Kerrytown; nationally recognized, locally beloved institution"
+  },
+  {
+    "id": "zingermans-next-door-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Open daily 7am–7pm at 422 Detroit St, next to the Deli; active as of May 2026"
+  },
+  {
+    "id": "zingermans-roadhouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 1800,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Reopened ~mid-Feb 2026 after a 6-week renovation; Yelp updated June 2026 confirms normal operations"
+  }
+]

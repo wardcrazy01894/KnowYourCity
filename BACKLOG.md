@@ -4,16 +4,16 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Difficulty rollout — other 3 cities.** St. Pete (PR #40) and **State
-      College** SHIPPED: every location has an `easy`/`medium`/`hard` `difficulty`
-      (inverse of local fame, from a fame+status web-research pass), and the daily
-      game runs **2 easy → 2 medium → 1 hard** (layering category variety).
-      **Seattle, Chicago & Ann Arbor still use the legacy cafe→…→wildcard plan**
-      until each gets its own pass (needs 1M-context subagent credits enabled, OR a
-      standard-context session — see memory `subagents-need-standard-context`). Use
-      the **`add-or-update-city` skill** — it runs the whole flow. See
-      `docs/PLAN.md` §5.1b/§5.3b, `docs/DATA-SOURCING.md` §4b, and memory
-      `difficulty-rating-research`.
+- [ ] **Difficulty rollout — 2 cities left.** St. Pete (PR #40), **State
+      College**, and **Ann Arbor** SHIPPED: every location has an
+      `easy`/`medium`/`hard` `difficulty` (inverse of local fame, from a
+      fame+status web-research pass), and the daily game runs **2 easy → 2 medium →
+      1 hard** (layering category variety). **Seattle & Chicago still use the
+      legacy cafe→…→wildcard plan** until each gets its own pass (needs 1M-context
+      subagent credits enabled, OR a standard-context session — see memory
+      `subagents-need-standard-context`). Use the **`add-or-update-city` skill** —
+      it runs the whole flow. See `docs/PLAN.md` §5.1b/§5.3b,
+      `docs/DATA-SOURCING.md` §4b, and memory `difficulty-rating-research`.
 - [x] **Generalize difficulty enrichment.** `scripts/apply-difficulty.mjs <city>`
       is the generalized, re-runnable successor to the St. Pete one-off — status
       cleanup (closed/junk/national-chains/renames) + de-dupe + city-relative

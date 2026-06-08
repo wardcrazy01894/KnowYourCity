@@ -167,7 +167,8 @@ by `fetch-food` — alongside notable landmarks from `fetch-pois`.
 ### 5.3b Difficulty rollout (per city)
 Difficulty is added **one city at a time** (each needs its own fame pass). A city
 without it keeps the legacy category plan, so partial rollout is safe.
-**Status: St. Petersburg and State College enriched; the other three pending.**
+**Status: St. Petersburg, State College, and Ann Arbor enriched; Seattle and
+Chicago pending.**
 Re-run a city's pass when its dataset changes materially, and any newly-added
 locations must be scored too (the percentile buckets are city-relative, so they
 shift when membership changes — same tradeoff as §5.2). The pass is now driven by
