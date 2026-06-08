@@ -17,7 +17,10 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       Fold fame-scoring + status cleanup + city-relative percentile bucketing
       (narrow-easy 20/45/35) into `build-city` so newly-added locations get scored
       and re-bucketed automatically. (Buckets are city-relative, so adding rows
-      shifts them — same stability tradeoff as daily selection.)
+      shifts them — same stability tradeoff as daily selection.) **Note:** the +19
+      parks/lakes added by `scripts/add-parks.mjs` (St. Pete, from player reports)
+      carry **hand-assigned** difficulty, not fame-derived — fold them into the
+      first generalized re-bucketing pass.
 - [x] **St. Pete dataset** — inclusive food/drink via `fetch-food` + curated
       landmarks. Peaked at ~516; the fame+status pass (PR #40) then **trimmed it
       to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1

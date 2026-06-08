@@ -141,8 +141,8 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
-### Status: ~382 locations (after the fame pass cleanup)
-`public/locations.stpete.json` holds **382 St. Pete places**. It started at ~516
+### Status: ~401 locations (after the fame pass cleanup + parks/lakes pass)
+`public/locations.stpete.json` holds **401 St. Pete places**. It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
 "Cafe"/"Hookah"), 1 renamed-to-also-closed — **renamed 15** still-operating spots
@@ -158,6 +158,18 @@ the city and inner beaches (the north edge reaches Kahuna's); the stpete `bounds
 in cities.json match it, and the in-bounds guard drops anything past it. The map
 locks pan/zoom to this box, so a tighter frame deliberately trades a few far-flung
 beach spots for a closer starting view.
+
+**Parks/lakes pass (+19).** Player "please add" reports (GitHub issues) surfaced a
+gap: the dataset had only 6 parks and zero lakes, badly under-representing St.
+Pete's public green space. `scripts/add-parks.mjs` (a one-off, idempotent
+curation like `apply-difficulty-stpete.mjs`) added the 6 requested places —
+Williams Park, Mirror Lake, Crescent Lake Park, Fossil Park, Bartlett Park, and
+Rec Dec (a Gandy sports bar; the report's "rec deck") — plus 13 other notable
+parks/lakes (the Straub parks, Demens Landing, Albert Whitted, Lake Maggiore,
+Sawgrass Lake, Maximo, Clam Bayou, etc.). Coordinates are from OSM Nominatim;
+difficulty is hand-assigned and embedded in `data/stpete-manual.json` too, so a
+future `build-city` rebuild preserves it. Lakes use the `park` category (there is
+no `lake` bucket). Parks are now 24.
 
 Earlier hand-picked highlights (with clues):
 - **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
