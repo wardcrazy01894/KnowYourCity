@@ -161,8 +161,8 @@ beach spots for a closer starting view.
 
 **Parks/lakes pass (+19).** Player "please add" reports (GitHub issues) surfaced a
 gap: the dataset had only 6 parks and zero lakes, badly under-representing St.
-Pete's public green space. `scripts/add-parks.mjs` (a one-off, idempotent
-curation like `apply-difficulty-stpete.mjs`) added the 6 requested places —
+Pete's public green space. A one-off, idempotent curation script added the 6
+requested places —
 Williams Park, Mirror Lake, Crescent Lake Park, Fossil Park, Bartlett Park, and
 Rec Dec (a Gandy sports bar; the report's "rec deck") — plus 13 other notable
 parks/lakes (the Straub parks, Demens Landing, Albert Whitted, Lake Maggiore,
@@ -211,7 +211,7 @@ The raw scores are cached in `data/fame-<city>.json` (committed, for provenance)
 The pass is applied by the generalized, re-runnable **`scripts/apply-difficulty.mjs
 <city> [fame-output.json]`** (it removes closed + `uncertain` junk + national
 chains + renamed-to-closed, applies renames, de-dupes by id keeping higher fame,
-then buckets). The St. Pete `apply-difficulty-stpete.mjs` was the one-off original.
+then buckets). It generalizes an earlier St. Pete-only one-off pass (since removed).
 Buckets are **city-relative**, so re-run the pass — and re-bucket — when a city's
 dataset changes, and score any newly-added locations. The fame research itself is
 a background `Workflow` (see `scripts/fame-workflow.template.md` and the

@@ -172,8 +172,8 @@ Chicago pending.**
 Re-run a city's pass when its dataset changes materially, and any newly-added
 locations must be scored too (the percentile buckets are city-relative, so they
 shift when membership changes — same tradeoff as §5.2). The pass is now driven by
-the generalized, re-runnable `scripts/apply-difficulty.mjs <city>` (the St. Pete
-`apply-difficulty-stpete.mjs` was the one-off original).
+the generalized, re-runnable `scripts/apply-difficulty.mjs <city>` (it generalizes
+an earlier St. Pete-only one-off pass, since removed).
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
 Per-round score is on a **0–100 scale** (perfect day = **500**), linear:

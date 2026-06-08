@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Generalized fame+status → difficulty pass for ANY city. The successor to the
-// St. Pete one-off (scripts/apply-difficulty-stpete.mjs); fold new cities through
-// this one.
+// Generalized fame+status → difficulty pass for ANY city. The generalized
+// successor to an earlier St. Pete-only one-off pass (since removed); fold new
+// cities through this one.
 //
 //   1. Load fame results from a workflow output (cached to data/fame-<city>.json,
 //      committed for provenance) OR from that cache.
