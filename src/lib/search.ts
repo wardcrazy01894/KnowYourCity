@@ -15,18 +15,20 @@ const normalize = (s: string) =>
 /**
  * Substring search over location names, ranked: prefix matches first, then by
  * how early the match occurs, then alphabetically. Returns [] for <2-char
- * queries. Good enough as an autocomplete source.
+ * queries. Matching folds diacritics/punctuation via `normalize()` — the same
+ * folding `isIncluded` uses — so an ASCII query ("Cafe Soleil") finds an
+ * accented name ("Café Soleil"). Good enough as an autocomplete source.
  */
 export function searchLocations(
   locations: Location[],
   query: string,
   limit = 12,
 ): Location[] {
-  const q = query.trim().toLowerCase()
+  const q = normalize(query)
   if (q.length < 2) return []
   const scored: Array<{ loc: Location; rank: number; idx: number }> = []
   for (const loc of locations) {
-    const n = loc.name.toLowerCase()
+    const n = normalize(loc.name)
     const idx = n.indexOf(q)
     if (idx === -1) continue
     scored.push({ loc, rank: n.startsWith(q) ? 0 : 1, idx })

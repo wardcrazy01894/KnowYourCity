@@ -18,6 +18,8 @@ const data = [
   loc('Mandarin Hide'),
   loc('Bandit Coffee'),
   loc('Bar Mezzo'),
+  loc('Café Soleil French Bakery & Deli'),
+  loc('Harry’s Beach Bar'),
 ]
 
 describe('searchLocations', () => {
@@ -39,6 +41,22 @@ describe('searchLocations', () => {
 
   it('respects the limit', () => {
     expect(searchLocations(data, 'a', 2).length).toBeLessThanOrEqual(2)
+  })
+
+  it('folds diacritics so an ASCII query finds an accented name', () => {
+    // A player types "Cafe Soleil" (no accent) for "Café Soleil…".
+    const names = searchLocations(data, 'cafe soleil').map((l) => l.name)
+    expect(names).toContain('Café Soleil French Bakery & Deli')
+  })
+
+  it('folds punctuation so a straight apostrophe finds a curly one', () => {
+    const names = searchLocations(data, "harry's").map((l) => l.name)
+    expect(names).toContain('Harry’s Beach Bar')
+  })
+
+  it('still ranks a normalized prefix match first', () => {
+    const names = searchLocations(data, 'cafe').map((l) => l.name)
+    expect(names[0]).toBe('Café Soleil French Bakery & Deli')
   })
 })
 
