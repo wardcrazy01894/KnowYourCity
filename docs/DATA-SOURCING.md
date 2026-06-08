@@ -41,7 +41,7 @@ requests an **allowlist** of high-signal tags only:
 [out:json][timeout:60];
 (
   nwr["tourism"~"attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium"](27.62,-82.78,27.87,-82.58);
-  nwr["leisure"~"golf_course|park|stadium|marina"](27.62,-82.78,27.87,-82.58);
+  nwr["leisure"~"golf_course|park|stadium|marina|nature_reserve|garden|dog_park|recreation_ground"](27.62,-82.78,27.87,-82.58);
   nwr["historic"](27.62,-82.78,27.87,-82.58);
   nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikidata"](27.62,-82.78,27.87,-82.58);
   nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikipedia"](27.62,-82.78,27.87,-82.58);
