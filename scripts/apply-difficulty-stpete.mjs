@@ -1,11 +1,18 @@
 #!/usr/bin/env node
-// One-off enrichment: apply the St. Pete fame+status pass to the committed dataset.
-//   1. cache the fame results to data/fame-stpete.json (gitignored),
+// One-off migration: apply the St. Pete fame+status pass to the dataset.
+//   1. load fame results from a workflow output (and cache them to
+//      data/fame-stpete.json, committed for provenance) OR from that cache,
 //   2. remove permanently-closed + obvious-junk entries, apply renames, de-dupe,
 //   3. assign difficulty (easy/medium/hard) by city-relative fame rank (narrow-easy: top 20% / 45% / 35%),
 //   4. write public/locations.stpete.json and print a full audit.
 //
-// Usage: node scripts/apply-difficulty-stpete.mjs <fame-workflow-output.json>
+// This runs ONCE, against the PRE-enrichment dataset; it refuses to run if the
+// dataset already carries difficulty (the fame ids would no longer match). To
+// re-run, restore the original file from git history first. Future enrichment of
+// new/other cities needs a general, idempotent path — see docs/PLAN.md §5.3b.
+//
+// Usage: node scripts/apply-difficulty-stpete.mjs [fame-workflow-output.json]
+//   (omit the arg to re-derive from the committed data/fame-stpete.json cache)
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 
 const FAME_OUT = process.argv[2]
@@ -26,30 +33,46 @@ const slug = (s) =>
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
 
-// ---- load fame results (and cache them) ----
-const raw = JSON.parse(readFileSync(FAME_OUT, 'utf8'))
-const results = (raw.result ?? raw).results
+// ---- load fame results: from a workflow output (and cache it), or the cache ----
+let results
+if (FAME_OUT) {
+  const raw = JSON.parse(readFileSync(FAME_OUT, 'utf8'))
+  results = (raw.result ?? raw).results
+  if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true })
+  writeFileSync(
+    CACHE,
+    JSON.stringify(
+      results.map((r) => ({
+        id: r.id,
+        status: r.status,
+        currentName: r.currentName || '',
+        fameScore: r.fameScore,
+        reviewCount: r.reviewCount,
+        hasWikipedia: r.hasWikipedia,
+      })),
+      null,
+      2,
+    ) + '\n',
+  )
+} else {
+  results = JSON.parse(readFileSync(CACHE, 'utf8'))
+}
 const fameById = new Map(results.map((r) => [r.id, r]))
-if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true })
-writeFileSync(
-  CACHE,
-  JSON.stringify(
-    results.map((r) => ({
-      id: r.id,
-      status: r.status,
-      currentName: r.currentName || '',
-      fameScore: r.fameScore,
-      reviewCount: r.reviewCount,
-      hasWikipedia: r.hasWikipedia,
-    })),
-    null,
-    2,
-  ) + '\n',
-)
 
 // ---- load dataset ----
 const ds = JSON.parse(readFileSync(DATASET, 'utf8'))
 const orig = ds.locations
+
+// SAFETY: one-off migration against the PRE-enrichment dataset. If it already
+// carries difficulty, the fame ids no longer match (renames/removals applied)
+// and re-running would corrupt it. Refuse rather than mangle.
+if (orig.some((l) => l.difficulty != null)) {
+  console.error(
+    'Refusing to run: public/locations.stpete.json is already enriched (has difficulty).\n' +
+      'Restore the pre-enrichment file from git history before re-running.',
+  )
+  process.exit(1)
+}
 
 const audit = {
   closed: [],
@@ -57,7 +80,6 @@ const audit = {
   renamedClosed: [],
   renamed: [],
   deduped: [],
-  kept: 0,
 }
 
 // ---- pass 1: cleanup ----
