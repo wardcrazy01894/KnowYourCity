@@ -78,7 +78,7 @@ export function buildOverpassQuery([s, w, n, e] = ST_PETE_BBOX) {
 [out:json][timeout:60];
 (
   nwr["tourism"~"attraction|museum|gallery|viewpoint|theme_park|zoo|aquarium"](${s},${w},${n},${e});
-  nwr["leisure"~"golf_course|park|stadium|marina"](${s},${w},${n},${e});
+  nwr["leisure"~"golf_course|park|stadium|marina|nature_reserve|garden|dog_park|recreation_ground"](${s},${w},${n},${e});
   nwr["historic"](${s},${w},${n},${e});
   nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikidata"](${s},${w},${n},${e});
   nwr["amenity"~"theatre|arts_centre|restaurant|bar|cafe"]["wikipedia"](${s},${w},${n},${e});
@@ -99,8 +99,10 @@ export const NAME_DENYLIST = [
 
 /**
  * Tag classes that are inherently notable enough to keep even without a
- * wikipedia/wikidata link. (leisure=park is intentionally excluded — too many
- * mundane pocket parks; parks only survive via a wiki link.)
+ * wikipedia/wikidata link. Parks and other green spaces ARE kept (a city's
+ * public parks/lakes are exactly the kind of place locals know) — the downstream
+ * fame+status pass trims the genuinely-obscure tail (intramural fields, pocket
+ * pollinator gardens, etc.), so we can afford to pull them inclusively here.
  */
 function hasNotableTag(tags) {
   if (!tags) return false
@@ -110,7 +112,12 @@ function hasNotableTag(tags) {
     )
   )
     return true
-  if (/^(golf_course|stadium|marina)$/.test(tags.leisure ?? '')) return true
+  if (
+    /^(golf_course|stadium|marina|park|nature_reserve|garden|dog_park|recreation_ground)$/.test(
+      tags.leisure ?? '',
+    )
+  )
+    return true
   if (tags.historic) return true
   if (tags.building === 'stadium') return true
   if (/^(theatre|arts_centre)$/.test(tags.amenity ?? '')) return true
@@ -131,7 +138,12 @@ export function isNotable(el) {
 function inferCategory(tags) {
   if (tags.tourism === 'museum' || tags.tourism === 'gallery') return 'museum'
   if (tags.leisure === 'golf_course') return 'golf_course'
-  if (tags.leisure === 'park') return 'park'
+  if (
+    /^(park|nature_reserve|garden|dog_park|recreation_ground)$/.test(
+      tags.leisure ?? '',
+    )
+  )
+    return 'park'
   if (tags.leisure === 'stadium' || tags.building === 'stadium') return 'venue'
   if (tags.amenity === 'theatre' || tags.amenity === 'arts_centre')
     return 'venue'

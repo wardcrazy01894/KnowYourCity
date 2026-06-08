@@ -30,6 +30,11 @@ describe('cities registry', () => {
       expect(w).toBeLessThan(e)
       expect(c.timeZone).toMatch(/^[A-Za-z]+\/[A-Za-z_]+$/)
       expect(c.short.length).toBeGreaterThan(0)
+      // target is the build-script size cap: null (uncapped) or a positive number.
+      expect(
+        c.target === null || (Number.isFinite(c.target) && c.target > 0),
+        `${c.id} target=${c.target}`,
+      ).toBe(true)
     }
   })
 })

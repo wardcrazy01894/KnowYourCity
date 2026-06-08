@@ -207,10 +207,21 @@ background workflow that fans out ~25 locations per agent):
    45% medium / bottom 35% hard.** Relative (not absolute) so every city can fill
    the 2-easy/2-medium/1-hard plan even when it has few true icons.
 
-The raw scores are cached in `data/fame-<city>.json` (committed, for provenance);
-the St. Pete pass was applied by `scripts/apply-difficulty-stpete.mjs`. Buckets
-are **city-relative**, so re-run the pass — and re-bucket — when a city's dataset
-changes, and score any newly-added locations. See PLAN.md §5.1b / §5.3b.
+The raw scores are cached in `data/fame-<city>.json` (committed, for provenance).
+The pass is applied by the generalized, re-runnable **`scripts/apply-difficulty.mjs
+<city> [fame-output.json]`** (it removes closed + `uncertain` junk + national
+chains + renamed-to-closed, applies renames, de-dupes by id keeping higher fame,
+then buckets). The St. Pete `apply-difficulty-stpete.mjs` was the one-off original.
+Buckets are **city-relative**, so re-run the pass — and re-bucket — when a city's
+dataset changes, and score any newly-added locations. The fame research itself is
+a background `Workflow` (see `scripts/fame-workflow.template.md` and the
+`add-or-update-city` skill). See PLAN.md §5.1b / §5.3b.
+
+> **Parks/green spaces** are pulled inclusively by `fetch-pois` (any named
+> `leisure=park|nature_reserve|garden|dog_park|recreation_ground`, no wiki tag
+> required) — a city's public parks are exactly what locals know. The fame pass
+> then trims the genuinely-obscure tail (intramural fields, pocket pollinator
+> gardens). Lakes have no dedicated category and ride along as `park`.
 
 ### Category buckets
 The pipeline tags each row with a `category`. For round selection:
@@ -224,10 +235,11 @@ one shot: it runs the landmark query (`fetch-pois` logic) and the inclusive food
 query (`fetch-food` logic) for the city's bbox, then **balances** the mix
 (~30% landmarks / 18% cafés / 22% bars / 30% restaurants), ranks food by the
 established-business signal, dedupes, filters to in-bounds, and caps to the
-city's `target`. Cities are defined once in the root `cities.json` (read by both
-this script and the app via `src/lib/cities.ts`). Current cities: St. Pete (~516,
-built via fetch-food + curation), State College (~80), Ann Arbor (~100),
-Seattle (~200), Chicago (~200).
+city's `target` — or, when `target` is **`null`**, keeps **everything** in-bounds
+(uncapped; let the fame pass trim the tail). Cities are defined once in the root
+`cities.json` (read by both this script and the app via `src/lib/cities.ts`).
+Current cities: St. Pete (~401, enriched), State College (~234, **uncapped +
+enriched**), Ann Arbor (~100), Seattle (~200), Chicago (~200).
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated

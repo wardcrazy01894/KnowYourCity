@@ -167,10 +167,12 @@ by `fetch-food` — alongside notable landmarks from `fetch-pois`.
 ### 5.3b Difficulty rollout (per city)
 Difficulty is added **one city at a time** (each needs its own fame pass). A city
 without it keeps the legacy category plan, so partial rollout is safe.
-**Status: St. Petersburg enriched; the other four pending.** Re-run a city's pass
-when its dataset changes materially, and any newly-added locations must be scored
-too (the percentile buckets are city-relative, so they shift when membership
-changes — same tradeoff as §5.2).
+**Status: St. Petersburg and State College enriched; the other three pending.**
+Re-run a city's pass when its dataset changes materially, and any newly-added
+locations must be scored too (the percentile buckets are city-relative, so they
+shift when membership changes — same tradeoff as §5.2). The pass is now driven by
+the generalized, re-runnable `scripts/apply-difficulty.mjs <city>` (the St. Pete
+`apply-difficulty-stpete.mjs` was the one-off original).
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
 Per-round score is on a **0–100 scale** (perfect day = **500**), linear:

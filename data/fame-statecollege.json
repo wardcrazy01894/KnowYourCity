@@ -1,0 +1,2822 @@
+[
+  {
+    "id": "3-dots",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active nonprofit arts/community gallery at 137 E Beaver Ave downtown"
+  },
+  {
+    "id": "409-pizza-and-wings",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 16,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed per Yelp (updated February 2026), was at 444 E College Ave"
+  },
+  {
+    "id": "7-brew",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national drive-thru coffee chain at 1923 S Atherton St, opened recently"
+  },
+  {
+    "id": "as-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "self-serve beer-wall pub inside McLanahan's Downtown Market on S Allen St"
+  },
+  {
+    "id": "abba-java-coffeehouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "free student coffeehouse ministry of Wesley Foundation at Penn State on Locust Ln"
+  },
+  {
+    "id": "adams-apple",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 35,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "upscale cocktail bar located inside The Tavern at 212 E Calder Way"
+  },
+  {
+    "id": "agape-coffee-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small independent coffee shop at 222 W Calder Way with limited web presence"
+  },
+  {
+    "id": "air-quality-learning-and-demonstration-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State Arboretum educational facility on ag campus, visits by appointment"
+  },
+  {
+    "id": "allen-street-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 236,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running upscale American restaurant on second floor of Hotel State College, 40+ years"
+  },
+  {
+    "id": "allen-street-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "independent pizzeria at 128 S Allen St, opened September 2022"
+  },
+  {
+    "id": "american-burrito",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "announced for fall 2025 at 114 S Allen St but no confirmed open status found as of June 2026"
+  },
+  {
+    "id": "antifragile-brewing-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "craft brewery and taproom at 324 E Calder Way, opened 2022"
+  },
+  {
+    "id": "armsby-respiration-calorimeter-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic Penn State agricultural museum on Ag Hill, open by appointment, on National Register of Historic Places"
+  },
+  {
+    "id": "art-alley",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no dedicated venue found by this name; may refer to mural-decorated McAllister Alley in downtown State College"
+  },
+  {
+    "id": "atherton",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Atherton gravesite memorial near Schwab — duplicate obscure node, dropped (agent mis-renamed to hotel)"
+  },
+  {
+    "id": "atom-first-seen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Müller Exhibition marker at Osmond Lab commemorating Erwin Müller first seeing atoms in 1955; campus-only audience"
+  },
+  {
+    "id": "au-bon-pain",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "all four Penn State campus locations replaced by Panera Bread in fall 2019 after Panera acquired Au Bon Pain"
+  },
+  {
+    "id": "auntie-annes",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national soft pretzel chain at 324 E College Ave, opened February 2020 with Cinnabon co-location"
+  },
+  {
+    "id": "bagel-crust-beaver",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 23,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local bagel shop at 225 W Beaver Ave, second location of Bagel Crust mini-chain"
+  },
+  {
+    "id": "bagel-crust-calder",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 58,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "original Bagel Crust location at 332 E Calder Way, downtown State College staple since 2014"
+  },
+  {
+    "id": "beaver-stadium",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 98,
+    "reviewCount": 1200,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic Penn State football stadium; technically renamed West Shore Home Field at Beaver Stadium in 2025 but universally still called Beaver Stadium"
+  },
+  {
+    "id": "beijing",
+    "status": "renamed",
+    "currentName": "Beijing & Osaka",
+    "fameScore": 35,
+    "reviewCount": 93,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Chinese-Japanese restaurant at 452 E College Ave now operating as Beijing & Osaka"
+  },
+  {
+    "id": "benny-leones",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 12,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Virginia-based regional pizza chain opened downtown State College June 2025; very new, low local recognition so far"
+  },
+  {
+    "id": "big-bowl-noodle-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "longtime Taiwanese noodle spot on E College Ave, popular with students and locals"
+  },
+  {
+    "id": "big-chicken",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Shaq's national fast-casual chain opened State College location February 2026 at 480 E College Ave"
+  },
+  {
+    "id": "big-deans-hot-chicken",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local hot chicken spot at 208 W College Ave run by experienced chef Dean Dupuis"
+  },
+  {
+    "id": "bill-pickles-tap-room",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 350,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown State College bar on S Allen St known for country night Tuesdays and peanut butter wings"
+  },
+  {
+    "id": "bistrozine",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 94,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Asian fusion BYOB restaurant on E Calder Way, opened 2018 with strong reviews"
+  },
+  {
+    "id": "blue-course",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 180,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Penn State's historic championship golf course on W College Ave, open to the public since 1921"
+  },
+  {
+    "id": "brothers-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Midwestern bar and grill chain with 17+ locations across 10 states; State College location at 134 S Allen St"
+  },
+  {
+    "id": "brothers-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 180,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local family-owned pizza chain with multiple State College area locations"
+  },
+  {
+    "id": "bryce-jordan-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 88,
+    "reviewCount": 500,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Penn State's 15,261-seat multipurpose arena, home to Nittany Lions basketball and major concerts"
+  },
+  {
+    "id": "buffalo-wild-wings",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 220,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national wings chain opened downtown State College March 2025 at 134 S Garner St"
+  },
+  {
+    "id": "cafe-210-west",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running College Ave bar and restaurant, known for 32oz Cafe Tea pitchers and live music patio"
+  },
+  {
+    "id": "cafe-alina",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Pakistani-inspired cafe on E Calder Way with 4.8-star rating and strong word-of-mouth following"
+  },
+  {
+    "id": "cafe-laura",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State School of Hospitality Management student-run restaurant in Mateer Building, open during semesters"
+  },
+  {
+    "id": "cafe-lemont",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 95,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small independent coffee shop in Lemont (just outside State College), known for on-site roasted coffee"
+  },
+  {
+    "id": "cafe-wow",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 160,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State grad-founded bubble tea and dessert cafe on E College Ave, established 2015"
+  },
+  {
+    "id": "camelot",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 20,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "historic private home at 520 S Fraser St on National Register of Historic Places since 1979; viewable from street but not a public venue"
+  },
+  {
+    "id": "canyon-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved late-night pizza staple on E Beaver Ave since 2001, open until 3-4am daily and iconic among Penn State students"
+  },
+  {
+    "id": "canyon-wings",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 38,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "late-night wing staple on E Beaver Ave, popular with Penn State students since 2007"
+  },
+  {
+    "id": "carters-table",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 59,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newer globally-inspired taco spot on E Beaver Ave, named Best New Restaurant 2024"
+  },
+  {
+    "id": "celebrities-bar-and-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "sports-memorabilia themed bar and grill inside the Ramada hotel, opened spring 2024"
+  },
+  {
+    "id": "central-reservation",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 76,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown cocktail bar and seafood restaurant on S Allen St"
+  },
+  {
+    "id": "centre-furnace",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic 1791 iron furnace stack on E College Ave, publicly accessible landmark and birthplace of Penn State"
+  },
+  {
+    "id": "centre-furnace-mansion",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 80,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "National Register historic mansion and Centre County Historical Society HQ, free tours Wed/Fri/Sun"
+  },
+  {
+    "id": "centre-hills-country-club",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "private 27-hole golf club in State College borough, established 1921"
+  },
+  {
+    "id": "champs-downtown",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 950,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "lively downtown sports bar on S Allen St with 360 bar, DJs, and live music"
+  },
+  {
+    "id": "champs-sports-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "N Atherton sports bar and grill established 1986, 45+ beers on tap and large event spaces"
+  },
+  {
+    "id": "chew-chew-bun",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 149,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Taiwanese bakery and coffee shop on E Beaver Ave known for egg tarts and shio pan buns"
+  },
+  {
+    "id": "chick-2",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 16,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "late-night NYC-style chicken-over-rice shop on E College Ave"
+  },
+  {
+    "id": "chumleys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 39,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "State College's LGBTQ-welcoming bar since 1984, downtown W College Ave"
+  },
+  {
+    "id": "cluck-catch",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 13,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "halal fried chicken and fish restaurant on Westerly Pkwy, opened December 2024"
+  },
+  {
+    "id": "college-buffet",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 62,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Chinese buffet and takeout on N Atherton St, long-running local spot"
+  },
+  {
+    "id": "cozy-thai",
+    "status": "open",
+    "currentName": "Cozy Thai Bistro",
+    "fameScore": 58,
+    "reviewCount": 272,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "State College's go-to Thai restaurant since 2006, BYOB on S Allen St"
+  },
+  {
+    "id": "crazy-boil",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 78,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed Cajun seafood boil restaurant on N Atherton St, confirmed closed as of early 2026"
+  },
+  {
+    "id": "dp-dough",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 147,
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "national late-night calzone franchise, Penn State staple on E Beaver Ave for over 25 years"
+  },
+  {
+    "id": "dagu-rice-noodle",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 16,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Yunnan-style rice noodle shop on E College Ave in downtown State College"
+  },
+  {
+    "id": "delhi-junction",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown Indian restaurant on Locust Ln with lunch buffet, opened 2024"
+  },
+  {
+    "id": "discovery-space",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "hands-on STEM children's museum on N Atherton St with 45+ exhibits, nonprofit"
+  },
+  {
+    "id": "doggies-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "casual pizza spot on E Calder Way, affiliated with Doggie's Pub next door"
+  },
+  {
+    "id": "doggies-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 38,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "dog-friendly pub with beer garden open since 2018 on S Pugh St"
+  },
+  {
+    "id": "douglas-albert-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "independent art gallery open since 1981, recently relocated to 126 E College Ave"
+  },
+  {
+    "id": "dq-grill-chill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national chain location at 310 W Aaron Dr, actively operating"
+  },
+  {
+    "id": "duck-donuts",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 350,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national chain at 125 S Fraser St, made-to-order warm donuts"
+  },
+  {
+    "id": "dulce-luca-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "bakery and café opened March 2024 on E Calder Way, local indie spot"
+  },
+  {
+    "id": "eden-valley-coffee-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 58,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newly opened July 2025 on Elmwood St, faith-inspired indie coffee shop"
+  },
+  {
+    "id": "edge-pollock",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining Starbucks concept on ground floor of Pollock Commons"
+  },
+  {
+    "id": "edwin-w-zoller-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State School of Visual Arts gallery in the Visual Arts Building, open since 1971"
+  },
+  {
+    "id": "el-jefes-taqueria",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "taqueria at 352 E Calder Way, small regional chain originating in Harvard Square"
+  },
+  {
+    "id": "elxir-coffee-roasters",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 193,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Philadelphia-based indie coffee roaster at 123 W Beaver Ave, took over Saint's Cafe space in 2022"
+  },
+  {
+    "id": "ems-museum-and-art-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State Earth and Mineral Sciences Museum in Deike Building, founded 1859, free admission"
+  },
+  {
+    "id": "faccia-luna",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 424,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-established wood-fired pizzeria at 1229 S Atherton St, ranked among top State College restaurants"
+  },
+  {
+    "id": "faculty-cottages",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic Penn State campus cottages on National Register of Historic Places, now used by academic programs"
+  },
+  {
+    "id": "famous-ernies-steaks",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 38,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "cheesesteak shop at 111 E Beaver Ave, named for Phryst bar founder Ernie Olbermann"
+  },
+  {
+    "id": "fatoum-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 19,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "new fusion bistro at 532 Westerly Pkwy blending Middle Eastern and Indian flavors"
+  },
+  {
+    "id": "federal-taphouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 275,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "upscale bar and grill above Target on S Fraser St, opened 2017, known for 80 beers on tap"
+  },
+  {
+    "id": "fiddlehead",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 110,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "fast-casual grain bowls and salads at 134 W College Ave, local healthy-eating spot"
+  },
+  {
+    "id": "fire-fig-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "recently opened Persian restaurant in former Kimchi location, open-fire grilling and saffron rice"
+  },
+  {
+    "id": "flipps",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining burger and breakfast station at Findlay Commons dining hall"
+  },
+  {
+    "id": "fresco-pollock",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining concept inside Pollock Commons food court, opened fall 2024"
+  },
+  {
+    "id": "fresh-bites-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newly opened July 2025 Detroit-style pizzeria at 300 S Pugh St, minimal local recognition yet"
+  },
+  {
+    "id": "freshens-fresh-food-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national campus chain (255+ locations), opened at Penn State ECoRE building in February 2025"
+  },
+  {
+    "id": "fuji-jade-garden-my-thai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 261,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "established pan-Asian restaurant at Northland Center, long-running local institution"
+  },
+  {
+    "id": "galanga-by-cozy-thai",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 39,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed as of 2025; was a Cozy Thai sister restaurant on E College Ave since 2014"
+  },
+  {
+    "id": "general-james-a-beaver-memorial",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "campus memorial to the Civil War general and Penn State trustee whose name is on Beaver Stadium; rarely visited as a standalone landmark"
+  },
+  {
+    "id": "giuseppes-pizzeria",
+    "status": "open",
+    "currentName": "Giuseppe's Pizzeria by Brothers",
+    "fameScore": 28,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newer downtown College Ave pizzeria continuing the Brothers Pizza legacy; opened 2024-2025"
+  },
+  {
+    "id": "good-day-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 18,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "nonprofit cafe employing adults with disabilities, part of Strawberry Fields Inc., open since 2018"
+  },
+  {
+    "id": "green-bowl",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 173,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "established Asian fusion spot on W Beaver Ave, long-running local restaurant"
+  },
+  {
+    "id": "gudong-hot-pot-delivery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "delivery-focused hot pot restaurant at N Atherton St, niche local spot"
+  },
+  {
+    "id": "halal-cart",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining cart at Market North serving shawarma and falafel bowls"
+  },
+  {
+    "id": "happy-valley-brewing-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 552,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "established local brewery and restaurant in a 200-year-old barn on Elmwood St, open since 2013"
+  },
+  {
+    "id": "happy-valley-live",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 17,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State-themed sports bar and entertainment venue at 1031 E College Ave, opened 2025"
+  },
+  {
+    "id": "hawaiian-poke-bowl-pho-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local poke bowl and pho cafe at 320 W Beaver Ave, limited hours (closed Mon/Sat)"
+  },
+  {
+    "id": "hibachi-san",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining unit at Hub Robeson Center, open weekdays only"
+  },
+  {
+    "id": "highlands-historic-district",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "part of the Holmes-Foster-Highlands Historic District on National Register of Historic Places since 1995; residential neighborhood more than a visited landmark"
+  },
+  {
+    "id": "hiway-pizza-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 87,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running State College pizza institution since 1963; downtown location closed 2023 but West College Ave location remains open"
+  },
+  {
+    "id": "holmes-foster-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "State College's first park (donated 1921), 11-acre neighborhood park at 901 Westerly Pkwy"
+  },
+  {
+    "id": "honey-baked-ham",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national chain location at 1724 S Atherton St, seasonal high traffic around holidays"
+  },
+  {
+    "id": "honeygrow",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "regional-to-national chain (65+ locations across 8 states), opened State College location November 2025 at 160 E Beaver Ave"
+  },
+  {
+    "id": "hosss-steak-sea-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 56,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Pennsylvania regional chain (29 PA locations), open at 1450 N Atherton St"
+  },
+  {
+    "id": "india-pavilion",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 242,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "longtime downtown Indian restaurant open since 1997 at 222 E Calder Way"
+  },
+  {
+    "id": "irvings-bagels",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 164,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular College Ave bagel spot with active Yelp listing updated March 2026"
+  },
+  {
+    "id": "john-i-thompson-grain-elevator-and-coal-sheds",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "historic 1885 wooden grain elevator in Lemont with Pennsylvania Historical Marker and Wikipedia article"
+  },
+  {
+    "id": "k2-roots",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local cold-pressed juice and smoothie cafe, moved to corner of Garner and College Ave"
+  },
+  {
+    "id": "kamrai-thai-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "well-regarded Thai and sushi restaurant at 901 Pike St in Lemont, active as of 2025"
+  },
+  {
+    "id": "kcs-cafe",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "possible former Penn State campus cafe in Career Services building; no current web presence found"
+  },
+  {
+    "id": "kings-espresso-bar",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "minimal web presence — only a lat/long mapping entry found, no reviews or active listings"
+  },
+  {
+    "id": "kitchen-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Turkish-run Mediterranean breakfast/brunch spot at 2137 S Atherton St, open daily except Tuesdays"
+  },
+  {
+    "id": "kokoro",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 79,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed per Yelp (updated June 2026), was a ramen/Japanese spot at 404 E Calder Way"
+  },
+  {
+    "id": "kondu",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 41,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Japanese sushi and teppanyaki spot at 132 S Allen St, open as of April 2026 per Yelp"
+  },
+  {
+    "id": "lion-shrine",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 95,
+    "reviewCount": 2000,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic Penn State landmark and one of the most photographed spots in Pennsylvania, has Wikipedia article"
+  },
+  {
+    "id": "lions-den",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 29,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "college bar at 118 S Garner St in the Penn State bar scene, open Tuesday–Saturday evenings"
+  },
+  {
+    "id": "little-food-court",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "permanently closed per Yelp, was at 250 E Calder Way lower floor"
+  },
+  {
+    "id": "little-szechuan",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 333,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular authentic Szechuan restaurant at 228 W College Ave, active as of May 2026"
+  },
+  {
+    "id": "local-whiskey",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 316,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown whiskey bar above The Phyrst at 107 E Beaver Ave, over 200 whiskey varieties"
+  },
+  {
+    "id": "lt-michael-p-murphy-penn-state-veterans-plaza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2011 class gift plaza near Old Main honoring Medal of Honor recipient and Penn State alumnus Lt. Michael P. Murphy"
+  },
+  {
+    "id": "lubrano-park",
+    "status": "open",
+    "currentName": "Medlar Field at Lubrano Park",
+    "fameScore": 55,
+    "reviewCount": 96,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State baseball stadium opened 2006, shared with State College Spikes minor league team; full name is Medlar Field at Lubrano Park"
+  },
+  {
+    "id": "lupitas-authentic-mexican-food",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Ferguson Township location closed but downtown location at 312 W Beaver Ave remains open"
+  },
+  {
+    "id": "lychee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 93,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Chinese restaurant at 1341 S Atherton St, active as of May 2026 per Yelp"
+  },
+  {
+    "id": "maine-bay-berry-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "seafood market and cafe in Lemont area, founded 2017, modest local following"
+  },
+  {
+    "id": "manna-korean-bbq-hot-pot",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "opened March 2026 at Westerly Pkwy Plaza, very new all-you-can-eat Korean BBQ and hot pot"
+  },
+  {
+    "id": "margaritas-pizzeria-and-italian-cuisine",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small family-run pizzeria on W Beaver Ave, modest but genuine local presence"
+  },
+  {
+    "id": "martin-luther-king-jr-memorial",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Dr. MLK Jr. Plaza in downtown State College, dedicated 2017, community gathering space with stainless-steel graphic wall"
+  },
+  {
+    "id": "marzonis-brick-oven-brewing-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 29,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Pennsylvania regional chain (5 locations), opened State College location September 2023 at former TGI Fridays on N Atherton St"
+  },
+  {
+    "id": "masala-palace",
+    "status": "renamed",
+    "currentName": "Masala Palace",
+    "fameScore": 45,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "formerly Kaarma Indian Cuisine, rebranded to Masala Palace; Indian/Pakistani restaurant on E Beaver Ave"
+  },
+  {
+    "id": "matson-museum-of-anthropology",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State anthropology museum, temporarily closed due to structural issue in Susan Welch Liberal Arts Building"
+  },
+  {
+    "id": "maxx-ramen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small ramen shop in Lemont run by the Kamrai team, lunch-focused hours, cozy local spot"
+  },
+  {
+    "id": "medlar-field-at-lubrano-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 150,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "5,570-seat baseball stadium shared by Penn State Nittany Lions and State College Spikes, opened 2006"
+  },
+  {
+    "id": "mercato-mio",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 37,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Southern Italian restaurant inside the Hilton Garden Inn on E College Ave, upscale hotel dining"
+  },
+  {
+    "id": "mezeh-mediterranean-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 57,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Eastern US Mediterranean fast-casual chain with 40+ locations; State College on E Calder Way"
+  },
+  {
+    "id": "mill-wheel",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no identifiable web presence as a State College attraction — likely not a real current public venue"
+  },
+  {
+    "id": "millbrook-marsh-nature-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "free 62-acre wetland nature center operated by Centre Region Parks & Recreation, less than 2 miles from Penn State"
+  },
+  {
+    "id": "momotaro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 170,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "bubble tea, rolled ice cream, and cafe on W College Ave, established 2017, popular with students"
+  },
+  {
+    "id": "monte-carlos-pizza-wings",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 48,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "pizza and wings spot on W College Ave, established 1977, modest local presence"
+  },
+  {
+    "id": "mosul-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "authentic Iraqi halal restaurant opened September 2025 on E College Ave, family-owned"
+  },
+  {
+    "id": "mr-wish",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "Taiwanese-origin bubble tea chain with US locations in 9 states; State College location opened 2021 on E College Ave"
+  },
+  {
+    "id": "nittany-lion-softball-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State softball facility opened 2011, playing field named Beard Field, 1,084-seat capacity"
+  },
+  {
+    "id": "off-the-ground",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no substantive web presence found for this name in State College — likely not a real current public venue"
+  },
+  {
+    "id": "old-botany",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historic 1887 Penn State building designated campus landmark in 1962, one of oldest unaltered buildings on campus, now houses Asian Studies Program"
+  },
+  {
+    "id": "old-gold-pizza",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "appears permanently closed; address (219 E Beaver Ave) now occupied by Canyon Pizza, no active web presence for Old Gold Pizza"
+  },
+  {
+    "id": "old-main",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 95,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Penn State's iconic administrative building and most recognized campus landmark"
+  },
+  {
+    "id": "oliv-hetzel",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "student apartment high-rise at 114 Hetzel St; in-lobby cafe is 'New Here Coffee', not a standalone public cafe"
+  },
+  {
+    "id": "original-waffle-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running local breakfast institution with two State College locations; changed ownership after 52 years"
+  },
+  {
+    "id": "osaka",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Japanese hibachi and sushi restaurant at 450 E College Ave, operating as Osaka & Bei Jing"
+  },
+  {
+    "id": "palmer-museum-at-the-arboretum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 400,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "new $85M Palmer Museum of Art opened June 2024 at Penn State Arboretum (650 Bigler Rd); largest art museum between Pittsburgh and Philadelphia"
+  },
+  {
+    "id": "palmer-museum-of-art",
+    "status": "renamed",
+    "currentName": "Palmer Museum at the Arboretum",
+    "fameScore": 65,
+    "reviewCount": 400,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "old Curtin Road location closed May 2023; institution relocated and reopened June 2024 at Penn State Arboretum under the same name"
+  },
+  {
+    "id": "panzer-stadium",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State lacrosse stadium opened 2018, dedicated with a gift from Ken Panzer '82; capacity 1,300"
+  },
+  {
+    "id": "patterson-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small student-work exhibition space in the Patterson Building at Penn State College of Arts and Architecture"
+  },
+  {
+    "id": "penang",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 122,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Malaysian and Southeast Asian fusion at 1221 N Atherton St; well-regarded local standout for roti canai and laksa"
+  },
+  {
+    "id": "penn-kebab",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 68,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small family-owned halal Turkish shawarma takeout at 418 E College Ave, open since 2012"
+  },
+  {
+    "id": "penn-state-all-sports-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 250,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "official Penn State athletics museum located inside Beaver Stadium, open since 2002"
+  },
+  {
+    "id": "penn-steaks",
+    "status": "renamed",
+    "currentName": "Penn Steaks",
+    "fameScore": 28,
+    "reviewCount": 34,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "reopened August 2025 as Penn Steaks under new local ownership after Campus Steaks closed when prior owner was imprisoned for fraud"
+  },
+  {
+    "id": "pennsylvania-agricultural-college-pac-herbarium",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "research herbarium in Whitmore Lab at Penn State with 100,000+ specimens dating to 1859; open for tours and research by appointment"
+  },
+  {
+    "id": "pennsylvania-state-golf-courses",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 200,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Penn State's two public 18-hole courses (Blue and White) at 1523 W College Ave, established 1921"
+  },
+  {
+    "id": "pho-11",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 135,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Vietnamese pho and rice dishes at 146 N Atherton St; consistently reviewed local favorite"
+  },
+  {
+    "id": "phyrst",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 111,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "iconic Penn State basement bar at 111 E Beaver Ave known for live music 365 days a year; decades-long State College institution"
+  },
+  {
+    "id": "pilato-studios",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "working studio/gallery of local mural artist Michael Pilato on E Calder Way; not a conventional public museum, limited hours and web presence"
+  },
+  {
+    "id": "pita-cabana",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 167,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Lebanese and Mediterranean restaurant at 334 E Calder Way in downtown State College"
+  },
+  {
+    "id": "playa-bowls",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 29,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national acai bowl chain at 482 E Calder Way; opened State College location relatively recently"
+  },
+  {
+    "id": "plaza-azteca",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 332,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "open on S Atherton St; East Coast chain with 40+ locations in 11+ states"
+  },
+  {
+    "id": "poindexter",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 42,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "all-day cafe inside Graduate State College hotel, opened 2019; low standalone local recognition"
+  },
+  {
+    "id": "president-atherton",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 350,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Atherton gravesite memorial near Schwab — duplicate obscure node, dropped (agent mis-renamed to hotel)"
+  },
+  {
+    "id": "primanti-bros",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 280,
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "Pittsburgh-founded regional chain at 130 Heister St; well-known sports bar sandwich spot"
+  },
+  {
+    "id": "pure-food-laws",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historical marker on Penn State campus commemorating Penn State chemist William Frear's role in founding pure food legislation"
+  },
+  {
+    "id": "ramyun-studio",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 55,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "self-serve Korean ramyun spot at 208 E Calder Way, opened October 2024"
+  },
+  {
+    "id": "robeson-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "HUB-Robeson Galleries inside Penn State's student union; free contemporary art exhibitions, well-known on campus"
+  },
+  {
+    "id": "roots-natural-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Charlottesville-based grain bowl chain (~23 locations in Mid-Atlantic) at 270 E Beaver Ave"
+  },
+  {
+    "id": "rothrock-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 128,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "locally beloved independent roaster/cafe on S Atherton St, voted best coffee in State College; established 2016"
+  },
+  {
+    "id": "sakura-asian-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 131,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "long-running sushi and Asian cuisine restaurant at 1525 S Atherton St"
+  },
+  {
+    "id": "sauly-boys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 67,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "gourmet hot dog and burger spot at 124 S Allen St in downtown State College"
+  },
+  {
+    "id": "saxbys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "experiential-learning coffeehouse in Penn State's Smeal College of Business; Philadelphia-based college-town chain"
+  },
+  {
+    "id": "sbarro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 41,
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "national pizza chain with 600+ locations; located in Penn State's HUB-Robeson Center"
+  },
+  {
+    "id": "science-technology-and-society",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "historical marker on Penn State campus honoring the nation's first interdisciplinary STS program, founded 1969-70"
+  },
+  {
+    "id": "shake-smart",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "protein shake and acai bowl chain operating at Penn State IM Building and White Building; 30+ campus locations nationwide"
+  },
+  {
+    "id": "sharkies-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 55,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local pool bar and bottle shop at 110 Sowers St; no-cover neighborhood hangout popular with locals and students"
+  },
+  {
+    "id": "sher-halal-gyro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 14,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "downtown halal gyro and rice platter staple at 137 E Beaver Ave since 2018"
+  },
+  {
+    "id": "sher-hot-chicken",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 35,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "sister restaurant to Sher Halal Gyro, opened August 2024 at 145 S Allen St with halal fried chicken and shawarma"
+  },
+  {
+    "id": "sichuan-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 47,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "affordable Szechuan lunch spot at 147 S Allen St in downtown State College"
+  },
+  {
+    "id": "sip-and-slurp",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "bubble tea and handmade noodle shop at 432 E College Ave"
+  },
+  {
+    "id": "sizzling-bites",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 52,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "PA-regional halal chain, opened State College May 2026 on S Pugh St"
+  },
+  {
+    "id": "slim-chickens",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "national chain, express location in Penn State HUB since fall 2021 replacing Chick-fil-A"
+  },
+  {
+    "id": "smash-falafel",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local Mediterranean falafel spot on E Calder Way downtown"
+  },
+  {
+    "id": "snap-custom-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 107,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "PA/DE regional build-your-own pizza chain, 132 W College Ave downtown"
+  },
+  {
+    "id": "sora-teriyaki-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "new Japanese restaurant opened March 2026 inside the Oliv Hetzel high-rise"
+  },
+  {
+    "id": "south-food-district",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining hall at Redifer Commons, South Halls"
+  },
+  {
+    "id": "sowers-harvest-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 288,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved local breakfast-and-lunch cafe on E Beaver Ave, open since 2015"
+  },
+  {
+    "id": "stage-west",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "live music and DJ bar/venue on E College Ave, capacity 520"
+  },
+  {
+    "id": "state-chikn",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining concept at Waring Commons West Food District"
+  },
+  {
+    "id": "state-theatre",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 82,
+    "reviewCount": 350,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "iconic 554-seat non-profit community theatre on W College Ave since 1938"
+  },
+  {
+    "id": "tadashi-japanese-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "two-location local Japanese restaurant, well-known for ramen and sushi"
+  },
+  {
+    "id": "tadashi-japanest-restaurant",
+    "status": "renamed",
+    "currentName": "Tadashi Japanese Restaurant",
+    "fameScore": 55,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "apparent typo/OCR corruption of Tadashi Japanese Restaurant — no separate entity found"
+  },
+  {
+    "id": "tasty-k",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 19,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "local Korean fried chicken spot on E Calder Way downtown"
+  },
+  {
+    "id": "tea-time",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "State College's first boba shop on E Calder Way, permanently closed 2021"
+  },
+  {
+    "id": "teafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "boba tea cafe at 1633 N Atherton St in the Walmart Plaza"
+  },
+  {
+    "id": "the-arboretum-at-penn-state",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 26,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "free 370-acre botanic garden and arboretum adjacent to Penn State campus"
+  },
+  {
+    "id": "the-arena-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 26,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "sports bar and grill at 1521 Martin St, located in the bowling lanes"
+  },
+  {
+    "id": "the-brewery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 38,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "legendary dive bar on E Beaver Ave, service-industry staple, survived 2023 eminent domain threat"
+  },
+  {
+    "id": "the-cheese-shoppe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 105,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "WC Clarke's, downtown Calder Way institution for 40+ years, original coffee roaster"
+  },
+  {
+    "id": "the-corner-room",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 82,
+    "reviewCount": 283,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State landmark at Hotel State College since 1926, 100 W College Ave"
+  },
+  {
+    "id": "the-cove-new-york-style-pizzeria",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 170,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "active NY-style pizza spot on E College Ave with delivery presence"
+  },
+  {
+    "id": "the-dining-room-at-the-nittany-lion-inn",
+    "status": "renamed",
+    "currentName": "Lionne",
+    "fameScore": 52,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "renamed to Lionne when Nittany Lion Inn reopened after renovation in September 2024"
+  },
+  {
+    "id": "the-frost-entomological-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 0,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "free Penn State insect museum in Curtin Road building, open weekdays"
+  },
+  {
+    "id": "the-greek",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 104,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "BYOB Greek counter-serve on Clinton Ave, founded by Original Waffle Shop owner"
+  },
+  {
+    "id": "the-hub-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "contemporary art gallery inside the HUB-Robeson Center on Penn State campus, free admission"
+  },
+  {
+    "id": "the-koop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 89,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Korean fried chicken and cuisine on Locust Lane, formerly named Waker Chicken"
+  },
+  {
+    "id": "the-land-grant-frescoes",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1940s Henry Varnum Poor frescoes in Old Main lobby, landmark Penn State historical art installation"
+  },
+  {
+    "id": "the-original-waffle-shop-west",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 192,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "longtime local breakfast staple at W College Ave and Blue Course Drive, one of two Original Waffle Shop locations"
+  },
+  {
+    "id": "the-press-cider-and-craft-beverage-tap-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "newer Pennsylvania-cider focused taphouse on Hiester Street, BYOF concept in former Deli/Z Bar space"
+  },
+  {
+    "id": "the-shandygaff",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "longstanding Calder Alley bar and LGBTQ venue, also known as The Gaff"
+  },
+  {
+    "id": "the-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "iconic downtown fine dining institution open since 1948 on E College Ave"
+  },
+  {
+    "id": "the-waffle-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 143,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved downtown breakfast diner at 364 E College Ave, separate from Original Waffle Shop"
+  },
+  {
+    "id": "the-whale-tea",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 262,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "bubble tea chain with locations in CT, ID and PA; opened downtown on E Beaver Ave around 2022"
+  },
+  {
+    "id": "toasted-bagel-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 461,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "rebranded from Bagel Crust Cafe, local bagel and breakfast spot on Westerly Pkwy"
+  },
+  {
+    "id": "tokyo-sushi-hibachi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 58,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Japanese sushi and hibachi restaurant on E College Ave, open since 2016"
+  },
+  {
+    "id": "turfgrass-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Mascaro-Steiniger Turfgrass Museum at Penn State's Landscape Management Research Center, very niche academic museum"
+  },
+  {
+    "id": "uncle-chens-primetime",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "adjacent milk tea and Primetime storefront at 426 E Calder Way, related to Uncle Chen's Chinese next door"
+  },
+  {
+    "id": "uncle-chens",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 132,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular student-favorite Chinese takeout on E Calder Way, known for generous portions of fried rice and lo mein"
+  },
+  {
+    "id": "underground-burgers-and-crepes",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 47,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "basement-level burger and crepe spot on E Calder Way; also hosts MrBeast Burger ghost kitchen brand"
+  },
+  {
+    "id": "vibe-coffee-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 271,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "independent people-first coffee shop on W Beaver Ave, opened January 2021 by two Penn State alumni"
+  },
+  {
+    "id": "waring-square",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 26,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus dining hall buffet in West Halls, recognized by residents and students"
+  },
+  {
+    "id": "websters-bookstore-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 66,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "beloved independent bookstore-cafe on E Beaver Ave, downtown community staple since 2012"
+  },
+  {
+    "id": "whiskers",
+    "status": "renamed",
+    "currentName": "Triplett's",
+    "fameScore": 38,
+    "reviewCount": 32,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "renamed Triplett's after Nittany Lion Inn full renovation reopened September 2024"
+  },
+  {
+    "id": "white-course",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 150,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "one of two Penn State-operated 18-hole golf courses, holes dating to 1922"
+  },
+  {
+    "id": "wingman-pizza",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "former address at 218 E Calder Way now occupied by Justice Chicken; no active State College Wingman Pizza presence found"
+  },
+  {
+    "id": "wings-over-happy-valley",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 165,
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "franchise location of Wings Over (30+ locations nationally) at 244 W Hamilton Ave, open as of May 2026"
+  },
+  {
+    "id": "yallah-chicken-and-taco",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "third Yallah brand location at 1669 N Atherton St, focused on chicken and tacos"
+  },
+  {
+    "id": "yallah-taco",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 124,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "flagship Yallah brand with two downtown locations (McAllister Alley since 2018; E College Ave since 2020)"
+  },
+  {
+    "id": "yogurt-express",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 43,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "independent frozen yogurt and smoothie shop on E College Ave, established 1985"
+  },
+  {
+    "id": "yummy-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 65,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "family-run Szechuan Chinese restaurant on E Calder Way, updated March 2026"
+  },
+  {
+    "id": "zen-wings-things",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 35,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "late-night Asian fusion wings spot at 433 E Beaver Ave, open until 2:30-3am"
+  },
+  {
+    "id": "zenos-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 142,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "iconic underground dive bar at 100 W College Ave, beloved Penn State institution since at least the 1970s"
+  },
+  {
+    "id": "alumni-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "one-acre garden oasis surrounding the Hintz Family Alumni Center on Penn State's University Park campus, dedicated 2006–2008"
+  },
+  {
+    "id": "bee-and-pollinator-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small pollinator-focused garden referenced in State College Borough's pollinator conservation program; low independent web presence"
+  },
+  {
+    "id": "blue-band-practice-im-fields",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State intramural fields used as practice space by the Blue Band; listed on soccer-fields.com but minimal public profile"
+  },
+  {
+    "id": "butterfly-garden",
+    "status": "open",
+    "currentName": "Snetsinger Butterfly Garden",
+    "fameScore": 52,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "well-known 3-acre habitat at Tom Tudek Memorial Park in State College, commonly known as the Snetsinger Butterfly Garden"
+  },
+  {
+    "id": "cairns-crossing",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small College Township neighborhood park at 104 Gaslight Circle, maintained by CRPR"
+  },
+  {
+    "id": "crossing-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no dedicated web presence found in CRPR or State College Borough park listings; may be very minor or informal green space"
+  },
+  {
+    "id": "dalevue-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 45,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "14.8-acre College Township neighborhood park at 413 Goldfinch Dr with sports courts, playground, and annual fireworks"
+  },
+  {
+    "id": "east-fairmount-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "1.5-acre State College Borough park at 518 E Fairmount Ave, established 1976, recently renovated with new pavilion and playground"
+  },
+  {
+    "id": "foundry-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus park built on the site of the demolished Engineering Foundry Building; retains original crucible as historic artifact"
+  },
+  {
+    "id": "foxpointe-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Foxpointe is a residential neighborhood with community green spaces but no dedicated park by this name surfaces in CRPR listings"
+  },
+  {
+    "id": "glenn-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2.49-acre College Township neighborhood park at 125 Shady Dr with pavilion, playground, basketball court, and sledding area"
+  },
+  {
+    "id": "ho-smith-botanic-gardens",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 400,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "flagship 10-acre cultivated garden within the Arboretum at Penn State, free admission, widely visited by locals and tourists; Wikipedia coverage is for the parent Arboretum at Penn State article"
+  },
+  {
+    "id": "harris-acres-parklet",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 14,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small green space serving backyards of the Harris Acres neighborhood, managed by College Township Parks & Recreation"
+  },
+  {
+    "id": "haymarket-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "12-acre Ferguson Township neighborhood park at 1631 Bristol Ave with sports fields, basketball court, and playground"
+  },
+  {
+    "id": "high-point-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "6.2-acre State College Borough park at 855 W Whitehall Rd; home to High Point Skatepark, a free 20,000 sq ft public skatepark"
+  },
+  {
+    "id": "lederer-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 112,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "21.8-acre wooded park on University Drive with walking trails, the James Evans Oak Arboretum, and connections to Walnut Springs and Thompson Woods"
+  },
+  {
+    "id": "marjorie-mae-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "4.7-acre Patton Township neighborhood park with playground and pavilion, maintained by CRPR"
+  },
+  {
+    "id": "millbrook-marsh-fen",
+    "status": "renamed",
+    "currentName": "Millbrook Marsh Nature Center",
+    "fameScore": 55,
+    "reviewCount": 298,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "well-known 62-acre wetland nature preserve and education center on Puddintown Rd, operated by CRPR; the fen/marsh ecosystem is central to its identity"
+  },
+  {
+    "id": "mountainside-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "16.21-acre State College Borough neighborhood park at 575 Matilda Ave with playground and green space"
+  },
+  {
+    "id": "nittany-orchard-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood park in the Nittany Orchard area of State College with tennis court, walking trails, and sports fields"
+  },
+  {
+    "id": "nittany-village-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 0.5-acre neighborhood park at 1331 Old Boalsburg Rd; sparked local controversy over affordable housing development proposal in 2021"
+  },
+  {
+    "id": "oak-grove-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "5.1-acre College Township neighborhood park with basketball, tennis, playground, and pavilion"
+  },
+  {
+    "id": "oakwood-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "neighborhood park at 380 Oakwood Ave with ballfield, playground, and pavilion in the Oakwood residential area"
+  },
+  {
+    "id": "orchard-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 55,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "well-used 23-acre borough park at 1060 Bayberry Dr with soccer fields, tennis, basketball, walking paths, and pavilion"
+  },
+  {
+    "id": "park-ave-lower-intramural-fields",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State intramural outdoor fields on East Park Avenue used for flag football, soccer, and casual recreation"
+  },
+  {
+    "id": "park-hills-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "4-acre Ferguson Township park at 1251 W. Park Hills Ave with basketball court, pavilion, playground, and trails"
+  },
+  {
+    "id": "penn-state-community-garden-pollinator-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "pollinator garden installed at Penn State Community Garden via 2014 Sustainability Reinvention Fund grant, featuring 50 native plant species"
+  },
+  {
+    "id": "pollinator-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 30,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "3.5-acre Pollinator and Bird Garden at Penn State's Arboretum, opened June 2021 with 390+ native species — accessible public garden on campus"
+  },
+  {
+    "id": "sa-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no web presence found for a park named S&A Park in State College; possibly an informal or very small green space with no official listing"
+  },
+  {
+    "id": "schreyer-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Schreyer Pocket Garden founded 2022 in Simmons Hall courtyard at Penn State; student-run raised-bed produce garden donating to Lion's Pantry"
+  },
+  {
+    "id": "sculpture-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "sculpture path and outdoor garden at the Palmer Museum of Art at Penn State's Arboretum campus, opened 2024 with works by multiple artists"
+  },
+  {
+    "id": "shamrock-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "2.6-acre neighborhood park at 828 Shamrock Ave with trails and playground serving the Shamrock Ave residential area"
+  },
+  {
+    "id": "shaw-park",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no web presence found for a Shaw Park in State College PA; may be a very small or informally named local green space"
+  },
+  {
+    "id": "sidney-friedman-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "0.92-acre downtown parklet at 241 S Fraser St named in 2009 for prominent businessman; hosts arts festival activity and overlooks Memorial Field"
+  },
+  {
+    "id": "slab-cabin-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 85,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "well-known 20-acre Centre Region park at 150 Slab Cabin Park Rd, famous locally for its sledding hill and connected bike path with covered bridge"
+  },
+  {
+    "id": "smithfield-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "3.15-acre neighborhood park at 1210 Smithfield St with pavilion, trails, playground, and basketball court"
+  },
+  {
+    "id": "songbird-sanctuary-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "8-acre passive Ferguson Township park acquired 2016, developed as songbird and pollinator habitat near Blue Course Drive; named in a public renaming process"
+  },
+  {
+    "id": "south-hills-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 20,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "small 1.5-acre borough pocket park at 126 Aikens Place with basketball court and playground; received renovation upgrades"
+  },
+  {
+    "id": "suburban-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 70,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "10-acre Ferguson Township park at Suburban Ave and N Allen St with tennis/pickleball, basketball, ballfield, and pavilion; renovated 2023-2024"
+  },
+  {
+    "id": "sunset-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 60,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "20-acre park at 850 McKee St dating to the 1950s, known for large shade trees, walking trails, basketball, and pavilion"
+  },
+  {
+    "id": "the-giving-garden",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "no web presence as a named public park or garden in State College — likely not a recognized standalone venue"
+  },
+  {
+    "id": "the-lemont-village-green",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "community green in Lemont village (~2 miles from State College), hosts summer concert series and the annual Strawberry Festival"
+  },
+  {
+    "id": "thompson-woods-preserve",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 40,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "43-acre wooded nature preserve at the borough/township border, managed jointly by State College and College Township"
+  },
+  {
+    "id": "tom-tudek-memorial-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 220,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "crown jewel of Ferguson Township parks — 87 acres with butterfly garden, dog park, trails, and community gardens"
+  },
+  {
+    "id": "tudek-dog-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "popular off-leash fenced dog park within Tudek Memorial Park, well known to local dog owners"
+  },
+  {
+    "id": "tudek-park-community-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "107-plot community garden inside Tudek Memorial Park, managed by Centre Region Parks & Recreation since 2005"
+  },
+  {
+    "id": "tussey-view-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "4.5-acre Borough park on E Marylyn Ave with tennis, pickleball, basketball, and playground"
+  },
+  {
+    "id": "upper-intramural-fields",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 10,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Penn State campus outdoor intramural fields used for soccer, flag football, and pickup sports; known to students but little independent web presence"
+  },
+  {
+    "id": "walnut-springs-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 265,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "~45-acre Borough park with wooded trails, creek, and native plantings; popular with hikers and trail runners"
+  },
+  {
+    "id": "westerly-parkway-wetland-education-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 15,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Borough stormwater detention basin converted to public wetland education site with trails and signage; opened May 2012"
+  }
+]
