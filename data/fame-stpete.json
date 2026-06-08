@@ -1,0 +1,4130 @@
+[
+  {
+    "id": "1200-chophouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "3-daughters-brewing",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "400-beach-seafood",
+    "status": "renamed",
+    "currentName": "Juno and the Peacock",
+    "fameScore": 45,
+    "reviewCount": 742,
+    "hasWikipedia": false
+  },
+  {
+    "id": "400-beach-seafood-tap-house",
+    "status": "renamed",
+    "currentName": "Juno and the Peacock",
+    "fameScore": 50,
+    "reviewCount": 742,
+    "hasWikipedia": false
+  },
+  {
+    "id": "49th-street-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "4th-street-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "9-bangkok-thai-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "abc-chinese-seafood",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 350,
+    "hasWikipedia": false
+  },
+  {
+    "id": "acropolis-greek-taverna",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 490,
+    "hasWikipedia": false
+  },
+  {
+    "id": "agave",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 530,
+    "hasWikipedia": false
+  },
+  {
+    "id": "al-lang-stadium",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 500,
+    "hasWikipedia": true
+  },
+  {
+    "id": "alesia",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 405,
+    "hasWikipedia": false
+  },
+  {
+    "id": "allelo",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "anani-gulfport-bistro",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 26,
+    "hasWikipedia": false
+  },
+  {
+    "id": "angelos-grill-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "anthonys-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "astra-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 94,
+    "hasWikipedia": false
+  },
+  {
+    "id": "athenian-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "avid-brew-company",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 52,
+    "hasWikipedia": false
+  },
+  {
+    "id": "baba",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 286,
+    "hasWikipedia": false
+  },
+  {
+    "id": "babalu",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 196,
+    "hasWikipedia": false
+  },
+  {
+    "id": "baby-turtle-beach-club",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bad-mother",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 70,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ballpark-and-rec",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "banana-hammock",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 243,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bandit-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "banyan-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 218,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bar-moxy",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bar548",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 83,
+    "hasWikipedia": false
+  },
+  {
+    "id": "basil-leaf",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 310,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bavaros",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 550,
+    "hasWikipedia": false
+  },
+  {
+    "id": "beangood-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "beech-kombucha",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "beerbusters-movie-bar-bottle-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bella-brava",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 700,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bento",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 197,
+    "hasWikipedia": false
+  },
+  {
+    "id": "biff-burger",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 260,
+    "hasWikipedia": false
+  },
+  {
+    "id": "big-apple-buffet-ii",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bjs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 800,
+    "hasWikipedia": false
+  },
+  {
+    "id": "black-crow-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 334,
+    "hasWikipedia": false
+  },
+  {
+    "id": "black-crow-coffee-shop",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 334,
+    "hasWikipedia": false
+  },
+  {
+    "id": "blue-fugu",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 166,
+    "hasWikipedia": false
+  },
+  {
+    "id": "blue-parrot",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 84,
+    "hasWikipedia": false
+  },
+  {
+    "id": "boardwalk-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 12,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bob-evans",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bodega",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 2255,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bojangles",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "bongos-beach-bar-grille",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 637,
+    "hasWikipedia": false
+  },
+  {
+    "id": "boston-market",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 39,
+    "hasWikipedia": false
+  },
+  {
+    "id": "boulevard-burgers-and-tap-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "boyd-hill-nature-preserve",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 400,
+    "hasWikipedia": true
+  },
+  {
+    "id": "brandys-lounge",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 20,
+    "hasWikipedia": false
+  },
+  {
+    "id": "brewburgers",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 95,
+    "hasWikipedia": false
+  },
+  {
+    "id": "brick-mortar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "brooklyn-south",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 390,
+    "hasWikipedia": false
+  },
+  {
+    "id": "buffalo-wild-wings",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 130,
+    "hasWikipedia": false
+  },
+  {
+    "id": "buildings-pub",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "buoys-waterfront-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "burger-monger",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 270,
+    "hasWikipedia": false
+  },
+  {
+    "id": "burrito-boarder",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "buttermilk-eatery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "buya",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 900,
+    "hasWikipedia": false
+  },
+  {
+    "id": "c-a-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 10,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cactus-charlies-lounge",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 20,
+    "hasWikipedia": false
+  },
+  {
+    "id": "caddys-on-the-beach",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "caddys-saint-pete-beach",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-1001-and-creative-catering-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 22,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-cibo",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 310,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-cure",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-gala",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-soleil-french-bakery-deli",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 720,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-tuk-tuk",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cafe-vienna",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 75,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cage-brewing",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 180,
+    "hasWikipedia": false
+  },
+  {
+    "id": "california-tacos",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 148,
+    "hasWikipedia": false
+  },
+  {
+    "id": "campanellas-italian-restaurant-pizzeria",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 193,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cappys-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 392,
+    "hasWikipedia": false
+  },
+  {
+    "id": "carinos-northern-italian-cuisine",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 323,
+    "hasWikipedia": false
+  },
+  {
+    "id": "carmelitas-mexican-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "casita-taqueria",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 653,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cassis",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 1259,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cassis-american-brasserie",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 1259,
+    "hasWikipedia": false
+  },
+  {
+    "id": "castile-restaurant",
+    "status": "renamed",
+    "currentName": "Azura Coastal Kitchen & Bar",
+    "fameScore": 30,
+    "reviewCount": 323,
+    "hasWikipedia": false
+  },
+  {
+    "id": "casual-clam",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 319,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cec-cafe",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 10,
+    "hasWikipedia": false
+  },
+  {
+    "id": "central-coffee-shoppe",
+    "status": "renamed",
+    "currentName": "Central Diner",
+    "fameScore": 50,
+    "reviewCount": 196,
+    "hasWikipedia": false
+  },
+  {
+    "id": "central-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 85,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ceviche",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 1152,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ceviche-tapas-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 1152,
+    "hasWikipedia": false
+  },
+  {
+    "id": "charleys-philly-steaks",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 60,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cheddars",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chiang-mai",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 102,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chicago-pizza",
+    "status": "renamed",
+    "currentName": "Wrigley's Pizza",
+    "fameScore": 30,
+    "reviewCount": 274,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chihuly-collection",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 194,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chile-verde",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 367,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chilis",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 98,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chill-restaurant-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 250,
+    "hasWikipedia": false
+  },
+  {
+    "id": "china-1",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 61,
+    "hasWikipedia": false
+  },
+  {
+    "id": "china-city",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 21,
+    "hasWikipedia": false
+  },
+  {
+    "id": "china-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 119,
+    "hasWikipedia": false
+  },
+  {
+    "id": "chop-stick-express",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 308,
+    "hasWikipedia": false
+  },
+  {
+    "id": "churchs-chicken",
+    "status": "open",
+    "currentName": "Church's Texas Chicken",
+    "fameScore": 30,
+    "reviewCount": 13,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ciccios-california",
+    "status": "renamed",
+    "currentName": "CALI",
+    "fameScore": 55,
+    "reviewCount": 786,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cider-press-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 700,
+    "hasWikipedia": false
+  },
+  {
+    "id": "clock-tower-sports-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cocktail-st-pete",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 104,
+    "hasWikipedia": false
+  },
+  {
+    "id": "coconut-charlies-beach-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "coney-island",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 60,
+    "hasWikipedia": false
+  },
+  {
+    "id": "coney-island-grill",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 119,
+    "hasWikipedia": false
+  },
+  {
+    "id": "copa",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 216,
+    "hasWikipedia": false
+  },
+  {
+    "id": "copper-shaker",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "corned-beef-corner",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 60,
+    "hasWikipedia": false
+  },
+  {
+    "id": "crab-shack",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 490,
+    "hasWikipedia": false
+  },
+  {
+    "id": "crabby-bills",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 2213,
+    "hasWikipedia": false
+  },
+  {
+    "id": "craftsman-house",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 31,
+    "hasWikipedia": false
+  },
+  {
+    "id": "crafty-crab",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 55,
+    "hasWikipedia": false
+  },
+  {
+    "id": "cycle-brewing",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "da-sesto-italiano-ristorante-e-vino",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 755,
+    "hasWikipedia": false
+  },
+  {
+    "id": "dead-bobs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "desanto-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "dickeys-barbecue-pit",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ding-tea",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "dooriban",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 371,
+    "hasWikipedia": false
+  },
+  {
+    "id": "doormet",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 24,
+    "hasWikipedia": false
+  },
+  {
+    "id": "doubles-sports-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 10,
+    "hasWikipedia": false
+  },
+  {
+    "id": "dr-bbq",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 888,
+    "hasWikipedia": false
+  },
+  {
+    "id": "driftwood-roastery",
+    "status": "renamed",
+    "currentName": "Driftwood Kava & Roastery St. Pete",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "drunkenwok",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "duncan-mcclellan-gallery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "earl-of-sandwich",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 88,
+    "hasWikipedia": false
+  },
+  {
+    "id": "edo-japanese-steakhouse-and-sushi-bar",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "el-agave-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 192,
+    "hasWikipedia": false
+  },
+  {
+    "id": "el-cap",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 567,
+    "hasWikipedia": false
+  },
+  {
+    "id": "el-huarache-veloz",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "el-nica-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "elliott-aster",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "emerald-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 66,
+    "hasWikipedia": false
+  },
+  {
+    "id": "engine-no-9",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 1575,
+    "hasWikipedia": false
+  },
+  {
+    "id": "enigma",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 73,
+    "hasWikipedia": false
+  },
+  {
+    "id": "estelas",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "evos",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 190,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fabrica-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 171,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fazios-pizza-and-subs",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fergs-sports-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 531,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fire-water",
+    "status": "renamed",
+    "currentName": "FireWater Cuisine & Wellness",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "first-street-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 35,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fish-tales",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 128,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fitlife-foods",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 120,
+    "hasWikipedia": false
+  },
+  {
+    "id": "five-bucks-drinkery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 395,
+    "hasWikipedia": false
+  },
+  {
+    "id": "flamingo-sports-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 250,
+    "hasWikipedia": false
+  },
+  {
+    "id": "flippers-pizzeria",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 229,
+    "hasWikipedia": false
+  },
+  {
+    "id": "florida-holocaust-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 82,
+    "reviewCount": 800,
+    "hasWikipedia": true
+  },
+  {
+    "id": "focheezy",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 106,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fort-de-soto-county-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 90,
+    "reviewCount": 8000,
+    "hasWikipedia": true
+  },
+  {
+    "id": "fortu",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fortunato-italian-pizzeria",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 44,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fourth-street-shrimp-store",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 3100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "foxtail-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 58,
+    "hasWikipedia": false
+  },
+  {
+    "id": "frays-donut-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fred-flemings-bbq",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "frescos-waterfront-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 1044,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fresh-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "fubar-downtown",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 23,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gateway-pizza-and-pasta",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gateway-to-india",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 420,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gennaros",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 173,
+    "hasWikipedia": false
+  },
+  {
+    "id": "georgies-alibi",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 57,
+    "hasWikipedia": false
+  },
+  {
+    "id": "german-american-society-biergarten",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "german-knoodle",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 312,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gigis-italian-restaurant",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 179,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gigis-italian-restaurants",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 222,
+    "hasWikipedia": false
+  },
+  {
+    "id": "glory-days-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 309,
+    "hasWikipedia": false
+  },
+  {
+    "id": "godfathers-pizza",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "good-night-john-boy",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 330,
+    "hasWikipedia": false
+  },
+  {
+    "id": "grace",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "grand-hacienda",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 433,
+    "hasWikipedia": false
+  },
+  {
+    "id": "grassroots-kava",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "grazzi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 725,
+    "hasWikipedia": false
+  },
+  {
+    "id": "great-explorations-childrens-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "great-wall",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "green-bench-brewing-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 420,
+    "hasWikipedia": false
+  },
+  {
+    "id": "griffin-ribs",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "grove-surf-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 238,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gulfport-brewery-eatery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "gypsysouls-coffeehouse-dtsp",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "habibi-lounge",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hangar-restaurant-and-flight-lounge",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 250,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hardees",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 61,
+    "hasWikipedia": false
+  },
+  {
+    "id": "harold-seltzers-steakhouse",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 468,
+    "hasWikipedia": false
+  },
+  {
+    "id": "harrys-beach-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "harveys-4th-street-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hawkers-asian-street-food",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 2200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hi-5",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "honey-baked-ham",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hooks-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 319,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hooks-sushi-bar-and-thai-food",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hookah",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hops-props",
+    "status": "renamed",
+    "currentName": "Hops 2.0",
+    "fameScore": 38,
+    "reviewCount": 133,
+    "hasWikipedia": false
+  },
+  {
+    "id": "huaroche-veloz",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 116,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hungry-howies",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "hurricane-seafood-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 876,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ichiban-japanese",
+    "status": "open",
+    "currentName": "Ichiban Izakaya",
+    "fameScore": 30,
+    "reviewCount": 120,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ichicoro-ane",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 270,
+    "hasWikipedia": false
+  },
+  {
+    "id": "if-i-brewed-the-world",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 38,
+    "hasWikipedia": false
+  },
+  {
+    "id": "il-ritorno",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 425,
+    "hasWikipedia": false
+  },
+  {
+    "id": "imagine-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 700,
+    "hasWikipedia": false
+  },
+  {
+    "id": "independent",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 29,
+    "hasWikipedia": false
+  },
+  {
+    "id": "indian-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "intermezzo-coffee-cocktails",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 249,
+    "hasWikipedia": false
+  },
+  {
+    "id": "isla-del-sol",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 15,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jacks",
+    "status": "open",
+    "currentName": "Jack's London Grill",
+    "fameScore": 40,
+    "reviewCount": 644,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jahva-coffee-lounge",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 24,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jannus-live",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 88,
+    "reviewCount": 600,
+    "hasWikipedia": true
+  },
+  {
+    "id": "jimmy-bs-beach-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 436,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jimmys-sports-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 24,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jinju",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 111,
+    "hasWikipedia": false
+  },
+  {
+    "id": "joey-brooklyns-famous-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 380,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jollibee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 304,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jotos-pizza",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jungle-prada-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 192,
+    "hasWikipedia": false
+  },
+  {
+    "id": "jwags",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 39,
+    "hasWikipedia": false
+  },
+  {
+    "id": "katiki",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 141,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kahunas",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 106,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kahwa-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kahwa-coffee-north",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 186,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kahwa-south",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 186,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kalinas-coffee-european-food",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 21,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kao-thai-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "karma",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kinjo-japanese-restaurant",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kobe-japanese-steakhouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kopper-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kress-building",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 50,
+    "hasWikipedia": true
+  },
+  {
+    "id": "krispy-krunchy-chicken",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "kristinas-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 286,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mi-carreta-restaurant-and-bakery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 236,
+    "hasWikipedia": false
+  },
+  {
+    "id": "la-casa-de-pane",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "la-hacienda",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "la-sandwicherie-saint-pete",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "la-teresita",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "la-v-vietnamese-fusion",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 674,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lanas-downtown-lounge",
+    "status": "open",
+    "currentName": "Lana's Place",
+    "fameScore": 22,
+    "reviewCount": 12,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lanna-thai-sushi-restuarant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 177,
+    "hasWikipedia": false
+  },
+  {
+    "id": "larrys-giant-subs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "leafy-greens-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 305,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lee-roy-selmons",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 48,
+    "hasWikipedia": true
+  },
+  {
+    "id": "level-11",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 190,
+    "hasWikipedia": false
+  },
+  {
+    "id": "leverocks",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 357,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lime",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 49,
+    "hasWikipedia": false
+  },
+  {
+    "id": "little-dog-house",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lonnis-sandwiches",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 157,
+    "hasWikipedia": false
+  },
+  {
+    "id": "los-guerreros-mexican-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 259,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lotus-vegetarian",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "low-tide-kava",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "luckie-bs",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 151,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lucky-9-juice-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 60,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lucky-star",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 89,
+    "hasWikipedia": false
+  },
+  {
+    "id": "lucky-star-lounge",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 37,
+    "hasWikipedia": false
+  },
+  {
+    "id": "macdintons-irish-pub",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 149,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mad-hatters-ethnobotanical-tea-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 195,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mamus-kitchen",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mandarin-hide",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 285,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mangrove-bay-golf-course",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 36,
+    "hasWikipedia": false
+  },
+  {
+    "id": "maple-street-biscuit-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 675,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mastrys",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 47,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mastrys-brewing-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 167,
+    "hasWikipedia": false
+  },
+  {
+    "id": "maxiland-bakery",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "maysters-cafe",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mcauleys-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mcnastys-bar-and-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 57,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mekong-vietnamese-restaurant",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mickeys-cafe",
+    "status": "open",
+    "currentName": "Mickey's Cafe & Organics",
+    "fameScore": 40,
+    "reviewCount": 142,
+    "hasWikipedia": false
+  },
+  {
+    "id": "middle-grounds-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 977,
+    "hasWikipedia": false
+  },
+  {
+    "id": "morean-arts-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 400,
+    "hasWikipedia": true
+  },
+  {
+    "id": "mr-mrs-crab",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mr-empanada",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 43,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mr-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "museum-of-fine-arts",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 82,
+    "reviewCount": 105,
+    "hasWikipedia": true
+  },
+  {
+    "id": "my-rich-uncle",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 257,
+    "hasWikipedia": false
+  },
+  {
+    "id": "nashs-hot-chicken",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 131,
+    "hasWikipedia": false
+  },
+  {
+    "id": "natures-table",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "neighborhood-joe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 133,
+    "hasWikipedia": false
+  },
+  {
+    "id": "neptune-grill",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "new-china",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "nine-spices-hot-pot",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 284,
+    "hasWikipedia": false
+  },
+  {
+    "id": "nitallys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 238,
+    "hasWikipedia": false
+  },
+  {
+    "id": "nori-thai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "north-shore-kickball-fields",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "north-shore-volleyball-courts",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "nueva-cantina",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 554,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ny-cafe",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "oak-and-stone",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "oishi-sushi-japanese-steak-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "old-northeast-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 125,
+    "hasWikipedia": false
+  },
+  {
+    "id": "old-southeast-market",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "one-night-stand",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "original-pizza-ii",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "overflow-brewing-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 44,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pacific-counter",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 547,
+    "hasWikipedia": false
+  },
+  {
+    "id": "paisanos-pizza-pasta",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pana-kava-java",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "paolos-pizza-subs",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 120,
+    "hasWikipedia": false
+  },
+  {
+    "id": "paradeco-coffee-roasters",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "paradise-grille-pass-a-grille",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 1000,
+    "hasWikipedia": false
+  },
+  {
+    "id": "paradise-grille-upham-beach",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "park-rec",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 222,
+    "hasWikipedia": false
+  },
+  {
+    "id": "park-street-diner",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "parkshore-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 808,
+    "hasWikipedia": false
+  },
+  {
+    "id": "parkside-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 195,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pasadena-yacht-country-club",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "patanegra",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 64,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pee-pas-garage-craft-brewery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pegs-cantina",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 155,
+    "hasWikipedia": true
+  },
+  {
+    "id": "pei-wei",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "perkins",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "perrys-bbq",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pho-ha-tien",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pho-kien-giang",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pho-quyen-vietnamese",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pier-teaki",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 308,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pin-wok-bowl",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 180,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pineapple-espresso",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 120,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pinoy-saint-pete",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 36,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pipos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 335,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pipos-cuban-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 335,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pipos-togo",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 46,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pitas-republic",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 43,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pizzaaaaaaa",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "pjs-seafood",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 339,
+    "hasWikipedia": false
+  },
+  {
+    "id": "planet-smoothie",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 14,
+    "hasWikipedia": false
+  },
+  {
+    "id": "players-sports-bar",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "po-folks",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 270,
+    "hasWikipedia": true
+  },
+  {
+    "id": "poke-island",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "poppos-taquiera",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "porters-stone-soup-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "portillos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 194,
+    "hasWikipedia": true
+  },
+  {
+    "id": "portofino-italian-ristorante",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 137,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ps-grind",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "punkys-bar-and-grill",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 120,
+    "hasWikipedia": false
+  },
+  {
+    "id": "quaker-steak-lube",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 273,
+    "hasWikipedia": false
+  },
+  {
+    "id": "quan-ngon-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 38,
+    "hasWikipedia": false
+  },
+  {
+    "id": "que-pasa-mexican-cantina",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 60,
+    "hasWikipedia": false
+  },
+  {
+    "id": "red-ribbon",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "red-robin",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 155,
+    "hasWikipedia": false
+  },
+  {
+    "id": "renzos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 275,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rhythm-blues-bar-grill",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 12,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ricks-reef",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 350,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ricky-ps-po-boys",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 210,
+    "hasWikipedia": false
+  },
+  {
+    "id": "right-around-the-corner",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 236,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ringside-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "riptides",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 38,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rococo-steak",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rollbotto-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "room-901",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 60,
+    "hasWikipedia": false
+  },
+  {
+    "id": "roses",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rubys-elixir",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 120,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rum-runners",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rumfish-grill-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 800,
+    "hasWikipedia": false
+  },
+  {
+    "id": "rumfish-grill-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 800,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ruths-chris-steak-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sab-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "saigon-blonde",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "saigon-cafe",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "saint-pete-bagel-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1000,
+    "hasWikipedia": false
+  },
+  {
+    "id": "saint-pete-brewing-company",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "saint-petersburg-ale-house",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "salems-gyros-subs",
+    "status": "renamed",
+    "currentName": "Salem's Fresh Eats",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "saltys-tiki-bar-beach-lounge",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sams-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sandras-german-restaurant",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 130,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sawatdee-thai-and-sushi",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 55,
+    "hasWikipedia": false
+  },
+  {
+    "id": "scooters-coffee",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "scrounge-lounge-beach-bar",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sea-critters-cafe",
+    "status": "renamed",
+    "currentName": "Red, White & Booze",
+    "fameScore": 45,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sea-hags-bar-grill",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 446,
+    "hasWikipedia": false
+  },
+  {
+    "id": "seasons-cafe-bakery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "senor-taco",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "shadracks",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "shells",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "shrimpys-blues-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "siam-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sila-thai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 180,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sip-tea",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "skyway-jacks",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 420,
+    "hasWikipedia": false
+  },
+  {
+    "id": "slice-of-the-burg",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 280,
+    "hasWikipedia": false
+  },
+  {
+    "id": "snappers-sea-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 1900,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sneakers-lounge",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 15,
+    "hasWikipedia": false
+  },
+  {
+    "id": "snell-arcade",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 0,
+    "hasWikipedia": true
+  },
+  {
+    "id": "sonic",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sonnys",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sonnys-real-pit-bbq",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 70,
+    "hasWikipedia": false
+  },
+  {
+    "id": "southside-craft-coffee-brew-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "souzou",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "spa-beach-bistro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "special-pho",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "spinners",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "spring-garden",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "spring-garden-family-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 70,
+    "hasWikipedia": false
+  },
+  {
+    "id": "squeeze-juice-works",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "st-pete-pier",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 92,
+    "reviewCount": 5000,
+    "hasWikipedia": true
+  },
+  {
+    "id": "st-petersburg-museum-of-history",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "stack-n-sizzle",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "steak-n-shake",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "steel-city-brewhouse",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 56,
+    "hasWikipedia": false
+  },
+  {
+    "id": "steves-tavern",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "stillwaters-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 1249,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sumitra-espresso-lounge",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sunken-gardens",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 82,
+    "reviewCount": 3000,
+    "hasWikipedia": true
+  },
+  {
+    "id": "sunset-grille",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 89,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sunshine-kitty-catfe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sushi-inc",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sushi-rock-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 175,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sushi-sho-rexley",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 179,
+    "hasWikipedia": false
+  },
+  {
+    "id": "sushi-spice",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "swigwam-beach-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "swingers-patio-bar-grill",
+    "status": "renamed",
+    "currentName": "The Salty Nun (also closed)",
+    "fameScore": 20,
+    "reviewCount": 68,
+    "hasWikipedia": false
+  },
+  {
+    "id": "taco-bus",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 432,
+    "hasWikipedia": true
+  },
+  {
+    "id": "tampa-bay-watch-discovery-center",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "taphouse-61",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "taste-of-punjab",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "taste-of-saigon",
+    "status": "renamed",
+    "currentName": "Ikigai with a Taste of Saigon",
+    "fameScore": 28,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "taste-of-the-islands-restaurant",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 13,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tasty-pho",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 412,
+    "hasWikipedia": false
+  },
+  {
+    "id": "ted-peters-smoked-fish",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 78,
+    "reviewCount": 1500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "terra-mar-brazilian-steakhouse",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 251,
+    "hasWikipedia": false
+  },
+  {
+    "id": "thai-am",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-ale-and-the-witch",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 254,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-avenue",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 825,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-bends",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 82,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-bikery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 76,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-burg-bar-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 350,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-burg-diner",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 153,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-cabana-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-campus-grind",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 27,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-canopy",
+    "status": "open",
+    "currentName": "Birchwood Canopy",
+    "fameScore": 62,
+    "reviewCount": 507,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-canopy-at-birchwood",
+    "status": "open",
+    "currentName": "Birchwood Canopy",
+    "fameScore": 62,
+    "reviewCount": 507,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-chattaway",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 303,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-chelsea-saint-pete",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 42,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-cupcake-spot",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 87,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-dali-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 95,
+    "reviewCount": 1400,
+    "hasWikipedia": true
+  },
+  {
+    "id": "the-don-cesar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 92,
+    "reviewCount": 3000,
+    "hasWikipedia": true
+  },
+  {
+    "id": "the-drunken-clam",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 313,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-floribbean",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 293,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-floridian",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 370,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-frog-pond",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 1258,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-galley",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-galley-a-st-pete-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-garage-on-central",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 51,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-island-grille-raw-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 722,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-james-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 1000,
+    "hasWikipedia": true
+  },
+  {
+    "id": "the-kitchen",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 48,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-lemon-grass",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-library",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-liquid-therapy-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-lure-ono",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-moon-under-water",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-neon-lunchbox",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 13,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-palladium-theater",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-pizza-joint-fl",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 76,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-sandbar",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 18,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-state-theatre",
+    "status": "renamed",
+    "currentName": "Floridian Social Club",
+    "fameScore": 62,
+    "reviewCount": 700,
+    "hasWikipedia": true
+  },
+  {
+    "id": "the-studio-public-house",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-tap-room",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 360,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-tavern-at-bayboro",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-toasted-monkey",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-wharf",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-witches-bbq-den",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "the-wooden-rooster",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "thirsty-first",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 280,
+    "hasWikipedia": false
+  },
+  {
+    "id": "three-birds-tavern",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 586,
+    "hasWikipedia": false
+  },
+  {
+    "id": "thuy-cafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 166,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tobys-original-little-italy-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 453,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tonys-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 147,
+    "hasWikipedia": false
+  },
+  {
+    "id": "torchys-tacos",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tour-de-pizza",
+    "status": "renamed",
+    "currentName": "TOURnament de Pizza",
+    "fameScore": 52,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "trailer-daddy",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 50,
+    "hasWikipedia": false
+  },
+  {
+    "id": "treasure-bay-resort-and-marina",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 400,
+    "hasWikipedia": false
+  },
+  {
+    "id": "trips-diner",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tritons-pub",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "trophy-fish",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 250,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tropicana-field",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 95,
+    "reviewCount": 5000,
+    "hasWikipedia": true
+  },
+  {
+    "id": "tryst",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 380,
+    "hasWikipedia": false
+  },
+  {
+    "id": "tsunami",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 240,
+    "hasWikipedia": false
+  },
+  {
+    "id": "twin-brooks-golf-course",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "twisted-indian",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 26,
+    "hasWikipedia": false
+  },
+  {
+    "id": "undertow",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 600,
+    "hasWikipedia": false
+  },
+  {
+    "id": "urban",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 500,
+    "hasWikipedia": false
+  },
+  {
+    "id": "victors-kitchen",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 34,
+    "hasWikipedia": false
+  },
+  {
+    "id": "village-inn",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 130,
+    "hasWikipedia": false
+  },
+  {
+    "id": "vinoy-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 500,
+    "hasWikipedia": true
+  },
+  {
+    "id": "vito-michaels-pizzeria",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 275,
+    "hasWikipedia": false
+  },
+  {
+    "id": "webbs-city-cellar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 150,
+    "hasWikipedia": false
+  },
+  {
+    "id": "welcome-to-the-farm",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 20,
+    "hasWikipedia": false
+  },
+  {
+    "id": "welton-brewing-co",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "welton-brewing-company-and-oyster-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "wepa-cocina-de-puerto-rico",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 125,
+    "hasWikipedia": false
+  },
+  {
+    "id": "westshore-pizza",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  },
+  {
+    "id": "wharf-seafood-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 454,
+    "hasWikipedia": false
+  },
+  {
+    "id": "where-else-tavern",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
+    "id": "wild-child",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 340,
+    "hasWikipedia": false
+  },
+  {
+    "id": "wildlife-acai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 22,
+    "hasWikipedia": false
+  },
+  {
+    "id": "willys-burger-and-booze",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 200,
+    "hasWikipedia": false
+  },
+  {
+    "id": "wilsons-sports-lounge",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 30,
+    "hasWikipedia": false
+  },
+  {
+    "id": "wine-madonna",
+    "status": "renamed",
+    "currentName": "Dracula's Legacy Wine Bar",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "winghouse",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 86,
+    "hasWikipedia": true
+  },
+  {
+    "id": "winghouse-of-saint-petersburg",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 86,
+    "hasWikipedia": true
+  },
+  {
+    "id": "woodson-african-american-museum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 11,
+    "hasWikipedia": true
+  },
+  {
+    "id": "woodys-waterfront-cafe",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 484,
+    "hasWikipedia": false
+  },
+  {
+    "id": "world-vegan-cuisine",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 80,
+    "hasWikipedia": false
+  },
+  {
+    "id": "yummy-teriyaki",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 9,
+    "hasWikipedia": false
+  },
+  {
+    "id": "yummy-thai",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 243,
+    "hasWikipedia": false
+  },
+  {
+    "id": "zaytoon-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 321,
+    "hasWikipedia": false
+  },
+  {
+    "id": "zbar",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 40,
+    "hasWikipedia": false
+  },
+  {
+    "id": "zekos-mediterranian-grill",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 100,
+    "hasWikipedia": false
+  },
+  {
+    "id": "zom-hee-chinese-restaurant",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 300,
+    "hasWikipedia": false
+  }
+]

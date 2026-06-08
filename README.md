@@ -39,8 +39,11 @@ close you got. Share your result Wordle-style.
 1. A place **name** appears over a satellite map of your chosen city.
 2. **Click the map** where you think it is (zoom in for precision).
 3. **Submit** → the real spot is revealed with your distance and score (0–100).
-4. Five rounds — **☕ coffee → 🍽️ restaurant → 🍺 bar → 🏛️ landmark → 🎲 wildcard** —
-   then a results screen with your total /500, streak, and a copyable share.
+4. Five rounds ramping up in difficulty — **🟢 easy → 🟢 easy → 🟡 medium →
+   🟡 medium → 🔴 hard** (with category variety mixed in) — then a results screen
+   with your total /500, streak, and a copyable share. Difficulty = how locally
+   famous a place is; cities not yet scored fall back to a
+   ☕ coffee → 🍽️ restaurant → 🍺 bar → 🏛️ landmark → 🎲 wildcard order.
 
 New puzzle daily at **midnight in the city's timezone**.
 

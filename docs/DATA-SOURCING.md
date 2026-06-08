@@ -105,6 +105,7 @@ Run at <https://query.wikidata.org>. This is optional polish — the OSM
   "lat": 27.7836,
   "lng": -82.6403,                 // el.lat/el.lon, or el.center for ways/rels
   "category": "attraction",        // inferred from tags (see types.ts)
+  "difficulty": "easy",            // easy|medium|hard; added by the fame pass (§4b). Optional until enriched
   "clue": null,                    // HUMAN writes this (or seed from Wikidata)
   "photoUrl": null,                // FUTURE photo rounds; leave null for v1
   "source": "overpass",            // or "wikidata" / "manual"
@@ -140,8 +141,13 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
-### Status: ~516 locations
-`public/locations.stpete.json` holds **~516 St. Pete places** — ~30 curated
+### Status: ~382 locations (after the fame pass cleanup)
+`public/locations.stpete.json` holds **382 St. Pete places**. It started at ~516
+from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
+104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
+"Cafe"/"Hookah"), 1 renamed-to-also-closed — **renamed 15** still-operating spots
+(e.g. The State Theatre → Floridian Social Club) and de-duped 1. The original
+inclusive composition was ~30 curated
 landmarks plus an **inclusive** pull of non-national-chain restaurants/bars/cafés
 in the bounding box (≈326 restaurants, **109 bars**, 50 cafés). Bars
 are pulled even without an "established" tag signal (many dives carry no tags);
@@ -161,10 +167,38 @@ Earlier hand-picked highlights (with clues):
   Floribbean…), bars/breweries (Green Bench, Cycle, Emerald Bar, 3 Daughters,
   Kahuna's…). Local mini-chains are welcome; only national chains are excluded.
 
-The daily game picks **one of each** in order: **cafe → restaurant → bar →
-landmark → wildcard** (`CATEGORY_PLAN` in `src/lib/daily.ts`). A vitest guard
-(`src/lib/locations.test.ts`) fails the build if a location is out of bounds, an
-id collides, or the curated set can no longer fill that plan.
+Because St. Pete is enriched with `difficulty`, the daily game uses the
+**difficulty plan** (easy → easy → medium → medium → hard, `DIFFICULTY_PLAN` in
+`src/lib/daily.ts`), still layering category variety within each slot. Cities not
+yet enriched use the legacy **cafe → restaurant → bar → landmark → wildcard**
+plan. A vitest guard (`src/lib/locations.test.ts`) fails the build if a location
+is out of bounds, an id collides, a difficulty is invalid, or the set can no
+longer fill its plan.
+
+## 4b. Difficulty — the fame + status pass
+
+Each location gets a `difficulty` (`easy`/`medium`/`hard`) = the **inverse of its
+local fame**. It's produced by a one-time **agentic web-research pass** (a
+background workflow that fans out ~25 locations per agent):
+
+1. **Status check** — every location is verified as `open` / `closed` / `renamed`
+   / `uncertain` via current Yelp/Google/news. **Permanently-closed are removed**
+   (not labeled hard); still-operating renames are updated to the new name;
+   obvious junk (generic names, zero web presence) is dropped; duplicates merged.
+2. **Fame score 0–100** — from TripAdvisor "things to do"/"best of" presence,
+   Google/Yelp review **count relative to the city**, and Wikipedia. The rubric is
+   calibrated against a human local's blind ratings: **down-weight tourist/critic
+   fame** (Michelin / James Beard / TripAdvisor rank / lore-only Wikipedia) and
+   **up-weight raw local ubiquity** — most restaurants/bars land 20–60; 80+ is
+   almost exclusively non-food landmarks.
+3. **Bucket by city-relative percentile** — **narrow-easy: top 20% easy / next
+   45% medium / bottom 35% hard.** Relative (not absolute) so every city can fill
+   the 2-easy/2-medium/1-hard plan even when it has few true icons.
+
+The raw scores are cached in `data/fame-<city>.json` (committed, for provenance);
+the St. Pete pass was applied by `scripts/apply-difficulty-stpete.mjs`. Buckets
+are **city-relative**, so re-run the pass — and re-bucket — when a city's dataset
+changes, and score any newly-added locations. See PLAN.md §5.1b / §5.3b.
 
 ### Category buckets
 The pipeline tags each row with a `category`. For round selection:
