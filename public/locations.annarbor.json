@@ -1648,6 +1648,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "hopcat",
+      "name": "HopCat",
+      "lat": 42.27893,
+      "lng": -83.741844,
+      "category": "bar",
+      "difficulty": "easy",
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "hot-pot-chen",
       "name": "Hot Pot Chen",
       "lat": 42.275,
@@ -1905,7 +1917,7 @@
       "lat": 42.27928,
       "lng": -83.741842,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "clue": null,
       "photoUrl": null,
       "source": "overpass",

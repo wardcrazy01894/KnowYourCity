@@ -1616,8 +1616,8 @@
     "fameScore": 55,
     "reviewCount": 538,
     "hasWikipedia": true,
-    "isNationalChain": true,
-    "statusNote": "open Michigan-based multi-location chain bar at 311 Maynard, acquired by Chicago firm in 2025"
+    "isNationalChain": false,
+    "statusNote": "regional Michigan-founded bar/restaurant chain; Ann Arbor student staple on Maynard St"
   },
   {
     "id": "hungry-howies",
