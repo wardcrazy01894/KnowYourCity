@@ -100,6 +100,18 @@
       "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
+      "id": "albert-whitted-park",
+      "name": "Albert Whitted Park",
+      "lat": 27.7664909,
+      "lng": -82.629542,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A waterfront park by Albert Whitted Airport at the south end of the downtown waterfront.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "alesia",
       "name": "Alesia",
       "lat": 27.770669,
@@ -170,6 +182,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "azalea-park",
+      "name": "Azalea Park",
+      "lat": 27.7858082,
+      "lng": -82.7392293,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A westside community park and recreation center near the Azalea neighborhood.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "azura-coastal-kitchen-bar",
@@ -266,6 +290,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "bartlett-park",
+      "name": "Bartlett Park",
+      "lat": 27.7504367,
+      "lng": -82.6404999,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A south-side neighborhood park with a historic pool and recreation center.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "basil-leaf",
@@ -904,6 +940,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "clam-bayou-nature-preserve",
+      "name": "Clam Bayou Nature Preserve",
+      "lat": 27.7387692,
+      "lng": -82.6903026,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A coastal mangrove preserve and paddling spot on the southwest edge of the city.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "clock-tower-sports-bar-grill",
       "name": "Clock Tower Sports Bar & Grill",
       "lat": 27.76932,
@@ -988,6 +1036,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "crescent-lake-park",
+      "name": "Crescent Lake Park",
+      "lat": 27.7884526,
+      "lng": -82.6413034,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A large lake-centered park north of downtown with a walking loop, ballfields, and the old Huggins-Stengel field.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "da-sesto-italiano-ristorante-e-vino",
       "name": "Da Sesto Italiano Ristorante e Vino",
       "lat": 27.838209,
@@ -1010,6 +1070,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "demens-landing-park",
+      "name": "Demens Landing Park",
+      "lat": 27.7706739,
+      "lng": -82.6295843,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A downtown waterfront park and marina at the foot of 1st Ave S, named for the city’s railroad founder.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "desanto-bar",
@@ -1372,6 +1444,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "fossil-park",
+      "name": "Fossil Park",
+      "lat": 27.8334822,
+      "lng": -82.6454972,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A north St. Pete neighborhood park and recreation center off Dr. MLK Jr. St N.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "fourth-street-shrimp-store",
       "name": "Fourth Street Shrimp Store",
       "lat": 27.782141,
@@ -1478,6 +1562,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "gizella-kopsick-palm-arboretum",
+      "name": "Gizella Kopsick Palm Arboretum",
+      "lat": 27.782663,
+      "lng": -82.6259248,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A waterfront arboretum of palms and cycads next to North Shore Park.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "glory-days-grill",
@@ -2140,6 +2236,30 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "lake-maggiore",
+      "name": "Lake Maggiore",
+      "lat": 27.7355582,
+      "lng": -82.6525332,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "The city’s largest lake, on the south side next to Boyd Hill Nature Preserve.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "lake-vista-park",
+      "name": "Lake Vista Park",
+      "lat": 27.7133102,
+      "lng": -82.6525362,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A southside community park around a small lake, with a pool and rec center.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "lanas-downtown-lounge",
       "name": "Lana's Downtown Lounge",
       "lat": 27.769075,
@@ -2344,6 +2464,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "maximo-park",
+      "name": "Maximo Park",
+      "lat": 27.7111002,
+      "lng": -82.6822738,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A waterfront park at the city’s southwest tip near the Skyway approach, with a boat ramp.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "mcauleys-pub",
       "name": "McAuley's Pub",
       "lat": 27.770863,
@@ -2402,6 +2534,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "mirror-lake",
+      "name": "Mirror Lake",
+      "lat": 27.7741062,
+      "lng": -82.6423321,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A small lake just northwest of downtown that gives its name to the surrounding historic neighborhood and library.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "morean-arts-center",
@@ -2558,6 +2702,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "north-straub-park",
+      "name": "North Straub Park",
+      "lat": 27.776281,
+      "lng": -82.6312195,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A downtown waterfront green along Bayshore Drive, just north of the museums.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "nueva-cantina",
@@ -2884,6 +3040,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "pioneer-park",
+      "name": "Pioneer Park",
+      "lat": 27.7707949,
+      "lng": -82.6328281,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A small downtown park just west of the waterfront, near the Dalí Museum and Albert Whitted.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "pipos",
       "name": "Pipo's",
       "lat": 27.814327,
@@ -3016,6 +3184,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "rec-dec",
+      "name": "Rec Dec",
+      "lat": 27.8682622,
+      "lng": -82.6330285,
+      "category": "bar",
+      "difficulty": "hard",
+      "clue": "A Gandy-area sports bar and social athletic club with lighted volleyball courts, cornhole, and a kitchen.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "red-ribbon",
       "name": "Red Ribbon",
       "lat": 27.839677,
@@ -3122,6 +3302,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "round-lake",
+      "name": "Round Lake",
+      "lat": 27.7791054,
+      "lng": -82.639802,
+      "category": "park",
+      "difficulty": "hard",
+      "clue": "A small historic lake and surrounding park in the Round Lake neighborhood.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "rubys-elixir",
@@ -3304,6 +3496,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "sawgrass-lake-park",
+      "name": "Sawgrass Lake Park",
+      "lat": 27.8413442,
+      "lng": -82.6689052,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A north St. Pete nature park with a boardwalk through one of the area’s largest maple swamps.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "scooters-coffee",
       "name": "Scooter's Coffee",
       "lat": 27.760473,
@@ -3482,6 +3686,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "south-straub-park",
+      "name": "South Straub Park",
+      "lat": 27.7727126,
+      "lng": -82.6324133,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A downtown waterfront green along Bayshore Drive, south of its sibling park.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "southside-craft-coffee-brew-bar",
@@ -4490,6 +4706,18 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "williams-park",
+      "name": "Williams Park",
+      "lat": 27.772822,
+      "lng": -82.6378037,
+      "category": "park",
+      "difficulty": "medium",
+      "clue": "A historic downtown square — the city’s old central gathering park, ringed by churches and a bandshell.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "willys-burger-and-booze",
