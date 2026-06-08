@@ -55,7 +55,22 @@ for (const city of CITIES) {
       expect(data.attribution).toBeTruthy()
     })
 
-    const enriched = data.locations.some((l) => l.difficulty != null)
+    const withDifficulty = data.locations.filter(
+      (l) => l.difficulty != null,
+    ).length
+    // Match the runtime predicate (daily.ts: `all.every(l => l.difficulty != null)`)
+    // exactly: a city is "enriched" only when EVERY location carries a difficulty.
+    const enriched = withDifficulty === data.locations.length
+
+    it('difficulty is all-or-nothing across the dataset', () => {
+      // A partially-enriched file would silently fall back to the legacy category
+      // plan in production (daily.ts uses `.every()`), so the difficulty data
+      // would be ignored without warning. Fail loudly instead.
+      expect(
+        withDifficulty === 0 || withDifficulty === data.locations.length,
+        `${city.id}: ${withDifficulty}/${data.locations.length} locations have a difficulty — must be all or none`,
+      ).toBe(true)
+    })
 
     it('difficulty, when used, is present and valid on every location', () => {
       if (!enriched) return // city not yet run through the fame pass
