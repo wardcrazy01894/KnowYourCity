@@ -89,11 +89,20 @@ describe('loadState', () => {
   })
 
   it('returns default (never throws) when storage access throws', () => {
-    vi.stubGlobal('localStorage', {
-      getItem: () => {
-        throw new Error('SecurityError: storage disabled')
-      },
-    } as unknown as Storage)
+    // Throw on ANY access (e.g. Safari private mode), not just getItem — so the
+    // test still guards if loadState is ever refactored to touch storage
+    // differently (otherwise it could pass on an unrelated TypeError).
+    vi.stubGlobal(
+      'localStorage',
+      new Proxy(
+        {},
+        {
+          get() {
+            throw new Error('SecurityError: storage disabled')
+          },
+        },
+      ) as unknown as Storage,
+    )
     expect(() => loadState('stpete')).not.toThrow()
     expect(loadState('stpete')).toEqual(defaultState())
   })
