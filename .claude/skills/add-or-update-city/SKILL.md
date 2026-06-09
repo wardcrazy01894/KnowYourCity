@@ -65,6 +65,18 @@ the workflow's returned `{results}` to a file and feed step 4. Template lives at
 `scripts/fame-workflow.template.md`. Cache → `data/fame-<id>.json` (committed for
 provenance) happens in step 4.
 
+> **Big cities / session limits — harvest, don't re-research.** For a large
+> uncapped city the pass can be 100+ batches and may straddle a session-limit
+> reset. Don't pass thousands of tuples through `args` (too large to emit by
+> hand) — instead generate a workflow **script file** with the tuples embedded as
+> a literal and launch via `scriptPath`. The Workflow persists each batch's result
+> to `agent-*.jsonl` as it finishes, so completed work survives a death. Recover +
+> resume with **`scripts/harvest-fame-transcripts.mjs <workflowsDir> data/fame-<id>.json
+> tuples.json`**: it rebuilds the results (recursive + merge-mode), reports MISSING
+> ids, and writes their tuples so you launch a follow-up workflow over **only the
+> remainder**. Loop harvest→follow-up until MISSING = 0, then step 4. (Seattle's
+> 2782-location pass took three runs across two resets this way.)
+
 ## 4. Enrich — `node scripts/apply-difficulty.mjs <id> <fame-output.json>`
 
 Generalized, **re-runnable** pass: removes permanently-closed + `uncertain` junk
