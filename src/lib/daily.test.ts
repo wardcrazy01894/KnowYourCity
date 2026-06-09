@@ -249,3 +249,112 @@ describe('selectDailyLocations difficulty plan (2 easy, 2 medium, 1 hard)', () =
     expect(picks[0].category).toBe('cafe')
   })
 })
+
+const FOOD_CATS = new Set(['cafe', 'restaurant', 'bar'])
+const DATES = [
+  '2026-06-06',
+  '2026-07-15',
+  '2026-09-01',
+  '2026-12-25',
+  '2027-03-03',
+]
+
+describe('selectDailyLocations — play cap (inPlay filtering)', () => {
+  // 5 in-play rows (each enriched) + benched rows that, if NOT filtered out,
+  // would either be picked or (lacking difficulty) flip the city to the legacy
+  // plan. Filtering to inPlay must keep the difficulty plan and never pick a
+  // benched row.
+  const benched = (id: string, category: LocationCategory): Location => ({
+    ...loc(id, category),
+    inPlay: false, // no difficulty: out of the play cap
+  })
+  const pool: Location[] = [
+    dloc('e1', 'museum', 'easy'),
+    dloc('e2', 'park', 'easy'),
+    dloc('m1', 'cafe', 'medium'),
+    dloc('m2', 'restaurant', 'medium'),
+    dloc('h1', 'bar', 'hard'),
+    benched('x1', 'restaurant'),
+    benched('x2', 'cafe'),
+    benched('x3', 'park'),
+  ]
+
+  it('never selects an inPlay:false location', () => {
+    for (const d of DATES) {
+      const picks = selectDailyLocations(pool, d)
+      expect(picks.every((p) => p.inPlay !== false)).toBe(true)
+      expect(picks.some((p) => p.id.startsWith('x'))).toBe(false)
+    }
+  })
+
+  it('still runs the difficulty plan off the in-play rows', () => {
+    const picks = selectDailyLocations(pool, '2026-06-06')
+    expect(picks.map((p) => p.difficulty)).toEqual([
+      'easy',
+      'easy',
+      'medium',
+      'medium',
+      'hard',
+    ])
+  })
+
+  it('throws if fewer than a full day are in play', () => {
+    const tooFew = [
+      dloc('e1', 'museum', 'easy'),
+      dloc('e2', 'park', 'easy'),
+      benched('x1', 'restaurant'),
+      benched('x2', 'cafe'),
+      benched('x3', 'bar'),
+      benched('x4', 'restaurant'),
+    ]
+    expect(() => selectDailyLocations(tooFew, '2026-06-06')).toThrow()
+  })
+})
+
+describe('selectDailyLocations — non-food floor (parks/landmarks show up)', () => {
+  // Adversarial food-heavy pool: NO non-food in the easy bucket and only ONE
+  // non-food in each of medium/hard, so plain category-variety can easily land
+  // an all-food (or single-non-food) day. The floor must reserve slots so two
+  // non-food (the park + the landmark) always appear.
+  const pool: Location[] = [
+    dloc('fe1', 'restaurant', 'easy'),
+    dloc('fe2', 'cafe', 'easy'),
+    dloc('fe3', 'bar', 'easy'),
+    dloc('fm1', 'restaurant', 'medium'),
+    dloc('fm2', 'cafe', 'medium'),
+    dloc('pm1', 'park', 'medium'),
+    dloc('fh1', 'restaurant', 'hard'),
+    dloc('fh2', 'cafe', 'hard'),
+    dloc('lh1', 'landmark', 'hard'),
+  ]
+  // 30 dates: a robust guarantee, not a lucky seed.
+  const manyDates = Array.from(
+    { length: 30 },
+    (_, i) =>
+      `2026-${String((i % 12) + 1).padStart(2, '0')}-${String((i % 28) + 1).padStart(2, '0')}`,
+  )
+
+  it('always includes at least two non-food picks, across many dates', () => {
+    for (const d of manyDates) {
+      const picks = selectDailyLocations(pool, d)
+      const nonFood = picks.filter((p) => !FOOD_CATS.has(p.category))
+      expect(
+        nonFood.length,
+        `${d}: only ${nonFood.length} non-food in ${picks.map((p) => p.category).join(',')}`,
+      ).toBeGreaterThanOrEqual(2)
+    }
+  })
+
+  it('still honors the exact difficulty ramp while enforcing the floor', () => {
+    for (const d of DATES) {
+      const picks = selectDailyLocations(pool, d)
+      expect(picks.map((p) => p.difficulty)).toEqual([
+        'easy',
+        'easy',
+        'medium',
+        'medium',
+        'hard',
+      ])
+    }
+  })
+})

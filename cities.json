@@ -8,7 +8,8 @@
       [27.62, -82.78],
       [27.87, -82.58]
     ],
-    "target": 520
+    "target": 520,
+    "playCap": 400
   },
   {
     "id": "statecollege",
@@ -19,7 +20,8 @@
       [40.77, -77.9],
       [40.82, -77.81]
     ],
-    "target": null
+    "target": null,
+    "playCap": 200
   },
   {
     "id": "annarbor",
@@ -30,7 +32,8 @@
       [42.25, -83.79],
       [42.31, -83.7]
     ],
-    "target": null
+    "target": null,
+    "playCap": 300
   },
   {
     "id": "seattle",
@@ -41,7 +44,8 @@
       [47.55, -122.42],
       [47.69, -122.29]
     ],
-    "target": null
+    "target": null,
+    "playCap": 500
   },
   {
     "id": "chicago",

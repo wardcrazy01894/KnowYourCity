@@ -28,6 +28,7 @@ import {
   cleanLocations,
   dedupeById,
   assignDifficulty,
+  assignCappedDifficulty,
   EASY_PCT,
   HARD_PCT,
 } from './apply-difficulty-lib.mjs'
@@ -74,11 +75,24 @@ const fameById = buildFameIndex(results)
 const ds = JSON.parse(readFileSync(DATASET, 'utf8'))
 const orig = ds.locations
 
+// ---- city playCap (top-N-by-fame play set), from cities.json ----
+const CITIES = JSON.parse(
+  readFileSync(new URL('../cities.json', import.meta.url), 'utf8'),
+)
+const playCap = CITIES.find((c) => c.id === CITY)?.playCap ?? null
+
 // ---- pass 1: cleanup · pass 2: de-dupe · pass 3: difficulty (see lib) ----
 const { cleaned, audit: cleanAudit } = cleanLocations(orig, fameById)
 const { kept, deduped } = dedupeById(cleaned)
 const audit = { ...cleanAudit, deduped }
-const { easyBound, hardBound } = assignDifficulty(kept, EASY_PCT, HARD_PCT)
+// Carry fame onto each kept row (so the cap can be re-derived without re-running
+// the research). Then bucket: capped cities use the count-based play-set cap;
+// uncapped cities use the percentile split (and play every enriched row).
+for (const loc of kept) loc.fameScore = loc._fame
+const capInfo = playCap
+  ? assignCappedDifficulty(kept, playCap)
+  : assignDifficulty(kept, EASY_PCT, HARD_PCT)
+const { easyBound, hardBound } = capInfo
 
 // ---- write dataset (preserve field order, drop _fame) ----
 const FIELD_ORDER = [
@@ -88,6 +102,8 @@ const FIELD_ORDER = [
   'lng',
   'category',
   'difficulty',
+  'inPlay',
+  'fameScore',
   'clue',
   'photoUrl',
   'source',
@@ -106,7 +122,8 @@ writeFileSync(DATASET, JSON.stringify(ds, null, 2) + '\n')
 
 // ---- audit ----
 const dist = { easy: 0, medium: 0, hard: 0 }
-for (const l of outLocations) dist[l.difficulty]++
+for (const l of outLocations) if (l.difficulty) dist[l.difficulty]++
+const inPlayCount = outLocations.filter((l) => l.inPlay !== false).length
 console.log(`=== ${CITY} CLEANUP AUDIT ===`)
 console.log(`original: ${orig.length}  ->  kept: ${outLocations.length}`)
 console.log(`removed closed: ${audit.closed.length}`)
@@ -129,7 +146,19 @@ show('CLOSED REMOVED', audit.closed)
 show('DE-DUPED', audit.deduped)
 if (audit.noFame.length) show('NO FAME RECORD', audit.noFame)
 
-console.log('\n=== DIFFICULTY (narrow-easy: top 20% / 45% / 35%) ===')
-console.log(
-  `easy=${dist.easy} (fame >= ${easyBound})  medium=${dist.medium}  hard=${dist.hard} (fame <= ${hardBound})`,
-)
+if (playCap) {
+  console.log(
+    `\n=== PLAY CAP (top ${playCap} by fame; 40% easy / 40% medium / 20% hard) ===`,
+  )
+  console.log(
+    `in play: ${inPlayCount} of ${outLocations.length}  (benched: ${outLocations.length - inPlayCount}, kept with fame, no difficulty)`,
+  )
+  console.log(
+    `easy=${dist.easy} (fame >= ${easyBound})  medium=${dist.medium}  hard=${dist.hard} (fame <= ${hardBound})`,
+  )
+} else {
+  console.log('\n=== DIFFICULTY (narrow-easy: top 20% / 45% / 35%) ===')
+  console.log(
+    `easy=${dist.easy} (fame >= ${easyBound})  medium=${dist.medium}  hard=${dist.hard} (fame <= ${hardBound})`,
+  )
+}

@@ -5,6 +5,10 @@
 
 export const EASY_PCT = 0.2 // top 20% by fame -> easy
 export const HARD_PCT = 0.35 // bottom 35% -> hard ; middle 45% -> medium
+// Play-cap buckets (count-based, applied to the top-`cap` rows): 40% easy /
+// 40% medium / 20% hard. At cap 500 that's 200/200/100. See City.playCap.
+export const CAP_EASY_PCT = 0.4
+export const CAP_HARD_PCT = 0.2
 // Fallback fame for a location with no fame record (shouldn't happen if the pass
 // ran on this exact dataset) — median so it lands in the medium bucket.
 export const MEDIAN_FAME_FALLBACK = 50
@@ -156,5 +160,45 @@ export function assignDifficulty(kept, easyPct = EASY_PCT, hardPct = HARD_PCT) {
     hardN,
     easyBound: ranked[easyN - 1]?._fame,
     hardBound: ranked[n - hardN]?._fame,
+  }
+}
+
+/**
+ * Pass 3 (capped variant) — for a city with a `playCap`. Rank by fame, keep the
+ * top `cap` as the daily play set (`inPlay: true`) bucketed by COUNT (top
+ * `easyPct` easy / last `hardPct` hard / the rest medium), and mark the
+ * remainder `inPlay: false` with NO `difficulty` (they stay in the dataset, with
+ * their fame, for provenance and a quick re-cap). Mutates each kept location.
+ * @returns {{ ranked: object[], playN: number, easyN: number, hardN: number, easyBound: number|undefined, hardBound: number|undefined }}
+ */
+export function assignCappedDifficulty(
+  kept,
+  cap,
+  easyPct = CAP_EASY_PCT,
+  hardPct = CAP_HARD_PCT,
+) {
+  const ranked = [...kept].sort(
+    (a, b) => b._fame - a._fame || (a.id < b.id ? -1 : 1),
+  )
+  const playN = Math.min(cap, ranked.length)
+  const easyN = Math.round(playN * easyPct)
+  const hardN = Math.round(playN * hardPct)
+  ranked.forEach((loc, i) => {
+    if (i < playN) {
+      loc.inPlay = true
+      loc.difficulty =
+        i < easyN ? 'easy' : i >= playN - hardN ? 'hard' : 'medium'
+    } else {
+      loc.inPlay = false
+      delete loc.difficulty
+    }
+  })
+  return {
+    ranked,
+    playN,
+    easyN,
+    hardN,
+    easyBound: ranked[easyN - 1]?._fame,
+    hardBound: ranked[playN - hardN]?._fame,
   }
 }

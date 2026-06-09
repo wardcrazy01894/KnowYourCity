@@ -24,6 +24,20 @@ export interface Location {
    * falls back to the legacy category plan. See src/lib/daily.ts.
    */
   difficulty?: Difficulty
+  /**
+   * Whether this location is in the daily play set. When a city sets a `playCap`
+   * (see cities.json), only the top-`playCap` rows by fame are `inPlay: true` and
+   * carry a `difficulty`; the rest are kept in the dataset (for provenance and a
+   * quick re-cap) as `inPlay: false` with NO `difficulty`. Absent = in play
+   * (uncapped cities). The daily selection (src/lib/daily.ts) filters on this.
+   */
+  inPlay?: boolean
+  /**
+   * City-relative fame 0–100 from the fame pass (docs/DATA-SOURCING.md §4b),
+   * carried onto the row so the play cap can be re-derived without re-running the
+   * research. Present on enriched cities; absent on unscored ones.
+   */
+  fameScore?: number
   /** Optional one-line hint shown under the name. */
   clue?: string | null
   /**

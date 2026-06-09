@@ -55,31 +55,54 @@ for (const city of CITIES) {
       expect(data.attribution).toBeTruthy()
     })
 
-    const withDifficulty = data.locations.filter(
+    // Only in-play rows are eligible for the daily game (daily.ts filters on
+    // `inPlay !== false`). A capped city keeps benched rows in the file with NO
+    // difficulty, so "enriched" is judged over the IN-PLAY set, mirroring the
+    // runtime predicate `playable.every(l => l.difficulty != null)`.
+    const playable = data.locations.filter((l) => l.inPlay !== false)
+    const benched = data.locations.filter((l) => l.inPlay === false)
+    const playableWithDifficulty = playable.filter(
       (l) => l.difficulty != null,
     ).length
-    // Match the runtime predicate (daily.ts: `all.every(l => l.difficulty != null)`)
-    // exactly: a city is "enriched" only when EVERY location carries a difficulty.
-    const enriched = withDifficulty === data.locations.length
+    const enriched =
+      playable.length > 0 && playableWithDifficulty === playable.length
 
-    it('difficulty is all-or-nothing across the dataset', () => {
-      // A partially-enriched file would silently fall back to the legacy category
-      // plan in production (daily.ts uses `.every()`), so the difficulty data
-      // would be ignored without warning. Fail loudly instead.
+    it('difficulty is all-or-nothing across the in-play set', () => {
+      // A partially-enriched in-play set would silently fall back to the legacy
+      // category plan in production (daily.ts uses `.every()`), so the difficulty
+      // data would be ignored without warning. Fail loudly instead.
       expect(
-        withDifficulty === 0 || withDifficulty === data.locations.length,
-        `${city.id}: ${withDifficulty}/${data.locations.length} locations have a difficulty — must be all or none`,
+        playableWithDifficulty === 0 ||
+          playableWithDifficulty === playable.length,
+        `${city.id}: ${playableWithDifficulty}/${playable.length} in-play locations have a difficulty — must be all or none`,
       ).toBe(true)
     })
 
-    it('difficulty, when used, is present and valid on every location', () => {
+    it('benched (inPlay:false) rows carry no difficulty', () => {
+      // The play cap strips difficulty from benched rows (they keep only fame),
+      // so they never leak into the difficulty plan. See apply-difficulty.mjs.
+      for (const l of benched) {
+        expect(
+          l.difficulty == null,
+          `${l.name} is benched but has difficulty=${l.difficulty}`,
+        ).toBe(true)
+      }
+    })
+
+    it('difficulty, when used, is present and valid on every in-play location', () => {
       if (!enriched) return // city not yet run through the fame pass
-      for (const l of data.locations) {
+      for (const l of playable) {
         expect(
           DIFFICULTIES.has(l.difficulty as string),
           `${l.name} difficulty=${l.difficulty}`,
         ).toBe(true)
       }
+    })
+
+    it('respects its playCap: in-play count = min(playCap, total)', () => {
+      if (city.playCap == null) return
+      const expected = Math.min(city.playCap, data.locations.length)
+      expect(playable.length).toBe(expected)
     })
 
     it('fills a valid daily plan across dates', () => {
