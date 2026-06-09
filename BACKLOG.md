@@ -27,7 +27,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       landmarks. Peaked at ~516; the fame+status pass (PR #40) then **trimmed it
       to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1
       renamed-to-closed; updated 15 renames; merged 1 dupe). The +19 parks/lakes
-      pass (PR #49) then brought it to **401**.
+      pass (PR #49) brought it to 401; the play-cap re-run (PR #59) re-deduped to
+      **389** (all in play — the cap is 400).
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
       Yelp/Google integration (ToS forbids storing their data long-term); the
@@ -51,6 +52,15 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       de-dupe (same normalized name AND within ~100 m → keep higher fame;
       different coords → keep both as genuine branches) to
       `composeLocations`/`apply-difficulty-lib` (TDD). Affects all cities.
+- [ ] **Better tie-break at the play-cap boundary.** Fame scores are coarse
+      (0–100 integers), so many rows tie right at the cap cut and id-lexicographic
+      order decides who plays. Seattle is the worst case: **87 rows tie at
+      fame = 44** straddling the 500th in-play slot (1 in, 86 out) — the boundary is
+      effectively alphabetical. It's deterministic and there's no fame *inversion*
+      (integrity holds), but the cut is arbitrary among equals. If finer ranking
+      matters, add a secondary signal (review count, category, wiki presence) to the
+      sort comparator in `assignCappedDifficulty`. Needs the precise-popularity data
+      above to be worthwhile.
 - [ ] **Manual force-include famous OSM-untagged landmarks.** Seattle's fetch
       missed the **Fremont Troll** and **The Spheres** (tagged `tourism=artwork`/
       other, outside the `fetch-pois` allowlist). Add them (and any per-city
@@ -128,15 +138,18 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 ## Done
 - [x] **State College enriched + uncapped + parks fix** — removed the size cap
       (`target: null` → `composeLocations` keeps everything in-bounds), re-fetched
-      (80 → 282), ran the fame pass, enriched to **234** (47 easy / 105 medium / 82
-      hard). Also fixed park under-fetching in `fetch-pois` (named green spaces no
-      longer need a wiki tag) → **2 → 46 parks**. Tooling: `apply-difficulty.mjs`,
+      (80 → 282), ran the fame pass, enriched to **234** rows (the 20/45/35
+      percentile split at the time gave 47 easy / 105 medium / 82 hard; PR #59's
+      play-cap re-run later set the in-play split to 200 rows at 80/80/40). Also
+      fixed park under-fetching in `fetch-pois` (named green spaces no longer need a
+      wiki tag) → **2 → 46 parks**. Tooling: `apply-difficulty.mjs`,
       `add-or-update-city` skill, `build-city.test.mjs`, `fetch-pois.test.mjs`.
 - [x] **Difficulty system (St. Pete)** — per-location easy/medium/hard from a
       fame+status web-research pass, calibrated to a human local's blind ratings;
       daily plan switched to 2 easy → 2 medium → 1 hard; St. Pete cleaned 516→382
-      (now **401** after the +19 parks/lakes pass, PR #49). PR #40. (Rollout to
-      other cities tracked under *In progress / next*.)
+      (401 after the +19 parks/lakes pass, PR #49; **389** after the play-cap
+      re-run, PR #59). PR #40. (Rollout to other cities tracked under *In progress /
+      next*.)
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
 - [x] Deterministic daily selection (midnight-Eastern, DST-aware) + 0–100 linear
       scoring, with unit tests.
@@ -147,7 +160,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
 - [x] Data pipeline (M2): Overpass scripts (fetch-pois / fetch-food /
-      build-city) → per-city `public/locations.<id>.json` (St. Pete ~401 +
+      build-city) → per-city `public/locations.<id>.json` (St. Pete 389 +
       4 cities); the app loads the selected city's file; validated by a test.
 - [x] Applied Alex's decisions: 0–100 linear scoring, midnight-ET rollover,
       clues hidden by default, whole-city start zoom.
