@@ -229,6 +229,12 @@ function fillByDifficulty(pool: Location[], count: number): Location[] {
     // Candidate tiers in priority order. When still under the non-food floor and
     // this difficulty has a non-food option, try those first — without ever
     // leaving the slot's difficulty (the ramp is the hard constraint).
+    // While under the non-food floor, non-food wins over a fresh food category
+    // (the floor is the stronger guarantee here — see MIN_NON_FOOD_PER_DAY).
+    // Each tier still prefers a fresh category internally. At the default floor
+    // of 1 the only forced pick is the FIRST non-food, so a "repeated non-food
+    // category" can't arise (that would require an earlier non-food pick, which
+    // already satisfies the floor and flips wantNonFood off).
     const tiers =
       wantNonFood && nonFoodOfDifficulty.length
         ? [nonFoodOfDifficulty, ofDifficulty]

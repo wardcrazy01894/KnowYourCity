@@ -183,6 +183,9 @@ export function assignCappedDifficulty(
   const playN = Math.min(cap, ranked.length)
   const easyN = Math.round(playN * easyPct)
   const hardN = Math.round(playN * hardPct)
+  // medium = playN - easyN - hardN is always >= 1 for playN >= 1 (since
+  // round(0.4n)+round(0.2n) < n), so no play set is ever left with zero of a
+  // bucket. The CLI also warns if a bucket somehow comes out empty.
   ranked.forEach((loc, i) => {
     if (i < playN) {
       loc.inPlay = true

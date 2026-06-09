@@ -124,6 +124,16 @@ writeFileSync(DATASET, JSON.stringify(ds, null, 2) + '\n')
 const dist = { easy: 0, medium: 0, hard: 0 }
 for (const l of outLocations) if (l.difficulty) dist[l.difficulty]++
 const inPlayCount = outLocations.filter((l) => l.inPlay !== false).length
+// A fillable daily plan needs at least 2 easy / 2 medium / 1 hard; warn loudly
+// if bucketing left any tier short (only possible with an extreme tiny cap).
+for (const [tier, min] of [
+  ['easy', 2],
+  ['medium', 2],
+  ['hard', 1],
+]) {
+  if (dist[tier] < min)
+    console.warn(`⚠️  WARNING: only ${dist[tier]} ${tier} (plan needs ${min}).`)
+}
 console.log(`=== ${CITY} CLEANUP AUDIT ===`)
 console.log(`original: ${orig.length}  ->  kept: ${outLocations.length}`)
 console.log(`removed closed: ${audit.closed.length}`)
