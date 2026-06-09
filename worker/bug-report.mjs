@@ -34,17 +34,17 @@ const RL_MAX = 5
 const RL_WINDOW_SECONDS = 60
 
 /** ALLOWED_ORIGIN may be "*" or a comma-separated list of origins. */
-function allowedOrigins(env) {
+export function allowedOrigins(env) {
   return (env.ALLOWED_ORIGIN || '*')
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean)
 }
-function originAllowed(env, origin) {
+export function originAllowed(env, origin) {
   const list = allowedOrigins(env)
   return list.includes('*') || (origin && list.includes(origin))
 }
-function cors(env, origin) {
+export function cors(env, origin) {
   const list = allowedOrigins(env)
   // Reflect the request origin when it's allowed (can't use "*" + a specific
   // list); fall back to the first configured origin.
@@ -70,7 +70,7 @@ function json(obj, status, headers) {
 
 /** Neutralize @mentions and code-fence breakout so report text can't ping users
  *  or inject Markdown outside its block. Uses a zero-width space. */
-function defang(s) {
+export function defang(s) {
   return String(s)
     .replace(/```/g, '`​`​`')
     .replace(/@/g, '@​')
