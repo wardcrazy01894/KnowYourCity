@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {
   slug,
+  buildFameIndex,
   cleanLocations,
   dedupeById,
   assignDifficulty,
@@ -37,6 +38,51 @@ describe('slug', () => {
     expect(slug('Café Soleil & Deli')).toBe('cafe-soleil-deli')
     expect(slug("Harry's  Beach   Bar")).toBe('harrys-beach-bar')
     expect(slug('--Edge--')).toBe('edge')
+  })
+})
+
+describe('buildFameIndex', () => {
+  it('indexes every record by its primary id', () => {
+    const idx = buildFameIndex([fame('a'), fame('b')])
+    expect(idx.get('a')?.id).toBe('a')
+    expect(idx.get('b')?.id).toBe('b')
+  })
+
+  it('also aliases a renamed record by slug(currentName) so re-runs find it', () => {
+    // A renamed record is keyed by its OLD id; on a re-run the dataset row
+    // already carries the NEW id, so we must also resolve it by the new slug.
+    const idx = buildFameIndex([
+      fame('old-id', { status: 'renamed', currentName: 'New Spot Café' }),
+    ])
+    expect(idx.get('old-id')?.id).toBe('old-id') // primary still works
+    expect(idx.get('new-spot-cafe')?.id).toBe('old-id') // alias resolves
+  })
+
+  it('never lets a rename alias clobber a real primary id', () => {
+    // record B's real id collides with A's rename target -> B must win.
+    const a = fame('a', { status: 'renamed', currentName: 'B' })
+    const b = fame('b', { fameScore: 99 })
+    const idx = buildFameIndex([a, b])
+    expect(idx.get('b')).toBe(b) // real record, not the alias
+  })
+
+  it('makes the rename pass idempotent: re-running keeps fame, not the fallback', () => {
+    // Regression for the 26-orphaned-renames bug: first run renamed
+    // old-id -> new-spot-cafe; a second run sees the new id and must still
+    // find fameScore 81 via the alias rather than dropping to the median.
+    const results = [
+      fame('old-id', {
+        status: 'renamed',
+        currentName: 'New Spot Café',
+        fameScore: 81,
+      }),
+    ]
+    const idx = buildFameIndex(results)
+    const alreadyRenamed = loc('new-spot-cafe', { name: 'New Spot Café' })
+    const { cleaned, audit } = cleanLocations([alreadyRenamed], idx)
+    expect(cleaned).toHaveLength(1)
+    expect(cleaned[0]._fame).toBe(81)
+    expect(audit.noFame).toHaveLength(0)
   })
 })
 

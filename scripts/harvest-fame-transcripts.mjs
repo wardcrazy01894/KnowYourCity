@@ -57,13 +57,19 @@ function walk(dir) {
       continue
     }
     if (st.isDirectory()) out.push(...walk(p))
-    else if (entry.startsWith('agent-') && entry.endsWith('.jsonl')) out.push(p)
+    else if (entry.startsWith('agent-') && entry.endsWith('.jsonl'))
+      out.push({ path: p, mtime: st.mtimeMs })
   }
   return out
 }
+// Oldest-first: when the same batch was re-run across resets, the more recent
+// transcript is processed last and its result wins ("last write wins" = most
+// recent, not filesystem order). Seed (existing OUT) is loaded before any file.
 const files = walk(DIR)
+  .sort((a, b) => a.mtime - b.mtime)
+  .map((f) => f.path)
 
-// id -> record (last StructuredOutput result wins)
+// id -> record (most-recent StructuredOutput result wins)
 const byId = new Map()
 let agentsWithOutput = 0
 let totalResultRows = 0
@@ -126,7 +132,9 @@ writeFileSync(OUT, JSON.stringify({ results }, null, 2) + '\n')
 if (seeded) console.log(`seeded from existing ${OUT}: ${seeded} ids`)
 console.log(`agent jsonl files scanned: ${files.length}`)
 console.log(`agents with StructuredOutput: ${agentsWithOutput}`)
-console.log(`result rows seen (pre-dedupe): ${totalResultRows}`)
+console.log(
+  `result rows seen (pre-dedupe, includes retries within same agent): ${totalResultRows}`,
+)
 console.log(`unique ids harvested: ${results.length}`)
 console.log(`wrote ${OUT}`)
 
@@ -142,7 +150,7 @@ if (TUPLES) {
     console.log(`unexpected ids (not in tuples): ${extra.length}`)
   if (missing.length) {
     const missTuples = tuples.filter((t) => !have.has(t[0]))
-    const MISS_OUT = OUT.replace(/\.json$/, '') + '.missing-tuples.json'
+    const MISS_OUT = OUT.replace(/\.json$/, '.missing-tuples.json')
     writeFileSync(MISS_OUT, JSON.stringify(missTuples))
     console.log(`wrote remaining tuples for a follow-up pass: ${MISS_OUT}`)
   }

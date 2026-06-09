@@ -20,6 +20,28 @@ export const slug = (s) =>
     .replace(/^-|-$/g, '')
 
 /**
+ * Build the id -> fame-record lookup. Records are keyed by their primary `id`
+ * AND, for `renamed` records, additionally aliased under `slug(currentName)` —
+ * the id the row will carry on a *re-run* after the rename has been applied.
+ * Without the alias, re-running the pass on an already-enriched dataset orphans
+ * every renamed row (its new id isn't in the cache), dropping it to the median
+ * fallback. A rename alias never clobbers a real primary id (primaries win).
+ * @param {object[]} results fame records (from the workflow output / cache)
+ * @returns {Map<string, object>}
+ */
+export function buildFameIndex(results) {
+  const byId = new Map()
+  for (const r of results) byId.set(r.id, r) // primary ids first
+  for (const r of results) {
+    if (r.status === 'renamed' && (r.currentName || '').trim()) {
+      const alias = slug(r.currentName)
+      if (alias && !byId.has(alias)) byId.set(alias, r) // don't shadow a real id
+    }
+  }
+  return byId
+}
+
+/**
  * Pass 1 — status cleanup. Given the original locations and a fameById lookup,
  * drop permanently-closed / national-chain / junk (`status: 'uncertain'') /
  * renamed-to-closed entries, apply still-operating renames (new id + name, clue

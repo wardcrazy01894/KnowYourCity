@@ -41,12 +41,16 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       which fell just outside. Bounds also gate the play-area map.
 - [ ] **Collapse same-business alternate-slug dupes in the pipeline.** Inclusive
       OSM pulls double-list a few businesses under near-identical names but
-      different slugs (Seattle had 7: `Wing Dome`/`WingDome`, `Anchorhead
-      Coffee`/`…Co`, `An Nam Pho`/`AnNamPho`, `Lula`/`Moore`/`Spud`/`Westman's`
-      variants). `apply-difficulty.mjs` only de-dupes by exact id, so these slip
-      through. Add a name-normalized de-dupe (keep higher fame) to
-      `composeLocations`/`apply-difficulty-lib` (TDD) so it's reproducible, not a
-      hand-edit. Affects all cities, not just Seattle.
+      different slugs. Seattle examples: `wing-dome`/`wingdome`/`the-wing-dome`
+      (3 nodes — but at distinct coords, likely a real multi-location chain to
+      KEEP), `anchorhead-coffee`/`…-co` and `lula-coffee`/`…-co` (distinct
+      addresses), `moore-coffee`/`moore-coffee-seattle` (≈80 m apart — a true
+      same-spot dupe to COLLAPSE), `an-nam-pho`/`annampho`, `spud-fish-and-chips`
+      variants, `westmans-bagel`-`and`/`&` variants. `apply-difficulty.mjs` only
+      de-dupes by exact id, so these slip through. Add a **name+proximity**-aware
+      de-dupe (same normalized name AND within ~100 m → keep higher fame;
+      different coords → keep both as genuine branches) to
+      `composeLocations`/`apply-difficulty-lib` (TDD). Affects all cities.
 - [ ] **Manual force-include famous OSM-untagged landmarks.** Seattle's fetch
       missed the **Fremont Troll** and **The Spheres** (tagged `tourism=artwork`/
       other, outside the `fetch-pois` allowlist). Add them (and any per-city
