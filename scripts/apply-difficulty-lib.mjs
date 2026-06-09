@@ -73,7 +73,7 @@ export function cleanLocations(
     const f = fameById.get(loc.id)
     if (!f) {
       audit.noFame.push(`${loc.name} (${loc.id})`)
-      cleaned.push({ ...bare, _fame: medianFallback })
+      cleaned.push({ ...bare, _fame: medianFallback, _reviewCount: 0 })
       continue
     }
     if (f.status === 'closed') {
@@ -106,10 +106,15 @@ export function cleanLocations(
         name: newName,
         clue: null, // old clue may reference the old identity
         _fame: f.fameScore,
+        _reviewCount: f.reviewCount ?? 0,
       })
       continue
     }
-    cleaned.push({ ...bare, _fame: f.fameScore })
+    cleaned.push({
+      ...bare,
+      _fame: f.fameScore,
+      _reviewCount: f.reviewCount ?? 0,
+    })
   }
   return { cleaned, audit }
 }
@@ -176,12 +181,30 @@ export function normalizeBusinessName(name, cityTokens = []) {
 export const DEFAULT_DEDUPE_METERS = 150
 
 /**
+ * Canonical ranking comparator: by fame (desc), then **review count** (desc) as a
+ * meaningful tie-break for the many rows that share a coarse 0–100 `fameScore`
+ * (e.g. Seattle has 90+ rows tied at fame 44 straddling the play-cap cut — review
+ * count orders them far better than the alphabet), then id (asc) for full
+ * determinism. Used for difficulty bucketing, the play cap, and picking the
+ * survivor of a same-name de-dupe.
+ */
+export function byFameRank(a, b) {
+  return (
+    b._fame - a._fame ||
+    (b._reviewCount ?? 0) - (a._reviewCount ?? 0) ||
+    (a.id < b.id ? -1 : 1)
+  )
+}
+
+/**
  * Pass 2.5 — collapse same-business "alternate slug" duplicates that an exact-id
- * de-dupe misses. Two rows merge only when they share a normalized name AND sit
- * within `maxMeters` of each other; the higher-`_fame` row is kept (ties broken
- * by id so re-runs are deterministic). Rows with the same name but far apart are
- * LEFT ALONE — they're genuine multi-location businesses (a fish-and-chips with
- * several branches), not duplicates. Survivors keep their original input order.
+ * de-dupe misses. Rows merge only when they share a normalized name AND are within
+ * `maxMeters` of each other; the best-ranked row (see byFameRank) is kept. Merging
+ * is **transitive** (union-find): a chain A~B~C within range forms one cluster even
+ * if the ends are >maxMeters apart, so the outcome is independent of input order.
+ * Rows with the same name but far apart stay separate — they're genuine
+ * multi-location businesses (a fish-and-chips with several branches), not dupes.
+ * Survivors keep their original input order.
  * @returns {{ kept: object[], merged: string[] }}
  */
 export function dedupeByNameProximity(
@@ -201,25 +224,43 @@ export function dedupeByNameProximity(
       survivors.add(group[0])
       continue
     }
-    // Highest fame first, id ascending as a deterministic tie-break, so the
-    // representative kept for a cluster is stable regardless of input order.
-    const ordered = [...group].sort(
-      (a, b) => b._fame - a._fame || (a.id < b.id ? -1 : 1),
-    )
-    const reps = []
-    for (const loc of ordered) {
-      const rep = reps.find((r) => haversineMeters(r, loc) <= maxMeters)
-      if (rep) {
-        merged.push(
-          `${loc.name} (${loc.id}) — merged into ${rep.id} (same name, ${Math.round(
-            haversineMeters(rep, loc),
-          )}m, kept fame=${rep._fame})`,
-        )
-      } else {
-        reps.push(loc)
+    // Union-find over the group: connect any two members within maxMeters.
+    const parent = group.map((_, i) => i)
+    const find = (i) => {
+      while (parent[i] !== i) {
+        parent[i] = parent[parent[i]]
+        i = parent[i]
+      }
+      return i
+    }
+    for (let i = 0; i < group.length; i++) {
+      for (let j = i + 1; j < group.length; j++) {
+        if (haversineMeters(group[i], group[j]) <= maxMeters) {
+          parent[find(i)] = find(j)
+        }
       }
     }
-    for (const r of reps) survivors.add(r)
+    // The best-ranked member of each connected cluster is the survivor; the rest
+    // merge into it. Rank by byFameRank so re-runs are deterministic.
+    const survivorByRoot = new Map()
+    for (const idx of [...group.keys()].sort((x, y) =>
+      byFameRank(group[x], group[y]),
+    )) {
+      const root = find(idx)
+      if (!survivorByRoot.has(root)) survivorByRoot.set(root, idx)
+    }
+    group.forEach((loc, i) => {
+      const winner = group[survivorByRoot.get(find(i))]
+      if (winner === loc) {
+        survivors.add(loc)
+      } else {
+        merged.push(
+          `${loc.name} (${loc.id}) — merged into ${winner.id} (same name, ${Math.round(
+            haversineMeters(winner, loc),
+          )}m, kept fame=${winner._fame})`,
+        )
+      }
+    })
   }
   return { kept: kept.filter((l) => survivors.has(l)), merged }
 }
@@ -231,9 +272,7 @@ export function dedupeByNameProximity(
  * @returns {{ ranked: object[], easyN: number, hardN: number, easyBound: number|undefined, hardBound: number|undefined }}
  */
 export function assignDifficulty(kept, easyPct = EASY_PCT, hardPct = HARD_PCT) {
-  const ranked = [...kept].sort(
-    (a, b) => b._fame - a._fame || (a.id < b.id ? -1 : 1),
-  )
+  const ranked = [...kept].sort(byFameRank)
   const n = ranked.length
   const easyN = Math.round(n * easyPct)
   const hardN = Math.round(n * hardPct)
@@ -263,9 +302,7 @@ export function assignCappedDifficulty(
   easyPct = CAP_EASY_PCT,
   hardPct = CAP_HARD_PCT,
 ) {
-  const ranked = [...kept].sort(
-    (a, b) => b._fame - a._fame || (a.id < b.id ? -1 : 1),
-  )
+  const ranked = [...kept].sort(byFameRank)
   const playN = Math.min(cap, ranked.length)
   const easyN = Math.round(playN * easyPct)
   const hardN = Math.round(playN * hardPct)
