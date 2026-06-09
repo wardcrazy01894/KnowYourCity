@@ -24,6 +24,7 @@
 // via) ./apply-difficulty-lib.mjs; this file is the filesystem + audit shell.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import {
+  buildFameIndex,
   cleanLocations,
   dedupeById,
   assignDifficulty,
@@ -67,7 +68,7 @@ if (FAME_OUT) {
 } else {
   results = JSON.parse(readFileSync(CACHE, 'utf8'))
 }
-const fameById = new Map(results.map((r) => [r.id, r]))
+const fameById = buildFameIndex(results)
 
 // ---- load dataset ----
 const ds = JSON.parse(readFileSync(DATASET, 'utf8'))

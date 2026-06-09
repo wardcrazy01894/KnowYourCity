@@ -207,6 +207,18 @@ background workflow that fans out ~25 locations per agent):
    45% medium / bottom 35% hard.** Relative (not absolute) so every city can fill
    the 2-easy/2-medium/1-hard plan even when it has few true icons.
 
+> **Crash-safe harvesting (large cities).** The fame `Workflow` persists each
+> batch agent's result to `agent-*.jsonl` in its transcript dir as it finishes,
+> so a session/limit death only costs in-flight batches. **`scripts/harvest-fame-transcripts.mjs
+> <workflowsDir> <out.json> [tuples.json]`** rebuilds `{results}` from those
+> transcripts (recursive across runs + merge-mode, so it accumulates), and reports
+> which ids are still MISSING (writing their tuples for a follow-up workflow over
+> just the remainder — no re-research). Seattle's uncapped pass (2782 locations,
+> 112 batches) needed three runs across two session-limit resets; the harvester
+> stitched them into one complete `data/fame-seattle.json`. Tuples are
+> reproducible from `public/locations.<id>.json`, so nothing transient is
+> load-bearing.
+
 The raw scores are cached in `data/fame-<city>.json` (committed, for provenance).
 The pass is applied by the generalized, re-runnable **`scripts/apply-difficulty.mjs
 <city> [fame-output.json]`** (it removes closed + `uncertain` junk + national
@@ -239,8 +251,8 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities: St. Pete (~401, enriched), State College (~234, **uncapped +
-enriched**), Ann Arbor (341, **uncapped + enriched**), Seattle (~200),
-Chicago (~200).
+enriched**), Ann Arbor (341, **uncapped + enriched**), Seattle (**2390,
+uncapped + enriched**), Chicago (~200).
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated

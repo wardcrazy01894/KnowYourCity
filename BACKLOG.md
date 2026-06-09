@@ -4,12 +4,12 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
-- [ ] **Difficulty rollout — 2 cities left.** St. Pete (PR #40), **State
-      College**, and **Ann Arbor** SHIPPED: every location has an
+- [ ] **Difficulty rollout — 1 city left.** St. Pete (PR #40), **State
+      College**, **Ann Arbor**, and **Seattle** SHIPPED: every location has an
       `easy`/`medium`/`hard` `difficulty` (inverse of local fame, from a
       fame+status web-research pass), and the daily game runs **2 easy → 2 medium →
-      1 hard** (layering category variety). **Seattle & Chicago still use the
-      legacy cafe→…→wildcard plan** until each gets its own pass (needs 1M-context
+      1 hard** (layering category variety). **Chicago still uses the
+      legacy cafe→…→wildcard plan** until it gets its own pass (needs 1M-context
       subagent credits enabled, OR a standard-context session — see memory
       `subagents-need-standard-context`). Use the **`add-or-update-city` skill** —
       it runs the whole flow. See `docs/PLAN.md` §5.1b/§5.3b,
@@ -39,6 +39,27 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.
+- [ ] **Collapse same-business alternate-slug dupes in the pipeline.** Inclusive
+      OSM pulls double-list a few businesses under near-identical names but
+      different slugs. Seattle examples: `wing-dome`/`wingdome`/`the-wing-dome`
+      (3 nodes — but at distinct coords, likely a real multi-location chain to
+      KEEP), `anchorhead-coffee`/`…-co` and `lula-coffee`/`…-co` (distinct
+      addresses), `moore-coffee`/`moore-coffee-seattle` (≈80 m apart — a true
+      same-spot dupe to COLLAPSE), `an-nam-pho`/`annampho`, `spud-fish-and-chips`
+      variants, `westmans-bagel`-`and`/`&` variants. `apply-difficulty.mjs` only
+      de-dupes by exact id, so these slip through. Add a **name+proximity**-aware
+      de-dupe (same normalized name AND within ~100 m → keep higher fame;
+      different coords → keep both as genuine branches) to
+      `composeLocations`/`apply-difficulty-lib` (TDD). Affects all cities.
+- [ ] **Manual force-include famous OSM-untagged landmarks.** Seattle's fetch
+      missed the **Fremont Troll** and **The Spheres** (tagged `tourism=artwork`/
+      other, outside the `fetch-pois` allowlist). Add them (and any per-city
+      equivalents) via `data/<id>-manual.json` with coords + hand-assigned
+      difficulty, then re-run `apply-difficulty.mjs`. See DATA-SOURCING §4.
+- [ ] **Optional: cap Seattle to top-N by fame + re-scale.** Seattle shipped
+      **uncapped (~2390)**. If that's too large, set a `target` (e.g. keep the
+      ~1000 highest-fame), rebuild or trim, and re-run `apply-difficulty.mjs` —
+      buckets are city-relative so easy/medium/hard recompute automatically.
 
 ## Multi-city (shipped — extend as desired)
 - [x] **City picker + 5 cities** — St. Pete, State College, Ann Arbor, Seattle,
