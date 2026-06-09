@@ -90,7 +90,9 @@ process — landmark notability + food/drink curation rules — in
 
 Works out of the box with **Esri World Imagery** (no key). For higher-zoom
 **Mapbox Satellite**, copy `.env.example` → `.env.local` and add a free Mapbox
-token (no credit card needed).
+token (no credit card needed). The token **ships in the public client bundle** by
+design, so **restrict it to your domain(s)** (URL restrictions) in the Mapbox
+dashboard rather than relying on secrecy — see `.env.example`.
 
 ## ☁️ Deploy (GitHub Pages)
 

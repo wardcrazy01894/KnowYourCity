@@ -106,6 +106,8 @@ Run at <https://query.wikidata.org>. This is optional polish — the OSM
   "lng": -82.6403,                 // el.lat/el.lon, or el.center for ways/rels
   "category": "attraction",        // inferred from tags (see types.ts)
   "difficulty": "easy",            // easy|medium|hard; added by the fame pass (§4b). Optional until enriched
+  "inPlay": true,                  // in the daily play set? Added by the play cap (§4c); absent = in play
+  "fameScore": 92,                 // 0–100 city-relative fame; added by the fame pass (§4b/§4c)
   "clue": null,                    // HUMAN writes this (or seed from Wikidata)
   "photoUrl": null,                // FUTURE photo rounds; leave null for v1
   "source": "overpass",            // or "wikidata" / "manual"
@@ -141,8 +143,10 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
-### Status: ~401 locations (after the fame pass cleanup + parks/lakes pass)
-`public/locations.stpete.json` holds **401 St. Pete places**. It started at ~516
+### Status: 389 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
+`public/locations.stpete.json` holds **389 St. Pete places** (peaked at 401 after
+the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389 — all
+in play, since the cap is 400). It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
 "Cafe"/"Hookah"), 1 renamed-to-also-closed — **renamed 15** still-operating spots
@@ -203,9 +207,12 @@ background workflow that fans out ~25 locations per agent):
    fame** (Michelin / James Beard / TripAdvisor rank / lore-only Wikipedia) and
    **up-weight raw local ubiquity** — most restaurants/bars land 20–60; 80+ is
    almost exclusively non-food landmarks.
-3. **Bucket by city-relative percentile** — **narrow-easy: top 20% easy / next
-   45% medium / bottom 35% hard.** Relative (not absolute) so every city can fill
-   the 2-easy/2-medium/1-hard plan even when it has few true icons.
+3. **Bucket into easy/medium/hard.** This is the percentile path — **narrow-easy:
+   top 20% easy / next 45% medium / bottom 35% hard** — used only for an *uncapped*
+   enriched city. **Every enriched city today sets a `playCap`**, so the live
+   bucketing is instead **count-based — 40% easy / 40% medium / 20% hard** over the
+   in-play set; see §4c. Either split is city-relative so the 2-easy/2-medium/1-hard
+   plan always fills, even when a city has few true icons.
 
 > **Crash-safe harvesting (large cities).** The fame `Workflow` persists each
 > batch agent's result to `agent-*.jsonl` in its transcript dir as it finishes,
