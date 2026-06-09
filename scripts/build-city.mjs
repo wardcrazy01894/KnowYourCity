@@ -16,13 +16,21 @@ import {
   foodLocationsFromElements,
   fetchOverpass,
 } from './fetch-food.mjs'
+import {
+  normalizeBusinessName,
+  haversineMeters,
+  DEFAULT_DEDUPE_METERS,
+} from './apply-difficulty-lib.mjs'
 
-const norm = (s) =>
-  s
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim()
+/** Trailing city tokens (e.g. "Seattle") stripped before name comparison, from
+ *  the city's short + name — so "Moore Coffee Seattle" ≡ "Moore Coffee". */
+const cityNameTokens = (city) => [
+  ...new Set(
+    [city.short, (city.name || '').split(',')[0]]
+      .filter(Boolean)
+      .map((s) => normalizeBusinessName(s)),
+  ),
+]
 
 async function loadCity(id) {
   const all = JSON.parse(
@@ -60,22 +68,36 @@ export function composeLocations({
 }) {
   const [[s, w], [n, e]] = city.bounds
   const hasCap = Number.isFinite(city.target)
+  const cityTokens = cityNameTokens(city)
   const usedIds = new Set()
-  const usedNorms = new Set()
+  // normalized-name -> kept locations with that name, for PROXIMITY-gated name
+  // de-dupe: a same-name candidate within DEFAULT_DEDUPE_METERS of an already-
+  // kept one is a dup (an OSM double-listing / alternate slug); the same name
+  // FAR away is a genuine multi-location business (a chain branch) and is kept.
+  const keptByNorm = new Map()
   const out = []
   const inBounds = (loc) =>
     loc.lat >= s && loc.lat <= n && loc.lng >= w && loc.lng <= e
+  const isNameProxDup = (loc, nm) =>
+    (keptByNorm.get(nm) || []).some(
+      (k) => haversineMeters(k, loc) <= DEFAULT_DEDUPE_METERS,
+    )
+  const remember = (loc, nm) => {
+    const group = keptByNorm.get(nm)
+    if (group) group.push(loc)
+    else keptByNorm.set(nm, [loc])
+  }
   const add = (loc) => {
-    const nm = norm(loc.name)
-    if (!loc.id || usedIds.has(loc.id) || usedNorms.has(nm)) return false
+    const nm = normalizeBusinessName(loc.name, cityTokens)
+    if (!loc.id || usedIds.has(loc.id) || isNameProxDup(loc, nm)) return false
     if (hasCap && out.length >= city.target) return false
     // Overpass `out center` can place a way/relation center just outside the
     // query box for boundary features — keep only points actually in-bounds.
     if (!inBounds(loc)) return false
     usedIds.add(loc.id)
-    usedNorms.add(nm)
     const { _signal, ...clean } = loc
     void _signal
+    remember(clean, nm)
     out.push(clean)
     return true
   }
@@ -105,11 +127,11 @@ export function composeLocations({
 
   // Manual must-includes bypass the cap; still deduped + in-bounds.
   for (const m of manual) {
-    const nm = norm(m.name)
-    if (!m.id || usedIds.has(m.id) || usedNorms.has(nm)) continue
+    const nm = normalizeBusinessName(m.name, cityTokens)
+    if (!m.id || usedIds.has(m.id) || isNameProxDup(m, nm)) continue
     if (!inBounds(m)) continue
     usedIds.add(m.id)
-    usedNorms.add(nm)
+    remember(m, nm)
     out.push(m)
   }
   return out
