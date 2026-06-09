@@ -4,6 +4,9 @@ import {
   buildFameIndex,
   cleanLocations,
   dedupeById,
+  dedupeByNameProximity,
+  normalizeBusinessName,
+  haversineMeters,
   assignDifficulty,
   assignCappedDifficulty,
   CAP_EASY_PCT,
@@ -197,6 +200,99 @@ describe('dedupeById', () => {
     const { kept, deduped } = dedupeById(input)
     expect(kept).toHaveLength(2)
     expect(deduped).toHaveLength(0)
+  })
+})
+
+describe('normalizeBusinessName', () => {
+  it('lowercases, expands &, strips punctuation/accents', () => {
+    expect(normalizeBusinessName('Spud Fish & Chips')).toBe(
+      'spud fish and chips',
+    )
+    expect(normalizeBusinessName("Westman's Bagel & Coffee")).toBe(
+      'westmans bagel and coffee',
+    )
+    expect(normalizeBusinessName('Café Soleil')).toBe('cafe soleil')
+  })
+
+  it('strips a TRAILING city token but not a leading/internal one', () => {
+    expect(normalizeBusinessName('Moore Coffee Seattle', ['seattle'])).toBe(
+      'moore coffee',
+    )
+    // "Seattle" as a prefix is part of the real name — keep it.
+    expect(normalizeBusinessName('Seattle Coffee Works', ['seattle'])).toBe(
+      'seattle coffee works',
+    )
+  })
+})
+
+describe('haversineMeters', () => {
+  it('is ~0 for identical points and ~99m for the Moore Coffee pair', () => {
+    expect(
+      haversineMeters({ lat: 47.6, lng: -122.3 }, { lat: 47.6, lng: -122.3 }),
+    ).toBeCloseTo(0, 5)
+    const d = haversineMeters(
+      { lat: 47.611635, lng: -122.341267 },
+      { lat: 47.610772, lng: -122.340957 },
+    )
+    expect(d).toBeGreaterThan(80)
+    expect(d).toBeLessThan(120)
+  })
+})
+
+describe('dedupeByNameProximity', () => {
+  const place = (id, name, lat, lng, _fame) => ({ id, name, lat, lng, _fame })
+
+  it('collapses a same-name pair within maxMeters, keeping higher fame', () => {
+    const { kept, merged } = dedupeByNameProximity(
+      [
+        place('moore-coffee', 'Moore Coffee', 47.611635, -122.341267, 48),
+        place(
+          'moore-coffee-seattle',
+          'Moore Coffee Seattle',
+          47.610772,
+          -122.340957,
+          40,
+        ),
+        place('solo', 'Solo Cafe', 47.7, -122.4, 30),
+      ],
+      { cityTokens: ['seattle'] },
+    )
+    expect(kept.map((k) => k.id).sort()).toEqual(['moore-coffee', 'solo'])
+    expect(merged).toHaveLength(1)
+  })
+
+  it('breaks fame ties deterministically by id (keeps the smaller id)', () => {
+    const { kept } = dedupeByNameProximity(
+      [
+        place(
+          'moore-coffee-seattle',
+          'Moore Coffee Seattle',
+          47.610772,
+          -122.340957,
+          48,
+        ),
+        place('moore-coffee', 'Moore Coffee', 47.611635, -122.341267, 48),
+      ],
+      { cityTokens: ['seattle'] },
+    )
+    expect(kept).toHaveLength(1)
+    expect(kept[0].id).toBe('moore-coffee')
+  })
+
+  it('KEEPS same-name entries that are far apart (genuine multi-location)', () => {
+    const { kept, merged } = dedupeByNameProximity([
+      place('spud-a', 'Spud Fish and Chips', 47.579549, -122.408799, 70),
+      place('spud-b', 'Spud Fish & Chips', 47.678352, -122.326923, 70),
+    ])
+    expect(kept).toHaveLength(2)
+    expect(merged).toHaveLength(0)
+  })
+
+  it('passes singletons through and preserves input order of survivors', () => {
+    const input = [place('a', 'Alpha', 0, 0, 1), place('b', 'Beta', 1, 1, 2)]
+    const { kept, merged } = dedupeByNameProximity(input)
+    expect(kept.map((k) => k.id)).toEqual(['a', 'b'])
+    expect(merged).toHaveLength(0)
   })
 })
 
