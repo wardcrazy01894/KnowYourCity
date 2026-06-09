@@ -122,13 +122,24 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
   Same date + same list ⇒ identical picks in identical order, every browser.
   No `Math.random()`.
 - **Round structure** — two plans, chosen automatically:
-  - **Difficulty plan** (`DIFFICULTY_PLAN`, default): when **every** location in
-    the city carries a `difficulty`, the 5 rounds run **easy → easy → medium →
-    medium → hard** (gentle warm-up, hardest finisher). Within each slot we *layer
-    both* constraints — prefer a location of that difficulty whose **category**
-    hasn't appeared yet today — so a day doesn't turn into five restaurants. If a
-    difficulty bucket runs short, the slot falls back to any remaining location
-    (still preferring a fresh category).
+  - **Difficulty plan** (`DIFFICULTY_PLAN`, default): when **every in-play**
+    location in the city carries a `difficulty`, the 5 rounds run **easy → easy →
+    medium → medium → hard** (gentle warm-up, hardest finisher). Within each slot
+    we *layer both* constraints — prefer a location of that difficulty whose
+    **category** hasn't appeared yet today — so a day doesn't turn into five
+    restaurants. On top of that a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`)
+    reserves a pick for a park/landmark/museum so a day is never all
+    cafés/restaurants/bars — without breaking the difficulty ramp (only a non-food
+    *of the slot's difficulty* is preferred). If a difficulty bucket runs short,
+    the slot falls back to any remaining location (still preferring a fresh
+    category).
+  - **Play cap** (`City.playCap`): big/uncapped cities would otherwise be
+    almost all food by fame rank. A city may cap its daily play set to the
+    top-`playCap` rows by fame (`inPlay: true`), rebucketed **40% easy / 40%
+    medium / 20% hard** (e.g. 500 → 200/200/100). The rest stay in the dataset as
+    `inPlay: false` with their `fameScore` but **no** `difficulty`; selection
+    filters them out. Current caps: St. Pete 400, Ann Arbor 300, State College
+    200, Seattle 500. See `docs/DATA-SOURCING.md` §4b.
   - **Category plan** (`CATEGORY_PLAN`, legacy fallback): for cities **not yet
     enriched** with difficulty, the 5 rounds are filled by category in order —
     **cafe → restaurant → bar → landmark → wildcard** (*landmark* = anything that

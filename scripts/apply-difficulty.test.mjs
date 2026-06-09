@@ -5,6 +5,9 @@ import {
   cleanLocations,
   dedupeById,
   assignDifficulty,
+  assignCappedDifficulty,
+  CAP_EASY_PCT,
+  CAP_HARD_PCT,
   MEDIAN_FAME_FALLBACK,
 } from './apply-difficulty-lib.mjs'
 
@@ -247,5 +250,79 @@ describe('assignDifficulty — narrow-easy bucketing', () => {
       {},
     )
     expect(dist).toEqual({ easy: 5, hard: 5 })
+  })
+})
+
+describe('assignCappedDifficulty — play-set cap + count buckets', () => {
+  const ranked = (n) =>
+    Array.from({ length: n }, (_, i) => ({
+      id: `l${i}`,
+      category: 'restaurant',
+      _fame: n - i, // l0 highest fame, l{n-1} lowest
+    }))
+  const dist = (rows) =>
+    rows.reduce(
+      (m, l) => (
+        (m[l.difficulty ?? '(none)'] = (m[l.difficulty ?? '(none)'] ?? 0) + 1),
+        m
+      ),
+      {},
+    )
+
+  it('keeps only the top-`cap` by fame in play, benches the rest', () => {
+    const kept = ranked(20)
+    assignCappedDifficulty(kept, 5)
+    const inPlay = kept.filter((l) => l.inPlay)
+    const benched = kept.filter((l) => l.inPlay === false)
+    expect(inPlay).toHaveLength(5)
+    expect(benched).toHaveLength(15)
+    // the 5 highest-fame are the in-play ones
+    expect(inPlay.map((l) => l._fame).sort((a, b) => b - a)).toEqual([
+      20, 19, 18, 17, 16,
+    ])
+  })
+
+  it('buckets the play set by count: top 40% easy / last 20% hard / rest medium', () => {
+    const kept = ranked(20)
+    assignCappedDifficulty(kept, 10) // play 10 -> easy 4, hard 2, medium 4
+    expect(dist(kept.filter((l) => l.inPlay))).toEqual({
+      easy: 4,
+      medium: 4,
+      hard: 2,
+    })
+  })
+
+  it('matches the 500/200-cap intent (200 easy / 200 medium / 100 hard at 500)', () => {
+    const kept = ranked(800)
+    const { easyN, hardN, playN } = assignCappedDifficulty(kept, 500)
+    expect(playN).toBe(500)
+    expect(easyN).toBe(200)
+    expect(hardN).toBe(100)
+    expect(dist(kept.filter((l) => l.inPlay))).toEqual({
+      easy: 200,
+      medium: 200,
+      hard: 100,
+    })
+  })
+
+  it('benched rows have NO difficulty (only a fame score is kept on the row)', () => {
+    const kept = ranked(8)
+    assignCappedDifficulty(kept, 3)
+    for (const l of kept.filter((x) => x.inPlay === false)) {
+      expect(l.difficulty).toBeUndefined()
+    }
+  })
+
+  it('when cap >= available, everything is in play and nothing benched', () => {
+    const kept = ranked(4)
+    const { playN } = assignCappedDifficulty(kept, 10)
+    expect(playN).toBe(4)
+    expect(kept.every((l) => l.inPlay === true)).toBe(true)
+    expect(kept.some((l) => l.inPlay === false)).toBe(false)
+  })
+
+  it('exposes the 40/20 cap split constants', () => {
+    expect(CAP_EASY_PCT).toBe(0.4)
+    expect(CAP_HARD_PCT).toBe(0.2)
   })
 })

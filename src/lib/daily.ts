@@ -44,6 +44,16 @@ export const DIFFICULTY_PLAN: Difficulty[] = [
 ]
 
 /**
+ * Minimum non-food (parks / landmarks / museums / attractions / …) locations in
+ * a daily game, so a day is never all cafés/restaurants/bars. The difficulty
+ * plan prefers a non-food pick while under this floor (without breaking the
+ * difficulty ramp), then reverts to plain category variety. Best-effort: if a
+ * city genuinely lacks this many non-food in the needed buckets it returns what
+ * it can. See fillByDifficulty.
+ */
+export const MIN_NON_FOOD_PER_DAY = 1
+
+/**
  * The fixed shape of a daily game: one of each category, in this order.
  * `landmark` means "anything that isn't a bar/cafe/restaurant"; `wildcard` is
  * any remaining location. If a bucket is empty/exhausted, that slot falls back
@@ -134,15 +144,22 @@ export function selectDailyLocations(
   dateKey: string,
   count: number = ROUNDS_PER_DAY,
 ): Location[] {
-  if (all.length < count) {
+  // Only rows in the daily play set are eligible. A city with a `playCap` marks
+  // the rest `inPlay: false` (and strips their difficulty); absent = in play.
+  // Filtering here also means the difficulty-plan predicate below sees only
+  // enriched rows, so a capped city still runs the difficulty plan.
+  const playable = all.filter((l) => l.inPlay !== false)
+  if (playable.length < count) {
     throw new Error(
-      `Need at least ${count} locations, got ${all.length}. Add more to the city's locations file.`,
+      `Need at least ${count} in-play locations, got ${playable.length}. Add more to the city's locations file (or raise its playCap).`,
     )
   }
   // Deterministic shuffle: sort by id (so source order doesn't matter), then
   // Fisher–Yates with a date-seeded PRNG. Same date + list ⇒ identical result
   // in every browser. No Math.random().
-  const pool = [...all].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
+  const pool = [...playable].sort((a, b) =>
+    a.id < b.id ? -1 : a.id > b.id ? 1 : 0,
+  )
   const rand = mulberry32(hashStringToSeed(dateKey))
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(rand() * (i + 1))
@@ -151,7 +168,7 @@ export function selectDailyLocations(
 
   // Use the difficulty plan once a city is fully enriched; otherwise the legacy
   // category plan. (Cities are enriched one at a time — see docs/DATA-SOURCING.md.)
-  return all.every((l) => l.difficulty != null)
+  return pool.every((l) => l.difficulty != null)
     ? fillByDifficulty(pool, count)
     : fillByCategory(pool, count)
 }
@@ -181,22 +198,50 @@ function fillByCategory(pool: Location[], count: number): Location[] {
 /**
  * Fill each slot from DIFFICULTY_PLAN (easy, easy, medium, medium, hard). Within
  * a slot we "layer both" constraints: prefer a location of the slot's difficulty
- * whose category hasn't appeared yet today, so the day stays varied. If a
- * difficulty bucket runs short, fall back to any remaining location (still
- * preferring a fresh category) so we always return a full set.
+ * whose category hasn't appeared yet today, so the day stays varied.
+ *
+ * Non-food floor: while the day is still short of MIN_NON_FOOD_PER_DAY non-food
+ * picks, a non-food location of the slot's difficulty is preferred (front-loaded
+ * so parks/landmarks aren't crowded out by food — see the user requirement in
+ * docs/PLAN.md). This never overrides the difficulty ramp: we only ever pick a
+ * non-food of the *current* slot's difficulty. Once the floor is met we revert
+ * to plain category variety. If a difficulty bucket runs short, fall back to any
+ * remaining location (still preferring a fresh category) so we always return a
+ * full set.
  */
 function fillByDifficulty(pool: Location[], count: number): Location[] {
   const plan = DIFFICULTY_PLAN.slice(0, count)
   const used = new Set<string>()
   const usedCategories = new Set<LocationCategory>()
   const chosen: Location[] = []
+  let nonFoodPicked = 0
+  const isNonFood = (l: Location) => !FOOD_DRINK.has(l.category)
+  // Prefer a fresh category within a candidate tier, else its first member.
+  const fromTier = (tier: Location[]) =>
+    tier.find((l) => !usedCategories.has(l.category)) ?? tier[0]
+
   for (const difficulty of plan) {
     const ofDifficulty = pool.filter(
       (l) => !used.has(l.id) && l.difficulty === difficulty,
     )
+    const wantNonFood = nonFoodPicked < MIN_NON_FOOD_PER_DAY
+    const nonFoodOfDifficulty = ofDifficulty.filter(isNonFood)
+    // Candidate tiers in priority order. When still under the non-food floor and
+    // this difficulty has a non-food option, try those first — without ever
+    // leaving the slot's difficulty (the ramp is the hard constraint).
+    // While under the non-food floor, non-food wins over a fresh food category
+    // (the floor is the stronger guarantee here — see MIN_NON_FOOD_PER_DAY).
+    // Each tier still prefers a fresh category internally. At the default floor
+    // of 1 the only forced pick is the FIRST non-food, so a "repeated non-food
+    // category" can't arise (that would require an earlier non-food pick, which
+    // already satisfies the floor and flips wantNonFood off).
+    const tiers =
+      wantNonFood && nonFoodOfDifficulty.length
+        ? [nonFoodOfDifficulty, ofDifficulty]
+        : [ofDifficulty]
     const pick =
-      ofDifficulty.find((l) => !usedCategories.has(l.category)) ??
-      ofDifficulty[0] ??
+      tiers.map(fromTier).find(Boolean) ??
+      // Difficulty bucket exhausted: fall back to any remaining location.
       pool.find((l) => !used.has(l.id) && !usedCategories.has(l.category)) ??
       pool.find((l) => !used.has(l.id))
     if (!pick) {
@@ -204,6 +249,7 @@ function fillByDifficulty(pool: Location[], count: number): Location[] {
     }
     used.add(pick.id)
     usedCategories.add(pick.category)
+    if (isNonFood(pick)) nonFoodPicked++
     chosen.push(pick)
   }
   return chosen

@@ -235,6 +235,27 @@ a background `Workflow` (see `scripts/fame-workflow.template.md` and the
 > then trims the genuinely-obscure tail (intramural fields, pocket pollinator
 > gardens). Lakes have no dedicated category and ride along as `park`.
 
+## 4c. Play cap — `City.playCap` (`inPlay` / `fameScore` on each row)
+
+A city's enriched dataset can be far larger than we want in daily rotation, and
+because food/drink dominates by fame rank, an uncapped city plays almost all
+restaurants/cafés/bars. A city may therefore set a **`playCap`** in `cities.json`:
+`apply-difficulty.mjs` ranks the kept rows by fame, marks the **top `playCap`**
+`inPlay: true`, and rebuckets *those* by **count — 40% easy / 40% medium / 20%
+hard** (so 500 → 200/200/100, 200 → 80/80/40). Every kept row gets its
+**`fameScore`** written onto it; the in-play rows get a `difficulty`; the
+benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
+stale bucket). This keeps the whole scored set in the file — re-capping to a
+different size is a pure re-run of `apply-difficulty.mjs` off the committed
+`data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
+filters to `inPlay !== false`. Current caps: St. Pete 400 (389 rows, all in
+play), Ann Arbor 300, State College 200, Seattle 500.
+
+> **Not just food.** Because fame rank skews to food, daily selection enforces a
+> **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
+> up every day — see PLAN.md §5. Parks survive the cap well (their famous ones
+> rank high): St. Pete keeps all 24, Ann Arbor 67, State College 30, Seattle 33.
+
 ### Category buckets
 The pipeline tags each row with a `category`. For round selection:
 `cafe`, `restaurant`, `bar` are the food/drink buckets; **everything else**
@@ -250,9 +271,10 @@ established-business signal, dedupes, filters to in-bounds, and caps to the
 city's `target` — or, when `target` is **`null`**, keeps **everything** in-bounds
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
-Current cities: St. Pete (~401, enriched), State College (~234, **uncapped +
-enriched**), Ann Arbor (341, **uncapped + enriched**), Seattle (**2390,
-uncapped + enriched**), Chicago (~200).
+Current cities (rows in dataset → **in daily play** after the play cap, see
+§4c): St. Pete (389 → **389**), State College (234 → **200**), Ann Arbor (341 →
+**300**), Seattle (2390 → **500**) — all enriched; Chicago (~200, not yet
+enriched).
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated

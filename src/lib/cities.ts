@@ -18,6 +18,13 @@ export interface City {
   bounds: [[number, number], [number, number]]
   /** Rough dataset size target (used by the build script). `null` = uncapped. */
   target: number | null
+  /**
+   * Daily play-set cap: only the top-`playCap` rows by fame are `inPlay` and
+   * carry a difficulty (rebucketed top-40% easy / next-40% medium / last-20%
+   * hard); the rest stay in the dataset as `inPlay: false`. Omit/`null` to play
+   * every enriched row. Applied by scripts/apply-difficulty.mjs.
+   */
+  playCap?: number | null
 }
 
 export const CITIES: City[] = citiesData as unknown as City[]
