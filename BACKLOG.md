@@ -54,15 +54,16 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       `…-coffee` (1.9 km), `wing-dome`/`wingdome`/`the-wing-dome`,
       `anchorhead-coffee`/`…-co`, `lula-coffee`/`…-co`, `an-nam-pho`/`annampho`
       (all > 150 m). Seattle 2390 → **2389**.
-- [ ] **Better tie-break at the play-cap boundary.** Fame scores are coarse
-      (0–100 integers), so many rows tie right at the cap cut and id-lexicographic
-      order decides who plays. Seattle is the worst case: **87 rows tie at
-      fame = 44** straddling the 500th in-play slot (1 in, 86 out) — the boundary is
-      effectively alphabetical. It's deterministic and there's no fame *inversion*
-      (integrity holds), but the cut is arbitrary among equals. If finer ranking
-      matters, add a secondary signal (review count, category, wiki presence) to the
-      sort comparator in `assignCappedDifficulty`. Needs the precise-popularity data
-      above to be worthwhile.
+- [x] **Better tie-break at the play-cap boundary.** Fame scores are coarse
+      (0–100 integers), so many rows tie right at the cap cut (Seattle: ~90 rows at
+      **fame = 44** straddling the 500th in-play slot) and id-lexicographic order
+      used to decide who plays — effectively alphabetical. Fixed: `byFameRank` (in
+      `apply-difficulty-lib.mjs`) now ranks by fame, then **review count** (well
+      populated in the fame cache — Seattle 2499/2782 non-zero), then id. It drives
+      difficulty bucketing, the play cap, and the de-dupe survivor pick, so the more
+      established of two equally-famous spots is preferred over the alphabetically
+      earlier one. (A richer popularity signal — see *Precise popularity filter* —
+      could refine it further.)
 - [ ] **Manual force-include famous OSM-untagged landmarks.** Seattle's fetch
       missed the **Fremont Troll** and **The Spheres** (tagged `tourism=artwork`/
       other, outside the `fetch-pois` allowlist). Add them (and any per-city

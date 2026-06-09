@@ -7,6 +7,7 @@ import {
   dedupeByNameProximity,
   normalizeBusinessName,
   haversineMeters,
+  byFameRank,
   assignDifficulty,
   assignCappedDifficulty,
   CAP_EASY_PCT,
@@ -120,13 +121,19 @@ describe('cleanLocations — status dispositions', () => {
     expect(audit.junk).toHaveLength(1)
   })
 
-  it('keeps a normal entry, carrying its fameScore as _fame', () => {
+  it('keeps a normal entry, carrying its fameScore as _fame and reviewCount as _reviewCount', () => {
     const { cleaned } = cleanLocations(
       [loc('a')],
-      byId([fame('a', { fameScore: 72 })]),
+      byId([fame('a', { fameScore: 72, reviewCount: 321 })]),
     )
     expect(cleaned).toHaveLength(1)
     expect(cleaned[0]._fame).toBe(72)
+    expect(cleaned[0]._reviewCount).toBe(321)
+  })
+
+  it('uses _reviewCount 0 for a no-fame-record row', () => {
+    const { cleaned } = cleanLocations([loc('a')], byId([]))
+    expect(cleaned[0]._reviewCount).toBe(0)
   })
 
   it('keeps a no-fame-record entry with the median fallback', () => {
@@ -293,6 +300,61 @@ describe('dedupeByNameProximity', () => {
     const { kept, merged } = dedupeByNameProximity(input)
     expect(kept.map((k) => k.id)).toEqual(['a', 'b'])
     expect(merged).toHaveLength(0)
+  })
+
+  it('merges a TRANSITIVE same-name chain into one (union-find), not the ends apart', () => {
+    // A~B (~133 m) and B~C (~133 m) are each within range but A~C (~266 m) is
+    // NOT. Greedy clustering would keep A and C as two reps; transitive
+    // (union-find) clustering collapses all three into the best-ranked one.
+    const { kept, merged } = dedupeByNameProximity([
+      place('chain-a', 'Chain Cafe', 0, 0, 90),
+      place('chain-b', 'Chain Cafe', 0.0012, 0, 80),
+      place('chain-c', 'Chain Cafe', 0.0024, 0, 70),
+    ])
+    expect(kept.map((k) => k.id)).toEqual(['chain-a'])
+    expect(merged).toHaveLength(2)
+  })
+})
+
+describe('byFameRank', () => {
+  it('orders by fame desc, then reviewCount desc, then id asc', () => {
+    const rows = [
+      { id: 'b', _fame: 50, _reviewCount: 10 },
+      { id: 'a', _fame: 50, _reviewCount: 10 },
+      { id: 'c', _fame: 50, _reviewCount: 999 },
+      { id: 'd', _fame: 90, _reviewCount: 0 },
+    ]
+    expect([...rows].sort(byFameRank).map((r) => r.id)).toEqual([
+      'd',
+      'c',
+      'a',
+      'b',
+    ])
+  })
+
+  it('treats a missing reviewCount as 0', () => {
+    const rows = [
+      { id: 'x', _fame: 40 },
+      { id: 'y', _fame: 40, _reviewCount: 5 },
+    ]
+    expect([...rows].sort(byFameRank).map((r) => r.id)).toEqual(['y', 'x'])
+  })
+})
+
+describe('assignCappedDifficulty — reviewCount tie-break at the cap cut', () => {
+  it('keeps the higher-review-count rows in play among fame ties', () => {
+    const rows = [
+      { id: 'low1', _fame: 44, _reviewCount: 5 },
+      { id: 'high', _fame: 44, _reviewCount: 900 },
+      { id: 'low2', _fame: 44, _reviewCount: 5 },
+      { id: 'mid', _fame: 44, _reviewCount: 100 },
+    ]
+    assignCappedDifficulty(rows, 2)
+    const inPlay = rows
+      .filter((r) => r.inPlay)
+      .map((r) => r.id)
+      .sort()
+    expect(inPlay).toEqual(['high', 'mid'])
   })
 })
 

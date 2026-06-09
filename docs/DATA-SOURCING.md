@@ -251,7 +251,9 @@ a background `Workflow` (see `scripts/fame-workflow.template.md` and the
 A city's enriched dataset can be far larger than we want in daily rotation, and
 because food/drink dominates by fame rank, an uncapped city plays almost all
 restaurants/cafés/bars. A city may therefore set a **`playCap`** in `cities.json`:
-`apply-difficulty.mjs` ranks the kept rows by fame, marks the **top `playCap`**
+`apply-difficulty.mjs` ranks the kept rows by fame — ties broken by **review
+count** then id (`byFameRank`), since the coarse 0–100 fame leaves many rows level
+at the cut — marks the **top `playCap`**
 `inPlay: true`, and rebuckets *those* by **count — 40% easy / 40% medium / 20%
 hard** (so 500 → 200/200/100, 200 → 80/80/40). Every kept row gets its
 **`fameScore`** written onto it; the in-play rows get a `difficulty`; the
