@@ -229,8 +229,12 @@ background workflow that fans out ~25 locations per agent):
 The raw scores are cached in `data/fame-<city>.json` (committed, for provenance).
 The pass is applied by the generalized, re-runnable **`scripts/apply-difficulty.mjs
 <city> [fame-output.json]`** (it removes closed + `uncertain` junk + national
-chains + renamed-to-closed, applies renames, de-dupes by id keeping higher fame,
-then buckets). It generalizes an earlier St. Pete-only one-off pass (since removed).
+chains + renamed-to-closed, applies renames, de-dupes by id **and** by
+same-name-within-~150 m — keeping higher fame — then buckets). The proximity gate
+means genuine multi-location businesses (same name, far apart) are kept, while a
+true same-spot alternate-slug dupe (e.g. Seattle's `moore-coffee-seattle` →
+`moore-coffee`) is collapsed. It generalizes an earlier St. Pete-only one-off pass
+(since removed).
 Buckets are **city-relative**, so re-run the pass — and re-bucket — when a city's
 dataset changes, and score any newly-added locations. The fame research itself is
 a background `Workflow` (see `scripts/fame-workflow.template.md` and the
@@ -280,7 +284,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c): St. Pete (389 → **389**), State College (234 → **200**), Ann Arbor (341 →
-**300**), Seattle (2390 → **500**) — all enriched; Chicago (~200, not yet
+**300**), Seattle (2389 → **500**) — all enriched; Chicago (~200, not yet
 enriched).
 
 ### Adding food/drink — `npm run fetch-food`
