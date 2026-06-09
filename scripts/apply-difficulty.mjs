@@ -29,6 +29,7 @@ import {
   buildFameIndex,
   cleanLocations,
   dedupeById,
+  dedupeByNameProximity,
   assignDifficulty,
   assignCappedDifficulty,
   EASY_PCT,
@@ -81,12 +82,33 @@ const orig = ds.locations
 const CITIES = JSON.parse(
   readFileSync(new URL('../cities.json', import.meta.url), 'utf8'),
 )
-const playCap = CITIES.find((c) => c.id === CITY)?.playCap ?? null
+const cityRow = CITIES.find((c) => c.id === CITY)
+const playCap = cityRow?.playCap ?? null
+// Trailing city tokens to strip before same-business name comparison (e.g.
+// "Moore Coffee Seattle" -> "moore coffee"), from the city's short + name.
+const cityTokens = [
+  ...new Set(
+    [cityRow?.short, (cityRow?.name || '').split(',')[0]]
+      .filter(Boolean)
+      .map((s) =>
+        s
+          .toLowerCase()
+          .normalize('NFKD')
+          .replace(/[^a-z0-9\s]/g, '')
+          .replace(/\s+/g, ' ')
+          .trim(),
+      ),
+  ),
+]
 
-// ---- pass 1: cleanup · pass 2: de-dupe · pass 3: difficulty (see lib) ----
+// ---- pass 1: cleanup · 2: de-dupe by id · 2.5: de-dupe by name+proximity ·
+//      pass 3: difficulty (see lib) ----
 const { cleaned, audit: cleanAudit } = cleanLocations(orig, fameById)
-const { kept, deduped } = dedupeById(cleaned)
-const audit = { ...cleanAudit, deduped }
+const { kept: keptById, deduped } = dedupeById(cleaned)
+const { kept, merged: nameMerged } = dedupeByNameProximity(keptById, {
+  cityTokens,
+})
+const audit = { ...cleanAudit, deduped, nameMerged }
 // Carry fame onto each kept row (so the cap can be re-derived without re-running
 // the research). Then bucket: capped cities use the count-based play-set cap;
 // uncapped cities use the percentile split (and play every enriched row).
@@ -143,7 +165,8 @@ console.log(`removed junk (status uncertain): ${audit.junk.length}`)
 console.log(`removed national chains: ${audit.chains.length}`)
 console.log(`removed renamed-to-closed: ${audit.renamedClosed.length}`)
 console.log(`renamed (updated): ${audit.renamed.length}`)
-console.log(`de-duped: ${audit.deduped.length}`)
+console.log(`de-duped (by id): ${audit.deduped.length}`)
+console.log(`de-duped (same name, <150m): ${audit.nameMerged.length}`)
 if (audit.noFame.length)
   console.log(`NO FAME RECORD (kept, median): ${audit.noFame.length}`)
 const show = (title, arr) => {
@@ -155,7 +178,8 @@ show('CHAINS REMOVED', audit.chains)
 show('RENAMED (updated)', audit.renamed)
 show('RENAMED-TO-CLOSED (dropped)', audit.renamedClosed)
 show('CLOSED REMOVED', audit.closed)
-show('DE-DUPED', audit.deduped)
+show('DE-DUPED (by id)', audit.deduped)
+show('DE-DUPED (same name, <150m)', audit.nameMerged)
 if (audit.noFame.length) show('NO FAME RECORD', audit.noFame)
 
 if (playCap) {

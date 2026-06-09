@@ -138,6 +138,92 @@ export function dedupeById(cleaned) {
   return { kept: [...byId.values()], deduped }
 }
 
+/** Great-circle distance between two {lat,lng} points, in metres (haversine). */
+const EARTH_RADIUS_M = 6371000
+export function haversineMeters(a, b) {
+  const toRad = (x) => (x * Math.PI) / 180
+  const dLat = toRad(b.lat - a.lat)
+  const dLng = toRad(b.lng - a.lng)
+  const lat1 = toRad(a.lat)
+  const lat2 = toRad(b.lat)
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2
+  return 2 * EARTH_RADIUS_M * Math.asin(Math.min(1, Math.sqrt(h)))
+}
+
+/**
+ * Normalize a business name for same-business comparison: lowercase, expand `&`
+ * to "and", drop accents/punctuation, collapse whitespace, and strip any TRAILING
+ * city token (e.g. "Moore Coffee Seattle" -> "moore coffee"). A leading/internal
+ * city word (e.g. "Seattle Coffee Works") is part of the real name and kept.
+ */
+export function normalizeBusinessName(name, cityTokens = []) {
+  let b = String(name)
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  for (const tk of cityTokens) {
+    const t = String(tk).toLowerCase().trim()
+    if (t && b.endsWith(' ' + t)) b = b.slice(0, -(t.length + 1)).trim()
+  }
+  return b
+}
+
+export const DEFAULT_DEDUPE_METERS = 150
+
+/**
+ * Pass 2.5 — collapse same-business "alternate slug" duplicates that an exact-id
+ * de-dupe misses. Two rows merge only when they share a normalized name AND sit
+ * within `maxMeters` of each other; the higher-`_fame` row is kept (ties broken
+ * by id so re-runs are deterministic). Rows with the same name but far apart are
+ * LEFT ALONE — they're genuine multi-location businesses (a fish-and-chips with
+ * several branches), not duplicates. Survivors keep their original input order.
+ * @returns {{ kept: object[], merged: string[] }}
+ */
+export function dedupeByNameProximity(
+  kept,
+  { cityTokens = [], maxMeters = DEFAULT_DEDUPE_METERS } = {},
+) {
+  const groups = new Map()
+  for (const loc of kept) {
+    const key = normalizeBusinessName(loc.name, cityTokens)
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key).push(loc)
+  }
+  const survivors = new Set()
+  const merged = []
+  for (const group of groups.values()) {
+    if (group.length === 1) {
+      survivors.add(group[0])
+      continue
+    }
+    // Highest fame first, id ascending as a deterministic tie-break, so the
+    // representative kept for a cluster is stable regardless of input order.
+    const ordered = [...group].sort(
+      (a, b) => b._fame - a._fame || (a.id < b.id ? -1 : 1),
+    )
+    const reps = []
+    for (const loc of ordered) {
+      const rep = reps.find((r) => haversineMeters(r, loc) <= maxMeters)
+      if (rep) {
+        merged.push(
+          `${loc.name} (${loc.id}) — merged into ${rep.id} (same name, ${Math.round(
+            haversineMeters(rep, loc),
+          )}m, kept fame=${rep._fame})`,
+        )
+      } else {
+        reps.push(loc)
+      }
+    }
+    for (const r of reps) survivors.add(r)
+  }
+  return { kept: kept.filter((l) => survivors.has(l)), merged }
+}
+
 /**
  * Pass 3 — assign `difficulty` by city-relative fame rank (narrow-easy: top
  * `easyPct` easy / bottom `hardPct` hard / the rest medium). Mutates each kept

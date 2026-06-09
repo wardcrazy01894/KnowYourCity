@@ -40,18 +40,20 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.
-- [ ] **Collapse same-business alternate-slug dupes in the pipeline.** Inclusive
+- [x] **Collapse same-business alternate-slug dupes in the pipeline.** Inclusive
       OSM pulls double-list a few businesses under near-identical names but
-      different slugs. Seattle examples: `wing-dome`/`wingdome`/`the-wing-dome`
-      (3 nodes — but at distinct coords, likely a real multi-location chain to
-      KEEP), `anchorhead-coffee`/`…-co` and `lula-coffee`/`…-co` (distinct
-      addresses), `moore-coffee`/`moore-coffee-seattle` (≈80 m apart — a true
-      same-spot dupe to COLLAPSE), `an-nam-pho`/`annampho`, `spud-fish-and-chips`
-      variants, `westmans-bagel`-`and`/`&` variants. `apply-difficulty.mjs` only
-      de-dupes by exact id, so these slip through. Add a **name+proximity**-aware
-      de-dupe (same normalized name AND within ~100 m → keep higher fame;
-      different coords → keep both as genuine branches) to
-      `composeLocations`/`apply-difficulty-lib` (TDD). Affects all cities.
+      different slugs. `dedupeByNameProximity` (in `apply-difficulty-lib.mjs`, TDD)
+      now collapses rows that share a normalized name (with `&`→"and" and a
+      trailing city token like "Seattle" stripped) **AND** sit within ~150 m,
+      keeping the higher fame (id tie-break for determinism); same-name rows that
+      are far apart are LEFT ALONE as genuine multi-location businesses. Verified
+      across all five cities, exactly **one** true same-spot dupe collapsed:
+      `moore-coffee-seattle` → `moore-coffee` (99 m). The other Seattle look-alikes
+      are correctly kept as distinct: `spud-fish-and-chips`/`-chips` (12.5 km
+      apart — a real two-location fish-and-chips), `westmans-bagel-and-coffee`/
+      `…-coffee` (1.9 km), `wing-dome`/`wingdome`/`the-wing-dome`,
+      `anchorhead-coffee`/`…-co`, `lula-coffee`/`…-co`, `an-nam-pho`/`annampho`
+      (all > 150 m). Seattle 2390 → **2389**.
 - [ ] **Better tie-break at the play-cap boundary.** Fame scores are coarse
       (0–100 integers), so many rows tie right at the cap cut and id-lexicographic
       order decides who plays. Seattle is the worst case: **87 rows tie at
