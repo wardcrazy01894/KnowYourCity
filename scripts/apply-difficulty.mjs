@@ -8,8 +8,10 @@
 //   2. Clean up: remove permanently-closed, obvious junk (status 'uncertain'),
 //      national chains, and renamed-to-closed; apply still-operating renames;
 //      de-dupe by id (keep higher fame).
-//   3. Assign difficulty by city-relative fame rank (narrow-easy: top 20% easy /
-//      next 45% medium / bottom 35% hard).
+//   3. Assign difficulty by city-relative fame rank. With a `playCap` (every
+//      enriched city today) the top-playCap rows go in-play, count-bucketed
+//      40% easy / 40% medium / 20% hard; an uncapped city instead uses the
+//      narrow-easy percentile split (top 20% easy / 45% medium / 35% hard).
 //   4. Write public/locations.<city>.json and print a full audit.
 //
 // Unlike the St. Pete one-off, this is re-runnable: it re-derives difficulty from
