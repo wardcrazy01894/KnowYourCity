@@ -56,8 +56,9 @@ Notes:
 - Restaurants/bars/cafés are only pulled **if they carry a `wikidata` or
   `wikipedia` tag** — that's the notability gate that keeps random eateries out
   while letting famous ones (the kind with a Wikipedia page) in.
-- Run it: `npm run fetch-pois` (Node 18+, public Overpass endpoint, well under
-  rate limits for a one-off). You can also paste the query into
+- Run it: `npm run fetch-pois` (needs Node 18+ for global `fetch` — the app
+  build/CI itself runs Node 22; public Overpass endpoint, well under rate limits
+  for a one-off). You can also paste the query into
   <https://overpass-turbo.eu> to eyeball results on a map first.
 
 ---
