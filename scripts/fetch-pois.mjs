@@ -12,7 +12,8 @@
  *      (fix names, write clues, delete junk). The script never writes
  *      locations.json directly — curation is deliberate.
  *
- * Run: `npm run fetch-pois`  (Node 18+, uses global fetch)
+ * Run: `npm run fetch-pois`  (needs Node 18+ for global fetch; the app build/CI
+ *   runs Node 22 — see .github/workflows)
  */
 
 import { mkdir, writeFile } from 'node:fs/promises'
