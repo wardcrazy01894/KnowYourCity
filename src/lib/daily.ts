@@ -8,10 +8,11 @@
  *
  * ── Timezone (read this) ──────────────────────────────────────────────────────
  * The "day" rolls over at midnight in the city's timezone, NOT the player's
- * local timezone and NOT UTC. For St. Pete that's America/New_York (handles
- * EST/EDT automatically). So everyone — wherever they are — gets the same puzzle
- * keyed to St. Pete's calendar day. When we add more cities each will carry its
- * own IANA timezone and call getDateKey(now, city.timeZone).
+ * local timezone and NOT UTC. Each city carries its own IANA timezone in
+ * cities.json (e.g. St. Pete America/New_York, Seattle America/Los_Angeles —
+ * EST/EDT/PST handled automatically), and App passes `city.timeZone` to
+ * getDateKey. So everyone — wherever they are — gets the same puzzle keyed to the
+ * city's calendar day.
  *
  * ── Stability tradeoff (read this) ───────────────────────────────────────────
  * Selection is a pure function of (dateKey, list). The PRNG is seeded ONLY by
