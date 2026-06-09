@@ -28,6 +28,22 @@ function getTurnstileToken(widgetId?: string): string | undefined {
   return w.turnstile?.getResponse(widgetId)
 }
 
+/**
+ * Reset the Turnstile widget so a retry gets a FRESH token. Turnstile tokens are
+ * single-use, so after a failed send the consumed token must be cleared —
+ * otherwise the next attempt re-submits it and the worker's siteverify rejects it
+ * until the widget auto-refreshes (~minutes). Best-effort: a no-op if Turnstile
+ * isn't loaded, and never throws.
+ */
+export function resetTurnstile(widgetId?: string): void {
+  const w = window as unknown as { turnstile?: TurnstileApi }
+  try {
+    w.turnstile?.reset(widgetId)
+  } catch {
+    // Widget may already be gone / not yet rendered — nothing to reset.
+  }
+}
+
 export function BugReport({
   onClose,
   context,
@@ -128,9 +144,16 @@ export function BugReport({
         log.info('BugReport', 'no endpoint; opening prefilled issue')
         window.open(res.fallbackUrl, '_blank', 'noopener')
         setStatus('done')
+      } else {
+        // Worker rejected the report (e.g. consumed/invalid token, rate limit).
+        // Reset Turnstile so the retry gets a fresh, unconsumed token.
+        if (TURNSTILE_KEY) resetTurnstile(widgetIdRef.current)
+        setStatus('error')
       }
     } catch (e) {
       log.error('BugReport', 'submit failed', { error: String(e) })
+      // Single-use token is now spent — reset so a retry isn't dead on arrival.
+      if (TURNSTILE_KEY) resetTurnstile(widgetIdRef.current)
       setStatus('error')
     }
   }
