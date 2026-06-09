@@ -127,8 +127,8 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
     medium → medium → hard** (gentle warm-up, hardest finisher). Within each slot
     we *layer both* constraints — prefer a location of that difficulty whose
     **category** hasn't appeared yet today — so a day doesn't turn into five
-    restaurants. On top of that a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 2`)
-    reserves picks for parks/landmarks/museums so a day is never all
+    restaurants. On top of that a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`)
+    reserves a pick for a park/landmark/museum so a day is never all
     cafés/restaurants/bars — without breaking the difficulty ramp (only a non-food
     *of the slot's difficulty* is preferred). If a difficulty bucket runs short,
     the slot falls back to any remaining location (still preferring a fresh

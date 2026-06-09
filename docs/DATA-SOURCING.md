@@ -252,7 +252,7 @@ filters to `inPlay !== false`. Current caps: St. Pete 400 (389 rows, all in
 play), Ann Arbor 300, State College 200, Seattle 500.
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
-> **non-food floor** (`MIN_NON_FOOD_PER_DAY = 2`) so parks/landmarks/museums show
+> **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
 > up every day — see PLAN.md §5. Parks survive the cap well (their famous ones
 > rank high): St. Pete keeps all 24, Ann Arbor 67, State College 30, Seattle 33.
 

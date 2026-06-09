@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {
   DIFFICULTY_PLAN,
+  MIN_NON_FOOD_PER_DAY,
   getDateKey,
   hashStringToSeed,
   mulberry32,
@@ -312,20 +313,18 @@ describe('selectDailyLocations — play cap (inPlay filtering)', () => {
 })
 
 describe('selectDailyLocations — non-food floor (parks/landmarks show up)', () => {
-  // Adversarial food-heavy pool: NO non-food in the easy bucket and only ONE
-  // non-food in each of medium/hard, so plain category-variety can easily land
-  // an all-food (or single-non-food) day. The floor must reserve slots so two
-  // non-food (the park + the landmark) always appear.
+  // Adversarial pool: the ONLY non-food (a park) sits in the easy bucket, where
+  // plain category variety can fill both easy slots with food and skip it,
+  // leaving an all-food day. The floor must prefer the park so at least
+  // MIN_NON_FOOD_PER_DAY non-food always appears.
   const pool: Location[] = [
     dloc('fe1', 'restaurant', 'easy'),
     dloc('fe2', 'cafe', 'easy'),
-    dloc('fe3', 'bar', 'easy'),
+    dloc('pe1', 'park', 'easy'),
     dloc('fm1', 'restaurant', 'medium'),
     dloc('fm2', 'cafe', 'medium'),
-    dloc('pm1', 'park', 'medium'),
-    dloc('fh1', 'restaurant', 'hard'),
+    dloc('fh1', 'bar', 'hard'),
     dloc('fh2', 'cafe', 'hard'),
-    dloc('lh1', 'landmark', 'hard'),
   ]
   // 30 dates: a robust guarantee, not a lucky seed.
   const manyDates = Array.from(
@@ -334,14 +333,17 @@ describe('selectDailyLocations — non-food floor (parks/landmarks show up)', ()
       `2026-${String((i % 12) + 1).padStart(2, '0')}-${String((i % 28) + 1).padStart(2, '0')}`,
   )
 
-  it('always includes at least two non-food picks, across many dates', () => {
+  it('always includes at least one non-food pick (never an all-food day), across many dates', () => {
+    // Assert the literal contract (>= 1), not >= MIN_NON_FOOD_PER_DAY, so the
+    // test still fails if the floor is ever removed/zeroed.
+    expect(MIN_NON_FOOD_PER_DAY).toBeGreaterThanOrEqual(1)
     for (const d of manyDates) {
       const picks = selectDailyLocations(pool, d)
       const nonFood = picks.filter((p) => !FOOD_CATS.has(p.category))
       expect(
         nonFood.length,
         `${d}: only ${nonFood.length} non-food in ${picks.map((p) => p.category).join(',')}`,
-      ).toBeGreaterThanOrEqual(2)
+      ).toBeGreaterThanOrEqual(1)
     }
   })
 

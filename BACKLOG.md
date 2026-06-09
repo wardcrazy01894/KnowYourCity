@@ -61,7 +61,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       fame are `inPlay` and carry a difficulty (count-bucketed 40% easy / 40%
       medium / 20% hard). Caps: St. Pete 400 (389 rows, all in play), Ann Arbor
       300, State College 200, Seattle 500. Daily selection filters to `inPlay`
-      and enforces a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 2`) so
+      and enforces a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so
       parks/landmarks aren't crowded out by food. Re-capping = re-run
       `apply-difficulty.mjs` off the committed fame cache (no re-research). See
       `docs/DATA-SOURCING.md` §4c, PLAN §5.

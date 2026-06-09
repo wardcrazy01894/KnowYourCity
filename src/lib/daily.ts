@@ -51,7 +51,7 @@ export const DIFFICULTY_PLAN: Difficulty[] = [
  * city genuinely lacks this many non-food in the needed buckets it returns what
  * it can. See fillByDifficulty.
  */
-export const MIN_NON_FOOD_PER_DAY = 2
+export const MIN_NON_FOOD_PER_DAY = 1
 
 /**
  * The fixed shape of a daily game: one of each category, in this order.
