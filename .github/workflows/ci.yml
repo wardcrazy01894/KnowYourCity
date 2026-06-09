@@ -33,6 +33,13 @@ jobs:
       - name: Install dependencies (locked)
         run: npm ci
 
+      # Informational only (continue-on-error): flag known vulns in shipped
+      # (production) deps. --omit=dev so the dev-only esbuild/vite advisory
+      # doesn't noise the signal. Non-blocking so a new advisory never wedges PRs.
+      - name: Audit production deps (informational)
+        run: npm audit --omit=dev
+        continue-on-error: true
+
       - name: Type check (tsc)
         run: npm run typecheck
 
