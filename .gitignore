@@ -12,3 +12,8 @@ dist/
 # public/locations.json is the committed artifact, not this.
 data/candidates.json
 data/food-candidates.json
+
+# Transient working dirs for a city's crash-safe fame pass (tuples, generated
+# workflow script, harvested accumulator). The committed artifact is the final
+# data/fame-<city>.json the apply-difficulty step writes, not this scratch.
+data/_*-fame-work/
