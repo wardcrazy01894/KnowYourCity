@@ -266,6 +266,28 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "tequila-daisy",
+      "name": "Tequila Daisy",
+      "lat": 27.77206,
+      "lng": -82.63416,
+      "category": "bar",
+      "clue": "A downtown cocktail bar on 1st Ave N pouring 700+ tequilas and mezcals.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Manual (geocoded via US Census)"
+    },
+    {
+      "id": "the-crafty-squirrel",
+      "name": "The Crafty Squirrel",
+      "lat": 27.7712876,
+      "lng": -82.6364287,
+      "category": "bar",
+      "clue": "A downtown Aussie-style bar with artisan pizza and shareable teapot cocktails.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "the-don-cesar",
       "name": "The Don CeSar",
       "lat": 27.7077,
@@ -277,6 +299,17 @@
       "attribution": "Wikidata CC0"
     },
     {
+      "id": "the-oyster-bar",
+      "name": "The Oyster Bar",
+      "lat": 27.7711149,
+      "lng": -82.6636939,
+      "category": "restaurant",
+      "clue": "A St. Pete seafood institution since 1999, now in the Grand Central District after leaving its longtime downtown home.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "welcome-to-the-farm",
       "name": "Welcome to the Farm",
       "lat": 27.771814,
@@ -286,6 +319,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "ParkWhiz (approx.)"
+    },
+    {
+      "id": "wheres-jubes",
+      "name": "Where's Jubes",
+      "lat": 27.7713863,
+      "lng": -82.6368671,
+      "category": "bar",
+      "clue": "An Aussie brewpub and sports bar on the 200 block of Central Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "williams-park",

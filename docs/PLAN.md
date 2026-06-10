@@ -155,7 +155,7 @@ residents would instantly recognise it. Fame is scored 0–100 by a one-time
 Google/Yelp review counts *relative to the city*, Wikipedia). Every enriched
 city today sets a **`playCap`** (see §5.1 and `docs/DATA-SOURCING.md` §4c), so
 the live bucketing is **count-based over the in-play set — 40% easy / 40% medium
-/ 20% hard** (e.g. St. Pete 389 → 156/155/78, Seattle 500 → 200/200/100). An
+/ 20% hard** (e.g. St. Pete 393 → 157/157/79, Seattle 500 → 200/200/100). An
 *uncapped* enriched city (none currently) would instead bucket by **city-relative
 percentile** with a narrow-easy split — top 20% easy / next 45% medium / bottom
 35% hard — keeping "easy" close to "everyone knows it" even when a city has few

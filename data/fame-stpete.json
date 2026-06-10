@@ -88,6 +88,16 @@
     "hasWikipedia": true
   },
   {
+    "id": "albert-whitted-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Active downtown waterfront park adjacent to Albert Whitted Airport; opened 2008"
+  },
+  {
     "id": "alesia",
     "status": "open",
     "currentName": "",
@@ -150,6 +160,16 @@
     "fameScore": 30,
     "reviewCount": 52,
     "hasWikipedia": false
+  },
+  {
+    "id": "azalea-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Large west-side neighborhood park with sports fields, trails, and disc golf"
   },
   {
     "id": "baba",
@@ -230,6 +250,16 @@
     "fameScore": 30,
     "reviewCount": 83,
     "hasWikipedia": false
+  },
+  {
+    "id": "bartlett-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 75,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "South St. Pete community park home to the St. Pete Tennis Center"
   },
   {
     "id": "basil-leaf",
@@ -840,6 +870,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "clam-bayou-nature-preserve",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 350,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Coastal wetland preserve with boardwalks, kayak launch, and mangrove trails; fully restored after hurricane flooding"
+  },
+  {
     "id": "clock-tower-sports-bar-grill",
     "status": "open",
     "currentName": "",
@@ -936,6 +976,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "crescent-lake-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 700,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Well-loved midtown lakeside park containing historic Huggins-Stengel Field (Yankees spring training 1925-1961)"
+  },
+  {
     "id": "cycle-brewing",
     "status": "closed",
     "currentName": "",
@@ -958,6 +1008,16 @@
     "fameScore": 42,
     "reviewCount": 300,
     "hasWikipedia": false
+  },
+  {
+    "id": "demens-landing-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 500,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Historic downtown waterfront park on site of St. Pete's first railway pier; hosts outdoor events and marina access"
   },
   {
     "id": "desanto-bar",
@@ -1256,6 +1316,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "fossil-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 130,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "North St. Pete neighborhood park with rec center, pool, tennis, pickleball, and a wooded loop trail"
+  },
+  {
     "id": "fourth-street-shrimp-store",
     "status": "open",
     "currentName": "",
@@ -1374,6 +1444,16 @@
     "fameScore": 45,
     "reviewCount": 222,
     "hasWikipedia": false
+  },
+  {
+    "id": "gizella-kopsick-palm-arboretum",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 220,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small but distinctive waterfront arboretum with 500+ palms and cycads representing ~150 species near North Shore"
   },
   {
     "id": "glory-days-grill",
@@ -1560,6 +1640,14 @@
     "hasWikipedia": false
   },
   {
+    "id": "hookah",
+    "status": "uncertain",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 0,
+    "hasWikipedia": false
+  },
+  {
     "id": "hooks-sushi",
     "status": "open",
     "currentName": "",
@@ -1573,14 +1661,6 @@
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 100,
-    "hasWikipedia": false
-  },
-  {
-    "id": "hookah",
-    "status": "uncertain",
-    "currentName": "",
-    "fameScore": 8,
-    "reviewCount": 0,
     "hasWikipedia": false
   },
   {
@@ -1776,14 +1856,6 @@
     "hasWikipedia": false
   },
   {
-    "id": "katiki",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 45,
-    "reviewCount": 141,
-    "hasWikipedia": false
-  },
-  {
     "id": "kahunas",
     "status": "open",
     "currentName": "",
@@ -1840,6 +1912,14 @@
     "hasWikipedia": false
   },
   {
+    "id": "katiki",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 141,
+    "hasWikipedia": false
+  },
+  {
     "id": "kinjo-japanese-restaurant",
     "status": "closed",
     "currentName": "",
@@ -1888,14 +1968,6 @@
     "hasWikipedia": false
   },
   {
-    "id": "mi-carreta-restaurant-and-bakery",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 38,
-    "reviewCount": 236,
-    "hasWikipedia": false
-  },
-  {
     "id": "la-casa-de-pane",
     "status": "open",
     "currentName": "",
@@ -1934,6 +2006,26 @@
     "fameScore": 55,
     "reviewCount": 674,
     "hasWikipedia": false
+  },
+  {
+    "id": "lake-maggiore",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 200,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "Large 363-acre freshwater lake in south St. Pete with surrounding park; Wikipedia article exists for the lake"
+  },
+  {
+    "id": "lake-vista-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 160,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "South St. Pete multi-amenity park with rec center, pool, skatepark, dog park, and sports courts"
   },
   {
     "id": "lanas-downtown-lounge",
@@ -2144,6 +2236,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "maximo-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 200,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Active city park on the south shore with boat ramps, trails, and disc golf"
+  },
+  {
     "id": "maysters-cafe",
     "status": "uncertain",
     "currentName": "",
@@ -2176,6 +2278,14 @@
     "hasWikipedia": false
   },
   {
+    "id": "mi-carreta-restaurant-and-bakery",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 236,
+    "hasWikipedia": false
+  },
+  {
     "id": "mickeys-cafe",
     "status": "open",
     "currentName": "Mickey's Cafe & Organics",
@@ -2192,6 +2302,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "mirror-lake",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Downtown urban lake park anchoring the shuffleboard and senior center complex"
+  },
+  {
     "id": "morean-arts-center",
     "status": "open",
     "currentName": "",
@@ -2200,19 +2320,19 @@
     "hasWikipedia": true
   },
   {
-    "id": "mr-mrs-crab",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 32,
-    "reviewCount": 150,
-    "hasWikipedia": false
-  },
-  {
     "id": "mr-empanada",
     "status": "open",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 43,
+    "hasWikipedia": false
+  },
+  {
+    "id": "mr-mrs-crab",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 150,
     "hasWikipedia": false
   },
   {
@@ -2318,6 +2438,16 @@
     "fameScore": 55,
     "reviewCount": 100,
     "hasWikipedia": false
+  },
+  {
+    "id": "north-straub-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Waterfront park on Bayshore Drive with 1925 banyan trees and event stage"
   },
   {
     "id": "nueva-cantina",
@@ -2592,6 +2722,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "pioneer-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 120,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small waterfront obelisk park honoring early settlers near the Pier"
+  },
+  {
     "id": "pipos",
     "status": "open",
     "currentName": "",
@@ -2744,6 +2884,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "rec-dec",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 250,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Recreational bar and sports venue on 105th Terrace NE, not a public park"
+  },
+  {
     "id": "red-ribbon",
     "status": "open",
     "currentName": "",
@@ -2846,6 +2996,16 @@
     "fameScore": 30,
     "reviewCount": 100,
     "hasWikipedia": false
+  },
+  {
+    "id": "round-lake",
+    "status": "open",
+    "currentName": "Historic Round Lake Park",
+    "fameScore": 30,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Small near-downtown lake park officially named Historic Round Lake Park, known for its large banyan tree"
   },
   {
     "id": "rubys-elixir",
@@ -2974,6 +3134,16 @@
     "fameScore": 22,
     "reviewCount": 55,
     "hasWikipedia": false
+  },
+  {
+    "id": "sawgrass-lake-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 900,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "400-acre Pinellas County nature park with elevated boardwalk through maple swamp, ranked #13 in St. Pete attractions"
   },
   {
     "id": "scooters-coffee",
@@ -3134,6 +3304,16 @@
     "fameScore": 35,
     "reviewCount": 70,
     "hasWikipedia": false
+  },
+  {
+    "id": "south-straub-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 250,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Shaded waterfront park south of North Straub with fountain and marina views"
   },
   {
     "id": "southside-craft-coffee-brew-bar",
@@ -3400,6 +3580,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "tequila-daisy",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Downtown tequila/mezcal cocktail bar, opened 2023."
+  },
+  {
     "id": "terra-mar-brazilian-steakhouse",
     "status": "open",
     "currentName": "",
@@ -3510,6 +3700,16 @@
     "fameScore": 30,
     "reviewCount": 42,
     "hasWikipedia": false
+  },
+  {
+    "id": "the-crafty-squirrel",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Aussie-style downtown bar, same owner as Where’s Jubes."
   },
   {
     "id": "the-cupcake-spot",
@@ -3662,6 +3862,16 @@
     "fameScore": 25,
     "reviewCount": 13,
     "hasWikipedia": false
+  },
+  {
+    "id": "the-oyster-bar",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 800,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Seafood institution since 1999; relocated to 2245 Central Ave, reopened Oct 2025."
   },
   {
     "id": "the-palladium-theater",
@@ -4000,6 +4210,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "wheres-jubes",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Aussie brewpub & grill on Central Ave."
+  },
+  {
     "id": "wild-child",
     "status": "open",
     "currentName": "",
@@ -4014,6 +4234,16 @@
     "fameScore": 22,
     "reviewCount": 22,
     "hasWikipedia": false
+  },
+  {
+    "id": "williams-park",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 350,
+    "hasWikipedia": true,
+    "isNationalChain": false,
+    "statusNote": "City's oldest park (1888) in the downtown core, known for the bandshell and Saturday Morning Market"
   },
   {
     "id": "willys-burger-and-booze",
@@ -4126,195 +4356,5 @@
     "fameScore": 50,
     "reviewCount": 300,
     "hasWikipedia": false
-  },
-  {
-    "id": "albert-whitted-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 52,
-    "reviewCount": 280,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Active downtown waterfront park adjacent to Albert Whitted Airport; opened 2008"
-  },
-  {
-    "id": "azalea-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 38,
-    "reviewCount": 120,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Large west-side neighborhood park with sports fields, trails, and disc golf"
-  },
-  {
-    "id": "bartlett-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 33,
-    "reviewCount": 75,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "South St. Pete community park home to the St. Pete Tennis Center"
-  },
-  {
-    "id": "clam-bayou-nature-preserve",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 40,
-    "reviewCount": 350,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Coastal wetland preserve with boardwalks, kayak launch, and mangrove trails; fully restored after hurricane flooding"
-  },
-  {
-    "id": "crescent-lake-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 58,
-    "reviewCount": 700,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Well-loved midtown lakeside park containing historic Huggins-Stengel Field (Yankees spring training 1925-1961)"
-  },
-  {
-    "id": "demens-landing-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 62,
-    "reviewCount": 500,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Historic downtown waterfront park on site of St. Pete's first railway pier; hosts outdoor events and marina access"
-  },
-  {
-    "id": "fossil-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 30,
-    "reviewCount": 130,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "North St. Pete neighborhood park with rec center, pool, tennis, pickleball, and a wooded loop trail"
-  },
-  {
-    "id": "gizella-kopsick-palm-arboretum",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 36,
-    "reviewCount": 220,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Small but distinctive waterfront arboretum with 500+ palms and cycads representing ~150 species near North Shore"
-  },
-  {
-    "id": "lake-maggiore",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 44,
-    "reviewCount": 200,
-    "hasWikipedia": true,
-    "isNationalChain": false,
-    "statusNote": "Large 363-acre freshwater lake in south St. Pete with surrounding park; Wikipedia article exists for the lake"
-  },
-  {
-    "id": "lake-vista-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 32,
-    "reviewCount": 160,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "South St. Pete multi-amenity park with rec center, pool, skatepark, dog park, and sports courts"
-  },
-  {
-    "id": "maximo-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 45,
-    "reviewCount": 200,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Active city park on the south shore with boat ramps, trails, and disc golf"
-  },
-  {
-    "id": "mirror-lake",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 52,
-    "reviewCount": 150,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Downtown urban lake park anchoring the shuffleboard and senior center complex"
-  },
-  {
-    "id": "north-straub-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 55,
-    "reviewCount": 300,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Waterfront park on Bayshore Drive with 1925 banyan trees and event stage"
-  },
-  {
-    "id": "pioneer-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 38,
-    "reviewCount": 120,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Small waterfront obelisk park honoring early settlers near the Pier"
-  },
-  {
-    "id": "rec-dec",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 28,
-    "reviewCount": 250,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Recreational bar and sports venue on 105th Terrace NE, not a public park"
-  },
-  {
-    "id": "round-lake",
-    "status": "open",
-    "currentName": "Historic Round Lake Park",
-    "fameScore": 30,
-    "reviewCount": 80,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Small near-downtown lake park officially named Historic Round Lake Park, known for its large banyan tree"
-  },
-  {
-    "id": "sawgrass-lake-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 55,
-    "reviewCount": 900,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "400-acre Pinellas County nature park with elevated boardwalk through maple swamp, ranked #13 in St. Pete attractions"
-  },
-  {
-    "id": "south-straub-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 48,
-    "reviewCount": 250,
-    "hasWikipedia": false,
-    "isNationalChain": false,
-    "statusNote": "Shaded waterfront park south of North Straub with fountain and marina views"
-  },
-  {
-    "id": "williams-park",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 50,
-    "reviewCount": 350,
-    "hasWikipedia": true,
-    "isNationalChain": false,
-    "statusNote": "City's oldest park (1888) in the downtown core, known for the bandshell and Saturday Morning Market"
   }
 ]
