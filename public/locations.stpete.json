@@ -1073,7 +1073,7 @@
       "lat": 27.770692,
       "lng": -82.681118,
       "category": "restaurant",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
@@ -1191,6 +1191,34 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "craft-kafe",
+      "name": "Craft Kafe",
+      "lat": 27.7708566,
+      "lng": -82.7292451,
+      "category": "cafe",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 40,
+      "clue": "A dedicated gluten-free bakery and coffeehouse on Central Ave near 66th St — the original location.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Manual (geocoded via US Census)"
+    },
+    {
+      "id": "craft-kafe-dtsp",
+      "name": "Craft Kafé DTSP",
+      "lat": 27.771054,
+      "lng": -82.6357411,
+      "category": "cafe",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 38,
+      "clue": "The downtown outpost of the gluten-free bakery and coffeehouse, at 200 Central.",
+      "photoUrl": null,
+      "source": "manual",
       "attribution": "OpenStreetMap ODbL"
     },
     {
@@ -1555,6 +1583,20 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "five-bucks-drinkery-downtown",
+      "name": "Five Bucks Drinkery",
+      "lat": 27.771384,
+      "lng": -82.636368,
+      "category": "bar",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 48,
+      "clue": "A longtime downtown dive on the 200 block of Central — everything five bucks.",
+      "photoUrl": null,
+      "source": "manual",
       "attribution": "OpenStreetMap ODbL"
     },
     {
@@ -4470,6 +4512,20 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "tequila-daisy",
+      "name": "Tequila Daisy",
+      "lat": 27.77206,
+      "lng": -82.63416,
+      "category": "bar",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 42,
+      "clue": "A downtown cocktail bar on 1st Ave N pouring 700+ tequilas and mezcals.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Manual (geocoded via US Census)"
+    },
+    {
       "id": "terra-mar-brazilian-steakhouse",
       "name": "Terra Mar Brazilian Steakhouse",
       "lat": 27.833155,
@@ -4636,6 +4692,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-crafty-squirrel",
+      "name": "The Crafty Squirrel",
+      "lat": 27.7712876,
+      "lng": -82.6364287,
+      "category": "bar",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 40,
+      "clue": "A downtown Aussie-style bar with artisan pizza and shareable teapot cocktails.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "the-dali-museum",
@@ -4832,6 +4902,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "the-oyster-bar",
+      "name": "The Oyster Bar",
+      "lat": 27.7711149,
+      "lng": -82.6636939,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 58,
+      "clue": "A St. Pete seafood institution since 1999, now in the Grand Central District after leaving its longtime downtown home.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "the-palladium-theater",
@@ -5294,6 +5378,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "wheres-jubes",
+      "name": "Where's Jubes",
+      "lat": 27.7713863,
+      "lng": -82.6368671,
+      "category": "bar",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 38,
+      "clue": "An Aussie brewpub and sports bar on the 200 block of Central Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "wild-child",
