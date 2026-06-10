@@ -47,9 +47,9 @@ const ANCHORS = {
     'a typical neighborhood tavern or taqueria ~30-45',
   ],
 }
-const anchorLines = (ANCHORS[CITY_LABEL] || [
-  '[add 4-6 known local icons with scores]',
-])
+const anchorLines = (
+  ANCHORS[CITY_LABEL] || ['[add 4-6 known local icons with scores]']
+)
   .map((a) => `    ${a}`)
   .join('\n')
 

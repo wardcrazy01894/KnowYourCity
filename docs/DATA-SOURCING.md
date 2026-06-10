@@ -215,17 +215,32 @@ background workflow that fans out ~25 locations per agent):
    in-play set; see §4c. Either split is city-relative so the 2-easy/2-medium/1-hard
    plan always fills, even when a city has few true icons.
 
-> **Crash-safe harvesting (large cities).** The fame `Workflow` persists each
-> batch agent's result to `agent-*.jsonl` in its transcript dir as it finishes,
-> so a session/limit death only costs in-flight batches. **`scripts/harvest-fame-transcripts.mjs
+> **Crash-safe harvesting (large cities).** Generate the fame `Workflow` with
+> **`scripts/gen-fame-workflow.mjs "<City, ST>" <tuples.json> <out.workflow.js>`** —
+> it embeds the tuples as a literal so you launch via `scriptPath` (an `args`
+> payload of thousands of tuples is too large to emit by hand) and edit the
+> per-city calibration anchors in one place. The Workflow persists each batch
+> agent's result to `agent-*.jsonl` in its transcript dir as it finishes, so a
+> session/limit death only costs in-flight batches. **`scripts/harvest-fame-transcripts.mjs
 > <workflowsDir> <out.json> [tuples.json]`** rebuilds `{results}` from those
 > transcripts (recursive across runs + merge-mode, so it accumulates), and reports
 > which ids are still MISSING (writing their tuples for a follow-up workflow over
-> just the remainder — no re-research). Seattle's uncapped pass (2782 locations,
-> 112 batches) needed three runs across two session-limit resets; the harvester
-> stitched them into one complete `data/fame-seattle.json`. Tuples are
-> reproducible from `public/locations.<id>.json`, so nothing transient is
-> load-bearing.
+> just the remainder — no re-research). Loop generate → launch → harvest → advance
+> until MISSING = 0.
+>
+> ⚠️ **Scope the harvest to one city's run-dirs.** Location slugs collide across
+> cities (e.g. `3rd-coast-cafe`), so harvesting the whole project transcript tree
+> would apply another city's fame to a colliding id. Discover only this city's
+> `wf_*` dirs by the rubric string — `grep -rl "places in <City, ST>" <projDir> |
+> grep /subagents/workflows/ | sed -E 's#(/wf_[^/]+)/.*#\1#' | sort -u` — and
+> harvest each into the accumulator. Source-scoping is the only safe fix;
+> post-filtering by id can't undo a collision.
+>
+> Seattle's uncapped pass (2782 locations, 112 batches) needed three runs across
+> two session-limit resets; **Chicago's (5325 → 4154, 267 batches) crossed ~5
+> resets** — each time, harvest banked the finished batches and a regenerated
+> follow-up workflow covered only the MISSING remainder. Tuples are reproducible
+> from `public/locations.<id>.json`, so nothing transient is load-bearing.
 
 The raw scores are cached in `data/fame-<city>.json` (committed, for provenance).
 The pass is applied by the generalized, re-runnable **`scripts/apply-difficulty.mjs
@@ -263,12 +278,13 @@ stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
 filters to `inPlay !== false`. Current caps: St. Pete 400 (389 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500.
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4154).
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
 > up every day — see PLAN.md §5. Parks survive the cap well (their famous ones
-> rank high): St. Pete keeps all 24, Ann Arbor 67, State College 30, Seattle 33.
+> rank high): St. Pete keeps all 24, Ann Arbor 67, State College 30, Seattle 33,
+> Chicago 47.
 
 ### Category buckets
 The pipeline tags each row with a `category`. For round selection:
@@ -287,8 +303,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c): St. Pete (389 → **389**), State College (234 → **200**), Ann Arbor (341 →
-**300**), Seattle (2389 → **500**) — all enriched; Chicago (~200, not yet
-enriched).
+**300**), Seattle (2389 → **500**), Chicago (4154 → **700**) — all enriched.
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
