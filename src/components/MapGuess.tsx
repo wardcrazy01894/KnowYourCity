@@ -10,8 +10,11 @@
  *    required (rendered by Leaflet's attribution control).
  *  - If VITE_MAPBOX_TOKEN is set: Mapbox Satellite (sharper, zoom to ~22).
  *
- * The map is locked to `bounds` (maxBounds + viscosity) so players can't pan
- * away from the city's play area.
+ * The map is locked NEAR `bounds` (maxBounds + viscosity) so players can't pan
+ * far from the city's play area. The lock box is padded (see padBounds, #71):
+ * with maxBounds flush against the play area, zoom snapping could leave an
+ * axis unpannable and edge locations couldn't be centered. Min zoom still
+ * locks to the UNPADDED bounds so players can't zoom out past the city.
  *
  * Anti-cheat note: answers live in the bundled JSON and are readable via
  * devtools. For a friends game that's acceptable and intentional.
@@ -21,6 +24,7 @@ import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import type { Guess, Location } from '../types'
 import { log } from '../lib/log'
+import { padBounds } from '../lib/mapBounds'
 
 export interface MapGuessProps {
   /** Bounding box the map is locked to, [[south, west], [north, east]]. */
@@ -86,7 +90,7 @@ export function MapGuess({
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
     const map = L.map(containerRef.current, {
-      maxBounds: bounds,
+      maxBounds: padBounds(bounds),
       maxBoundsViscosity: 1,
       zoomControl: true,
     })
