@@ -144,6 +144,16 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
+**Adding one venue** (e.g. a player request from the in-app bug reporter): use
+the `add-location` skill — it verifies open/moved status, geocodes, writes the
+`data/<city>-manual.json` + `data/fame-<city>.json` records, recalibrates via
+`apply-difficulty.mjs`, and then runs **`scripts/nearby-sweep.mjs <city>
+"<lat>,<lng>"`** to list named OSM POIs on the surrounding block that the
+dataset is missing (cross-checked by normalized name + 150 m proximity, the
+pipeline's dupe rule). Sweep hits must be web-verified before adding — OSM is
+stale (most "missing" hits around a downtown block turn out to be
+already-known closures recorded in the fame cache).
+
 ### Status: 389 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
 `public/locations.stpete.json` holds **389 St. Pete places** (peaked at 401 after
 the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389 — all
