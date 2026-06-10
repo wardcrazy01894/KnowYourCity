@@ -17761,13 +17761,13 @@
   },
   {
     "id": "ke14-the-cubby-bear",
-    "status": "open",
+    "status": "uncertain",
     "currentName": "",
     "fameScore": 62,
     "reviewCount": 533,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Iconic Wrigleyville sports bar and music venue since 1953 across from Wrigley Field; active and hosting events in 2026"
+    "statusNote": "OSM code-prefixed (KE##/IC#) park node mislabeled with a famous venue name at the wrong location; name-matched fame is spurious"
   },
   {
     "id": "ke16",
@@ -48011,13 +48011,13 @@
   },
   {
     "id": "ic6-gerald-j-roper-gateway",
-    "status": "open",
+    "status": "uncertain",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago Gateway Green expressway garden at Kennedy/Edens junction, renamed for Gerald J. Roper; open green space visible to motorists"
+    "statusNote": "OSM code-prefixed (KE##/IC#) park node mislabeled with a famous venue name at the wrong location; name-matched fame is spurious"
   },
   {
     "id": "icafe",
@@ -50421,23 +50421,23 @@
   },
   {
     "id": "ke34-cubs",
-    "status": "open",
+    "status": "uncertain",
     "currentName": "",
     "fameScore": 97,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Chicago Cubs at Wrigley Field, active 2026 MLB season"
+    "statusNote": "OSM code-prefixed (KE##/IC#) park node mislabeled with a famous venue name at the wrong location; name-matched fame is spurious"
   },
   {
     "id": "ke37-harry-carays",
-    "status": "open",
+    "status": "uncertain",
     "currentName": "",
     "fameScore": 68,
     "reviewCount": 1114,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Harry Caray's Italian Steakhouse River North, open as of June 2026; regional multi-location group"
+    "statusNote": "OSM code-prefixed (KE##/IC#) park node mislabeled with a famous venue name at the wrong location; name-matched fame is spurious"
   },
   {
     "id": "ke39-hyatt-regency",

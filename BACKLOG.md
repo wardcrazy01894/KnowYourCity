@@ -12,7 +12,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       **`add-or-update-city` skill** for any future city — it runs the whole flow.
       See `docs/PLAN.md` §5.1b/§5.3b, `docs/DATA-SOURCING.md` §4b, and memory
       `difficulty-rating-research`. (Chicago's uncapped pass — 5325 fetched →
-      4154 enriched, top 700 in play — ran crash-safe across ~5 session-limit
+      4150 enriched, top 700 in play — ran crash-safe across ~5 session-limit
       resets via `scripts/gen-fame-workflow.mjs` + `harvest-fame-transcripts.mjs`.)
 - [x] **Generalize difficulty enrichment.** `scripts/apply-difficulty.mjs <city>`
       is the generalized, re-runnable successor to the St. Pete one-off — status
@@ -37,6 +37,16 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       entries; maintain a per-city ban list / extend `CLOSED`. (St. Pete swept by
       the fame+status pass in PR #40 — 133 closed/junk removed; the other cities
       get the same sweep as part of their difficulty rollout above.)
+- [ ] **Strip OSM code-prefixed display names in the pipeline.** Some OSM nodes
+      carry a survey-code prefix glued to the name (Chicago had `KE34-Cubs`,
+      `KE14-The Cubby Bear`, `KE37-Harry Caray's`, `IC6-Gerald J Roper Gateway` —
+      `park`-category points sitting kilometres from the famous venue whose name
+      they borrow, so the fame agent name-matched them to spurious 60–97 scores).
+      Chicago's were marked `uncertain` in `data/fame-chicago.json` and dropped on
+      re-run, but the systemic fix is a `cleanDisplayName` step in
+      `composeLocations`/`build-city` (regex `^[A-Z]{2,3}\d+-`, TDD) so future
+      cities/regens don't reintroduce them. Watch for other mislabeled-but-clean
+      names that name-match a famous venue at the wrong coordinates.
 - [ ] **Widen the bbox?** — decide whether to expand the box to recapture the Old
       Sunshine Skyway fishing pier (south) and north-county golf (e.g. Bardmoor),
       which fell just outside. Bounds also gate the play-area map.

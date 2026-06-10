@@ -237,7 +237,7 @@ background workflow that fans out ~25 locations per agent):
 > post-filtering by id can't undo a collision.
 >
 > Seattle's uncapped pass (2782 locations, 112 batches) needed three runs across
-> two session-limit resets; **Chicago's (5325 → 4154, 267 batches) crossed ~5
+> two session-limit resets; **Chicago's (5325 → 4150, 267 batches) crossed ~5
 > resets** — each time, harvest banked the finished batches and a regenerated
 > follow-up workflow covered only the MISSING remainder. Tuples are reproducible
 > from `public/locations.<id>.json`, so nothing transient is load-bearing.
@@ -278,7 +278,7 @@ stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
 filters to `inPlay !== false`. Current caps: St. Pete 400 (389 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4154).
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4150).
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
@@ -303,7 +303,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c): St. Pete (389 → **389**), State College (234 → **200**), Ann Arbor (341 →
-**300**), Seattle (2389 → **500**), Chicago (4154 → **700**) — all enriched.
+**300**), Seattle (2389 → **500**), Chicago (4150 → **700**) — all enriched.
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
