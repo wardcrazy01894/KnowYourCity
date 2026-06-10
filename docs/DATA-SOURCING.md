@@ -144,9 +144,9 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
-### Status: 393 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
-`public/locations.stpete.json` holds **393 St. Pete places** (peaked at 401 after
-the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +4
+### Status: 396 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
+`public/locations.stpete.json` holds **396 St. Pete places** (peaked at 401 after
+the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +7
 player-requested/nearby-sweep adds — all in play, since the cap is 400). It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
@@ -277,7 +277,7 @@ benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
 stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
-filters to `inPlay !== false`. Current caps: St. Pete 400 (393 rows, all in
+filters to `inPlay !== false`. Current caps: St. Pete 400 (396 rows, all in
 play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4150).
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a

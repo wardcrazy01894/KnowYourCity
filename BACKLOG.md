@@ -28,7 +28,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1
       renamed-to-closed; updated 15 renames; merged 1 dupe). The +19 parks/lakes
       pass (PR #49) brought it to 401; the play-cap re-run (PR #59) re-deduped to
-      389; issue-requested adds + nearby sweep (#50/#51) brought it to **393**
+      389; issue-requested adds + nearby sweep (#50/#51) brought it to **396**
       (all in play — the cap is 400).
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid

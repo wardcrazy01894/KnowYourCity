@@ -960,6 +960,26 @@
     "hasWikipedia": false
   },
   {
+    "id": "craft-kafe",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 475,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Original 6653 Central Ave location of the gluten-free cafe."
+  },
+  {
+    "id": "craft-kafe-dtsp",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 283,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Downtown location of the gluten-free cafe, 200 Central Ave."
+  },
+  {
     "id": "craftsman-house",
     "status": "closed",
     "currentName": "",
@@ -1258,6 +1278,16 @@
     "fameScore": 48,
     "reviewCount": 395,
     "hasWikipedia": false
+  },
+  {
+    "id": "five-bucks-drinkery-downtown",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 395,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Downtown flagship at 247 Central; dataset previously only had the Pinellas Park branch."
   },
   {
     "id": "flamingo-sports-bar",

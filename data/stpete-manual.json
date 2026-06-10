@@ -57,6 +57,28 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "craft-kafe",
+      "name": "Craft Kafe",
+      "lat": 27.7708566,
+      "lng": -82.7292451,
+      "category": "cafe",
+      "clue": "A dedicated gluten-free bakery and coffeehouse on Central Ave near 66th St — the original location.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "Manual (geocoded via US Census)"
+    },
+    {
+      "id": "craft-kafe-dtsp",
+      "name": "Craft Kafé DTSP",
+      "lat": 27.771054,
+      "lng": -82.6357411,
+      "category": "cafe",
+      "clue": "The downtown outpost of the gluten-free bakery and coffeehouse, at 200 Central.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
       "id": "crescent-lake-park",
       "name": "Crescent Lake Park",
       "lat": 27.7884526,
@@ -77,6 +99,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "five-bucks-drinkery-downtown",
+      "name": "Five Bucks Drinkery",
+      "lat": 27.771384,
+      "lng": -82.636368,
+      "category": "bar",
+      "clue": "A longtime downtown dive on the 200 block of Central — everything five bucks.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "fossil-park",
