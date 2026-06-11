@@ -97,6 +97,19 @@ export function getDateKey(
 }
 
 /**
+ * True if `key` is a REAL calendar date in YYYY-MM-DD form. A format-only
+ * regex lets impossible dates through (?date=2026-99-99, 2026-02-30): those
+ * later produce an Invalid Date inside the streak math, which throws
+ * RangeError on game completion. The UTC round-trip catches both invalid
+ * dates and silent rollovers (2026-02-30 → Mar 2).
+ */
+export function isValidDateKey(key: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) return false
+  const d = new Date(key + 'T00:00:00Z')
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === key
+}
+
+/**
  * cyrb53 string hash → 32-bit seed. Fast, dependency-free, well-distributed.
  * https://stackoverflow.com/a/52171480
  */

@@ -12,7 +12,8 @@
  *   - phishing links       → ctx.url kept only if it matches the site origin
  *   - XSS-pivot from other  → server-side Origin allowlist (not just CORS)
  *     sites
- *   - giant payloads       → Content-Length + field length caps
+ *   - giant payloads       → size cap on bytes read (+ Content-Length early
+ *                            reject) + field length caps
  *   - token blast radius   → fine-grained PAT, Issues:write, single repo (README)
  *
  * Vars / secrets (wrangler.toml [vars] or `wrangler secret put`):
@@ -77,6 +78,17 @@ export function defang(s) {
     .replace(/\r/g, '')
 }
 
+/** True if `url` parses and its origin is EXACTLY one of the allowed origins.
+ *  A prefix check (startsWith) would let lookalike hosts through, e.g.
+ *  https://knowyourcity.gg.evil.com — a phishing link in a public issue. */
+export function urlFromAllowedOrigin(url, origins) {
+  try {
+    return origins.includes(new URL(url).origin)
+  } catch {
+    return false
+  }
+}
+
 async function verifyTurnstile(token, secret, ip) {
   if (!token) return false
   const form = new URLSearchParams({ secret, response: token })
@@ -116,7 +128,8 @@ export default {
     if (origin && !originAllowed(env, origin))
       return json({ error: 'forbidden origin' }, 403, headers)
 
-    // Reject oversized bodies before parsing.
+    // Cheap early reject on the declared size. Clients can omit Content-Length,
+    // so the authoritative cap is on the bytes actually read (below).
     const len = parseInt(request.headers.get('Content-Length') || '0', 10)
     if (len > MAX_BODY_BYTES)
       return json({ error: 'payload too large' }, 413, headers)
@@ -141,7 +154,11 @@ export default {
 
     let body
     try {
-      body = await request.json()
+      const raw = await request.text()
+      // Enforce the size cap on the bytes read, not just the header.
+      if (new TextEncoder().encode(raw).byteLength > MAX_BODY_BYTES)
+        return json({ error: 'payload too large' }, 413, headers)
+      body = JSON.parse(raw)
     } catch {
       return json({ error: 'invalid json' }, 400, headers)
     }
@@ -170,7 +187,7 @@ export default {
     const origins = allowedOrigins(env)
     const safeUrl = origins.includes('*')
       ? defang(url)
-      : origins.some((o) => url.startsWith(o))
+      : urlFromAllowedOrigin(url, origins)
         ? url
         : '(omitted)'
 
