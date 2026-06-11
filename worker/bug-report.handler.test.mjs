@@ -186,4 +186,26 @@ describe('bug-report worker handler', () => {
     )
     expect(githubCall.body.body).toContain(`URL: ${ORIGIN}/`)
   })
+
+  it('omits a lookalike-origin URL (prefix attack) from the issue body', async () => {
+    // knowyourcity.gg.evil.com starts with the allowed origin string but is a
+    // different host — a startsWith check would let this phishing link through.
+    await handler.fetch(
+      post({ message: 'hi', context: { url: ORIGIN + '.evil.com/phish' } }),
+      makeEnv(),
+    )
+    expect(githubCall.body.body).toContain('URL: (omitted)')
+    expect(githubCall.body.body).not.toContain('evil.com')
+  })
+
+  it('rejects an oversized body (413) even without a Content-Length header', async () => {
+    // HTTP clients may omit Content-Length; the size cap must hold on the
+    // actual bytes read, not just the header.
+    const res = await handler.fetch(
+      post({ message: 'hi', logs: 'x'.repeat(30_000) }),
+      makeEnv(),
+    )
+    expect(res.status).toBe(413)
+    expect(githubCall).toBeNull()
+  })
 })

@@ -3,6 +3,7 @@ import {
   DIFFICULTY_PLAN,
   MIN_NON_FOOD_PER_DAY,
   getDateKey,
+  isValidDateKey,
   hashStringToSeed,
   mulberry32,
   selectDailyLocations,
@@ -52,6 +53,28 @@ describe('getDateKey (America/New_York, DST-aware)', () => {
     expect(getDateKey(new Date('2026-06-07T12:00:00Z'))).toMatch(
       /^\d{4}-\d{2}-\d{2}$/,
     )
+  })
+})
+
+describe('isValidDateKey', () => {
+  it('accepts real calendar dates', () => {
+    expect(isValidDateKey('2026-06-11')).toBe(true)
+    expect(isValidDateKey('2024-02-29')).toBe(true) // leap day
+  })
+
+  it('rejects format mismatches', () => {
+    expect(isValidDateKey('2026-6-11')).toBe(false)
+    expect(isValidDateKey('garbage')).toBe(false)
+    expect(isValidDateKey('')).toBe(false)
+  })
+
+  it('rejects well-formatted but impossible dates (the ?date=2026-99-99 crash)', () => {
+    // These pass a format-only regex but produce Invalid Date / silently roll
+    // over — previousDateKey would then throw RangeError on game completion.
+    expect(isValidDateKey('2026-99-99')).toBe(false)
+    expect(isValidDateKey('2026-02-30')).toBe(false) // rolls over to Mar 2
+    expect(isValidDateKey('2023-02-29')).toBe(false) // not a leap year
+    expect(isValidDateKey('2026-00-10')).toBe(false)
   })
 })
 
