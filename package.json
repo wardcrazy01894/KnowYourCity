@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "A daily 'where is it?' map guessing game for local places, starting with St. Petersburg, FL.",
+  "description": "A daily 'where is it?' map-guessing game for local landmarks — St. Pete, State College, Ann Arbor, Seattle, Chicago.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
