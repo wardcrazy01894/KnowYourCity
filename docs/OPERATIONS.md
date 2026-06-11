@@ -19,7 +19,7 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
   `KnowYourLocals` → `KnowYourCity` at cutover. GitHub redirects the old web
   and git URLs, and the worker's fine-grained PAT follows the repo ID, so
   issue-filing survives the rename.
-- **Known cutover consequence:** localStorage (streaks/history, `kyl:*` keys)
+- **Known cutover consequence:** localStorage (streaks/history, `kyl:*`-era keys)
   does **not** carry across origins, so players who used
   `wardcrazy01894.github.io` start fresh at `knowyourcity.gg`. Accepted
   one-time cost; not a bug.
@@ -71,7 +71,9 @@ silently.
 ## Bug-report worker
 
 A Cloudflare Worker (see [`../worker/`](../worker/)) holds the GitHub token
-**server-side** and files issues on the app's behalf. It's hardened (defang
+**server-side** and files issues on the app's behalf. (It keeps its legacy
+`kyl-bug` name on purpose: renaming a Worker changes its `workers.dev` URL and
+drops its secrets, for zero player-visible benefit.) It's hardened (defang
 @mentions/code-fences, payload caps, off-site URL drop, per-IP rate limit,
 Turnstile, server-side Origin allowlist). Worker secrets (`GH_TOKEN`,
 `TURNSTILE_SECRET`) live in Wrangler, never in this repo.

@@ -50,7 +50,7 @@ export function bugReportUrl(ctx: ReportContext = {}, message = ''): string {
     `URL: ${href}`,
     `Browser: ${ua}`,
     '',
-    '_Tip: run `kylDumpLogs()` in the browser console (F12) and paste the output._',
+    '_Tip: run `kycDumpLogs()` in the browser console (F12) and paste the output._',
   ].join('\n')
   return `${REPO_URL}/issues/new?title=${encodeURIComponent(
     title,

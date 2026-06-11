@@ -12,7 +12,7 @@ import { log } from './log'
 import { shouldStartFresh } from './devmode'
 
 export const STORAGE_VERSION = 1
-const PREFIX = 'kyl:v' + STORAGE_VERSION
+const PREFIX = 'kyc:v' + STORAGE_VERSION
 /** Streak/history/resume are per-city, so the key is namespaced by city id. */
 const keyFor = (cityId: string) => `${PREFIX}:${cityId}`
 

@@ -2,13 +2,13 @@
  * Tiny logging utility for KnowYourCity.
  *
  * Goals:
- *  - Readable console output prefixed with `[KYL]` and a scope.
+ *  - Readable console output prefixed with `[KYC]` and a scope.
  *  - An in-memory ring buffer of the last N entries so a whole session can be
  *    dumped and pasted to a developer when something goes wrong.
- *  - Global hooks (in dev tools): `window.kylDumpLogs()` prints + copies the
- *    buffer; `window.__KYL_LOGS__` is the raw array.
+ *  - Global hooks (in dev tools): `window.kycDumpLogs()` prints + copies the
+ *    buffer; `window.__KYC_LOGS__` is the raw array.
  *  - `debug` level is quiet unless enabled (`?debug` in the URL, or
- *    localStorage `kyl:debug` = '1'), so normal play isn't noisy.
+ *    localStorage `kyc:debug` = '1'), so normal play isn't noisy.
  *  - Safe to import in non-browser contexts (tests): guards `window`.
  *
  * Usage:  import { log } from './lib/log'
@@ -33,7 +33,7 @@ function debugEnabled(): boolean {
   if (!hasWindow) return false
   try {
     if (new URLSearchParams(window.location.search).has('debug')) return true
-    return window.localStorage.getItem('kyl:debug') === '1'
+    return window.localStorage.getItem('kyc:debug') === '1'
   } catch {
     return false
   }
@@ -60,7 +60,7 @@ function emit(level: LogLevel, scope: string, msg: string, data?: unknown) {
   buffer.push(entry)
   if (buffer.length > MAX_ENTRIES) buffer.shift()
 
-  const line = `[KYL ${level.toUpperCase()}] ${scope}: ${msg}`
+  const line = `[KYC ${level.toUpperCase()}] ${scope}: ${msg}`
   const fn =
     level === 'error'
       ? console.error
@@ -73,7 +73,7 @@ function emit(level: LogLevel, scope: string, msg: string, data?: unknown) {
   else fn(line)
 
   if (hasWindow) {
-    ;(window as unknown as { __KYL_LOGS__?: LogEntry[] }).__KYL_LOGS__ = buffer
+    ;(window as unknown as { __KYC_LOGS__?: LogEntry[] }).__KYC_LOGS__ = buffer
   }
 }
 
@@ -102,15 +102,15 @@ export function dumpLogs(): string {
 
 /**
  * Install global helpers + uncaught-error capture. Call once at startup.
- * Adds window.kylDumpLogs() (prints, copies to clipboard, returns the text).
+ * Adds window.kycDumpLogs() (prints, copies to clipboard, returns the text).
  */
 export function installLogging(appVersion: string): void {
   if (!hasWindow) return
   const w = window as unknown as {
-    kylDumpLogs?: () => string
-    __KYL_LOGS__?: LogEntry[]
+    kycDumpLogs?: () => string
+    __KYC_LOGS__?: LogEntry[]
   }
-  w.kylDumpLogs = () => {
+  w.kycDumpLogs = () => {
     const text = dumpLogs()
     console.log(text)
     try {

@@ -65,9 +65,9 @@ Add a query param to the URL:
 | `?reset` | Same 5, but **wipes progress every refresh** — replay one set. _(`?fresh` is an alias.)_ |
 | `?shuffle` | A **brand-new random 5 every refresh** — try different sets. |
 | `?date=YYYY-MM-DD` | Play a specific day's puzzle. |
-| `?debug` | Verbose `[KYL]` logging in the console. |
+| `?debug` | Verbose `[KYC]` logging in the console. |
 
-🐞 **Reporting a bug?** Run **`kylDumpLogs()`** in the browser console — it prints
+🐞 **Reporting a bug?** Run **`kycDumpLogs()`** in the browser console — it prints
 the full session log and copies it to your clipboard. Paste that in.
 
 ## 🗃️ Cities & datasets

@@ -19,7 +19,7 @@ import { CityPicker } from './components/CityPicker'
 import { DatasetSearch } from './components/DatasetSearch'
 import { BugReport } from './components/BugReport'
 
-const CITY_KEY = 'kyl:city'
+const CITY_KEY = 'kyc:city'
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
 const SHUFFLE_SEED = Math.random().toString(36).slice(2)
 

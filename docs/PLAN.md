@@ -37,7 +37,7 @@ Browser (static site, no backend)
  ├─ lib/storage.ts               ← localStorage: streak/history/resume
  ├─ lib/devmode.ts               ← URL modes: ?reset / ?shuffle
  ├─ lib/sound.ts                 ← Web Audio score-feedback cues
- ├─ lib/log.ts                   ← console + buffered logging (kylDumpLogs)
+ ├─ lib/log.ts                   ← console + buffered logging (kycDumpLogs)
  └─ components/
      ├─ App      → load data, resolve the day, mute toggle, render Game
      ├─ Game     → 5-round flow (guess → reveal → next → results)
@@ -226,11 +226,11 @@ URL params (all client-side, no build flags; see `src/lib/devmode.ts`):
 - `?reset` (alias `?fresh`) — same 5 for the day, wipe progress every refresh.
 - `?shuffle` (alias `?random`) — a brand-new random 5 every refresh.
 - `?date=YYYY-MM-DD` — play a specific day's puzzle.
-- `?debug` (or `localStorage kyl:debug='1'`) enables verbose `debug` logs.
+- `?debug` (or `localStorage kyc:debug='1'`) enables verbose `debug` logs.
 
-Logging (`src/lib/log.ts`): `[KYL]`-prefixed console output + an in-memory ring
+Logging (`src/lib/log.ts`): `[KYC]`-prefixed console output + an in-memory ring
 buffer + uncaught-error/rejection capture. In the browser console,
-`kylDumpLogs()` prints the full session log and copies it to the clipboard — the
+`kycDumpLogs()` prints the full session log and copies it to the clipboard — the
 intended way to capture a repro and hand it to a developer.
 
 ### 5.10b Utilities: dataset search + bug report
@@ -317,7 +317,7 @@ http://localhost:5173/ (the site serves from the root — `base: '/'`).
 ## 9. Multi-city (implemented)
 The app ships **5 cities**: St. Pete, State College, Ann Arbor, Seattle, Chicago.
 A **landing picker** (`CityPicker`) chooses the city; the choice is saved
-(localStorage `kyl:city` + `?city=` in the URL). Each city is data:
+(localStorage `kyc:city` + `?city=` in the URL). Each city is data:
 
 ```
 City = { id, name, short, timeZone, bounds, target, playCap? }   // cities.json (+ cities.ts)
