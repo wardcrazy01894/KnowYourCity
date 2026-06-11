@@ -9,7 +9,7 @@
 
 import { useEffect, useState } from 'react'
 import type { LocationsFile, Location } from './types'
-import { getDateKey, selectDailyLocations } from './lib/daily'
+import { getDateKey, isValidDateKey, selectDailyLocations } from './lib/daily'
 import { getCity, cityDataUrl, type City } from './lib/cities'
 import { shouldShuffle } from './lib/devmode'
 import { isMuted, setMuted } from './lib/sound'
@@ -58,7 +58,7 @@ function resolveMode(city: City): Mode {
     }
   }
   const param = new URLSearchParams(search).get('date')
-  if (param && /^\d{4}-\d{2}-\d{2}$/.test(param)) {
+  if (param && isValidDateKey(param)) {
     return {
       dateKey: param,
       selectionSeed: `${city.id}:${param}`,
