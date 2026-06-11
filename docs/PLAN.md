@@ -16,14 +16,15 @@ credit card).
 
 - Each **day** (rolling over at midnight in the city's timezone), everyone gets the **same 5 places** for that city.
 - For each place we show its **name** (+ optional one-line clue). No photo yet.
-- Player drops **one pin** on a **satellite map** of St. Pete.
+- Player drops **one pin** on a **satellite map** of the chosen city.
 - Score = distance-based, GeoGuessr-style decay, retuned for city scale.
 - After 5 rounds: results screen + **Wordle-style shareable** text. Streaks
   persist locally.
 
 **Explicitly OUT of v1** (designed-for, not built): photo rounds, any backend,
-shared online leaderboards, accounts, multiple cities. The data schema and a
-`photoUrl` field leave clean seams for all of these.
+shared online leaderboards, accounts. The data schema and a `photoUrl` field
+leave clean seams for all of these. (Multi-city was originally deferred too,
+but shipped in v1 — see §9.)
 
 ---
 
@@ -39,10 +40,13 @@ Browser (static site, no backend)
  ├─ lib/sound.ts                 ← Web Audio score-feedback cues
  ├─ lib/log.ts                   ← console + buffered logging (kycDumpLogs)
  └─ components/
-     ├─ App      → load data, resolve the day, mute toggle, render Game
-     ├─ Game     → 5-round flow (guess → reveal → next → results)
-     ├─ MapGuess → Leaflet + free satellite tiles, pin + reveal line
-     └─ Results  → totals, streak, share string
+     ├─ App          → load data, resolve the day, mute toggle, render Game
+     ├─ CityPicker   → landing screen: choose a city (see §9)
+     ├─ Game         → 5-round flow (guess → reveal → next → results)
+     ├─ MapGuess     → Leaflet + free satellite tiles, pin + reveal line
+     ├─ Results      → totals, streak, share string
+     ├─ DatasetSearch→ "is it in the list?" lookup (lib/search.ts)
+     └─ BugReport    → in-app bug form → worker → GitHub issue (lib/report.ts)
 ```
 
 No server: "same 5 for everyone" is achieved purely by seeding a PRNG with the
@@ -63,30 +67,43 @@ browsers compute the identical selection offline.
 ```
 KnowYourCity/
 ├─ index.html
-├─ package.json            scripts: dev, build, test, lint, fetch-pois, deploy
+├─ package.json            scripts: dev, build, test, lint, fetch-pois,
+│                          fetch-food, build-city, deploy, …
 ├─ vite.config.ts          base: '/'
 ├─ tsconfig.json · eslint.config.js · .prettierrc.json
-├─ .env.example            optional VITE_MAPBOX_TOKEN
+├─ .env.example            optional client config (Mapbox tiles, bug-report
+│                          endpoint, Turnstile, CF Web Analytics)
 ├─ README.md · CLAUDE.md · BACKLOG.md
 ├─ public/
 │   ├─ locations.<id>.json      per-city datasets (stpete, seattle, …)
 │   └─ (cities.json at repo root is the city registry)
 ├─ scripts/
-│   ├─ fetch-pois.mjs           Overpass → data/candidates.json
+│   ├─ fetch-pois.mjs           Overpass landmarks → data/candidates.json
+│   ├─ fetch-food.mjs           Overpass food/drink → data/food-candidates.json
+│   ├─ build-city.mjs           assemble a city's locations.<id>.json
+│   ├─ apply-difficulty.mjs     fame → difficulty enrichment (+ -lib.mjs)
+│   ├─ gen-fame-workflow.mjs · harvest-fame-transcripts.mjs   crash-safe fame pass
+│   ├─ nearby-sweep.mjs         block-radius sweep around a new location
 │   └─ protect-main.sh          (re)apply branch protection
 ├─ data/
-│   └─ candidates.json          gitignored pipeline output (for curation)
+│   ├─ fame-<city>.json         committed fame caches (re-cap without re-research)
+│   ├─ stpete-manual.json       manually curated St. Pete additions
+│   └─ candidates.json …        gitignored pipeline output (for curation)
 ├─ src/
 │   ├─ main.tsx · App.tsx · index.css · vite-env.d.ts
 │   ├─ types.ts                 Location, GameState, RoundResult, Guess…
 │   ├─ lib/                     daily · scoring · storage · devmode · sound · log
+│   │                           · cities · search · report · analytics
 │   │                           (+ co-located *.test.ts; locations.test.ts guards data)
-│   └─ components/              Game · MapGuess · Results (+ Results.test.ts)
+│   └─ components/              Game · MapGuess · Results · CityPicker ·
+│                               DatasetSearch · BugReport (+ tests)
+├─ worker/                      Cloudflare Worker: bug report → GitHub issue
 ├─ .github/                     workflows/ci.yml · workflows/deploy.yml · pull_request_template.md
-├─ .claude/                     settings.json · hooks/ · skills/tdd-cycle/
+├─ .claude/                     settings.json · hooks/ · skills/
 └─ docs/
     ├─ PLAN.md (this file)
     ├─ DATA-SOURCING.md
+    ├─ OPERATIONS.md
     └─ QUESTIONS-FOR-ALEX.md
 ```
 
@@ -103,10 +120,10 @@ KnowYourCity/
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |
 | **M6** | Results + Wordle-style share string | ✅ done |
-| **M7** | Deploy to GitHub Pages | 🟡 self-enabling workflow shipped (`deploy.yml`); goes live on next push to `main` |
+| **M7** | Deploy to GitHub Pages | ✅ done — live at <https://knowyourcity.gg/> (custom domain since 2026-06-10; auto-deploys on every merge to `main`) |
 
-v1 is feature-complete and playable. Remaining work (grow dataset, photos,
-multi-city, deploy) is tracked in `BACKLOG.md`. CI gates every PR with
+v1 is feature-complete, live, and playable. Remaining work (grow datasets,
+photos, …) is tracked in `BACKLOG.md`. CI gates every PR with
 typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
 
 ---
@@ -139,7 +156,7 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
     medium / 20% hard** (e.g. 500 → 200/200/100). The rest stay in the dataset as
     `inPlay: false` with their `fameScore` but **no** `difficulty`; selection
     filters them out. Current caps: St. Pete 400, Ann Arbor 300, State College
-    200, Seattle 500. See `docs/DATA-SOURCING.md` §4c.
+    200, Seattle 500, Chicago 700. See `docs/DATA-SOURCING.md` §4c.
   - **Category plan** (`CATEGORY_PLAN`, legacy fallback): for cities **not yet
     enriched** with difficulty, the 5 rounds are filled by category in order —
     **cafe → restaurant → bar → landmark → wildcard** (*landmark* = anything that
@@ -180,8 +197,8 @@ by `fetch-food` — alongside notable landmarks from `fetch-pois`.
 ### 5.3b Difficulty rollout (per city)
 Difficulty is added **one city at a time** (each needs its own fame pass). A city
 without it keeps the legacy category plan, so partial rollout is safe.
-**Status: St. Petersburg, State College, Ann Arbor, and Seattle enriched;
-Chicago pending.**
+**Status: all 5 cities enriched — St. Petersburg, State College, Ann Arbor,
+Seattle, and Chicago. The difficulty rollout is complete.**
 Re-run a city's pass when its dataset changes materially, and any newly-added
 locations must be scored too (the percentile buckets are city-relative, so they
 shift when membership changes — same tradeoff as §5.2). The pass is now driven by
@@ -303,9 +320,10 @@ http://localhost:5173/ (the site serves from the root — `base: '/'`).
 2. **Auto-deploy** via `.github/workflows/deploy.yml` on every push to `main`.
    It **self-enables Pages** on first run (`configure-pages` `enablement: true`),
    so no manual Settings toggle. Public client config (`VITE_BUG_ENDPOINT`,
-   `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN`) is read from repo
+   `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN`, optional
+   `VITE_CF_BEACON_TOKEN` for Cloudflare Web Analytics) is read from repo
    **Variables** so it bakes into the build; unset is fine (bug form falls back
-   to a prefilled issue).
+   to a prefilled issue; analytics is a no-op).
 3. **Manual alternative:** `npm run deploy` (uses `gh-pages` to push `dist/` to a
    `gh-pages` branch); then set Pages Source = `gh-pages` branch instead.
 4. App lives at `https://knowyourcity.gg/` (custom domain configured in repo

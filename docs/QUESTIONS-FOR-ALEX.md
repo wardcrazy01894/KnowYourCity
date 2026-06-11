@@ -31,7 +31,8 @@ applied. Open follow-ups live in `BACKLOG.md`.
    `Game.tsx`; clues remain in the data for later.*
 
 8. **Daily rollover** — switch at **midnight US Eastern**. *Applied: `getDateKey`
-   uses `America/New_York` via `Intl` (DST-aware). Header shows "(ET)".*
+   uses `America/New_York` via `Intl` (DST-aware); each city now carries its own
+   IANA timezone.*
 
 9. **Dataset size** — **~200 before launch** (more is better); anything is fine
    while prototyping. *Applied: target documented; current shipped set is 396 (plus 4 more cities).*
@@ -47,4 +48,4 @@ applied. Open follow-ups live in `BACKLOG.md`.
 - Per-city **must-include** and **banned** lists.
 - Whether to widen the St. Pete bbox to recapture the Old Sunshine Skyway pier
   and north-county golf (both fell just outside the current box).
-- The eventual custom domain name.
+- ~~The eventual custom domain name.~~ *Resolved: **knowyourcity.gg** (see #10).*
