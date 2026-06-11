@@ -102,7 +102,8 @@ dashboard rather than relying on secrecy — see `.env.example`.
 site's public client config bakes in from repo **Variables** (Settings → Secrets
 and variables → Actions → Variables): `VITE_BUG_ENDPOINT`,
 `VITE_TURNSTILE_SITEKEY`, optional `VITE_MAPBOX_TOKEN` (leave it unset to use the
-free, keyless Esri satellite tiles). If the bug vars are unset, the build still
+free, keyless Esri satellite tiles), and optional `VITE_CF_BEACON_TOKEN`
+(Cloudflare Web Analytics page views — see `docs/OPERATIONS.md`). If the bug vars are unset, the build still
 works and the bug form falls back to a prefilled issue. (If your account blocks
 API-enabling Pages, fall back to Settings → Pages → Source = GitHub Actions.)
 

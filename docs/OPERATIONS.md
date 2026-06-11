@@ -34,10 +34,20 @@ Secrets and variables → Actions → **Variables** tab — *not* Secrets):
 | `VITE_BUG_ENDPOINT` | `https://kyl-bug.wardcrazy01894.workers.dev` | bug-report worker (one-click GitHub issues) |
 | `VITE_TURNSTILE_SITEKEY` | `0x4AAAAAADgHt68jxl4onK-C` | public Turnstile site key for the bug form's bot check |
 | `VITE_MAPBOX_TOKEN` | *(unset, on purpose)* | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles |
+| `VITE_CF_BEACON_TOKEN` | *(set after creating the Web Analytics site)* | Cloudflare Web Analytics beacon — cookieless page-view tracking |
 
 If `VITE_BUG_ENDPOINT` is unset, the bug form falls back to opening a prefilled
 GitHub "new issue" page (no worker needed). For local builds these live in
 `.env.local` (gitignored) instead.
+
+## Analytics
+
+**Cloudflare Web Analytics** (free, cookieless — no consent banner needed).
+The dashboard is at Cloudflare → **Web Analytics**; it shows page views,
+visits, referrers, countries, and Core Web Vitals. The beacon script only
+loads when `VITE_CF_BEACON_TOKEN` is set (a **public** value), so local dev
+and forks are untracked. Changing/rotating the token = update the repo
+Variable, then re-run the deploy workflow (Variables bake in at build time).
 
 ## Bug-report worker
 
