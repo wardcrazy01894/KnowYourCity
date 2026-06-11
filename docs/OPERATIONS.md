@@ -49,7 +49,7 @@ Secrets and variables → Actions → **Variables** tab — *not* Secrets):
 | `VITE_BUG_ENDPOINT` | `https://kyl-bug.wardcrazy01894.workers.dev` | bug-report worker (one-click GitHub issues) |
 | `VITE_TURNSTILE_SITEKEY` | `0x4AAAAAADgHt68jxl4onK-C` | public Turnstile site key for the bug form's bot check |
 | `VITE_MAPBOX_TOKEN` | *(unset, on purpose)* | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles |
-| `VITE_CF_BEACON_TOKEN` | *(set after creating the Web Analytics site)* | Cloudflare Web Analytics beacon — cookieless page-view tracking |
+| `VITE_CF_BEACON_TOKEN` | `38e507931236442a83feeb410f152878` | Cloudflare Web Analytics beacon — cookieless page-view tracking |
 
 If `VITE_BUG_ENDPOINT` is unset, the bug form falls back to opening a prefilled
 GitHub "new issue" page (no worker needed). For local builds these live in
