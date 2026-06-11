@@ -35,6 +35,11 @@ describe('cities registry', () => {
         c.target === null || (Number.isFinite(c.target) && c.target > 0),
         `${c.id} target=${c.target}`,
       ).toBe(true)
+      // playCap is the daily play-set cap: absent/null or a positive number.
+      expect(
+        c.playCap == null || (Number.isFinite(c.playCap) && c.playCap > 0),
+        `${c.id} playCap=${c.playCap}`,
+      ).toBe(true)
     }
   })
 })

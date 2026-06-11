@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "description": "A daily 'where is it?' map-guessing game for local landmarks — St. Pete, State College, Ann Arbor, Seattle, Chicago.",
   "scripts": {
     "dev": "vite",
