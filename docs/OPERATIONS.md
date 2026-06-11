@@ -11,8 +11,18 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
 - **Custom domain:** `knowyourcity.gg`, registered at **Porkbun** (auto-renew
   ON). DNS at Porkbun: **ALIAS** on the apex → `wardcrazy01894.github.io`,
   **CNAME** `www` → same. The domain is set in repo Settings → Pages (with
-  **Enforce HTTPS**); GitHub provisions the certificate. Changing
-  registrar/DNS means re-pointing the ALIAS — nothing in the repo.
+  **Enforce HTTPS**); GitHub provisions the certificate. `public/CNAME` also
+  ships the domain in every build artifact — workflow-sourced Pages keeps the
+  domain in Settings (the file is belt-and-braces, and required if deploys
+  ever switch back to a branch source).
+- **Repo rename note (2026-06-10):** the repo was renamed
+  `KnowYourLocals` → `KnowYourCity` at cutover. GitHub redirects the old web
+  and git URLs, and the worker's fine-grained PAT follows the repo ID, so
+  issue-filing survives the rename.
+- **Known cutover consequence:** localStorage (streaks/history, `kyl:*` keys)
+  does **not** carry across origins, so players who used
+  `wardcrazy01894.github.io` start fresh at `knowyourcity.gg`. Accepted
+  one-time cost; not a bug.
 - Went live **2026-06-07** (github.io); custom domain cutover **2026-06-10**.
 
 ## Deploy
