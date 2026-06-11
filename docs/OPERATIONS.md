@@ -5,10 +5,15 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
 
 ## Live site
 
-- **URL:** <https://wardcrazy01894.github.io/KnowYourLocals/>
+- **URL:** <https://knowyourcity.gg/>
 - **Host:** GitHub Pages, Source = **GitHub Actions** (`build_type: workflow`).
   Pages was auto-enabled by the deploy workflow — no manual Settings toggle.
-- Went live **2026-06-07**.
+- **Custom domain:** `knowyourcity.gg`, registered at **Porkbun** (auto-renew
+  ON). DNS at Porkbun: **ALIAS** on the apex → `wardcrazy01894.github.io`,
+  **CNAME** `www` → same. The domain is set in repo Settings → Pages (with
+  **Enforce HTTPS**); GitHub provisions the certificate. Changing
+  registrar/DNS means re-pointing the ALIAS — nothing in the repo.
+- Went live **2026-06-07** (github.io); custom domain cutover **2026-06-10**.
 
 ## Deploy
 
@@ -48,12 +53,13 @@ Turnstile, server-side Origin allowlist). Worker secrets (`GH_TOKEN`,
 `TURNSTILE_SECRET`) live in Wrangler, never in this repo.
 
 - **Origin allowlist:** `ALLOWED_ORIGIN` in `worker/wrangler.toml` includes the
-  Pages origin `https://wardcrazy01894.github.io` (plus localhost for dev).
-- **Turnstile hostname:** the Turnstile **sitekey must list the Pages hostname**
-  (`wardcrazy01894.github.io`) in the Cloudflare Turnstile dashboard, or the bot
+  site origin `https://knowyourcity.gg` (plus localhost for dev). Changing it
+  requires a worker redeploy (`wrangler deploy` in `worker/`).
+- **Turnstile hostname:** the Turnstile **sitekey must list the site hostname**
+  (`knowyourcity.gg`) in the Cloudflare Turnstile dashboard, or the bot
   check fails on the live site and the fail-closed worker rejects reports.
   ✅ Verified working end-to-end on 2026-06-07 (a real report from the live site
-  filed a GitHub issue).
+  filed a GitHub issue, pre-cutover via `wardcrazy01894.github.io`).
 
 ## Before opening a PR
 

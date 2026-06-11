@@ -1,5 +1,5 @@
 /**
- * Core domain types for KnowYourLocals.
+ * Core domain types for KnowYourCity.
  *
  * These are the shared contracts between the data pipeline, the game logic,
  * and the React components. Keep them stable — changing `Location` means

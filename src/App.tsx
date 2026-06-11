@@ -186,7 +186,7 @@ export function App() {
       >
         <div>
           <h1 style={{ margin: 0, fontSize: 20 }}>
-            Know Your Locals — {city.short}
+            Know Your City — {city.short}
           </h1>
           <small style={{ opacity: 0.7 }}>
             <button

@@ -1,4 +1,4 @@
-# KnowYourLocals — working agreement
+# KnowYourCity — working agreement
 
 A daily map-guessing game for local landmarks (St. Petersburg, FL first).
 See `docs/PLAN.md` for architecture and `docs/DATA-SOURCING.md` for the data

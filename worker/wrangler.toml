@@ -3,11 +3,11 @@ main = "bug-report.mjs"
 compatibility_date = "2024-11-01"
 
 [vars]
-GH_REPO = "wardcrazy01894/KnowYourLocals"
+GH_REPO = "wardcrazy01894/KnowYourCity"
 # Comma-separated allowed origins (worker rejects other browser origins).
 # Includes localhost for local testing — drop those before going fully public if
 # you want to be strict.
-ALLOWED_ORIGIN = "https://wardcrazy01894.github.io,http://localhost:5173,http://localhost:4173"
+ALLOWED_ORIGIN = "https://knowyourcity.gg,http://localhost:5173,http://localhost:4173"
 
 # Per-IP rate limit — GA binding, needs NO account resource (just this config).
 # 5 reports / 60s per IP. This satisfies the worker's fail-closed check out of

@@ -11,7 +11,7 @@
 
 import { dumpLogs } from './log'
 
-export const REPO_URL = 'https://github.com/wardcrazy01894/KnowYourLocals'
+export const REPO_URL = 'https://github.com/wardcrazy01894/KnowYourCity'
 
 export interface ReportContext {
   city?: string

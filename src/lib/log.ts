@@ -1,5 +1,5 @@
 /**
- * Tiny logging utility for KnowYourLocals.
+ * Tiny logging utility for KnowYourCity.
  *
  * Goals:
  *  - Readable console output prefixed with `[KYL]` and a scope.
@@ -133,7 +133,7 @@ export function installLogging(appVersion: string): void {
       reason: String((e as PromiseRejectionEvent).reason),
     })
   })
-  log.info('App', `KnowYourLocals v${appVersion} starting`, {
+  log.info('App', `KnowYourCity v${appVersion} starting`, {
     debug: debugEnabled(),
     ua: navigator.userAgent,
   })

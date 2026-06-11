@@ -40,7 +40,7 @@ describe('buildShareString', () => {
   it('has the title (with city), scored line, and an emoji bar', () => {
     const s = buildShareString('Seattle', '2026-06-06', results, 285)
     const lines = s.split('\n')
-    expect(lines[0]).toBe('Know Your Locals — Seattle')
+    expect(lines[0]).toBe('Know Your City — Seattle')
     expect(lines[1]).toBe('2026-06-06 · 285/500')
     expect(lines[2]).toBe('🟩🟩🟨🟧⬛')
   })
@@ -51,7 +51,7 @@ describe('buildShareString', () => {
   })
 
   it('appends the site URL as one extra last line when given one', () => {
-    const url = 'https://wardcrazy01894.github.io/KnowYourLocals/'
+    const url = 'https://knowyourcity.gg/'
     const base = buildShareString('St. Pete', '2026-06-06', results, 285)
     const withUrl = buildShareString(
       'St. Pete',

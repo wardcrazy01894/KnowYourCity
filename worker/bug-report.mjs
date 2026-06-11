@@ -205,7 +205,7 @@ export default {
         headers: {
           Authorization: `Bearer ${env.GH_TOKEN}`,
           Accept: 'application/vnd.github+json',
-          'User-Agent': 'KnowYourLocals-bug-bot',
+          'User-Agent': 'KnowYourCity-bug-bot',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({

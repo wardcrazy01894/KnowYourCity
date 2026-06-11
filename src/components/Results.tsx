@@ -43,7 +43,7 @@ export function buildShareString(
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   const bar = results.map((r) => scoreEmoji(r.score)).join('')
   const lines = [
-    `Know Your Locals — ${cityShort}`,
+    `Know Your City — ${cityShort}`,
     `${dateKey} · ${totalScore.toLocaleString('en-US')}/${maxTotal.toLocaleString('en-US')}`,
     bar,
   ]
@@ -53,7 +53,7 @@ export function buildShareString(
 
 /**
  * The game's own absolute URL, for the share text. Uses the current origin +
- * Vite `base`, so it's correct on Pages (`…github.io/KnowYourLocals/`) and on a
+ * Vite `base`, so it's correct on the custom domain (`knowyourcity.gg`) and on a
  * future custom domain without hardcoding.
  */
 export function shareSiteUrl(): string {
