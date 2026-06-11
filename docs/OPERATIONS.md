@@ -5,10 +5,25 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
 
 ## Live site
 
-- **URL:** <https://wardcrazy01894.github.io/KnowYourLocals/>
+- **URL:** <https://knowyourcity.gg/>
 - **Host:** GitHub Pages, Source = **GitHub Actions** (`build_type: workflow`).
   Pages was auto-enabled by the deploy workflow — no manual Settings toggle.
-- Went live **2026-06-07**.
+- **Custom domain:** `knowyourcity.gg`, registered at **Porkbun** (auto-renew
+  ON). DNS at Porkbun: **ALIAS** on the apex → `wardcrazy01894.github.io`,
+  **CNAME** `www` → same. The domain is set in repo Settings → Pages (with
+  **Enforce HTTPS**); GitHub provisions the certificate. `public/CNAME` also
+  ships the domain in every build artifact — workflow-sourced Pages keeps the
+  domain in Settings (the file is belt-and-braces, and required if deploys
+  ever switch back to a branch source).
+- **Repo rename note (2026-06-10):** the repo was renamed
+  `KnowYourLocals` → `KnowYourCity` at cutover. GitHub redirects the old web
+  and git URLs, and the worker's fine-grained PAT follows the repo ID, so
+  issue-filing survives the rename.
+- **Known cutover consequence:** localStorage (streaks/history, `kyl:*`-era keys)
+  does **not** carry across origins, so players who used
+  `wardcrazy01894.github.io` start fresh at `knowyourcity.gg`. Accepted
+  one-time cost; not a bug.
+- Went live **2026-06-07** (github.io); custom domain cutover **2026-06-10**.
 
 ## Deploy
 
@@ -34,7 +49,7 @@ Secrets and variables → Actions → **Variables** tab — *not* Secrets):
 | `VITE_BUG_ENDPOINT` | `https://kyl-bug.wardcrazy01894.workers.dev` | bug-report worker (one-click GitHub issues) |
 | `VITE_TURNSTILE_SITEKEY` | `0x4AAAAAADgHt68jxl4onK-C` | public Turnstile site key for the bug form's bot check |
 | `VITE_MAPBOX_TOKEN` | *(unset, on purpose)* | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles |
-| `VITE_CF_BEACON_TOKEN` | *(set after creating the Web Analytics site)* | Cloudflare Web Analytics beacon — cookieless page-view tracking |
+| `VITE_CF_BEACON_TOKEN` | `38e507931236442a83feeb410f152878` | Cloudflare Web Analytics beacon — cookieless page-view tracking |
 
 If `VITE_BUG_ENDPOINT` is unset, the bug form falls back to opening a prefilled
 GitHub "new issue" page (no worker needed). For local builds these live in
@@ -48,22 +63,29 @@ visits, referrers, countries, and Core Web Vitals. The beacon script only
 loads when `VITE_CF_BEACON_TOKEN` is set (a **public** value), so local dev
 and forks are untracked. Changing/rotating the token = update the repo
 Variable, then re-run the deploy workflow (Variables bake in at build time).
+Note: the beacon *script* is allowlisted in the CSP `script-src`, but its
+data reporting rides on the currently-wide `connect-src *` — if `connect-src`
+is ever tightened, add `https://cloudflareinsights.com` or analytics dies
+silently.
 
 ## Bug-report worker
 
 A Cloudflare Worker (see [`../worker/`](../worker/)) holds the GitHub token
-**server-side** and files issues on the app's behalf. It's hardened (defang
+**server-side** and files issues on the app's behalf. (It keeps its legacy
+`kyl-bug` name on purpose: renaming a Worker changes its `workers.dev` URL and
+drops its secrets, for zero player-visible benefit.) It's hardened (defang
 @mentions/code-fences, payload caps, off-site URL drop, per-IP rate limit,
 Turnstile, server-side Origin allowlist). Worker secrets (`GH_TOKEN`,
 `TURNSTILE_SECRET`) live in Wrangler, never in this repo.
 
 - **Origin allowlist:** `ALLOWED_ORIGIN` in `worker/wrangler.toml` includes the
-  Pages origin `https://wardcrazy01894.github.io` (plus localhost for dev).
-- **Turnstile hostname:** the Turnstile **sitekey must list the Pages hostname**
-  (`wardcrazy01894.github.io`) in the Cloudflare Turnstile dashboard, or the bot
+  site origin `https://knowyourcity.gg` (plus localhost for dev). Changing it
+  requires a worker redeploy (`wrangler deploy` in `worker/`).
+- **Turnstile hostname:** the Turnstile **sitekey must list the site hostname**
+  (`knowyourcity.gg`) in the Cloudflare Turnstile dashboard, or the bot
   check fails on the live site and the fail-closed worker rejects reports.
   ✅ Verified working end-to-end on 2026-06-07 (a real report from the live site
-  filed a GitHub issue).
+  filed a GitHub issue, pre-cutover via `wardcrazy01894.github.io`).
 
 ## Before opening a PR
 

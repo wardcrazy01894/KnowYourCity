@@ -37,7 +37,8 @@ applied. Open follow-ups live in `BACKLOG.md`.
    while prototyping. *Applied: target documented; current shipped set is 396 (plus 4 more cities).*
 
 10. **Hosting** — free `github.io` for now (it is free for public repos); a
-    **custom domain later** (name TBD). *Applied: repo made public; documented.*
+    **custom domain later** (name TBD). *Applied: repo made public; custom
+    domain **knowyourcity.gg** bought at Porkbun and live as of 2026-06-10.*
 
 11. **Photos in v1** — keep **v1 text-only**; photos are a backlog item.
     *Applied: backlog updated; `photoUrl` field already in the schema.*

@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🗺️ Know Your Locals
+# 🗺️ Know Your City
 
 **A daily "where is it?" map-guessing game for local landmarks** — like
 [maptap.gg](https://maptap.gg) / GeoGuessr Daily, but for your city.
 
 🌎 Cities: **St. Petersburg · State College · Ann Arbor · Seattle · Chicago**
 
-[![CI](https://github.com/wardcrazy01894/KnowYourLocals/actions/workflows/ci.yml/badge.svg)](https://github.com/wardcrazy01894/KnowYourLocals/actions/workflows/ci.yml)
+[![CI](https://github.com/wardcrazy01894/KnowYourCity/actions/workflows/ci.yml/badge.svg)](https://github.com/wardcrazy01894/KnowYourCity/actions/workflows/ci.yml)
 &nbsp;·&nbsp; React + TypeScript + Vite + Leaflet
 &nbsp;·&nbsp; $0 to run
 
@@ -28,7 +28,7 @@ close you got. Share your result Wordle-style.
 - 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
-> **Status:** **live** at <https://wardcrazy01894.github.io/KnowYourLocals/> —
+> **Status:** **live** at <https://knowyourcity.gg/> —
 > auto-deploys on every push to `main` (see [`docs/OPERATIONS.md`](docs/OPERATIONS.md)).
 > Next up: more places + photos. See [`BACKLOG.md`](BACKLOG.md).
 
@@ -52,11 +52,8 @@ New puzzle daily at **midnight in the city's timezone**.
 
 ```bash
 npm install
-npm run dev          # → http://localhost:5173/KnowYourLocals/
+npm run dev          # → http://localhost:5173/
 ```
-
-> Vite serves under the `/KnowYourLocals/` base path (so the same build works on
-> GitHub Pages) — open the full URL it prints.
 
 ## 🧪 Local testing
 
@@ -68,9 +65,9 @@ Add a query param to the URL:
 | `?reset` | Same 5, but **wipes progress every refresh** — replay one set. _(`?fresh` is an alias.)_ |
 | `?shuffle` | A **brand-new random 5 every refresh** — try different sets. |
 | `?date=YYYY-MM-DD` | Play a specific day's puzzle. |
-| `?debug` | Verbose `[KYL]` logging in the console. |
+| `?debug` | Verbose `[KYC]` logging in the console. |
 
-🐞 **Reporting a bug?** Run **`kylDumpLogs()`** in the browser console — it prints
+🐞 **Reporting a bug?** Run **`kycDumpLogs()`** in the browser console — it prints
 the full session log and copies it to your clipboard. Paste that in.
 
 ## 🗃️ Cities & datasets
@@ -111,8 +108,8 @@ API-enabling Pages, fall back to Settings → Pages → Source = GitHub Actions.
 `gh-pages` branch (requires `.env.local` for the bug endpoint/Turnstile, and
 Pages Source set to the `gh-pages` branch instead of Actions).
 
-Site lives at `https://wardcrazy01894.github.io/KnowYourLocals/`
-(`vite.config.ts` already sets the correct `base`).
+Site lives at `https://knowyourcity.gg/` (custom domain on GitHub Pages;
+`vite.config.ts` sets `base: '/'` accordingly).
 
 ## 🛠️ Development
 

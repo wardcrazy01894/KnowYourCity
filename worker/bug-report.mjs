@@ -19,7 +19,7 @@
  *   GH_TOKEN          (secret) fine-grained PAT, Issues: read & write, this repo
  *   GH_REPO           "owner/repo" to file issues in (a PRIVATE triage repo is
  *                     safest — keeps spam/injected content out of public view)
- *   ALLOWED_ORIGIN    e.g. "https://wardcrazy01894.github.io" ("*" disables the
+ *   ALLOWED_ORIGIN    e.g. "https://knowyourcity.gg" ("*" disables the
  *                     Origin check — dev only)
  *   TURNSTILE_SECRET  (secret, optional) enables Cloudflare Turnstile verification
  *   RL                (optional KV namespace binding) enables per-IP rate limiting
@@ -205,7 +205,7 @@ export default {
         headers: {
           Authorization: `Bearer ${env.GH_TOKEN}`,
           Accept: 'application/vnd.github+json',
-          'User-Agent': 'KnowYourLocals-bug-bot',
+          'User-Agent': 'KnowYourCity-bug-bot',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({

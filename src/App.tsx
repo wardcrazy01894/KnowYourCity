@@ -19,7 +19,7 @@ import { CityPicker } from './components/CityPicker'
 import { DatasetSearch } from './components/DatasetSearch'
 import { BugReport } from './components/BugReport'
 
-const CITY_KEY = 'kyl:city'
+const CITY_KEY = 'kyc:city'
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
 const SHUFFLE_SEED = Math.random().toString(36).slice(2)
 
@@ -186,7 +186,7 @@ export function App() {
       >
         <div>
           <h1 style={{ margin: 0, fontSize: 20 }}>
-            Know Your Locals — {city.short}
+            Know Your City — {city.short}
           </h1>
           <small style={{ opacity: 0.7 }}>
             <button

@@ -1,4 +1,4 @@
-# KnowYourLocals — Implementation Plan
+# KnowYourCity — Implementation Plan
 
 A daily map-guessing game for **local** points of interest, à la
 [maptap.gg](https://maptap.gg) / GeoGuessr Daily, starting with **St.
@@ -37,7 +37,7 @@ Browser (static site, no backend)
  ├─ lib/storage.ts               ← localStorage: streak/history/resume
  ├─ lib/devmode.ts               ← URL modes: ?reset / ?shuffle
  ├─ lib/sound.ts                 ← Web Audio score-feedback cues
- ├─ lib/log.ts                   ← console + buffered logging (kylDumpLogs)
+ ├─ lib/log.ts                   ← console + buffered logging (kycDumpLogs)
  └─ components/
      ├─ App      → load data, resolve the day, mute toggle, render Game
      ├─ Game     → 5-round flow (guess → reveal → next → results)
@@ -53,18 +53,18 @@ browsers compute the identical selection offline.
 - **React + TypeScript + Vite**, static build.
 - **Leaflet** for the map; **free satellite tiles** (Esri World Imagery default,
   optional Mapbox Satellite via free token).
-- **GitHub Pages** for hosting (free). `vite.config.ts` sets
-  `base: '/KnowYourLocals/'`.
+- **GitHub Pages** for hosting (free), served at the custom domain
+  **knowyourcity.gg** (`vite.config.ts` sets `base: '/'`).
 
 ---
 
 ## 3. Repo structure
 
 ```
-KnowYourLocals/
+KnowYourCity/
 ├─ index.html
 ├─ package.json            scripts: dev, build, test, lint, fetch-pois, deploy
-├─ vite.config.ts          base: '/KnowYourLocals/'
+├─ vite.config.ts          base: '/'
 ├─ tsconfig.json · eslint.config.js · .prettierrc.json
 ├─ .env.example            optional VITE_MAPBOX_TOKEN
 ├─ README.md · CLAUDE.md · BACKLOG.md
@@ -208,7 +208,7 @@ returning players.
 
 ### 5.7 Share string (`Results.buildShareString`, pure)
 ```
-Know Your Locals — <City>
+Know Your City — <City>
 2026-06-06 · 428/500
 🟩🟩🟩🟨⬛
 ```
@@ -226,11 +226,11 @@ URL params (all client-side, no build flags; see `src/lib/devmode.ts`):
 - `?reset` (alias `?fresh`) — same 5 for the day, wipe progress every refresh.
 - `?shuffle` (alias `?random`) — a brand-new random 5 every refresh.
 - `?date=YYYY-MM-DD` — play a specific day's puzzle.
-- `?debug` (or `localStorage kyl:debug='1'`) enables verbose `debug` logs.
+- `?debug` (or `localStorage kyc:debug='1'`) enables verbose `debug` logs.
 
-Logging (`src/lib/log.ts`): `[KYL]`-prefixed console output + an in-memory ring
+Logging (`src/lib/log.ts`): `[KYC]`-prefixed console output + an in-memory ring
 buffer + uncaught-error/rejection capture. In the browser console,
-`kylDumpLogs()` prints the full session log and copies it to the clipboard — the
+`kycDumpLogs()` prints the full session log and copies it to the clipboard — the
 intended way to capture a repro and hand it to a developer.
 
 ### 5.10b Utilities: dataset search + bug report
@@ -296,10 +296,10 @@ that withholds coordinates until after submit (future work).
 ## 8. Deployment
 
 **Local dev:** `npm install` then `npm run dev` →
-http://localhost:5173/KnowYourLocals/ (Vite serves under the Pages `base`).
+http://localhost:5173/ (the site serves from the root — `base: '/'`).
 
 **GitHub Pages:**
-1. `vite.config.ts` already sets `base: '/KnowYourLocals/'`.
+1. `vite.config.ts` sets `base: '/'` (custom domain serves from the root).
 2. **Auto-deploy** via `.github/workflows/deploy.yml` on every push to `main`.
    It **self-enables Pages** on first run (`configure-pages` `enablement: true`),
    so no manual Settings toggle. Public client config (`VITE_BUG_ENDPOINT`,
@@ -308,16 +308,16 @@ http://localhost:5173/KnowYourLocals/ (Vite serves under the Pages `base`).
    to a prefilled issue).
 3. **Manual alternative:** `npm run deploy` (uses `gh-pages` to push `dist/` to a
    `gh-pages` branch); then set Pages Source = `gh-pages` branch instead.
-4. App lives at `https://wardcrazy01894.github.io/KnowYourLocals/`. Repo is
-   **public** with branch protection enforced. For a custom domain later, add a
-   `CNAME` and set `base: '/'`.
+4. App lives at `https://knowyourcity.gg/` (custom domain configured in repo
+   Settings → Pages; DNS is an ALIAS at Porkbun → `wardcrazy01894.github.io`).
+   Repo is **public** with branch protection enforced.
 
 ---
 
 ## 9. Multi-city (implemented)
 The app ships **5 cities**: St. Pete, State College, Ann Arbor, Seattle, Chicago.
 A **landing picker** (`CityPicker`) chooses the city; the choice is saved
-(localStorage `kyl:city` + `?city=` in the URL). Each city is data:
+(localStorage `kyc:city` + `?city=` in the URL). Each city is data:
 
 ```
 City = { id, name, short, timeZone, bounds, target, playCap? }   // cities.json (+ cities.ts)

@@ -73,17 +73,22 @@ describe('loadState', () => {
     expect(loadState('stpete')).toEqual(state)
   })
 
+  it('writes under the kyc: prefix (pins the key the seeded tests below rely on)', () => {
+    saveState('stpete', sample())
+    expect(stub.map.has(`kyc:v${STORAGE_VERSION}:stpete`)).toBe(true)
+  })
+
   it('resets to default on a version mismatch (schema bump must not brick players)', () => {
     // Simulate data written by an older build with a different version.
     stub.map.set(
-      `kyl:v${STORAGE_VERSION}:stpete`,
+      `kyc:v${STORAGE_VERSION}:stpete`,
       JSON.stringify({ ...sample(), version: STORAGE_VERSION - 1 }),
     )
     expect(loadState('stpete')).toEqual(defaultState())
   })
 
   it('returns default (never throws) on corrupt JSON', () => {
-    stub.map.set(`kyl:v${STORAGE_VERSION}:stpete`, '{ not valid json ]')
+    stub.map.set(`kyc:v${STORAGE_VERSION}:stpete`, '{ not valid json ]')
     expect(() => loadState('stpete')).not.toThrow()
     expect(loadState('stpete')).toEqual(defaultState())
   })
@@ -133,12 +138,12 @@ describe('clearState', () => {
     saveState('stpete', sample())
     saveState('seattle', sample())
     stub.map.set('unrelated:key', 'keep-me')
-    stub.map.set('kyl:v0:olddata', 'older-version-keep') // different PREFIX
+    stub.map.set('kyc:v0:olddata', 'older-version-keep') // different PREFIX
     clearState()
     expect(loadState('stpete')).toEqual(defaultState())
     expect(loadState('seattle')).toEqual(defaultState())
     expect(stub.map.get('unrelated:key')).toBe('keep-me')
-    expect(stub.map.get('kyl:v0:olddata')).toBe('older-version-keep')
+    expect(stub.map.get('kyc:v0:olddata')).toBe('older-version-keep')
   })
 
   it('never throws when storage access fails', () => {

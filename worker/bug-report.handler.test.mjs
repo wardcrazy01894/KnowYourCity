@@ -9,7 +9,7 @@ import handler from './bug-report.mjs'
  * size cap, Turnstile, phishing-URL scrub) can't regress silently.
  */
 
-const ORIGIN = 'https://wardcrazy01894.github.io'
+const ORIGIN = 'https://knowyourcity.gg'
 
 // A KV stub for the per-IP rate limiter (env.RL). count = current counter value.
 const kv = (count = 0) => ({
@@ -181,9 +181,9 @@ describe('bug-report worker handler', () => {
 
   it('keeps a same-origin reported URL in the issue body', async () => {
     await handler.fetch(
-      post({ message: 'hi', context: { url: ORIGIN + '/KnowYourLocals/' } }),
+      post({ message: 'hi', context: { url: ORIGIN + '/' } }),
       makeEnv(),
     )
-    expect(githubCall.body.body).toContain(`URL: ${ORIGIN}/KnowYourLocals/`)
+    expect(githubCall.body.body).toContain(`URL: ${ORIGIN}/`)
   })
 })

@@ -22,7 +22,7 @@ export function scoreTier(score: number): ScoreTier {
   return 'womp'
 }
 
-const MUTE_KEY = 'kyl:muted'
+const MUTE_KEY = 'kyc:muted'
 
 export function isMuted(): boolean {
   try {

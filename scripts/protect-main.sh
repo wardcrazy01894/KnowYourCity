@@ -10,13 +10,13 @@
 # Free plan (or any repo on GitHub Pro/Team/Enterprise). This repo is private, so
 # this script will 403 until you either make it public or upgrade. To make it
 # public:
-#   gh repo edit wardcrazy01894/KnowYourLocals --visibility public \
+#   gh repo edit wardcrazy01894/KnowYourCity --visibility public \
 #       --accept-visibility-change-consequences
 #
 # Then run:  bash scripts/protect-main.sh
 set -euo pipefail
 
-REPO="${1:-wardcrazy01894/KnowYourLocals}"
+REPO="${1:-wardcrazy01894/KnowYourCity}"
 
 echo "Applying branch protection to $REPO@main ..."
 gh api -X PUT "repos/$REPO/branches/main/protection" --input - <<'JSON'

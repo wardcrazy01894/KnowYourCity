@@ -107,13 +107,12 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       Commons (free). v1 stays text-only by decision.
 - [ ] **Persistence / stats UI** — surface a stats panel + an "already played
       today" view (resume mid-day + streaks already work under the hood).
-- [ ] **Deploy to GitHub Pages** — publish at
-      `wardcrazy01894.github.io/KnowYourLocals/` (free for public repos). Add a
-      Pages Actions workflow.
+- [x] **Deploy to GitHub Pages** — DONE 2026-06-07 via
+      `.github/workflows/deploy.yml`; now served at `knowyourcity.gg`.
 
 ## Later / nice-to-have
-- [ ] **Custom domain** — Alex wants one eventually (name TBD; maybe a `.gg`).
-      Add a `CNAME` and set Vite `base: '/'`.
+- [x] **Custom domain** — DONE 2026-06-10: `knowyourcity.gg` (Porkbun), Vite
+      `base: '/'`, Pages custom domain + HTTPS. See `docs/OPERATIONS.md`.
 - [ ] **Difficulty tiers (named, not "easy/medium/hard")** — the base
       easy/medium/hard difficulty SHIPPED (PR #40) and drives the daily ramp; this
       item is now the *optional* polish of renaming/expanding those into a

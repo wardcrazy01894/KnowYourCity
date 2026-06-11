@@ -21,7 +21,7 @@ wide-open. Turnstile is recommended on top for a public repo.
    wrangler login
    ```
 2. Create a **fine-grained personal access token** on GitHub with
-   **Issues: Read and write** scoped to the `KnowYourLocals` repo only.
+   **Issues: Read and write** scoped to the `KnowYourCity` repo only.
 3. From this `worker/` directory:
    ```bash
    wrangler secret put GH_TOKEN      # paste the token when prompted

@@ -1,14 +1,13 @@
 import { defineConfig, configDefaults } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
-// IMPORTANT: `base` must match the GitHub Pages project path so that
-// asset URLs resolve correctly when served from
-// https://<user>.github.io/KnowYourLocals/.
-// For local dev `base` is harmless; for a future custom domain (apex/CNAME)
-// change this back to '/'.
+// `base: '/'` because the site is served from the custom-domain root
+// (https://knowyourcity.gg/). If it ever moves back to a github.io PROJECT
+// page (no custom domain), this must become '/<repo-name>/' again or asset
+// URLs 404.
 // (`vitest/config` re-exports vite's defineConfig and adds the typed `test` key.)
 export default defineConfig({
-  base: '/KnowYourLocals/',
+  base: '/',
   plugins: [react()],
   test: {
     // Don't collect tests from isolated subagent/reviewer worktrees — their full

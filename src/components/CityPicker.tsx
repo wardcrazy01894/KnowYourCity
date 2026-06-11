@@ -26,7 +26,7 @@ export function CityPicker({
         textAlign: 'center',
       }}
     >
-      <h1 style={{ fontSize: 32, margin: '0 0 4px' }}>🗺️ Know Your Locals</h1>
+      <h1 style={{ fontSize: 32, margin: '0 0 4px' }}>🗺️ Know Your City</h1>
       <p style={{ opacity: 0.75, marginTop: 0 }}>
         A daily map-guessing game for local spots. Pick your city:
       </p>

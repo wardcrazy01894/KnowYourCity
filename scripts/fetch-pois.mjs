@@ -48,7 +48,7 @@ async function fetchOverpass(query) {
             'Content-Type': 'application/x-www-form-urlencoded',
             // Overpass requires a descriptive User-Agent or it returns 406/429.
             'User-Agent':
-              'KnowYourLocals/0.1 (https://github.com/wardcrazy01894/KnowYourLocals)',
+              'KnowYourCity/0.1 (https://github.com/wardcrazy01894/KnowYourCity)',
             Accept: 'application/json',
           },
           body: 'data=' + encodeURIComponent(query),
