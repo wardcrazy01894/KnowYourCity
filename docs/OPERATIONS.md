@@ -63,6 +63,10 @@ visits, referrers, countries, and Core Web Vitals. The beacon script only
 loads when `VITE_CF_BEACON_TOKEN` is set (a **public** value), so local dev
 and forks are untracked. Changing/rotating the token = update the repo
 Variable, then re-run the deploy workflow (Variables bake in at build time).
+Note: the beacon *script* is allowlisted in the CSP `script-src`, but its
+data reporting rides on the currently-wide `connect-src *` — if `connect-src`
+is ever tightened, add `https://cloudflareinsights.com` or analytics dies
+silently.
 
 ## Bug-report worker
 
