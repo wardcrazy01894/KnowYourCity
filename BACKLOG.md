@@ -83,7 +83,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [x] **Play cap per city (`City.playCap`) + non-food floor.** Every enriched
       row stays in the dataset with its `fameScore`; only the top-`playCap` by
       fame are `inPlay` and carry a difficulty (count-bucketed 40% easy / 40%
-      medium / 20% hard). Caps: St. Pete 400 (389 rows, all in play), Ann Arbor
+      medium / 20% hard). Caps: St. Pete 400 (396 rows, all in play), Ann Arbor
       300, State College 200, Seattle 500, Chicago 700. Daily selection filters
       to `inPlay`
       and enforces a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so
@@ -162,7 +162,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       fame+status web-research pass, calibrated to a human local's blind ratings;
       daily plan switched to 2 easy → 2 medium → 1 hard; St. Pete cleaned 516→382
       (401 after the +19 parks/lakes pass, PR #49; **389** after the play-cap
-      re-run, PR #59). PR #40. (Rollout to other cities tracked under *In progress /
+      re-run, PR #59; **396** after the +7 player-requested/nearby-sweep adds,
+      PR #74). PR #40. (Rollout to other cities tracked under *In progress /
       next*.)
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
 - [x] Deterministic daily selection (midnight-Eastern, DST-aware) + 0–100 linear
@@ -174,7 +175,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
 - [x] Data pipeline (M2): Overpass scripts (fetch-pois / fetch-food /
-      build-city) → per-city `public/locations.<id>.json` (St. Pete 389 +
+      build-city) → per-city `public/locations.<id>.json` (St. Pete 396 +
       4 cities); the app loads the selected city's file; validated by a test.
 - [x] Applied Alex's decisions: 0–100 linear scoring, midnight-ET rollover,
       clues hidden by default, whole-city start zoom.

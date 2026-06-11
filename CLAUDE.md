@@ -76,9 +76,13 @@ A PostToolUse hook auto-formats/lints TS files on edit
 
 ## Secrets
 
-No secrets in the repo. The only optional secret is `VITE_MAPBOX_TOKEN`, which
-goes in `.env.local` (gitignored). Note it ships in the client bundle by design,
-so restrict it by URL in the Mapbox dashboard rather than relying on secrecy.
+No secrets in the repo. The optional client config values (`VITE_MAPBOX_TOKEN`,
+`VITE_CF_BEACON_TOKEN`, `VITE_BUG_ENDPOINT`, `VITE_TURNSTILE_SITEKEY`) go in
+`.env.local` (gitignored) locally and repo **Variables** in CI. All are public
+by design — they ship in the client bundle — so restrict the Mapbox token by
+URL in the Mapbox dashboard rather than relying on secrecy. The only true
+secrets (worker `GH_TOKEN`, `TURNSTILE_SECRET`) live in Cloudflare via
+`wrangler secret put`, never in the repo.
 
 ## Git identity
 
