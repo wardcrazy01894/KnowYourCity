@@ -101,6 +101,17 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "friendly-fisherman",
+      "name": "Friendly Fisherman",
+      "lat": 27.784792,
+      "lng": -82.782157,
+      "category": "restaurant",
+      "clue": "The Hubbard family's casual waterfront seafood spot at John's Pass — cook-your-own-catch and fresh Gulf fish since 1978.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
+    },
+    {
       "id": "five-bucks-drinkery-downtown",
       "name": "Five Bucks Drinkery",
       "lat": 27.771384,
@@ -143,6 +154,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap Nominatim"
+    },
+    {
+      "id": "hubbards-marina",
+      "name": "Hubbard's Marina",
+      "lat": 27.784628,
+      "lng": -82.782316,
+      "category": "landmark",
+      "clue": "A family-owned fishing charter and marina at John's Pass Village, in continuous operation since 1928 — one of Florida's oldest.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
     },
     {
       "id": "kahunas",
@@ -283,6 +305,17 @@
       "lng": -82.6689052,
       "category": "park",
       "clue": "A north St. Pete nature park with a boardwalk through one of the area’s largest maple swamps.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "sculleys",
+      "name": "Sculley's Waterfront Restaurant",
+      "lat": 27.784962,
+      "lng": -82.782307,
+      "category": "restaurant",
+      "clue": "A waterfront seafood spot on the John's Pass Village boardwalk in Madeira Beach, sourcing fresh Gulf catch.",
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"

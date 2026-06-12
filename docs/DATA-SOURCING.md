@@ -154,11 +154,11 @@ pipeline's dupe rule). Sweep hits must be web-verified before adding — OSM is
 stale (most "missing" hits around a downtown block turn out to be
 already-known closures recorded in the fame cache).
 
-### Status: 395 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
-`public/locations.stpete.json` holds **395 St. Pete places** (peaked at 401 after
+### Status: 398 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
+`public/locations.stpete.json` holds **398 St. Pete places** (peaked at 401 after
 the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +7
-player-requested/nearby-sweep adds; −1 closed bar removed via issue #81 — all in
-play, since the cap is 400). It started at ~516
+player-requested/nearby-sweep adds; −1 closed bar removed via issue #81; +3
+John's Pass Village adds — all in play, since the cap is 400). It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
 "Cafe"/"Hookah"), 1 renamed-to-also-closed — **renamed 15** still-operating spots
@@ -169,9 +169,10 @@ in the bounding box (≈326 restaurants, **109 bars**, 50 cafés). Bars
 are pulled even without an "established" tag signal (many dives carry no tags);
 restaurants/cafés still require one. A few well-known bars not in OSM (Good Night
 John Boy, My Rich Uncle, Welcome to the Farm) were added manually via geocoded
-addresses. The box is `[27.62, -82.78, 27.87, -82.58]` — a close-in frame over
-the city and inner beaches (the north edge reaches Kahuna's); the stpete `bounds`
-in cities.json match it, and the in-bounds guard drops anything past it. The map
+addresses. The box is `[27.62, -82.79, 27.87, -82.58]` — a close-in frame over
+the city and inner beaches (the north edge reaches Kahuna's, the west edge now
+includes John's Pass Village); the stpete `bounds` in cities.json match it, and
+the in-bounds guard drops anything past it. The map
 locks pan/zoom to this box, so a tighter frame deliberately trades a few far-flung
 beach spots for a closer starting view.
 
@@ -288,7 +289,7 @@ benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
 stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
-filters to `inPlay !== false`. Current caps: St. Pete 400 (395 rows, all in
+filters to `inPlay !== false`. Current caps: St. Pete 400 (398 rows, all in
 play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4150).
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
@@ -313,7 +314,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
-§4c): St. Pete (395 → **395**), State College (234 → **200**), Ann Arbor (341 →
+§4c): St. Pete (398 → **398**), State College (234 → **200**), Ann Arbor (341 →
 **300**), Seattle (2389 → **500**), Chicago (4150 → **700**) — all enriched.
 
 ### Adding food/drink — `npm run fetch-food`
