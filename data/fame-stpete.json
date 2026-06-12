@@ -1405,6 +1405,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "friendly-fisherman",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 550,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Family-run seafood restaurant at John's Pass Village boardwalk, operated by Hubbard's Marina since 1978"
+  },
+  {
     "id": "fubar-downtown",
     "status": "closed",
     "currentName": "",
@@ -1709,6 +1719,16 @@
     "fameScore": 32,
     "reviewCount": 116,
     "hasWikipedia": false
+  },
+  {
+    "id": "hubbards-marina",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 840,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Family-owned fishing charter and marina at John's Pass since 1928; USA Today #1-rated charter in the US"
   },
   {
     "id": "hungry-howies",
@@ -3337,6 +3357,16 @@
     "hasWikipedia": false
   },
   {
+    "id": "sculleys",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 629,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Waterfront seafood restaurant on the John's Pass Village boardwalk in Madeira Beach; recently renovated"
+  },
+  {
     "id": "south-straub-park",
     "status": "open",
     "currentName": "",
@@ -3821,6 +3851,16 @@
     "fameScore": 28,
     "reviewCount": 51,
     "hasWikipedia": false
+  },
+  {
+    "id": "the-hut-johns-pass",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 0,
+    "reviewCount": 406,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Sculley's The Hut — tiki bar annex at John's Pass; Yelp marked CLOSED April 2026"
   },
   {
     "id": "the-island-grille-raw-bar",

@@ -1754,6 +1754,20 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "friendly-fisherman",
+      "name": "Friendly Fisherman",
+      "lat": 27.784792,
+      "lng": -82.782157,
+      "category": "restaurant",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 42,
+      "clue": "The Hubbard family's casual waterfront seafood spot at John's Pass — cook-your-own-catch and fresh Gulf fish since 1978.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
+    },
+    {
       "id": "gateway-to-india",
       "name": "Gateway to India",
       "lat": 27.810205,
@@ -2118,6 +2132,20 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "hubbards-marina",
+      "name": "Hubbard's Marina",
+      "lat": 27.784628,
+      "lng": -82.782316,
+      "category": "landmark",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 58,
+      "clue": "A family-owned fishing charter and marina at John's Pass Village, in continuous operation since 1928 — one of Florida's oldest.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
+    },
+    {
       "id": "hungry-howies",
       "name": "Hungry Howie's",
       "lat": 27.823038,
@@ -2473,7 +2501,7 @@
       "lat": 27.753184,
       "lng": -82.763606,
       "category": "bar",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -2963,7 +2991,7 @@
       "lat": 27.817351,
       "lng": -82.63891,
       "category": "restaurant",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
@@ -4034,6 +4062,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "sculleys",
+      "name": "Sculley's Waterfront Restaurant",
+      "lat": 27.784962,
+      "lng": -82.782307,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 45,
+      "clue": "A waterfront seafood spot on the John's Pass Village boardwalk in Madeira Beach, sourcing fresh Gulf catch.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "seasons-cafe-bakery",
