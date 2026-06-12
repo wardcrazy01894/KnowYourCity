@@ -1041,11 +1041,12 @@
   },
   {
     "id": "desanto-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 150,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "Permanently closed (rooftop bar above Red Mesa Cantina; Yelp lists as closed, player report 2026-06-11, issue #81)"
   },
   {
     "id": "dickeys-barbecue-pit",

@@ -1278,20 +1278,6 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
-      "id": "desanto-bar",
-      "name": "DeSanto Bar",
-      "lat": 27.769662,
-      "lng": -82.636756,
-      "category": "bar",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 35,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "dickeys-barbecue-pit",
       "name": "Dickey's Barbecue Pit",
       "lat": 27.790799,
