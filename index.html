@@ -12,14 +12,76 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Know Your City</title>
+    <title>Know Your City — daily map-guessing game for local landmarks</title>
     <meta
       name="description"
-      content="A daily map-guessing game for local landmarks — St. Pete, State College, Ann Arbor, Seattle, Chicago."
+      content="A daily map-guessing game for local landmarks — St. Pete, State College, Ann Arbor, Seattle, Chicago. Drop a pin on the satellite map; 5 rounds, same puzzle for everyone, new game at midnight."
     />
+    <link rel="canonical" href="https://knowyourcity.gg/" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0f1720" />
+
+    <!-- Social share unfurls (Open Graph + Twitter). og:image must be absolute. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://knowyourcity.gg/" />
+    <meta property="og:site_name" content="Know Your City" />
+    <meta
+      property="og:title"
+      content="Know Your City — daily map-guessing game"
+    />
+    <meta
+      property="og:description"
+      content="How well do you really know your city? Drop a pin on the satellite map for 5 local landmarks a day — St. Pete, State College, Ann Arbor, Seattle, Chicago."
+    />
+    <meta property="og:image" content="https://knowyourcity.gg/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Know Your City — a daily map-guessing game for local landmarks"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Know Your City — daily map-guessing game"
+    />
+    <meta
+      name="twitter:description"
+      content="How well do you really know your city? Drop a pin on the satellite map for 5 local landmarks a day."
+    />
+    <meta name="twitter:image" content="https://knowyourcity.gg/og-image.png" />
+
+    <!-- Structured data for rich results. JSON-LD is inert data, not executed,
+         so the script-src CSP above does not block it. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Know Your City",
+        "url": "https://knowyourcity.gg/",
+        "description": "A daily map-guessing game for local landmarks. Drop a pin on a satellite map for 5 places a day — same puzzle for everyone, new game at midnight local time.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "image": "https://knowyourcity.gg/og-image.png",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Know Your City</h1>
+      <p>
+        A free daily map-guessing game for local landmarks in St. Petersburg FL,
+        State College, Ann Arbor, Seattle, and Chicago. Each day, everyone gets
+        the same 5 local places — drop a pin on the satellite map as close as
+        you can. JavaScript is required to play.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
