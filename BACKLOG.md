@@ -28,7 +28,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       to 382** (removed 104 permanently-closed + 28 zero-presence junk + 1
       renamed-to-closed; updated 15 renames; merged 1 dupe). The +19 parks/lakes
       pass (PR #49) brought it to 401; the play-cap re-run (PR #59) re-deduped to
-      389; issue-requested adds + nearby sweep (#50/#51) brought it to **396**
+      389; issue-requested adds + nearby sweep (#50/#51) brought it to **396**;
+      removing the closed DeSanto Bar (issue #81) brought it to **395**
       (all in play — the cap is 400).
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
@@ -163,7 +164,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       daily plan switched to 2 easy → 2 medium → 1 hard; St. Pete cleaned 516→382
       (401 after the +19 parks/lakes pass, PR #49; **389** after the play-cap
       re-run, PR #59; **396** after the +7 player-requested/nearby-sweep adds,
-      PR #74). PR #40. (Rollout to other cities tracked under *In progress /
+      PR #74; **395** after removing the closed DeSanto Bar, issue #81). PR #40. (Rollout to other cities tracked under *In progress /
       next*.)
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
 - [x] Deterministic daily selection (midnight-Eastern, DST-aware) + 0–100 linear
@@ -175,7 +176,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
 - [x] Data pipeline (M2): Overpass scripts (fetch-pois / fetch-food /
-      build-city) → per-city `public/locations.<id>.json` (St. Pete 396 +
+      build-city) → per-city `public/locations.<id>.json` (St. Pete 395 +
       4 cities); the app loads the selected city's file; validated by a test.
 - [x] Applied Alex's decisions: 0–100 linear scoring, midnight-ET rollover,
       clues hidden by default, whole-city start zoom.
