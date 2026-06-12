@@ -150,6 +150,9 @@ export function mulberry32(seed: number): () => number {
  *  - Fisher–Yates shuffle driven by a date-seeded mulberry32.
  *  - Each plan slot takes the first shuffled location of its category, falling
  *    back to any remaining location when that bucket is empty.
+ *  - `overrides` maps a selectionSeed (e.g. "stpete:2026-06-13") to an ordered
+ *    list of location IDs; when a match is found those locations are returned
+ *    directly, bypassing the PRNG entirely.
  *
  * @throws if the pool has fewer than `count` items.
  */
@@ -157,7 +160,16 @@ export function selectDailyLocations(
   all: Location[],
   dateKey: string,
   count: number = ROUNDS_PER_DAY,
+  overrides?: Record<string, readonly string[]>,
 ): Location[] {
+  const overrideIds = overrides?.[dateKey]
+  if (overrideIds) {
+    const byId = new Map(all.map((l) => [l.id, l]))
+    const resolved = overrideIds
+      .map((id) => byId.get(id))
+      .filter((l): l is Location => l != null)
+    if (resolved.length === count) return resolved
+  }
   // Only rows in the daily play set are eligible. A city with a `playCap` marks
   // the rest `inPlay: false` (and strips their difficulty); absent = in play.
   // Filtering here also means the difficulty-plan predicate below sees only

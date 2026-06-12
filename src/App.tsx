@@ -10,6 +10,7 @@
 import { useEffect, useState } from 'react'
 import type { LocationsFile, Location } from './types'
 import { getDateKey, isValidDateKey, selectDailyLocations } from './lib/daily'
+import { DAILY_OVERRIDES } from './data/dailyOverrides'
 import { getCity, cityDataUrl, type City } from './lib/cities'
 import { shouldShuffle } from './lib/devmode'
 import { isMuted, setMuted } from './lib/sound'
@@ -90,7 +91,12 @@ export function App() {
       .then((file) => {
         if (!live) return
         setAttribution(file.attribution || '')
-        const picks = selectDailyLocations(file.locations, mode.selectionSeed)
+        const picks = selectDailyLocations(
+          file.locations,
+          mode.selectionSeed,
+          undefined,
+          DAILY_OVERRIDES,
+        )
         log.info('App', 'picks', { picks: picks.map((p) => p.name) })
         setToday(picks)
       })
