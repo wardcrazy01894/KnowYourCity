@@ -76,6 +76,8 @@ KnowYourCity/
 ├─ README.md · CLAUDE.md · BACKLOG.md
 ├─ public/
 │   ├─ locations.<id>.json      per-city datasets (stpete, seattle, …)
+│   ├─ favicon.svg/.ico · apple-touch-icon.png · og-image.png   icons + share image
+│   ├─ robots.txt · sitemap.xml  crawler directives (guarded by seo-meta.test.ts)
 │   └─ (cities.json at repo root is the city registry)
 ├─ scripts/
 │   ├─ fetch-pois.mjs           Overpass landmarks → data/candidates.json
