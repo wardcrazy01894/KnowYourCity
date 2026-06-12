@@ -84,7 +84,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [x] **Play cap per city (`City.playCap`) + non-food floor.** Every enriched
       row stays in the dataset with its `fameScore`; only the top-`playCap` by
       fame are `inPlay` and carry a difficulty (count-bucketed 40% easy / 40%
-      medium / 20% hard). Caps: St. Pete 400 (396 rows, all in play), Ann Arbor
+      medium / 20% hard). Caps: St. Pete 400 (395 rows, all in play), Ann Arbor
       300, State College 200, Seattle 500, Chicago 700. Daily selection filters
       to `inPlay`
       and enforces a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so
