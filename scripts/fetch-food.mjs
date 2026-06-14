@@ -30,8 +30,14 @@
 
 import { mkdir, writeFile } from 'node:fs/promises'
 
-/** St. Pete bbox [south, west, north, east] — matches stpete bounds in cities.json. */
-export const FOOD_BBOX = /** @type {const} */ ([27.62, -82.78, 27.87, -82.58])
+/**
+ * Default bbox for `npm run fetch-food` (St. Pete) [south, west, north, east].
+ * Matches the stpete bounds in cities.json. `build-city` always passes an
+ * explicit per-city bbox from cities.json and never uses this default.
+ */
+export const DEFAULT_BBOX = /** @type {const} */ ([
+  27.62, -82.79, 27.87, -82.58,
+])
 
 const OVERPASS_ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
@@ -40,7 +46,7 @@ const OVERPASS_ENDPOINTS = [
 ]
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-export function buildFoodQuery([s, w, n, e] = FOOD_BBOX) {
+export function buildFoodQuery([s, w, n, e] = DEFAULT_BBOX) {
   return `
 [out:json][timeout:120];
 (
