@@ -25,6 +25,7 @@ close you got. Share your result Wordle-style.
   womp-womp for a bad miss (🔊/🔇 to mute).
 - 🧭 **Real local spots** — landmarks, restaurants, bars & cafés per city.
 - 🔎 **"Is my place in the game?"** — search a city's list with autocomplete.
+- 🔗 **SEO-ready** — OG/Twitter unfurl meta, sitemap, robots.txt, and JSON-LD structured data for social sharing.
 - 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
 
