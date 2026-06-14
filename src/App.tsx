@@ -7,7 +7,7 @@
  * ?date=YYYY-MM-DD (a specific day). The selection seed is namespaced per city.
  */
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { LocationsFile, Location } from './types'
 import { getDateKey, isValidDateKey, selectDailyLocations } from './lib/daily'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
@@ -23,6 +23,8 @@ import { BugReport } from './components/BugReport'
 const CITY_KEY = 'kyc:city'
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
 const SHUFFLE_SEED = Math.random().toString(36).slice(2)
+
+const BUILD_HASH = import.meta.env.VITE_BUILD_HASH ?? 'dev'
 
 async function loadLocations(cityId: string): Promise<LocationsFile> {
   const url = cityDataUrl(cityId)
@@ -78,6 +80,42 @@ export function App() {
   const [reporting, setReporting] = useState(false)
   const [reportPrefill, setReportPrefill] = useState('')
   const [attribution, setAttribution] = useState('')
+  const [newVersionAvailable, setNewVersionAvailable] = useState(false)
+
+  // Keep a ref so the visibility handler always reads the latest `today` value
+  // without needing to re-register on every render.
+  const todayRef = useRef(today)
+  useEffect(() => {
+    todayRef.current = today
+  }, [today])
+
+  // On tab focus, check whether a new deploy has landed by comparing the build
+  // hash embedded at compile time against /version.json served by CF Pages.
+  // If the hashes differ and no game is loaded yet, reload silently; otherwise
+  // show a banner so the player can refresh after finishing their round.
+  useEffect(() => {
+    if (import.meta.env.DEV) return
+    async function checkVersion() {
+      try {
+        const r = await fetch(`/version.json?_=${Date.now()}`)
+        if (!r.ok) return
+        const data = (await r.json()) as { hash: string }
+        if (data.hash === BUILD_HASH) return
+        if (!todayRef.current) {
+          window.location.reload()
+        } else {
+          setNewVersionAvailable(true)
+        }
+      } catch {
+        // offline, fetch blocked, etc. — ignore
+      }
+    }
+    function onVisible() {
+      if (!document.hidden) void checkVersion()
+    }
+    document.addEventListener('visibilitychange', onVisible)
+    return () => document.removeEventListener('visibilitychange', onVisible)
+  }, [])
 
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
@@ -181,6 +219,28 @@ export function App() {
 
   return (
     <main>
+      {newVersionAvailable && (
+        <div
+          role="alert"
+          style={{
+            background: '#f4b400',
+            color: '#000',
+            padding: '8px 16px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: 14,
+          }}
+        >
+          <span>New questions are available — reload when you're done.</span>
+          <button
+            onClick={() => window.location.reload()}
+            style={{ marginLeft: 12, cursor: 'pointer', fontWeight: 600 }}
+          >
+            Reload now
+          </button>
+        </div>
+      )}
       <header
         style={{
           padding: '12px 16px',

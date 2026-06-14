@@ -1,0 +1,11 @@
+# Prevent stale caches for assets whose content changes between deploys but
+# whose filenames are stable (no content hash in the URL).
+
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/version.json
+  Cache-Control: no-cache, must-revalidate
+
+/locations.*
+  Cache-Control: no-cache, must-revalidate
