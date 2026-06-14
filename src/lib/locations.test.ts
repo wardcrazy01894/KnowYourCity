@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import type { LocationsFile } from '../types'
 import { ROUNDS_PER_DAY, selectDailyLocations } from './daily'
 import { CITIES } from './cities'
+import { DAILY_OVERRIDES } from '../data/dailyOverrides'
 import stpete from '../../public/locations.stpete.json'
 import statecollege from '../../public/locations.statecollege.json'
 import annarbor from '../../public/locations.annarbor.json'
@@ -133,3 +134,25 @@ for (const city of CITIES) {
     })
   })
 }
+
+describe('DAILY_OVERRIDES — integration', () => {
+  it('every override ID resolves to an in-play location in its city dataset', () => {
+    for (const [seed, ids] of Object.entries(DAILY_OVERRIDES)) {
+      const cityId = seed.split(':')[0]
+      const data = DATASETS[cityId]
+      expect(
+        data,
+        `no dataset for city "${cityId}" (seed: "${seed}")`,
+      ).toBeTruthy()
+      const inPlayIds = new Set(
+        data.locations.filter((l) => l.inPlay !== false).map((l) => l.id),
+      )
+      for (const id of ids) {
+        expect(
+          inPlayIds.has(id),
+          `override "${seed}": id "${id}" not found in in-play locations`,
+        ).toBe(true)
+      }
+    }
+  })
+})

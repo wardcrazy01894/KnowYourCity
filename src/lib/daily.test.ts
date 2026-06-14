@@ -407,6 +407,9 @@ describe('selectDailyLocations — overrides', () => {
   it('falls through to PRNG when no override exists for the seed', () => {
     const overrides = { 'stpete:2026-06-14': ['e1', 'e2', 'm1', 'm2', 'h1'] }
     const picks = selectDailyLocations(pool, 'stpete:2026-06-13', 5, overrides)
+    expect(picks).toHaveLength(5)
+    const poolIds = new Set(pool.map((l) => l.id))
+    picks.forEach((p) => expect(poolIds.has(p.id)).toBe(true))
     expect(picks.map((p) => p.id)).not.toEqual(['e1', 'e2', 'm1', 'm2', 'h1'])
   })
 
@@ -414,5 +417,26 @@ describe('selectDailyLocations — overrides', () => {
     expect(() =>
       selectDailyLocations(pool, 'stpete:2026-06-13', 5),
     ).not.toThrow()
+  })
+
+  it('falls through to PRNG when an override ID is missing from the pool', () => {
+    const picks = selectDailyLocations(pool, 'stpete:2026-06-13', 5, {
+      'stpete:2026-06-13': ['e2', 'm3', 'e1', 'm1', 'UNKNOWN-ID'],
+    })
+    expect(picks).toHaveLength(5)
+    const poolIds = new Set(pool.map((l) => l.id))
+    picks.forEach((p) => expect(poolIds.has(p.id)).toBe(true))
+    expect(picks.map((p) => p.id)).not.toContain('UNKNOWN-ID')
+  })
+
+  it('falls through to PRNG when an override ID is inPlay:false', () => {
+    const withBenched = pool.map((l) =>
+      l.id === 'e2' ? { ...l, inPlay: false as const } : l,
+    )
+    const picks = selectDailyLocations(withBenched, 'stpete:2026-06-13', 5, {
+      'stpete:2026-06-13': ['e2', 'm3', 'e1', 'm1', 'h2'],
+    })
+    expect(picks).toHaveLength(5)
+    expect(picks.map((p) => p.id)).not.toContain('e2')
   })
 })

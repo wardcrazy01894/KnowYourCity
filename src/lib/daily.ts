@@ -163,12 +163,15 @@ export function selectDailyLocations(
   overrides?: Record<string, readonly string[]>,
 ): Location[] {
   const overrideIds = overrides?.[dateKey]
-  if (overrideIds) {
+  if (overrideIds?.length) {
     const byId = new Map(all.map((l) => [l.id, l]))
     const resolved = overrideIds
       .map((id) => byId.get(id))
-      .filter((l): l is Location => l != null)
+      .filter((l): l is Location => l != null && l.inPlay !== false)
     if (resolved.length === count) return resolved
+    console.warn(
+      `[KYC] Override for "${dateKey}" resolved ${resolved.length}/${count} in-play locations — falling back to PRNG. Check for unknown or inPlay:false IDs.`,
+    )
   }
   // Only rows in the daily play set are eligible. A city with a `playCap` marks
   // the rest `inPlay: false` (and strips their difficulty); absent = in play.

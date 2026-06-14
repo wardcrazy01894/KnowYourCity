@@ -8,71 +8,71 @@
  * passes) or delete them during a future cleanup pass.
  */
 export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
-  // St. Pete — Jun 13–22 2026 (hand-curated for variety & spreadability)
-  'stpete:2026-06-13': [
+  // St. Pete — Jun 14–23 2026 (hand-curated for variety & spreadability)
+  'stpete:2026-06-14': [
     'the-dali-museum',
     'bodega',
     'lake-maggiore',
     'angelos-grill-bar',
     'rec-dec',
   ],
-  'stpete:2026-06-14': [
+  'stpete:2026-06-15': [
     'tropicana-field',
     'green-bench-brewing-co',
     'north-shore-kickball-fields',
     'elliott-aster',
     'buttermilk-eatery',
   ],
-  'stpete:2026-06-15': [
+  'stpete:2026-06-16': [
     'museum-of-fine-arts',
     'the-chattaway',
     'twin-brooks-golf-course',
     'fresh-kitchen',
     'mcauleys-pub',
   ],
-  'stpete:2026-06-16': [
+  'stpete:2026-06-17': [
     'the-don-cesar',
     'parkshore-grill',
     'lake-vista-park',
     'hi-5',
     'sams-sushi',
   ],
-  'stpete:2026-06-17': [
+  'stpete:2026-06-18': [
     'jannus-live',
     'cassis-american-brasserie',
     'paradeco-coffee-roasters',
     'the-floridian',
     'enigma',
   ],
-  'stpete:2026-06-18': [
+  'stpete:2026-06-19': [
     'sunken-gardens',
     'ceviche-tapas-bar',
     'bartlett-park',
     'draculas-legacy-wine-bar',
     'dickeys-barbecue-pit',
   ],
-  'stpete:2026-06-19': [
+  'stpete:2026-06-20': [
     'vinoy-park',
     'hawkers-asian-street-food',
     'wheres-jubes',
     'allelo',
     'the-garage-on-central',
   ],
-  'stpete:2026-06-20': [
+  'stpete:2026-06-21': [
     'st-pete-pier',
     'fergs-sports-bar-grill',
     'burger-monger',
     'trophy-fish',
     'special-pho',
   ],
-  'stpete:2026-06-21': [
+  'stpete:2026-06-22': [
     'al-lang-stadium',
     'engine-no-9',
     'rum-runners',
     'baba',
     'pee-pas-garage-craft-brewery',
   ],
-  'stpete:2026-06-22': [
+  'stpete:2026-06-23': [
     'the-james-museum',
     '3-daughters-brewing',
     'sunset-grille',
