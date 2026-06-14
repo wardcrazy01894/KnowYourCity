@@ -33,7 +33,7 @@ but shipped in v1 — see §9.)
 ```
 Browser (static site, no backend)
  ├─ public/locations.<id>.json   ← per-city curated datasets (committed)
- ├─ lib/daily.ts                 ← date → seed → pick the day's 5 (by category)
+ ├─ lib/daily.ts                 ← date → seed → pick the day's 5 (override or PRNG)
  ├─ lib/scoring.ts               ← haversine + 0–100 linear score
  ├─ lib/storage.ts               ← localStorage: streak/history/resume
  ├─ lib/devmode.ts               ← URL modes: ?reset / ?shuffle
@@ -94,6 +94,8 @@ KnowYourCity/
 ├─ src/
 │   ├─ main.tsx · App.tsx · index.css · vite-env.d.ts
 │   ├─ types.ts                 Location, GameState, RoundResult, Guess…
+│   ├─ data/
+│   │   └─ dailyOverrides.ts    hand-curated daily puzzles keyed "cityId:YYYY-MM-DD"
 │   ├─ lib/                     daily · scoring · storage · devmode · sound · log
 │   │                           · cities · search · report · analytics
 │   │                           (+ co-located *.test.ts; locations.test.ts guards data)
@@ -164,6 +166,14 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
     **cafe → restaurant → bar → landmark → wildcard** (*landmark* = anything that
     isn't a cafe/restaurant/bar; *wildcard* = any remaining). Empty buckets fall
     back to any remaining location.
+  - **Daily overrides** (`src/data/dailyOverrides.ts`): a hand-curated escape
+    hatch — a `Record<"cityId:YYYY-MM-DD", string[]>` map of location IDs. When
+    a key matches today's selection seed, `selectDailyLocations` returns those
+    IDs in the given order instead of running the PRNG. Used to hand-pick a set
+    for special days or to guarantee variety during a launch window. Only affects
+    the matching date; all other days use the PRNG as normal. Unresolved or
+    `inPlay:false` IDs in an override silently fall back to the PRNG
+    (`console.warn`), so malformed entries degrade gracefully.
   - Either way a full set of 5 is always returned. Cities are enriched one at a
     time (St. Petersburg first); see §5.3b and `docs/DATA-SOURCING.md`.
 
@@ -183,11 +193,13 @@ true icons. Either way fame is calibrated to **down-weight tourist/critic fame**
 local ubiquity** — see `docs/DATA-SOURCING.md`.
 
 ### 5.2 Daily selection integrity (the honest tradeoff)
-Selection is a pure function of `(dateKey, list)`. **If you edit the location
-list, the shuffle changes for every date** — past and future puzzles shift.
-For a friends game this is fine (nobody audits yesterday). If it ever matters,
-freeze each day's chosen ids into a committed `manifest.json` and read from that
-instead of reshuffling. Not worth it for v1.
+Selection is a function of `(dateKey, list, overrides)`. For most days the
+`overrides` map has no entry and selection is purely deterministic from
+`(dateKey, list)`. **If you edit the location list, the PRNG shuffle changes for
+every non-overridden date** — past and future puzzles shift. For a friends game
+this is fine (nobody audits yesterday). If it ever matters, freeze each day's
+chosen ids into a committed `manifest.json` and read from that instead of
+reshuffling. Not worth it for v1.
 
 ### 5.3 List size vs repetition
 5 unique places/day. With **N** curated locations, you can run ~`N/5` days

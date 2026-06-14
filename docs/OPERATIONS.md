@@ -68,6 +68,15 @@ data reporting rides on the currently-wide `connect-src *` — if `connect-src`
 is ever tightened, add `https://cloudflareinsights.com` or analytics dies
 silently.
 
+## SEO
+
+- **OG/Twitter meta tags** are hardcoded in `index.html` (title, description, `og:image`, `og:url`). No runtime generation needed.
+- **`public/og-image.png`** — the social share image (1200×630). Regenerate manually and commit if branding changes.
+- **`public/robots.txt`** — allows all crawlers; points to the sitemap.
+- **`public/sitemap.xml`** — static, lists `https://knowyourcity.gg/`. Update manually if URL structure changes.
+- **Search Console / Bing:** submit the sitemap URL (`https://knowyourcity.gg/sitemap.xml`) in Google Search Console and Bing Webmaster Tools. (Owner follow-up — not yet done.)
+- These static files are guarded by `src/lib/seo-meta.test.ts`; CI will catch accidental deletions.
+
 ## Bug-report worker
 
 A Cloudflare Worker (see [`../worker/`](../worker/)) holds the GitHub token

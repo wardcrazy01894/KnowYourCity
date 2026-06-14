@@ -1559,7 +1559,7 @@
     },
     {
       "id": "five-bucks-drinkery",
-      "name": "Five Bucks Drinkery",
+      "name": "Five Bucks Drinkery (Pinellas Park)",
       "lat": 27.839533,
       "lng": -82.70131,
       "category": "bar",
@@ -1573,7 +1573,7 @@
     },
     {
       "id": "five-bucks-drinkery-downtown",
-      "name": "Five Bucks Drinkery",
+      "name": "Five Bucks Drinkery (DTSP)",
       "lat": 27.771384,
       "lng": -82.636368,
       "category": "bar",

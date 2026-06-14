@@ -295,8 +295,8 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4150).
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
 > up every day — see PLAN.md §5. Parks survive the cap well (their famous ones
-> rank high): St. Pete keeps all 24, Ann Arbor 67, State College 30, Seattle 33,
-> Chicago 47.
+> rank high): St. Pete keeps all 24, Ann Arbor 67, State College 29, Seattle 33,
+> Chicago 44.
 
 ### Category buckets
 The pipeline tags each row with a `category`. For round selection:
