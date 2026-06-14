@@ -17,3 +17,6 @@ data/food-candidates.json
 # workflow script, harvested accumulator). The committed artifact is the final
 # data/fame-<city>.json the apply-difficulty step writes, not this scratch.
 data/_*-fame-work/
+
+# Scratch dir created by scripts during local runs (e.g. node compile cache).
+scripts/tmp/

@@ -3,7 +3,7 @@
  * fetch-pois.mjs — builds a *candidate* locations file for manual review.
  *
  * Pipeline (see docs/DATA-SOURCING.md for the full rationale):
- *   1. Query Overpass for POIs in the St. Pete bbox matching a tag allowlist.
+ *   1. Query Overpass for POIs in the St. Pete bbox (default) matching a tag allowlist.
  *   2. Keep only "notable" rows: has name AND (wikipedia|wikidata tag OR tag is
  *      inherently notable e.g. tourism=museum/attraction, leisure=golf_course).
  *   3. Drop obvious chains/mundane via a name denylist (laundromat, Great Clips…).
@@ -18,9 +18,13 @@
 
 import { mkdir, writeFile } from 'node:fs/promises'
 
-/** St. Pete bounding box [south, west, north, east] — matches the stpete bounds in cities.json. */
-export const ST_PETE_BBOX = /** @type {const} */ ([
-  27.62, -82.78, 27.87, -82.58,
+/**
+ * Default bbox for `npm run fetch-pois` (St. Pete) [south, west, north, east].
+ * Matches the stpete bounds in cities.json. `build-city` always passes an
+ * explicit per-city bbox from cities.json and never uses this default.
+ */
+export const DEFAULT_BBOX = /** @type {const} */ ([
+  27.62, -82.79, 27.87, -82.58,
 ])
 
 /** Public Overpass instances, tried in order (with retries) if one is busy. */
@@ -74,7 +78,7 @@ async function fetchOverpass(query) {
  * Overpass QL. Pulls nodes+ways+relations for the allowlisted tags inside the
  * bbox; `out center` gives ways/relations a representative lat/lng.
  */
-export function buildOverpassQuery([s, w, n, e] = ST_PETE_BBOX) {
+export function buildOverpassQuery([s, w, n, e] = DEFAULT_BBOX) {
   return `
 [out:json][timeout:60];
 (
