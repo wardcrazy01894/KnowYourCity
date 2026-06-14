@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
+import { versionCheckAction } from './lib/version'
 import type { LocationsFile, Location } from './types'
 import { getDateKey, isValidDateKey, selectDailyLocations } from './lib/daily'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
@@ -82,17 +83,16 @@ export function App() {
   const [attribution, setAttribution] = useState('')
   const [newVersionAvailable, setNewVersionAvailable] = useState(false)
 
-  // Keep a ref so the visibility handler always reads the latest `today` value
-  // without needing to re-register on every render.
-  const todayRef = useRef(today)
-  useEffect(() => {
-    todayRef.current = today
-  }, [today])
+  // Inline ref — always reflects the latest cityId without an async useEffect.
+  // The visibility handler reads this so it never sees a stale value.
+  const cityIdRef = useRef(cityId)
+  cityIdRef.current = cityId
 
   // On tab focus, check whether a new deploy has landed by comparing the build
   // hash embedded at compile time against /version.json served by CF Pages.
-  // If the hashes differ and no game is loaded yet, reload silently; otherwise
-  // show a banner so the player can refresh after finishing their round.
+  // If the hashes differ and no city is chosen yet, reload silently (safe — no
+  // game in progress); otherwise show a banner so mid-game players can choose
+  // when to refresh.
   useEffect(() => {
     if (import.meta.env.DEV) return
     async function checkVersion() {
@@ -100,12 +100,13 @@ export function App() {
         const r = await fetch(`/version.json?_=${Date.now()}`)
         if (!r.ok) return
         const data = (await r.json()) as { hash: string }
-        if (data.hash === BUILD_HASH) return
-        if (!todayRef.current) {
-          window.location.reload()
-        } else {
-          setNewVersionAvailable(true)
-        }
+        const action = versionCheckAction(
+          BUILD_HASH,
+          data.hash,
+          cityIdRef.current !== null,
+        )
+        if (action === 'reload') window.location.reload()
+        else if (action === 'banner') setNewVersionAvailable(true)
       } catch {
         // offline, fetch blocked, etc. — ignore
       }

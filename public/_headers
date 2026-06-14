@@ -7,5 +7,17 @@
 /version.json
   Cache-Control: no-cache, must-revalidate
 
-/locations.*
+/locations.stpete.json
+  Cache-Control: no-cache, must-revalidate
+
+/locations.annarbor.json
+  Cache-Control: no-cache, must-revalidate
+
+/locations.chicago.json
+  Cache-Control: no-cache, must-revalidate
+
+/locations.seattle.json
+  Cache-Control: no-cache, must-revalidate
+
+/locations.statecollege.json
   Cache-Control: no-cache, must-revalidate
