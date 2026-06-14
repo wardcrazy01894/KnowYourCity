@@ -3072,8 +3072,8 @@
     {
       "id": "neighborhood-joe",
       "name": "Neighborhood Joe",
-      "lat": 27.796002,
-      "lng": -82.646533,
+      "lat": 27.7933,
+      "lng": -82.6466,
       "category": "cafe",
       "difficulty": "medium",
       "inPlay": true,
@@ -3128,8 +3128,8 @@
     {
       "id": "north-shore-kickball-fields",
       "name": "North Shore Park Kickball Fields",
-      "lat": 27.7857,
-      "lng": -82.6265,
+      "lat": 27.7803,
+      "lng": -82.6273,
       "category": "park",
       "difficulty": "medium",
       "inPlay": true,
