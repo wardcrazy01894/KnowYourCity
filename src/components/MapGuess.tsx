@@ -80,6 +80,13 @@ export function MapGuess({
   const guessMarkerRef = useRef<L.CircleMarker | null>(null)
   const truthMarkerRef = useRef<L.CircleMarker | null>(null)
   const lineRef = useRef<L.Polyline | null>(null)
+  /**
+   * Polygon layer drawn on reveal when `location.polygon` is set.
+   * Cleaned up at the top of the reveal useEffect (same pattern as
+   * truthMarkerRef / lineRef) to prevent cross-round layer leaks.
+   * [M-D1]
+   */
+  const polygonLayerRef = useRef<L.Polygon | null>(null)
   // Keep the latest callback/locked without re-binding the map click handler.
   const onGuessRef = useRef(onGuessChange)
   const lockedRef = useRef(locked)
@@ -153,6 +160,9 @@ export function MapGuess({
     truthMarkerRef.current = null
     lineRef.current?.remove()
     lineRef.current = null
+    // [M-D1] Polygon layer cleanup — mirrors truth marker / line pattern.
+    polygonLayerRef.current?.remove()
+    polygonLayerRef.current = null
     if (!reveal) return
 
     const truth: L.LatLngExpression = [reveal.location.lat, reveal.location.lng]
@@ -172,18 +182,44 @@ export function MapGuess({
       .bindTooltip(label, { permanent: true, direction: 'top' })
       .openTooltip()
 
+    // [M-D1] Shade the location's footprint polygon (if any) so the player can
+    // see whether their pin landed inside it. Created BEFORE the fitBounds logic
+    // so it can be included in the framed view. Subtle 15% green fill keeps the
+    // satellite imagery visible underneath. The polygon is stored as [lat, lng]
+    // pairs, which is a valid L.LatLngExpression[].
+    if (reveal.location.polygon?.length) {
+      polygonLayerRef.current = L.polygon(
+        reveal.location.polygon as L.LatLngExpression[],
+        {
+          color: '#2ecc71', // same green as the truth marker
+          weight: 2,
+          fillColor: '#2ecc71',
+          fillOpacity: 0.15, // subtle: satellite imagery stays visible
+        },
+      ).addTo(map)
+    }
+
     if (guess) {
       lineRef.current = L.polyline([[guess.lat, guess.lng], truth], {
         color: '#f4b400',
         weight: 2,
         dashArray: '6 6',
       }).addTo(map)
-      map.fitBounds(L.latLngBounds([guess.lat, guess.lng], truth).pad(0.4), {
-        maxZoom: 17,
-      })
-    } else {
-      map.setView(truth, 15)
     }
+
+    // Frame every revealed layer (guess pin, truth marker, distance line, and
+    // the footprint polygon when present) so nothing is clipped — important when
+    // a large park polygon extends well beyond the guess↔truth bounding box.
+    const candidates: (L.Layer | null)[] = [
+      guess ? L.marker([guess.lat, guess.lng]) : null,
+      truthMarkerRef.current,
+      lineRef.current,
+      polygonLayerRef.current,
+    ]
+    const framed = L.featureGroup(
+      candidates.filter((l): l is L.Layer => l != null),
+    )
+    map.fitBounds(framed.getBounds().pad(0.2), { maxZoom: 17 })
   }, [reveal, guess])
 
   // Re-frame to the full play area at the start of each new round.

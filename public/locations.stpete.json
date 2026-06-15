@@ -127,7 +127,15 @@
       "clue": "A waterfront park by Albert Whitted Airport at the south end of the downtown waterfront.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.76652, -82.63042],
+        [27.76641, -82.63067],
+        [27.76569, -82.63033],
+        [27.76691, -82.62766],
+        [27.76733, -82.62764],
+        [27.76652, -82.63041]
+      ]
     },
     {
       "id": "alesia",
@@ -351,7 +359,15 @@
       "clue": "A south-side neighborhood park with a historic pool and recreation center.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.75205, -82.64237],
+        [27.75205, -82.63865],
+        [27.75078, -82.6386],
+        [27.74857, -82.63867],
+        [27.74855, -82.64238],
+        [27.75198, -82.64241]
+      ]
     },
     {
       "id": "basil-leaf",
@@ -589,7 +605,93 @@
       "clue": "A 245-acre nature preserve with trails along Lake Maggiore.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [27.74243, -82.66817],
+        [27.74243, -82.67108],
+        [27.73865, -82.67104],
+        [27.73893, -82.67049],
+        [27.73886, -82.66989],
+        [27.73762, -82.66731],
+        [27.73627, -82.66579],
+        [27.73437, -82.66282],
+        [27.73303, -82.66114],
+        [27.73272, -82.66065],
+        [27.73078, -82.65892],
+        [27.72795, -82.65681],
+        [27.72655, -82.65535],
+        [27.72579, -82.65434],
+        [27.7251, -82.65323],
+        [27.72466, -82.65225],
+        [27.72436, -82.65095],
+        [27.72443, -82.64954],
+        [27.72481, -82.64795],
+        [27.72506, -82.64731],
+        [27.72564, -82.64628],
+        [27.72625, -82.64552],
+        [27.72632, -82.64548],
+        [27.72657, -82.64592],
+        [27.72676, -82.64594],
+        [27.72696, -82.64566],
+        [27.72687, -82.64518],
+        [27.72802, -82.64467],
+        [27.72886, -82.64459],
+        [27.72921, -82.64469],
+        [27.72976, -82.64498],
+        [27.73129, -82.64629],
+        [27.73072, -82.64709],
+        [27.73068, -82.64736],
+        [27.73077, -82.64788],
+        [27.72993, -82.64783],
+        [27.72948, -82.64803],
+        [27.7293, -82.64836],
+        [27.72897, -82.64859],
+        [27.7288, -82.64899],
+        [27.72887, -82.64904],
+        [27.72876, -82.64909],
+        [27.72892, -82.64958],
+        [27.72881, -82.64992],
+        [27.72857, -82.6499],
+        [27.72825, -82.65016],
+        [27.72775, -82.65039],
+        [27.72726, -82.65036],
+        [27.72725, -82.65046],
+        [27.72764, -82.65062],
+        [27.72804, -82.65057],
+        [27.72917, -82.65078],
+        [27.72931, -82.65074],
+        [27.72952, -82.65095],
+        [27.7303, -82.65262],
+        [27.73115, -82.65377],
+        [27.73117, -82.65401],
+        [27.73162, -82.6542],
+        [27.73173, -82.65449],
+        [27.73237, -82.65507],
+        [27.7335, -82.65583],
+        [27.73361, -82.65608],
+        [27.73404, -82.6563],
+        [27.73573, -82.65755],
+        [27.73662, -82.65906],
+        [27.73696, -82.65984],
+        [27.73752, -82.66021],
+        [27.73768, -82.66059],
+        [27.73805, -82.661],
+        [27.73868, -82.66112],
+        [27.73889, -82.66142],
+        [27.73878, -82.6616],
+        [27.73843, -82.66178],
+        [27.73824, -82.66203],
+        [27.7381, -82.66248],
+        [27.73812, -82.66274],
+        [27.73833, -82.66375],
+        [27.7392, -82.66472],
+        [27.73933, -82.66541],
+        [27.73933, -82.66626],
+        [27.74126, -82.66626],
+        [27.74191, -82.66742],
+        [27.74212, -82.66756],
+        [27.74241, -82.66758]
+      ]
     },
     {
       "id": "brick-mortar",
@@ -1093,7 +1195,37 @@
       "clue": "A coastal mangrove preserve and paddling spot on the southwest edge of the city.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.73817, -82.68743],
+        [27.73821, -82.68784],
+        [27.73842, -82.68828],
+        [27.73981, -82.68955],
+        [27.74034, -82.69014],
+        [27.74031, -82.69038],
+        [27.7391, -82.69195],
+        [27.73891, -82.69202],
+        [27.73863, -82.69199],
+        [27.73842, -82.69125],
+        [27.7382, -82.69133],
+        [27.73794, -82.69128],
+        [27.73758, -82.69107],
+        [27.73748, -82.69121],
+        [27.73753, -82.69138],
+        [27.73768, -82.69136],
+        [27.7382, -82.69162],
+        [27.73844, -82.6918],
+        [27.7385, -82.69195],
+        [27.73801, -82.69186],
+        [27.73762, -82.69165],
+        [27.73756, -82.69166],
+        [27.7375, -82.69196],
+        [27.73729, -82.69204],
+        [27.73722, -82.69193],
+        [27.73728, -82.69177],
+        [27.7371, -82.69174],
+        [27.73712, -82.68741]
+      ]
     },
     {
       "id": "clock-tower-sports-bar-grill",
@@ -1233,7 +1365,22 @@
       "clue": "A large lake-centered park north of downtown with a walking loop, ballfields, and the old Huggins-Stengel field.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.792, -82.64254],
+        [27.79205, -82.64022],
+        [27.79199, -82.64015],
+        [27.78489, -82.64016],
+        [27.78494, -82.6417],
+        [27.78487, -82.6417],
+        [27.78486, -82.64293],
+        [27.78525, -82.64285],
+        [27.78609, -82.64319],
+        [27.78637, -82.64312],
+        [27.78722, -82.64261],
+        [27.78776, -82.64248],
+        [27.79197, -82.64258]
+      ]
     },
     {
       "id": "da-sesto-italiano-ristorante-e-vino",
@@ -1681,7 +1828,21 @@
       "clue": "A north St. Pete neighborhood park and recreation center off Dr. MLK Jr. St N.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.83561, -82.64622],
+        [27.83561, -82.64218],
+        [27.83486, -82.64181],
+        [27.83458, -82.64246],
+        [27.83378, -82.64386],
+        [27.83322, -82.6445],
+        [27.83101, -82.64598],
+        [27.83118, -82.64652],
+        [27.83174, -82.64628],
+        [27.83194, -82.64679],
+        [27.83502, -82.64676],
+        [27.83503, -82.64621]
+      ]
     },
     {
       "id": "fourth-street-shrimp-store",
@@ -1835,7 +1996,16 @@
       "clue": "A waterfront arboretum of palms and cycads next to North Shore Park.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.78253, -82.62651],
+        [27.78223, -82.62598],
+        [27.78231, -82.62566],
+        [27.7828, -82.62533],
+        [27.78279, -82.62546],
+        [27.783, -82.6257],
+        [27.78307, -82.62616]
+      ]
     },
     {
       "id": "glory-days-grill",
@@ -2633,7 +2803,18 @@
       "clue": "A southside community park around a small lake, with a pool and rec center.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.71227, -82.65452],
+        [27.71215, -82.65446],
+        [27.71213, -82.65355],
+        [27.71216, -82.65059],
+        [27.71409, -82.65055],
+        [27.71575, -82.65059],
+        [27.71577, -82.65204],
+        [27.71566, -82.65292],
+        [27.71566, -82.65454]
+      ]
     },
     {
       "id": "lanas-downtown-lounge",
@@ -2885,7 +3066,31 @@
       "clue": "A waterfront park at the city’s southwest tip near the Skyway approach, with a boat ramp.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.70884, -82.68166],
+        [27.70927, -82.68206],
+        [27.70953, -82.68248],
+        [27.70998, -82.68375],
+        [27.71034, -82.68446],
+        [27.71037, -82.68472],
+        [27.71064, -82.68493],
+        [27.71084, -82.68494],
+        [27.71115, -82.68485],
+        [27.71123, -82.68472],
+        [27.71153, -82.68454],
+        [27.7117, -82.6841],
+        [27.71172, -82.68382],
+        [27.71163, -82.68359],
+        [27.71238, -82.6828],
+        [27.71299, -82.68231],
+        [27.71326, -82.68181],
+        [27.71333, -82.68137],
+        [27.71302, -82.68022],
+        [27.71301, -82.67976],
+        [27.71155, -82.67967],
+        [27.70884, -82.67968]
+      ]
     },
     {
       "id": "mcauleys-pub",
@@ -2969,7 +3174,27 @@
       "clue": "A small lake just northwest of downtown that gives its name to the surrounding historic neighborhood and library.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.77509, -82.64303],
+        [27.77493, -82.64341],
+        [27.77468, -82.64347],
+        [27.77426, -82.64341],
+        [27.77368, -82.64314],
+        [27.77322, -82.64302],
+        [27.77297, -82.6427],
+        [27.77302, -82.64248],
+        [27.77294, -82.64229],
+        [27.77364, -82.64158],
+        [27.77474, -82.64096],
+        [27.7748, -82.6411],
+        [27.77498, -82.6411],
+        [27.77507, -82.64123],
+        [27.77527, -82.64173],
+        [27.7752, -82.64204],
+        [27.77527, -82.64226],
+        [27.77514, -82.64285]
+      ]
     },
     {
       "id": "morean-arts-center",
@@ -3165,7 +3390,16 @@
       "clue": "A downtown waterfront green along Bayshore Drive, just north of the museums.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.77577, -82.6318],
+        [27.77617, -82.6317],
+        [27.77747, -82.6311],
+        [27.7775, -82.63022],
+        [27.77639, -82.63075],
+        [27.77505, -82.63125],
+        [27.77505, -82.63209]
+      ]
     },
     {
       "id": "nueva-cantina",
@@ -3543,7 +3777,17 @@
       "clue": "A small downtown park just west of the waterfront, near the Dalí Museum and Albert Whitted.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.7711, -82.63314],
+        [27.7711, -82.6324],
+        [27.77096, -82.63235],
+        [27.77049, -82.63246],
+        [27.77048, -82.63326],
+        [27.77057, -82.63331],
+        [27.77107, -82.63326],
+        [27.7711, -82.63319]
+      ]
     },
     {
       "id": "pipos",
@@ -3837,7 +4081,18 @@
       "clue": "A small historic lake and surrounding park in the Round Lake neighborhood.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.77932, -82.63998],
+        [27.77912, -82.64011],
+        [27.77893, -82.64004],
+        [27.77883, -82.63985],
+        [27.77886, -82.63966],
+        [27.77902, -82.63951],
+        [27.77922, -82.63953],
+        [27.77936, -82.63972],
+        [27.77935, -82.63992]
+      ]
     },
     {
       "id": "rubys-elixir",
@@ -4257,7 +4512,16 @@
       "clue": "A downtown waterfront green along Bayshore Drive, south of its sibling park.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.77345, -82.63268],
+        [27.77346, -82.63173],
+        [27.77296, -82.63184],
+        [27.77199, -82.63212],
+        [27.77198, -82.63292],
+        [27.77217, -82.63309],
+        [27.77336, -82.6327]
+      ]
     },
     {
       "id": "southside-craft-coffee-brew-bar",
@@ -5321,7 +5585,35 @@
       "clue": "A downtown waterfront park that hosts festivals and concerts.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [27.78071, -82.62601],
+        [27.78048, -82.62589],
+        [27.77963, -82.62588],
+        [27.77963, -82.62615],
+        [27.77884, -82.62634],
+        [27.77765, -82.62645],
+        [27.77758, -82.62657],
+        [27.77757, -82.62763],
+        [27.7775, -82.62765],
+        [27.77676, -82.6272],
+        [27.77673, -82.62651],
+        [27.77725, -82.62618],
+        [27.77857, -82.62492],
+        [27.77894, -82.62477],
+        [27.77941, -82.62472],
+        [27.78032, -82.62485],
+        [27.78072, -82.62563],
+        [27.78082, -82.62565],
+        [27.78123, -82.62543],
+        [27.7816, -82.62532],
+        [27.78165, -82.62537],
+        [27.78293, -82.62475],
+        [27.78368, -82.62433],
+        [27.78494, -82.62344],
+        [27.78492, -82.62501],
+        [27.78147, -82.62739]
+      ]
     },
     {
       "id": "webbs-city-cellar",
@@ -5461,7 +5753,15 @@
       "clue": "A historic downtown square — the city’s old central gathering park, ringed by churches and a bandshell.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "polygon": [
+        [27.77341, -82.63733],
+        [27.77336, -82.63721],
+        [27.77227, -82.6372],
+        [27.77217, -82.63729],
+        [27.77219, -82.63835],
+        [27.77339, -82.63835]
+      ]
     },
     {
       "id": "willys-burger-and-booze",

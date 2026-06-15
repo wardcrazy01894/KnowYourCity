@@ -81,11 +81,20 @@ bounds, target size). Each city's data lives at `public/locations.<id>.json`.
 
 ```bash
 npm run build-city -- seattle   # landmarks + inclusive food → public/locations.seattle.json
+npm run add-polygons            # backfill park/golf footprints from OSM (all cities)
 ```
 
 To **add a city**: append it to `cities.json`, then run `build-city`. Full
 process — landmark notability + food/drink curation rules — in
 [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md).
+
+**Polygon scoring:** large footprints (parks, golf courses, lakes) get a real
+`polygon` so a guess anywhere inside scores 100, with distance measured from the
+nearest edge outside it. `npm run add-polygons` backfills them from OpenStreetMap
+and flags any large location it couldn't match in
+`data/polygon-backfill-report.json`. Details in
+[`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md) §4d and
+[`docs/PLAN.md`](docs/PLAN.md) §5.4.
 
 ## 🛰️ Optional: sharper imagery
 

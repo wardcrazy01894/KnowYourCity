@@ -36,7 +36,8 @@ still-deferred accounts.)
 Browser (static site, no backend)
  ├─ public/locations.<id>.json   ← per-city curated datasets (committed)
  ├─ lib/daily.ts                 ← date → seed → pick the day's 5 (override or PRNG)
- ├─ lib/scoring.ts               ← haversine + 0–100 linear score
+ ├─ lib/scoring.ts               ← 0–100 score; point + polygon branches (§5.4)
+ ├─ lib/geo.ts                   ← pure geometry: point-in-polygon, edge distance, haversine
  ├─ lib/storage.ts               ← localStorage: streak/history/resume
  ├─ lib/devmode.ts               ← URL modes: ?reset / ?shuffle
  ├─ lib/sound.ts                 ← Web Audio score-feedback cues
@@ -223,11 +224,31 @@ the generalized, re-runnable `scripts/apply-difficulty.mjs <city>` (it generaliz
 an earlier St. Pete-only one-off pass, since removed).
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
-Per-round score is on a **0–100 scale** (perfect day = **500**), linear:
-- ≤ **300 m** → **100**.
-- ≥ **5 km** → **0**.
-- between → linear falloff. Constants (`PERFECT_RADIUS_M`, `ZERO_DISTANCE_M`)
-  are tunable after playtest.
+Per-round score is on a **0–100 scale** (perfect day = **500**), with a linear
+falloff between a "perfect radius" and **`ZERO_DISTANCE_M`** (5 km → 0).
+`scoreForDistance(distanceMeters, perfectRadiusM)` is the pure core;
+`scoreGuess(location, guess)` picks the radius per location and returns
+`{ distanceMeters, score }`. There are **four branches**:
+
+1. **Polygon + inside** — a guess inside `location.polygon` scores **100** with
+   `distanceMeters: 0` ("0 m" is honest: you were inside the shape).
+2. **Polygon + outside** — distance is measured to the **nearest polygon edge**
+   (not the centroid), and the falloff starts **at the edge** (perfect radius 0):
+   even 1 m outside is < 100. No freebie ring outside a polygon.
+3. **Point + large-footprint category, no polygon** (`park`/`golf_course` that
+   wasn't matched/kept by the backfill) — centroid distance with the legacy
+   **`LARGE_FALLBACK_RADIUS_M`** (300 m) freebie, so a dropped park doesn't
+   regress. These should be resolved via the §4d backfill report, not left.
+4. **Point + normal category** — centroid distance with the tightened
+   **`POINT_PERFECT_RADIUS_M`** (100 m) freebie. Polygons removed the need for
+   the old generous 300 m point radius.
+
+Polygon geometry is computed by pure helpers in **`src/lib/geo.ts`**
+(`pointInPolygon` ray-cast with inclusive boundary, `distanceToPolygonMeters`
+via a local equirectangular projection, `haversineMeters`, `douglasPeucker`).
+Footprints are backfilled offline by **`scripts/add-polygons.mjs`** (see
+DATA-SOURCING.md §4d) and shaded on the map at reveal (`MapGuess`). All radius
+constants are tunable after playtest.
 
 ### 5.5 Round flow (`Game`)
 `guessing` → submit → `revealed` (truth marker + distance line) → next →

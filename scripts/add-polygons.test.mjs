@@ -1,0 +1,316 @@
+import { describe, it, expect } from 'vitest'
+import {
+  buildPolygonQuery,
+  centroid,
+  haversineMeters,
+  douglasPeucker,
+  extractOuterRing,
+  pickBestMatch,
+} from './add-polygons.mjs'
+
+// ---------------------------------------------------------------------------
+// buildPolygonQuery
+// ---------------------------------------------------------------------------
+
+describe('buildPolygonQuery', () => {
+  const bbox = [27.6, -82.8, 27.9, -82.5]
+
+  it('requests full geometry (out geom) for ways and relations', () => {
+    const q = buildPolygonQuery('Vinoy Park', bbox)
+    expect(q).toContain('out geom')
+    expect(q).toContain('way[')
+    expect(q).toContain('relation[')
+  })
+
+  it('anchors and case-insensitively matches the name', () => {
+    const q = buildPolygonQuery('Vinoy Park', bbox)
+    expect(q).toContain('"^Vinoy Park$",i')
+  })
+
+  it('escapes regex metacharacters in the name', () => {
+    const q = buildPolygonQuery('A+B (Park).', bbox)
+    expect(q).toContain('A\\+B \\(Park\\)\\.')
+  })
+
+  it('matches by name only (no restrictive leisure tag filter)', () => {
+    // Lakes (natural=water) and country clubs (landuse=*) must still match, so
+    // the query must NOT pin a leisure tag.
+    const q = buildPolygonQuery('X', bbox)
+    expect(q).not.toContain('leisure')
+    expect(q).not.toContain('natural')
+  })
+
+  it('interpolates the bbox in S,W,N,E order', () => {
+    const q = buildPolygonQuery('X', bbox)
+    expect(q).toContain('(27.6,-82.8,27.9,-82.5)')
+  })
+})
+
+// ---------------------------------------------------------------------------
+// centroid + haversineMeters
+// ---------------------------------------------------------------------------
+
+describe('centroid', () => {
+  it('averages the coordinate pairs', () => {
+    const c = centroid([
+      [0, 0],
+      [2, 0],
+      [2, 2],
+      [0, 2],
+    ])
+    expect(c).toEqual({ lat: 1, lng: 1 })
+  })
+})
+
+describe('haversineMeters', () => {
+  it('is ~0 for identical points', () => {
+    expect(
+      haversineMeters({ lat: 27.77, lng: -82.63 }, { lat: 27.77, lng: -82.63 }),
+    ).toBeCloseTo(0, 3)
+  })
+  it('one degree of latitude ≈ 111 km', () => {
+    const d = haversineMeters({ lat: 27, lng: -82 }, { lat: 28, lng: -82 })
+    expect(d).toBeGreaterThan(110_000)
+    expect(d).toBeLessThan(112_000)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// douglasPeucker
+// ---------------------------------------------------------------------------
+
+describe('douglasPeucker', () => {
+  it('collapses collinear points to the endpoints', () => {
+    const collinear = [
+      [27.76, -82.64],
+      [27.762, -82.64],
+      [27.764, -82.64],
+      [27.766, -82.64],
+    ]
+    expect(douglasPeucker(collinear, 0.00005)).toHaveLength(2)
+  })
+
+  it('returns rings of ≤ 2 points unchanged', () => {
+    const two = [
+      [27.76, -82.64],
+      [27.77, -82.63],
+    ]
+    expect(douglasPeucker(two, 0.00005)).toEqual(two)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// extractOuterRing
+// ---------------------------------------------------------------------------
+
+const closedWay = (latlons) => ({
+  type: 'way',
+  id: 1,
+  geometry: latlons.map(([lat, lon]) => ({ lat, lon })),
+})
+
+describe('extractOuterRing', () => {
+  it('strips the repeated closing node from a closed way → open ring', () => {
+    const ring = extractOuterRing(
+      closedWay([
+        [27.77, -82.64],
+        [27.77, -82.63],
+        [27.76, -82.63],
+        [27.76, -82.64],
+        [27.77, -82.64], // repeated first node
+      ]),
+    )
+    expect(ring).toHaveLength(4)
+    expect(ring[0]).toEqual([27.77, -82.64])
+    expect(ring[ring.length - 1]).not.toEqual(ring[0])
+  })
+
+  it('returns null for a node element', () => {
+    expect(extractOuterRing({ type: 'node', id: 9, lat: 1, lon: 2 })).toBeNull()
+  })
+
+  it('returns null for a way with too few points', () => {
+    expect(
+      extractOuterRing(
+        closedWay([
+          [27.77, -82.64],
+          [27.76, -82.63],
+        ]),
+      ),
+    ).toBeNull()
+  })
+
+  it('returns null for an OPEN (linear) way — e.g. a street sharing the name', () => {
+    expect(
+      extractOuterRing({
+        type: 'way',
+        id: 2,
+        geometry: [
+          { lat: 27.77, lon: -82.64 },
+          { lat: 27.77, lon: -82.63 },
+          { lat: 27.76, lon: -82.63 },
+          { lat: 27.76, lon: -82.62 }, // does not return to the first node
+        ],
+      }),
+    ).toBeNull()
+  })
+
+  it('uses a relation’s self-closed outer member', () => {
+    const rel = {
+      type: 'relation',
+      id: 5,
+      members: [
+        {
+          role: 'outer',
+          geometry: [
+            { lat: 27.77, lon: -82.64 },
+            { lat: 27.77, lon: -82.63 },
+            { lat: 27.76, lon: -82.63 },
+            { lat: 27.77, lon: -82.64 },
+          ],
+        },
+        { role: 'inner', geometry: [] },
+      ],
+    }
+    const ring = extractOuterRing(rel)
+    expect(ring).toHaveLength(3)
+  })
+
+  it('stitches multiple outer arcs into one closed ring', () => {
+    // Two arcs of a square that share endpoints and together close the ring:
+    //   arc1: NW → NE → SE     arc2: SE → SW → NW
+    const rel = {
+      type: 'relation',
+      id: 8,
+      members: [
+        {
+          role: 'outer',
+          geometry: [
+            { lat: 27.77, lon: -82.64 }, // NW
+            { lat: 27.77, lon: -82.63 }, // NE
+            { lat: 27.76, lon: -82.63 }, // SE
+          ],
+        },
+        {
+          role: 'outer',
+          geometry: [
+            { lat: 27.76, lon: -82.63 }, // SE (shared)
+            { lat: 27.76, lon: -82.64 }, // SW
+            { lat: 27.77, lon: -82.64 }, // NW (closes)
+          ],
+        },
+      ],
+    }
+    const ring = extractOuterRing(rel)
+    // 4 distinct corners (open ring, closing node stripped).
+    expect(ring).toHaveLength(4)
+  })
+
+  it('stitches arcs even when one is reversed', () => {
+    const rel = {
+      type: 'relation',
+      id: 9,
+      members: [
+        {
+          role: 'outer',
+          geometry: [
+            { lat: 27.77, lon: -82.64 },
+            { lat: 27.77, lon: -82.63 },
+            { lat: 27.76, lon: -82.63 },
+          ],
+        },
+        {
+          // Reversed: NW → SW → SE (must be flipped to chain onto the SE tail).
+          role: 'outer',
+          geometry: [
+            { lat: 27.77, lon: -82.64 }, // NW
+            { lat: 27.76, lon: -82.64 }, // SW
+            { lat: 27.76, lon: -82.63 }, // SE
+          ],
+        },
+      ],
+    }
+    expect(extractOuterRing(rel)).toHaveLength(4)
+  })
+
+  it('returns null (multi-arc) when the outer member is an open arc', () => {
+    const rel = {
+      type: 'relation',
+      id: 6,
+      members: [
+        {
+          role: 'outer',
+          geometry: [
+            { lat: 27.77, lon: -82.64 },
+            { lat: 27.77, lon: -82.63 },
+            { lat: 27.76, lon: -82.63 }, // not closed back to start
+          ],
+        },
+      ],
+    }
+    expect(extractOuterRing(rel)).toBeNull()
+  })
+
+  it('returns null when a relation has no outer member', () => {
+    const rel = {
+      type: 'relation',
+      id: 7,
+      members: [{ role: 'inner', geometry: [] }],
+    }
+    expect(extractOuterRing(rel)).toBeNull()
+  })
+})
+
+// ---------------------------------------------------------------------------
+// pickBestMatch
+// ---------------------------------------------------------------------------
+
+describe('pickBestMatch', () => {
+  // A small square centred ~250 m NE of loc (in range, but not dead-on).
+  const near = closedWay([
+    [27.772, -82.637],
+    [27.772, -82.627],
+    [27.762, -82.627],
+    [27.762, -82.637],
+    [27.772, -82.637],
+  ])
+  // A square ~5 km away.
+  const far = closedWay([
+    [27.82, -82.64],
+    [27.82, -82.63],
+    [27.81, -82.63],
+    [27.81, -82.64],
+    [27.82, -82.64],
+  ])
+  const loc = { lat: 27.765, lng: -82.635 }
+
+  it('returns the only in-range candidate', () => {
+    expect(pickBestMatch([near], loc, 'x')).toBe(near)
+  })
+
+  it('returns null when every candidate is beyond the centroid radius', () => {
+    expect(pickBestMatch([far], loc, 'x')).toBeNull()
+  })
+
+  it('picks the nearest when several are in range', () => {
+    const alsoNear = closedWay([
+      [27.766, -82.636],
+      [27.766, -82.634],
+      [27.764, -82.634],
+      [27.764, -82.636],
+      [27.766, -82.636],
+    ])
+    // alsoNear is centred almost exactly on loc → should win over `near`.
+    expect(pickBestMatch([near, alsoNear], loc, 'x')).toBe(alsoNear)
+  })
+
+  it('returns null when no element yields a usable ring', () => {
+    expect(
+      pickBestMatch(
+        [{ type: 'node', id: 1, lat: 27.765, lon: -82.635 }],
+        loc,
+        'x',
+      ),
+    ).toBeNull()
+  })
+})

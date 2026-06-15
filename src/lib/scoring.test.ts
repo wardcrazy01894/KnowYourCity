@@ -4,8 +4,11 @@ import {
   scoreForDistance,
   scoreGuess,
   formatDistance,
+  isLargeFootprintCategory,
   MAX_ROUND_SCORE,
   PERFECT_RADIUS_M,
+  POINT_PERFECT_RADIUS_M,
+  LARGE_FALLBACK_RADIUS_M,
   ZERO_DISTANCE_M,
 } from './scoring'
 import type { Location } from '../types'
@@ -70,8 +73,49 @@ describe('scoreForDistance', () => {
   })
 })
 
+describe('scoreForDistance with an explicit perfect radius', () => {
+  it('uses the passed radius as the full-marks threshold', () => {
+    expect(scoreForDistance(100, POINT_PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)
+    expect(
+      scoreForDistance(POINT_PERFECT_RADIUS_M, POINT_PERFECT_RADIUS_M),
+    ).toBe(MAX_ROUND_SCORE)
+    // Just past the tight point radius → less than full marks.
+    expect(
+      scoreForDistance(POINT_PERFECT_RADIUS_M + 50, POINT_PERFECT_RADIUS_M),
+    ).toBeLessThan(MAX_ROUND_SCORE)
+  })
+
+  it('with radius 0, falloff starts at the edge — no flat freebie ring', () => {
+    // Exactly at the edge → full marks.
+    expect(scoreForDistance(0, 0)).toBe(MAX_ROUND_SCORE)
+    // A meaningful distance outside is already below full marks (vs. the 300m
+    // default which would still award 100 here).
+    expect(scoreForDistance(100, 0)).toBeLessThan(MAX_ROUND_SCORE)
+    expect(scoreForDistance(100, 0)).toBeGreaterThan(0)
+    expect(scoreForDistance(100, PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)
+  })
+})
+
+describe('isLargeFootprintCategory', () => {
+  it('is true for park and golf_course', () => {
+    expect(isLargeFootprintCategory('park')).toBe(true)
+    expect(isLargeFootprintCategory('golf_course')).toBe(true)
+  })
+  it('is false for ordinary point categories', () => {
+    for (const c of [
+      'restaurant',
+      'bar',
+      'cafe',
+      'museum',
+      'attraction',
+    ] as const) {
+      expect(isLargeFootprintCategory(c)).toBe(false)
+    }
+  })
+})
+
 describe('scoreGuess', () => {
-  const loc: Location = {
+  const point: Location = {
     id: 'x',
     name: 'X',
     lat: 27.77,
@@ -80,13 +124,93 @@ describe('scoreGuess', () => {
     source: 'manual',
     attribution: 't',
   }
-  it('returns full score for an exact guess', () => {
-    const { distanceMeters, score } = scoreGuess(loc, {
+  // Distance helpers: ~0.001° latitude ≈ 111 m at this latitude.
+  const northOf = (
+    loc: Location,
+    meters: number,
+  ): { lat: number; lng: number } => ({
+    lat: loc.lat + meters / 111_320,
+    lng: loc.lng,
+  })
+
+  it('returns full score for an exact guess (point location)', () => {
+    const { distanceMeters, score } = scoreGuess(point, {
       lat: 27.77,
       lng: -82.63,
     })
     expect(distanceMeters).toBeCloseTo(0, 3)
     expect(score).toBe(MAX_ROUND_SCORE)
+  })
+
+  describe('branch 4: point + normal category (tight radius)', () => {
+    it('full marks within POINT_PERFECT_RADIUS_M', () => {
+      // ~50 m away, well inside the 100 m freebie.
+      expect(scoreGuess(point, northOf(point, 50)).score).toBe(MAX_ROUND_SCORE)
+    })
+    it('less than full marks beyond POINT_PERFECT_RADIUS_M', () => {
+      // ~250 m away, outside the 100 m point radius.
+      const { score } = scoreGuess(point, northOf(point, 250))
+      expect(score).toBeLessThan(MAX_ROUND_SCORE)
+      expect(score).toBeGreaterThan(0)
+    })
+  })
+
+  describe('branch 3: large-footprint category with NO polygon (300m fallback)', () => {
+    const park: Location = { ...point, category: 'park' }
+    it('still full marks at 250 m (covered by LARGE_FALLBACK_RADIUS_M)', () => {
+      expect(LARGE_FALLBACK_RADIUS_M).toBeGreaterThan(POINT_PERFECT_RADIUS_M)
+      expect(scoreGuess(park, northOf(park, 250)).score).toBe(MAX_ROUND_SCORE)
+    })
+    it('a normal point at the same 250 m would NOT be full marks', () => {
+      expect(scoreGuess(point, northOf(point, 250)).score).toBeLessThan(
+        MAX_ROUND_SCORE,
+      )
+    })
+  })
+
+  describe('polygon branches', () => {
+    // ~1.1 km square centered on the location centroid (open ring).
+    const polyLoc: Location = {
+      ...point,
+      category: 'park',
+      polygon: [
+        [27.775, -82.635],
+        [27.775, -82.625],
+        [27.765, -82.625],
+        [27.765, -82.635],
+      ],
+    }
+
+    it('branch 1: a guess inside the polygon scores 100 with 0 distance', () => {
+      const { distanceMeters, score } = scoreGuess(polyLoc, {
+        lat: 27.77,
+        lng: -82.63,
+      })
+      expect(distanceMeters).toBe(0)
+      expect(score).toBe(MAX_ROUND_SCORE)
+    })
+
+    it('branch 2: a guess just outside the polygon is below full marks (no freebie ring)', () => {
+      // ~110 m north of the north edge (27.775).
+      const { distanceMeters, score } = scoreGuess(polyLoc, {
+        lat: 27.776,
+        lng: -82.63,
+      })
+      expect(distanceMeters).toBeGreaterThan(0)
+      expect(score).toBeLessThan(MAX_ROUND_SCORE)
+      expect(score).toBeGreaterThan(0)
+    })
+
+    it('branch 2: distanceMeters is the edge distance, not the centroid distance', () => {
+      // A guess far north: centroid is ~600m, but the edge is closer.
+      const guess = { lat: 27.78, lng: -82.63 }
+      const { distanceMeters } = scoreGuess(polyLoc, guess)
+      const centroidDist = haversineMeters(guess, {
+        lat: polyLoc.lat,
+        lng: polyLoc.lng,
+      })
+      expect(distanceMeters).toBeLessThan(centroidDist)
+    })
   })
 })
 

@@ -111,10 +111,17 @@ Run at <https://query.wikidata.org>. This is optional polish — the OSM
   "fameScore": 92,                 // 0–100 city-relative fame; added by the fame pass (§4b/§4c)
   "clue": null,                    // HUMAN writes this (or seed from Wikidata)
   "photoUrl": null,                // FUTURE photo rounds; leave null for v1
+  "polygon": [[27.78, -82.64], …], // OPTIONAL footprint ring (park/golf only); see §4d
   "source": "overpass",            // or "wikidata" / "manual"
   "attribution": "OpenStreetMap ODbL"
 }
 ```
+
+`polygon` is an **open** ring of `[lat, lng]` pairs (first point NOT repeated at
+the end), 5-decimal precision, ≤ 100 nodes. Present only on large-footprint
+rows (`category: "park" | "golf_course"`); see §4d. When set, a guess inside the
+ring scores a perfect 100 and the distance is measured from the nearest polygon
+edge for guesses outside it (see PLAN.md §scoring).
 
 Output goes to `data/candidates.json`. De-dupe by `id` (same place can appear as
 both a node and a way).
@@ -349,6 +356,61 @@ To grow further: re-run `npm run fetch-pois`, add more from
 `data/candidates.json`. The script sets a descriptive `User-Agent` and falls back
 across Overpass mirrors (the public servers 406 without a UA and often return a
 busy error under load).
+
+---
+
+## 4d. Polygons — `npm run add-polygons` (large-footprint footprints)
+
+Parks, golf courses, lakes, and other large areas are stored in OSM as a single
+**centroid point** by `fetch-pois` (`out center`). Scoring a sprawling park by
+its centroid is unfair: a player who correctly pins the *edge* of a big park can
+be hundreds of metres from the centre. `scripts/add-polygons.mjs` backfills the
+real **footprint** so a guess anywhere inside the shape scores a perfect 100, and
+guesses outside fall off from the nearest edge (see PLAN.md §scoring).
+
+```bash
+npm run add-polygons                 # all cities
+node scripts/add-polygons.mjs --city stpete          # one city
+node scripts/add-polygons.mjs --city stpete --dry-run   # show, don't write
+node scripts/add-polygons.mjs --force                # re-fetch existing polygons
+```
+
+What it does, per in-play `park`/`golf_course` row without a `polygon`:
+
+1. Queries Overpass for **ways + relations matching the row's `name`** within the
+   city bbox, with `out geom` (full geometry, not `out center`). The query is
+   name-only on purpose — large footprints are tagged inconsistently
+   (`leisure=park`, `natural=water` for lakes, `landuse=*` for country clubs), so
+   a tag filter would silently drop lakes and clubs.
+2. **Picks the best match** by centroid proximity: candidates whose computed
+   centroid is within `CENTROID_MATCH_RADIUS_M` (500 m) of the stored point; the
+   nearest wins. This guards against a same-named feature elsewhere in the city.
+3. **Extracts the outer ring.** Only **closed** ways are accepted (a linear way —
+   a street sharing the name — is rejected). For multipolygon **relations** (how
+   most large parks/lakes are stored), the `outer` member arcs are **stitched
+   head-to-tail** into a closed ring (reversing arcs as needed); the largest
+   resulting ring is the footprint. Holes and secondary outer rings are ignored
+   (a guessing-game footprint doesn't need them). Arc chains that don't close are
+   logged and skipped.
+4. **Simplifies** with Douglas–Peucker (ε = 0.00005° ≈ 5 m), drops anything still
+   over **100 nodes** (bundle-size cap), rounds coords to 5 dp, and writes the
+   open ring back onto the row in-place.
+
+**Flagging the misses.** Every eligible large-footprint row that does **not**
+receive a polygon (no OSM match, unusable geometry, or over the node cap) is
+written to **`data/polygon-backfill-report.json`** with its id, name, city,
+lat/lng, and reason. The rule: *no large park should remain a single point.* Work
+the report by web-searching the geometry — when the OSM `name` differs from our
+display name (e.g. "Demens Landing" vs "Demens Landing Park"), add an entry to
+the **`NAME_OVERRIDES`** map in the script and re-run; if OSM has no usable
+polygon at all, hand-add the ring to the row. Rows left without a polygon fall
+back to centroid scoring with the legacy 300 m freebie radius
+(`LARGE_FALLBACK_RADIUS_M`) so they don't regress — but they should be resolved,
+not left.
+
+The script is idempotent: without `--force` it skips rows that already have a
+`polygon`, so re-running only retries the misses (and is polite to the public
+Overpass mirrors — a 2 s delay between queries, with mirror fallback + retry).
 
 ---
 
