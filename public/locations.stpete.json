@@ -4752,8 +4752,8 @@
     {
       "id": "the-don-cesar",
       "name": "The Don CeSar",
-      "lat": 27.7077,
-      "lng": -82.7411,
+      "lat": 27.709271,
+      "lng": -82.737277,
       "category": "landmark",
       "difficulty": "easy",
       "inPlay": true,
@@ -4792,8 +4792,8 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "the-floridian",
-      "name": "The Floridian",
+      "id": "the-floridian-cuban-sandwiches",
+      "name": "The Floridian Cuban Sandwiches",
       "lat": 27.770342,
       "lng": -82.766858,
       "category": "restaurant",
@@ -5312,8 +5312,8 @@
     {
       "id": "vinoy-park",
       "name": "Vinoy Park",
-      "lat": 27.780826,
-      "lng": -82.625547,
+      "lat": 27.7792,
+      "lng": -82.6253,
       "category": "park",
       "difficulty": "easy",
       "inPlay": true,

@@ -41,7 +41,7 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'jannus-live',
     'cassis-american-brasserie',
     'paradeco-coffee-roasters',
-    'the-floridian',
+    'the-floridian-cuban-sandwiches',
     'enigma',
   ],
   'stpete:2026-06-19': [
