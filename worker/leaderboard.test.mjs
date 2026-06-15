@@ -9,6 +9,8 @@ import {
   isValidDateKey,
   validateView,
   validateSubmission,
+  cutoffDateKey,
+  RETENTION_DAYS,
 } from './leaderboard-lib.mjs'
 
 /**
@@ -107,6 +109,21 @@ describe('validateView', () => {
       ok: false,
       error: 'invalid date',
     })
+  })
+})
+
+describe('cutoffDateKey', () => {
+  it('is RETENTION_DAYS before now (keep boundary, exclusive)', () => {
+    // 2026-06-15 minus 90 days = 2026-03-17.
+    expect(cutoffDateKey(new Date('2026-06-15T12:00:00Z'))).toBe('2026-03-17')
+  })
+  it('honors a custom window', () => {
+    expect(cutoffDateKey(new Date('2026-06-15T12:00:00Z'), 1)).toBe(
+      '2026-06-14',
+    )
+  })
+  it('defaults to a 90-day horizon', () => {
+    expect(RETENTION_DAYS).toBe(90)
   })
 })
 

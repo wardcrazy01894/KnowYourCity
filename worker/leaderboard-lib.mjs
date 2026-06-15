@@ -142,6 +142,34 @@ export async function upsertAndRank(db, { city, date, clientId, score }, now) {
 }
 
 /**
+ * How long a day's scores are kept. Old daily boards have no value once the day
+ * passes, so a scheduled prune (see the worker's `scheduled` handler) deletes
+ * rows older than this, keeping the table bounded no matter how busy it gets.
+ * NOTE: this only prunes `scores`; per-player streaks live in their own table so
+ * a long streak survives even after its early daily rows are pruned.
+ */
+export const RETENTION_DAYS = 90
+
+/**
+ * The oldest date key to KEEP — anything strictly before this is pruned. Uses a
+ * UTC-based offset; a few hours of timezone slack is irrelevant at a 90-day
+ * horizon, and date keys are ISO strings so a lexical `<` compares correctly.
+ * Pure given `now`.
+ */
+export function cutoffDateKey(now, days = RETENTION_DAYS) {
+  return new Date(now.getTime() - days * 86_400_000).toISOString().slice(0, 10)
+}
+
+/** Delete daily scores older than `cutoff` (YYYY-MM-DD). Returns rows removed. */
+export async function pruneOldScores(db, cutoff) {
+  const res = await db
+    .prepare(`DELETE FROM scores WHERE date < ?1`)
+    .bind(cutoff)
+    .run()
+  return res?.meta?.changes ?? 0
+}
+
+/**
  * Read the day's top scores (desc, capped at TOP_LIMIT) plus the total entry
  * count for a city + date. Anonymous: scores only — no ids, no names. The client
  * assigns display ranks (ties share a rank) and highlights the player's own row.
