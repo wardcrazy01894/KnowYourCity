@@ -19,11 +19,20 @@
 const CLIENT_ID_KEY = 'kyc:clientId'
 const CACHE_PREFIX = 'kyc:lb:v1'
 
+/** A per-player streak, computed and stored server-side (keyed by the anonymous
+ *  device id; the accounts-ready record). */
+export interface Streak {
+  current: number
+  best: number
+}
+
 export interface Standing {
   /** 1-based competition rank (ties share a rank). */
   rank: number
   /** Total entries for this city + day. */
   total: number
+  /** The player's server-side streak after this submission, when available. */
+  streak?: Streak
 }
 
 /**
@@ -168,6 +177,12 @@ export async function submitDailyScore(
     if (typeof data?.rank !== 'number' || typeof data?.total !== 'number')
       return null
     const standing: Standing = { rank: data.rank, total: data.total }
+    if (
+      data.streak &&
+      typeof data.streak.current === 'number' &&
+      typeof data.streak.best === 'number'
+    )
+      standing.streak = { current: data.streak.current, best: data.streak.best }
     writeStanding(args.cityId, args.dateKey, standing)
     return standing
   } catch {

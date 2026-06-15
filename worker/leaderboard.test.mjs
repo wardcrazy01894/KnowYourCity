@@ -11,6 +11,8 @@ import {
   validateSubmission,
   cutoffDateKey,
   RETENTION_DAYS,
+  previousDateKey,
+  advanceStreak,
 } from './leaderboard-lib.mjs'
 
 /**
@@ -124,6 +126,52 @@ describe('cutoffDateKey', () => {
   })
   it('defaults to a 90-day horizon', () => {
     expect(RETENTION_DAYS).toBe(90)
+  })
+})
+
+describe('previousDateKey', () => {
+  it('returns the prior calendar day (handles month/leap boundaries)', () => {
+    expect(previousDateKey('2026-06-15')).toBe('2026-06-14')
+    expect(previousDateKey('2026-03-01')).toBe('2026-02-28')
+    expect(previousDateKey('2028-03-01')).toBe('2028-02-29') // leap year
+  })
+})
+
+describe('advanceStreak', () => {
+  it('starts a new streak at 1 when there is no prior row', () => {
+    expect(advanceStreak(null, '2026-06-15')).toEqual({
+      current: 1,
+      best: 1,
+      last_played_date: '2026-06-15',
+    })
+  })
+  it('increments when the prior play was yesterday', () => {
+    const prev = { current: 3, best: 5, last_played_date: '2026-06-14' }
+    expect(advanceStreak(prev, '2026-06-15')).toMatchObject({
+      current: 4,
+      best: 5,
+    })
+  })
+  it('sets a new best when the streak passes it', () => {
+    const prev = { current: 5, best: 5, last_played_date: '2026-06-14' }
+    expect(advanceStreak(prev, '2026-06-15')).toMatchObject({
+      current: 6,
+      best: 6,
+    })
+  })
+  it('resets to 1 after a gap', () => {
+    const prev = { current: 9, best: 9, last_played_date: '2026-06-10' }
+    expect(advanceStreak(prev, '2026-06-15')).toMatchObject({
+      current: 1,
+      best: 9,
+    })
+  })
+  it('is a no-op on same-day replay (keeps current)', () => {
+    const prev = { current: 4, best: 7, last_played_date: '2026-06-15' }
+    expect(advanceStreak(prev, '2026-06-15')).toMatchObject({
+      current: 4,
+      best: 7,
+    })
   })
 })
 

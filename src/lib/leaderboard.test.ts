@@ -169,6 +169,24 @@ describe('submitDailyScore', () => {
     )
     expect(await submitDailyScore(args)).toBeNull()
   })
+
+  it('parses the server streak into the standing when present', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({
+          ok: true,
+          rank: 2,
+          total: 10,
+          streak: { current: 4, best: 7 },
+        }),
+      })),
+    )
+    const r = await submitDailyScore(args)
+    expect(r).toEqual({ rank: 2, total: 10, streak: { current: 4, best: 7 } })
+  })
 })
 
 describe('buildLeaderboardRows', () => {

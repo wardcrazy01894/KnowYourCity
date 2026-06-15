@@ -169,6 +169,65 @@ export async function pruneOldScores(db, cutoff) {
   return res?.meta?.changes ?? 0
 }
 
+/** The calendar day before `dateKey` ("YYYY-MM-DD"), via a UTC round-trip.
+ *  Mirrors the client's previousDateKey (src/components/Game.tsx). */
+export function previousDateKey(dateKey) {
+  const d = new Date(dateKey + 'T00:00:00Z')
+  d.setUTCDate(d.getUTCDate() - 1)
+  return d.toISOString().slice(0, 10)
+}
+
+/**
+ * Advance a per-player streak to account for playing `dateKey`. Mirrors the
+ * client's nextStreak: same-day replay keeps the count, the immediately previous
+ * day increments, any other gap resets to 1; `best` is the running max. Pure —
+ * `prev` is the stored row (or null for a first-ever play).
+ */
+export function advanceStreak(prev, dateKey) {
+  let current
+  if (!prev) current = 1
+  else if (prev.last_played_date === dateKey)
+    current = prev.current // replay safety
+  else if (prev.last_played_date === previousDateKey(dateKey))
+    current = prev.current + 1
+  else current = 1
+  return {
+    current,
+    best: Math.max(prev?.best ?? 0, current),
+    last_played_date: dateKey,
+  }
+}
+
+/**
+ * Read → advance → upsert the player's streak for (city, client_id) on a daily
+ * submission. Returns `{ current, best }`. Separate from the score write so a
+ * streak hiccup never blocks the score; SQLite serializes the read/write and a
+ * same-device double-submit converges to the same value.
+ */
+export async function updateStreak(db, { city, clientId, date }, now) {
+  const prev = await db
+    .prepare(
+      `SELECT current, best, last_played_date FROM streaks
+       WHERE city = ?1 AND client_id = ?2`,
+    )
+    .bind(city, clientId)
+    .first()
+  const next = advanceStreak(prev, date)
+  await db
+    .prepare(
+      `INSERT INTO streaks (city, client_id, current, best, last_played_date, updated_at)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?6)
+       ON CONFLICT(city, client_id) DO UPDATE SET
+         current = excluded.current,
+         best = excluded.best,
+         last_played_date = excluded.last_played_date,
+         updated_at = excluded.updated_at`,
+    )
+    .bind(city, clientId, next.current, next.best, next.last_played_date, now)
+    .run()
+  return { current: next.current, best: next.best }
+}
+
 /**
  * Read the day's top scores (desc, capped at TOP_LIMIT) plus the total entry
  * count for a city + date. Anonymous: scores only — no ids, no names. The client

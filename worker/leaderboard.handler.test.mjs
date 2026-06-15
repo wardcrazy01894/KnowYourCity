@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import handler from './leaderboard.mjs'
-import { dateKeyFor } from './leaderboard-lib.mjs'
+import { dateKeyFor, previousDateKey } from './leaderboard-lib.mjs'
 
 /**
  * Handler-level tests for the leaderboard Worker's `fetch`. Pure helpers live in
@@ -34,6 +34,23 @@ const fakeViewDB = (scores = [480, 455, 420], total = scores.length) => {
       { results: scores.map((s) => ({ score: s })) },
       { results: [{ total }] },
     ]),
+  }
+}
+
+// Fake D1 that also serves the streak read/write (first/run), so the POST path
+// returns a streak. `prevStreak` is the stored row (or null for first play).
+const fakeDBWithStreak = (
+  rankRow = { better: 2, total: 7 },
+  prevStreak = null,
+) => {
+  const stmt = {
+    bind: () => stmt,
+    first: async () => prevStreak,
+    run: async () => ({ meta: { changes: 1 } }),
+  }
+  return {
+    prepare: vi.fn(() => stmt),
+    batch: vi.fn(async () => [{ results: [] }, { results: [rankRow] }]),
   }
 }
 
@@ -235,9 +252,54 @@ describe('leaderboard worker handler', () => {
     const res = await handler.fetch(post(goodBody()), env)
     expect(res.status).toBe(200)
     expect(await res.json()).toEqual({ ok: true, rank: 3, total: 47 })
-    // The day's row was upserted (two prepared statements: upsert + standing).
+    // The day's row was upserted + ranked in one atomic batch.
     expect(env.DB.batch).toHaveBeenCalledOnce()
-    expect(env.DB.prepare).toHaveBeenCalledTimes(2)
+    expect(env.DB.prepare.mock.calls.length).toBeGreaterThanOrEqual(2)
+  })
+
+  it('returns a starting streak of 1 for a first-ever play', async () => {
+    const env = makeEnv({ DB: fakeDBWithStreak({ better: 0, total: 1 }, null) })
+    const res = await handler.fetch(post(goodBody()), env)
+    expect(await res.json()).toEqual({
+      ok: true,
+      rank: 1,
+      total: 1,
+      streak: { current: 1, best: 1 },
+    })
+  })
+
+  it('increments the streak when yesterday was played', async () => {
+    const prev = {
+      current: 3,
+      best: 4,
+      last_played_date: previousDateKey(TODAY),
+    }
+    const env = makeEnv({ DB: fakeDBWithStreak({ better: 1, total: 9 }, prev) })
+    const res = await handler.fetch(post(goodBody()), env)
+    expect((await res.json()).streak).toEqual({ current: 4, best: 4 })
+  })
+
+  it('still returns the standing if the streak write fails (best-effort)', async () => {
+    // batch (score+rank) works, but the streak statement throws.
+    const db = fakeDBWithStreak({ better: 2, total: 7 }, null)
+    db.prepare = vi.fn(() => ({
+      bind: () => ({
+        first: async () => {
+          throw new Error('streak D1 error')
+        },
+        run: async () => ({}),
+      }),
+    }))
+    // Restore batch for the score path.
+    db.batch = vi.fn(async () => [
+      { results: [] },
+      { results: [{ better: 2, total: 7 }] },
+    ])
+    const res = await handler.fetch(post(goodBody()), makeEnv({ DB: db }))
+    expect(res.status).toBe(200)
+    const body = await res.json()
+    expect(body).toMatchObject({ ok: true, rank: 3, total: 7 })
+    expect(body.streak).toBeUndefined()
   })
 
   it('ranks a lone player 1st of 1', async () => {
