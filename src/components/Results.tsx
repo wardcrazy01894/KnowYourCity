@@ -91,6 +91,9 @@ export function Results({
     official ? readStanding(cityId, dateKey) : null,
   )
   const [showBoard, setShowBoard] = useState(false)
+  // Prefer the server-computed streak (authoritative, accounts-ready) when the
+  // submission returns one; otherwise fall back to the local streak.
+  const shownStreak = standing?.streak ?? streak
 
   useEffect(() => {
     let live = true
@@ -150,7 +153,7 @@ export function Results({
         </span>
       </p>
       <p style={{ opacity: 0.8, marginTop: 0 }}>
-        🔥 Streak {streak.current} (best {streak.best})
+        🔥 Streak {shownStreak.current} (best {shownStreak.best})
       </p>
       {standing && (
         <p

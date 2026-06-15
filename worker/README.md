@@ -106,8 +106,14 @@ and answer "you placed **Xth of Y** today".
   automatically — nothing extra to set up. (Local: `wrangler dev --test-scheduled`
   then `curl "http://localhost:8787/__scheduled?cron=0+5+*+*+*"` to fire it.)
 
+- **Per-player streak.** Each submit also advances a consecutive-day streak for
+  `(city, client_id)` in a separate `streaks` table (migration `0002`) and
+  returns it — anonymous and accounts-ready like the scores, and kept in its own
+  table so it **survives** the retention prune. The UI shows the server streak
+  when present, else the local one.
+
 Request/response shape:
-- **Submit:** `POST { city, date, score, clientId, turnstileToken? }` → `{ ok, rank, total }`.
+- **Submit:** `POST { city, date, score, clientId, turnstileToken? }` → `{ ok, rank, total, streak? }` (`streak` = `{ current, best }`).
 - **View:** `GET ?city=&date=` → `{ ok, total, scores[] }` — the day's top 100
   scores (desc), anonymous (scores only, no ids/names). Powers the "🏆 View
   leaderboard" button; rate-limited and city/date-validated like the POST.

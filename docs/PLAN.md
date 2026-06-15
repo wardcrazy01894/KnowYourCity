@@ -415,6 +415,18 @@ the seam a future login would link to via the reserved `scores.user_id` column
 localStorage has no `client_id` to reattach, so some pre-account history can't be
 linked. Accepted tradeoff of anonymous-first.
 
+### Per-player streak (server-side, accounts-ready)
+On each official submission the worker advances a **consecutive-day streak** for
+`(city, client_id)` in its own `streaks` table (migration `0002`) and returns
+`{ current, best }` in the response; the results screen shows the **server**
+streak when present, falling back to the existing local streak when the
+leaderboard is off. Kept in a separate table (not derived from `scores`) so a
+long streak **survives the 90-day retention prune**. Same logic as the client's
+nextStreak (same-day replay = no change, previous-day = +1, any gap = reset to 1)
+and the same accounts seam — keyed by the anonymous device id with a reserved
+NULL `user_id`, per city. Best-effort: a streak hiccup never fails the score
+submission.
+
 ### Integrity (only the official challenge counts)
 The client (`src/lib/leaderboard.ts`) submits **only** the official daily
 challenge — `App.resolveMode` sets `official: true` only for today's date-seeded

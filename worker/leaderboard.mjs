@@ -45,6 +45,7 @@ import {
   topScores,
   cutoffDateKey,
   pruneOldScores,
+  updateStreak,
 } from './leaderboard-lib.mjs'
 
 const MAX_BODY_BYTES = 4_000
@@ -156,8 +157,17 @@ export default {
     if (!v.ok) return json({ error: v.error }, v.status, headers)
 
     try {
-      const standing = await upsertAndRank(env.DB, v.value, Date.now())
-      return json({ ok: true, ...standing }, 200, headers)
+      const now = Date.now()
+      const standing = await upsertAndRank(env.DB, v.value, now)
+      // Advance the per-player streak. Best-effort: a streak failure must not
+      // fail the score submission, so it's caught independently.
+      let streak
+      try {
+        streak = await updateStreak(env.DB, v.value, now)
+      } catch {
+        streak = undefined
+      }
+      return json({ ok: true, ...standing, streak }, 200, headers)
     } catch {
       // D1 outage / quota exhaustion — degrade gracefully; the client just
       // omits the leaderboard line. Never 500 on the player.
