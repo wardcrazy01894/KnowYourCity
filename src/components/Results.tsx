@@ -5,19 +5,33 @@
  * current/best streak, and a "Copy result" button.
  */
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { RoundResult } from '../types'
 import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
 import { ROUNDS_PER_DAY } from '../lib/daily'
 import { log } from '../lib/log'
+import {
+  submitDailyScore,
+  formatStanding,
+  readStanding,
+  type Standing,
+} from '../lib/leaderboard'
+import { Leaderboard } from './Leaderboard'
+
+/** Whether the leaderboard endpoint is configured at build time. */
+const LEADERBOARD_ENABLED = Boolean(import.meta.env.VITE_LEADERBOARD_ENDPOINT)
 
 export interface ResultsProps {
+  /** City id — namespaces the leaderboard submission/cache. */
+  cityId: string
   /** City label for the share card, e.g. "Seattle". */
   cityShort: string
   dateKey: string
   results: RoundResult[]
   totalScore: number
   streak: { current: number; best: number }
+  /** True only for the official daily challenge — gates leaderboard submission. */
+  official: boolean
 }
 
 /** Emoji tier for a single round score (0–100 scale). */
@@ -61,13 +75,36 @@ export function shareSiteUrl(): string {
 }
 
 export function Results({
+  cityId,
   cityShort,
   dateKey,
   results,
   totalScore,
   streak,
+  official,
 }: ResultsProps) {
   const [copied, setCopied] = useState(false)
+  // Leaderboard standing: seed from any cached value (instant on reload), then
+  // submit once on mount. Stays null when the leaderboard is off/unavailable, in
+  // which case nothing renders — the feature never blocks the results screen.
+  const [standing, setStanding] = useState<Standing | null>(() =>
+    official ? readStanding(cityId, dateKey) : null,
+  )
+  const [showBoard, setShowBoard] = useState(false)
+
+  useEffect(() => {
+    let live = true
+    submitDailyScore({ cityId, dateKey, score: totalScore, official })
+      .then((s) => {
+        if (live && s) setStanding(s)
+      })
+      .catch(() => {})
+    return () => {
+      live = false
+    }
+    // Submit once for this finished day; inputs are stable for a given render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   // Compute once so the copied text and the preview below can never diverge.
   const shareText = buildShareString(
@@ -90,6 +127,19 @@ export function Results({
     }
   }
 
+  if (showBoard) {
+    return (
+      <Leaderboard
+        cityId={cityId}
+        cityShort={cityShort}
+        dateKey={dateKey}
+        yourScore={official ? totalScore : undefined}
+        yourStanding={standing}
+        onClose={() => setShowBoard(false)}
+      />
+    )
+  }
+
   return (
     <section style={{ padding: 16, maxWidth: 560, margin: '0 auto' }}>
       <h2 style={{ marginBottom: 4 }}>Done for today!</h2>
@@ -102,6 +152,17 @@ export function Results({
       <p style={{ opacity: 0.8, marginTop: 0 }}>
         🔥 Streak {streak.current} (best {streak.best})
       </p>
+      {standing && (
+        <p
+          style={{
+            marginTop: 0,
+            fontWeight: 600,
+            color: '#7fb2ff',
+          }}
+        >
+          🏆 {formatStanding(standing)}
+        </p>
+      )}
 
       <ol style={{ paddingLeft: 20, lineHeight: 1.6 }}>
         {results.map((r, i) => (
@@ -114,22 +175,40 @@ export function Results({
         ))}
       </ol>
 
-      <button
-        onClick={copy}
-        style={{
-          marginTop: 12,
-          padding: '10px 16px',
-          fontSize: 16,
-          fontWeight: 600,
-          borderRadius: 8,
-          border: 'none',
-          background: '#f4b400',
-          color: '#0f1720',
-          cursor: 'pointer',
-        }}
-      >
-        {copied ? 'Copied!' : 'Copy result'}
-      </button>
+      <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        <button
+          onClick={copy}
+          style={{
+            padding: '10px 16px',
+            fontSize: 16,
+            fontWeight: 600,
+            borderRadius: 8,
+            border: 'none',
+            background: '#f4b400',
+            color: '#0f1720',
+            cursor: 'pointer',
+          }}
+        >
+          {copied ? 'Copied!' : 'Copy result'}
+        </button>
+        {LEADERBOARD_ENABLED && (
+          <button
+            onClick={() => setShowBoard(true)}
+            style={{
+              padding: '10px 16px',
+              fontSize: 16,
+              fontWeight: 600,
+              borderRadius: 8,
+              border: '1px solid #7fb2ff',
+              background: 'transparent',
+              color: '#7fb2ff',
+              cursor: 'pointer',
+            }}
+          >
+            🏆 View leaderboard
+          </button>
+        )}
+      </div>
 
       <pre
         style={{

@@ -20,3 +20,6 @@ data/_*-fame-work/
 
 # Scratch dir created by scripts during local runs (e.g. node compile cache).
 scripts/tmp/
+
+# Local Wrangler state — local D1 SQLite, KV, caches for `wrangler dev`.
+.wrangler/

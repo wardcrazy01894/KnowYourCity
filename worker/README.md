@@ -74,3 +74,90 @@ issue tracker, add Turnstile before sharing widely.
 - Any host works (Cloudflare/Deno Deploy/Netlify/Vercel functions) — this is just
   the simplest free option. Keep the request/response shape:
   `POST { message, context, logs, turnstileToken? }` → `{ ok, url }`.
+
+---
+
+# Leaderboard worker (`leaderboard.mjs`)
+
+A **second** Cloudflare Worker — separate from the bug worker but in this same
+directory because it imports the bug worker's `cors`/origin helpers. It backs the
+**anonymous daily leaderboard**: store one score per `(city, date, device)` in
+[Cloudflare **D1**](https://developers.cloudflare.com/d1/) (serverless SQLite)
+and answer "you placed **Xth of Y** today".
+
+- **Anonymous.** Identity is a random UUID in the browser's `localStorage`
+  (`kyc:clientId`) — no accounts, no names, no PII. The `scores.user_id` column
+  is reserved (NULL) so a login can be linked later. (That future migration is
+  inherently lossy: a player who cleared localStorage has no id to link.)
+- **Official games only.** The client submits **only** the real daily challenge.
+  Shuffle (`?shuffle`) and date overrides (`?date=`) never submit, and the worker
+  independently rejects unknown cities and any date outside a ±1-day window of
+  the city-local "today" (it recomputes the date itself — see `CITY_TZ`).
+- **Fails closed** the same way: the per-IP rate limit in
+  `wrangler.leaderboard.toml` is on by default, so a fresh deploy isn't
+  wide-open. **Anti-cheat is a documented non-goal** (`docs/PLAN.md` §6): scores
+  are client-computed, so a determined actor can still POST a fake total / inflate
+  `Y`. The rate limit bounds it; turn on Turnstile (below) if abuse appears.
+- Behind `VITE_LEADERBOARD_ENDPOINT` — unset means the app just omits the
+  standing line, so this is **optional**.
+
+Request/response shape:
+- **Submit:** `POST { city, date, score, clientId, turnstileToken? }` → `{ ok, rank, total }`.
+- **View:** `GET ?city=&date=` → `{ ok, total, scores[] }` — the day's top 100
+  scores (desc), anonymous (scores only, no ids/names). Powers the "🏆 View
+  leaderboard" button; rate-limited and city/date-validated like the POST.
+
+## Try it locally first (no production resources)
+
+You can exercise the whole flow against a **local** D1 file before deploying:
+
+```bash
+# 1. Create the local D1 + apply the schema (writes to ./.wrangler, gitignored):
+wrangler d1 migrations apply kyc-leaderboard --local -c worker/wrangler.leaderboard.toml
+
+# 2. Run the worker locally (defaults to http://localhost:8787):
+wrangler dev -c worker/wrangler.leaderboard.toml
+
+# 3. In another terminal, point the app at it and run the dev server:
+echo 'VITE_LEADERBOARD_ENDPOINT=http://localhost:8787' >> .env.local
+npm run dev
+```
+
+`ALLOWED_ORIGIN` already includes `http://localhost:5173`, so the dev site is
+allowed. Finish a day (the **official** one — not `?shuffle`/`?date=`) and you'll
+see "🏆 You placed 1st of 1 today". Open a second browser/profile (it gets a new
+`clientId`) and finish again to watch `Y` grow. Inspect the rows directly:
+
+```bash
+wrangler d1 execute kyc-leaderboard --local \
+  -c worker/wrangler.leaderboard.toml --command "SELECT * FROM scores"
+```
+
+## Deploy (one time, free tier)
+
+```bash
+# 1. Create the database, then paste the printed database_id into
+#    worker/wrangler.leaderboard.toml ([[d1_databases]] database_id):
+wrangler d1 create kyc-leaderboard
+
+# 2. Apply the schema to the REMOTE database:
+wrangler d1 migrations apply kyc-leaderboard --remote -c worker/wrangler.leaderboard.toml
+
+# 3. Deploy the worker (rate limit + ALLOWED_ORIGIN are already in the toml):
+wrangler deploy -c worker/wrangler.leaderboard.toml
+```
+
+Then set the app env (repo **Variable** for CI, or `.env.local` locally) to the
+printed URL and rebuild/redeploy the site:
+
+```
+VITE_LEADERBOARD_ENDPOINT=https://kyc-leaderboard.<you>.workers.dev
+```
+
+## Optional: require Turnstile (stronger anti-inflation)
+
+To require a bot check on every submission, `wrangler secret put TURNSTILE_SECRET
+-c worker/wrangler.leaderboard.toml`. **Note:** v1 submits automatically at
+end-of-day with no widget, so enabling this also needs an **invisible Turnstile
+execute** on the client before `submitDailyScore` (not built yet). Until that's
+wired, leave `TURNSTILE_SECRET` unset and rely on the rate limit.

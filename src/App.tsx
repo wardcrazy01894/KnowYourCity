@@ -49,6 +49,12 @@ interface Mode {
   dateKey: string
   selectionSeed: string
   label: string
+  /**
+   * True ONLY for the real daily challenge (today's date-seeded 5). Shuffle and
+   * date overrides are false, so their scores never reach the leaderboard — the
+   * board only ranks the official daily set everyone shares. See Results.
+   */
+  official: boolean
 }
 
 function resolveMode(city: City): Mode {
@@ -59,6 +65,7 @@ function resolveMode(city: City): Mode {
       dateKey: today,
       selectionSeed: `${city.id}:shuffle-${SHUFFLE_SEED}`,
       label: 'shuffle — random 5 (refresh for a new set)',
+      official: false,
     }
   }
   const param = new URLSearchParams(search).get('date')
@@ -67,9 +74,15 @@ function resolveMode(city: City): Mode {
       dateKey: param,
       selectionSeed: `${city.id}:${param}`,
       label: `${param} (override)`,
+      official: false,
     }
   }
-  return { dateKey: today, selectionSeed: `${city.id}:${today}`, label: today }
+  return {
+    dateKey: today,
+    selectionSeed: `${city.id}:${today}`,
+    label: today,
+    official: true,
+  }
 }
 
 export function App() {
@@ -331,6 +344,7 @@ export function App() {
         dateKey={mode.dateKey}
         bounds={city.bounds}
         locations={today}
+        official={mode.official}
       />
       <footer
         style={{

@@ -36,6 +36,8 @@ export interface GameProps {
   bounds: [[number, number], [number, number]]
   /** The 5 locations selected for today (from selectDailyLocations). */
   locations: Location[]
+  /** True only for the official daily challenge — gates leaderboard submission. */
+  official: boolean
 }
 
 // Clues are kept in the dataset but hidden by default for more challenge.
@@ -76,6 +78,7 @@ export function Game({
   dateKey,
   bounds,
   locations,
+  official,
 }: GameProps) {
   // One read of saved state at mount, shared by both the game + streak init.
   const [initial] = useState(() => loadState(cityId))
@@ -180,11 +183,13 @@ export function Game({
   if (game.phase === 'finished') {
     return (
       <Results
+        cityId={cityId}
         cityShort={cityShort}
         dateKey={game.dateKey}
         results={game.results}
         totalScore={totalScore}
         streak={streak}
+        official={official}
       />
     )
   }
