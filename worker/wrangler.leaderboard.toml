@@ -20,7 +20,7 @@ ALLOWED_ORIGIN = "https://knowyourcity.gg,http://localhost:5173,http://localhost
 [[d1_databases]]
 binding = "DB"
 database_name = "kyc-leaderboard"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "869c8b75-0639-4972-9f70-d11606c17845"
 migrations_dir = "migrations"
 
 # Per-IP rate limit — GA binding, needs NO account resource (just this config).
@@ -34,6 +34,12 @@ namespace_id = "2001"
   [ratelimits.simple]
   limit = 30
   period = 60
+
+# Daily retention prune (Cron Trigger) — deletes scores older than
+# RETENTION_DAYS (90) so the table stays bounded no matter the traffic. Runs at
+# 05:00 UTC (off-peak for US cities). Free — Cron Triggers cost nothing.
+[triggers]
+crons = ["0 5 * * *"]
 
 # --- Optional secrets (set with `wrangler secret put NAME -c <this file>`) -----
 # TURNSTILE_SECRET  optional. When set, a valid Turnstile token is REQUIRED on

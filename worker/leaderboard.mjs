@@ -43,6 +43,8 @@ import {
   upsertAndRank,
   validateView,
   topScores,
+  cutoffDateKey,
+  pruneOldScores,
 } from './leaderboard-lib.mjs'
 
 const MAX_BODY_BYTES = 4_000
@@ -161,5 +163,17 @@ export default {
       // omits the leaderboard line. Never 500 on the player.
       return json({ error: 'leaderboard unavailable' }, 503, headers)
     }
+  },
+
+  /**
+   * Cron Trigger (see [triggers] in wrangler.leaderboard.toml): prune daily
+   * scores older than RETENTION_DAYS so the table stays bounded forever. Best
+   * effort — a failure just retries next run; it never affects the live game.
+   */
+  async scheduled(_event, env, ctx) {
+    if (!env.DB) return
+    ctx.waitUntil(
+      pruneOldScores(env.DB, cutoffDateKey(new Date())).catch(() => {}),
+    )
   },
 }

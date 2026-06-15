@@ -100,6 +100,11 @@ and answer "you placed **Xth of Y** today".
   `Y`. The rate limit bounds it; turn on Turnstile (below) if abuse appears.
 - Behind `VITE_LEADERBOARD_ENDPOINT` — unset means the app just omits the
   standing line, so this is **optional**.
+- **Bounded storage.** A Cron Trigger (`[triggers] crons` in the toml → the
+  worker's `scheduled` handler) prunes `scores` older than 90 days every night,
+  so the table never grows without limit. `wrangler deploy` registers the cron
+  automatically — nothing extra to set up. (Local: `wrangler dev --test-scheduled`
+  then `curl "http://localhost:8787/__scheduled?cron=0+5+*+*+*"` to fire it.)
 
 Request/response shape:
 - **Submit:** `POST { city, date, score, clientId, turnstileToken? }` → `{ ok, rank, total }`.

@@ -430,6 +430,14 @@ mitigates with a per-IP rate limit (worker fails closed without one) and accepts
 the residual; Turnstile is plumbed through and documented as the next step
 (`worker/README.md`) if abuse appears.
 
+### Retention (bounded storage)
+Old daily boards have no value once the day passes, so a **Cloudflare Cron
+Trigger** on the worker (`scheduled` handler, daily 05:00 UTC) prunes `scores`
+rows older than **`RETENTION_DAYS` (90)**. This keeps the table bounded forever
+regardless of traffic (even 50k players/day stays well within D1 limits), at no
+extra cost. The prune touches **only** `scores` — never the per-player streak
+table — so a long streak survives even after its early daily rows age out.
+
 ### Graceful + optional
 Everything is behind `VITE_LEADERBOARD_ENDPOINT`. Unset, offline, a non-official
 game, or any error → the standing line is simply omitted; the game never blocks.

@@ -255,3 +255,38 @@ describe('leaderboard worker handler', () => {
     expect(res.status).toBe(503)
   })
 })
+
+describe('leaderboard worker scheduled (retention prune)', () => {
+  // Fake D1 capturing a prepare().bind().run() DELETE.
+  const prudeDB = () => {
+    const calls = { sql: '', bound: null }
+    const stmt = {
+      bind: (...args) => {
+        calls.bound = args
+        return stmt
+      },
+      run: vi.fn(async () => ({ meta: { changes: 4 } })),
+    }
+    return {
+      calls,
+      prepare: vi.fn((sql) => {
+        calls.sql = sql
+        return stmt
+      }),
+    }
+  }
+  const ctx = () => ({ waitUntil: (p) => p })
+
+  it('prunes scores older than the retention cutoff', async () => {
+    const db = prudeDB()
+    await handler.scheduled({}, { DB: db }, ctx())
+    expect(db.calls.sql).toMatch(/DELETE FROM scores WHERE date <\s*\?1/)
+    // Bound cutoff is a YYYY-MM-DD date key.
+    expect(db.calls.bound[0]).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+  })
+
+  it('is a no-op when D1 is not bound', async () => {
+    // Must not throw.
+    await handler.scheduled({}, {}, ctx())
+  })
+})
