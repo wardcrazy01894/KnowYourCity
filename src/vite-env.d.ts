@@ -8,6 +8,9 @@ interface ImportMetaEnv {
   /** Optional bug-report endpoint (the worker/ function). Falls back to a
    *  prefilled GitHub issue page when unset. */
   readonly VITE_BUG_ENDPOINT?: string
+  /** Optional leaderboard endpoint (the worker/leaderboard.mjs function). When
+   *  unset, the daily standing line is simply omitted. */
+  readonly VITE_LEADERBOARD_ENDPOINT?: string
   /** Optional Cloudflare Turnstile site key — shows a bot check on the bug form. */
   readonly VITE_TURNSTILE_SITEKEY?: string
   /** Optional Cloudflare Web Analytics beacon token (public) — page-view

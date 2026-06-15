@@ -1,0 +1,235 @@
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import {
+  ordinal,
+  percentile,
+  formatStanding,
+  getClientId,
+  buildSubmitPayload,
+  readStanding,
+  submitDailyScore,
+  fetchLeaderboard,
+  buildLeaderboardRows,
+  PERCENTILE_MIN_TOTAL,
+} from './leaderboard'
+
+/**
+ * Minimal in-memory localStorage stub — vitest runs in the node environment (no
+ * DOM), so we install a Storage-shaped object on globalThis (mirrors
+ * storage.test.ts). Each test gets a fresh one.
+ */
+function makeStorageStub(): Storage {
+  const map = new Map<string, string>()
+  return {
+    get length() {
+      return map.size
+    },
+    getItem: (k: string) => (map.has(k) ? map.get(k)! : null),
+    setItem: (k: string, v: string) => {
+      map.set(k, String(v))
+    },
+    removeItem: (k: string) => {
+      map.delete(k)
+    },
+    key: (i: number) => Array.from(map.keys())[i] ?? null,
+    clear: () => map.clear(),
+  } as Storage
+}
+
+beforeEach(() => {
+  vi.stubGlobal('localStorage', makeStorageStub())
+})
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
+
+describe('ordinal', () => {
+  it('handles the common cases', () => {
+    expect(ordinal(1)).toBe('1st')
+    expect(ordinal(2)).toBe('2nd')
+    expect(ordinal(3)).toBe('3rd')
+    expect(ordinal(4)).toBe('4th')
+    expect(ordinal(21)).toBe('21st')
+    expect(ordinal(102)).toBe('102nd')
+  })
+  it('handles the 11–13 teens exception', () => {
+    expect(ordinal(11)).toBe('11th')
+    expect(ordinal(12)).toBe('12th')
+    expect(ordinal(13)).toBe('13th')
+    expect(ordinal(111)).toBe('111th')
+  })
+})
+
+describe('percentile', () => {
+  it('puts the top of the field at a small percent, clamped to ≥1', () => {
+    expect(percentile(1, 100)).toBe(1)
+    expect(percentile(50, 100)).toBe(50)
+    expect(percentile(1, 1)).toBe(100)
+  })
+})
+
+describe('formatStanding', () => {
+  it('celebrates the first finisher (total 1)', () => {
+    expect(formatStanding({ rank: 1, total: 1 })).toMatch(/first to finish/i)
+  })
+  it('shows plain rank for a small field (no noisy percentile)', () => {
+    const s = formatStanding({ rank: 3, total: 7 })
+    expect(s).toBe('You placed 3rd of 7 today')
+    expect(s).not.toMatch(/top/)
+  })
+  it('adds a percentile once the field is large enough', () => {
+    const s = formatStanding({ rank: 5, total: PERCENTILE_MIN_TOTAL })
+    expect(s).toMatch(/of 20 today · top \d+%/)
+  })
+})
+
+describe('getClientId', () => {
+  it('mints a stable id and reuses it across calls', () => {
+    const a = getClientId()
+    const b = getClientId()
+    expect(a).toBe(b)
+    expect(a.length).toBeGreaterThanOrEqual(8)
+  })
+})
+
+describe('buildSubmitPayload', () => {
+  it('carries city/date/score + the anonymous clientId (no names/PII)', () => {
+    const p = buildSubmitPayload({
+      cityId: 'stpete',
+      dateKey: '2026-06-15',
+      score: 420,
+      official: true,
+    })
+    expect(p).toMatchObject({
+      city: 'stpete',
+      date: '2026-06-15',
+      score: 420,
+    })
+    expect(p.clientId).toBe(getClientId())
+    // Nothing that could identify a person.
+    expect(JSON.stringify(p)).not.toMatch(/name|email/i)
+  })
+})
+
+describe('submitDailyScore', () => {
+  const args = {
+    cityId: 'stpete',
+    dateKey: '2026-06-15',
+    score: 420,
+    official: true,
+  }
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    vi.unstubAllEnvs()
+  })
+
+  it('does NOT submit a non-official game (shuffle / date override)', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    const f = vi.fn()
+    vi.stubGlobal('fetch', f)
+    const r = await submitDailyScore({ ...args, official: false })
+    expect(r).toBeNull()
+    expect(f).not.toHaveBeenCalled()
+  })
+
+  it('does NOT submit when no endpoint is configured', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', '')
+    const f = vi.fn()
+    vi.stubGlobal('fetch', f)
+    expect(await submitDailyScore(args)).toBeNull()
+    expect(f).not.toHaveBeenCalled()
+  })
+
+  it('submits an official game and returns + caches the standing', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    const f = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({ ok: true, rank: 3, total: 47 }),
+    }))
+    vi.stubGlobal('fetch', f)
+
+    const r = await submitDailyScore(args)
+    expect(r).toEqual({ rank: 3, total: 47 })
+    expect(f).toHaveBeenCalledOnce()
+    // Cached so a reload won't re-POST.
+    expect(readStanding('stpete', '2026-06-15')).toEqual({ rank: 3, total: 47 })
+
+    await submitDailyScore(args)
+    expect(f).toHaveBeenCalledOnce() // still once — served from cache
+  })
+
+  it('resolves null (never throws) when the request fails', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        throw new Error('offline')
+      }),
+    )
+    expect(await submitDailyScore(args)).toBeNull()
+  })
+})
+
+describe('buildLeaderboardRows', () => {
+  it('ranks highest-first with ties sharing a rank (competition ranking)', () => {
+    expect(buildLeaderboardRows([420, 480, 480, 300])).toEqual([
+      { rank: 1, score: 480, you: false },
+      { rank: 1, score: 480, you: false },
+      { rank: 3, score: 420, you: false },
+      { rank: 4, score: 300, you: false },
+    ])
+  })
+
+  it('flags the first row matching the viewer’s score as "you"', () => {
+    const rows = buildLeaderboardRows([480, 420, 420], 420)
+    expect(rows.filter((r) => r.you)).toHaveLength(1)
+    expect(rows.find((r) => r.you)).toMatchObject({ rank: 2, score: 420 })
+  })
+
+  it('marks nobody when the viewer’s score is absent', () => {
+    expect(buildLeaderboardRows([480, 420], 333).some((r) => r.you)).toBe(false)
+  })
+})
+
+describe('fetchLeaderboard', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    vi.unstubAllEnvs()
+  })
+
+  it('returns null when no endpoint is configured', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', '')
+    expect(await fetchLeaderboard('stpete', '2026-06-15')).toBeNull()
+  })
+
+  it('fetches scores + total with city/date query params', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example/')
+    let calledUrl = ''
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (url: string) => {
+        calledUrl = url
+        return {
+          ok: true,
+          json: async () => ({ total: 9, scores: [500, 480] }),
+        }
+      }),
+    )
+    const data = await fetchLeaderboard('stpete', '2026-06-15')
+    expect(data).toEqual({ total: 9, scores: [500, 480] })
+    expect(calledUrl).toContain('city=stpete')
+    expect(calledUrl).toContain('date=2026-06-15')
+  })
+
+  it('resolves null (never throws) on a failed request', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example/')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        throw new Error('offline')
+      }),
+    )
+    expect(await fetchLeaderboard('stpete', '2026-06-15')).toBeNull()
+  })
+})

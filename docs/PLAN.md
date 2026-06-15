@@ -21,10 +21,12 @@ credit card).
 - After 5 rounds: results screen + **Wordle-style shareable** text. Streaks
   persist locally.
 
-**Explicitly OUT of v1** (designed-for, not built): photo rounds, any backend,
-shared online leaderboards, accounts. The data schema and a `photoUrl` field
-leave clean seams for all of these. (Multi-city was originally deferred too,
-but shipped in v1 — see §9.)
+**Explicitly OUT of v1** (designed-for, not built): photo rounds, accounts. The
+data schema and a `photoUrl` field leave clean seams for these. (Multi-city was
+originally deferred too, but shipped in v1 — see §9. An **anonymous daily
+leaderboard** also shipped post-v1 — see §11; it adds the project's first
+persistent storage, Cloudflare D1, and is built with an `user_id` seam for the
+still-deferred accounts.)
 
 ---
 
@@ -101,7 +103,8 @@ KnowYourCity/
 │   │                           (+ co-located *.test.ts; locations.test.ts guards data)
 │   └─ components/              Game · MapGuess · Results · CityPicker ·
 │                               DatasetSearch · BugReport (+ tests)
-├─ worker/                      Cloudflare Worker: bug report → GitHub issue
+├─ worker/                      Cloudflare Workers: bug report → GitHub issue;
+│                               leaderboard → D1 (leaderboard.mjs + migrations/)
 ├─ .github/                     workflows/ci.yml · workflows/deploy.yml · pull_request_template.md
 ├─ .claude/                     settings.json · hooks/ · skills/
 └─ docs/
@@ -370,3 +373,66 @@ set after enrichment — see §5.1 and `docs/DATA-SOURCING.md` §4c.)
 ## 10. Decisions & open items
 Resolved decisions are recorded in `docs/QUESTIONS-FOR-ALEX.md`. Still open:
 must-include / banned lists per city, and growing each city to ~200 places.
+
+## 11. Anonymous daily leaderboard (shipped post-v1)
+
+Each finished **official** daily challenge tells the player where they placed:
+"🏆 You placed 3rd of 47 today" (+ "top X%" once the field is ≥ 20). Anonymous —
+**no accounts, no names, no PII** — and **independent per city** (a 500 in State
+College is never ranked against a 415 in St. Pete).
+
+### Architecture
+This is the project's **first persistent storage**. A second Cloudflare Worker
+(`worker/leaderboard.mjs`, deployed from `worker/wrangler.leaderboard.toml`)
+fronts a **Cloudflare D1** (serverless SQLite) table:
+
+```
+scores(city, date, client_id, score, user_id NULL, created_at, updated_at,
+       PRIMARY KEY(city, date, client_id))   + INDEX(city, date, score)
+```
+
+- `city` is part of the **primary key**, so leaderboards are independent by
+  construction (not just a filtered query).
+- Rank = `COUNT(*) WHERE city=? AND date=? AND score > stored`; ties share a rank
+  (standard competition ranking), `rank = better + 1`. UPSERT keeps the **max**
+  score, so a replay can't lower it and is idempotent.
+- Two routes on the one worker: **POST** submits a score → `{rank, total}`;
+  **GET** `?city=&date=` views the board → `{total, scores[]}` (top 100, desc,
+  **scores only — no ids/names**). The "🏆 View leaderboard" button on the
+  results screen opens it; the client assigns display ranks (ties share a rank)
+  and highlights the viewer's own row. The GET is rate-limited like the POST and
+  city/date-validated; the row cap keeps the anonymous list from being scraped
+  wholesale.
+- **D1 over KV/Durable Objects:** the rank query is a one-line indexed `COUNT`,
+  `batch()` is atomic, and the relational shape is the natural home for the
+  future accounts table. KV can't rank without scanning; a DO-per-day is overkill
+  and complicates cross-day/account queries.
+
+### Identity & the accounts seam
+Identity is an anonymous random UUID minted in `localStorage` (`kyc:clientId`) —
+the seam a future login would link to via the reserved `scores.user_id` column
+(NULL today). Honest caveat: that migration is **lossy** — a player who cleared
+localStorage has no `client_id` to reattach, so some pre-account history can't be
+linked. Accepted tradeoff of anonymous-first.
+
+### Integrity (only the official challenge counts)
+The client (`src/lib/leaderboard.ts`) submits **only** the official daily
+challenge — `App.resolveMode` sets `official: true` only for today's date-seeded
+set; **shuffle (`?shuffle`) and date overrides (`?date=`) never submit**, so the
+board isn't polluted by results from a different set of places. Defence in depth,
+the worker independently **rejects unknown cities** and any **date outside a
+±1-day window** of the city-local "today" (it recomputes the date itself from an
+inlined `CITY_TZ` map — keep it in step with `cities.json`).
+
+**Anti-cheat remains a non-goal** (§6): scores are client-computed, so a
+determined actor can POST a fake total or inflate the "of Y" denominator. v1
+mitigates with a per-IP rate limit (worker fails closed without one) and accepts
+the residual; Turnstile is plumbed through and documented as the next step
+(`worker/README.md`) if abuse appears.
+
+### Graceful + optional
+Everything is behind `VITE_LEADERBOARD_ENDPOINT`. Unset, offline, a non-official
+game, or any error → the standing line is simply omitted; the game never blocks.
+The returned `{rank,total}` is cached under `kyc:lb:v1:<city>:<date>` so a reload
+doesn't re-POST (and the UPSERT is idempotent if one races through). Local-first
+testing flow (local D1, `wrangler dev`) is in `worker/README.md`.

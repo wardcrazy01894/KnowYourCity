@@ -1,0 +1,42 @@
+# Leaderboard Worker — separate from the bug worker (kyl-bug). Deploy with:
+#   wrangler deploy -c worker/wrangler.leaderboard.toml
+# It imports the bug worker's cors/origin helpers, so keep both files together.
+
+name = "kyc-leaderboard"
+main = "leaderboard.mjs"
+compatibility_date = "2024-11-01"
+
+[vars]
+# Comma-separated allowed origins (worker rejects other browser origins).
+# Includes localhost for local testing — drop those before going fully public if
+# you want to be strict.
+ALLOWED_ORIGIN = "https://knowyourcity.gg,http://localhost:5173,http://localhost:4173"
+
+# --- D1 database (the scores table) -------------------------------------------
+# Create it once, then paste the printed database_id below:
+#   wrangler d1 create kyc-leaderboard
+#   wrangler d1 migrations apply kyc-leaderboard --local    # local dev
+#   wrangler d1 migrations apply kyc-leaderboard --remote   # production
+[[d1_databases]]
+binding = "DB"
+database_name = "kyc-leaderboard"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+# Per-IP rate limit — GA binding, needs NO account resource (just this config).
+# 30 submissions / 60s per IP: generous for real play (one per city/day) while
+# capping a single source's ability to stuff the "of Y" denominator. This
+# satisfies the worker's fail-closed check, so a fresh deploy is not wide-open.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "2001"
+
+  [ratelimits.simple]
+  limit = 30
+  period = 60
+
+# --- Optional secrets (set with `wrangler secret put NAME -c <this file>`) -----
+# TURNSTILE_SECRET  optional. When set, a valid Turnstile token is REQUIRED on
+#                   every submission. v1 submits automatically at end-of-day with
+#                   no widget, so leave this UNSET unless you also wire an
+#                   invisible Turnstile execute on the client (see worker/README.md).
