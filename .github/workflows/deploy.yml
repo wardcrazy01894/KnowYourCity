@@ -5,10 +5,11 @@ name: deploy
 #
 # The site's PUBLIC client config is read from repo Variables (Settings →
 # Secrets and variables → Actions → Variables) so it bakes into the bundle:
-#   - VITE_BUG_ENDPOINT      the deployed bug-report worker URL (one-click issues)
-#   - VITE_TURNSTILE_SITEKEY public Turnstile site key for the bug form's bot check
-#   - VITE_MAPBOX_TOKEN      optional, for Mapbox satellite tiles (Esri is default)
-#   - VITE_CF_BEACON_TOKEN   optional, Cloudflare Web Analytics page-view beacon
+#   - VITE_BUG_ENDPOINT          the deployed bug-report worker URL (one-click issues)
+#   - VITE_LEADERBOARD_ENDPOINT  the deployed leaderboard worker URL (daily standings)
+#   - VITE_TURNSTILE_SITEKEY     public Turnstile site key for the bug form's bot check
+#   - VITE_MAPBOX_TOKEN          optional, for Mapbox satellite tiles (Esri is default)
+#   - VITE_CF_BEACON_TOKEN       optional, Cloudflare Web Analytics page-view beacon
 # All of these are PUBLIC values (they ship in client JS), so Variables — not
 # Secrets — is correct. If unset, the build still succeeds and the bug form
 # falls back to opening a prefilled GitHub issue page.
@@ -58,6 +59,7 @@ jobs:
         run: npm run build
         env:
           VITE_BUG_ENDPOINT: ${{ vars.VITE_BUG_ENDPOINT }}
+          VITE_LEADERBOARD_ENDPOINT: ${{ vars.VITE_LEADERBOARD_ENDPOINT }}
           VITE_TURNSTILE_SITEKEY: ${{ vars.VITE_TURNSTILE_SITEKEY }}
           VITE_MAPBOX_TOKEN: ${{ vars.VITE_MAPBOX_TOKEN }}
           VITE_CF_BEACON_TOKEN: ${{ vars.VITE_CF_BEACON_TOKEN }}
