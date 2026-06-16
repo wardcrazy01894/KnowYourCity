@@ -41,7 +41,7 @@ export const POINT_PERFECT_RADIUS_M = 100
  * 100-node cap or was unmatched in OSM. Using the legacy 300m here prevents
  * a regression for those locations: without this a player who correctly pins
  * "inside" a large park (but whose polygon was dropped) would now be penalised
- * by the tighter 130m POINT_PERFECT_RADIUS_M.
+ * by the tighter 100m POINT_PERFECT_RADIUS_M.
  *
  * See docs/plans/POLYGON-SCORING.md §Must-fix 1 / §7.7 / §7.3.
  *
@@ -92,7 +92,7 @@ export const ZERO_DISTANCE_M = 5000
  * backward-compatible. `scoreGuess` passes the appropriate radius for each
  * case:
  *  - polygon outside: perfectRadiusM = 0 (falloff starts at the polygon edge)
- *  - point normal:    perfectRadiusM = POINT_PERFECT_RADIUS_M (130)
+ *  - point normal:    perfectRadiusM = POINT_PERFECT_RADIUS_M (100)
  *  - point large-footprint no polygon: perfectRadiusM = LARGE_FALLBACK_RADIUS_M (300)
  *
  * @param distanceMeters  - Distance to score (metres).
@@ -139,11 +139,13 @@ export function scoreForDistance(
  * 4. **Point + normal category** (everything else):
  *    → centroidDist = haversineMeters(guess, location centroid)
  *    → `{ distanceMeters: centroidDist, score: scoreForDistance(centroidDist, POINT_PERFECT_RADIUS_M) }`
- *    Uses tightened 130m radius; polygons have removed the need for the old
+ *    Uses tightened 100m radius; polygons have removed the need for the old
  *    generous 300m freebie for ordinary point locations.
  *
  * TEST CASES the implementer must ensure pass (see scoring.test.ts [M-B1]):
- *  - point-normal at 130m → score: MAX_ROUND_SCORE; at 131m → score < MAX_ROUND_SCORE
+ *  - point-normal at 100m → score: MAX_ROUND_SCORE; at 150m → score < MAX_ROUND_SCORE
+ *    (Math.round masks the very first metres past 100m; the score is provably
+ *    below MAX by ~125m, so the boundary test uses 150m to be unambiguous.)
  *  - point-large-no-polygon at 250m → score: MAX_ROUND_SCORE (LARGE_FALLBACK covers it)
  *  - polygon-outside at 1m → score < MAX_ROUND_SCORE (perfectRadius = 0)
  *  - polygon-inside → distanceMeters: 0, score: MAX_ROUND_SCORE

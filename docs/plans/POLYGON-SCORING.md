@@ -22,7 +22,7 @@ the right radius to each:
 - **polygon + outside** → `scoreForDistance(edgeDist, 0)` — falloff starts
   at the polygon edge, no freebie ring.
 - **point + large-footprint category + no polygon** → `scoreForDistance(centroidDist, LARGE_FALLBACK_RADIUS_M)` (300m) — prevents regression for parks whose polygon was dropped.
-- **point + normal** → `scoreForDistance(centroidDist, POINT_PERFECT_RADIUS_M)` (130m).  
+- **point + normal** → `scoreForDistance(centroidDist, POINT_PERFECT_RADIUS_M)` (100m).  
 New helper `isLargeFootprintCategory(category)` (exported, testable) decides
 the third case. `LARGE_FALLBACK_RADIUS_M = 300` is a new exported constant.
 See §3.4 for the updated spec and §6.1 for new `scoreGuess` test cases.  
@@ -71,7 +71,7 @@ branch of `scoreGuess`. Even 1m outside the polygon edge returns <100.
 §6 M-D prose now explicitly states: "D1 depends on A1 (`polygon?` type must
 be compiled before MapGuess.tsx can reference it)". See updated §6 below.
 
-**SF-7 — Large parks with no polygon regressing to 130m radius** — FIXED via MF-1  
+**SF-7 — Large parks with no polygon regressing to 100m radius** — FIXED via MF-1  
 The `LARGE_FALLBACK_RADIUS_M = 300` branch in `scoreGuess` (case 3) prevents
 this regression. Referenced in §7.3 and §7.7.
 
@@ -108,7 +108,7 @@ Files: `src/types.ts`.
 
 - v1 polygon scope = `park` + `golf_course` only. Venues/stadiums + cemetery
   deferred to v2 (noted in §2 and §8).
-- `POINT_PERFECT_RADIUS_M = 130`, `LARGE_FALLBACK_RADIUS_M = 300`.
+- `POINT_PERFECT_RADIUS_M = 100`, `LARGE_FALLBACK_RADIUS_M = 300`.
 - Polygon data committed into JSON — confirmed.
 - `nature_reserve`/`marina` ride along via `category: 'park'` — fine.
 
@@ -124,7 +124,7 @@ they clicked. This feature:
 1. Adds an optional `polygon` field to `Location` (outer ring only, v1).
 2. Changes `scoreGuess` so a pin **inside** a polygon always scores 100, and a
    pin **outside** falls off from the nearest polygon edge.
-3. Tightens point scoring from 300m to 130m to remove the "free zone" that
+3. Tightens point scoring from 300m to 100m to remove the "free zone" that
    polygons make irrelevant for large places.
 4. Backfills polygon data for ~210 in-play park/golf_course locations via a new
    `scripts/add-polygons.mjs` script.
@@ -280,7 +280,7 @@ calculation for the five cities (latitude range 27°–48°N).
 
 ```ts
 /** Tightened perfect radius for ordinary point locations. */
-export const POINT_PERFECT_RADIUS_M = 130
+export const POINT_PERFECT_RADIUS_M = 100
 
 /**
  * Fallback perfect radius for large-footprint categories (park, golf_course)
@@ -330,10 +330,10 @@ Branch 2 uses `perfectRadiusM = 0`: falloff begins AT the polygon edge — even
 Branch 3 uses `LARGE_FALLBACK_RADIUS_M = 300`: prevents regressing large parks
 whose polygon was dropped by the 100-node cap. Without this, a player who
 correctly pins "inside" a large park (but whose polygon is missing) gets
-penalised by the tighter 130m radius instead of the old generous 300m.
+penalised by the tighter 100m radius instead of the old generous 300m.
 
 **Explicit test cases for `scoreGuess` (add to `scoring.test.ts` [M-B1]):**
-- point-normal at exactly 130m → score: `MAX_ROUND_SCORE`
+- point-normal at exactly 100m → score: `MAX_ROUND_SCORE`
 - point-normal at 131m → score: `< MAX_ROUND_SCORE`
 - point-large-no-polygon at 250m → score: `MAX_ROUND_SCORE` (LARGE_FALLBACK covers)
 - point-large-no-polygon at 301m → score: `< MAX_ROUND_SCORE`
@@ -631,7 +631,7 @@ The exact cases from §3.4, expressed as a table for `scoring.test.ts` authors:
 | 3 — large-footprint no polygon at 250m | park | absent | 250m to centroid | `MAX_ROUND_SCORE` (LARGE_FALLBACK=300) |
 | 3 — large-footprint no polygon at 301m | park | absent | 301m to centroid | `< MAX_ROUND_SCORE` |
 | 3 — golf_course no polygon at 250m | golf_course | absent | 250m to centroid | `MAX_ROUND_SCORE` |
-| 4 — normal point at 130m | restaurant | absent | 130m to centroid | `MAX_ROUND_SCORE` |
+| 4 — normal point at 100m | restaurant | absent | 100m to centroid | `MAX_ROUND_SCORE` |
 | 4 — normal point at 131m | restaurant | absent | 131m to centroid | `< MAX_ROUND_SCORE` |
 | 4 — normal point at 0m | landmark | absent | 0m | `MAX_ROUND_SCORE`; `distanceMeters: 0` |
 
@@ -706,7 +706,7 @@ coastlines stay above 100 after simplification.
 **No regression for dropped polygons:** a park/golf_course location that falls
 back to point scoring because its polygon was dropped by the 100-node cap uses
 `LARGE_FALLBACK_RADIUS_M = 300` in `scoreGuess` branch 3 (see §3.4). The
-player is not penalised by the tighter `POINT_PERFECT_RADIUS_M = 130` that
+player is not penalised by the tighter `POINT_PERFECT_RADIUS_M = 100` that
 applies to ordinary non-park locations. (Resolved: SF-7 / MF-1.)
 
 ### 7.4 Antimeridian
@@ -752,14 +752,14 @@ No existing `scoreForDistance` test breaks.
 
 **New `scoreGuess` test cases to add in `scoring.test.ts` [M-B1]** (spec'd
 in §3.4 — repeating here for traceability):
-- point-normal at 130m → `MAX_ROUND_SCORE`; at 131m → `< MAX_ROUND_SCORE`.
+- point-normal at 100m → `MAX_ROUND_SCORE`; at 131m → `< MAX_ROUND_SCORE`.
 - point-large-no-polygon (park) at 250m → `MAX_ROUND_SCORE` (LARGE_FALLBACK=300 covers it);
   at 301m → `< MAX_ROUND_SCORE`.
 - polygon-outside at 1m → `< MAX_ROUND_SCORE` (perfectRadius = 0, no freebie).
 - polygon-inside → `{ distanceMeters: 0, score: MAX_ROUND_SCORE }`.
 
 This also confirms SF-7 is resolved: large parks with no polygon regress to
-`LARGE_FALLBACK_RADIUS_M = 300`, NOT to the tighter 130m. (Resolved: MF-1.)
+`LARGE_FALLBACK_RADIUS_M = 300`, NOT to the tighter 100m. (Resolved: MF-1.)
 
 ### 7.8 Leaflet polygon layer leak
 
@@ -800,10 +800,13 @@ polygon branch — absent or empty polygon falls through to point scoring.
    support (Tropicana Field, Beaver Stadium, Michigan Stadium) is tracked in
    BACKLOG.md as a v2 item.
 
-2. **Point radius: 130m justified?** — **RESOLVED: `POINT_PERFECT_RADIUS_M = 130`
-   is the accepted default.** Owner will playtest after launch; the constant is
-   easy to adjust (one line in `scoring.ts`) and `LARGE_FALLBACK_RADIUS_M = 300`
-   protects large parks with no polygon from the tighter radius.
+2. **Point radius: 100m justified?** — **RESOLVED: `POINT_PERFECT_RADIUS_M = 100`
+   is the accepted default.** (Planning briefly settled on 130m; tightened
+   further to 100m — "roughly a city block" — during implementation. This doc
+   was reconciled to the shipped value.) Owner will playtest after launch; the
+   constant is easy to adjust (one line in `scoring.ts`) and
+   `LARGE_FALLBACK_RADIUS_M = 300` protects large parks with no polygon from the
+   tighter radius.
 
 3. **Polygon data committed vs. fetched at build time?** — **RESOLVED: committed
    into JSON.** Same pipeline as all other location data. Keeps CI offline-able

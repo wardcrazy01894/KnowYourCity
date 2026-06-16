@@ -143,9 +143,28 @@ describe('scoreGuess', () => {
   })
 
   describe('branch 4: point + normal category (tight radius)', () => {
+    it('is the tightened 100 m value, not the old 300 m default', () => {
+      // Pin the constant: changing it (e.g. back to 130/300) must be a
+      // deliberate edit that breaks this test, not a silent drift.
+      expect(POINT_PERFECT_RADIUS_M).toBe(100)
+      expect(POINT_PERFECT_RADIUS_M).toBeLessThan(PERFECT_RADIUS_M)
+    })
     it('full marks within POINT_PERFECT_RADIUS_M', () => {
       // ~50 m away, well inside the 100 m freebie.
       expect(scoreGuess(point, northOf(point, 50)).score).toBe(MAX_ROUND_SCORE)
+    })
+    it('full marks at exactly the radius, below full marks past it', () => {
+      // At the radius itself → still MAX (boundary is inclusive).
+      expect(
+        scoreGuess(point, northOf(point, POINT_PERFECT_RADIUS_M)).score,
+      ).toBe(MAX_ROUND_SCORE)
+      // 150 m is unambiguously past the 100 m radius (Math.round only masks the
+      // first ~25 m). The OLD 300 m radius would still award full marks here —
+      // so this test would fail if the radius hadn't actually been tightened.
+      expect(scoreGuess(point, northOf(point, 150)).score).toBeLessThan(
+        MAX_ROUND_SCORE,
+      )
+      expect(scoreForDistance(150, PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)
     })
     it('less than full marks beyond POINT_PERFECT_RADIUS_M', () => {
       // ~250 m away, outside the 100 m point radius.
