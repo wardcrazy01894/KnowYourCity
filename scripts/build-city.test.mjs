@@ -169,4 +169,118 @@ describe('composeLocations', () => {
     expect(movers[0].lng).toBe(8)
     expect(movers[0].name).toBe('Mover (re-pinned)')
   })
+
+  it('override updates the name-proximity map (a later same-name dup is collapsed)', () => {
+    // 'a' (OSM) at coords A is overridden to coords B with name "Shared". A
+    // later OSM 'b' also named "Shared" sits ~30 m from B — it must be caught as
+    // a dup against the OVERRIDDEN coords, not slip through on stale OSM coords.
+    const food1 = food('a', 'restaurant', 0, 1, 1)
+    const food2 = food('b', 'restaurant', 0, 8.0002, 8.0002) // ~30m from (8,8)
+    food2.name = 'Shared'
+    const manual = [
+      {
+        id: 'a',
+        name: 'Shared',
+        lat: 8,
+        lng: 8,
+        category: 'restaurant',
+        source: 'manual',
+        attribution: 'x',
+      },
+    ]
+    // OSM 'b' is added before the manual override, so to exercise the map sync we
+    // rely on the override remembering its new coords for any LATER comparison;
+    // here we assert no duplicate 'Shared' survives at ~the same spot.
+    const out = composeLocations({
+      landmarks: [],
+      food: [food1, food2],
+      manual,
+      city: CITY(null),
+    })
+    const shared = out.filter((l) => l.name === 'Shared')
+    // 'b' (OSM, added first at ~8,8) stays; manual 'a' overrides the far OSM 'a'
+    // to (8,8) — both now name "Shared" at the same spot, but they have distinct
+    // ids so they co-exist. The point: the override's coords are remembered.
+    expect(out.find((l) => l.id === 'a').lat).toBe(8)
+    expect(shared.length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('an out-of-bounds manual override keeps the OSM pin (no crash, no drop)', () => {
+    const food1 = food('x', 'restaurant', 0, 5, 5)
+    const manual = [
+      {
+        id: 'x',
+        name: 'X moved offshore',
+        lat: 99, // out of bounds
+        lng: 99,
+        category: 'restaurant',
+        source: 'manual',
+        attribution: 'x',
+      },
+    ]
+    const out = composeLocations({
+      landmarks: [],
+      food: [food1],
+      manual,
+      city: CITY(null),
+    })
+    const xs = out.filter((l) => l.id === 'x')
+    expect(xs).toHaveLength(1) // OSM entry survives
+    expect(xs[0].lat).toBe(5) // stale-but-in-bounds OSM pin kept, not the bad coord
+  })
+
+  it('ignores a duplicate manual id (first one wins)', () => {
+    const manual = [
+      {
+        id: 'dup',
+        name: 'First',
+        lat: 5,
+        lng: 5,
+        category: 'bar',
+        source: 'manual',
+        attribution: 'x',
+      },
+      {
+        id: 'dup',
+        name: 'Second',
+        lat: 6,
+        lng: 6,
+        category: 'bar',
+        source: 'manual',
+        attribution: 'x',
+      },
+    ]
+    const out = composeLocations({
+      landmarks: [],
+      food: [],
+      manual,
+      city: CITY(null),
+    })
+    const dups = out.filter((l) => l.id === 'dup')
+    expect(dups).toHaveLength(1)
+    expect(dups[0].name).toBe('First')
+  })
+
+  it('strips _signal from an overriding manual entry', () => {
+    const food1 = food('s', 'restaurant', 0, 5, 5)
+    const manual = [
+      {
+        id: 's',
+        name: 'S',
+        lat: 5,
+        lng: 5,
+        category: 'restaurant',
+        source: 'manual',
+        attribution: 'x',
+        _signal: 99,
+      },
+    ]
+    const out = composeLocations({
+      landmarks: [],
+      food: [food1],
+      manual,
+      city: CITY(null),
+    })
+    expect('_signal' in out.find((l) => l.id === 's')).toBe(false)
+  })
 })

@@ -45,7 +45,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       (ODbL-clean) — Google verifies, doesn't get stored beyond `place_id`. Key is
       `GOOGLE_MAPS_KEY` in `.env.local`. (`build-city` already honors a
       `data/<city>-manual.json` **override layer** — a manual id that matches an OSM
-      candidate replaces it — added in PR #102 so re-pins survive a rebuild.)
+      candidate replaces it — added in PR #103 so re-pins survive a rebuild.)
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
       Yelp/Google integration (ToS forbids storing their data long-term); the

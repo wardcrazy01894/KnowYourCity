@@ -56,9 +56,11 @@ async function loadCity(id) {
  *     the others;
  *   - `null`/`undefined` → **uncapped**: keep every in-bounds deduped candidate
  *     (used when we want the full city and let a later fame pass trim the tail).
- * Manual entries always bypass the cap.
+ * Manual entries always bypass the cap, and a manual entry whose id matches an
+ * OSM candidate OVERRIDES it (curated coords win — re-pins survive a rebuild).
  *
- * Pure (no IO) so it's unit-testable — see build-city.test.mjs.
+ * Deterministic return value (unit-testable — see build-city.test.mjs); the only
+ * side effect is diagnostic `console.warn` for dropped/duplicate manual entries.
  */
 export function composeLocations({
   landmarks = [],
@@ -129,19 +131,37 @@ export function composeLocations({
   // id matches an already-added OSM candidate OVERRIDES it (curated coords/name
   // win over stale OSM) — this is how a re-pinned venue survives a from-scratch
   // rebuild instead of reverting to its old OSM pin. Otherwise it's a normal
-  // must-include, subject to the same-name proximity de-dupe.
+  // must-include, subject to the same-name proximity de-dupe. (Emits diagnostic
+  // console.warn for dropped/duplicate manual entries — otherwise pure.)
+  const seenManual = new Set()
   for (const m of manual) {
-    if (!m.id || !inBounds(m)) continue
-    const existingIdx = out.findIndex((o) => o.id === m.id)
-    if (existingIdx !== -1) {
-      out[existingIdx] = m
+    if (!m.id) continue
+    if (seenManual.has(m.id)) {
+      console.warn(`  ⚠ duplicate manual id, ignoring repeat: ${m.id}`)
       continue
     }
-    const nm = normalizeBusinessName(m.name, cityTokens)
-    if (isNameProxDup(m, nm)) continue
-    usedIds.add(m.id)
-    remember(m, nm)
-    out.push(m)
+    seenManual.add(m.id)
+    const { _signal: _ms, ...mc } = m // strip internal field, like add()
+    void _ms
+    const nm = normalizeBusinessName(mc.name, cityTokens)
+    const existingIdx = out.findIndex((o) => o.id === mc.id)
+    if (existingIdx !== -1) {
+      // Override an OSM candidate of the same id. An out-of-bounds re-pin is a
+      // likely coord typo — keep the OSM pin and warn rather than silently drop.
+      if (!inBounds(mc)) {
+        console.warn(
+          `  ⚠ manual override out-of-bounds, kept OSM pin: ${mc.id}`,
+        )
+        continue
+      }
+      out[existingIdx] = mc
+      remember(mc, nm) // keep the name-proximity map in sync with new coords
+      continue
+    }
+    if (!inBounds(mc) || isNameProxDup(mc, nm)) continue
+    usedIds.add(mc.id)
+    remember(mc, nm)
+    out.push(mc)
   }
   return out
 }
