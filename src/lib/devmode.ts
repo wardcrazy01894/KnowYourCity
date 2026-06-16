@@ -11,6 +11,8 @@
  *   ?polygons  → DEV verification round: every polygon location in the current
  *                city, in one game, so each shaded boundary can be eyeballed.
  *                Never official (off the leaderboard); see App.resolveMode.
+ *   ?polygons=id1,id2 → same round restricted to those location ids (re-check
+ *                a few specific boundaries without playing all of them).
  *
  * All helpers are pure (take the location.search string) so they're testable.
  */
@@ -34,4 +36,20 @@ export function shouldShuffle(search: string): boolean {
  */
 export function isPolygonTest(search: string): boolean {
   return new URLSearchParams(search).has('polygons')
+}
+
+/**
+ * The id subset for `?polygons=id1,id2` — restricts the verification round to
+ * just those locations (handy for re-checking a few specific boundaries).
+ * Returns `null` for the bare `?polygons` (every polygon) or when it isn't a
+ * polygon test at all; callers gate on {@link isPolygonTest} first.
+ */
+export function polygonTestIds(search: string): string[] | null {
+  const raw = new URLSearchParams(search).get('polygons')
+  if (!raw) return null
+  const ids = raw
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+  return ids.length > 0 ? ids : null
 }

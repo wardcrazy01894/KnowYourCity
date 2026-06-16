@@ -474,4 +474,41 @@ describe('selectPolygonLocations', () => {
       selectPolygonLocations([loc('a', 'cafe'), loc('b', 'park')]),
     ).toEqual([])
   })
+
+  it('restricts to a given id subset (still polygon-only, sorted)', () => {
+    const all: Location[] = [
+      { ...loc('zebra-park', 'park'), polygon: poly },
+      { ...loc('apple-park', 'park'), polygon: poly },
+      { ...loc('mango-park', 'park'), polygon: poly },
+      loc('alpha-cafe', 'cafe'),
+    ]
+    expect(
+      selectPolygonLocations(all, ['zebra-park', 'apple-park']).map(
+        (p) => p.id,
+      ),
+    ).toEqual(['apple-park', 'zebra-park'])
+  })
+
+  it('ignores subset ids that have no polygon', () => {
+    const all: Location[] = [
+      { ...loc('apple-park', 'park'), polygon: poly },
+      loc('alpha-cafe', 'cafe'),
+    ]
+    expect(
+      selectPolygonLocations(all, ['alpha-cafe', 'apple-park']).map(
+        (p) => p.id,
+      ),
+    ).toEqual(['apple-park'])
+  })
+
+  it('returns every polygon when the subset is null', () => {
+    const all: Location[] = [
+      { ...loc('apple-park', 'park'), polygon: poly },
+      { ...loc('zebra-park', 'park'), polygon: poly },
+    ]
+    expect(selectPolygonLocations(all, null).map((p) => p.id)).toEqual([
+      'apple-park',
+      'zebra-park',
+    ])
+  })
 })

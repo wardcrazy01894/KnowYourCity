@@ -18,7 +18,7 @@ import {
 } from './lib/daily'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
 import { getCity, cityDataUrl, type City } from './lib/cities'
-import { shouldShuffle, isPolygonTest } from './lib/devmode'
+import { shouldShuffle, isPolygonTest, polygonTestIds } from './lib/devmode'
 import { isMuted, setMuted } from './lib/sound'
 import { log } from './lib/log'
 import { Game } from './components/Game'
@@ -69,6 +69,11 @@ interface Mode {
   polygonTest: boolean
   /** localStorage namespace for Game — isolated in `?polygons` mode. */
   storageCityId: string
+  /**
+   * In `?polygons` mode, the id subset from `?polygons=id1,id2` (or `null` for
+   * every polygon). Ignored unless `polygonTest` is true.
+   */
+  polygonIds: string[] | null
 }
 
 function resolveMode(city: City): Mode {
@@ -82,6 +87,7 @@ function resolveMode(city: City): Mode {
       official: false,
       polygonTest: true,
       storageCityId: `${city.id}__polygons`,
+      polygonIds: polygonTestIds(search),
     }
   }
   if (shouldShuffle(search)) {
@@ -92,6 +98,7 @@ function resolveMode(city: City): Mode {
       official: false,
       polygonTest: false,
       storageCityId: city.id,
+      polygonIds: null,
     }
   }
   const param = new URLSearchParams(search).get('date')
@@ -103,6 +110,7 @@ function resolveMode(city: City): Mode {
       official: false,
       polygonTest: false,
       storageCityId: city.id,
+      polygonIds: null,
     }
   }
   return {
@@ -112,6 +120,7 @@ function resolveMode(city: City): Mode {
     official: true,
     polygonTest: false,
     storageCityId: city.id,
+    polygonIds: null,
   }
 }
 
@@ -174,7 +183,7 @@ export function App() {
         if (!live) return
         setAttribution(file.attribution || '')
         const picks = mode.polygonTest
-          ? selectPolygonLocations(file.locations)
+          ? selectPolygonLocations(file.locations, mode.polygonIds)
           : selectDailyLocations(
               file.locations,
               mode.selectionSeed,

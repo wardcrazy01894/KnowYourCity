@@ -210,10 +210,19 @@ export function selectDailyLocations(
  * Unlike the daily selection this is NOT filtered by `inPlay` — a benched
  * (inPlay:false) park still needs its polygon verified — and there is no count
  * cap: it returns however many polygons exist. Pure given `all`.
+ *
+ * Pass `ids` (from `?polygons=id1,id2`) to restrict the round to just those
+ * locations; `null`/omitted returns every polygon. Ids without a polygon are
+ * silently skipped.
  */
-export function selectPolygonLocations(all: Location[]): Location[] {
+export function selectPolygonLocations(
+  all: Location[],
+  ids: string[] | null = null,
+): Location[] {
+  const allow = ids ? new Set(ids) : null
   return all
     .filter((l) => Array.isArray(l.polygon) && l.polygon.length > 0)
+    .filter((l) => !allow || allow.has(l.id))
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
 }
 

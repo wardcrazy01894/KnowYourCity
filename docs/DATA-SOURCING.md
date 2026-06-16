@@ -438,23 +438,38 @@ Overpass mirrors — a 2 s delay between queries, with mirror fallback + retry).
 **Current status (St. Pete): 26/28** eligible rows have polygons.
 - Five name-mismatch misses resolved via `NAME_OVERRIDES` (Mangrove Bay, Twin
   Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens Landing).
-- Two resolved via `OSM_ELEMENT_OVERRIDES`: **Isla Del Sol** golf course (its
-  named relation is malformed — 8 `inner` members, no outer ring — so we pin the
-  larger of its two disjoint, unnamed `golf_course` ways; the smaller NE parcel
-  isn't shaded since a single ring can't cover both) and **Sawgrass Lake Park**
-  (no park-boundary polygon exists near the point — the nearest `nature_reserve`
-  ways are ~1.5 km north — so we pin the named "Sawgrass Lake" water body at the
-  park's core). For both, the row's `lat`/`lng` was moved to an interior point of
-  the chosen ring so the reveal marker sits inside the shaded footprint.
 - Two stay **point-only by design**, not as bugs: **North Shore kickball fields**
   (a ~30 m baseball diamond) and **volleyball courts** (six ~15 m sand courts) —
   both smaller than the point freebie radius, so a polygon would only make them
   harder (see "When NOT to add a polygon" above).
 
+**Manually-corrected polygons (owner playtest feedback).** Five St. Pete
+footprints the auto-extractor got wrong — the single-largest-ring rule (step 3)
+drops secondary outer rings, and a couple of footprints aren't a clean single
+OSM polygon. These were rebuilt by hand from their OSM geometry and written
+straight onto the rows, so a plain re-run leaves them alone (idempotent skip);
+**`--force` would regress them to the wrong auto-extracted shape — don't.**
+- **Azalea Park** & **Clam Bayou Nature Preserve** — multipolygon relations with
+  **two `outer` rings**; the extractor kept only the larger and dropped the rest
+  (Azalea's south/centre block, Clam Bayou's west parcel). Fixed with the
+  **convex hull of both outer rings** so the whole footprint is covered.
+- **Fort De Soto** — the precise multi-pronged coastline was visually noisy; per
+  owner request it's now a **coarse convex hull** of the main-island coastline
+  (≈12 nodes) that "encapsulates a lot of it" rather than tracing every inlet.
+- **Isla Del Sol** — its named relation is malformed (8 `inner` members, no
+  outer), so the footprint is the **convex hull of the entire golf course**
+  (all 8 member rings + both `golf_course` ways), spanning the whole island —
+  the earlier single-parcel pin was much too small.
+- **Sawgrass Lake Park** — no *named* park boundary exists near the point, but an
+  **unnamed `leisure=park` way (215108300)** found via Overpass `is_in` *does*
+  enclose it (~1.2 × 2.1 km); that boundary is now the footprint, replacing the
+  small "Sawgrass Lake" water body used before.
+
 **Verifying the result:** load the game with **`?polygons`** (see
 README / docs/PLAN.md) — it plays one round per polygon location in the city so
-each shaded boundary can be eyeballed against the satellite map. State College is
-fully backfilled (33/33).
+each shaded boundary can be eyeballed against the satellite map. Append a
+comma-separated id list to re-check just a few: **`?polygons=azalea-park,isla-del-sol`**.
+State College is fully backfilled (33/33).
 
 ---
 
