@@ -99,12 +99,14 @@ describe('buildSubmitPayload', () => {
       cityId: 'stpete',
       dateKey: '2026-06-15',
       score: 420,
+      lineup: 'abc123',
       official: true,
     })
     expect(p).toMatchObject({
       city: 'stpete',
       date: '2026-06-15',
       score: 420,
+      lineup: 'abc123',
     })
     expect(p.clientId).toBe(getClientId())
     // Nothing that could identify a person.
@@ -117,6 +119,7 @@ describe('submitDailyScore', () => {
     cityId: 'stpete',
     dateKey: '2026-06-15',
     score: 420,
+    lineup: 'abc123',
     official: true,
   }
 
@@ -153,11 +156,29 @@ describe('submitDailyScore', () => {
     const r = await submitDailyScore(args)
     expect(r).toEqual({ rank: 3, total: 47 })
     expect(f).toHaveBeenCalledOnce()
-    // Cached so a reload won't re-POST.
-    expect(readStanding('stpete', '2026-06-15')).toEqual({ rank: 3, total: 47 })
+    // Cached per (city, date, lineup) so a reload won't re-POST.
+    expect(readStanding('stpete', '2026-06-15', 'abc123')).toEqual({
+      rank: 3,
+      total: 47,
+    })
 
     await submitDailyScore(args)
     expect(f).toHaveBeenCalledOnce() // still once — served from cache
+  })
+
+  it('re-POSTs when the lineup changed (a replay adds its own row)', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    const f = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({ ok: true, rank: 5, total: 48 }),
+    }))
+    vi.stubGlobal('fetch', f)
+
+    await submitDailyScore(args) // lineup 'abc123'
+    expect(f).toHaveBeenCalledOnce()
+    // Same day, DIFFERENT lineup → cache miss → a second POST (a new board row).
+    await submitDailyScore({ ...args, lineup: 'def456', score: 380 })
+    expect(f).toHaveBeenCalledTimes(2)
   })
 
   it('resolves null (never throws) when the request fails', async () => {
@@ -201,13 +222,27 @@ describe('buildLeaderboardRows', () => {
   })
 
   it('flags the first row matching the viewer’s score as "you"', () => {
-    const rows = buildLeaderboardRows([480, 420, 420], 420)
+    const rows = buildLeaderboardRows([480, 420, 420], [420])
     expect(rows.filter((r) => r.you)).toHaveLength(1)
     expect(rows.find((r) => r.you)).toMatchObject({ rank: 2, score: 420 })
   })
 
   it('marks nobody when the viewer’s score is absent', () => {
-    expect(buildLeaderboardRows([480, 420], 333).some((r) => r.you)).toBe(false)
+    expect(buildLeaderboardRows([480, 420], [333]).some((r) => r.you)).toBe(
+      false,
+    )
+  })
+
+  // A player who replayed a changed lineup has TWO scores on the day's board;
+  // both their rows are flagged (multiset), distinct scores or tied.
+  it('flags both of the viewer’s scores when they have two entries', () => {
+    const rows = buildLeaderboardRows([480, 420, 380, 300], [420, 380])
+    expect(rows.filter((r) => r.you).map((r) => r.score)).toEqual([420, 380])
+  })
+
+  it('flags exactly N rows when the viewer has N tied entries', () => {
+    const rows = buildLeaderboardRows([480, 380, 380, 380], [380, 380])
+    expect(rows.filter((r) => r.you)).toHaveLength(2)
   })
 })
 

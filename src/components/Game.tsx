@@ -156,6 +156,7 @@ export function Game({
         dateKey={game.dateKey}
         results={game.results}
         totalScore={totalScore}
+        lineup={lineupHash(game.locations)}
         streak={streak}
         official={official}
       />

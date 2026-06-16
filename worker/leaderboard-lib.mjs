@@ -57,6 +57,16 @@ export function isValidClientId(id) {
   return typeof id === 'string' && /^[A-Za-z0-9_-]{8,64}$/.test(id)
 }
 
+/**
+ * Lineup hash shape (see client progress.ts:lineupHash — base36 of a 32-bit
+ * hash). Identifies WHICH official set a completion was for, so a player who
+ * replays a CHANGED set gets a distinct row. Empty string is the legacy bucket
+ * (rows from before lineups existed, and old clients that don't send one).
+ */
+export function isValidLineup(v) {
+  return typeof v === 'string' && /^[0-9a-z]{0,16}$/.test(v)
+}
+
 /** True if `key` is a REAL calendar date in YYYY-MM-DD form (mirrors the
  *  client's isValidDateKey — rejects 2026-99-99 etc. via a UTC round-trip). */
 export function isValidDateKey(key) {
@@ -105,37 +115,50 @@ export function validateSubmission(body, now = new Date()) {
   if (!isValidClientId(clientId))
     return { ok: false, status: 400, error: 'invalid clientId' }
 
-  return { ok: true, value: { city, date, score, clientId } }
+  // Optional: absent (old clients) → '' legacy bucket. A replay against a
+  // changed official set sends a different hash → a distinct row that day.
+  const lineup = body?.lineup == null ? '' : String(body.lineup)
+  if (!isValidLineup(lineup))
+    return { ok: false, status: 400, error: 'invalid lineup' }
+
+  return { ok: true, value: { city, date, score, clientId, lineup } }
 }
 
 /**
- * UPSERT the device's score (keep the MAX — a replay can't lower it) and read
- * back the standing in one atomic D1 batch. Rank counts strictly-higher stored
- * scores, so ties share a rank (standard competition ranking) and rank = better
- * + 1. The inner subquery reads the *stored* score, so a stray lower re-submit
- * still ranks against the kept (higher) score.
+ * UPSERT the device's score for a (city, date, client_id, LINEUP) and read back
+ * the standing in one atomic D1 batch. Keying on `lineup` means a replay against
+ * a CHANGED official set inserts its OWN row (a player can hold more than one
+ * entry that day), while a reload of the SAME completion keeps-max in place —
+ * a replay can't lower a given lineup's stored score. Rank counts strictly-higher
+ * stored scores across the whole day's board (every lineup), so ties share a
+ * rank and rank = better + 1; `total` is every row for the day.
  */
-export async function upsertAndRank(db, { city, date, clientId, score }, now) {
+export async function upsertAndRank(
+  db,
+  { city, date, clientId, score, lineup = '' },
+  now,
+) {
   const upsert = db
     .prepare(
-      `INSERT INTO scores (city, date, client_id, score, created_at, updated_at)
-       VALUES (?1, ?2, ?3, ?4, ?5, ?5)
-       ON CONFLICT(city, date, client_id) DO UPDATE SET
+      `INSERT INTO scores (city, date, client_id, lineup, score, created_at, updated_at)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?6)
+       ON CONFLICT(city, date, client_id, lineup) DO UPDATE SET
          score = MAX(score, excluded.score),
          updated_at = excluded.updated_at`,
     )
-    .bind(city, date, clientId, score, now)
+    .bind(city, date, clientId, lineup, score, now)
   const standing = db
     .prepare(
       `SELECT
          (SELECT COUNT(*) FROM scores s
             WHERE s.city = ?1 AND s.date = ?2
               AND s.score > (SELECT score FROM scores
-                             WHERE city = ?1 AND date = ?2 AND client_id = ?3)
+                             WHERE city = ?1 AND date = ?2
+                               AND client_id = ?3 AND lineup = ?4)
          ) AS better,
          (SELECT COUNT(*) FROM scores WHERE city = ?1 AND date = ?2) AS total`,
     )
-    .bind(city, date, clientId)
+    .bind(city, date, clientId, lineup)
   const results = await db.batch([upsert, standing])
   const row = results[1].results[0]
   return { rank: Number(row.better) + 1, total: Number(row.total) }

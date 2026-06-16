@@ -195,7 +195,37 @@ describe('validateSubmission', () => {
       date: today,
       score: 420,
       clientId: '3f1a9c2e-7b4d-4e1a-9c2e-7b4d4e1a9c2e',
+      lineup: '', // absent in payload → legacy '' bucket
     })
+  })
+
+  it('carries a well-formed lineup hash when provided', () => {
+    const r = validateSubmission(
+      {
+        city: 'stpete',
+        date: today,
+        score: 420,
+        clientId: 'a'.repeat(12),
+        lineup: '1a2b3c',
+      },
+      now,
+    )
+    expect(r.ok).toBe(true)
+    expect(r.value.lineup).toBe('1a2b3c')
+  })
+
+  it('rejects a malformed lineup', () => {
+    const r = validateSubmission(
+      {
+        city: 'stpete',
+        date: today,
+        score: 1,
+        clientId: 'a'.repeat(12),
+        lineup: 'NOT/A/HASH',
+      },
+      now,
+    )
+    expect(r).toMatchObject({ ok: false, error: 'invalid lineup' })
   })
 
   it('rejects an unknown city', () => {

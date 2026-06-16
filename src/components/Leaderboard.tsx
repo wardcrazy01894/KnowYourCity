@@ -24,8 +24,11 @@ export interface LeaderboardProps {
   cityId: string
   cityShort: string
   dateKey: string
-  /** The viewer's own total today (highlights their row), if they played. */
+  /** The viewer's latest total today — drives the "you placed Xth" line. */
   yourScore?: number
+  /** ALL of the viewer's totals today (one normally, two after a changed-lineup
+   *  replay) — highlights each of their rows. Defaults to [yourScore]. */
+  yourScores?: number[]
   /** The viewer's standing, for the "you placed Xth" line when off the shown list. */
   yourStanding?: Standing | null
   onClose: () => void
@@ -47,6 +50,7 @@ export function Leaderboard({
   cityShort,
   dateKey,
   yourScore,
+  yourScores,
   yourStanding,
   onClose,
 }: LeaderboardProps) {
@@ -68,9 +72,10 @@ export function Leaderboard({
         yourStanding && yourScore !== undefined
           ? refreshStanding(yourStanding, data, yourScore)
           : (yourStanding ?? null)
+      const own = yourScores ?? (yourScore !== undefined ? [yourScore] : [])
       setState({
         phase: 'ready',
-        rows: buildLeaderboardRows(data.scores, yourScore),
+        rows: buildLeaderboardRows(data.scores, own),
         total: data.total,
         you,
       })
