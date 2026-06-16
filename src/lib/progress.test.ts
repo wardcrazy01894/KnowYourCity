@@ -118,4 +118,28 @@ describe('recordCompletion', () => {
     expect(second.history.map((h: DayRecord) => h.lineup)).toEqual(['A', 'B'])
     expect(second.streak).toEqual(first.streak) // unchanged — same date
   })
+
+  // Migration: a record written before `lineup` existed has no lineup field. A
+  // changed-lineup replay must still append a new record (the legacy record's
+  // undefined lineup can't match a real hash) WITHOUT re-bumping the streak.
+  it('appends past a legacy (lineup-less) record without re-bumping the streak', () => {
+    const legacy: DayRecord = {
+      dateKey: '2026-06-16',
+      totalScore: 420,
+      results,
+    }
+    const played: Streak = {
+      current: 2,
+      best: 4,
+      lastPlayedDateKey: '2026-06-16',
+    }
+    const { history, streak } = recordCompletion(
+      [legacy],
+      played,
+      done('2026-06-16', 'B', 380),
+    )
+    expect(history).toHaveLength(2)
+    expect(history[1]).toMatchObject({ totalScore: 380, lineup: 'B' })
+    expect(streak).toEqual(played) // date already played — no bump
+  })
 })

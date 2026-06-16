@@ -75,6 +75,10 @@ export function recordCompletion(
   streak: Streak,
   done: CompletedDay,
 ): { history: DayRecord[]; streak: Streak } {
+  // A record written before `lineup` existed has `h.lineup === undefined`, which
+  // never equals a real hash — so a legacy day, when replayed against a changed
+  // set, correctly appends a new record rather than no-op'ing. (The streak is
+  // still protected by `dateRecorded` below, so this can't double-count a date.)
   const lineupRecorded = history.some(
     (h) => h.dateKey === done.dateKey && h.lineup === done.lineup,
   )
