@@ -51,6 +51,38 @@ export const slug = (s) =>
     .replace(/^-|-$/g, '')
 
 /**
+ * Normalize a venue name for national-chain matching: lowercase, DELETE
+ * apostrophes (so "Church's" -> "churchs", not "church s"), turn other
+ * punctuation into spaces, collapse runs. Used by matchNationalChain.
+ */
+export const normalizeForChain = (s) =>
+  (s || '')
+    .toLowerCase()
+    .replace(/['’`]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+/**
+ * Return the matched national-chain token if `name` contains one as a
+ * word-boundary token sequence, else null. `chains` are tokens from
+ * `data/national-chains.json` (normalized here, so they can be written naturally).
+ * The list is a FLAGGING aid, not an auto-remover — see scripts/check-chains.mjs
+ * and the guard test in apply-difficulty.test.mjs.
+ * @param {string} name venue display name
+ * @param {string[]} chains chain tokens
+ * @returns {string|null}
+ */
+export function matchNationalChain(name, chains = []) {
+  const padded = ` ${normalizeForChain(name)} `
+  for (const ch of chains) {
+    const c = normalizeForChain(ch)
+    if (c && padded.includes(` ${c} `)) return c
+  }
+  return null
+}
+
+/**
  * Build the id -> fame-record lookup. Records are keyed by their primary `id`
  * AND, for `renamed` records, additionally aliased under `slug(currentName)` —
  * the id the row will carry on a *re-run* after the rename has been applied.

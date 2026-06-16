@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import fs from 'node:fs'
 import {
   slug,
   buildFameIndex,
@@ -12,6 +13,7 @@ import {
   assignCappedDifficulty,
   projectLocation,
   FIELD_ORDER,
+  matchNationalChain,
   CAP_EASY_PCT,
   CAP_HARD_PCT,
   MEDIAN_FAME_FALLBACK,
@@ -541,5 +543,72 @@ describe('projectLocation (dataset field projection)', () => {
       attribution: 't',
     })
     expect(Object.keys(out)).toEqual(['id', 'name', 'attribution', 'polygon'])
+  })
+})
+
+describe('matchNationalChain', () => {
+  const CHAINS = ['bjs', 'chilis', 'churchs chicken', 'olive garden', 'sonic']
+
+  it('matches a bare chain name (apostrophe-insensitive)', () => {
+    expect(matchNationalChain("BJ's", CHAINS)).toBe('bjs')
+    expect(matchNationalChain("Chili's", CHAINS)).toBe('chilis')
+  })
+
+  it('matches when the chain token is part of a longer venue name', () => {
+    expect(matchNationalChain("BJ's Restaurant & Brewhouse", CHAINS)).toBe(
+      'bjs',
+    )
+    expect(matchNationalChain("Church's Chicken", CHAINS)).toBe(
+      'churchs chicken',
+    )
+    expect(matchNationalChain('Olive Garden Italian Restaurant', CHAINS)).toBe(
+      'olive garden',
+    )
+  })
+
+  it('respects word boundaries (no substring false positives)', () => {
+    expect(matchNationalChain('Subjective Coffee', CHAINS)).toBeNull() // not "bjs"
+    expect(matchNationalChain('Supersonic Cafe', CHAINS)).toBeNull() // "sonic" inside a word
+    expect(matchNationalChain('Sonic', CHAINS)).toBe('sonic') // standalone word does match
+  })
+
+  it('returns null for local / FL-regional names not on the list', () => {
+    expect(matchNationalChain('Burger Monger', CHAINS)).toBeNull()
+    expect(matchNationalChain("Beef 'O' Brady's", CHAINS)).toBeNull()
+    expect(matchNationalChain('Sunken Gardens', CHAINS)).toBeNull()
+  })
+})
+
+describe('national-chain guard — no chain leaks in-play in any committed dataset', () => {
+  const { readFileSync, readdirSync } = fs
+  const cfg = JSON.parse(
+    readFileSync(new URL('../data/national-chains.json', import.meta.url)),
+  )
+  const cities = readdirSync(new URL('../public/', import.meta.url))
+    .filter((f) => /^locations\..+\.json$/.test(f))
+    .map((f) => f.match(/^locations\.(.+)\.json$/)[1])
+
+  it('finds the committed city datasets (guard is not vacuous)', () => {
+    expect(cities.length).toBeGreaterThan(0)
+  })
+
+  it.each(cities)('%s has no national-chain name in the play set', (city) => {
+    const locs = JSON.parse(
+      readFileSync(
+        new URL(`../public/locations.${city}.json`, import.meta.url),
+      ),
+    ).locations
+    const leaked = locs
+      .filter((l) => l.inPlay !== false)
+      .filter((l) => !cfg.keepIds[l.id])
+      .map((l) => ({
+        id: l.id,
+        name: l.name,
+        chain: matchNationalChain(l.name, cfg.chains),
+      }))
+      .filter((x) => x.chain)
+    // If this fails: either add the chain token's victim to data/national-chains.json
+    // keepIds (a local namesake) or it's a real chain — mark it isNationalChain.
+    expect(leaked).toEqual([])
   })
 })
