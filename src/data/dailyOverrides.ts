@@ -49,7 +49,7 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'ceviche-tapas-bar',
     'bartlett-park',
     'draculas-legacy-wine-bar',
-    'dickeys-barbecue-pit',
+    'astra-pizza',
   ],
   'stpete:2026-06-20': [
     'vinoy-park',
