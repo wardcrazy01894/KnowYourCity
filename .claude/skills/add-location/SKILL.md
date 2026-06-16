@@ -61,10 +61,15 @@ node -e 'const d=require("./public/locations.<city>.json").locations;
    sorted by id. **Omit** difficulty/inPlay/fameScore — the pass assigns them.
 2. **`data/fame-<city>.json`**: full 8-field record
    (`id,status,currentName,fameScore,reviewCount,hasWikipedia,isNationalChain,statusNote`).
-   Score fame against the city's existing anchors — pull a few:
-   `node -e '...'` over the cache (St. Pete: Tropicana Field 95, Sunken Gardens
-   82, 3 Daughters 72; most bars/restaurants 20–60). Down-weight tourist fame,
-   up-weight local ubiquity.
+   **Always assign a real, calibrated `fameScore` — never inherit or guess** (owner
+   rule: every add/update/rename gets an accurate score). Pull the venue's
+   **Google Places `userRatingCount`** (`places:searchText`, key in `.env.local`
+   `GOOGLE_MAPS_KEY`) and calibrate against the city's existing fame↔reviewCount
+   anchors in the cache (St. Pete: Tropicana Field 95/5000rev, 3 Daughters 72/600,
+   Dead Bob's 42/300, McNasty's 22/57, 4th Street Pub 20/30; most bars/restaurants
+   20–60). Down-weight tourist fame, up-weight local ubiquity. A **rename-to-
+   successor is a different business** — score the new one, don't carry the old
+   venue's fame. Set `reviewCount` to the Places count for provenance.
 3. **`public/locations.<city>.json`**: append the same base entry (sorted by id),
    then recalibrate:
 
