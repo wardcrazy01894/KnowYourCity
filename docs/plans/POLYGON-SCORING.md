@@ -1,7 +1,7 @@
 # Polygon-Aware Scoring — Implementation Plan
 
-**Status:** Design / planning  
-**Feature branch:** `feat/polygon-scoring`  
+**Status:** ✅ **SHIPPED in #97** (commit `3e078a4`). This document is the
+ratified design, kept for reference; the feature is fully implemented and merged.
 **Affects:** scoring logic, types, data pipeline, MapGuess UI, 5 city datasets
 
 ---
@@ -829,17 +829,16 @@ polygon branch — absent or empty polygon falls through to point scoring.
 - [x] `src/types.ts`: `RoundResult.distanceMeters` JSDoc updated to describe all
       three semantics (point centroid / polygon inside = 0 / polygon outside =
       edge distance) — DONE (stub). (Resolved: Nit N-B.)
-- [ ] `docs/DATA-SOURCING.md` §3: add `polygon?` to the Location schema block.
-- [ ] `docs/DATA-SOURCING.md`: new §4d "Polygon backfill (`add-polygons.mjs`)"
+- [x] `docs/DATA-SOURCING.md` §3: add `polygon?` to the Location schema block — DONE.
+- [x] `docs/DATA-SOURCING.md`: new §4d "Polygon backfill (`add-polygons.mjs`)"
       covering the `out geom` approach, matching strategy, Douglas–Peucker, node cap,
-      and the three distinct WARN log messages (§7.2).
-- [ ] `docs/PLAN.md` §2: add `src/lib/geo.ts` to architecture overview.
-- [ ] `docs/PLAN.md` §5.4: update Scoring section with `POINT_PERFECT_RADIUS_M`,
+      and the three distinct WARN log messages (§7.2) — DONE.
+- [x] `docs/PLAN.md` §2: add `src/lib/geo.ts` to architecture overview — DONE.
+- [x] `docs/PLAN.md` §5.4: update Scoring section with `POINT_PERFECT_RADIUS_M`,
       `LARGE_FALLBACK_RADIUS_M`, all four `scoreGuess` branches, and
-      `distanceMeters` semantics.
-- [ ] `docs/PLAN.md` repo structure: add `scripts/add-polygons.mjs` entry.
-- [ ] `README.md`: add `npm run add-polygons` command description (if the script
-      is added to `package.json`).
+      `distanceMeters` semantics — DONE.
+- [x] `docs/PLAN.md` repo structure: add `scripts/add-polygons.mjs` entry — DONE.
+- [x] `README.md`: add `npm run add-polygons` command description — DONE.
 
 ---
 

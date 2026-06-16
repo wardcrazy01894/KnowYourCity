@@ -50,10 +50,13 @@ Secrets and variables → Actions → **Variables** tab — *not* Secrets):
 | `VITE_TURNSTILE_SITEKEY` | `0x4AAAAAADgHt68jxl4onK-C` | public Turnstile site key for the bug form's bot check |
 | `VITE_MAPBOX_TOKEN` | *(unset, on purpose)* | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles |
 | `VITE_CF_BEACON_TOKEN` | `38e507931236442a83feeb410f152878` | Cloudflare Web Analytics beacon — cookieless page-view tracking |
+| `VITE_LEADERBOARD_ENDPOINT` | the `kyc-leaderboard` worker URL (`…workers.dev` or a custom route) | anonymous daily leaderboard + per-player streak worker; **unset → the leaderboard UI is hidden** |
 
 If `VITE_BUG_ENDPOINT` is unset, the bug form falls back to opening a prefilled
-GitHub "new issue" page (no worker needed). For local builds these live in
-`.env.local` (gitignored) instead.
+GitHub "new issue" page (no worker needed). If `VITE_LEADERBOARD_ENDPOINT` is
+unset, the leaderboard view and server streak are simply not shown (the game
+plays fully without them). For local builds these live in `.env.local`
+(gitignored) instead.
 
 ## Analytics
 
@@ -95,6 +98,52 @@ Turnstile, server-side Origin allowlist). Worker secrets (`GH_TOKEN`,
   check fails on the live site and the fail-closed worker rejects reports.
   ✅ Verified working end-to-end on 2026-06-07 (a real report from the live site
   filed a GitHub issue, pre-cutover via `wardcrazy01894.github.io`).
+
+## Leaderboard worker (`kyc-leaderboard`)
+
+A **separate** Cloudflare Worker (`worker/leaderboard.mjs`, config
+`worker/wrangler.leaderboard.toml`) backs the anonymous daily leaderboard (#92)
+and the server-side per-player streak (#95). It is backed by a **Cloudflare D1**
+database (`kyc-leaderboard`) and shares the bug worker's CORS/origin helpers, so
+keep both worker files together. Submissions are anonymous (a browser-generated
+`client_id`, no PII), size-capped, origin-allowlisted, per-IP rate-limited
+(30/60s), and fail-closed; scores are pruned after **90 days** by a daily cron.
+
+> ⚠️ **Unlike the web app, the workers do NOT auto-deploy.** `deploy.yml` only
+> ships the static site. Worker code **and D1 migrations** are applied **by hand**
+> with Wrangler — a migration merged to `main` is **not** live until you run the
+> commands below. There is no CI signal if you forget.
+
+**Deploy the worker** (from the repo root):
+
+```bash
+wrangler deploy -c worker/wrangler.leaderboard.toml
+```
+
+**Apply D1 migrations** (`worker/migrations/*.sql`, run in order; idempotent
+`CREATE … IF NOT EXISTS`):
+
+```bash
+wrangler d1 migrations apply kyc-leaderboard --local    # local dev
+wrangler d1 migrations apply kyc-leaderboard --remote   # production
+```
+
+The first deploy also needs the D1 database created once
+(`wrangler d1 create kyc-leaderboard`, then paste the printed `database_id` into
+`wrangler.leaderboard.toml`). `TURNSTILE_SECRET` is optional here (see the toml
+header) — leave it unset unless you also wire an invisible Turnstile execute on
+the client. The bug worker (`kyl-bug`) deploys the same way with
+`wrangler deploy` from `worker/` (its config is the default `wrangler.toml`).
+
+## New-deploy refresh (stale-tab busting)
+
+Every build stamps a git build hash into the bundle (`VITE_BUILD_HASH`, defined
+in `vite.config.ts`) and also emits a static **`/version.json`** carrying the
+same hash. On an interval an open tab fetches `version.json` and, if the hash no
+longer matches the one it booted with, forces a one-time reload **before** a city
+is selected (so progress is never interrupted mid-game). The logic lives in
+`src/lib/version.ts` (#91). Both values come from the same build, so they can
+never disagree within a single deploy — no reload loop.
 
 ## Before opening a PR
 

@@ -149,7 +149,13 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       game URL (`shareSiteUrl()` = origin + Vite `base`, so it's correct on Pages
       and a future custom domain). See `buildShareString` in
       `src/components/Results.tsx`.
-- [ ] Optional backend for shared online leaderboards.
+- [x] **Optional backend for shared online leaderboards** — shipped (#92): the
+      anonymous daily leaderboard (Cloudflare D1 worker `kyc-leaderboard`,
+      `src/components/Leaderboard.tsx`, `src/lib/leaderboard.ts`), with a 90-day
+      retention cron (#93). A **server-side per-player streak** (#95, migration
+      `0002_create_streaks.sql`, `streaks` table) was added alongside it, keyed by
+      anonymous client id and built to be accounts-ready. See PLAN §11 and
+      `worker/README.md`. *Still open:* named/account-based leaderboards.
 
 ## Done
 - [x] **State College enriched + uncapped + parks fix** — removed the size cap
