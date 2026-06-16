@@ -140,4 +140,33 @@ describe('composeLocations', () => {
     // 3 capped landmarks + 1 manual that bypassed the cap
     expect(out.length).toBe(4)
   })
+
+  it('manual entry OVERRIDES an OSM entry of the same id (curated coords win)', () => {
+    // A re-pinned venue: OSM still has it at the OLD address; the manual entry
+    // carries the curated new coords. Manual must win so a from-scratch rebuild
+    // preserves the re-pin instead of reverting to the stale OSM pin.
+    const food1 = food('mover', 'restaurant', 0, 1, 1) // stale OSM coords
+    const manual = [
+      {
+        id: 'mover',
+        name: 'Mover (re-pinned)',
+        lat: 8,
+        lng: 8, // curated new coords
+        category: 'restaurant',
+        source: 'manual',
+        attribution: 'x',
+      },
+    ]
+    const out = composeLocations({
+      landmarks: [],
+      food: [food1],
+      manual,
+      city: CITY(null),
+    })
+    const movers = out.filter((l) => l.id === 'mover')
+    expect(movers).toHaveLength(1) // not duplicated
+    expect(movers[0].lat).toBe(8) // manual coords win
+    expect(movers[0].lng).toBe(8)
+    expect(movers[0].name).toBe('Mover (re-pinned)')
+  })
 })

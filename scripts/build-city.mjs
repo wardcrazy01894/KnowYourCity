@@ -125,11 +125,20 @@ export function composeLocations({
   for (const f of [...cafes, ...bars, ...rests].sort(bySignal)) add(f)
   for (const l of landmarks) add(l)
 
-  // Manual must-includes bypass the cap; still deduped + in-bounds.
+  // Manual must-includes bypass the cap; still in-bounds. A manual entry whose
+  // id matches an already-added OSM candidate OVERRIDES it (curated coords/name
+  // win over stale OSM) — this is how a re-pinned venue survives a from-scratch
+  // rebuild instead of reverting to its old OSM pin. Otherwise it's a normal
+  // must-include, subject to the same-name proximity de-dupe.
   for (const m of manual) {
+    if (!m.id || !inBounds(m)) continue
+    const existingIdx = out.findIndex((o) => o.id === m.id)
+    if (existingIdx !== -1) {
+      out[existingIdx] = m
+      continue
+    }
     const nm = normalizeBusinessName(m.name, cityTokens)
-    if (!m.id || usedIds.has(m.id) || isNameProxDup(m, nm)) continue
-    if (!inBounds(m)) continue
+    if (isNameProxDup(m, nm)) continue
     usedIds.add(m.id)
     remember(m, nm)
     out.push(m)

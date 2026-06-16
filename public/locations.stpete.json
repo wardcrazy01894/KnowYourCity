@@ -42,8 +42,8 @@
       "fameScore": 22,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "4th-street-pub",
@@ -884,8 +884,8 @@
       "fameScore": 48,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "cage-brewing",
@@ -3421,8 +3421,8 @@
       "fameScore": 30,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "mr-mrs-crab",
@@ -3533,8 +3533,8 @@
       "fameScore": 58,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "nori-thai",
@@ -4640,8 +4640,8 @@
       "fameScore": 20,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "sculleys",
@@ -5077,8 +5077,8 @@
       "fameScore": 32,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "sushi-sho-rexley",
@@ -5665,8 +5665,8 @@
       "fameScore": 40,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
     },
     {
       "id": "three-birds-tavern",

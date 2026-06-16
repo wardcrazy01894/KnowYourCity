@@ -11,6 +11,13 @@ Drives a city from nothing (or a stale dataset) to a **difficulty-enriched**
 then opens a PR. This is the repeatable version of the St. Pete and State College
 passes. Read `docs/DATA-SOURCING.md` §4b and `docs/PLAN.md` §5.1b/§5.3b first.
 
+> **OSM alone is stale — cross-check with Google Places** (owner directive). The
+> Overpass pull seeds candidates, but verify each venue's `business_status` /
+> current name / `userRatingCount` against the Google Places API
+> (`GOOGLE_MAPS_KEY` in `.env.local`) during the fame+status pass so a new city
+> doesn't launch with closed/renamed pins. Commit coords from Nominatim/Census
+> (ODbL-clean). See the `google-maps-verification` memory + `BACKLOG.md`.
+
 **Prerequisite — subagents must work.** The fame pass fans out web-research
 subagents. If the Agent tool fails with *"Usage credits required for 1M
 context"*, the session is on the 1M-context model. Fix before starting: run
