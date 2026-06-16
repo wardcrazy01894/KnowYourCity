@@ -409,26 +409,47 @@ What it does, per in-play `park`/`golf_course` row without a `polygon`:
 receive a polygon (no OSM match, unusable geometry, or over the node cap) is
 written to **`data/polygon-backfill-report.json`** with its id, name, city,
 lat/lng, and reason. The rule: *no large park should remain a single point.* Work
-the report by web-searching the geometry — when the OSM `name` differs from our
-display name (e.g. "Demens Landing" vs "Demens Landing Park"), add an entry to
-the **`NAME_OVERRIDES`** map in the script and re-run; if OSM has no usable
-polygon at all, hand-add the ring to the row. Rows left without a polygon fall
-back to centroid scoring with the legacy 300 m freebie radius
-(`LARGE_FALLBACK_RADIUS_M`) so they don't regress — but they should be resolved,
-not left.
+the report by web-searching the geometry. Two override maps in the script handle
+the misses, in priority order:
+
+1. **`NAME_OVERRIDES`** (`id → OSM name`) — when the OSM `name` tag differs from
+   our display name (e.g. "Demens Landing" vs "Demens Landing Park"). Re-queries
+   by the corrected name.
+2. **`OSM_ELEMENT_OVERRIDES`** (`id → {type, id}`) — when name matching can't
+   work at all: a malformed/ambiguous relation, or a footprint stored as an
+   *unnamed* way. Pin the exact element id verified on openstreetmap.org and the
+   script fetches it directly (`buildElementQuery`).
+
+If OSM has no usable polygon at all, hand-add the ring to the row. Rows left
+without a polygon fall back to centroid scoring with the legacy 300 m freebie
+radius (`LARGE_FALLBACK_RADIUS_M`) so they don't regress.
+
+**When NOT to add a polygon.** Polygons exist to give *large* footprints a fair
+"inside = 100" target. A feature **smaller than the point freebie radius** (≈100 m)
+should stay a point: a polygon there has no freebie outside its edge, so it would
+make the location *harder* to score than the point fallback — the opposite of the
+intent. Tiny sub-features (a single ball diamond, a cluster of volleyball courts)
+therefore stay point-only on purpose.
 
 The script is idempotent: without `--force` it skips rows that already have a
 `polygon`, so re-running only retries the misses (and is polite to the public
 Overpass mirrors — a 2 s delay between queries, with mirror fallback + retry).
 
-**Current status (St. Pete): 24/28** eligible rows have polygons. The five
-name-mismatch misses were resolved via `NAME_OVERRIDES` (Mangrove Bay, Twin
-Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens Landing). The four
-still point-only are genuine OSM gaps, not bugs: **Isla Del Sol** (relation has
-only `inner` members — no outer ring, unmappable), **North Shore Park kickball
-fields** and **volleyball courts** (sub-features with no named footprint), and
-**Sawgrass Lake Park** (only a node + an unnamed way in OSM). They fall back to
-centroid scoring and need a hand-added ring if they're ever to shade.
+**Current status (St. Pete): 26/28** eligible rows have polygons.
+- Five name-mismatch misses resolved via `NAME_OVERRIDES` (Mangrove Bay, Twin
+  Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens Landing).
+- Two resolved via `OSM_ELEMENT_OVERRIDES`: **Isla Del Sol** golf course (its
+  named relation is malformed — 8 `inner` members, no outer ring — so we pin the
+  larger of its two disjoint, unnamed `golf_course` ways; the smaller NE parcel
+  isn't shaded since a single ring can't cover both) and **Sawgrass Lake Park**
+  (no park-boundary polygon exists near the point — the nearest `nature_reserve`
+  ways are ~1.5 km north — so we pin the named "Sawgrass Lake" water body at the
+  park's core). For both, the row's `lat`/`lng` was moved to an interior point of
+  the chosen ring so the reveal marker sits inside the shaded footprint.
+- Two stay **point-only by design**, not as bugs: **North Shore kickball fields**
+  (a ~30 m baseball diamond) and **volleyball courts** (six ~15 m sand courts) —
+  both smaller than the point freebie radius, so a polygon would only make them
+  harder (see "When NOT to add a polygon" above).
 
 **Verifying the result:** load the game with **`?polygons`** (see
 README / docs/PLAN.md) — it plays one round per polygon location in the city so

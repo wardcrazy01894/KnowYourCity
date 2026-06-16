@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {
   buildPolygonQuery,
+  buildElementQuery,
   centroid,
   haversineMeters,
   douglasPeucker,
@@ -54,6 +55,28 @@ describe('buildPolygonQuery', () => {
     // member ways back as separate elements carrying their geometry.
     const q = buildPolygonQuery('Lake Maggiore', bbox)
     expect(q).toContain('(._;>;)')
+  })
+})
+
+// ---------------------------------------------------------------------------
+// buildElementQuery
+// ---------------------------------------------------------------------------
+
+describe('buildElementQuery', () => {
+  it('fetches a specific way by id with geometry and member recursion', () => {
+    const q = buildElementQuery('way', 1196843509)
+    expect(q).toContain('way(1196843509)')
+    expect(q).toContain('(._;>;)')
+    expect(q).toContain('out geom')
+  })
+
+  it('fetches a specific relation by id', () => {
+    const q = buildElementQuery('relation', 14526770)
+    expect(q).toContain('relation(14526770)')
+  })
+
+  it('rejects an unsupported element type', () => {
+    expect(() => buildElementQuery('node', 1)).toThrow()
   })
 })
 

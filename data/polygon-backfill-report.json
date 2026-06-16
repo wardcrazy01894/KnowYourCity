@@ -2,18 +2,10 @@
   "generatedFrom": "stpete",
   "dryRun": false,
   "totalEligible": 28,
-  "totalWithPolygon": 24,
-  "totalPointOnly": 4,
-  "newMatchesThisRun": 5,
+  "totalWithPolygon": 26,
+  "totalPointOnly": 2,
+  "newMatchesThisRun": 2,
   "pointOnly": [
-    {
-      "id": "isla-del-sol",
-      "name": "Isla Del Sol",
-      "city": "stpete",
-      "lat": 27.710822,
-      "lng": -82.714633,
-      "reason": "no-match"
-    },
     {
       "id": "north-shore-kickball-fields",
       "name": "North Shore Park Kickball Fields",
@@ -28,14 +20,6 @@
       "city": "stpete",
       "lat": 27.782942,
       "lng": -82.624619,
-      "reason": "no-match"
-    },
-    {
-      "id": "sawgrass-lake-park",
-      "name": "Sawgrass Lake Park",
-      "city": "stpete",
-      "lat": 27.8413442,
-      "lng": -82.6689052,
       "reason": "no-match"
     }
   ]

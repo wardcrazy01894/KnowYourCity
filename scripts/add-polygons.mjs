@@ -196,6 +196,29 @@ export function buildPolygonQuery(name, bbox) {
 out geom;`.trim()
 }
 
+/**
+ * Build a query that fetches ONE specific OSM element by id (with member
+ * recursion + `out geom`, same rationale as buildPolygonQuery). Used by the
+ * OSM_ELEMENT_OVERRIDES escape hatch for locations OSM can't resolve by name:
+ * a malformed/ambiguous relation, or a footprint stored as an unnamed way (e.g.
+ * the Isla Del Sol golf parcels, the "Sawgrass Lake" water body). The operator
+ * pins the exact element id they verified on openstreetmap.org.
+ *
+ * @param {'way'|'relation'} type
+ * @param {number} id
+ * @returns {string}
+ */
+export function buildElementQuery(type, id) {
+  if (type !== 'way' && type !== 'relation') {
+    throw new Error(`buildElementQuery: unsupported type "${type}"`)
+  }
+  return `
+[out:json][timeout:90];
+${type}(${id});
+(._;>;);
+out geom;`.trim()
+}
+
 // ---------------------------------------------------------------------------
 // Geometry helpers (Node-side — cannot import src/lib/geo.ts directly)
 // ---------------------------------------------------------------------------
@@ -646,6 +669,40 @@ async function fetchPolygonForLocation(location, bbox, nameOverride) {
   return { ring: simplified.map(roundCoord), reason: 'ok' }
 }
 
+/**
+ * Fetch a polygon for a location by a PINNED OSM element id (see
+ * OSM_ELEMENT_OVERRIDES), bypassing name matching entirely. Same ring
+ * extraction + coarsen-to-cap pipeline as fetchPolygonForLocation.
+ *
+ * @param {{ id: string, name: string }} location
+ * @param {{ type: 'way'|'relation', id: number }} ref
+ * @returns {Promise<{ ring: [number,number][] | null, reason: string }>}
+ */
+async function fetchPolygonByElement(location, ref) {
+  const { elements } = await fetchOverpass(buildElementQuery(ref.type, ref.id))
+  const wayGeomById = buildWayGeomIndex(elements || [])
+  const target = (elements || []).find(
+    (el) => el.type === ref.type && el.id === ref.id,
+  )
+  if (!target) {
+    console.warn(
+      `    WARN: ${location.id} — pinned ${ref.type}/${ref.id} not returned by Overpass`,
+    )
+    return { ring: null, reason: 'no-match' }
+  }
+  const ring = extractOuterRing(target, wayGeomById)
+  if (!ring) return { ring: null, reason: 'unusable-geometry' } // logged inside
+
+  const baseline = douglasPeucker(ring, DP_EPSILON_DEG)
+  const simplified = simplifyToCap(ring, DP_EPSILON_DEG, MAX_NODES)
+  if (baseline.length > MAX_NODES) {
+    console.warn(
+      `    NOTE: ${location.id} — ${ref.type}/${ref.id} coarsened ${baseline.length}→${simplified.length} nodes to fit the ${MAX_NODES}-node cap`,
+    )
+  }
+  return { ring: simplified.map(roundCoord), reason: 'ok' }
+}
+
 // ---------------------------------------------------------------------------
 // Name override map
 // ---------------------------------------------------------------------------
@@ -669,6 +726,35 @@ const NAME_OVERRIDES = {
   // OSM spells the city out ("Saint" not "St."), and Demens has an apostrophe.
   'st-pete-pier': 'Saint Pete Pier',
   'demens-landing-park': "Demen's Landing Park",
+}
+
+/**
+ * Escape hatch for footprints OSM can't resolve by name — pin the exact element
+ * id verified on openstreetmap.org. Takes priority over NAME_OVERRIDES. Key =
+ * location id; value = { type, id }.
+ *
+ * Why each entry can't go through name matching:
+ *  - isla-del-sol: the named relation 14526770 is malformed (8 `inner` members,
+ *    no `outer` ring — unmappable). The course is two disjoint UNNAMED
+ *    `leisure=golf_course` ways; we pin the larger SW parcel (way 1196843509,
+ *    nearest the stored centroid). The smaller NE parcel isn't shaded — a single
+ *    ring can't cover both, and a hull spanning the gap would wrongly include
+ *    the homes/canals between them.
+ *  - sawgrass-lake-park: no park-boundary polygon exists in OSM near the point
+ *    (the only `nature_reserve` ways are ~1.5 km north — a different reserve).
+ *    The defining feature is the named water body "Sawgrass Lake" (way
+ *    102845485), which sits at the park's core, so we shade that.
+ *
+ * North Shore kickball/volleyball are intentionally NOT here: their OSM
+ * footprints (a single ~30 m baseball diamond; six ~15 m sand courts) are
+ * smaller than the point freebie radius, so a polygon would only make them
+ * HARDER to score. They stay point-only by design (see docs/DATA-SOURCING.md §4d).
+ *
+ * @type {Record<string, { type: 'way'|'relation', id: number }>}
+ */
+const OSM_ELEMENT_OVERRIDES = {
+  'isla-del-sol': { type: 'way', id: 1196843509 },
+  'sawgrass-lake-park': { type: 'way', id: 102845485 },
 }
 
 // ---------------------------------------------------------------------------
@@ -713,13 +799,16 @@ async function processCity(city, opts) {
 
   for (let i = 0; i < todo.length; i++) {
     const loc = todo[i]
+    const elementRef = OSM_ELEMENT_OVERRIDES[loc.id]
     const override = NAME_OVERRIDES[loc.id]
     process.stdout.write(
       `  [${i + 1}/${todo.length}] ${loc.id} (${loc.name})… `,
     )
     let result
     try {
-      result = await fetchPolygonForLocation(loc, bbox, override)
+      result = elementRef
+        ? await fetchPolygonByElement(loc, elementRef)
+        : await fetchPolygonForLocation(loc, bbox, override)
     } catch (err) {
       console.warn(`\n    ERROR: ${loc.id} — ${err.message}`)
       result = { ring: null, reason: 'fetch-error' }
