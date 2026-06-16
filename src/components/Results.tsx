@@ -10,6 +10,7 @@ import type { RoundResult } from '../types'
 import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
 import { ROUNDS_PER_DAY } from '../lib/daily'
 import { log } from '../lib/log'
+import { loadState } from '../lib/storage'
 import {
   submitDailyScore,
   fetchLeaderboard,
@@ -31,6 +32,9 @@ export interface ResultsProps {
   dateKey: string
   results: RoundResult[]
   totalScore: number
+  /** Hash of the lineup just played (progress.ts:lineupHash) — keys the
+   *  leaderboard submission/cache so a changed-set replay adds its own row. */
+  lineup: string
   streak: { current: number; best: number }
   /** True only for the official daily challenge — gates leaderboard submission. */
   official: boolean
@@ -82,6 +86,7 @@ export function Results({
   dateKey,
   results,
   totalScore,
+  lineup,
   streak,
   official,
 }: ResultsProps) {
@@ -90,7 +95,17 @@ export function Results({
   // submit once on mount. Stays null when the leaderboard is off/unavailable, in
   // which case nothing renders — the feature never blocks the results screen.
   const [standing, setStanding] = useState<Standing | null>(() =>
-    official ? readStanding(cityId, dateKey) : null,
+    official ? readStanding(cityId, dateKey, lineup) : null,
+  )
+  // All of the viewer's totals for the day (one normally; two after a
+  // changed-set replay) — highlights each of their rows on the board. Read once
+  // from history, which already holds this completion's record by now.
+  const [yourScores] = useState<number[]>(() =>
+    official
+      ? loadState(cityId)
+          .history.filter((h) => h.dateKey === dateKey)
+          .map((h) => h.totalScore)
+      : [],
   )
   const [showBoard, setShowBoard] = useState(false)
   // Prefer the server-computed streak (authoritative, accounts-ready) when the
@@ -104,6 +119,7 @@ export function Results({
         cityId,
         dateKey,
         score: totalScore,
+        lineup,
         official,
       })
       if (!live || !s) return
@@ -152,6 +168,7 @@ export function Results({
         cityShort={cityShort}
         dateKey={dateKey}
         yourScore={official ? totalScore : undefined}
+        yourScores={yourScores}
         yourStanding={standing}
         onClose={() => setShowBoard(false)}
       />

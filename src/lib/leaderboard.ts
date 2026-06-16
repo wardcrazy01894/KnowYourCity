@@ -103,13 +103,21 @@ export function formatStanding({ rank, total }: Standing): string {
     : base
 }
 
-const cacheKey = (cityId: string, dateKey: string) =>
-  `${CACHE_PREFIX}:${cityId}:${dateKey}`
+// The cache (and thus the once-per-day no-re-POST guard) is keyed by LINEUP too:
+// a reload of the same completion is served from cache, but a replay against a
+// CHANGED official set has a different lineup → cache miss → it submits a new
+// row. Legacy callers pass '' (the same bucket old clients land in).
+const cacheKey = (cityId: string, dateKey: string, lineup = '') =>
+  `${CACHE_PREFIX}:${cityId}:${dateKey}:${lineup}`
 
-/** Read a previously-returned standing for this city+day, or null. */
-export function readStanding(cityId: string, dateKey: string): Standing | null {
+/** Read a previously-returned standing for this city+day+lineup, or null. */
+export function readStanding(
+  cityId: string,
+  dateKey: string,
+  lineup = '',
+): Standing | null {
   try {
-    const raw = localStorage.getItem(cacheKey(cityId, dateKey))
+    const raw = localStorage.getItem(cacheKey(cityId, dateKey, lineup))
     if (!raw) return null
     const s = JSON.parse(raw) as Standing
     return typeof s?.rank === 'number' && typeof s?.total === 'number'
@@ -120,9 +128,14 @@ export function readStanding(cityId: string, dateKey: string): Standing | null {
   }
 }
 
-function writeStanding(cityId: string, dateKey: string, s: Standing): void {
+function writeStanding(
+  cityId: string,
+  dateKey: string,
+  lineup: string,
+  s: Standing,
+): void {
   try {
-    localStorage.setItem(cacheKey(cityId, dateKey), JSON.stringify(s))
+    localStorage.setItem(cacheKey(cityId, dateKey, lineup), JSON.stringify(s))
   } catch {
     /* best-effort */
   }
@@ -132,6 +145,9 @@ export interface SubmitArgs {
   cityId: string
   dateKey: string
   score: number
+  /** Hash of the played lineup (progress.ts:lineupHash) — distinguishes a replay
+   *  of a changed official set so it submits its own board row. */
+  lineup: string
   /** True only for the real daily challenge — false for shuffle / date override. */
   official: boolean
   /** Cloudflare Turnstile token, when the widget is enabled (optional in v1). */
@@ -145,6 +161,7 @@ export function buildSubmitPayload(args: SubmitArgs) {
     date: args.dateKey,
     score: args.score,
     clientId: getClientId(),
+    lineup: args.lineup,
     turnstileToken: args.turnstileToken,
   }
 }
@@ -163,7 +180,7 @@ export async function submitDailyScore(
   const endpoint = import.meta.env.VITE_LEADERBOARD_ENDPOINT
   if (!endpoint) return null
 
-  const cached = readStanding(args.cityId, args.dateKey)
+  const cached = readStanding(args.cityId, args.dateKey, args.lineup)
   if (cached) return cached
 
   try {
@@ -183,7 +200,7 @@ export async function submitDailyScore(
       typeof data.streak.best === 'number'
     )
       standing.streak = { current: data.streak.current, best: data.streak.best }
-    writeStanding(args.cityId, args.dateKey, standing)
+    writeStanding(args.cityId, args.dateKey, args.lineup, standing)
     return standing
   } catch {
     return null
@@ -274,24 +291,30 @@ export interface LeaderboardRow {
 
 /**
  * Turn a desc-sorted score list into ranked rows. Ties share a rank (standard
- * competition ranking: 480, 480, 420 → ranks 1, 1, 3). When `yourScore` is
- * given, the FIRST row matching it is flagged `you` (anonymous play can't
- * distinguish tied players, so we highlight one). Pure.
+ * competition ranking: 480, 480, 420 → ranks 1, 1, 3). `yourScores` are the
+ * viewer's own totals for the day — usually one, but a player who replayed a
+ * changed official set has two (both rows are theirs). Each of your scores
+ * flags ONE matching row (a multiset: two of your rows at 380 flag two 380s);
+ * anonymous play can't distinguish tied players, so among equal scores we just
+ * flag the first unflagged ones. Pure.
  */
 export function buildLeaderboardRows(
   scores: number[],
-  yourScore?: number,
+  yourScores: number[] = [],
 ): LeaderboardRow[] {
   const sorted = [...scores].sort((a, b) => b - a)
-  let youMarked = false
+  // How many of each score are the viewer's, decremented as we flag rows.
+  const mine = new Map<number, number>()
+  for (const s of yourScores) mine.set(s, (mine.get(s) ?? 0) + 1)
   let prevScore: number | null = null
   let prevRank = 0
   return sorted.map((score, i) => {
     const rank = prevScore !== null && score === prevScore ? prevRank : i + 1
     prevScore = score
     prevRank = rank
-    const you = !youMarked && yourScore !== undefined && score === yourScore
-    if (you) youMarked = true
+    const left = mine.get(score) ?? 0
+    const you = left > 0
+    if (you) mine.set(score, left - 1)
     return { rank, score, you }
   })
 }
