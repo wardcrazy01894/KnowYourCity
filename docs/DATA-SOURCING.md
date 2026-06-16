@@ -112,6 +112,7 @@ Run at <https://query.wikidata.org>. This is optional polish — the OSM
   "clue": null,                    // HUMAN writes this (or seed from Wikidata)
   "photoUrl": null,                // FUTURE photo rounds; leave null for v1
   "polygon": [[27.78, -82.64], …], // OPTIONAL footprint ring (park/golf only); see §4d
+  "lastVerified": "2026-06-16",    // OPTIONAL date open-status last confirmed via Google Places
   "source": "overpass",            // or "wikidata" / "manual"
   "attribution": "OpenStreetMap ODbL"
 }
