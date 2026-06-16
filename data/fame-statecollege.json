@@ -651,13 +651,13 @@
   },
   {
     "id": "dulce-luca-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "bakery and café opened March 2024 on E Calder Way, local indie spot"
+    "statusNote": "CLOSED_PERMANENTLY at 214 E Calder Way (Google Places, both Jun 2026 sweeps)."
   },
   {
     "id": "eden-valley-coffee-company",

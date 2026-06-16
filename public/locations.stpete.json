@@ -15,7 +15,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "3-daughters-brewing",
@@ -29,7 +30,8 @@
       "clue": "A large, popular craft brewery with a big taproom.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "49th-street-pub",
@@ -43,7 +45,8 @@
       "clue": "A neighborhood pub on Central Ave.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "4th-street-pub",
@@ -57,7 +60,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "9-bangkok-thai-restaurant",
@@ -71,7 +75,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "abc-chinese-seafood",
@@ -85,7 +90,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "agave",
@@ -99,7 +105,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "al-lang-stadium",
@@ -113,7 +120,8 @@
       "clue": "A waterfront stadium, home of the Tampa Bay Rowdies.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "albert-whitted-park",
@@ -128,6 +136,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.76652, -82.63042],
         [27.76641, -82.63067],
@@ -149,7 +158,8 @@
       "clue": "A unique French-Vietnamese restaurant near Pasadena.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "allelo",
@@ -163,7 +173,8 @@
       "clue": "A Mediterranean-Aegean restaurant on Beach Drive.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "angelos-grill-bar",
@@ -177,7 +188,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "anthonys-pizza",
@@ -191,7 +203,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "astra-pizza",
@@ -205,7 +218,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "athenian-garden",
@@ -219,7 +233,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "azalea-park",
@@ -234,6 +249,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.78456, -82.74067],
         [27.78456, -82.73779],
@@ -259,7 +275,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "baba",
@@ -273,7 +290,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bad-mother",
@@ -287,7 +305,8 @@
       "clue": "An independent coffee shop downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ballpark-and-rec",
@@ -301,7 +320,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "banana-hammock",
@@ -315,7 +335,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bandit-coffee",
@@ -329,7 +350,8 @@
       "clue": "An independent coffee shop on Central Avenue.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bar-moxy",
@@ -343,7 +365,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bar548",
@@ -351,13 +374,14 @@
       "lat": 27.770905,
       "lng": -82.64111,
       "category": "bar",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bartlett-park",
@@ -393,7 +417,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bavaros",
@@ -407,7 +432,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "beangood-coffee",
@@ -421,7 +447,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "beech-kombucha",
@@ -435,7 +462,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "beerbusters-movie-bar-bottle-shop",
@@ -449,7 +477,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bella-brava",
@@ -463,7 +492,8 @@
       "clue": "A New World Italian trattoria on Beach Drive.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "black-crow-coffee",
@@ -477,7 +507,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "black-crow-coffee-shop",
@@ -491,7 +522,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "blue-fugu",
@@ -505,21 +537,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "boardwalk-tavern",
-      "name": "Boardwalk Tavern",
-      "lat": 27.820875,
-      "lng": -82.669286,
-      "category": "bar",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bobs-side-piece",
@@ -533,7 +552,8 @@
       "clue": "A neighborhood bar on Central Ave in the Pasadena area.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bodega",
@@ -547,7 +567,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "bongos-beach-bar-grille",
@@ -575,7 +596,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "boyd-hill-nature-preserve",
@@ -590,6 +612,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.74243, -82.66817],
         [27.74243, -82.67108],
@@ -689,7 +712,8 @@
       "clue": "An acclaimed farm-to-table restaurant in the EDGE District.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "brooklyn-south",
@@ -703,7 +727,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "buona-ristorante",
@@ -717,7 +742,8 @@
       "clue": "An Italian restaurant on Gulf Blvd, St. Pete Beach.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "buoys-waterfront-bar-grill",
@@ -731,7 +757,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "burger-monger",
@@ -745,7 +772,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "buttermilk-eatery",
@@ -759,7 +787,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "caddys-on-the-beach",
@@ -773,7 +802,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cafe-1001-and-creative-catering-company",
@@ -787,7 +817,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cafe-cibo",
@@ -801,7 +832,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cafe-gala",
@@ -815,7 +847,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cafe-soleil-french-bakery-deli",
@@ -829,7 +862,8 @@
       "clue": "A French bakery and deli near St. Pete Beach.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cage-brewing",
@@ -843,7 +877,8 @@
       "clue": "A craft brewery & event space in the Warehouse Arts District.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cali",
@@ -857,7 +892,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "campanellas-italian-restaurant-pizzeria",
@@ -871,7 +907,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cappys-pizza",
@@ -885,7 +922,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "carinos-northern-italian-cuisine",
@@ -899,7 +937,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "carmelitas-mexican-restaurant",
@@ -913,7 +952,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "casita-taqueria",
@@ -927,7 +967,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cassis",
@@ -941,7 +982,8 @@
       "clue": "A French-American brasserie on Beach Drive.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cassis-american-brasserie",
@@ -955,7 +997,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "casual-clam",
@@ -969,7 +1012,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "central-diner",
@@ -983,7 +1027,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "central-pizza",
@@ -997,7 +1042,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ceviche",
@@ -1011,7 +1057,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ceviche-tapas-bar",
@@ -1025,7 +1072,8 @@
       "clue": "A long-running Spanish tapas bar known for its sangria.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "chihuly-collection",
@@ -1039,7 +1087,8 @@
       "clue": "A permanent home for Dale Chihuly's blown-glass art on Central Ave.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "chile-verde",
@@ -1053,7 +1102,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "chill-restaurant-bar",
@@ -1067,7 +1117,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "china-1",
@@ -1081,7 +1132,23 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "china-crossings",
+      "name": "China Crossings",
+      "lat": 27.86801,
+      "lng": -82.64464,
+      "category": "restaurant",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 35,
+      "clue": "A Chinese restaurant on Roosevelt Blvd N.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim, status verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "china-kitchen",
@@ -1095,7 +1162,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "chop-stick-express",
@@ -1109,7 +1177,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "clam-bayou-nature-preserve",
@@ -1124,6 +1193,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.73759, -82.69518],
         [27.73748, -82.69514],
@@ -1152,7 +1222,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "coconut-charlies-beach-bar",
@@ -1166,7 +1237,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "copa",
@@ -1180,7 +1252,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "copper-shaker",
@@ -1194,7 +1267,8 @@
       "clue": "A craft cocktail bar known for its Old Fashioneds.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "crab-shack",
@@ -1208,7 +1282,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "crabby-bills",
@@ -1222,7 +1297,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "craft-kafe",
@@ -1250,7 +1326,8 @@
       "clue": "The downtown outpost of the gluten-free bakery and coffeehouse, at 200 Central.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "crescent-lake-park",
@@ -1265,6 +1342,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.792, -82.64254],
         [27.79205, -82.64022],
@@ -1293,7 +1371,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "dead-bobs",
@@ -1307,7 +1386,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "demens-landing-park",
@@ -1322,6 +1402,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77, -82.63187],
         [27.7701, -82.6313],
@@ -1351,7 +1432,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "doubles-sports-bar",
@@ -1379,7 +1461,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "driftwood-kava-roastery-st-pete",
@@ -1393,7 +1476,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "duncan-mcclellan-gallery",
@@ -1407,7 +1491,8 @@
       "clue": "A renowned glass-art gallery in the Warehouse Arts District.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "el-agave-bar",
@@ -1421,7 +1506,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "el-cap",
@@ -1435,7 +1521,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "el-huarache-veloz",
@@ -1449,7 +1536,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "el-nica-restaurant",
@@ -1463,7 +1551,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "elliott-aster",
@@ -1477,7 +1566,8 @@
       "clue": "Coastal fine dining near the Vinoy.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "emerald-bar",
@@ -1491,7 +1581,8 @@
       "clue": "A legendary Central Avenue dive bar since 1947.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "engine-no-9",
@@ -1505,7 +1596,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "enigma",
@@ -1519,7 +1611,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fabrica-pizza",
@@ -1533,7 +1626,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fergs-sports-bar-grill",
@@ -1547,7 +1641,8 @@
       "clue": "A sprawling sports bar across from the ballpark.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "firewater-cuisine-wellness",
@@ -1561,7 +1656,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "first-street-coffee",
@@ -1575,7 +1671,8 @@
       "clue": "A downtown specialty coffee shop.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fitlife-foods",
@@ -1589,7 +1686,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "five-bucks-drinkery",
@@ -1603,7 +1701,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "five-bucks-drinkery-downtown",
@@ -1617,7 +1716,8 @@
       "clue": "A longtime downtown dive on the 200 block of Central — everything five bucks.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "flamingo-sports-bar",
@@ -1631,7 +1731,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "flippers-pizzeria",
@@ -1645,7 +1746,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "florida-holocaust-museum",
@@ -1659,7 +1761,8 @@
       "clue": "One of the largest Holocaust museums in the U.S., downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "floridian-social-club",
@@ -1673,7 +1776,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fort-de-soto-county-park",
@@ -1688,6 +1792,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.6474, -82.74741],
         [27.61351, -82.73796],
@@ -1714,7 +1819,8 @@
       "clue": "Pan-Asian dining with A5 wagyu in the Ponce de Leon Hotel.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fortunatos-italian-pizzeria-northeast",
@@ -1728,7 +1834,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fossil-park",
@@ -1770,7 +1877,8 @@
       "clue": "A quirky old-school seafood market & diner on 4th Street.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "foxtail-coffee",
@@ -1784,7 +1892,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "frays-donut-house",
@@ -1798,7 +1907,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "frescos-waterfront-bistro",
@@ -1812,7 +1922,8 @@
       "clue": "A waterfront seafood bistro by the downtown marina.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "fresh-kitchen",
@@ -1826,7 +1937,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "friendly-fisherman",
@@ -1840,7 +1952,8 @@
       "clue": "The Hubbard family's casual waterfront seafood spot at John's Pass — cook-your-own-catch and fresh Gulf fish since 1978.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "gateway-to-india",
@@ -1854,7 +1967,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "german-american-society-biergarten",
@@ -1868,7 +1982,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "german-knoodle",
@@ -1882,7 +1997,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "gigis-italian-restaurants",
@@ -1896,7 +2012,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "gizella-kopsick-palm-arboretum",
@@ -1911,6 +2028,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.78253, -82.62651],
         [27.78223, -82.62598],
@@ -1933,7 +2051,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "good-night-john-boy",
@@ -1947,7 +2066,8 @@
       "clue": "A downtown dance bar/nightlife spot.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap Nominatim"
+      "attribution": "OpenStreetMap Nominatim",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "grace",
@@ -1961,7 +2081,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "grand-hacienda",
@@ -1975,7 +2096,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "grassroots-kava",
@@ -1989,7 +2111,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "grazzi",
@@ -2003,7 +2126,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "great-explorations-childrens-museum",
@@ -2017,7 +2141,8 @@
       "clue": "A hands-on children’s museum next to Sunken Gardens.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "green-bench-brewing-co",
@@ -2031,7 +2156,8 @@
       "clue": "One of St. Pete's flagship craft breweries.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "grove-surf-coffee",
@@ -2045,7 +2171,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "gulfport-brewery-eatery",
@@ -2059,7 +2186,8 @@
       "clue": "A neighborhood brewpub in Gulfport.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "gypsysouls-coffeehouse-dtsp",
@@ -2073,7 +2201,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hangar-restaurant-and-flight-lounge",
@@ -2087,7 +2216,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "harrys-beach-bar",
@@ -2101,7 +2231,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "harveys-4th-street-grill",
@@ -2115,7 +2246,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hawkers-asian-street-food",
@@ -2129,7 +2261,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hi-5",
@@ -2143,7 +2276,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hooks-sushi",
@@ -2157,21 +2291,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "hops-20",
-      "name": "Hops 2.0",
-      "lat": 27.773798,
-      "lng": -82.630755,
-      "category": "bar",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "huaroche-veloz",
@@ -2185,7 +2306,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hubbards-marina",
@@ -2199,7 +2321,8 @@
       "clue": "A family-owned fishing charter and marina at John's Pass Village, in continuous operation since 1928 — one of Florida's oldest.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hurricane-seafood-restaurant",
@@ -2213,7 +2336,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ichiban-japanese",
@@ -2227,7 +2351,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ikigai-with-a-taste-of-saigon",
@@ -2241,7 +2366,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "il-ritorno",
@@ -2255,7 +2381,8 @@
       "clue": "A modern, award-winning Italian spot downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "imagine-museum",
@@ -2269,7 +2396,8 @@
       "clue": "A museum devoted to contemporary studio glass art.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "indian-bistro",
@@ -2283,7 +2411,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "intermezzo-coffee-cocktails",
@@ -2297,7 +2426,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "isla-del-sol",
@@ -2341,7 +2471,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "jannus-live",
@@ -2355,7 +2486,8 @@
       "clue": "An open-air downtown courtyard music venue, one of Florida’s oldest.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "jimmy-bs-beach-bar",
@@ -2369,7 +2501,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "jimmys-sports-bar",
@@ -2383,7 +2516,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "jinju",
@@ -2397,7 +2531,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "joey-brooklyns-famous-pizza",
@@ -2411,7 +2546,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "jungle-prada-tavern",
@@ -2425,7 +2561,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "juno-and-the-peacock",
@@ -2439,7 +2576,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "jwags",
@@ -2453,7 +2591,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kahunas",
@@ -2467,7 +2606,8 @@
       "clue": "A Gandy-area bar in north St. Pete.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kahwa-coffee",
@@ -2481,7 +2621,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kahwa-coffee-north",
@@ -2495,7 +2636,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kahwa-south",
@@ -2509,7 +2651,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kalinas-coffee-european-food",
@@ -2523,7 +2666,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kao-thai-kitchen",
@@ -2537,7 +2681,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "katiki",
@@ -2551,7 +2696,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kobe-japanese-steakhouse",
@@ -2565,7 +2711,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kopper-kitchen",
@@ -2579,7 +2726,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kress-building",
@@ -2593,7 +2741,8 @@
       "clue": "A historic five-and-dime building on Central Avenue.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kristinas-cafe",
@@ -2601,13 +2750,14 @@
       "lat": 27.804315,
       "lng": -82.679919,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "la-casa-de-pane",
@@ -2621,7 +2771,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "la-teresita",
@@ -2635,7 +2786,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "la-v-vietnamese-fusion",
@@ -2775,6 +2927,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.71227, -82.65452],
         [27.71215, -82.65446],
@@ -2799,7 +2952,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lanna-thai-sushi-restuarant",
@@ -2813,7 +2967,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "level-11",
@@ -2841,7 +2996,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lonnis-sandwiches",
@@ -2855,7 +3011,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "los-guerreros-mexican-restaurant",
@@ -2869,7 +3026,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lotus-vegetarian",
@@ -2883,7 +3041,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "low-tide-kava",
@@ -2897,7 +3056,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lucky-9-juice-bar",
@@ -2911,7 +3071,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lucky-star",
@@ -2925,7 +3086,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lucky-star-lounge",
@@ -2939,7 +3101,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mad-hatters-ethnobotanical-tea-bar",
@@ -2953,7 +3116,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mandarin-hide",
@@ -2967,7 +3131,8 @@
       "clue": "A craft cocktail bar on Central Avenue.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mangrove-bay-golf-course",
@@ -2982,6 +3147,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.83558, -82.62873],
         [27.83556, -82.63025],
@@ -3056,7 +3222,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mastrys-brewing-co",
@@ -3070,7 +3237,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "maximo-park",
@@ -3085,6 +3253,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.70884, -82.68166],
         [27.70927, -82.68206],
@@ -3122,7 +3291,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "melt-n-dip",
@@ -3136,7 +3306,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mi-carreta-restaurant-and-bakery",
@@ -3150,7 +3321,8 @@
       "clue": "Family-run Colombian and Latin American plates with a bakery counter of fresh pan and pastries (formerly La Carreta Bakery).",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mickeys-cafe",
@@ -3164,7 +3336,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "middle-grounds-grill",
@@ -3178,7 +3351,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mirror-lake",
@@ -3226,7 +3400,8 @@
       "clue": "A downtown arts center with a glass-blowing hot shop.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mr-empanada",
@@ -3240,7 +3415,8 @@
       "clue": "A counter-service spot for empanadas and Cuban-style fare.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mr-mrs-crab",
@@ -3254,7 +3430,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mr-sushi",
@@ -3282,7 +3459,8 @@
       "clue": "St. Pete's flagship fine-art museum on the downtown waterfront.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "my-rich-uncle",
@@ -3296,7 +3474,8 @@
       "clue": "A downtown cocktail lounge.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap Nominatim"
+      "attribution": "OpenStreetMap Nominatim",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "natures-table",
@@ -3310,7 +3489,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "neighborhood-joe",
@@ -3324,7 +3504,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "nine-spices-hot-pot",
@@ -3338,7 +3519,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "nitallys",
@@ -3352,7 +3534,8 @@
       "clue": "A long-running Thai-and-Mexican fusion restaurant.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "nori-thai",
@@ -3366,7 +3549,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "north-shore-kickball-fields",
@@ -3380,7 +3564,8 @@
       "clue": "The open rec/kickball fields at North Shore Park.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "Manual (approx.)"
+      "attribution": "Manual (approx.)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "north-shore-volleyball-courts",
@@ -3394,7 +3579,8 @@
       "clue": "Sand volleyball courts at North Shore Park on the downtown waterfront.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "north-straub-park",
@@ -3409,6 +3595,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77577, -82.6318],
         [27.77617, -82.6317],
@@ -3431,7 +3618,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "oak-and-stone",
@@ -3445,7 +3633,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "old-northeast-tavern",
@@ -3473,7 +3662,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "one-night-stand",
@@ -3487,7 +3677,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "overflow-brewing-company",
@@ -3501,7 +3692,8 @@
       "clue": "A craft brewery known for its sours.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "oyster-shucker-craft-draft",
@@ -3515,7 +3707,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pacific-counter",
@@ -3529,7 +3722,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "paisanos-pizza-pasta",
@@ -3543,7 +3737,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pana-kava-java",
@@ -3557,7 +3752,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "paolos-pizza-subs",
@@ -3571,7 +3767,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "paradeco-coffee-roasters",
@@ -3585,7 +3782,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "paradise-grille-pass-a-grille",
@@ -3599,7 +3797,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "paradise-grille-upham-beach",
@@ -3613,7 +3812,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "park-rec",
@@ -3627,7 +3827,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "parkshore-grill",
@@ -3641,7 +3842,8 @@
       "clue": "An upscale American restaurant on Beach Drive.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "parkside-cafe",
@@ -3655,7 +3857,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pasadena-yacht-country-club",
@@ -3670,6 +3873,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.75325, -82.72876],
         [27.75281, -82.72862],
@@ -3767,7 +3971,8 @@
       "clue": "A quirky craft brewery in a former auto shop.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "perrys-bbq",
@@ -3781,7 +3986,23 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "perrys-porch",
+      "name": "Perry's Porch",
+      "lat": 27.77348,
+      "lng": -82.6312,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 50,
+      "clue": "A restaurant on 2nd Ave NE in downtown St. Pete.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim, status verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pho-ha-tien",
@@ -3795,7 +4016,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pho-kien-giang",
@@ -3809,7 +4031,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pho-quyen-vietnamese",
@@ -3823,7 +4046,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pier-teaki",
@@ -3837,7 +4061,8 @@
       "clue": "A tiki rooftop bar atop the St. Pete Pier.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pin-on-grand",
@@ -3851,7 +4076,8 @@
       "clue": "An Asian-fusion restaurant in the Grand Central District.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pin-wok-bowl",
@@ -3865,7 +4091,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pineapple-espresso",
@@ -3879,7 +4106,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pioneer-park",
@@ -3894,6 +4122,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.7711, -82.63314],
         [27.7711, -82.6324],
@@ -3917,7 +4146,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pipos-cuban-cafe",
@@ -3931,7 +4161,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "poke-island",
@@ -3945,7 +4176,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "poppos-taquiera",
@@ -3959,7 +4191,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "porters-stone-soup-cafe",
@@ -3973,7 +4206,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "quan-ngon-bistro",
@@ -3987,21 +4221,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "que-pasa-mexican-cantina",
-      "name": "Que Pasa Mexican Cantina",
-      "lat": 27.866872,
-      "lng": -82.64542,
-      "category": "restaurant",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "rec-dec",
@@ -4015,7 +4236,8 @@
       "clue": "A Gandy-area sports bar and social athletic club with lighted volleyball courts, cornhole, and a kitchen.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "red-white-booze",
@@ -4029,7 +4251,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "renzos",
@@ -4037,13 +4260,14 @@
       "lat": 27.77015,
       "lng": -82.63535,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ricks-reef",
@@ -4057,7 +4281,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "right-around-the-corner",
@@ -4071,7 +4296,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "riptides",
@@ -4085,7 +4311,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "rococo-steak",
@@ -4099,7 +4326,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "root-clay",
@@ -4113,7 +4341,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "roses",
@@ -4127,7 +4356,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "round-lake",
@@ -4135,7 +4365,7 @@
       "lat": 27.7791054,
       "lng": -82.639802,
       "category": "park",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "inPlay": true,
       "fameScore": 30,
       "clue": "A small historic lake and surrounding park in the Round Lake neighborhood.",
@@ -4166,7 +4396,8 @@
       "clue": "A downtown jazz & blues bar open late.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "rum-runners",
@@ -4180,7 +4411,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "rumfish-grill-bar",
@@ -4194,7 +4426,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "rumfish-grill-restaurant",
@@ -4208,7 +4441,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sab-cafe",
@@ -4222,7 +4456,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "saigon-blonde",
@@ -4236,7 +4471,8 @@
       "clue": "A Vietnamese-inspired cocktail bar downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "saint-pete-bagel-company",
@@ -4250,7 +4486,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "saint-pete-brewing-company",
@@ -4264,7 +4501,8 @@
       "clue": "A downtown craft brewery & taproom.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "saint-petersburg-ale-house",
@@ -4278,7 +4516,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "salems-fresh-eats",
@@ -4292,7 +4531,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "saltys-tiki-bar-beach-lounge",
@@ -4306,7 +4546,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sams-sushi",
@@ -4320,7 +4561,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sawatdee-thai-and-sushi",
@@ -4334,7 +4576,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sawgrass-lake-park",
@@ -4349,6 +4592,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.84611, -82.67233],
         [27.84655, -82.67193],
@@ -4403,7 +4647,8 @@
       "clue": "A waterfront seafood spot on the John's Pass Village boardwalk in Madeira Beach, sourcing fresh Gulf catch.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "seasons-cafe-bakery",
@@ -4417,7 +4662,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "senor-taco",
@@ -4431,7 +4677,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "shadracks",
@@ -4445,7 +4692,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "shells",
@@ -4459,7 +4707,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "shrimpys-blues-bistro",
@@ -4473,7 +4722,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "siam-garden",
@@ -4487,7 +4737,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sila-thai",
@@ -4501,7 +4752,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "skyway-jacks",
@@ -4515,7 +4767,8 @@
       "clue": "A beloved no-frills breakfast institution.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "slice-of-the-burg",
@@ -4529,7 +4782,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "snappers-sea-grill",
@@ -4543,7 +4797,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "snell-arcade",
@@ -4557,7 +4812,8 @@
       "clue": "An ornate 1920s Mediterranean Revival arcade building downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "south-straub-park",
@@ -4572,6 +4828,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77345, -82.63268],
         [27.77346, -82.63173],
@@ -4594,7 +4851,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "spa-beach-bistro",
@@ -4608,7 +4866,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "special-pho",
@@ -4622,7 +4881,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "spinners",
@@ -4650,7 +4910,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "spring-garden-family-restaurant",
@@ -4664,7 +4925,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "st-pete-pier",
@@ -4679,6 +4941,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77349, -82.62604],
         [27.77346, -82.62296],
@@ -4714,7 +4977,8 @@
       "clue": "City history museum by the Pier — near the first airline flight site.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "stillwaters-tavern",
@@ -4728,7 +4992,8 @@
       "clue": "A gastropub on Beach Drive downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sumitra-espresso-lounge",
@@ -4742,7 +5007,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sunken-gardens",
@@ -4756,7 +5022,8 @@
       "clue": "A 100-year-old botanical garden, one of St. Pete's oldest attractions.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sunset-grille",
@@ -4770,7 +5037,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sushi-inc",
@@ -4784,7 +5052,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sushi-rock-grill",
@@ -4798,7 +5067,8 @@
       "clue": "A sushi and hibachi restaurant on Isla del Sol.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "sushi-sho-rexley",
@@ -4812,7 +5082,8 @@
       "clue": "A tiny downtown omakase sushi counter.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "swigwam-beach-bar",
@@ -4826,7 +5097,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tampa-bay-watch-discovery-center",
@@ -4840,7 +5112,8 @@
       "clue": "A marine-education center out on the St. Pete Pier.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tasty-pho",
@@ -4854,7 +5127,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "ted-peters-smoked-fish",
@@ -4868,7 +5142,8 @@
       "clue": "A roadside institution famous for smoked mullet & German potato salad.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tequila-daisy",
@@ -4882,7 +5157,8 @@
       "clue": "A downtown cocktail bar on 1st Ave N pouring 700+ tequilas and mezcals.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "Manual (geocoded via US Census)"
+      "attribution": "Manual (geocoded via US Census)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "terra-mar-brazilian-steakhouse",
@@ -4896,7 +5172,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "thai-am",
@@ -4910,7 +5187,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-ale-and-the-witch",
@@ -4924,7 +5202,8 @@
       "clue": "A craft-beer courtyard bar tucked off Central Avenue.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-bends",
@@ -4938,7 +5217,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-bikery",
@@ -4952,7 +5232,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-burg-bar-grill",
@@ -4966,7 +5247,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-burg-diner",
@@ -4980,7 +5262,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-cabana-bar",
@@ -4994,7 +5277,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-campus-grind",
@@ -5008,7 +5292,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-canopy",
@@ -5022,7 +5307,8 @@
       "clue": "A rooftop bar atop The Birchwood with skyline views.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-canopy-at-birchwood",
@@ -5036,7 +5322,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-chattaway",
@@ -5050,7 +5337,8 @@
       "clue": "A historic open-air burger joint in a former trolley stop.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-crafty-squirrel",
@@ -5064,7 +5352,8 @@
       "clue": "A downtown Aussie-style bar with artisan pizza and shareable teapot cocktails.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-dali-museum",
@@ -5078,7 +5367,8 @@
       "clue": "Home to the largest Salvador Dalí collection outside Europe, under a glass 'enigma'.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-don-cesar",
@@ -5092,7 +5382,8 @@
       "clue": "The 'Pink Palace' — a historic 1928 resort hotel on the Gulf beach.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "Wikidata CC0"
+      "attribution": "Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-drunken-clam",
@@ -5106,7 +5397,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-floribbean",
@@ -5120,7 +5412,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-floridian-cuban-sandwiches",
@@ -5134,7 +5427,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-galley",
@@ -5148,7 +5442,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-galley-a-st-pete-tavern",
@@ -5162,7 +5457,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-garage-on-central",
@@ -5176,7 +5472,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-island-grille-raw-bar",
@@ -5190,7 +5487,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-james-museum",
@@ -5204,7 +5502,8 @@
       "clue": "Western & wildlife art behind a carved-canyon entryway downtown.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-lemon-grass",
@@ -5218,7 +5517,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-library",
@@ -5232,21 +5532,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "the-liquid-therapy-bar",
-      "name": "The Liquid Therapy Bar",
-      "lat": 27.839468,
-      "lng": -82.726467,
-      "category": "bar",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-neon-lunchbox",
@@ -5260,7 +5547,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-oyster-bar",
@@ -5274,7 +5562,8 @@
       "clue": "A St. Pete seafood institution since 1999, now in the Grand Central District after leaving its longtime downtown home.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-palladium-theater",
@@ -5288,7 +5577,8 @@
       "clue": "A historic former church turned downtown concert hall.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-pizza-joint-fl",
@@ -5302,7 +5592,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-tap-room",
@@ -5316,7 +5607,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-tavern-at-bayboro",
@@ -5330,7 +5622,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-toasted-monkey",
@@ -5344,7 +5637,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-wharf",
@@ -5358,7 +5652,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-wooden-rooster",
@@ -5372,7 +5667,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "thirsty-first",
@@ -5386,7 +5682,8 @@
       "clue": "A two-story sports bar on Central Ave downtown.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "three-birds-tavern",
@@ -5400,7 +5697,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "thuy-cafe",
@@ -5414,7 +5712,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tobys-original-little-italy-pizza",
@@ -5428,7 +5727,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tonys-pizza",
@@ -5442,7 +5742,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "trailer-daddy",
@@ -5456,7 +5757,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "treasure-bay-resort-and-marina",
@@ -5470,7 +5772,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "trips-diner",
@@ -5484,7 +5787,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tritons-pub",
@@ -5498,7 +5802,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "trophy-fish",
@@ -5512,7 +5817,8 @@
       "clue": "A casual seafood spot in the Grand Central District.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tropicana-field",
@@ -5526,7 +5832,8 @@
       "clue": "The domed ballpark that was home to the Tampa Bay Rays.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "tryst",
@@ -5540,7 +5847,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "twin-brooks-golf-course",
@@ -5555,6 +5863,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.74821, -82.68815],
         [27.74823, -82.68563],
@@ -5584,7 +5893,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "undertow",
@@ -5598,7 +5908,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "victors-kitchen",
@@ -5612,7 +5923,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "vinoy-park",
@@ -5627,6 +5939,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.78071, -82.62601],
         [27.78048, -82.62589],
@@ -5668,7 +5981,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "welcome-to-the-farm",
@@ -5682,7 +5996,8 @@
       "clue": "A downtown bar on 1st Ave N.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "ParkWhiz (approx.)"
+      "attribution": "ParkWhiz (approx.)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "welton-brewing-co",
@@ -5696,7 +6011,8 @@
       "clue": "A New-England-style brewpub & oyster bar.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "welton-brewing-company-and-oyster-bar",
@@ -5710,7 +6026,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "wharf-seafood-restaurant",
@@ -5724,7 +6041,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "wheres-jubes",
@@ -5738,7 +6056,23 @@
       "clue": "An Aussie brewpub and sports bar on the 200 block of Central Avenue.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "whiskey-on-park",
+      "name": "Whiskey on Park",
+      "lat": 27.83947,
+      "lng": -82.72647,
+      "category": "bar",
+      "difficulty": "hard",
+      "inPlay": true,
+      "fameScore": 26,
+      "clue": "A bar on Park Blvd in Pinellas Park.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim, status verified via Google Places)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "whos-on-first",
@@ -5752,7 +6086,8 @@
       "clue": "A downtown sports bar on 1st Ave N.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "wild-child",
@@ -5766,7 +6101,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "wildlife-acai",
@@ -5780,7 +6116,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "williams-park",
@@ -5795,6 +6132,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77341, -82.63733],
         [27.77336, -82.63721],
@@ -5830,7 +6168,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "wrigleys-pizza",
@@ -5844,7 +6183,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "yummy-thai",
@@ -5858,7 +6198,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "zaytoon-grill",
@@ -5872,7 +6213,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "zekos-mediterranian-grill",
@@ -5886,7 +6228,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "zom-hee-chinese-restaurant",
@@ -5900,7 +6243,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     }
   ]
 }
