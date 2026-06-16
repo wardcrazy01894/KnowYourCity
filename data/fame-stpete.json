@@ -2306,11 +2306,12 @@
   },
   {
     "id": "mcauleys-pub",
-    "status": "open",
-    "currentName": "",
+    "status": "closed",
+    "currentName": "The Local Draught House DTSP",
     "fameScore": 28,
     "reviewCount": 40,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "Permanently closed ~2020; space at 1584 Central Ave became The Local Draught House DTSP. Confirmed via Yelp (listed CLOSED) + St. Pete Rising + Creative Loafing, Jun 2026."
   },
   {
     "id": "mcnastys-bar-and-grill",

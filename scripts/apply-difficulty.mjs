@@ -32,6 +32,7 @@ import {
   dedupeByNameProximity,
   assignDifficulty,
   assignCappedDifficulty,
+  projectLocation,
   EASY_PCT,
   HARD_PCT,
 } from './apply-difficulty-lib.mjs'
@@ -118,29 +119,11 @@ const capInfo = playCap
   : assignDifficulty(kept, EASY_PCT, HARD_PCT)
 const { easyBound, hardBound } = capInfo
 
-// ---- write dataset (preserve field order, drop _fame) ----
-const FIELD_ORDER = [
-  'id',
-  'name',
-  'lat',
-  'lng',
-  'category',
-  'difficulty',
-  'inPlay',
-  'fameScore',
-  'clue',
-  'photoUrl',
-  'source',
-  'attribution',
-]
+// ---- write dataset (canonical field order, drop _fame; see lib FIELD_ORDER) ----
 const outLocations = kept
   .slice()
   .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
-  .map((loc) => {
-    const o = {}
-    for (const k of FIELD_ORDER) if (k in loc) o[k] = loc[k]
-    return o
-  })
+  .map(projectLocation)
 ds.locations = outLocations
 writeFileSync(DATASET, JSON.stringify(ds, null, 2) + '\n')
 

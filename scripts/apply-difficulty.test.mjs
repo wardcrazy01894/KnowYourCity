@@ -10,6 +10,8 @@ import {
   byFameRank,
   assignDifficulty,
   assignCappedDifficulty,
+  projectLocation,
+  FIELD_ORDER,
   CAP_EASY_PCT,
   CAP_HARD_PCT,
   MEDIAN_FAME_FALLBACK,
@@ -482,5 +484,62 @@ describe('assignCappedDifficulty — play-set cap + count buckets', () => {
   it('exposes the 40/20 cap split constants', () => {
     expect(CAP_EASY_PCT).toBe(0.4)
     expect(CAP_HARD_PCT).toBe(0.2)
+  })
+})
+
+describe('projectLocation (dataset field projection)', () => {
+  it('preserves the polygon field for large-footprint locations', () => {
+    // Regression: polygon was added in #97 but omitted from FIELD_ORDER, so
+    // re-running the pass (for a closure or re-cap) silently stripped it.
+    const polygon = [
+      [27.7, -82.6],
+      [27.8, -82.6],
+      [27.8, -82.5],
+    ]
+    const out = projectLocation({
+      id: 'a',
+      name: 'A',
+      lat: 27.7,
+      lng: -82.6,
+      category: 'park',
+      difficulty: 'easy',
+      inPlay: true,
+      fameScore: 80,
+      clue: null,
+      photoUrl: null,
+      source: 'overpass',
+      attribution: 't',
+      polygon,
+      _fame: 80,
+    })
+    expect(out.polygon).toEqual(polygon)
+  })
+
+  it('drops internal _fame and omits absent optional fields', () => {
+    const out = projectLocation({
+      id: 'a',
+      name: 'A',
+      lat: 0,
+      lng: 0,
+      category: 'restaurant',
+      source: 'overpass',
+      attribution: 't',
+      _fame: 50,
+    })
+    expect('_fame' in out).toBe(false)
+    expect('polygon' in out).toBe(false)
+    expect('inPlay' in out).toBe(false)
+  })
+
+  it('emits fields in canonical order with polygon last', () => {
+    expect(FIELD_ORDER[0]).toBe('id')
+    expect(FIELD_ORDER[FIELD_ORDER.length - 1]).toBe('polygon')
+    const out = projectLocation({
+      id: 'a',
+      polygon: [[0, 0]],
+      name: 'A',
+      attribution: 't',
+    })
+    expect(Object.keys(out)).toEqual(['id', 'name', 'attribution', 'polygon'])
   })
 })
