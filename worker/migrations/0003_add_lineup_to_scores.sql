@@ -13,6 +13,11 @@
 -- predate lineups and get the empty-string '' legacy bucket (matching the
 -- worker's default for old clients that don't send a lineup).
 
+-- Defensive: clear any leftover scratch table from a botched earlier attempt so
+-- the rebuild is safely re-runnable. (D1 tracks migrations and runs each once,
+-- so this only matters if 0003 ever failed partway and is retried by hand.)
+DROP TABLE IF EXISTS scores_new;
+
 CREATE TABLE scores_new (
   city       TEXT    NOT NULL,
   date       TEXT    NOT NULL,            -- city-local calendar day, "YYYY-MM-DD"
