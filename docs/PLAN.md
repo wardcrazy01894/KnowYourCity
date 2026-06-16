@@ -124,7 +124,7 @@ KnowYourCity/
 |---|-----------|--------|
 | **M0** | Scaffold: Vite+React+TS, deps, `npm run dev` | ✅ done |
 | **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests) | ✅ done |
-| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 383; 4 more cities) | ✅ done |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 374; 4 more cities) | ✅ done |
 | **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds | ✅ done |
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |
@@ -189,7 +189,7 @@ residents would instantly recognise it. Fame is scored 0–100 by a one-time
 Google/Yelp review counts *relative to the city*, Wikipedia). Every enriched
 city today sets a **`playCap`** (see §5.1 and `docs/DATA-SOURCING.md` §4c), so
 the live bucketing is **count-based over the in-play set — 40% easy / 40% medium
-/ 20% hard** (e.g. St. Pete 383 → 153/153/77, Seattle 500 → 200/200/100). An
+/ 20% hard** (e.g. St. Pete 374 → 150/149/75, Seattle 500 → 200/200/100). An
 *uncapped* enriched city (none currently) would instead bucket by **city-relative
 percentile** with a narrow-easy split — top 20% easy / next 45% medium / bottom
 35% hard — keeping "easy" close to "everyone knows it" even when a city has few
