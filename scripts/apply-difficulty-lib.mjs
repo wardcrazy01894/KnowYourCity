@@ -67,7 +67,8 @@ export const normalizeForChain = (s) =>
  * Return the matched national-chain token if `name` contains one as a
  * word-boundary token sequence, else null. `chains` are tokens from
  * `data/national-chains.json` (normalized here, so they can be written naturally).
- * Powers the maintained exclusion list — see cleanLocations + the guard test.
+ * The list is a FLAGGING aid, not an auto-remover — see scripts/check-chains.mjs
+ * and the guard test in apply-difficulty.test.mjs.
  * @param {string} name venue display name
  * @param {string[]} chains chain tokens
  * @returns {string|null}

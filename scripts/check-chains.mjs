@@ -13,12 +13,15 @@ import { matchNationalChain } from './apply-difficulty-lib.mjs'
 const cfg = JSON.parse(
   readFileSync(new URL('../data/national-chains.json', import.meta.url)),
 )
+const all = readdirSync(new URL('../public/', import.meta.url))
+  .filter((f) => /^locations\..+\.json$/.test(f))
+  .map((f) => f.match(/^locations\.(.+)\.json$/)[1])
 const only = process.argv[2]
-const cities = only
-  ? [only]
-  : readdirSync(new URL('../public/', import.meta.url))
-      .filter((f) => /^locations\..+\.json$/.test(f))
-      .map((f) => f.match(/^locations\.(.+)\.json$/)[1])
+if (only && !all.includes(only)) {
+  console.error(`Unknown city "${only}". Known: ${all.join(', ')}`)
+  process.exit(1)
+}
+const cities = only ? [only] : all
 
 let total = 0
 for (const city of cities) {
