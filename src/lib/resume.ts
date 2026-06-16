@@ -9,7 +9,9 @@
  * may no longer exist) and we start fresh so the NEW lineup is actually
  * playable. Re-finishing a day is safe: persistence is idempotent per dateKey
  * (history isn't double-recorded and the streak isn't double-bumped — see
- * Game.tsx persist/nextStreak).
+ * Game.tsx persist/nextStreak). FIRST RECORD WINS: the original DayRecord (and
+ * its score) is preserved — a replay lets you see the new lineup but does not
+ * overwrite your first result for that day.
  */
 
 import type { GameState, Location } from '../types'

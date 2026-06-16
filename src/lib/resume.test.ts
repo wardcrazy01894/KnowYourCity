@@ -48,6 +48,10 @@ describe('sameLineup', () => {
   it('false when length differs', () => {
     expect(sameLineup(lineup(['a', 'b']), lineup(['a', 'b', 'c']))).toBe(false)
   })
+
+  it('true for two empty lineups (vacuously the same)', () => {
+    expect(sameLineup([], [])).toBe(true)
+  })
 })
 
 describe('freshGame', () => {
@@ -94,5 +98,21 @@ describe('resolveInitialGame', () => {
     expect(result).not.toBe(saved)
     expect(result.locations.map((l) => l.id)).toEqual(['a', 'b', 'c'])
     expect(result.phase).toBe('guessing')
+  })
+
+  // Same as above but the player was mid-game (not finished) when the lineup
+  // changed: in-progress results are discarded and the new set starts clean.
+  it('starts fresh when the lineup changed mid-game', () => {
+    const saved: GameState = {
+      dateKey: today,
+      locations: lineup(['a', 'b', 'OLD']),
+      roundIndex: 2,
+      results: [],
+      phase: 'guessing',
+    }
+    const result = resolveInitialGame(saved, today, todays)
+    expect(result.locations.map((l) => l.id)).toEqual(['a', 'b', 'c'])
+    expect(result.roundIndex).toBe(0)
+    expect(result.results).toEqual([])
   })
 })
