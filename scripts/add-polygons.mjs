@@ -174,13 +174,26 @@ export function buildPolygonQuery(name, bbox) {
   // Case-insensitive anchored match absorbs capitalisation differences between
   // the curated display name and the OSM `name` tag.
   const pat = `^${escapeRegex(name)}$`
+  // Two non-obvious details, both learned the hard way against the public
+  // mirrors (overpass-api.de / kumi.systems):
+  //
+  //  1. `out geom;` — NOT `out geom tags;`. The `tags` keyword makes these
+  //     servers return multipolygon relations with `members: 0` (the member
+  //     list is silently dropped), so no outer ring can be stitched. Plain
+  //     `out geom;` already includes tags AND inline member geometry.
+  //  2. `(._;>;)` recurses from the matched ways/relations down to their member
+  //     ways/nodes. Belt-and-suspenders: it guarantees member ways are present
+  //     as standalone elements so extractOuterRing can resolve any member that
+  //     lacks inline geometry by ref (see buildWayGeomIndex). Closed-way matches
+  //     are unaffected (recursion just adds their own nodes, which we ignore).
   return `
 [out:json][timeout:90];
 (
   way["name"~"${pat}",i](${s},${w},${n},${e});
   relation["name"~"${pat}",i](${s},${w},${n},${e});
 );
-out geom tags;`.trim()
+(._;>;);
+out geom;`.trim()
 }
 
 // ---------------------------------------------------------------------------
@@ -274,6 +287,32 @@ export function douglasPeucker(ring, epsilonDeg) {
     }
   }
   return ring.filter((_, i) => keep[i])
+}
+
+/**
+ * Simplify a ring to at most `maxNodes` points by escalating the Douglas–Peucker
+ * epsilon until it fits. Very large footprints (e.g. Fort De Soto, a multi-mile
+ * multi-island county park) have outer rings that 5 m D–P still leaves well over
+ * the cap — rather than DROP them to point scoring, we accept a coarser polygon.
+ * A coarse footprint is still vastly better than a single centroid for scoring.
+ *
+ * @param {[number,number][]} ring  - open ring
+ * @param {number} startEps         - initial D–P epsilon (degrees)
+ * @param {number} maxNodes         - hard cap on output node count
+ * @returns {[number,number][]}     - simplified ring, ≤ maxNodes points
+ *
+ * [M-C1]
+ */
+export function simplifyToCap(ring, startEps, maxNodes) {
+  let eps = startEps
+  let out = douglasPeucker(ring, eps)
+  // Geometric escalation: 1.7^20 ≈ 4×10^4, so even a continent-scale ring
+  // collapses to a triangle well within the iteration bound.
+  for (let i = 0; i < 20 && out.length > maxNodes; i++) {
+    eps *= 1.7
+    out = douglasPeucker(ring, eps)
+  }
+  return out
 }
 
 // ---------------------------------------------------------------------------
@@ -398,7 +437,7 @@ function stitchOuterRing(outerMembers) {
   return geomToOpenRing(biggest)
 }
 
-export function extractOuterRing(el) {
+export function extractOuterRing(el, wayGeomById) {
   if (el.type === 'way') {
     // Only CLOSED ways are areas. A linear way (a street, a path) that happens
     // to share the location's name must NOT be treated as a polygon ring.
@@ -410,7 +449,16 @@ export function extractOuterRing(el) {
     return geomToOpenRing(g)
   }
   if (el.type === 'relation') {
-    const outers = (el.members || []).filter((m) => m.role === 'outer')
+    // A member's geometry may be inline (some Overpass mirrors) OR live on a
+    // separately-returned way element keyed by ref (overpass-api.de). Resolve
+    // each outer member against both, then keep only those we could geolocate.
+    const outers = (el.members || [])
+      .filter((m) => m.role === 'outer')
+      .map((m) => ({
+        geometry:
+          m.geometry ?? (wayGeomById ? wayGeomById.get(m.ref) : undefined),
+      }))
+      .filter((m) => Array.isArray(m.geometry) && m.geometry.length >= 2)
     if (outers.length === 0) {
       console.warn(
         `    WARN: relation ${el.id} has no outer member geometry — skipping`,
@@ -429,6 +477,51 @@ export function extractOuterRing(el) {
   }
   // node or anything else: no polygon geometry.
   return null
+}
+
+/**
+ * Index way geometry by OSM id, for resolving relation member refs.
+ *
+ * After `(._;>;)` recursion, multipolygon member ways are returned as their own
+ * top-level elements carrying geometry. extractOuterRing looks them up here.
+ *
+ * @param {object[]} elements
+ * @returns {Map<number, {lat:number,lon:number}[]>}
+ *
+ * [M-C1]
+ */
+export function buildWayGeomIndex(elements) {
+  const idx = new Map()
+  for (const el of elements) {
+    if (el.type === 'way' && Array.isArray(el.geometry)) {
+      idx.set(el.id, el.geometry)
+    }
+  }
+  return idx
+}
+
+/**
+ * Keep only elements whose `name` tag matches `name` exactly (anchored,
+ * case-insensitive) — the same predicate buildPolygonQuery uses server-side.
+ *
+ * The `(._;>;)` recursion drags in member ways that are either unnamed (the
+ * literal outer ring) or differently-named (e.g. an inner-hole island named
+ * "Lake Maggiore Island"). Those must NOT compete as standalone polygon
+ * candidates — only the genuinely name-matched way/relation should. We still
+ * keep the recursed ways available via buildWayGeomIndex for ref resolution.
+ *
+ * @param {object[]} elements
+ * @param {string} name
+ * @returns {object[]}
+ *
+ * [M-C1]
+ */
+export function filterByName(elements, name) {
+  const re = new RegExp(`^${escapeRegex(name)}$`, 'i')
+  return elements.filter(
+    (el) =>
+      el.tags && typeof el.tags.name === 'string' && re.test(el.tags.name),
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -453,12 +546,12 @@ export function extractOuterRing(el) {
  *
  * [M-C1]
  */
-export function pickBestMatch(elements, location, locationId) {
+export function pickBestMatch(elements, location, locationId, wayGeomById) {
   // Score each element that yields a usable outer ring by its centroid distance
   // from the stored location point.
   const candidates = []
   for (const el of elements) {
-    const ring = extractOuterRing(el)
+    const ring = extractOuterRing(el, wayGeomById)
     if (!ring) continue // already logged its own WARN inside extractOuterRing
     const c = centroid(ring)
     const dist = haversineMeters(location, c)
@@ -528,18 +621,26 @@ async function fetchPolygonForLocation(location, bbox, nameOverride) {
     return { ring: null, reason: 'no-match' }
   }
 
-  const best = pickBestMatch(elements, location, location.id)
+  // The `(._;>;)` recursion returns member ways/nodes alongside the matched
+  // ways/relations. Index every way's geometry for relation ref-resolution, but
+  // only let genuinely name-matched elements compete as polygon candidates.
+  const wayGeomById = buildWayGeomIndex(elements)
+  const named = filterByName(elements, queryName)
+  const candidates = named.length > 0 ? named : elements
+
+  const best = pickBestMatch(candidates, location, location.id, wayGeomById)
   if (!best) return { ring: null, reason: 'no-match' } // pickBestMatch logged it
 
-  const ring = extractOuterRing(best)
+  const ring = extractOuterRing(best, wayGeomById)
   if (!ring) return { ring: null, reason: 'unusable-geometry' } // logged inside
 
-  const simplified = douglasPeucker(ring, DP_EPSILON_DEG)
-  if (simplified.length > MAX_NODES) {
+  const baseline = douglasPeucker(ring, DP_EPSILON_DEG)
+  const simplified = simplifyToCap(ring, DP_EPSILON_DEG, MAX_NODES)
+  if (baseline.length > MAX_NODES) {
+    // Huge footprint: kept, but at coarser resolution to fit the node cap.
     console.warn(
-      `    WARN: ${location.id} — ${best.type}/${best.id} simplified to ${simplified.length} nodes (> ${MAX_NODES} cap); skipping (falls back to point scoring)`,
+      `    NOTE: ${location.id} — ${best.type}/${best.id} coarsened ${baseline.length}→${simplified.length} nodes to fit the ${MAX_NODES}-node cap`,
     )
-    return { ring: null, reason: 'too-many-nodes' }
   }
 
   return { ring: simplified.map(roundCoord), reason: 'ok' }
@@ -560,7 +661,15 @@ async function fetchPolygonForLocation(location, bbox, nameOverride) {
  *
  * [M-C1]
  */
-const NAME_OVERRIDES = {}
+const NAME_OVERRIDES = {
+  // Golf courses: OSM uses the full legal name, our dataset the common one.
+  'mangrove-bay-golf-course': 'Mangrove Bay Municipal Golf Course',
+  'twin-brooks-golf-course': 'Twin Brooks Golf Course and Driving Range',
+  'pasadena-yacht-country-club': 'Pasadena Yacht & Country Club Golf',
+  // OSM spells the city out ("Saint" not "St."), and Demens has an apostrophe.
+  'st-pete-pier': 'Saint Pete Pier',
+  'demens-landing-park': "Demen's Landing Park",
+}
 
 // ---------------------------------------------------------------------------
 // City processing

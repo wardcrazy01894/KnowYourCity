@@ -2,56 +2,16 @@
   "generatedFrom": "stpete",
   "dryRun": false,
   "totalEligible": 28,
-  "totalWithPolygon": 16,
-  "totalPointOnly": 12,
-  "newMatchesThisRun": 0,
+  "totalWithPolygon": 24,
+  "totalPointOnly": 4,
+  "newMatchesThisRun": 5,
   "pointOnly": [
-    {
-      "id": "azalea-park",
-      "name": "Azalea Park",
-      "city": "stpete",
-      "lat": 27.7858082,
-      "lng": -82.7392293,
-      "reason": "no-match"
-    },
-    {
-      "id": "demens-landing-park",
-      "name": "Demens Landing Park",
-      "city": "stpete",
-      "lat": 27.7706739,
-      "lng": -82.6295843,
-      "reason": "no-match"
-    },
-    {
-      "id": "fort-de-soto-county-park",
-      "name": "Fort De Soto County Park",
-      "city": "stpete",
-      "lat": 27.630058,
-      "lng": -82.722643,
-      "reason": "no-match"
-    },
     {
       "id": "isla-del-sol",
       "name": "Isla Del Sol",
       "city": "stpete",
       "lat": 27.710822,
       "lng": -82.714633,
-      "reason": "no-match"
-    },
-    {
-      "id": "lake-maggiore",
-      "name": "Lake Maggiore",
-      "city": "stpete",
-      "lat": 27.7355582,
-      "lng": -82.6525332,
-      "reason": "no-match"
-    },
-    {
-      "id": "mangrove-bay-golf-course",
-      "name": "Mangrove Bay Golf Course",
-      "city": "stpete",
-      "lat": 27.833389,
-      "lng": -82.622298,
       "reason": "no-match"
     },
     {
@@ -71,35 +31,11 @@
       "reason": "no-match"
     },
     {
-      "id": "pasadena-yacht-country-club",
-      "name": "Pasadena Yacht & Country Club",
-      "city": "stpete",
-      "lat": 27.750868,
-      "lng": -82.721695,
-      "reason": "no-match"
-    },
-    {
       "id": "sawgrass-lake-park",
       "name": "Sawgrass Lake Park",
       "city": "stpete",
       "lat": 27.8413442,
       "lng": -82.6689052,
-      "reason": "no-match"
-    },
-    {
-      "id": "st-pete-pier",
-      "name": "St. Pete Pier",
-      "city": "stpete",
-      "lat": 27.773824,
-      "lng": -82.624503,
-      "reason": "no-match"
-    },
-    {
-      "id": "twin-brooks-golf-course",
-      "name": "Twin Brooks Golf Course",
-      "city": "stpete",
-      "lat": 27.746535,
-      "lng": -82.686964,
       "reason": "no-match"
     }
   ]

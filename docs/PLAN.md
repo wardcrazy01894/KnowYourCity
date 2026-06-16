@@ -39,7 +39,7 @@ Browser (static site, no backend)
  ├─ lib/scoring.ts               ← 0–100 score; point + polygon branches (§5.4)
  ├─ lib/geo.ts                   ← pure geometry: point-in-polygon, edge distance, haversine
  ├─ lib/storage.ts               ← localStorage: streak/history/resume
- ├─ lib/devmode.ts               ← URL modes: ?reset / ?shuffle
+ ├─ lib/devmode.ts               ← URL modes: ?reset / ?shuffle / ?polygons
  ├─ lib/sound.ts                 ← Web Audio score-feedback cues
  ├─ lib/log.ts                   ← console + buffered logging (kycDumpLogs)
  └─ components/
@@ -281,6 +281,10 @@ URL params (all client-side, no build flags; see `src/lib/devmode.ts`):
 - `?reset` (alias `?fresh`) — same 5 for the day, wipe progress every refresh.
 - `?shuffle` (alias `?random`) — a brand-new random 5 every refresh.
 - `?date=YYYY-MM-DD` — play a specific day's puzzle.
+- `?polygons` — dev verification round: every polygon location in the city in
+  one game (sorted by id), so each shaded boundary can be checked against the
+  map. Never official; stored under an isolated `<city>__polygons` key so it
+  doesn't clobber the daily save. See `selectPolygonLocations` in `daily.ts`.
 - `?debug` (or `localStorage kyc:debug='1'`) enables verbose `debug` logs.
 
 Logging (`src/lib/log.ts`): `[KYC]`-prefixed console output + an in-memory ring

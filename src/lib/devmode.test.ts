@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { shouldStartFresh, shouldShuffle } from './devmode'
+import { shouldStartFresh, shouldShuffle, isPolygonTest } from './devmode'
 
 describe('shouldStartFresh', () => {
   it('does NOT reset by default (persists progress)', () => {
@@ -15,6 +15,19 @@ describe('shouldStartFresh', () => {
   it('shuffle mode also resets each load', () => {
     expect(shouldStartFresh('?shuffle')).toBe(true)
     expect(shouldStartFresh('?random')).toBe(true)
+  })
+})
+
+describe('isPolygonTest', () => {
+  it('is on only for ?polygons', () => {
+    expect(isPolygonTest('?polygons')).toBe(true)
+    expect(isPolygonTest('?city=stpete&polygons')).toBe(true)
+  })
+
+  it('is off otherwise', () => {
+    expect(isPolygonTest('')).toBe(false)
+    expect(isPolygonTest('?shuffle')).toBe(false)
+    expect(isPolygonTest('?date=2026-06-06')).toBe(false)
   })
 })
 

@@ -203,6 +203,21 @@ export function selectDailyLocations(
 }
 
 /**
+ * Every location carrying a non-empty polygon, sorted by id. Powers the
+ * `?polygons` dev verification round (src/lib/devmode.ts): one game containing
+ * all of a city's shaded boundaries so each can be eyeballed against the map.
+ *
+ * Unlike the daily selection this is NOT filtered by `inPlay` — a benched
+ * (inPlay:false) park still needs its polygon verified — and there is no count
+ * cap: it returns however many polygons exist. Pure given `all`.
+ */
+export function selectPolygonLocations(all: Location[]): Location[] {
+  return all
+    .filter((l) => Array.isArray(l.polygon) && l.polygon.length > 0)
+    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
+}
+
+/**
  * Fill each slot from its category (cafe → restaurant → bar → landmark →
  * wildcard), falling back to any remaining location so we always return a full
  * set (e.g. a dataset with no cafés still works).

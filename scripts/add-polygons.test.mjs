@@ -6,6 +6,9 @@ import {
   douglasPeucker,
   extractOuterRing,
   pickBestMatch,
+  buildWayGeomIndex,
+  filterByName,
+  simplifyToCap,
 } from './add-polygons.mjs'
 
 // ---------------------------------------------------------------------------
@@ -43,6 +46,49 @@ describe('buildPolygonQuery', () => {
   it('interpolates the bbox in S,W,N,E order', () => {
     const q = buildPolygonQuery('X', bbox)
     expect(q).toContain('(27.6,-82.8,27.9,-82.5)')
+  })
+
+  it('recurses into members so multipolygon ways are fetched with geometry', () => {
+    // overpass-api.de does NOT embed member geometry on a bare relation query —
+    // the relation comes back with members:0. Recursing (._;>;) pulls the
+    // member ways back as separate elements carrying their geometry.
+    const q = buildPolygonQuery('Lake Maggiore', bbox)
+    expect(q).toContain('(._;>;)')
+  })
+})
+
+// ---------------------------------------------------------------------------
+// buildWayGeomIndex
+// ---------------------------------------------------------------------------
+
+describe('buildWayGeomIndex', () => {
+  it('indexes way geometry by id and ignores relations/nodes', () => {
+    const idx = buildWayGeomIndex([
+      { type: 'way', id: 101, geometry: [{ lat: 1, lon: 2 }] },
+      { type: 'relation', id: 5, members: [] },
+      { type: 'node', id: 9, lat: 1, lon: 2 },
+    ])
+    expect(idx.get(101)).toEqual([{ lat: 1, lon: 2 }])
+    expect(idx.has(5)).toBe(false)
+    expect(idx.has(9)).toBe(false)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// filterByName
+// ---------------------------------------------------------------------------
+
+describe('filterByName', () => {
+  it('keeps only elements whose name tag matches (anchored, case-insensitive)', () => {
+    const els = [
+      { type: 'relation', id: 1, tags: { name: 'Lake Maggiore' } },
+      { type: 'way', id: 2, tags: { name: 'Lake Maggiore Island' } }, // inner hole — excluded
+      { type: 'way', id: 3, tags: {} }, // unnamed outer member — excluded
+      { type: 'way', id: 4, tags: { name: 'lake maggiore' } }, // case-insensitive — kept
+      { type: 'node', id: 5 }, // no tags — excluded
+    ]
+    const out = filterByName(els, 'Lake Maggiore')
+    expect(out.map((e) => e.id).sort()).toEqual([1, 4])
   })
 })
 
@@ -96,6 +142,37 @@ describe('douglasPeucker', () => {
       [27.77, -82.63],
     ]
     expect(douglasPeucker(two, 0.00005)).toEqual(two)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// simplifyToCap
+// ---------------------------------------------------------------------------
+
+describe('simplifyToCap', () => {
+  it('leaves a ring already within the cap untouched', () => {
+    const ring = [
+      [27.76, -82.64],
+      [27.77, -82.63],
+      [27.78, -82.62],
+    ]
+    expect(simplifyToCap(ring, 0.00005, 100)).toEqual(
+      douglasPeucker(ring, 0.00005),
+    )
+  })
+
+  it('escalates epsilon until a dense ring fits under the cap', () => {
+    // A 400-point jagged *2-D blob* (noisy circle) that 5 m D–P leaves well over
+    // the cap. Heavy simplification collapses it toward a triangle, not a line.
+    const ring = []
+    for (let i = 0; i < 400; i++) {
+      const a = (i / 400) * 2 * Math.PI
+      const r = 0.01 + (i % 2) * 0.002 // jagged radius
+      ring.push([27.7 + r * Math.cos(a), -82.65 + r * Math.sin(a)])
+    }
+    const out = simplifyToCap(ring, 0.00005, 50)
+    expect(out.length).toBeLessThanOrEqual(50)
+    expect(out.length).toBeGreaterThanOrEqual(3)
   })
 })
 
@@ -258,6 +335,42 @@ describe('extractOuterRing', () => {
       members: [{ role: 'inner', geometry: [] }],
     }
     expect(extractOuterRing(rel)).toBeNull()
+  })
+
+  it('resolves outer member geometry by ref from the way index when inline geometry is absent', () => {
+    // Mirrors overpass-api.de's response: the relation's members carry NO inline
+    // geometry (only type/ref/role); the geometry lives on separately-returned
+    // way elements indexed by id.
+    const rel = {
+      type: 'relation',
+      id: 5,
+      members: [
+        { role: 'outer', type: 'way', ref: 101 },
+        { role: 'inner', type: 'way', ref: 102 },
+      ],
+    }
+    const wayIndex = new Map([
+      [
+        101,
+        [
+          { lat: 27.77, lon: -82.64 },
+          { lat: 27.77, lon: -82.63 },
+          { lat: 27.76, lon: -82.63 },
+          { lat: 27.77, lon: -82.64 }, // self-closed outer
+        ],
+      ],
+    ])
+    const ring = extractOuterRing(rel, wayIndex)
+    expect(ring).toHaveLength(3)
+  })
+
+  it('returns null for a relation whose outer member ref is missing from the index', () => {
+    const rel = {
+      type: 'relation',
+      id: 6,
+      members: [{ role: 'outer', type: 'way', ref: 999 }],
+    }
+    expect(extractOuterRing(rel, new Map())).toBeNull()
   })
 })
 

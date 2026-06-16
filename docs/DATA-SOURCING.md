@@ -378,10 +378,16 @@ node scripts/add-polygons.mjs --force                # re-fetch existing polygon
 What it does, per in-play `park`/`golf_course` row without a `polygon`:
 
 1. Queries Overpass for **ways + relations matching the row's `name`** within the
-   city bbox, with `out geom` (full geometry, not `out center`). The query is
-   name-only on purpose — large footprints are tagged inconsistently
-   (`leisure=park`, `natural=water` for lakes, `landuse=*` for country clubs), so
-   a tag filter would silently drop lakes and clubs.
+   city bbox, recursing into members (`(._;>;);`) and emitting **`out geom;`** —
+   _not_ `out geom tags;`. This matters: on the public mirrors (overpass-api.de,
+   kumi.systems) `out geom tags;` strips relation `members` to an empty list, so
+   multipolygons come back with no geometry; plain `out geom;` returns both tags
+   and inline member geometry. The recursion also surfaces member ways as
+   standalone elements, so a relation's ring can be reassembled by member ref
+   when inline geometry is absent. The query is name-only on purpose — large
+   footprints are tagged inconsistently (`leisure=park`, `natural=water` for
+   lakes, `landuse=*` for country clubs), so a tag filter would silently drop
+   lakes and clubs.
 2. **Picks the best match** by centroid proximity: candidates whose computed
    centroid is within `CENTROID_MATCH_RADIUS_M` (500 m) of the stored point; the
    nearest wins. This guards against a same-named feature elsewhere in the city.
@@ -392,9 +398,12 @@ What it does, per in-play `park`/`golf_course` row without a `polygon`:
    resulting ring is the footprint. Holes and secondary outer rings are ignored
    (a guessing-game footprint doesn't need them). Arc chains that don't close are
    logged and skipped.
-4. **Simplifies** with Douglas–Peucker (ε = 0.00005° ≈ 5 m), drops anything still
-   over **100 nodes** (bundle-size cap), rounds coords to 5 dp, and writes the
-   open ring back onto the row in-place.
+4. **Simplifies** with Douglas–Peucker (ε = 0.00005° ≈ 5 m). If the result is
+   still over the **100-node** bundle-size cap, the epsilon is escalated (×1.7
+   per pass, up to 20 passes) until it fits — so a huge park (e.g. Fort De Soto)
+   is *coarsened* rather than dropped, and a `NOTE:` line records the
+   before→after node counts. Coords are rounded to 5 dp and the open ring is
+   written back onto the row in-place.
 
 **Flagging the misses.** Every eligible large-footprint row that does **not**
 receive a polygon (no OSM match, unusable geometry, or over the node cap) is
@@ -411,6 +420,20 @@ not left.
 The script is idempotent: without `--force` it skips rows that already have a
 `polygon`, so re-running only retries the misses (and is polite to the public
 Overpass mirrors — a 2 s delay between queries, with mirror fallback + retry).
+
+**Current status (St. Pete): 24/28** eligible rows have polygons. The five
+name-mismatch misses were resolved via `NAME_OVERRIDES` (Mangrove Bay, Twin
+Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens Landing). The four
+still point-only are genuine OSM gaps, not bugs: **Isla Del Sol** (relation has
+only `inner` members — no outer ring, unmappable), **North Shore Park kickball
+fields** and **volleyball courts** (sub-features with no named footprint), and
+**Sawgrass Lake Park** (only a node + an unnamed way in OSM). They fall back to
+centroid scoring and need a hand-added ring if they're ever to shade.
+
+**Verifying the result:** load the game with **`?polygons`** (see
+README / docs/PLAN.md) — it plays one round per polygon location in the city so
+each shaded boundary can be eyeballed against the satellite map. State College is
+fully backfilled (33/33).
 
 ---
 

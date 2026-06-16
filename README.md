@@ -69,6 +69,7 @@ Add a query param to the URL:
 | `?reset` | Same 5, but **wipes progress every refresh** — replay one set. _(`?fresh` is an alias.)_ |
 | `?shuffle` | A **brand-new random 5 every refresh** — try different sets. |
 | `?date=YYYY-MM-DD` | Play a specific day's puzzle. |
+| `?polygons` | **Dev verification round:** one game of _every_ polygon location in the city, so each shaded boundary can be eyeballed against the map. Off the leaderboard; stored separately so it never clobbers the daily save. |
 | `?debug` | Verbose `[KYC]` logging in the console. |
 
 🐞 **Reporting a bug?** Run **`kycDumpLogs()`** in the browser console — it prints
