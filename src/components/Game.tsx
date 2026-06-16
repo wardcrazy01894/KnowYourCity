@@ -18,13 +18,9 @@ import { Results } from './Results'
 import { scoreGuess, formatDistance } from '../lib/scoring'
 import { playScoreSound } from '../lib/sound'
 import { log } from '../lib/log'
-import {
-  loadState,
-  saveState,
-  STORAGE_VERSION,
-  type PersistedState,
-} from '../lib/storage'
+import { loadState, saveState, STORAGE_VERSION } from '../lib/storage'
 import { resolveInitialGame } from '../lib/resume'
+import { lineupHash, recordCompletion } from '../lib/progress'
 
 export interface GameProps {
   /** City id — namespaces saved state so streaks are per-city. */
@@ -44,30 +40,6 @@ export interface GameProps {
 // Clues are kept in the dataset but hidden by default for more challenge.
 // Flip to true (or make it a setting) to show the one-line hint under the name.
 const SHOW_CLUES = false
-
-/** Calendar date key (YYYY-MM-DD) for the day before `dateKey`. */
-function previousDateKey(dateKey: string): string {
-  const d = new Date(dateKey + 'T00:00:00Z')
-  d.setUTCDate(d.getUTCDate() - 1)
-  return d.toISOString().slice(0, 10)
-}
-
-function nextStreak(
-  prev: PersistedState['streak'],
-  dateKey: string,
-): PersistedState['streak'] {
-  let current: number
-  if (prev.lastPlayedDateKey === dateKey)
-    current = prev.current // replay safety
-  else if (prev.lastPlayedDateKey === previousDateKey(dateKey))
-    current = prev.current + 1
-  else current = 1
-  return {
-    current,
-    best: Math.max(prev.best, current),
-    lastPlayedDateKey: dateKey,
-  }
-}
 
 export function Game({
   cityId,
@@ -107,20 +79,21 @@ export function Game({
     const p = loadState(cityId)
     let history = p.history
     let st = p.streak
-    if (finalize && !history.some((h) => h.dateKey === next.dateKey)) {
-      const total = next.results.reduce((sum, r) => sum + r.score, 0)
-      history = [
-        ...history,
-        {
-          dateKey: next.dateKey,
-          totalScore: total,
-          results: next.results.map((r) => ({
-            distanceMeters: r.distanceMeters,
-            score: r.score,
-          })),
-        },
-      ]
-      st = nextStreak(p.streak, next.dateKey)
+    if (finalize) {
+      // Each distinct (date, lineup) completion is its own record: a replay of a
+      // CHANGED official set adds a second record, both kept; the streak bumps
+      // once per calendar date. See progress.ts:recordCompletion.
+      const folded = recordCompletion(p.history, p.streak, {
+        dateKey: next.dateKey,
+        lineup: lineupHash(next.locations),
+        totalScore: next.results.reduce((sum, r) => sum + r.score, 0),
+        results: next.results.map((r) => ({
+          distanceMeters: r.distanceMeters,
+          score: r.score,
+        })),
+      })
+      history = folded.history
+      st = folded.streak
       setStreak(st)
     }
     saveState(cityId, {
