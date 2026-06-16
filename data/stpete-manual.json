@@ -46,6 +46,28 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "bobs-side-piece",
+      "name": "Bob's Side Piece",
+      "lat": 27.77072,
+      "lng": -82.73037,
+      "category": "bar",
+      "clue": "A neighborhood bar on Central Ave in the Pasadena area.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "buona-ristorante",
+      "name": "Buona Ristorante",
+      "lat": 27.72339,
+      "lng": -82.73938,
+      "category": "restaurant",
+      "clue": "An Italian restaurant on Gulf Blvd, St. Pete Beach.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "clam-bayou-nature-preserve",
       "name": "Clam Bayou Nature Preserve",
       "lat": 27.7387692,
@@ -101,17 +123,6 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
-      "id": "friendly-fisherman",
-      "name": "Friendly Fisherman",
-      "lat": 27.784792,
-      "lng": -82.782157,
-      "category": "restaurant",
-      "clue": "The Hubbard family's casual waterfront seafood spot at John's Pass — cook-your-own-catch and fresh Gulf fish since 1978.",
-      "photoUrl": null,
-      "source": "manual",
-      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
-    },
-    {
       "id": "five-bucks-drinkery-downtown",
       "name": "Five Bucks Drinkery (DTSP)",
       "lat": 27.771384,
@@ -132,6 +143,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "friendly-fisherman",
+      "name": "Friendly Fisherman",
+      "lat": 27.784792,
+      "lng": -82.782157,
+      "category": "restaurant",
+      "clue": "The Hubbard family's casual waterfront seafood spot at John's Pass — cook-your-own-catch and fresh Gulf fish since 1978.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
     },
     {
       "id": "gizella-kopsick-palm-arboretum",
@@ -266,6 +288,17 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "pin-on-grand",
+      "name": "Pin On Grand",
+      "lat": 27.77081,
+      "lng": -82.66699,
+      "category": "restaurant",
+      "clue": "An Asian-fusion restaurant in the Grand Central District.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "pioneer-park",
       "name": "Pioneer Park",
       "lat": 27.7707949,
@@ -393,6 +426,17 @@
       "lng": -82.6368671,
       "category": "bar",
       "clue": "An Aussie brewpub and sports bar on the 200 block of Central Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "whos-on-first",
+      "name": "Who's On First",
+      "lat": 27.77228,
+      "lng": -82.63444,
+      "category": "bar",
+      "clue": "A downtown sports bar on 1st Ave N.",
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"

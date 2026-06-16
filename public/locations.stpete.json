@@ -34,8 +34,8 @@
     {
       "id": "49th-street-pub",
       "name": "49th Street Pub",
-      "lat": 27.780176,
-      "lng": -82.700745,
+      "lat": 27.77084,
+      "lng": -82.69595,
       "category": "bar",
       "difficulty": "hard",
       "inPlay": true,
@@ -43,7 +43,7 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "4th-street-pub",
@@ -550,6 +550,20 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "bobs-side-piece",
+      "name": "Bob's Side Piece",
+      "lat": 27.77072,
+      "lng": -82.73037,
+      "category": "bar",
+      "difficulty": "hard",
+      "inPlay": true,
+      "fameScore": 20,
+      "clue": "A neighborhood bar on Central Ave in the Pasadena area.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "bodega",
       "name": "Bodega",
       "lat": 27.770869,
@@ -748,6 +762,20 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "buona-ristorante",
+      "name": "Buona Ristorante",
+      "lat": 27.72339,
+      "lng": -82.73938,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 58,
+      "clue": "An Italian restaurant on Gulf Blvd, St. Pete Beach.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "buoys-waterfront-bar-grill",
       "name": "Buoy's Waterfront Bar & Grill",
       "lat": 27.741083,
@@ -848,8 +876,8 @@
     {
       "id": "cafe-soleil-french-bakery-deli",
       "name": "Café Soleil French Bakery & Deli",
-      "lat": 27.723391,
-      "lng": -82.739384,
+      "lat": 27.73063,
+      "lng": -82.7425,
       "category": "cafe",
       "difficulty": "easy",
       "inPlay": true,
@@ -857,7 +885,7 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "cage-brewing",
@@ -865,7 +893,7 @@
       "lat": 27.770466,
       "lng": -82.660509,
       "category": "bar",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": "A craft brewery & event space in the Warehouse Arts District.",
@@ -1223,20 +1251,6 @@
         [27.74587, -82.69072],
         [27.741, -82.69488]
       ]
-    },
-    {
-      "id": "clock-tower-sports-bar-grill",
-      "name": "Clock Tower Sports Bar & Grill",
-      "lat": 27.76932,
-      "lng": -82.767528,
-      "category": "bar",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "cocktail-st-pete",
@@ -1634,20 +1648,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "estelas",
-      "name": "Estela's",
-      "lat": 27.866881,
-      "lng": -82.64555,
-      "category": "restaurant",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "fabrica-pizza",
       "name": "Fabrica Pizza",
       "lat": 27.770112,
@@ -1841,6 +1841,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "fortunatos-italian-pizzeria-northeast",
+      "name": "Fortunatos Italian Pizzeria Northeast",
+      "lat": 27.80571,
+      "lng": -82.63594,
+      "category": "restaurant",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 38,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "fossil-park",
@@ -2984,26 +2998,12 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "larrys-giant-subs",
-      "name": "Larry's Giant Subs",
-      "lat": 27.834063,
-      "lng": -82.681226,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 32,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "level-11",
       "name": "Level 11",
       "lat": 27.725801,
       "lng": -82.743154,
       "category": "bar",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -3260,7 +3260,7 @@
       "lat": 27.7111002,
       "lng": -82.6822738,
       "category": "park",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": "A waterfront park at the city’s southwest tip near the Skyway approach, with a boat ramp.",
@@ -3305,6 +3305,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "melt-n-dip",
+      "name": "Melt N Dip",
+      "lat": 27.77416,
+      "lng": -82.63382,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 54,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "mi-carreta-restaurant-and-bakery",
@@ -3399,16 +3413,16 @@
     {
       "id": "mr-empanada",
       "name": "Mr. Empanada",
-      "lat": 27.817351,
-      "lng": -82.63891,
+      "lat": 27.76785,
+      "lng": -82.64615,
       "category": "restaurant",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "mr-mrs-crab",
@@ -3511,8 +3525,8 @@
     {
       "id": "nitallys",
       "name": "Nitally's",
-      "lat": 27.770813,
-      "lng": -82.666993,
+      "lat": 27.78368,
+      "lng": -82.64661,
       "category": "restaurant",
       "difficulty": "easy",
       "inPlay": true,
@@ -3520,7 +3534,7 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "nori-thai",
@@ -3616,20 +3630,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "oishi-sushi-japanese-steak-house",
-      "name": "Oishi Sushi & Japanese Steak House",
-      "lat": 27.825024,
-      "lng": -82.680011,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "old-northeast-tavern",
       "name": "Old Northeast Tavern",
       "lat": 27.779571,
@@ -3684,6 +3684,20 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "oyster-shucker-craft-draft",
+      "name": "Oyster Shucker Craft & Draft",
+      "lat": 27.7406,
+      "lng": -82.75306,
+      "category": "bar",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 50,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "pacific-counter",
@@ -4008,6 +4022,20 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "pin-on-grand",
+      "name": "Pin On Grand",
+      "lat": 27.77081,
+      "lng": -82.66699,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 46,
+      "clue": "An Asian-fusion restaurant in the Grand Central District.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
       "id": "pin-wok-bowl",
       "name": "Pin Wok & Bowl",
       "lat": 27.771374,
@@ -4214,20 +4242,6 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
-      "id": "red-ribbon",
-      "name": "Red Ribbon",
-      "lat": 27.839677,
-      "lng": -82.68877,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 32,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "red-white-booze",
       "name": "Red, White & Booze",
       "lat": 27.697088,
@@ -4312,18 +4326,18 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "rollbotto-sushi",
-      "name": "Rollbotto Sushi",
-      "lat": 27.774164,
-      "lng": -82.633816,
-      "category": "restaurant",
-      "difficulty": "medium",
+      "id": "root-clay",
+      "name": "Root + Clay",
+      "lat": 27.81407,
+      "lng": -82.63281,
+      "category": "bar",
+      "difficulty": "hard",
       "inPlay": true,
-      "fameScore": 32,
+      "fameScore": 28,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
       "id": "roses",
@@ -4618,8 +4632,8 @@
     {
       "id": "scooters-coffee",
       "name": "Scooter's Coffee",
-      "lat": 27.760473,
-      "lng": -82.735173,
+      "lat": 27.85652,
+      "lng": -82.63867,
       "category": "cafe",
       "difficulty": "hard",
       "inPlay": true,
@@ -4627,7 +4641,7 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "sculleys",
@@ -5055,8 +5069,8 @@
     {
       "id": "sushi-rock-grill",
       "name": "Sushi Rock Grill",
-      "lat": 27.783669,
-      "lng": -82.646484,
+      "lat": 27.71337,
+      "lng": -82.71388,
       "category": "restaurant",
       "difficulty": "medium",
       "inPlay": true,
@@ -5064,7 +5078,7 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "sushi-sho-rexley",
@@ -5643,8 +5657,8 @@
     {
       "id": "thirsty-first",
       "name": "Thirsty First",
-      "lat": 27.772277,
-      "lng": -82.634439,
+      "lat": 27.77146,
+      "lng": -82.64064,
       "category": "bar",
       "difficulty": "medium",
       "inPlay": true,
@@ -5652,7 +5666,7 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified Google Places)"
     },
     {
       "id": "three-birds-tavern",
@@ -5719,20 +5733,6 @@
       "difficulty": "easy",
       "inPlay": true,
       "fameScore": 45,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "tournament-de-pizza",
-      "name": "TOURnament de Pizza",
-      "lat": 27.80573,
-      "lng": -82.635333,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 52,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
@@ -6021,20 +6021,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "westshore-pizza",
-      "name": "Westshore Pizza",
-      "lat": 27.80146,
-      "lng": -82.63779,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 55,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "wharf-seafood-restaurant",
       "name": "Wharf Seafood Restaurant",
       "lat": 27.696893,
@@ -6058,6 +6044,20 @@
       "inPlay": true,
       "fameScore": 38,
       "clue": "An Aussie brewpub and sports bar on the 200 block of Central Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "whos-on-first",
+      "name": "Who's On First",
+      "lat": 27.77228,
+      "lng": -82.63444,
+      "category": "bar",
+      "difficulty": "hard",
+      "inPlay": true,
+      "fameScore": 28,
+      "clue": "A downtown sports bar on 1st Ave N.",
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
@@ -6111,20 +6111,6 @@
         [27.77219, -82.63835],
         [27.77339, -82.63835]
       ]
-    },
-    {
-      "id": "willys-burger-and-booze",
-      "name": "Willy's Burger and Booze",
-      "lat": 27.740517,
-      "lng": -82.753319,
-      "category": "bar",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "woodson-african-american-museum",
