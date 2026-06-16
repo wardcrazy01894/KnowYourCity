@@ -36,7 +36,23 @@ export function getCity(id: string | null | undefined): City | undefined {
   return CITIES.find((c) => c.id === id)
 }
 
-/** Path to a city's bundled dataset (respects Vite's base). */
+/**
+ * Path to a city's bundled dataset (respects Vite's base).
+ *
+ * The dataset JSON has a STABLE filename (unlike the content-hashed JS bundle),
+ * so a client cache can serve a stale copy against a freshly-loaded bundle —
+ * the skew that can desync a bundled daily override from the dataset it names.
+ *
+ * Defense-in-depth, NOT the only guard: `public/_headers` already sends
+ * `Cache-Control: no-cache, must-revalidate` for each `locations.*.json` (added
+ * 2026-06-14). Appending `?v=<per-deploy build hash>` adds a layer that the
+ * headers don't: a unique URL per deploy can't be collapsed by a cache that
+ * ignores `no-cache` (bfcache, an edge/proxy that disregards request headers),
+ * and it auto-covers any NEW city without a matching `_headers` entry having to
+ * be remembered. The hash is the git short hash injected at build (also emitted
+ * in /version.json); falls back to `dev` when no build hash is present.
+ */
 export function cityDataUrl(id: string): string {
-  return import.meta.env.BASE_URL + `locations.${id}.json`
+  const v = import.meta.env.VITE_BUILD_HASH ?? 'dev'
+  return import.meta.env.BASE_URL + `locations.${id}.json?v=${v}`
 }
