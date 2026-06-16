@@ -71,7 +71,7 @@ browsers compute the identical selection offline.
 KnowYourCity/
 ├─ index.html
 ├─ package.json            scripts: dev, build, test, lint, fetch-pois,
-│                          fetch-food, build-city, deploy, …
+│                          fetch-food, build-city, add-polygons, deploy, …
 ├─ vite.config.ts          base: '/'
 ├─ tsconfig.json · eslint.config.js · .prettierrc.json
 ├─ .env.example            optional client config (Mapbox tiles, bug-report
@@ -86,6 +86,7 @@ KnowYourCity/
 │   ├─ fetch-pois.mjs           Overpass landmarks → data/candidates.json
 │   ├─ fetch-food.mjs           Overpass food/drink → data/food-candidates.json
 │   ├─ build-city.mjs           assemble a city's locations.<id>.json
+│   ├─ add-polygons.mjs         backfill park/golf footprint rings from OSM
 │   ├─ apply-difficulty.mjs     fame → difficulty enrichment (+ -lib.mjs)
 │   ├─ gen-fame-workflow.mjs · harvest-fame-transcripts.mjs   crash-safe fame pass
 │   ├─ nearby-sweep.mjs         block-radius sweep around a new location

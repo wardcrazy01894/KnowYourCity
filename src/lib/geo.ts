@@ -159,9 +159,10 @@ export function distanceToPolygonMeters(point: LatLng, ring: Ring): number {
  * Reduces the number of points in `ring` while preserving shape to within
  * `epsilonDeg` degrees. Input and output are both open rings.
  *
- * Intended for use in `scripts/add-polygons.mjs` at data-prep time only —
- * NOT called at game runtime. Exported from this module so it can be imported
- * by Node scripts without bundling the full app.
+ * Used at data-prep time only (the `npm run add-polygons` flow) — NOT called at
+ * game runtime. `scripts/add-polygons.mjs` keeps its own parallel copy (it can't
+ * import this TS module directly); this export is the unit-tested reference
+ * implementation (see `geo.test.ts`).
  *
  * @param _ring       - Open polygon ring to simplify.
  * @param _epsilonDeg - Maximum perpendicular deviation allowed (in degrees).
