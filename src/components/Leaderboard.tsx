@@ -14,6 +14,7 @@ import { ROUNDS_PER_DAY } from '../lib/daily'
 import {
   fetchLeaderboard,
   buildLeaderboardRows,
+  refreshStanding,
   ordinal,
   type LeaderboardRow,
   type Standing,
@@ -33,7 +34,13 @@ export interface LeaderboardProps {
 type LoadState =
   | { phase: 'loading' }
   | { phase: 'empty' }
-  | { phase: 'ready'; rows: LeaderboardRow[]; total: number }
+  | {
+      phase: 'ready'
+      rows: LeaderboardRow[]
+      total: number
+      /** The viewer's standing, refreshed against this fresh read. */
+      you: Standing | null
+    }
 
 export function Leaderboard({
   cityId,
@@ -54,10 +61,18 @@ export function Leaderboard({
         setState({ phase: 'empty' })
         return
       }
+      // Refresh the viewer's standing against this fresh read so the off-list
+      // "You placed Nth of Y" line matches the fresh header (not the frozen
+      // submit-time snapshot).
+      const you =
+        yourStanding && yourScore !== undefined
+          ? refreshStanding(yourStanding, data, yourScore)
+          : (yourStanding ?? null)
       setState({
         phase: 'ready',
         rows: buildLeaderboardRows(data.scores, yourScore),
         total: data.total,
+        you,
       })
     })
     return () => {
@@ -148,10 +163,10 @@ export function Leaderboard({
               {state.total.toLocaleString('en-US')}.
             </p>
           )}
-          {!youShown && yourStanding && (
+          {!youShown && state.you && (
             <p style={{ marginTop: 8, fontWeight: 600, color: '#7fb2ff' }}>
-              You placed {ordinal(yourStanding.rank)} of{' '}
-              {yourStanding.total.toLocaleString('en-US')}
+              You placed {ordinal(state.you.rank)} of{' '}
+              {state.you.total.toLocaleString('en-US')}
               {yourScore !== undefined &&
                 ` · ${yourScore.toLocaleString('en-US')} pts`}
             </p>

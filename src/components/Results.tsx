@@ -12,6 +12,8 @@ import { ROUNDS_PER_DAY } from '../lib/daily'
 import { log } from '../lib/log'
 import {
   submitDailyScore,
+  fetchLeaderboard,
+  refreshStanding,
   formatStanding,
   readStanding,
   type Standing,
@@ -97,11 +99,24 @@ export function Results({
 
   useEffect(() => {
     let live = true
-    submitDailyScore({ cityId, dateKey, score: totalScore, official })
-      .then((s) => {
-        if (live && s) setStanding(s)
+    async function run() {
+      const s = await submitDailyScore({
+        cityId,
+        dateKey,
+        score: totalScore,
+        official,
       })
-      .catch(() => {})
+      if (!live || !s) return
+      setStanding(s)
+      // Submit caches its standing write-once (no re-POST on reload), so the
+      // rank/total would otherwise freeze at finish time. Refresh them against a
+      // fresh read so "Nth of Y · top Z%" stays current as more players finish.
+      const fresh = await fetchLeaderboard(cityId, dateKey)
+      if (live && fresh) setStanding(refreshStanding(s, fresh, totalScore))
+    }
+    // Best-effort: any failure leaves the cached standing in place — the
+    // leaderboard never blocks or breaks the results screen.
+    run().catch(() => {})
     return () => {
       live = false
     }
@@ -168,12 +183,11 @@ export function Results({
       )}
 
       <ol style={{ paddingLeft: 20, lineHeight: 1.6 }}>
-        {results.map((r, i) => (
+        {results.map((r) => (
           <li key={r.location.id}>
             {scoreEmoji(r.score)} <strong>{r.location.name}</strong> —{' '}
             {formatDistance(r.distanceMeters)} ·{' '}
             {r.score.toLocaleString('en-US')} pts
-            {i === results.length - 1 ? '' : ''}
           </li>
         ))}
       </ol>

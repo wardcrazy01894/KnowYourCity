@@ -8,6 +8,7 @@ import {
   readStanding,
   submitDailyScore,
   fetchLeaderboard,
+  refreshStanding,
   buildLeaderboardRows,
   PERCENTILE_MIN_TOTAL,
 } from './leaderboard'
@@ -207,6 +208,61 @@ describe('buildLeaderboardRows', () => {
 
   it('marks nobody when the viewer’s score is absent', () => {
     expect(buildLeaderboardRows([480, 420], 333).some((r) => r.you)).toBe(false)
+  })
+})
+
+describe('refreshStanding', () => {
+  it('refreshes total and recomputes the exact rank for an uncapped field', () => {
+    // Cached "2nd of 3" from the morning; the board now has everyone (uncapped)
+    // and more players. Your 460 has two higher scores → 3rd.
+    const r = refreshStanding(
+      { rank: 2, total: 3 },
+      { total: 5, scores: [500, 480, 460, 440, 420] },
+      460,
+    )
+    expect(r).toEqual({ rank: 3, total: 5 })
+  })
+
+  it('keeps the cached streak while refreshing the numbers', () => {
+    const r = refreshStanding(
+      { rank: 1, total: 1, streak: { current: 4, best: 7 } },
+      { total: 2, scores: [500, 480] },
+      500,
+    )
+    expect(r.streak).toEqual({ current: 4, best: 7 })
+    expect(r).toMatchObject({ rank: 1, total: 2 })
+  })
+
+  it('computes the exact rank when the score reaches into a capped window', () => {
+    // Server returned only the top 3 of 200, but your 460 == the smallest
+    // returned, so every higher score is in the window → rank is exact.
+    const r = refreshStanding(
+      { rank: 1, total: 50 },
+      { total: 200, scores: [500, 480, 460] },
+      460,
+    )
+    expect(r).toEqual({ rank: 3, total: 200 })
+  })
+
+  it('keeps the cached rank when the player is below a capped window', () => {
+    // Top-3 of 200 returned; your 300 is below the smallest returned (460), so an
+    // exact rank can't be derived — keep the cached submit rank, refresh total.
+    const r = refreshStanding(
+      { rank: 150, total: 80 },
+      { total: 200, scores: [500, 480, 460] },
+      300,
+    )
+    expect(r).toEqual({ rank: 150, total: 200 })
+  })
+
+  it('floors the fallback rank at the returned window size + 1', () => {
+    const r = refreshStanding(
+      { rank: 2, total: 10 }, // implausibly good for a below-window score
+      { total: 200, scores: [500, 480, 460] },
+      300,
+    )
+    expect(r.rank).toBe(4) // 3 returned → at best 4th
+    expect(r.total).toBe(200)
   })
 })
 
