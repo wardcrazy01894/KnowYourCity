@@ -2945,7 +2945,9 @@
     "currentName": "",
     "fameScore": 40,
     "reviewCount": 273,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "quan-ngon-bistro",
@@ -3127,7 +3129,9 @@
     "currentName": "",
     "fameScore": 50,
     "reviewCount": 600,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "sab-cafe",
@@ -3233,7 +3237,9 @@
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 100,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "scrounge-lounge-beach-bar",
@@ -3369,7 +3375,9 @@
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 200,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "sonnys",

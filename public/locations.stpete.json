@@ -4018,20 +4018,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "quaker-steak-lube",
-      "name": "Quaker Steak & Lube",
-      "lat": 27.866825,
-      "lng": -82.700883,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 40,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "quan-ngon-bistro",
       "name": "Quan Ngon Bistro",
       "lat": 27.839565,
@@ -4267,20 +4253,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "ruths-chris-steak-house",
-      "name": "Ruth's Chris Steak House",
-      "lat": 27.773872,
-      "lng": -82.634321,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 50,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "sab-cafe",
       "name": "Sab Cafe",
       "lat": 27.77376,
@@ -4462,20 +4434,6 @@
       ]
     },
     {
-      "id": "scooters-coffee",
-      "name": "Scooter's Coffee",
-      "lat": 27.85652,
-      "lng": -82.63867,
-      "category": "cafe",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 20,
-      "clue": "A drive-thru coffee kiosk on 4th St N.",
-      "photoUrl": null,
-      "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
-    },
-    {
       "id": "sculleys",
       "name": "Sculley's Waterfront Restaurant",
       "lat": 27.784962,
@@ -4639,20 +4597,6 @@
       "inPlay": true,
       "fameScore": 62,
       "clue": "An ornate 1920s Mediterranean Revival arcade building downtown.",
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "sonic",
-      "name": "Sonic",
-      "lat": 27.841971,
-      "lng": -82.699346,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 30,
-      "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL"
