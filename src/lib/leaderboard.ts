@@ -227,6 +227,43 @@ export async function fetchLeaderboard(
   }
 }
 
+/**
+ * Recompute the player's standing for DISPLAY from a fresh read of the board.
+ *
+ * The submit-time standing is cached write-once (so a reload never re-POSTs),
+ * which means "Nth of Y · top Z%" would otherwise freeze at the moment the
+ * player finished — stale by evening once hundreds more have played. This keeps
+ * the cached submit (and its server streak) but refreshes the numbers:
+ *
+ *  - `total` is always taken from the fresh read.
+ *  - `rank` is recomputed EXACTLY when the player's score still falls within the
+ *    returned top-N window (always true when they placed in the top N): every
+ *    score above theirs is then guaranteed to be in the window, so
+ *    `1 + count(scores > yourScore)` is their true competition rank.
+ *  - When the player placed BELOW the returned (capped) window, an exact rank
+ *    can't be derived from a capped list, so the cached submit rank is kept
+ *    (floored at window + 1). That branch only happens past the server TOP_LIMIT.
+ *
+ * Pure.
+ */
+export function refreshStanding(
+  cached: Standing,
+  fresh: LeaderboardData,
+  yourScore: number,
+): Standing {
+  const total = Math.max(fresh.total, 1)
+  const returned = fresh.scores.length
+  const greater = fresh.scores.filter((s) => s > yourScore).length
+  // Capped iff the server returned fewer rows than the true total.
+  const capped = returned < fresh.total
+  const smallestReturned = returned > 0 ? Math.min(...fresh.scores) : Infinity
+  const inWindow = !capped || yourScore >= smallestReturned
+  const rank = inWindow ? greater + 1 : Math.max(cached.rank, returned + 1)
+  const out: Standing = { rank, total }
+  if (cached.streak) out.streak = cached.streak
+  return out
+}
+
 export interface LeaderboardRow {
   /** 1-based competition rank (ties share a rank). */
   rank: number
