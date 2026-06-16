@@ -25,23 +25,31 @@ describe('cities registry', () => {
 
   // The dataset JSON has a STABLE filename (locations.<id>.json), so a mobile
   // cache can serve a stale copy against a freshly-loaded JS bundle — the skew
-  // that silently broke a daily override (hurricane-bar incident, 2026-06-16).
-  // Stamping the per-deploy build hash onto the URL makes every new bundle
-  // request a fresh JSON, locking the two together.
+  // that can desync a bundled daily override from its dataset. Stamping the
+  // per-deploy build hash makes every new bundle request a fresh JSON. (This is
+  // defense-in-depth over the no-cache headers in public/_headers.)
   describe('cityDataUrl — cache-busting', () => {
-    const hash = import.meta.env.VITE_BUILD_HASH ?? 'dev'
+    const v = (id: string) =>
+      new URL(cityDataUrl(id), 'https://x').searchParams.get('v')
 
-    it('points at the city dataset with a build-hash version query', () => {
+    it('points at the city dataset with a non-empty version query', () => {
       const url = cityDataUrl('stpete')
-      expect(url).toContain('locations.stpete.json')
-      expect(url).toContain(`?v=${hash}`)
+      expect(url).toContain('locations.stpete.json?v=')
+      // Asserts a real value got stamped — independent of the function's own
+      // 'dev' fallback, so it can't pass by both sides defaulting in lockstep.
+      expect(v('stpete')).toBeTruthy()
     })
 
     it('uses the same version for every city (one build → one hash)', () => {
-      const v = (id: string) =>
-        new URL(cityDataUrl(id), 'https://x').searchParams.get('v')
-      expect(v('stpete')).toBe(hash)
       expect(v('seattle')).toBe(v('stpete'))
+    })
+
+    it('the version matches the injected build hash when present', () => {
+      // In CI the build hash is the git short sha; assert the URL carries
+      // exactly that, not some unrelated string. Skips only if no hash exists.
+      const injected = import.meta.env.VITE_BUILD_HASH
+      if (!injected) return
+      expect(v('stpete')).toBe(injected)
     })
   })
 

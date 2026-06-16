@@ -39,13 +39,18 @@ export function getCity(id: string | null | undefined): City | undefined {
 /**
  * Path to a city's bundled dataset (respects Vite's base).
  *
- * The `?v=<build hash>` is a cache-buster, not decoration: the dataset JSON has
- * a STABLE filename (unlike the content-hashed JS bundle), so without it a
- * client cache can serve a stale dataset against a freshly-loaded bundle. That
- * skew silently broke a daily override once (a bundled override id no longer
- * existed in the cached JSON → selectDailyLocations fell back to a random day).
- * Stamping the per-deploy build hash makes every new bundle fetch a fresh JSON,
- * so the two always move together. Falls back to `dev` outside a build.
+ * The dataset JSON has a STABLE filename (unlike the content-hashed JS bundle),
+ * so a client cache can serve a stale copy against a freshly-loaded bundle —
+ * the skew that can desync a bundled daily override from the dataset it names.
+ *
+ * Defense-in-depth, NOT the only guard: `public/_headers` already sends
+ * `Cache-Control: no-cache, must-revalidate` for each `locations.*.json` (added
+ * 2026-06-14). Appending `?v=<per-deploy build hash>` adds a layer that the
+ * headers don't: a unique URL per deploy can't be collapsed by a cache that
+ * ignores `no-cache` (bfcache, an edge/proxy that disregards request headers),
+ * and it auto-covers any NEW city without a matching `_headers` entry having to
+ * be remembered. The hash is the git short hash injected at build (also emitted
+ * in /version.json); falls back to `dev` when no build hash is present.
  */
 export function cityDataUrl(id: string): string {
   const v = import.meta.env.VITE_BUILD_HASH ?? 'dev'
