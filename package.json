@@ -19,6 +19,7 @@
     "fetch-pois": "node scripts/fetch-pois.mjs",
     "fetch-food": "node scripts/fetch-food.mjs",
     "build-city": "node scripts/build-city.mjs",
+    "check-chains": "node scripts/check-chains.mjs",
     "add-polygons": "node scripts/add-polygons.mjs",
     "deploy": "npm run build && gh-pages -d dist"
   },

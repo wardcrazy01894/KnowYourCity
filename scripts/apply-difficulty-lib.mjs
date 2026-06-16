@@ -115,7 +115,6 @@ export function cleanLocations(
   orig,
   fameById,
   medianFallback = MEDIAN_FAME_FALLBACK,
-  { chains = [], keepIds = {} } = {},
 ) {
   const audit = {
     closed: [],
@@ -129,16 +128,6 @@ export function cleanLocations(
   for (const loc of orig) {
     const { difficulty: _d, ...bare } = loc
     void _d
-    // National-chain LIST check (name-based, data/national-chains.json) — drops
-    // regardless of fame record, unless the id is allow-listed as a local
-    // namesake. This is the durable, no-web-search chain exclusion.
-    if (!keepIds[loc.id]) {
-      const chain = matchNationalChain(loc.name, chains)
-      if (chain) {
-        audit.chains.push(`${loc.name} (${loc.id}) — national chain (list)`)
-        continue
-      }
-    }
     const f = fameById.get(loc.id)
     if (!f) {
       audit.noFame.push(`${loc.name} (${loc.id})`)

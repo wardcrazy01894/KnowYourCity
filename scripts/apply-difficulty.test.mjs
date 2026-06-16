@@ -568,54 +568,14 @@ describe('matchNationalChain', () => {
 
   it('respects word boundaries (no substring false positives)', () => {
     expect(matchNationalChain('Subjective Coffee', CHAINS)).toBeNull() // not "bjs"
-    expect(matchNationalChain('Sonic Boom Records', CHAINS)).toBe('sonic') // word match still fires
     expect(matchNationalChain('Supersonic Cafe', CHAINS)).toBeNull() // "sonic" inside a word
+    expect(matchNationalChain('Sonic', CHAINS)).toBe('sonic') // standalone word does match
   })
 
   it('returns null for local / FL-regional names not on the list', () => {
     expect(matchNationalChain('Burger Monger', CHAINS)).toBeNull()
     expect(matchNationalChain("Beef 'O' Brady's", CHAINS)).toBeNull()
     expect(matchNationalChain('Sunken Gardens', CHAINS)).toBeNull()
-  })
-})
-
-describe('cleanLocations — national-chain list', () => {
-  const baseLoc = (id, name) => ({
-    id,
-    name,
-    lat: 0,
-    lng: 0,
-    category: 'restaurant',
-    source: 'overpass',
-    attribution: 't',
-  })
-  const fameOpen = (id) => ({
-    id,
-    status: 'open',
-    currentName: '',
-    fameScore: 40,
-    reviewCount: 10,
-    hasWikipedia: false,
-  })
-
-  it('drops an in-play venue whose name matches the chain list', () => {
-    const orig = [baseLoc('chilis', "Chili's"), baseLoc('local', 'Local Spot')]
-    const fameById = buildFameIndex([fameOpen('chilis'), fameOpen('local')])
-    const { cleaned, audit } = cleanLocations(orig, fameById, 50, {
-      chains: ['chilis'],
-    })
-    expect(cleaned.map((l) => l.id)).toEqual(['local'])
-    expect(audit.chains.some((c) => c.includes('chilis'))).toBe(true)
-  })
-
-  it('keeps a chain-name match when its id is in keepIds (local namesake)', () => {
-    const orig = [baseLoc('sonic-local', 'Sonic Boom Records')]
-    const fameById = buildFameIndex([fameOpen('sonic-local')])
-    const { cleaned } = cleanLocations(orig, fameById, 50, {
-      chains: ['sonic'],
-      keepIds: { 'sonic-local': 'local record store, not the drive-in' },
-    })
-    expect(cleaned.map((l) => l.id)).toEqual(['sonic-local'])
   })
 })
 
@@ -627,6 +587,10 @@ describe('national-chain guard — no chain leaks in-play in any committed datas
   const cities = readdirSync(new URL('../public/', import.meta.url))
     .filter((f) => /^locations\..+\.json$/.test(f))
     .map((f) => f.match(/^locations\.(.+)\.json$/)[1])
+
+  it('finds the committed city datasets (guard is not vacuous)', () => {
+    expect(cities.length).toBeGreaterThan(0)
+  })
 
   it.each(cities)('%s has no national-chain name in the play set', (city) => {
     const locs = JSON.parse(

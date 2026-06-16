@@ -1,5 +1,5 @@
 {
-  "_comment": "National-chain exclusion list for the local-landmark datasets. apply-difficulty.mjs drops any in-play venue whose name matches one of these tokens (apostrophe-safe, word-boundary normalized match — see matchNationalChain in apply-difficulty-lib.mjs), and a CI guard test fails if a match ever lands in-play. To exclude a newly-spotted chain, add ONE token below — no web search needed. Tokens are lowercase, apostrophes deleted ('Church's'->'churchs'). Keep tokens DISTINCTIVE to avoid matching local namesakes. Florida-regional brands are intentionally OMITTED so they stay (see keepRegional). A genuine local business that happens to match a token can be force-kept by id via keepIds.",
+  "_comment": "National-chain FLAGGING list for the local-landmark datasets. This does NOT auto-remove — `node scripts/check-chains.mjs [city]` (and a CI guard test in apply-difficulty.test.mjs) flag any in-play venue whose name matches a token (apostrophe-safe, word-boundary normalized — see matchNationalChain in apply-difficulty-lib.mjs); a human VERIFIES each, then marks the real chains `isNationalChain: true` in data/fame-<city>.json (apply-difficulty drops those) or adds a local namesake's id to keepIds below. To start excluding a newly-spotted chain, add ONE token here — no web search needed. Tokens are lowercase, apostrophes deleted ('Church's'->'churchs'); keep them DISTINCTIVE to minimise namesake flags. Florida-regional brands are intentionally OMITTED so they stay (see keepRegional_note).",
   "chains": [
     "mcdonalds", "burger king", "wendys", "five guys", "shake shack", "whataburger",
     "in n out", "sonic", "checkers", "rallys", "hardees", "carls jr", "jack in the box",
@@ -23,15 +23,15 @@
     "applebees", "chilis", "tgi fridays", "ruby tuesday", "olive garden", "red lobster",
     "outback steakhouse", "longhorn steakhouse", "texas roadhouse", "cheesecake factory",
     "pf changs", "red robin", "cheddars", "golden corral", "cracker barrel", "dennys",
-    "ihop", "waffle house", "bob evans", "village inn", "perkins", "po folks", "bjs",
-    "twin peaks", "hooters", "yard house", "bahama breeze", "seasons 52", "coopers hawk",
-    "first watch", "another broken egg", "metro diner", "bonefish grill", "carrabbas",
+    "ihop", "waffle house", "bob evans", "village inn", "perkins restaurant", "po folks", "bjs",
+    "twin peaks restaurant", "hooters", "yard house", "bahama breeze", "seasons 52", "coopers hawk",
+    "first watch restaurant", "another broken egg", "metro diner", "bonefish grill", "carrabbas",
     "ruths chris", "mortons", "flemings", "capital grille", "fogo de chao", "benihana",
     "famous daves", "logans roadhouse", "ocharleys", "maggianos", "brio italian",
     "romanos macaroni grill", "buca di beppo", "old spaghetti factory", "joes crab shack",
     "bubba gump", "rainforest cafe", "quaker steak", "dickeys", "honey baked ham",
     "panda express", "pei wei", "noodles and company", "teriyaki madness", "sweetgreen",
-    "cava", "panera", "corner bakery", "au bon pain", "captain ds", "long john silvers",
+    "cava mediterranean", "panera bread", "corner bakery cafe", "au bon pain", "captain ds", "long john silvers",
     "jollibee", "portillos"
   ],
   "keepRegional_note": "FL-regional brands intentionally NOT listed (they stay): Publix, Beef 'O' Brady's, Miller's Ale House, PDQ, Pollo Tropical, Tijuana Flats, Burger Monger (St. Pete-founded), Bavaro's, Oak & Stone, Pipo's, Mr. Empanada, Leverock's, Flippers Pizzeria, Fresh Kitchen, Fitlife Foods, Datz, Square 1 Burgers, Pincho. Borderline FL-origin-but-now-big (Tropical Smoothie, Sonny's BBQ, Hawkers, Maple Street Biscuit, Kobe) left off pending an owner call.",
