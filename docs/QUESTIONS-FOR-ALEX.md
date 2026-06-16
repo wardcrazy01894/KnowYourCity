@@ -35,7 +35,7 @@ applied. Open follow-ups live in `BACKLOG.md`.
    IANA timezone.*
 
 9. **Dataset size** — **~200 before launch** (more is better); anything is fine
-   while prototyping. *Applied: target documented; current shipped set is 374 (plus 4 more cities).*
+   while prototyping. *Applied: target documented; current shipped set is 373 (plus 4 more cities).*
 
 10. **Hosting** — free `github.io` for now (it is free for public repos); a
     **custom domain later** (name TBD). *Applied: repo made public; custom

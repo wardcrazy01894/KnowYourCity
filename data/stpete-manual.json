@@ -90,6 +90,17 @@
       "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
+      "id": "china-crossings",
+      "name": "China Crossings",
+      "lat": 27.86801,
+      "lng": -82.64464,
+      "category": "restaurant",
+      "clue": "A Chinese restaurant on Roosevelt Blvd N.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim, status verified via Google Places)"
+    },
+    {
       "id": "clam-bayou-nature-preserve",
       "name": "Clam Bayou Nature Preserve",
       "lat": 27.7387692,
@@ -332,6 +343,17 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "perrys-porch",
+      "name": "Perry's Porch",
+      "lat": 27.77348,
+      "lng": -82.6312,
+      "category": "restaurant",
+      "clue": "A restaurant on 2nd Ave NE in downtown St. Pete.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim, status verified via Google Places)"
+    },
+    {
       "id": "pin-on-grand",
       "name": "Pin On Grand",
       "lat": 27.77081,
@@ -495,6 +517,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "whiskey-on-park",
+      "name": "Whiskey on Park",
+      "lat": 27.83947,
+      "lng": -82.72647,
+      "category": "bar",
+      "clue": "A bar on Park Blvd in Pinellas Park.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (geocoded via Nominatim, status verified via Google Places)"
     },
     {
       "id": "whos-on-first",

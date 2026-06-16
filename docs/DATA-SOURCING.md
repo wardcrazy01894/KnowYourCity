@@ -112,9 +112,9 @@ Run at <https://query.wikidata.org>. This is optional polish — the OSM
   "clue": null,                    // HUMAN writes this (or seed from Wikidata)
   "photoUrl": null,                // FUTURE photo rounds; leave null for v1
   "polygon": [[27.78, -82.64], …], // OPTIONAL footprint ring (park/golf only); see §4d
-  "lastVerified": "2026-06-16",    // OPTIONAL date open-status last confirmed via Google Places
   "source": "overpass",            // or "wikidata" / "manual"
-  "attribution": "OpenStreetMap ODbL"
+  "attribution": "OpenStreetMap ODbL",
+  "lastVerified": "2026-06-16"     // OPTIONAL date open-status last confirmed via Google Places
 }
 ```
 
@@ -163,14 +163,17 @@ stale (most "missing" hits around a downtown block turn out to be
 already-known closures recorded in the fame cache).
 
 ### Status: 374 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
-`public/locations.stpete.json` holds **374 St. Pete places** (peaked at 401 after
+`public/locations.stpete.json` holds **373 St. Pete places** (peaked at 401 after
 the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +7
 player-requested/nearby-sweep adds; −1 closed bar removed via issue #81; +3
 John's Pass Village adds; −1 closed McAuley's Pub removed; a Google Places
 freshness sweep then re-pinned 7 relocated venues, renamed 4 to their current
 successor business, removed 5 truly-closed, and added 4 new spots (net −1); then
 −22 national chains that had leaked past the original fame pass (Bob Evans,
-Chili's, Ruth's Chris, Scooter's Coffee, Quaker Steak & Lube, …) — all in play,
+Chili's, Ruth's Chris, Scooter's Coffee, Quaker Steak & Lube, …); then a
+whole-fleet Google Places freshness sweep removed 4 newly-closed (Boardwalk
+Tavern, Hops 2.0, Que Pasa, Liquid Therapy Bar) and added 3 successors at those
+spots (Perry's Porch, China Crossings, Whiskey on Park) → **373**, all in play,
 since the cap is 400). It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
@@ -326,8 +329,27 @@ benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
 stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
-filters to `inPlay !== false`. Current caps: St. Pete 400 (374 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4150).
+filters to `inPlay !== false`. Current caps: St. Pete 400 (373 rows, all in
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
+
+> **Removing a row reshuffles the cap.** Because in-play membership and the
+> 40/40/20 buckets are recomputed from fame rank on every `apply-difficulty` run,
+> dropping an in-play venue (e.g. a permanently-closed one) **promotes the next
+> benched row** into the play set and can **nudge a few venues across a bucket
+> boundary** (e.g. medium↔hard). That's expected, not churn — a freshness sweep
+> that removes N venues will show N promotions plus a handful of difficulty
+> flips. Any promoted *business* gets re-verified + stamped (below); promoted
+> parks/landmarks are stamped as stable.
+
+> **Freshness (`lastVerified`).** A periodic Google Places pass stamps each
+> in-play venue with the `YYYY-MM-DD` it was last confirmed current: businesses
+> whose `business_status` is OPERATIONAL, and parks/landmarks (no
+> `business_status`) as stable still-present landmarks. The **only** in-play rows
+> left unstamped are businesses with an uncertain status (chiefly
+> `CLOSED_TEMPORARILY`) — an absent stamp is a deliberate "needs a look" signal.
+> The field lives in the public dataset only (not the fame cache) and survives
+> re-runs via `FIELD_ORDER`. Permanently-closed venues found in the pass are
+> removed the usual way (`status: closed` in the fame cache → dropped).
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
@@ -351,8 +373,8 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
-§4c): St. Pete (374 → **374**), State College (230 → **200**), Ann Arbor (341 →
-**300**), Seattle (2389 → **500**), Chicago (4150 → **700**) — all enriched.
+§4c): St. Pete (373 → **373**), State College (229 → **200**), Ann Arbor (340 →
+**300**), Seattle (2388 → **500**), Chicago (4149 → **700**) — all enriched.
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
