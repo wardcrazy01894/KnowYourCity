@@ -170,13 +170,14 @@ describe('composeLocations', () => {
     expect(movers[0].name).toBe('Mover (re-pinned)')
   })
 
-  it('override updates the name-proximity map (a later same-name dup is collapsed)', () => {
-    // 'a' (OSM) at coords A is overridden to coords B with name "Shared". A
-    // later OSM 'b' also named "Shared" sits ~30 m from B — it must be caught as
-    // a dup against the OVERRIDDEN coords, not slip through on stale OSM coords.
-    const food1 = food('a', 'restaurant', 0, 1, 1)
-    const food2 = food('b', 'restaurant', 0, 8.0002, 8.0002) // ~30m from (8,8)
-    food2.name = 'Shared'
+  it('override updates the name-proximity map so a LATER same-name manual dup is collapsed', () => {
+    // OSM 'a' (name "Mover", coords far away) is overridden by a manual entry
+    // that RENAMES it to "Shared" at (8,8). A SECOND, later manual entry 'b' is
+    // also "Shared" at ~30 m from (8,8). It must be caught as a same-name
+    // proximity dup against the OVERRIDE's new coords — which only works if the
+    // override remembered itself in keptByNorm. Without that sync, 'b' slips
+    // through and duplicates.
+    const food1 = food('a', 'restaurant', 0, 1, 1) // OSM "Mover", far away
     const manual = [
       {
         id: 'a',
@@ -187,22 +188,26 @@ describe('composeLocations', () => {
         source: 'manual',
         attribution: 'x',
       },
+      {
+        id: 'b',
+        name: 'Shared',
+        lat: 8.0002, // ~30 m from the override's new (8,8)
+        lng: 8.0002,
+        category: 'restaurant',
+        source: 'manual',
+        attribution: 'x',
+      },
     ]
-    // OSM 'b' is added before the manual override, so to exercise the map sync we
-    // rely on the override remembering its new coords for any LATER comparison;
-    // here we assert no duplicate 'Shared' survives at ~the same spot.
     const out = composeLocations({
       landmarks: [],
-      food: [food1, food2],
+      food: [food1],
       manual,
       city: CITY(null),
     })
     const shared = out.filter((l) => l.name === 'Shared')
-    // 'b' (OSM, added first at ~8,8) stays; manual 'a' overrides the far OSM 'a'
-    // to (8,8) — both now name "Shared" at the same spot, but they have distinct
-    // ids so they co-exist. The point: the override's coords are remembered.
-    expect(out.find((l) => l.id === 'a').lat).toBe(8)
-    expect(shared.length).toBeGreaterThanOrEqual(1)
+    expect(shared).toHaveLength(1) // 'b' collapsed against the remembered override
+    expect(shared[0].id).toBe('a')
+    expect(shared[0].lat).toBe(8)
   })
 
   it('an out-of-bounds manual override keeps the OSM pin (no crash, no drop)', () => {
