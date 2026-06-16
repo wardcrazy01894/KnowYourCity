@@ -174,9 +174,11 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 ## Done
 - [x] **State College enriched + uncapped + parks fix** — removed the size cap
       (`target: null` → `composeLocations` keeps everything in-bounds), re-fetched
-      (80 → 282), ran the fame pass, enriched to **234** rows (the 20/45/35
+      (80 → 282), ran the fame pass, enriched to 234 rows (the 20/45/35
       percentile split at the time gave 47 easy / 105 medium / 82 hard; PR #59's
-      play-cap re-run later set the in-play split to 200 rows at 80/80/40). Also
+      play-cap re-run later set the in-play split to 200 rows at 80/80/40). A
+      Google Places freshness sweep (Jun 2026) then removed 4 closed and renamed 4
+      to current successors → **230** rows (200 in play). Also
       fixed park under-fetching in `fetch-pois` (named green spaces no longer need a
       wiki tag) → **2 → 46 parks**. Tooling: `apply-difficulty.mjs`,
       `add-or-update-city` skill, `build-city.test.mjs`, `fetch-pois.test.mjs`.
