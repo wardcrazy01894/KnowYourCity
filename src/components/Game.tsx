@@ -24,6 +24,7 @@ import {
   STORAGE_VERSION,
   type PersistedState,
 } from '../lib/storage'
+import { resolveInitialGame } from '../lib/resume'
 
 export interface GameProps {
   /** City id — namespaces saved state so streaks are per-city. */
@@ -68,10 +69,6 @@ function nextStreak(
   }
 }
 
-function freshGame(dateKey: string, locations: Location[]): GameState {
-  return { dateKey, locations, roundIndex: 0, results: [], phase: 'guessing' }
-}
-
 export function Game({
   cityId,
   cityShort,
@@ -83,9 +80,7 @@ export function Game({
   // One read of saved state at mount, shared by both the game + streak init.
   const [initial] = useState(() => loadState(cityId))
   const [game, setGame] = useState<GameState>(() =>
-    initial.current && initial.current.dateKey === dateKey
-      ? initial.current
-      : freshGame(dateKey, locations),
+    resolveInitialGame(initial.current, dateKey, locations),
   )
   const [guess, setGuess] = useState<Guess | null>(null)
   const [streak, setStreak] = useState(initial.streak)
