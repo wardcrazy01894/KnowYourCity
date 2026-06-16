@@ -169,8 +169,18 @@ export function selectDailyLocations(
       .map((id) => byId.get(id))
       .filter((l): l is Location => l != null && l.inPlay !== false)
     if (resolved.length === count) return resolved
-    console.warn(
-      `[KYC] Override for "${dateKey}" resolved ${resolved.length}/${count} in-play locations — falling back to PRNG. Check for unknown or inPlay:false IDs.`,
+    // LOUD on purpose (console.error, not warn): a partial resolve means a
+    // hand-curated day silently reverted to a random selection — the
+    // hurricane-bar failure mode. Name the seed and which IDs dropped so it's
+    // actionable. In a self-consistent build this never fires (a guard test
+    // asserts every committed override resolves fully); seeing it at runtime
+    // means the bundle and dataset are skewed (e.g. a stale cached dataset).
+    const dropped = overrideIds.filter((id) => {
+      const l = byId.get(id)
+      return l == null || l.inPlay === false
+    })
+    console.error(
+      `[KYC] Override for "${dateKey}" resolved ${resolved.length}/${count} in-play locations — falling back to PRNG. Unresolved IDs: ${dropped.join(', ')}.`,
     )
   }
   // Only rows in the daily play set are eligible. A city with a `playCap` marks
