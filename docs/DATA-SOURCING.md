@@ -449,10 +449,14 @@ drops secondary outer rings, and a couple of footprints aren't a clean single
 OSM polygon. These were rebuilt by hand from their OSM geometry and written
 straight onto the rows, so a plain re-run leaves them alone (idempotent skip);
 **`--force` would regress them to the wrong auto-extracted shape — don't.**
-- **Azalea Park** & **Clam Bayou Nature Preserve** — multipolygon relations with
-  **two `outer` rings**; the extractor kept only the larger and dropped the rest
-  (Azalea's south/centre block, Clam Bayou's west parcel). Fixed with the
-  **convex hull of both outer rings** so the whole footprint is covered.
+- **Azalea Park** — multipolygon relation with **two `outer` rings**; the
+  extractor kept only the larger and dropped the south/centre block. Fixed with
+  the **convex hull of both outer rings** so the whole footprint is covered.
+- **Clam Bayou Nature Preserve** — the named `nature_reserve` way is only the
+  south chunk; the preserve's wetland actually continues ~680 m north toward
+  Gulfport as a chain of unnamed `natural=wetland` parcels (the largest reaching
+  N≈27.7464). Fixed with the **convex hull of the preserve + the contiguous
+  wetland parcels** so it covers the full natural area, not just the south end.
 - **Fort De Soto** — the precise multi-pronged coastline was visually noisy; per
   owner request it's now a **coarse convex hull** of the main-island coastline
   (≈12 nodes) that "encapsulates a lot of it" rather than tracing every inlet.
