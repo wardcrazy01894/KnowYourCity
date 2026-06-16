@@ -381,13 +381,13 @@
   },
   {
     "id": "camelot",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 20,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "historic private home at 520 S Fraser St on National Register of Historic Places since 1979; viewable from street but not a public venue"
+    "statusNote": "Permanently closed at 520 S Fraser St; no operating successor (Google Places CLOSED_PERMANENTLY, Jun 2026)."
   },
   {
     "id": "canyon-pizza",
@@ -401,13 +401,13 @@
   },
   {
     "id": "canyon-wings",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 65,
     "reviewCount": 38,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "late-night wing staple on E Beaver Ave, popular with Penn State students since 2007"
+    "statusNote": "Permanently closed at 229 E Beaver Ave (Google Places, Jun 2026). The adjacent Canyon Pizza is a separate, still-open entry already in the dataset."
   },
   {
     "id": "carters-table",
@@ -791,13 +791,13 @@
   },
   {
     "id": "flipps",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 30,
-    "reviewCount": 0,
+    "status": "renamed",
+    "currentName": "East Food District",
+    "fameScore": 25,
+    "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Penn State campus dining burger and breakfast station at Findlay Commons dining hall"
+    "statusNote": "Now \"East Food District\" (verified Google Places, Jun 2026)."
   },
   {
     "id": "fresco-pollock",
@@ -1271,13 +1271,13 @@
   },
   {
     "id": "maxx-ramen",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small ramen shop in Lemont run by the Kamrai team, lunch-focused hours, cozy local spot"
+    "statusNote": "Permanently closed at 812 Pike St, Lemont; no relocation (Google Places + Yelp, Jun 2026)."
   },
   {
     "id": "medlar-field-at-lubrano-park",
@@ -1611,13 +1611,13 @@
   },
   {
     "id": "poindexter",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 28,
-    "reviewCount": 42,
+    "status": "renamed",
+    "currentName": "Trophy Room",
+    "fameScore": 20,
+    "reviewCount": 11,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "all-day cafe inside Graduate State College hotel, opened 2019; low standalone local recognition"
+    "statusNote": "Now \"Trophy Room\" (verified Google Places, Jun 2026)."
   },
   {
     "id": "president-atherton",
@@ -1881,13 +1881,13 @@
   },
   {
     "id": "state-chikn",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Penn State campus dining concept at Waring Commons West Food District"
+    "statusNote": "Closed at 480 E College Ave; replaced by Big Chicken, a national chain the pipeline excludes (Google Places, Jun 2026)."
   },
   {
     "id": "state-theatre",
@@ -1941,13 +1941,13 @@
   },
   {
     "id": "teafe",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 35,
-    "reviewCount": 80,
+    "status": "renamed",
+    "currentName": "TeaFé",
+    "fameScore": 38,
+    "reviewCount": 190,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "boba tea cafe at 1633 N Atherton St in the Walmart Plaza"
+    "statusNote": "Now \"TeaFé\" (verified Google Places, Jun 2026)."
   },
   {
     "id": "the-arboretum-at-penn-state",
@@ -2181,13 +2181,13 @@
   },
   {
     "id": "underground-burgers-and-crepes",
-    "status": "open",
-    "currentName": "",
-    "fameScore": 40,
-    "reviewCount": 47,
+    "status": "renamed",
+    "currentName": "Under Ground Burger",
+    "fameScore": 18,
+    "reviewCount": 3,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "basement-level burger and crepe spot on E Calder Way; also hosts MrBeast Burger ghost kitchen brand"
+    "statusNote": "Now \"Under Ground Burger\" (verified Google Places, Jun 2026)."
   },
   {
     "id": "vibe-coffee-co",
