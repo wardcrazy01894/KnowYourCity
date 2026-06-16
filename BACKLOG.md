@@ -34,8 +34,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       to **398**; removing the closed McAuley's Pub (now The Local Draught House)
       brought it to **397**; a Google Places freshness sweep then re-pinned 7
       relocated venues, renamed 4 to their current successor, removed 5
-      truly-closed, and added 4 new spots → 396; then removing 17 national chains
-      that leaked past the original fame pass → **379** (all in play — cap is 400).
+      truly-closed, and added 4 new spots → 396; then removing 22 national chains
+      that leaked past the original fame pass → **374** (all in play — cap is 400).
 - [ ] **Build new cities from OSM + Google Maps, not OSM alone** (owner directive,
       2026-06-16 — "OSM has outdated data"). `build-city.mjs` pulls only live
       Overpass today, so a new city can launch with stale closed/renamed pins (the
@@ -100,7 +100,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [x] **Play cap per city (`City.playCap`) + non-food floor.** Every enriched
       row stays in the dataset with its `fameScore`; only the top-`playCap` by
       fame are `inPlay` and carry a difficulty (count-bucketed 40% easy / 40%
-      medium / 20% hard). Caps: St. Pete 400 (379 rows, all in play), Ann Arbor
+      medium / 20% hard). Caps: St. Pete 400 (374 rows, all in play), Ann Arbor
       300, State College 200, Seattle 500, Chicago 700. Daily selection filters
       to `inPlay`
       and enforces a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so
@@ -191,7 +191,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       PR #74; **395** after removing the closed DeSanto Bar, issue #81; **398**
       after +3 John's Pass adds, issue #85; **397** after removing the closed
       McAuley's Pub; **396** after a Google Places freshness sweep — re-pin 7,
-      rename 4 to successors, −5 closed, +4 new; **379** after removing 17
+      rename 4 to successors, −5 closed, +4 new; **374** after removing 22
       national chains). PR #40. (Rollout to other
       cities tracked under *In progress / next*.)
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
@@ -204,7 +204,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       scoring + reveal, 5-round flow, results + Wordle share, localStorage
       resume + streaks.
 - [x] Data pipeline (M2): Overpass scripts (fetch-pois / fetch-food /
-      build-city) → per-city `public/locations.<id>.json` (St. Pete 379 +
+      build-city) → per-city `public/locations.<id>.json` (St. Pete 374 +
       4 cities); the app loads the selected city's file; validated by a test.
 - [x] Applied Alex's decisions: 0–100 linear scoring, midnight-ET rollover,
       clues hidden by default, whole-city start zoom.

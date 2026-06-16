@@ -466,20 +466,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "bjs",
-      "name": "BJ's",
-      "lat": 27.838789,
-      "lng": -82.686288,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 40,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "black-crow-coffee",
       "name": "Black Crow Coffee",
       "lat": 27.770439,
@@ -1904,7 +1890,7 @@
       "lat": 27.768977,
       "lng": -82.768614,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -2214,20 +2200,6 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (node from nearby-sweep)"
-    },
-    {
-      "id": "hungry-howies",
-      "name": "Hungry Howie's",
-      "lat": 27.823038,
-      "lng": -82.639084,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 35,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "hurricane-seafood-restaurant",
@@ -3962,20 +3934,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "po-folks",
-      "name": "Po Folks",
-      "lat": 27.789881,
-      "lng": -82.678814,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 42,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "poke-island",
       "name": "Poke Island",
       "lat": 27.836444,
@@ -4177,7 +4135,7 @@
       "lat": 27.7791054,
       "lng": -82.639802,
       "category": "park",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 30,
       "clue": "A small historic lake and surrounding park in the Round Lake neighborhood.",
@@ -5487,20 +5445,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "torchys-tacos",
-      "name": "Torchy's Tacos",
-      "lat": 27.792862,
-      "lng": -82.729784,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 45,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "trailer-daddy",
       "name": "Trailer Daddy",
       "lat": 27.771408,
@@ -5665,20 +5609,6 @@
       "difficulty": "hard",
       "inPlay": true,
       "fameScore": 20,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "village-inn",
-      "name": "Village Inn",
-      "lat": 27.855296,
-      "lng": -82.638289,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 45,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",

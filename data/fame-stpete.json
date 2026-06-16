@@ -339,7 +339,9 @@
     "currentName": "",
     "fameScore": 40,
     "reviewCount": 800,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "black-crow-coffee",
@@ -1758,7 +1760,9 @@
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 50,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "hurricane-seafood-restaurant",
@@ -2879,7 +2883,9 @@
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 270,
-    "hasWikipedia": true
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "poke-island",
@@ -4119,7 +4125,9 @@
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 300,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "tournament-de-pizza",
@@ -4240,7 +4248,9 @@
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 130,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "vinoy-park",
