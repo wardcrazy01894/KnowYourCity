@@ -183,4 +183,44 @@ describe('DAILY_OVERRIDES — integration', () => {
       }
     }
   })
+
+  // Shape guard: an override must be exactly one full day's worth of DISTINCT
+  // ids. A short/long list or a duplicate id would still "resolve" past the
+  // existence check above (filter keeps duplicates), but produce a malformed
+  // day — or, if short, silently fall through to the PRNG. Catch it here.
+  it('every override is exactly ROUNDS_PER_DAY distinct ids', () => {
+    for (const [seed, ids] of Object.entries(DAILY_OVERRIDES)) {
+      expect(ids.length, `override "${seed}": wrong length`).toBe(
+        ROUNDS_PER_DAY,
+      )
+      expect(
+        new Set(ids).size,
+        `override "${seed}": contains a duplicate id`,
+      ).toBe(ids.length)
+    }
+  })
+
+  // The bug that shipped (hurricane-bar incident, 2026-06-16): when ANY override
+  // id fails to resolve, selectDailyLocations silently discards the WHOLE day's
+  // curation and returns a random PRNG selection (daily.ts), warning only to the
+  // console. This asserts the real selection path — fed the real DAILY_OVERRIDES
+  // — returns each override VERBATIM and in order, i.e. the override is actually
+  // USED, never silently dropped. Goes red the instant a committed override and
+  // its dataset drift apart.
+  it('selectDailyLocations returns each override verbatim (no silent PRNG fallback)', () => {
+    for (const [seed, ids] of Object.entries(DAILY_OVERRIDES)) {
+      const cityId = seed.split(':')[0]
+      const data = DATASETS[cityId]
+      const picks = selectDailyLocations(
+        data.locations,
+        seed,
+        undefined,
+        DAILY_OVERRIDES,
+      )
+      expect(
+        picks.map((p) => p.id),
+        `override "${seed}" was not used — selection fell back to the PRNG`,
+      ).toEqual([...ids])
+    }
+  })
 })
