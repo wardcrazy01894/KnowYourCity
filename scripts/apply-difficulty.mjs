@@ -25,6 +25,8 @@
 // The status-cleanup / de-dupe / fame-bucketing logic lives in (and is unit-tested
 // via) ./apply-difficulty-lib.mjs; this file is the filesystem + audit shell.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import prettier from 'prettier'
 import {
   buildFameIndex,
   cleanLocations,
@@ -125,7 +127,18 @@ const outLocations = kept
   .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
   .map(projectLocation)
 ds.locations = outLocations
-writeFileSync(DATASET, JSON.stringify(ds, null, 2) + '\n')
+// Format through the repo's Prettier config before writing. Raw JSON.stringify
+// expands `polygon` coordinate arrays one-number-per-line, which CI's
+// `format:check` rejects — so without this every re-run produced a file that
+// failed the gate until a manual `prettier --write`. Self-formatting keeps the
+// script's output directly committable.
+const datasetPath = fileURLToPath(DATASET)
+const prettierCfg = await prettier.resolveConfig(datasetPath)
+const formatted = await prettier.format(JSON.stringify(ds, null, 2), {
+  ...prettierCfg,
+  parser: 'json',
+})
+writeFileSync(DATASET, formatted)
 
 // ---- audit ----
 const dist = { easy: 0, medium: 0, hard: 0 }
