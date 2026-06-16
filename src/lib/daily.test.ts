@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import {
   DIFFICULTY_PLAN,
   MIN_NON_FOOD_PER_DAY,
@@ -439,6 +439,28 @@ describe('selectDailyLocations — overrides', () => {
     })
     expect(picks).toHaveLength(5)
     expect(picks.map((p) => p.id)).not.toContain('e2')
+  })
+
+  // A partial-resolve fallback means a curated day silently became random — the
+  // hurricane-bar failure mode. It must be LOUD (console.error), not a warn that
+  // scrolls past unnoticed, and must name the seed so it's actionable.
+  it('logs console.error naming the seed when an override partially resolves', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    selectDailyLocations(pool, 'stpete:2026-06-13', 5, {
+      'stpete:2026-06-13': ['e2', 'm3', 'e1', 'm1', 'UNKNOWN-ID'],
+    })
+    expect(spy).toHaveBeenCalledTimes(1)
+    expect(spy.mock.calls[0].join(' ')).toContain('stpete:2026-06-13')
+    spy.mockRestore()
+  })
+
+  it('stays silent when the override fully resolves', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    selectDailyLocations(pool, 'stpete:2026-06-13', 5, {
+      'stpete:2026-06-13': ['e2', 'm3', 'e1', 'm1', 'h2'],
+    })
+    expect(spy).not.toHaveBeenCalled()
+    spy.mockRestore()
   })
 })
 
