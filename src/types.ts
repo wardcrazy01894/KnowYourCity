@@ -66,6 +66,14 @@ export interface Location {
    * [M-A1]
    */
   polygon?: [number, number][]
+  /**
+   * Optional `YYYY-MM-DD` date this venue's open/operating status was last
+   * confirmed (via a Google Places `business_status` freshness check). Lets us
+   * audit how stale the dataset is and prioritise re-checks. Absent → not yet
+   * verified through that pass. Set by the freshness sweeps; preserved across
+   * `apply-difficulty` re-runs (it's in `FIELD_ORDER`). Not used by gameplay.
+   */
+  lastVerified?: string
 }
 
 /** Guessing difficulty, from easiest (most locally famous) to hardest (obscure). */

@@ -15,8 +15,9 @@ export const MEDIAN_FAME_FALLBACK = 50
 
 // Canonical dataset field order for the written `locations.<city>.json`. The
 // projection drops internal scratch fields (e.g. `_fame`) and omits any field a
-// row doesn't have. `polygon` (large-footprint scoring, #97) MUST be listed or
-// re-running the pass strips it — keep it last since it's a bulky array.
+// row doesn't have. `polygon` (large-footprint scoring, #97) and `lastVerified`
+// (freshness stamp) MUST be listed or re-running the pass strips them — keep
+// `polygon` last-ish since it's a bulky array.
 export const FIELD_ORDER = [
   'id',
   'name',
@@ -30,6 +31,7 @@ export const FIELD_ORDER = [
   'photoUrl',
   'source',
   'attribution',
+  'lastVerified',
   'polygon',
 ]
 

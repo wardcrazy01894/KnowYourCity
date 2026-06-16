@@ -544,6 +544,22 @@ describe('projectLocation (dataset field projection)', () => {
     })
     expect(Object.keys(out)).toEqual(['id', 'name', 'attribution', 'polygon'])
   })
+
+  it('preserves the lastVerified freshness stamp across a re-run', () => {
+    const out = projectLocation({
+      id: 'a',
+      name: 'A',
+      lat: 0,
+      lng: 0,
+      category: 'restaurant',
+      source: 'overpass',
+      attribution: 't',
+      lastVerified: '2026-06-16',
+      _fame: 40,
+    })
+    expect(out.lastVerified).toBe('2026-06-16')
+    expect('_fame' in out).toBe(false)
+  })
 })
 
 describe('matchNationalChain', () => {
