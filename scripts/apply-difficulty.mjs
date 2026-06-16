@@ -81,6 +81,14 @@ const fameById = buildFameIndex(results)
 const ds = JSON.parse(readFileSync(DATASET, 'utf8'))
 const orig = ds.locations
 
+// ---- national-chain exclusion list (maintained in data/national-chains.json) ----
+const CHAINS = JSON.parse(
+  readFileSync(
+    new URL('../data/national-chains.json', import.meta.url),
+    'utf8',
+  ),
+)
+
 // ---- city playCap (top-N-by-fame play set), from cities.json ----
 const CITIES = JSON.parse(
   readFileSync(new URL('../cities.json', import.meta.url), 'utf8'),
@@ -106,7 +114,12 @@ const cityTokens = [
 
 // ---- pass 1: cleanup · 2: de-dupe by id · 2.5: de-dupe by name+proximity ·
 //      pass 3: difficulty (see lib) ----
-const { cleaned, audit: cleanAudit } = cleanLocations(orig, fameById)
+const { cleaned, audit: cleanAudit } = cleanLocations(
+  orig,
+  fameById,
+  undefined,
+  { chains: CHAINS.chains ?? [], keepIds: CHAINS.keepIds ?? {} },
+)
 const { kept: keptById, deduped } = dedupeById(cleaned)
 const { kept, merged: nameMerged } = dedupeByNameProximity(keptById, {
   cityTokens,

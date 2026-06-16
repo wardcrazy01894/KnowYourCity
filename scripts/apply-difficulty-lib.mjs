@@ -51,6 +51,37 @@ export const slug = (s) =>
     .replace(/^-|-$/g, '')
 
 /**
+ * Normalize a venue name for national-chain matching: lowercase, DELETE
+ * apostrophes (so "Church's" -> "churchs", not "church s"), turn other
+ * punctuation into spaces, collapse runs. Used by matchNationalChain.
+ */
+export const normalizeForChain = (s) =>
+  (s || '')
+    .toLowerCase()
+    .replace(/['’`]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+/**
+ * Return the matched national-chain token if `name` contains one as a
+ * word-boundary token sequence, else null. `chains` are tokens from
+ * `data/national-chains.json` (normalized here, so they can be written naturally).
+ * Powers the maintained exclusion list — see cleanLocations + the guard test.
+ * @param {string} name venue display name
+ * @param {string[]} chains chain tokens
+ * @returns {string|null}
+ */
+export function matchNationalChain(name, chains = []) {
+  const padded = ` ${normalizeForChain(name)} `
+  for (const ch of chains) {
+    const c = normalizeForChain(ch)
+    if (c && padded.includes(` ${c} `)) return c
+  }
+  return null
+}
+
+/**
  * Build the id -> fame-record lookup. Records are keyed by their primary `id`
  * AND, for `renamed` records, additionally aliased under `slug(currentName)` —
  * the id the row will carry on a *re-run* after the rename has been applied.
@@ -84,6 +115,7 @@ export function cleanLocations(
   orig,
   fameById,
   medianFallback = MEDIAN_FAME_FALLBACK,
+  { chains = [], keepIds = {} } = {},
 ) {
   const audit = {
     closed: [],
@@ -97,6 +129,16 @@ export function cleanLocations(
   for (const loc of orig) {
     const { difficulty: _d, ...bare } = loc
     void _d
+    // National-chain LIST check (name-based, data/national-chains.json) — drops
+    // regardless of fame record, unless the id is allow-listed as a local
+    // namesake. This is the durable, no-web-search chain exclusion.
+    if (!keepIds[loc.id]) {
+      const chain = matchNationalChain(loc.name, chains)
+      if (chain) {
+        audit.chains.push(`${loc.name} (${loc.id}) — national chain (list)`)
+        continue
+      }
+    }
     const f = fameById.get(loc.id)
     if (!f) {
       audit.noFame.push(`${loc.name} (${loc.id})`)

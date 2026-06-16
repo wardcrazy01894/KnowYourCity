@@ -208,6 +208,18 @@ Earlier hand-picked highlights (with clues):
   Floribbean…), bars/breweries (Green Bench, Cycle, Emerald Bar, 3 Daughters,
   Kahuna's…). Local mini-chains are welcome; only national chains are excluded.
 
+> **National-chain exclusion is list-driven** (`data/national-chains.json`).
+> `apply-difficulty` drops any in-play venue whose name matches a chain token
+> (apostrophe-safe, word-boundary normalized — `matchNationalChain` in
+> `apply-difficulty-lib.mjs`), and a CI guard test (`apply-difficulty.test.mjs`)
+> fails if one ever lands in-play. To exclude a newly-spotted chain, add ONE
+> token to the list — no web search, no per-venue research. **FL-regional brands
+> are deliberately off the list** (they stay). A genuine local business that
+> happens to share a chain token (e.g. Seattle's "Chili's South Indian Cuisine",
+> Chicago's "The Village Inn Bar") is force-kept via the list's `keepIds`. The
+> per-venue `isNationalChain` flag in `data/fame-<city>.json` still works as an
+> explicit override too.
+
 Because St. Pete is enriched with `difficulty`, the daily game uses the
 **difficulty plan** (easy → easy → medium → medium → hard, `DIFFICULTY_PLAN` in
 `src/lib/daily.ts`), still layering category variety within each slot. Cities not

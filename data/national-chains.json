@@ -1,0 +1,42 @@
+{
+  "_comment": "National-chain exclusion list for the local-landmark datasets. apply-difficulty.mjs drops any in-play venue whose name matches one of these tokens (apostrophe-safe, word-boundary normalized match — see matchNationalChain in apply-difficulty-lib.mjs), and a CI guard test fails if a match ever lands in-play. To exclude a newly-spotted chain, add ONE token below — no web search needed. Tokens are lowercase, apostrophes deleted ('Church's'->'churchs'). Keep tokens DISTINCTIVE to avoid matching local namesakes. Florida-regional brands are intentionally OMITTED so they stay (see keepRegional). A genuine local business that happens to match a token can be force-kept by id via keepIds.",
+  "chains": [
+    "mcdonalds", "burger king", "wendys", "five guys", "shake shack", "whataburger",
+    "in n out", "sonic", "checkers", "rallys", "hardees", "carls jr", "jack in the box",
+    "white castle", "steak n shake", "smashburger", "burgerfi", "habit burger", "culvers",
+    "freddys frozen custard", "fatburger", "wahlburgers", "mrbeast",
+    "kfc", "popeyes", "chick fil a", "churchs chicken", "bojangles", "zaxbys",
+    "raising canes", "wingstop", "buffalo wild wings", "slim chickens", "daves hot chicken",
+    "el pollo loco", "big chicken", "wing street",
+    "dominos", "pizza hut", "papa johns", "little caesars", "marcos pizza", "hungry howies",
+    "blaze pizza", "mod pizza", "sbarro", "papa murphys", "jets pizza", "cicis",
+    "subway", "jimmy johns", "jersey mikes", "firehouse subs", "quiznos", "potbelly",
+    "which wich", "penn station", "mcalisters", "jasons deli", "schlotzskys", "blimpie",
+    "larrys giant subs", "charleys philly steaks", "charleys cheesesteaks", "capriottis",
+    "taco bell", "chipotle", "qdoba", "moes southwest", "torchys tacos",
+    "baja fresh", "rubios", "fuzzys taco",
+    "starbucks", "dunkin", "tim hortons", "caribou coffee", "peets coffee", "dutch bros",
+    "scooters coffee", "biggby", "einstein bros", "auntie annes", "cinnabon", "krispy kreme",
+    "dairy queen", "baskin robbins", "cold stone", "tcby", "menchies", "jamba",
+    "smoothie king", "crumbl", "insomnia cookies", "nothing bundt", "marble slab",
+    "ritas italian ice", "ben and jerrys", "haagen dazs",
+    "applebees", "chilis", "tgi fridays", "ruby tuesday", "olive garden", "red lobster",
+    "outback steakhouse", "longhorn steakhouse", "texas roadhouse", "cheesecake factory",
+    "pf changs", "red robin", "cheddars", "golden corral", "cracker barrel", "dennys",
+    "ihop", "waffle house", "bob evans", "village inn", "perkins", "po folks", "bjs",
+    "twin peaks", "hooters", "yard house", "bahama breeze", "seasons 52", "coopers hawk",
+    "first watch", "another broken egg", "metro diner", "bonefish grill", "carrabbas",
+    "ruths chris", "mortons", "flemings", "capital grille", "fogo de chao", "benihana",
+    "famous daves", "logans roadhouse", "ocharleys", "maggianos", "brio italian",
+    "romanos macaroni grill", "buca di beppo", "old spaghetti factory", "joes crab shack",
+    "bubba gump", "rainforest cafe", "quaker steak", "dickeys", "honey baked ham",
+    "panda express", "pei wei", "noodles and company", "teriyaki madness", "sweetgreen",
+    "cava", "panera", "corner bakery", "au bon pain", "captain ds", "long john silvers",
+    "jollibee", "portillos"
+  ],
+  "keepRegional_note": "FL-regional brands intentionally NOT listed (they stay): Publix, Beef 'O' Brady's, Miller's Ale House, PDQ, Pollo Tropical, Tijuana Flats, Burger Monger (St. Pete-founded), Bavaro's, Oak & Stone, Pipo's, Mr. Empanada, Leverock's, Flippers Pizzeria, Fresh Kitchen, Fitlife Foods, Datz, Square 1 Burgers, Pincho. Borderline FL-origin-but-now-big (Tropical Smoothie, Sonny's BBQ, Hawkers, Maple Street Biscuit, Kobe) left off pending an owner call.",
+  "keepIds": {
+    "chilis-south-indian-cuisine": "Seattle South-Indian restaurant — not Chili's the chain",
+    "village-inn": "Chicago's local 'The Village Inn Bar' — not the Village Inn chain (St. Pete's actual chain is fame-flagged isNationalChain)"
+  }
+}
