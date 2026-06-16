@@ -3293,20 +3293,6 @@
       ]
     },
     {
-      "id": "mcauleys-pub",
-      "name": "McAuley's Pub",
-      "lat": 27.770863,
-      "lng": -82.653933,
-      "category": "bar",
-      "difficulty": "hard",
-      "inPlay": true,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "mcnastys-bar-and-grill",
       "name": "McNasty's Bar and Grill",
       "lat": 27.734562,

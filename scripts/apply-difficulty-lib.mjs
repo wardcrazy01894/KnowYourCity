@@ -13,6 +13,33 @@ export const CAP_HARD_PCT = 0.2
 // ran on this exact dataset) — median so it lands in the medium bucket.
 export const MEDIAN_FAME_FALLBACK = 50
 
+// Canonical dataset field order for the written `locations.<city>.json`. The
+// projection drops internal scratch fields (e.g. `_fame`) and omits any field a
+// row doesn't have. `polygon` (large-footprint scoring, #97) MUST be listed or
+// re-running the pass strips it — keep it last since it's a bulky array.
+export const FIELD_ORDER = [
+  'id',
+  'name',
+  'lat',
+  'lng',
+  'category',
+  'difficulty',
+  'inPlay',
+  'fameScore',
+  'clue',
+  'photoUrl',
+  'source',
+  'attribution',
+  'polygon',
+]
+
+/** Project a (possibly scratch-annotated) location to a clean, ordered row. */
+export function projectLocation(loc) {
+  const o = {}
+  for (const k of FIELD_ORDER) if (k in loc) o[k] = loc[k]
+  return o
+}
+
 export const slug = (s) =>
   s
     .toLowerCase()

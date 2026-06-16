@@ -28,7 +28,7 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'the-chattaway',
     'twin-brooks-golf-course',
     'fresh-kitchen',
-    'mcauleys-pub',
+    'world-vegan-cuisine',
   ],
   'stpete:2026-06-17': [
     'the-don-cesar',
