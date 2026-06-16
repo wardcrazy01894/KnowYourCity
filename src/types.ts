@@ -155,4 +155,11 @@ export interface DayRecord {
   dateKey: string
   totalScore: number
   results: Array<Pick<RoundResult, 'distanceMeters' | 'score'>>
+  /**
+   * Hash of the lineup that was played (see progress.ts:lineupHash). Identifies
+   * the completion so a replay against a CHANGED official set is recorded
+   * separately from the first play. Optional: records written before this field
+   * existed simply lack it.
+   */
+  lineup?: string
 }
