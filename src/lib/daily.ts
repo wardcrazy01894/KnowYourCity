@@ -168,7 +168,19 @@ export function selectDailyLocations(
     const resolved = overrideIds
       .map((id) => byId.get(id))
       .filter((l): l is Location => l != null && l.inPlay !== false)
-    if (resolved.length === count) return resolved
+    if (resolved.length >= count) {
+      // Over-long override (more valid IDs than rounds) is a data bug, but the
+      // curated picks still beat a random day: honor the first `count` in order
+      // rather than discarding the curation. Shout so the list gets trimmed. In
+      // a self-consistent build this never fires (a guard test asserts every
+      // committed override is exactly ROUNDS_PER_DAY IDs).
+      if (resolved.length > count) {
+        console.error(
+          `[KYC] Override for "${dateKey}" lists ${resolved.length} in-play locations for a ${count}-round day — using the first ${count}. Trim the override to ${count} IDs.`,
+        )
+      }
+      return resolved.slice(0, count)
+    }
     // LOUD on purpose (console.error, not warn): a partial resolve means a
     // hand-curated day silently reverted to a random selection — the
     // hurricane-bar failure mode. Name the seed and which IDs dropped so it's
