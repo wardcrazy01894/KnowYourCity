@@ -462,6 +462,20 @@ describe('selectDailyLocations — overrides', () => {
     expect(spy).not.toHaveBeenCalled()
     spy.mockRestore()
   })
+
+  // An over-long override (more valid IDs than rounds) is a data bug, but the
+  // curated picks are still better than a random day — use the first `count`
+  // (in order) rather than silently reverting to the PRNG, and shout about it.
+  it('uses the first count and errors when an override over-specifies', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const picks = selectDailyLocations(pool, 'stpete:2026-06-13', 5, {
+      'stpete:2026-06-13': ['e2', 'm3', 'e1', 'm1', 'h2', 'h3'],
+    })
+    expect(picks.map((p) => p.id)).toEqual(['e2', 'm3', 'e1', 'm1', 'h2'])
+    expect(spy).toHaveBeenCalledTimes(1)
+    expect(spy.mock.calls[0][0]).toContain('stpete:2026-06-13')
+    spy.mockRestore()
+  })
 })
 
 describe('selectPolygonLocations', () => {
