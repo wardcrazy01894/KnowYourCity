@@ -1831,7 +1831,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "aviv-hummus-bar",
@@ -10078,7 +10079,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "gearhouse-coffee-shop",
@@ -11634,7 +11636,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "hiroshis",
@@ -14014,7 +14017,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "kiwanis-memorial-preserve-park",
@@ -17608,7 +17612,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "montlake-playfield",
@@ -20564,7 +20569,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pike-street-coffee",
@@ -20699,7 +20705,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "pioneer-square-pergola",
@@ -28240,7 +28247,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "the-rabbit-box",
@@ -30683,7 +30691,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "waterfront-activities-center",

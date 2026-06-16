@@ -702,7 +702,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "burr-oak-park",
@@ -909,7 +910,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "cloverdale-park",
@@ -1342,7 +1344,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "edible-garden",

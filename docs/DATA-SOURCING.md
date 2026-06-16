@@ -332,6 +332,25 @@ different size is a pure re-run of `apply-difficulty.mjs` off the committed
 filters to `inPlay !== false`. Current caps: St. Pete 400 (373 rows, all in
 play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
 
+> **Removing a row reshuffles the cap.** Because in-play membership and the
+> 40/40/20 buckets are recomputed from fame rank on every `apply-difficulty` run,
+> dropping an in-play venue (e.g. a permanently-closed one) **promotes the next
+> benched row** into the play set and can **nudge a few venues across a bucket
+> boundary** (e.g. medium↔hard). That's expected, not churn — a freshness sweep
+> that removes N venues will show N promotions plus a handful of difficulty
+> flips. Any promoted *business* gets re-verified + stamped (below); promoted
+> parks/landmarks are stamped as stable.
+
+> **Freshness (`lastVerified`).** A periodic Google Places pass stamps each
+> in-play venue with the `YYYY-MM-DD` it was last confirmed current: businesses
+> whose `business_status` is OPERATIONAL, and parks/landmarks (no
+> `business_status`) as stable still-present landmarks. The **only** in-play rows
+> left unstamped are businesses with an uncertain status (chiefly
+> `CLOSED_TEMPORARILY`) — an absent stamp is a deliberate "needs a look" signal.
+> The field lives in the public dataset only (not the fame cache) and survives
+> re-runs via `FIELD_ORDER`. Permanently-closed venues found in the pass are
+> removed the usual way (`status: closed` in the fame cache → dropped).
+
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
 > up every day — see PLAN.md §5. Parks survive the cap well (their famous ones

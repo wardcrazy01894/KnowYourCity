@@ -67,11 +67,16 @@ export interface Location {
    */
   polygon?: [number, number][]
   /**
-   * Optional `YYYY-MM-DD` date this venue's open/operating status was last
-   * confirmed (via a Google Places `business_status` freshness check). Lets us
-   * audit how stale the dataset is and prioritise re-checks. Absent → not yet
-   * verified through that pass. Set by the freshness sweeps; preserved across
-   * `apply-difficulty` re-runs (it's in `FIELD_ORDER`). Not used by gameplay.
+   * Optional `YYYY-MM-DD` date this venue was last confirmed current in a
+   * freshness pass. For cafe/bar/restaurant it means Google Places
+   * `business_status` came back OPERATIONAL; for parks/landmarks (no
+   * `business_status`, and they don't "close") it means the venue was reviewed
+   * and is a stable, still-present landmark. Lets us audit dataset staleness;
+   * not used by gameplay. Deliberately left **unstamped** only where current
+   * status is uncertain — chiefly `CLOSED_TEMPORARILY` businesses — so an absent
+   * stamp on an in-play venue is a meaningful "needs a look" signal. Lives in the
+   * **public dataset only**, not the `data/fame-<city>.json` cache. Preserved
+   * across `apply-difficulty` re-runs (it's in `FIELD_ORDER`).
    */
   lastVerified?: string
 }

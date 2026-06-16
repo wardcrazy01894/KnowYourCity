@@ -396,6 +396,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.75205, -82.64237],
         [27.75205, -82.63865],
@@ -1850,6 +1851,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.83561, -82.64622],
         [27.83561, -82.64218],
@@ -2442,6 +2444,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.71102, -82.72179],
         [27.70929, -82.72176],
@@ -2816,6 +2819,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.72903, -82.6485],
         [27.7293, -82.64836],
@@ -3367,6 +3371,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77509, -82.64303],
         [27.77493, -82.64341],
@@ -4372,6 +4377,7 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [27.77932, -82.63998],
         [27.77912, -82.64011],
@@ -6154,7 +6160,8 @@
       "clue": "St. Pete's African American history & culture museum.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "world-vegan-cuisine",

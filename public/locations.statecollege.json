@@ -372,6 +372,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [40.78502, -77.87671],
         [40.78528, -77.87697],
@@ -1849,7 +1850,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "lupitas-authentic-mexican-food",
@@ -1996,7 +1998,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-16"
     },
     {
       "id": "mercato-mio",
@@ -3839,6 +3842,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16",
       "polygon": [
         [40.78502, -77.87671],
         [40.78524, -77.87644],
