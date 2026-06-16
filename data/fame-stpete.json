@@ -387,7 +387,9 @@
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 300,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "bodega",
@@ -403,7 +405,9 @@
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 100,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "bongos-beach-bar-grille",
@@ -475,7 +479,9 @@
     "currentName": "",
     "fameScore": 50,
     "reviewCount": 130,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "buildings-pub",
@@ -755,7 +761,9 @@
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 60,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "cheddars",
@@ -763,7 +771,9 @@
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 200,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "chiang-mai",
@@ -803,7 +813,9 @@
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 98,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "chill-restaurant-bar",
@@ -851,7 +863,9 @@
     "currentName": "Church's Texas Chicken",
     "fameScore": 30,
     "reviewCount": 13,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "ciccios-california",
@@ -1055,7 +1069,9 @@
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 200,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "ding-tea",
@@ -1632,7 +1648,9 @@
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 61,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "harold-seltzers-steakhouse",
@@ -1680,7 +1698,9 @@
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 80,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "hookah",
@@ -1882,7 +1902,9 @@
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 304,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "jotos-pizza",
@@ -2889,7 +2911,9 @@
     "currentName": "",
     "fameScore": 50,
     "reviewCount": 194,
-    "hasWikipedia": true
+    "hasWikipedia": true,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "portofino-italian-ristorante",
@@ -3477,7 +3501,9 @@
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 200,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": true,
+    "statusNote": "National chain — excluded from the local-landmark dataset (owner policy)."
   },
   {
     "id": "steel-city-brewhouse",
