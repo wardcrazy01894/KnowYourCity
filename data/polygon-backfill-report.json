@@ -1,0 +1,26 @@
+{
+  "generatedFrom": "stpete",
+  "dryRun": false,
+  "totalEligible": 28,
+  "totalWithPolygon": 26,
+  "totalPointOnly": 2,
+  "newMatchesThisRun": 2,
+  "pointOnly": [
+    {
+      "id": "north-shore-kickball-fields",
+      "name": "North Shore Park Kickball Fields",
+      "city": "stpete",
+      "lat": 27.7803,
+      "lng": -82.6273,
+      "reason": "no-match"
+    },
+    {
+      "id": "north-shore-volleyball-courts",
+      "name": "North Shore Park Volleyball Courts",
+      "city": "stpete",
+      "lat": 27.782942,
+      "lng": -82.624619,
+      "reason": "no-match"
+    }
+  ]
+}

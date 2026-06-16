@@ -56,6 +56,34 @@ for (const city of CITIES) {
       expect(data.attribution).toBeTruthy()
     })
 
+    it('polygons are well-formed open rings (≥3 points, first ≠ last, finite)', () => {
+      // The polygon contract (types.ts) and the backfill pipeline use OPEN
+      // rings: ≥3 distinct points, first point NOT repeated at the end. A
+      // closed ring still scores correctly (geo.ts treats rings as implicitly
+      // closed) but violates the convention — guard against drift so a future
+      // hand-edit or pipeline change can't silently reintroduce one.
+      for (const l of data.locations) {
+        if (l.polygon == null) continue
+        const ring = l.polygon
+        expect(
+          ring.length,
+          `${l.name} polygon too short`,
+        ).toBeGreaterThanOrEqual(3)
+        for (const [lat, lng] of ring) {
+          expect(
+            Number.isFinite(lat) && Number.isFinite(lng),
+            `${l.name} polygon has a non-finite coord`,
+          ).toBe(true)
+        }
+        const [fLat, fLng] = ring[0]
+        const [lLat, lLng] = ring[ring.length - 1]
+        expect(
+          fLat !== lLat || fLng !== lLng,
+          `${l.name} polygon is a CLOSED ring (first point repeated at end) — drop the duplicate`,
+        ).toBe(true)
+      }
+    })
+
     // Only in-play rows are eligible for the daily game (daily.ts filters on
     // `inPlay !== false`). A capped city keeps benched rows in the file with NO
     // difficulty, so "enriched" is judged over the IN-PLAY set, mirroring the

@@ -10,10 +10,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { versionCheckAction } from './lib/version'
 import type { LocationsFile, Location } from './types'
-import { getDateKey, isValidDateKey, selectDailyLocations } from './lib/daily'
+import {
+  getDateKey,
+  isValidDateKey,
+  selectDailyLocations,
+  selectPolygonLocations,
+} from './lib/daily'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
 import { getCity, cityDataUrl, type City } from './lib/cities'
-import { shouldShuffle } from './lib/devmode'
+import { shouldShuffle, isPolygonTest, polygonTestIds } from './lib/devmode'
 import { isMuted, setMuted } from './lib/sound'
 import { log } from './lib/log'
 import { Game } from './components/Game'
@@ -55,17 +60,45 @@ interface Mode {
    * board only ranks the official daily set everyone shares. See Results.
    */
   official: boolean
+  /**
+   * `?polygons` dev round: every polygon location in the city, one game, for
+   * eyeballing each shaded boundary. The load effect uses selectPolygonLocations
+   * instead of the daily selection; progress is stored under an isolated cityId
+   * (see `storageCityId`) so it never touches the real daily save.
+   */
+  polygonTest: boolean
+  /** localStorage namespace for Game — isolated in `?polygons` mode. */
+  storageCityId: string
+  /**
+   * In `?polygons` mode, the id subset from `?polygons=id1,id2` (or `null` for
+   * every polygon). Ignored unless `polygonTest` is true.
+   */
+  polygonIds: string[] | null
 }
 
 function resolveMode(city: City): Mode {
   const today = getDateKey(new Date(), city.timeZone)
   const search = typeof window !== 'undefined' ? window.location.search : ''
+  if (isPolygonTest(search)) {
+    return {
+      dateKey: today,
+      selectionSeed: `${city.id}:polygons`,
+      label: 'polygon test — every shaded boundary (dev)',
+      official: false,
+      polygonTest: true,
+      storageCityId: `${city.id}__polygons`,
+      polygonIds: polygonTestIds(search),
+    }
+  }
   if (shouldShuffle(search)) {
     return {
       dateKey: today,
       selectionSeed: `${city.id}:shuffle-${SHUFFLE_SEED}`,
       label: 'shuffle — random 5 (refresh for a new set)',
       official: false,
+      polygonTest: false,
+      storageCityId: city.id,
+      polygonIds: null,
     }
   }
   const param = new URLSearchParams(search).get('date')
@@ -75,6 +108,9 @@ function resolveMode(city: City): Mode {
       selectionSeed: `${city.id}:${param}`,
       label: `${param} (override)`,
       official: false,
+      polygonTest: false,
+      storageCityId: city.id,
+      polygonIds: null,
     }
   }
   return {
@@ -82,6 +118,9 @@ function resolveMode(city: City): Mode {
     selectionSeed: `${city.id}:${today}`,
     label: today,
     official: true,
+    polygonTest: false,
+    storageCityId: city.id,
+    polygonIds: null,
   }
 }
 
@@ -143,12 +182,17 @@ export function App() {
       .then((file) => {
         if (!live) return
         setAttribution(file.attribution || '')
-        const picks = selectDailyLocations(
-          file.locations,
-          mode.selectionSeed,
-          undefined,
-          DAILY_OVERRIDES,
-        )
+        const picks = mode.polygonTest
+          ? selectPolygonLocations(file.locations, mode.polygonIds)
+          : selectDailyLocations(
+              file.locations,
+              mode.selectionSeed,
+              undefined,
+              DAILY_OVERRIDES,
+            )
+        if (mode.polygonTest && picks.length === 0) {
+          throw new Error(`${city.name} has no polygon locations to verify.`)
+        }
         log.info('App', 'picks', { picks: picks.map((p) => p.name) })
         setToday(picks)
       })
@@ -286,7 +330,7 @@ export function App() {
             {import.meta.env.DEV && (
               <span style={{ color: '#f4b400' }}>
                 {' '}
-                · dev: ?reset · ?shuffle
+                · dev: ?reset · ?shuffle · ?polygons
               </span>
             )}
           </small>
@@ -339,7 +383,7 @@ export function App() {
         </button>
       </header>
       <Game
-        cityId={city.id}
+        cityId={mode.storageCityId}
         cityShort={city.short}
         dateKey={mode.dateKey}
         bounds={city.bounds}

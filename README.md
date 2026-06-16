@@ -69,6 +69,7 @@ Add a query param to the URL:
 | `?reset` | Same 5, but **wipes progress every refresh** — replay one set. _(`?fresh` is an alias.)_ |
 | `?shuffle` | A **brand-new random 5 every refresh** — try different sets. |
 | `?date=YYYY-MM-DD` | Play a specific day's puzzle. |
+| `?polygons` | **Dev verification round:** one game of _every_ polygon location in the city, so each shaded boundary can be eyeballed against the map. Off the leaderboard; stored separately so it never clobbers the daily save. |
 | `?debug` | Verbose `[KYC]` logging in the console. |
 
 🐞 **Reporting a bug?** Run **`kycDumpLogs()`** in the browser console — it prints
@@ -81,11 +82,20 @@ bounds, target size). Each city's data lives at `public/locations.<id>.json`.
 
 ```bash
 npm run build-city -- seattle   # landmarks + inclusive food → public/locations.seattle.json
+npm run add-polygons            # backfill park/golf footprints from OSM (all cities)
 ```
 
 To **add a city**: append it to `cities.json`, then run `build-city`. Full
 process — landmark notability + food/drink curation rules — in
 [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md).
+
+**Polygon scoring:** large footprints (parks, golf courses, lakes) get a real
+`polygon` so a guess anywhere inside scores 100, with distance measured from the
+nearest edge outside it. `npm run add-polygons` backfills them from OpenStreetMap
+and flags any large location it couldn't match in
+`data/polygon-backfill-report.json`. Details in
+[`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md) §4d and
+[`docs/PLAN.md`](docs/PLAN.md) §5.4.
 
 ## 🛰️ Optional: sharper imagery
 

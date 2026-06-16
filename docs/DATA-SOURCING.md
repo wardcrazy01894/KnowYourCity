@@ -111,10 +111,17 @@ Run at <https://query.wikidata.org>. This is optional polish — the OSM
   "fameScore": 92,                 // 0–100 city-relative fame; added by the fame pass (§4b/§4c)
   "clue": null,                    // HUMAN writes this (or seed from Wikidata)
   "photoUrl": null,                // FUTURE photo rounds; leave null for v1
+  "polygon": [[27.78, -82.64], …], // OPTIONAL footprint ring (park/golf only); see §4d
   "source": "overpass",            // or "wikidata" / "manual"
   "attribution": "OpenStreetMap ODbL"
 }
 ```
+
+`polygon` is an **open** ring of `[lat, lng]` pairs (first point NOT repeated at
+the end), 5-decimal precision, ≤ 100 nodes. Present only on large-footprint
+rows (`category: "park" | "golf_course"`); see §4d. When set, a guess inside the
+ring scores a perfect 100 and the distance is measured from the nearest polygon
+edge for guesses outside it (see PLAN.md §scoring).
 
 Output goes to `data/candidates.json`. De-dupe by `id` (same place can appear as
 both a node and a way).
@@ -349,6 +356,124 @@ To grow further: re-run `npm run fetch-pois`, add more from
 `data/candidates.json`. The script sets a descriptive `User-Agent` and falls back
 across Overpass mirrors (the public servers 406 without a UA and often return a
 busy error under load).
+
+---
+
+## 4d. Polygons — `npm run add-polygons` (large-footprint footprints)
+
+Parks, golf courses, lakes, and other large areas are stored in OSM as a single
+**centroid point** by `fetch-pois` (`out center`). Scoring a sprawling park by
+its centroid is unfair: a player who correctly pins the *edge* of a big park can
+be hundreds of metres from the centre. `scripts/add-polygons.mjs` backfills the
+real **footprint** so a guess anywhere inside the shape scores a perfect 100, and
+guesses outside fall off from the nearest edge (see PLAN.md §scoring).
+
+```bash
+npm run add-polygons                 # all cities
+node scripts/add-polygons.mjs --city stpete          # one city
+node scripts/add-polygons.mjs --city stpete --dry-run   # show, don't write
+node scripts/add-polygons.mjs --force                # re-fetch existing polygons
+```
+
+What it does, per in-play `park`/`golf_course` row without a `polygon`:
+
+1. Queries Overpass for **ways + relations matching the row's `name`** within the
+   city bbox, recursing into members (`(._;>;);`) and emitting **`out geom;`** —
+   _not_ `out geom tags;`. This matters: on the public mirrors (overpass-api.de,
+   kumi.systems) `out geom tags;` strips relation `members` to an empty list, so
+   multipolygons come back with no geometry; plain `out geom;` returns both tags
+   and inline member geometry. The recursion also surfaces member ways as
+   standalone elements, so a relation's ring can be reassembled by member ref
+   when inline geometry is absent. The query is name-only on purpose — large
+   footprints are tagged inconsistently (`leisure=park`, `natural=water` for
+   lakes, `landuse=*` for country clubs), so a tag filter would silently drop
+   lakes and clubs.
+2. **Picks the best match** by centroid proximity: candidates whose computed
+   centroid is within `CENTROID_MATCH_RADIUS_M` (500 m) of the stored point; the
+   nearest wins. This guards against a same-named feature elsewhere in the city.
+3. **Extracts the outer ring.** Only **closed** ways are accepted (a linear way —
+   a street sharing the name — is rejected). For multipolygon **relations** (how
+   most large parks/lakes are stored), the `outer` member arcs are **stitched
+   head-to-tail** into a closed ring (reversing arcs as needed); the largest
+   resulting ring is the footprint. Holes and secondary outer rings are ignored
+   (a guessing-game footprint doesn't need them). Arc chains that don't close are
+   logged and skipped.
+4. **Simplifies** with Douglas–Peucker (ε = 0.00005° ≈ 5 m). If the result is
+   still over the **100-node** bundle-size cap, the epsilon is escalated (×1.7
+   per pass, up to 20 passes) until it fits — so a huge park (e.g. Fort De Soto)
+   is *coarsened* rather than dropped, and a `NOTE:` line records the
+   before→after node counts. Coords are rounded to 5 dp and the open ring is
+   written back onto the row in-place.
+
+**Flagging the misses.** Every eligible large-footprint row that does **not**
+receive a polygon (no OSM match, unusable geometry, or over the node cap) is
+written to **`data/polygon-backfill-report.json`** with its id, name, city,
+lat/lng, and reason. The rule: *no large park should remain a single point.* Work
+the report by web-searching the geometry. Two override maps in the script handle
+the misses, in priority order:
+
+1. **`NAME_OVERRIDES`** (`id → OSM name`) — when the OSM `name` tag differs from
+   our display name (e.g. "Demens Landing" vs "Demens Landing Park"). Re-queries
+   by the corrected name.
+2. **`OSM_ELEMENT_OVERRIDES`** (`id → {type, id}`) — when name matching can't
+   work at all: a malformed/ambiguous relation, or a footprint stored as an
+   *unnamed* way. Pin the exact element id verified on openstreetmap.org and the
+   script fetches it directly (`buildElementQuery`).
+
+If OSM has no usable polygon at all, hand-add the ring to the row. Rows left
+without a polygon fall back to centroid scoring with the legacy 300 m freebie
+radius (`LARGE_FALLBACK_RADIUS_M`) so they don't regress.
+
+**When NOT to add a polygon.** Polygons exist to give *large* footprints a fair
+"inside = 100" target. A feature **smaller than the point freebie radius** (≈100 m)
+should stay a point: a polygon there has no freebie outside its edge, so it would
+make the location *harder* to score than the point fallback — the opposite of the
+intent. Tiny sub-features (a single ball diamond, a cluster of volleyball courts)
+therefore stay point-only on purpose.
+
+The script is idempotent: without `--force` it skips rows that already have a
+`polygon`, so re-running only retries the misses (and is polite to the public
+Overpass mirrors — a 2 s delay between queries, with mirror fallback + retry).
+
+**Current status (St. Pete): 26/28** eligible rows have polygons.
+- Five name-mismatch misses resolved via `NAME_OVERRIDES` (Mangrove Bay, Twin
+  Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens Landing).
+- Two stay **point-only by design**, not as bugs: **North Shore kickball fields**
+  (a ~30 m baseball diamond) and **volleyball courts** (six ~15 m sand courts) —
+  both smaller than the point freebie radius, so a polygon would only make them
+  harder (see "When NOT to add a polygon" above).
+
+**Manually-corrected polygons (owner playtest feedback).** Five St. Pete
+footprints the auto-extractor got wrong — the single-largest-ring rule (step 3)
+drops secondary outer rings, and a couple of footprints aren't a clean single
+OSM polygon. These were rebuilt by hand from their OSM geometry and written
+straight onto the rows, so a plain re-run leaves them alone (idempotent skip);
+**`--force` would regress them to the wrong auto-extracted shape — don't.**
+- **Azalea Park** — multipolygon relation with **two `outer` rings**; the
+  extractor kept only the larger and dropped the south/centre block. Fixed with
+  the **convex hull of both outer rings** so the whole footprint is covered.
+- **Clam Bayou Nature Preserve** — the named `nature_reserve` way is only the
+  south chunk; the preserve's wetland actually continues ~680 m north toward
+  Gulfport as a chain of unnamed `natural=wetland` parcels (the largest reaching
+  N≈27.7464). Fixed with the **convex hull of the preserve + the contiguous
+  wetland parcels** so it covers the full natural area, not just the south end.
+- **Fort De Soto** — the precise multi-pronged coastline was visually noisy; per
+  owner request it's now a **coarse convex hull** of the main-island coastline
+  (≈12 nodes) that "encapsulates a lot of it" rather than tracing every inlet.
+- **Isla Del Sol** — its named relation is malformed (8 `inner` members, no
+  outer), so the footprint is the **convex hull of the entire golf course**
+  (all 8 member rings + both `golf_course` ways), spanning the whole island —
+  the earlier single-parcel pin was much too small.
+- **Sawgrass Lake Park** — no *named* park boundary exists near the point, but an
+  **unnamed `leisure=park` way (215108300)** found via Overpass `is_in` *does*
+  enclose it (~1.2 × 2.1 km); that boundary is now the footprint, replacing the
+  small "Sawgrass Lake" water body used before.
+
+**Verifying the result:** load the game with **`?polygons`** (see
+README / docs/PLAN.md) — it plays one round per polygon location in the city so
+each shaded boundary can be eyeballed against the satellite map. Append a
+comma-separated id list to re-check just a few: **`?polygons=azalea-park,isla-del-sol`**.
+State College is fully backfilled (33/33).
 
 ---
 

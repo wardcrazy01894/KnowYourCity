@@ -49,6 +49,23 @@ export interface Location {
   source: 'overpass' | 'wikidata' | 'manual'
   /** Per-row attribution string (license obligation). */
   attribution: string
+  /**
+   * Optional polygon for large-footprint locations (parks, golf courses).
+   * Stored as an **open ring** of [lat, lng] pairs — the first point is NOT
+   * repeated at the end. Coordinates are rounded to 5 decimal places (≈ 1.1 m
+   * precision), sufficient for a guessing game and cheaper than the 7-decimal
+   * Overpass output.
+   *
+   * Only locations with `category: 'park' | 'golf_course'` carry a polygon.
+   * Absent or empty → falls back to centroid-point scoring (backwards-compat:
+   * old persisted game states never have this field and score correctly).
+   *
+   * Populated by `scripts/add-polygons.mjs` (OSM `out geom` re-query by name
+   * within city bbox). See docs/DATA-SOURCING.md §4d and docs/plans/POLYGON-SCORING.md.
+   *
+   * [M-A1]
+   */
+  polygon?: [number, number][]
 }
 
 /** Guessing difficulty, from easiest (most locally famous) to hardest (obscure). */
@@ -85,7 +102,20 @@ export interface Guess {
 export interface RoundResult {
   location: Location
   guess: Guess
-  /** Great-circle distance between guess and truth, in meters. */
+  /**
+   * Distance from the guess to the "target" in meters. Semantics vary by
+   * location type:
+   *  - **point locations**: great-circle (haversine) distance to the centroid.
+   *  - **polygon locations, guess inside**: always 0 (the guess was inside the
+   *    polygon — "0 m" is the honest display value).
+   *  - **polygon locations, guess outside**: distance to the nearest polygon
+   *    edge (NOT to the centroid).
+   *
+   * The UI shows `formatDistance(distanceMeters)`. For polygon inside-hits this
+   * renders as "0 m". For polygon outside-hits the displayed distance is
+   * "how far outside the boundary you were", which is more meaningful than the
+   * centroid distance. See docs/plans/POLYGON-SCORING.md §3.4 and §7.6.
+   */
   distanceMeters: number
   /** Score for this round, integer 0..MAX_ROUND_SCORE. */
   score: number
