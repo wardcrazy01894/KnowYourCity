@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { CITIES, getCity, DEFAULT_CITY_ID } from './cities'
+import { CITIES, getCity, DEFAULT_CITY_ID, cityDataUrl } from './cities'
 
 describe('cities registry', () => {
   it('has the five expected cities', () => {
@@ -21,6 +21,28 @@ describe('cities registry', () => {
 
   it('the default city exists', () => {
     expect(getCity(DEFAULT_CITY_ID)).toBeTruthy()
+  })
+
+  // The dataset JSON has a STABLE filename (locations.<id>.json), so a mobile
+  // cache can serve a stale copy against a freshly-loaded JS bundle — the skew
+  // that silently broke a daily override (hurricane-bar incident, 2026-06-16).
+  // Stamping the per-deploy build hash onto the URL makes every new bundle
+  // request a fresh JSON, locking the two together.
+  describe('cityDataUrl — cache-busting', () => {
+    const hash = import.meta.env.VITE_BUILD_HASH ?? 'dev'
+
+    it('points at the city dataset with a build-hash version query', () => {
+      const url = cityDataUrl('stpete')
+      expect(url).toContain('locations.stpete.json')
+      expect(url).toContain(`?v=${hash}`)
+    })
+
+    it('uses the same version for every city (one build → one hash)', () => {
+      const v = (id: string) =>
+        new URL(cityDataUrl(id), 'https://x').searchParams.get('v')
+      expect(v('stpete')).toBe(hash)
+      expect(v('seattle')).toBe(v('stpete'))
+    })
   })
 
   it('every city has sane bounds and an IANA timezone', () => {

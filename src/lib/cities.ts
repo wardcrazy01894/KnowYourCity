@@ -36,7 +36,18 @@ export function getCity(id: string | null | undefined): City | undefined {
   return CITIES.find((c) => c.id === id)
 }
 
-/** Path to a city's bundled dataset (respects Vite's base). */
+/**
+ * Path to a city's bundled dataset (respects Vite's base).
+ *
+ * The `?v=<build hash>` is a cache-buster, not decoration: the dataset JSON has
+ * a STABLE filename (unlike the content-hashed JS bundle), so without it a
+ * client cache can serve a stale dataset against a freshly-loaded bundle. That
+ * skew silently broke a daily override once (a bundled override id no longer
+ * existed in the cached JSON → selectDailyLocations fell back to a random day).
+ * Stamping the per-deploy build hash makes every new bundle fetch a fresh JSON,
+ * so the two always move together. Falls back to `dev` outside a build.
+ */
 export function cityDataUrl(id: string): string {
-  return import.meta.env.BASE_URL + `locations.${id}.json`
+  const v = import.meta.env.VITE_BUILD_HASH ?? 'dev'
+  return import.meta.env.BASE_URL + `locations.${id}.json?v=${v}`
 }
