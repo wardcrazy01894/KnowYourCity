@@ -13,6 +13,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "49th-street-pub",
+      "name": "49th Street Pub",
+      "lat": 27.77084,
+      "lng": -82.69595,
+      "category": "bar",
+      "clue": "A neighborhood pub on Central Ave.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+    },
+    {
       "id": "albert-whitted-park",
       "name": "Albert Whitted Park",
       "lat": 27.7664909,
@@ -66,6 +77,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "cafe-soleil-french-bakery-deli",
+      "name": "Café Soleil French Bakery & Deli",
+      "lat": 27.73063,
+      "lng": -82.7425,
+      "category": "cafe",
+      "clue": "A French bakery and deli near St. Pete Beach.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
       "id": "clam-bayou-nature-preserve",
@@ -255,6 +277,17 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "mr-empanada",
+      "name": "Mr. Empanada",
+      "lat": 27.76785,
+      "lng": -82.64615,
+      "category": "restaurant",
+      "clue": "A counter-service spot for empanadas and Cuban-style fare.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+    },
+    {
       "id": "my-rich-uncle",
       "name": "My Rich Uncle",
       "lat": 27.771901,
@@ -264,6 +297,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap Nominatim"
+    },
+    {
+      "id": "nitallys",
+      "name": "Nitally's",
+      "lat": 27.78368,
+      "lng": -82.64661,
+      "category": "restaurant",
+      "clue": "A long-running Thai-and-Mexican fusion restaurant.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
       "id": "north-shore-kickball-fields",
@@ -343,6 +387,17 @@
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
     },
     {
+      "id": "scooters-coffee",
+      "name": "Scooter's Coffee",
+      "lat": 27.85652,
+      "lng": -82.63867,
+      "category": "cafe",
+      "clue": "A drive-thru coffee kiosk on 4th St N.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+    },
+    {
       "id": "sculleys",
       "name": "Sculley's Waterfront Restaurant",
       "lat": 27.784962,
@@ -363,6 +418,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "sushi-rock-grill",
+      "name": "Sushi Rock Grill",
+      "lat": 27.71337,
+      "lng": -82.71388,
+      "category": "restaurant",
+      "clue": "A sushi and hibachi restaurant on Isla del Sol.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
       "id": "tequila-daisy",
@@ -407,6 +473,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (geocoded via Nominatim)"
+    },
+    {
+      "id": "thirsty-first",
+      "name": "Thirsty First",
+      "lat": 27.77146,
+      "lng": -82.64064,
+      "category": "bar",
+      "clue": "A two-story sports bar on Central Ave downtown.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
       "id": "welcome-to-the-farm",

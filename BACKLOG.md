@@ -35,6 +35,17 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       brought it to **397**; a Google Places freshness sweep then re-pinned 7
       relocated venues, renamed 4 to their current successor, removed 5
       truly-closed, and added 4 new spots → **396** (all in play — the cap is 400).
+- [ ] **Build new cities from OSM + Google Maps, not OSM alone** (owner directive,
+      2026-06-16 — "OSM has outdated data"). `build-city.mjs` pulls only live
+      Overpass today, so a new city can launch with stale closed/renamed pins (the
+      St. Pete Places sweep, PR #102, found ~18). Cross-check candidates against the
+      **Google Places API** (`business_status` to drop closed, current name for
+      renames, `userRatingCount` as a fame/inclusion signal) during the
+      `add-or-update-city` flow. Keep **committed coords from Nominatim/Census**
+      (ODbL-clean) — Google verifies, doesn't get stored beyond `place_id`. Key is
+      `GOOGLE_MAPS_KEY` in `.env.local`. (`build-city` already honors a
+      `data/<city>-manual.json` **override layer** — a manual id that matches an OSM
+      candidate replaces it — added in PR #103 so re-pins survive a rebuild.)
 - [ ] **Precise popularity filter** — current inclusion uses an OSM
       "established business" proxy. A true "≥100 Yelp reviews" cut needs a paid
       Yelp/Google integration (ToS forbids storing their data long-term); the
