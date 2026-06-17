@@ -3,12 +3,17 @@
  * end-of-game flourish on maptap.gg: a big initial pop plus a ~2s shower from two
  * side cannons, so it's unmistakable rather than a single frame you might miss.
  *
- * `canvas-confetti` renders its own fixed, `pointer-events:none` canvas over the
- * page, so it never intercepts clicks on the results card or leaderboard beneath
- * it. `fireConfetti` returns a cancel handle: the caller stops the still-raining
- * shower when it swaps the results view for the leaderboard, so confetti never
- * keeps falling over the board. Best-effort — any failure is swallowed so it can
- * never break the results screen. No-op without a DOM (tests/SSR).
+ * We render onto our OWN full-screen, `pointer-events:none` canvas with
+ * `useWorker:false`. canvas-confetti's default global instead renders via a Web
+ * Worker + OffscreenCanvas, which silently draws nothing in some browser/dev
+ * setups — owning the canvas and staying on the main thread renders reliably and
+ * lets us control stacking (`z-index`) and click pass-through directly. The canvas
+ * never intercepts clicks, so it can't block the results card or leaderboard.
+ *
+ * `fireConfetti` returns a cancel handle: the caller stops the still-raining
+ * shower when it swaps the results view for the leaderboard. Best-effort — any
+ * failure is swallowed so it can never break the results screen. No-op without a
+ * DOM (tests/SSR).
  */
 
 import confetti from 'canvas-confetti'
@@ -26,21 +31,40 @@ function prefersReducedMotion(): boolean {
 
 const Z_INDEX = 9999
 const SHOWER_MS = 2200
-
 /** A no-op cancel handle (nothing to stop). */
 const NOOP = () => {}
+
+// One reused fire() bound to our own canvas, created on first use.
+let fire: confetti.CreateTypes | null = null
+function getFire(): confetti.CreateTypes {
+  if (fire) return fire
+  const canvas = document.createElement('canvas')
+  canvas.setAttribute('aria-hidden', 'true')
+  Object.assign(canvas.style, {
+    position: 'fixed',
+    inset: '0',
+    width: '100%',
+    height: '100%',
+    pointerEvents: 'none',
+    zIndex: String(Z_INDEX),
+  })
+  document.body.appendChild(canvas)
+  fire = confetti.create(canvas, { resize: true, useWorker: false })
+  return fire
+}
 
 /**
  * Fire the celebratory confetti. Synchronous; returns a cancel handle that stops
  * the ongoing shower (the initial pop has already been drawn and just fades out).
  */
 export function fireConfetti(): () => void {
-  if (typeof window === 'undefined') return NOOP
+  if (typeof window === 'undefined' || typeof document === 'undefined')
+    return NOOP
   try {
+    const burst = getFire()
     // One big pop from the lower-centre — always shown (even under reduced
     // motion) so the moment is clearly acknowledged.
-    confetti({
-      zIndex: Z_INDEX,
+    burst({
       particleCount: 150,
       spread: 90,
       startVelocity: 45,
@@ -58,16 +82,14 @@ export function fireConfetti(): () => void {
     const end = performance.now() + SHOWER_MS
     const tick = () => {
       if (cancelled) return
-      confetti({
-        zIndex: Z_INDEX,
+      burst({
         particleCount: 7,
         angle: 60,
         spread: 65,
         startVelocity: 55,
         origin: { x: 0, y: 0.7 },
       })
-      confetti({
-        zIndex: Z_INDEX,
+      burst({
         particleCount: 7,
         angle: 120,
         spread: 65,
