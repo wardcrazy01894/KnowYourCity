@@ -200,6 +200,28 @@ describe('DAILY_OVERRIDES — integration', () => {
     }
   })
 
+  // Cross-day uniqueness: a location should not be curated onto two different
+  // days within the same city. The per-entry "distinct ids" guard above only
+  // catches a repeat WITHIN a single day; a location reused across days (e.g.
+  // the same easy pin on Wed and Sun) slips past it but plays as a stale repeat
+  // for anyone who plays the streak. Guard per city so unrelated cities never
+  // collide on a shared slug.
+  it('never reuses a location across a city’s override days', () => {
+    const seenByCity: Record<string, Map<string, string>> = {}
+    for (const [seed, ids] of Object.entries(DAILY_OVERRIDES)) {
+      const cityId = seed.split(':')[0]
+      const seen = (seenByCity[cityId] ??= new Map())
+      for (const id of ids) {
+        const prev = seen.get(id)
+        expect(
+          prev,
+          `${cityId}: id "${id}" appears on both "${prev}" and "${seed}"`,
+        ).toBeUndefined()
+        seen.set(id, seed)
+      }
+    }
+  })
+
   // The bug that shipped (hurricane-bar incident, 2026-06-16): when ANY override
   // id fails to resolve, selectDailyLocations silently discards the WHOLE day's
   // curation and returns a random PRNG selection (daily.ts), warning only to the

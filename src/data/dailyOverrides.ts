@@ -1,7 +1,12 @@
 /**
  * Hand-curated daily overrides — keyed by selectionSeed ("cityId:YYYY-MM-DD").
- * When a key matches, selectDailyLocations returns these IDs in round order
- * (easy, easy, medium, medium, hard) instead of the PRNG selection.
+ * When a key matches, selectDailyLocations returns these IDs verbatim and in
+ * the listed order instead of running the PRNG selection.
+ *
+ * Order is whatever the curator chooses — it is NOT required to follow the
+ * easy/easy/medium/medium/hard ramp. Most entries do (it makes a nicer day),
+ * but a block may intentionally deviate (e.g. the Seattle Jun 17–23 run below
+ * is all-easy). Do not assume difficulty from slot position.
  *
  * To add more overrides: append entries in the same format and re-deploy.
  * To expire old ones: leave them in place (they never match after the date
@@ -78,5 +83,59 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'sunset-grille',
     'the-toasted-monkey',
     'mr-empanada',
+  ],
+
+  // Seattle — Jun 17–23 2026 (Wed→Tue). Short-term, hand-picked exception:
+  // every pick is an EASY (owner request), so these intentionally skip the
+  // usual easy/easy/medium/medium/hard ramp. An override plays its 5 IDs in
+  // order, so the difficulty plan is bypassed by design.
+  'seattle:2026-06-17': [
+    'pacific-science-center',
+    'argosy-cruises',
+    'biscuit-bitch',
+    'saigon-deli',
+    'monsoon',
+  ],
+  'seattle:2026-06-18': [
+    'sky-view-observatory',
+    'mikes-chili-parlor',
+    'macrina-bakery-belltown',
+    'cafe-campagne',
+    'caffe-vita',
+  ],
+  'seattle:2026-06-19': [
+    'lumen-field',
+    'canlis',
+    'top-pot-doughnuts',
+    'piroshky-piroshky',
+    'rhein-haus-seattle',
+  ],
+  'seattle:2026-06-20': [
+    'cal-anderson-park',
+    'wild-ginger-seattle',
+    'fremont-brewing-company',
+    'saltys',
+    'portage-bay-cafe',
+  ],
+  'seattle:2026-06-21': [
+    'kerry-park',
+    'the-5-point',
+    'daniels-broiler',
+    'mopop-museum-of-pop-culture',
+    'ivars-fish-bar',
+  ],
+  'seattle:2026-06-22': [
+    'space-needle',
+    'dicks-drive-in-broadway',
+    'ezells-chicken',
+    'lowells',
+    'spud-fish-chips',
+  ],
+  'seattle:2026-06-23': [
+    'gas-works-park',
+    'pike-place-market',
+    'international-fountain',
+    'paseo',
+    'the-walrus-and-the-carpenter',
   ],
 }
