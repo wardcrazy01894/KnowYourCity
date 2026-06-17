@@ -121,7 +121,10 @@ export function classifyVenue(
           { lat: candidate.lat, lng: candidate.lng },
         )
       : null
-  const closeEnough = distanceM === null ? true : distanceM <= maxDistanceM
+  // No coordinates back from Places means we can't confirm identity by location,
+  // so treat it as NOT close — routes to review rather than risking an
+  // unverified stamp or (worse) an unverified auto-close.
+  const closeEnough = distanceM !== null && distanceM <= maxDistanceM
   const matched = nameSim >= minNameSim && closeEnough
 
   if (!matched) {

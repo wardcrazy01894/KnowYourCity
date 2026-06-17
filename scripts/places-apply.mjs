@@ -172,7 +172,7 @@ section(
   'Needs review',
   review,
   (x) =>
-    `${x.name} (${x.id}) — ${x.verdict}; google="${x.candidateName ?? '∅'}" dist=${x.distanceM ?? '∅'}m sim=${x.nameSim}`,
+    `${x.name} (${x.id}) — ${x.verdict}; google="${x.candidateName ?? '∅'}" dist=${x.distanceM ?? '∅'}m sim=${x.nameSim ?? '∅'}`,
 )
 const report = lines.join('\n') + '\n'
 if (!DRY) writeFileSync(REPORT, report)

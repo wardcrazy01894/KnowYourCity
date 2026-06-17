@@ -105,6 +105,25 @@ describe('classifyVenue', () => {
     expect(r.verdict).toBe('ambiguous')
   })
 
+  it('a candidate with no coordinates is NOT matched (cannot confirm by location)', () => {
+    const r = classifyVenue(v, {
+      businessStatus: 'OPERATIONAL',
+      displayName: 'Canlis',
+    })
+    expect(r.distanceM).toBeNull()
+    expect(r.matched).toBe(false)
+    expect(r.action).toBe('review')
+  })
+
+  it('a coordinate-less CLOSED_PERMANENTLY does NOT auto-close', () => {
+    const r = classifyVenue(v, {
+      businessStatus: 'CLOSED_PERMANENTLY',
+      displayName: 'Canlis',
+    })
+    expect(r.verdict).toBe('ambiguous')
+    expect(r.action).toBe('review')
+  })
+
   it('a closed but unmatched candidate does NOT auto-close', () => {
     const r = classifyVenue(v, {
       businessStatus: 'CLOSED_PERMANENTLY',
@@ -155,5 +174,11 @@ describe('driftFlag', () => {
   it('handles a previously-unknown count (0/undefined)', () => {
     expect(driftFlag(0, 500)).not.toBeNull()
     expect(driftFlag(undefined, 500)).not.toBeNull()
+  })
+  it('honors the tighter thresholds places-apply.mjs passes ({minNew:500, ratio:3})', () => {
+    const opts = { minNew: 500, ratio: 3 }
+    expect(driftFlag(100, 400, opts)).toBeNull() // new 400 < minNew 500
+    expect(driftFlag(300, 700, opts)).toBeNull() // 700>=500 but ratio 2.33 < 3
+    expect(driftFlag(100, 600, opts)).not.toBeNull() // 600>=500 and ratio 6 >= 3
   })
 })
