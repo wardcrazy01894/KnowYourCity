@@ -173,8 +173,10 @@ successor business, removed 5 truly-closed, and added 4 new spots (net −1); th
 Chili's, Ruth's Chris, Scooter's Coffee, Quaker Steak & Lube, …); then a
 whole-fleet Google Places freshness sweep removed 4 newly-closed (Boardwalk
 Tavern, Hops 2.0, Que Pasa, Liquid Therapy Bar) and added 3 successors at those
-spots (Perry's Porch, China Crossings, Whiskey on Park) → **373**, all in play,
-since the cap is 400). It started at ~516
+spots (Perry's Porch, China Crossings, Whiskey on Park) → 373; then the
+four-city full-vetting pass (PR #122 + the benched sweep) removed 3 long-closed
+resort venues (Bongo's, Level 11, Spinners) → **370**, all in play, since the cap
+is 400). It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
 "Cafe"/"Hookah"), 1 renamed-to-also-closed — **renamed 15** still-operating spots
@@ -329,7 +331,7 @@ benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
 stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
-filters to `inPlay !== false`. Current caps: St. Pete 400 (373 rows, all in
+filters to `inPlay !== false`. Current caps: St. Pete 400 (370 rows, all in
 play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
 
 > **Removing a row reshuffles the cap.** Because in-play membership and the
@@ -369,6 +371,30 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
 > gitignored — only the boolean outcome (stamp/close) and date are committed. The
 > matching/classification rules are pure + unit-tested in
 > `scripts/places-freshness-lib.mjs`.
+>
+> **Matcher.** Identity is judged by name + distance, robust to the OSM↔Google
+> formatting gap: `nameSimilarity` canonicalizes abbreviations/ordinals/spacing
+> ("3rd Ave Cafe" = "Third Avenue Cafe", "AnNamPho" = "An Nam Pho") and a
+> **strong-proximity override** treats an operational venue within ~75 m of our
+> pin as the same place despite name noise (a low-sim floor still rejects a
+> different tenant). Non-business POIs get a wider distance gate (big footprints).
+> `classifyFromStored` re-runs an improved matcher over a prior sweep's JSONL with
+> **no re-fetch**, so the auto-stamp tier can be grown for free.
+>
+> **Full vetting (the hard tail).** Items the matcher can't confidently auto-stamp
+> (ambiguous, not-found, temporarily-closed, delisted-landmark) are driven to a
+> terminal state by a multi-agent verification pass: each agent re-queries Places
+> + web-searches one batch and returns **keep / remove** with a cited reason (the
+> `verify-hardtail` workflow). `scripts/places-vet-apply.mjs --city <id>
+> --decisions <file>` then stamps the keeps **at their existing pin** and drops the
+> removes (synthesizing a `status: closed` fame entry when a row had none, so a
+> no-fame row still drops). It **never writes moved coordinates** — a relocation is
+> resolved as a *keep* (a small pin nudge where the committed pin is still accurate)
+> or a *remove* (a large move: the committed pin is stale, so the venue is dropped
+> and re-added cleanly via the `add-location` skill, which sources ODbL coords from
+> Nominatim/Census). This keeps committed coordinates ODbL-clean and guarantees no
+> pin drifts away from its polygon. It's how all four launched cities reached
+> **zero unverified rows**.
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
@@ -392,8 +418,9 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
-§4c): St. Pete (373 → **373**), State College (229 → **200**), Ann Arbor (340 →
-**300**), Seattle (2388 → **500**), Chicago (4149 → **700**) — all enriched.
+§4c, post full-vetting): St. Pete (370 → **370**), State College (227 → **200**),
+Ann Arbor (337 → **300**), Seattle (2294 → **500**), Chicago (4149 → **700**) —
+all enriched.
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated

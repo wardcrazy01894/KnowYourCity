@@ -291,13 +291,13 @@
   },
   {
     "id": "administration-building",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "generic building name; likely Seattle University Administration Building, a functioning campus landmark"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No 'Administration Building' landmark exists near our pin (47.666,-122.397); Google's closest match is UW's Admin Building 8.4km away — generic campus building with no recognizable identity for players"
   },
   {
     "id": "admiral-benbow",
@@ -611,13 +611,13 @@
   },
   {
     "id": "east-allison-street-end",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 5,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small accessible public shoreline access point built 2018 on Lake Union in Eastlake"
+    "statusNote": "Removed via vetting 2026-06-17 (high): A street-end public shore access point is a generic OSM artifact that players could not recognise or meaningfully guess; per decision rules, street ends are excluded."
   },
   {
     "id": "east-boston-street-end",
@@ -1341,13 +1341,13 @@
   },
   {
     "id": "canoe-house",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 60,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Historic UW Shell House / Canoe House, designated Seattle landmark since 2018; on National Register since 1975"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms 'Canoe House (CNH)' is CLOSED_PERMANENTLY at exactly ourCoords (1m away)."
   },
   {
     "id": "canon",
@@ -1591,13 +1591,13 @@
   },
   {
     "id": "conduit-coffee",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Small batch coffee roastery on Westlake Ave, open to public for Tuesday open houses"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google's only Conduit Coffee result is at Airport Way S (~6.5km away); no location exists near our pin at 47.642,-122.344."
   },
   {
     "id": "connect-lounge",
@@ -1751,13 +1751,13 @@
   },
   {
     "id": "arepa-venezuelan-kitchen",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 449,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open in U-District since 2016, well-reviewed Venezuelan spot"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Arepa Venezuelan Kitchen\" 534m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "argosy-cruises",
@@ -1811,13 +1811,13 @@
   },
   {
     "id": "arne-gillam-courtyard",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small courtyard space at Two Union Square; minimal public profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Google Places match and no web evidence of a named public courtyard/park by this name at these coords; appears to be an unrecognizable OSM artifact."
   },
   {
     "id": "aroom",
@@ -2401,13 +2401,13 @@
   },
   {
     "id": "ant-gallery",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Nonprofit artist collective at Seattle Center since 1988, moving to Pioneer Square"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"A/NT Gallery\" 2882m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "a-hong-kong-kitchen",
@@ -2451,13 +2451,13 @@
   },
   {
     "id": "aburiya-bento-house",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 36,
     "reviewCount": 432,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Belltown Japanese aburi sushi spot near Pike Place, updated May 2026"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Permanently closed after owner's 2023 murder; Google returns no match at our coords and web sources confirm it did not reopen."
   },
   {
     "id": "accidental-park",
@@ -2521,13 +2521,13 @@
   },
   {
     "id": "berlin-wall-fragment",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "multiple fragments in Seattle (Fremont/Cafe Turko and Seattle Center Armory); publicly accessible landmark"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Berlin Wall Fragment\" 3134m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "berliner-doner-kebab",
@@ -2721,13 +2721,13 @@
   },
   {
     "id": "birrieria-gourmet",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 16,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "birria food truck/stall with Ballard Seattle location at 5401 17th Ave NW; limited local profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Google hit near our Ballard/Crown Hill pin; Birrieria Gourmet's only confirmed current location is Federal Way (~25km away), and the Ballard food-truck pod is gone."
   },
   {
     "id": "birrieria-pepe-el-toro",
@@ -3861,13 +3861,13 @@
   },
   {
     "id": "fairmount-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 14,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "5-acre West Seattle neighborhood park adjacent to Fairmount Park Elementary; Wikipedia article covers the neighborhood, not the park itself"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Fairmount Park\" 2893m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "fairmount-playfield",
@@ -3991,13 +3991,13 @@
   },
   {
     "id": "fauntleroy-place",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 4,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Tiny street-triangle park in West Seattle with nine trees and a bench; very minor public green space"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Fauntleroy Place\" 4083m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "edgars-cantina",
@@ -4361,13 +4361,13 @@
   },
   {
     "id": "animated-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 16,
     "reviewCount": 44,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Small Georgetown cafe known for cosplay baristas and colorful drinks"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places only finds Animated Cafe in Burien (18.5km away); our pin at 47.607,-122.341 matches neither the current Burien location nor the Georgetown 303 S Michigan location, indicating a dead prio"
   },
   {
     "id": "anna-thomsen-milburn-memorial",
@@ -5551,23 +5551,23 @@
   },
   {
     "id": "15th-avenue-northwest",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "major Ballard arterial street, not a named attraction or destination"
+    "statusNote": "Removed via vetting 2026-06-17 (high): A generic street segment; Google's centroid is 2.5km from our pin with no identifiable landmark at ourCoords."
   },
   {
     "id": "15th-avenue-west",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "main Interbay/Magnolia arterial street, not a named attraction or destination"
+    "statusNote": "Removed via vetting 2026-06-17 (high): A street segment spanning several km, not an identifiable landmark; Google's centroid is 1.2km from our pin and no specific place a player could recognize or guess."
   },
   {
     "id": "1890-seattle-fire-department-bell",
@@ -5601,13 +5601,13 @@
   },
   {
     "id": "206-burger-company",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 200,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Seattle-founded small chain with multiple locations; masala-spiced burgers, modest local following"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Yelp shows the original 3rd Ave location as CLOSED; our pin coords match that closed site, and the nearest open 206 Burger Co. is at 1401 Broadway (~600m away), already a separate listing."
   },
   {
     "id": "2120",
@@ -5661,13 +5661,13 @@
   },
   {
     "id": "36th-avenue-northwest-street-end",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 4,
     "reviewCount": 3,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "minor Ballard shoreline street-end park, essentially no public profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Name explicitly includes 'street end,' which the rules exclude; Google finds only the road itself with no distinct public place."
   },
   {
     "id": "3rd-ave-cafe",
@@ -5751,13 +5751,13 @@
   },
   {
     "id": "cork-kale",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "hotel bar inside EVEN Hotel South Lake Union, limited local profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms Cork & Kale Seattle is CLOSED_PERMANENTLY at 527 Fairview Ave N, matching our pin location."
   },
   {
     "id": "corliss-place",
@@ -5961,13 +5961,13 @@
   },
   {
     "id": "crawfish-king",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 814,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Seattle's original Viet-Cajun seafood boil, International District, since 2009"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google's only Crawfish King result is at 1525 13th Ave (~2.1km from our pin); no operational location exists near ourCoords."
   },
   {
     "id": "creative-justice-cafe",
@@ -6041,13 +6041,13 @@
   },
   {
     "id": "casa-patron",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 240,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "family-owned Mexican bar and restaurant in Roosevelt neighborhood since 2010"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Yelp (updated Feb 2026) marks Casa Patrón as CLOSED with no reopening indicated; Google status is CLOSED_TEMPORARILY with no evidence of return."
   },
   {
     "id": "cascade-place",
@@ -6231,13 +6231,13 @@
   },
   {
     "id": "chan-seattle",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 40,
     "reviewCount": 1193,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "progressive Korean restaurant at the Paramount Hotel downtown, well-reviewed food destination"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Relocated ~696m (verified operational elsewhere); committed pin is stale — removed to re-add cleanly via add-location. (Google confirms Chan Seattle is OPERATIONAL at 724 Pine St (47.6131,-122.3334);"
   },
   {
     "id": "chandala-thai",
@@ -6461,13 +6461,13 @@
   },
   {
     "id": "bun",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 40,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small Vietnamese noodle restaurant in International District, appears to be operating"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places finds no restaurant named 'Bun' near ourCoords (47.5978,-122.3235); the nearest result is Mee Sum Pastry 1841m away, and no Vietnamese restaurant by that name appears at the pin."
   },
   {
     "id": "burger-hut",
@@ -6721,13 +6721,13 @@
   },
   {
     "id": "basilic",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 237,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Queen Anne Thai restaurant that relocated to 530 Queen Anne Ave N; same name"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Basilic\" 527m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "batch-206-distillery",
@@ -7231,13 +7231,13 @@
   },
   {
     "id": "band-house",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "historic military building within Fort Lawton Landmark District in Discovery Park, not a public-facing venue"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): No Google Places match and no web evidence of a recognizable 'Band House' landmark at these coords in Seattle; unidentifiable OSM artifact."
   },
   {
     "id": "bandol",
@@ -7451,13 +7451,13 @@
   },
   {
     "id": "harbour-cruise",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "generic OSM node likely representing Argosy Cruises harbor tours at Pier 55, tourist attraction running since 1949"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Harbour Cruise\" 540m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "hardwok-cafe",
@@ -7581,13 +7581,13 @@
   },
   {
     "id": "honor-coffee-tea",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 53,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "most locations closed; one remaining at Benaroya Hall lobby (200 University St)"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Multiple Honor Coffee & Tea Seattle locations confirmed permanently closed on Yelp (updated through early 2026); Google returns a completely different brand at the nearest address, with no operational "
   },
   {
     "id": "honor-society-coffee",
@@ -8311,13 +8311,13 @@
   },
   {
     "id": "fremont-dock",
-    "status": "open",
+    "status": "closed",
     "currentName": "The Dock Sports Bar & Grill",
     "fameScore": 28,
     "reviewCount": 243,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "family-owned Fremont sports bar operating since 2012, now goes by The Dock Sports Bar & Grill"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Fremont Dock Company is a commercial real estate/property management firm since 1947, not a bar; its address (3500 1st Ave NW) is also ~392m from ourCoords."
   },
   {
     "id": "fremont-peak-park",
@@ -8461,13 +8461,13 @@
   },
   {
     "id": "fuel",
-    "status": "open",
+    "status": "closed",
     "currentName": "Fuel Coffee & Books",
     "fameScore": 38,
     "reviewCount": 200,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "independent Seattle coffee and bookstore mini-chain since 2005, some locations for sale but Capitol Hill still open"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Google Places match near ourCoords (47.661,-122.337); nearest Fuel cafe is 3.7km away in Madison Valley, no evidence of a Fuel cafe at the pinned location."
   },
   {
     "id": "fuel-sports-grill",
@@ -8581,13 +8581,13 @@
   },
   {
     "id": "discovery-portal",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 14,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "free self-guided visitor center at Seattle Children's Research Institute, low public profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No 'Discovery Portal' museum exists at or near ourCoords; Google returns no match at that location, and the only 'Discovery Institute' nearby is a think tank 1,567m away."
   },
   {
     "id": "district-garage",
@@ -8761,23 +8761,23 @@
   },
   {
     "id": "bober-tea",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 24,
     "reviewCount": 114,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open Capitol Hill location at 605 Broadway E as Bober Tea & Mochi Dough"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places returns 'Yumm Mochi' (OPERATIONAL) at the exact same address (9m from our pin), indicating Bober Tea has closed or relocated and is no longer at this location."
   },
   {
     "id": "boeing-centennial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 14,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Boeing Centennial Terrace at MOHAI on Lake Union; minor event/public-space node, not a standalone attraction"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): No Google Places result for any 'Boeing Centennial' landmark near ourCoords (47.643,-122.328); closest Boeing landmark is the 747 fuselage art 2.8km away, and no evidence of a named 'Boeing Centennia"
   },
   {
     "id": "boiling-point",
@@ -9001,13 +9001,13 @@
   },
   {
     "id": "burritos-california",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 37,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "recently opened Capitol Hill location (2025), multi-location WA chain"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Burritos California\" 5491m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "busanjeong",
@@ -9541,13 +9541,13 @@
   },
   {
     "id": "gh-pasta-pizza",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 82,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "General Harvest restaurant group; West Seattle original plus newer Phinney Ridge location"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places finds the only G.H. Pasta & Pizza in West Seattle at 47.535,-122.376 — over 16km from ourCoords (47.679,-122.355), no evidence of a location near the pin."
   },
   {
     "id": "gaga-tea",
@@ -10261,13 +10261,13 @@
   },
   {
     "id": "lobby-espresso",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 16,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small in-hospital espresso stand at UW Medical Center, very low public profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places finds only 'UWMC Plaza Cafe' at our pin's address (1959 NE Pacific St); no Lobby Espresso result returned anywhere in Seattle, and Yelp/Foursquare listings show it no longer operating und"
   },
   {
     "id": "local-bigger-burger",
@@ -10401,13 +10401,13 @@
   },
   {
     "id": "lotus",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 24,
     "reviewCount": 216,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Seattle Lotus Vegetarian Restaurant in White Center, niche vegetarian Vietnamese destination"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): No Google Places result or web evidence of any landmark, artwork, or named place called 'Lotus' near our pin (47.6281, -122.3363); closest Google result is a street name 5.8km away."
   },
   {
     "id": "lotus-on-the-beach",
@@ -10471,13 +10471,13 @@
   },
   {
     "id": "lowlander-brewing",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 17,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Renee Erickson's tank bar brewery in Pioneer Square, opened December 2025"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Lowlander Brewing\" 2804m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "lowrider-brewing",
@@ -10491,13 +10491,13 @@
   },
   {
     "id": "loxicha",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 137,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "authentic Oaxacan food truck in Lake City, well-regarded by local Mexican food fans"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Loxicha\" 6008m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "juice-press",
@@ -10511,13 +10511,13 @@
   },
   {
     "id": "juicy-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 123,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Active location at 701 5th Ave; Pike St and Olive Way locations closed"
+    "statusNote": "Removed via vetting 2026-06-17 (high): The Capitol Hill and Olive Way Juicy Café locations are CLOSED per Yelp; the only OPERATIONAL location is 2059m away downtown at 701 5th Ave, confirming our pin is a dead branch."
   },
   {
     "id": "juisala",
@@ -11231,13 +11231,13 @@
   },
   {
     "id": "kiki-bakery-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 216,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open Asian bakery on Aurora Ave N, 216 Yelp reviews"
+    "statusNote": "Removed via vetting 2026-06-17 (high): The only Kiki Bakery found by Google is 7.1km away on Aurora Ave N; nothing exists near our pin coordinates."
   },
   {
     "id": "kilig",
@@ -11251,13 +11251,13 @@
   },
   {
     "id": "loxsmith-bagels",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 34,
     "reviewCount": 29,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "operating with limited weekend hours at Beacon Hill and West Seattle locations"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"LoxSmith Bagels\" 4949m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "loyal-heights-playfield",
@@ -12031,13 +12031,13 @@
   },
   {
     "id": "jemels-big-easy",
-    "status": "open",
+    "status": "closed",
     "currentName": "Jemil's Big Easy",
     "fameScore": 30,
     "reviewCount": 208,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "spelling is Jemil's not Jemel's; Cajun food truck and catering in West Seattle"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places returns no match at our coords; Foursquare marks the restaurant 'Now Closed'; the business at Delridge Way is catering-only, not a dine-in restaurant."
   },
   {
     "id": "jensen-marina",
@@ -12281,13 +12281,13 @@
   },
   {
     "id": "lake-view-point",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Minor OSM viewpoint node near Lakeview Park in Denny-Blaine, no standalone presence"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): No named 'Lake View Point' park found near our pin (47.64458,-122.334518); nearest viewpoints are 1.9km+ away, suggesting a generic OSM artifact."
   },
   {
     "id": "lakeview-place",
@@ -13351,13 +13351,13 @@
   },
   {
     "id": "lin-dumpling-and-noodles",
-    "status": "open",
+    "status": "closed",
     "currentName": "Lin Handmade Dumplings & Noodles",
     "fameScore": 24,
     "reviewCount": 32,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "U-District handmade Sichuan dumplings and noodle shop; full name is Lin Handmade Dumplings & Noodles"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No 'Lin Dumpling and Noodles' found near our pin (47.6648, -122.3154); Google's closest dumpling result is a different business 1.6km away, and the Lin Handmade Dumplings brand has multiple confirmed c"
   },
   {
     "id": "lindas-tavern",
@@ -14111,13 +14111,13 @@
   },
   {
     "id": "naan-stop",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 70,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open on the Ave in University District; Indian street food counter"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Yelp marks Naan Stop at 4549 University Wy NE as CLOSED (updated April 2026); no active location at our pin coords."
   },
   {
     "id": "nacho-borracho",
@@ -14171,13 +14171,13 @@
   },
   {
     "id": "nasai-teriyaki",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 26,
     "reviewCount": 123,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "family-owned teriyaki with multiple Seattle locations including University District and Lake City"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Nasai Teriyaki\" 8299m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "national-nordic-museum",
@@ -15051,13 +15051,13 @@
   },
   {
     "id": "market-fresh",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 100,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "downtown Seattle weekday lunch spot with two locations, recently pivoted from buffet to sandwiches and grain bowls"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): No Market Fresh found at or near our pin (47.614, -122.335); all active Market Fresh locations are ~1km away in downtown Seattle with no branch at our coords."
   },
   {
     "id": "market-pho",
@@ -15381,13 +15381,13 @@
   },
   {
     "id": "regatta-bar-grille",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 43,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "bar and grille inside Crowne Plaza hotel downtown, low independent local profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places returns only 'Elevation' (OPERATIONAL) 12m from our pin — Regatta Bar & Grille has been replaced at that location."
   },
   {
     "id": "regrade-park",
@@ -15741,13 +15741,13 @@
   },
   {
     "id": "wallingford-triangle-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 6,
     "reviewCount": 5,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "tiny neighborhood triangle park in Wallingford with bench and table, minimal online presence"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): No Google Places match at our pin coords (47.6528,-122.3288); all Triangle Park results are 2–5km away, and no named 'Wallingford Triangle Park' appears in Seattle Parks listings."
   },
   {
     "id": "revel",
@@ -16291,13 +16291,13 @@
   },
   {
     "id": "us-army-corps-of-engineers",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "federal agency office building (Federal Center South), not a public visitor destination"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"U.S. Army Corps of Engineers\" 12519m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "us-government-wharf",
@@ -16381,13 +16381,13 @@
   },
   {
     "id": "un-po-tipsy-pizzeria",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 11,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "opened December 2025 in Pioneer Square by Renee Erickson, very new with few reviews yet"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Un Po Tipsy Pizzeria\" 2793m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "underbelly",
@@ -16471,13 +16471,13 @@
   },
   {
     "id": "union-trust-annex",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 5,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Pioneer Square historic commercial building from 1900-1901, now office space; low public recognition"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms CLOSED_PERMANENTLY at the correct coords; it is a business venue, not a durable landmark worth keeping."
   },
   {
     "id": "unity-museum",
@@ -16491,13 +16491,13 @@
   },
   {
     "id": "university-of-washington-club",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "UW campus venue reopened for pilot community programming in 2025-2026 after pandemic closure"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms 'The University of Washington Club (FAC)' is CLOSED_PERMANENTLY at our pin's exact coordinates."
   },
   {
     "id": "teamsters-quarters",
@@ -16561,13 +16561,13 @@
   },
   {
     "id": "teriyaki-bowl",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 63,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "generic teriyaki spot with multiple Seattle locations, one on E Madison St"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Teriyaki Bowl found near our pin (47.6260,-122.3457); the two Google matches are 4km away on E Madison St and in West Seattle, neither at our location."
   },
   {
     "id": "teriyaki-madness",
@@ -16801,13 +16801,13 @@
   },
   {
     "id": "taco-bus",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 35,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Small food truck operation in Rainier Beach area, limited presence"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Foursquare shows 'Taco Bus (Now Closed)' and no Google result matches the name at our Roosevelt/Ravenna pin; the only Seattle 'Taco Bus' is a taco truck in far-south Seattle."
   },
   {
     "id": "taco-del-mar",
@@ -16821,13 +16821,13 @@
   },
   {
     "id": "taco-loco",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 100,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "El Taco Loco, Ballard Mexican counter inside a liquor store, open and popular"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No 'Taco Loco' found near our Crown Hill pin (47.6867,-122.3766); El Taco Loco locations are 2.4km+ away in Ballard with no evidence of a branch at our coords."
   },
   {
     "id": "taco-time",
@@ -16961,13 +16961,13 @@
   },
   {
     "id": "tandoori-hut",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 26,
     "reviewCount": 120,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Belltown Indian restaurant at 2nd Ave, operating with some conflicting hours info"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Google shows CLOSED_TEMPORARILY at our Capitol Hill pin; the active Tandoori Hut is at 2616 2nd Ave Belltown, a different location, suggesting this branch is closed."
   },
   {
     "id": "taneda-sushi",
@@ -17521,13 +17521,13 @@
   },
   {
     "id": "university-street-parklet",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 5,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small crowd-funded parklet on University Way NE in U-District, minimal public profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No evidence of a 'University Street Parklet' at our downtown coords (47.612885/-122.323701); nearest Google match is a different parklet 5.1km away in the U-District."
   },
   {
     "id": "unwind-cafe",
@@ -17671,13 +17671,13 @@
   },
   {
     "id": "uw-farm",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "active 2.5-acre student-run organic farm on UW campus, established 2006"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Relocated ~1960m (verified operational elsewhere); committed pin is stale — removed to re-add cleanly via add-location. (UW official site and Google both confirm UW Farm is at 3501 NE 41st St (47.658"
   },
   {
     "id": "vacil-salvadoreno-taco-loco",
@@ -17781,13 +17781,13 @@
   },
   {
     "id": "knights-of-columbus-hall",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 30,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Seattle Landmark and National Register building at 722 E Union St on First Hill/Capitol Hill"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms Knights of Columbus at our exact pin (3m away) is CLOSED_PERMANENTLY."
   },
   {
     "id": "kobe-friendship-bell",
@@ -19051,23 +19051,23 @@
   },
   {
     "id": "the-wick",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 56,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Motorcycles-and-coffee cafe; Queen Anne location closed, relocated to Aurora Ave N and operating with limited hours"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Google Places returns The Wick at 47.6831,-122.3447 (4m from our pin) as CLOSED_TEMPORARILY, and Yelp (Aug 2025) corroborates the Aurora Ave location is currently not operational."
   },
   {
     "id": "the-wild-cup",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Coffee cart inside Woodland Park Zoo, not a standalone public cafe"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Google Places result for 'The Wild Cup' anywhere near Seattle (nearest hit was Idaho), and no web evidence of a cafe by this name at or near our pin at 47.666492,-122.350489."
   },
   {
     "id": "the-wing-dome",
@@ -21861,13 +21861,13 @@
   },
   {
     "id": "verve-bowls",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 335,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Seattle-only acai bowl cafe with three locations, open as of 2026"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Verve Bowls\" 7297m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "via-tribunali-capitol-hill",
@@ -23051,13 +23051,13 @@
   },
   {
     "id": "raygun-lounge",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 44,
     "reviewCount": 123,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "saved by community crowdfunding late 2025, reopened under new management in early 2026 on Capitol Hill"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places returns only 'The Tilted Table' (OPERATIONAL) at the exact address — Raygun Lounge has been replaced at that location."
   },
   {
     "id": "razzis-pizzeria",
@@ -24431,13 +24431,13 @@
   },
   {
     "id": "smashbox",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 14,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Smashburger concept inside Great Notion's Ballard taproom, limited recognition as standalone venue"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places returns CLOSED_PERMANENTLY for SmashBox @ Great Notion just 15m from our pin."
   },
   {
     "id": "smile-thai-cuisine",
@@ -24981,13 +24981,13 @@
   },
   {
     "id": "olympia-coffee-roasting-company",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 121,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "same brand as Olympia Coffee; roaster-founded in Olympia with multiple Seattle cafes including downtown flagship"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Google finds no Olympia Coffee branch at ourCoords (47.6149,-122.3381); nearest operational location is 546m away on 5th Ave downtown, suggesting our pin is a defunct or never-opened location."
   },
   {
     "id": "olympia-pizza-spaghetti-house",
@@ -25331,13 +25331,13 @@
   },
   {
     "id": "machine-house-brewery",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 350,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "English-style craft brewery in Hillman City, active taproom"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Machine House Brewery\" 2992m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "machine-shop",
@@ -25561,13 +25561,13 @@
   },
   {
     "id": "mahder-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Ethiopian restaurant on S Jackson St in the Central District"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Mahder Cafe found in Seattle; Google search returned no match at our coords — a different business (Vision Ethiopian Cuisine) now occupies that address."
   },
   {
     "id": "trace",
@@ -26451,13 +26451,13 @@
   },
   {
     "id": "montlake-boulevard-northeast",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "continuation of Montlake Blvd E north of the Ship Canal into the University District; street name only"
+    "statusNote": "Removed via vetting 2026-06-17 (high): A street/road segment, not a recognizable standalone landmark; Google's nearest match is 847m away and is just the road itself."
   },
   {
     "id": "montlake-bridge",
@@ -27011,13 +27011,13 @@
   },
   {
     "id": "west-bertona-street-end",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 5,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "One of Seattle's 149 public shoreline street ends along the Ship Canal; minimal public profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Per decision rules, 'street end' entries are removed; the name itself indicates a street terminus, not a recognizable named park a player could guess."
   },
   {
     "id": "west-ewing-mini-park",
@@ -27151,13 +27151,13 @@
   },
   {
     "id": "waterway-23",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 4,
     "reviewCount": 3,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "easternmost Lake Union north-shore waterway incorporated into Burke-Gilman Trail, minimal standalone profile"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms Waterway 23 at 47.6486,-122.3467 (7m from our pin) with status CLOSED_PERMANENTLY."
   },
   {
     "id": "waterway-5-park",
@@ -27371,13 +27371,13 @@
   },
   {
     "id": "witch-hazel-family",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "OSM sub-area node within Washington Park Arboretum; botanical collection area, no independent public presence"
+    "statusNote": "Removed via vetting 2026-06-17 (high): No Google Places match near our pin; 'Witch Hazel Family' is an internal garden area designation within Washington Park Arboretum, not a recognizable standalone landmark."
   },
   {
     "id": "witt-winter-garden",
@@ -27511,13 +27511,13 @@
   },
   {
     "id": "zeeks-pizza-north-queen-anne-fremont",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open; North Queen Anne/Fremont location listed on OpenTable and Facebook"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Zeeks Pizza - North Queen Anne Fremont\" 1343m from the proposed spot — cannot establish a clean ODbL location."
   },
   {
     "id": "zeeks-pizza-queen-anne",
@@ -27818,5 +27818,35 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "Small Southern meat-and-three counter on Aurora Ave N, newer opening with limited review footprint"
+  },
+  {
+    "id": "charlestown-park",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 0,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places returns only street segments (SW/S Charlestown St) — no named park exists at or near our pin; this is a street-end OSM artifact."
+  },
+  {
+    "id": "seattle-cider-taproom",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 0,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Removed via vetting 2026-06-17 (high): Seattle Cider Taproom permanently closed February 26, 2026 when 2 Towns Ciderhouse acquired Seattle Cider Co. and shut the SODO facility; Yelp and Brewbound both confirm the closure."
+  },
+  {
+    "id": "seeking-ferments",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 0,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirmed CLOSED_PERMANENTLY at 5m from our pin."
   }
 ]

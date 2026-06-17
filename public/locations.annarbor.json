@@ -467,13 +467,14 @@
       "lat": 42.282602,
       "lng": -83.748624,
       "category": "restaurant",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 22,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "barton-nature-area",
@@ -564,6 +565,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28888, -83.75403],
         [42.28845, -83.75401],
@@ -986,6 +988,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.27535, -83.78819],
         [42.27498, -83.78816],
@@ -1242,6 +1245,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.30623, -83.73823],
         [42.30603, -83.73653],
@@ -1345,6 +1349,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.27062, -83.72558],
         [42.27138, -83.72456],
@@ -1365,6 +1370,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.29504, -83.77388],
         [42.29511, -83.77265],
@@ -1443,7 +1449,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "depot-plaza",
@@ -1457,6 +1464,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28887, -83.74713],
         [42.28885, -83.74703],
@@ -1507,6 +1515,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.2744, -83.70156],
         [42.27457, -83.70226],
@@ -1527,6 +1536,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.26354, -83.77699],
         [42.26338, -83.77698],
@@ -1546,6 +1556,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25761, -83.77788],
         [42.25742, -83.77805],
@@ -1775,6 +1786,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25764, -83.76331],
         [42.25779, -83.76333],
@@ -1849,6 +1861,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.27949, -83.73742],
         [42.2795, -83.73757],
@@ -2166,6 +2179,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.30012, -83.77822],
         [42.29975, -83.77932],
@@ -2206,7 +2220,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "ginger-deli",
@@ -2249,7 +2264,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "graydon-park",
@@ -2263,6 +2279,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.26244, -83.73912],
         [42.26169, -83.73748],
@@ -2350,6 +2367,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28267, -83.76214],
         [42.28273, -83.76136],
@@ -2397,7 +2415,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "hazel-coffee-co",
@@ -2571,6 +2590,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.29355, -83.78893],
         [42.29358, -83.78814],
@@ -2687,27 +2707,6 @@
       ]
     },
     {
-      "id": "huron-parkway-right-of-way",
-      "name": "Huron Parkway Right of Way",
-      "lat": 42.306719,
-      "lng": -83.738367,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 10,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [42.30747, -83.74152],
-        [42.30658, -83.74152],
-        [42.30603, -83.73653],
-        [42.30597, -83.73524],
-        [42.30664, -83.73522],
-        [42.30726, -83.74046]
-      ]
-    },
-    {
       "id": "hyperion-coffee",
       "name": "Hyperion Coffee",
       "lat": 42.279501,
@@ -2781,6 +2780,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25967, -83.73213],
         [42.25933, -83.73211],
@@ -2959,6 +2959,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.29472, -83.78305],
         [42.29428, -83.78377],
@@ -3053,7 +3054,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "kuebler-langford-nature-area",
@@ -3147,6 +3149,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25273, -83.7591],
         [42.25259, -83.75782],
@@ -3169,6 +3172,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.26299, -83.77097],
         [42.26226, -83.77096],
@@ -3188,6 +3192,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25542, -83.76412],
         [42.25489, -83.76403],
@@ -3363,12 +3368,14 @@
       "lat": 42.292192,
       "lng": -83.74306,
       "category": "park",
-      "inPlay": false,
+      "difficulty": "hard",
+      "inPlay": true,
       "fameScore": 12,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.29251, -83.74235],
         [42.29277, -83.74357],
@@ -3495,6 +3502,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25905, -83.71031],
         [42.25888, -83.70921],
@@ -3546,6 +3554,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28306, -83.76241],
         [42.28258, -83.76243],
@@ -3581,6 +3590,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25063, -83.7638],
         [42.25062, -83.76437],
@@ -3806,6 +3816,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.29097, -83.76188],
         [42.29074, -83.76262],
@@ -4013,6 +4024,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.30402, -83.7693],
         [42.30434, -83.7693],
@@ -4130,6 +4142,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28663, -83.74801],
         [42.28648, -83.74807],
@@ -4213,6 +4226,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.29944, -83.73477],
         [42.29939, -83.7361],
@@ -4247,6 +4261,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28772, -83.70318],
         [42.28776, -83.70207],
@@ -4288,6 +4303,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.30468, -83.74296],
         [42.30513, -83.74242],
@@ -4620,6 +4636,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.25804, -83.76277],
         [42.25835, -83.76279],
@@ -4987,104 +5004,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "scio-ridge-land-conservancy",
-      "name": "Scio Ridge Land Conservancy",
-      "lat": 42.263616,
-      "lng": -83.787903,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [42.26337, -83.79123],
-        [42.26359, -83.79091],
-        [42.26367, -83.78993],
-        [42.26433, -83.78923],
-        [42.26451, -83.78921],
-        [42.26457, -83.78902],
-        [42.26441, -83.78886],
-        [42.26457, -83.78901],
-        [42.26466, -83.78885],
-        [42.26497, -83.78877],
-        [42.2652, -83.78921],
-        [42.26504, -83.78877],
-        [42.26627, -83.78827],
-        [42.2669, -83.78837],
-        [42.26737, -83.78891],
-        [42.26754, -83.78958],
-        [42.26719, -83.78961],
-        [42.26719, -83.78972],
-        [42.26754, -83.7897],
-        [42.26756, -83.79002],
-        [42.26722, -83.79013],
-        [42.26727, -83.7903],
-        [42.26825, -83.79008],
-        [42.26827, -83.78883],
-        [42.26808, -83.78889],
-        [42.26799, -83.78868],
-        [42.26839, -83.78863],
-        [42.26856, -83.78847],
-        [42.26853, -83.78813],
-        [42.26829, -83.78833],
-        [42.26745, -83.78821],
-        [42.26696, -83.78769],
-        [42.26701, -83.7863],
-        [42.26713, -83.78598],
-        [42.26778, -83.78538],
-        [42.2676, -83.7851],
-        [42.26521, -83.78519],
-        [42.26278, -83.78457],
-        [42.26317, -83.78499],
-        [42.26324, -83.78529],
-        [42.26312, -83.7875],
-        [42.26277, -83.78824],
-        [42.26256, -83.78842],
-        [42.26249, -83.78801],
-        [42.26246, -83.78841],
-        [42.26223, -83.78843],
-        [42.26205, -83.78826],
-        [42.26195, -83.78764],
-        [42.26212, -83.78719],
-        [42.26233, -83.78706],
-        [42.2624, -83.78669],
-        [42.26224, -83.78701],
-        [42.26161, -83.78655],
-        [42.2614, -83.78663],
-        [42.26073, -83.78827],
-        [42.26088, -83.78831],
-        [42.26132, -83.78792],
-        [42.26163, -83.78799],
-        [42.26178, -83.78884],
-        [42.26142, -83.78928],
-        [42.2598, -83.78846],
-        [42.25988, -83.78807],
-        [42.25974, -83.78843],
-        [42.25919, -83.78776],
-        [42.25891, -83.78793],
-        [42.25867, -83.78851],
-        [42.25906, -83.78874],
-        [42.25968, -83.78951],
-        [42.26007, -83.78971],
-        [42.26019, -83.78929],
-        [42.26085, -83.78964],
-        [42.26097, -83.78972],
-        [42.26083, -83.79015],
-        [42.26119, -83.79038],
-        [42.26132, -83.78995],
-        [42.26143, -83.79003],
-        [42.26127, -83.79043],
-        [42.26135, -83.7905],
-        [42.26152, -83.7901],
-        [42.26219, -83.79058],
-        [42.263, -83.79051],
-        [42.2632, -83.79063],
-        [42.26308, -83.79105]
-      ]
-    },
-    {
       "id": "scorekeepers",
       "name": "Scorekeepers",
       "lat": 42.278916,
@@ -5096,7 +5015,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sculpture-plaza",
@@ -5604,20 +5524,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "the-hen-on-the-fly",
-      "name": "The Hen on the Fly",
-      "lat": 42.258593,
-      "lng": -83.728656,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "the-jagged-fork",
       "name": "The Jagged Fork",
       "lat": 42.27749,
@@ -5885,6 +5791,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.3092, -83.71713],
         [42.30931, -83.7173],
@@ -6178,6 +6085,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.28771, -83.77295],
         [42.2877, -83.7724],
@@ -6274,6 +6182,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.27725, -83.7751],
         [42.27714, -83.77439],
@@ -6297,6 +6206,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [42.2571, -83.7321],
         [42.25641, -83.73209],

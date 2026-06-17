@@ -414,11 +414,12 @@
   },
   {
     "id": "bongos-beach-bar-grille",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 637,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "Removed via vetting 2026-06-17 (high): Closed since Hurricane Helene (Sept 2024) at the Bellwether Beach Resort; Yelp still TEMP. CLOSED as of June 2026 with no confirmed reopening date — 20+ months of indefinite closure."
   },
   {
     "id": "boston-market",
@@ -2151,11 +2152,12 @@
   },
   {
     "id": "level-11",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 190,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "Removed via vetting 2026-06-17 (high): Part of Bellwether Beach Resort (5250 Gulf Blvd), closed since Hurricanes Helene/Milton (Sept 2024); Yelp TEMP. CLOSED updated March 2026 with no reopening date after 20+ months."
   },
   {
     "id": "leverocks",
@@ -3458,11 +3460,12 @@
   },
   {
     "id": "spinners",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 58,
     "reviewCount": 500,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "Removed via vetting 2026-06-17 (high): Part of Bellwether Beach Resort (5250 Gulf Blvd), closed since Hurricanes Helene/Milton (Sept 2024); official site says TEMPORARILY CLOSED with no reopening timeline after 20+ months."
   },
   {
     "id": "spring-garden",

@@ -3,6 +3,8 @@ import {
   normalizeName,
   nameSimilarity,
   classifyVenue,
+  classifyFromStored,
+  decideMatch,
   driftFlag,
   shouldAutoClose,
 } from './places-freshness-lib.mjs'
@@ -26,6 +28,28 @@ describe('nameSimilarity', () => {
       nameSimilarity('Serious Pie Ballard', 'Serious Pie'),
     ).toBeGreaterThan(0.6)
     expect(nameSimilarity('Canlis', 'Dick’s Drive-In')).toBeLessThan(0.3)
+  })
+  it('treats abbreviation/ordinal/spacing variants as the same name', () => {
+    expect(nameSimilarity('3rd Ave Cafe', 'Third Avenue Cafe')).toBe(1)
+    expect(nameSimilarity('74th Street Alehouse', '74th St Ale House')).toBe(1)
+    expect(nameSimilarity('AnNamPho', 'An Nam Pho')).toBe(1)
+    expect(nameSimilarity('Boathouse Deli', 'Boat House Deli')).toBe(1)
+  })
+  it('scores a 2+ token contained name high ("Serious Pie" ⊂ "Serious Pie Ballard")', () => {
+    expect(
+      nameSimilarity('Serious Pie', 'Serious Pie Ballard'),
+    ).toBeGreaterThanOrEqual(0.9)
+  })
+  it('does NOT award the 0.9 containment bonus to a single generic token', () => {
+    // "Park" ⊂ "Lincoln Park" must not score 0.9 — it would falsely auto-match
+    // any nearby place whose name contains the word. Dice keeps it modest.
+    expect(nameSimilarity('Park', 'Lincoln Park')).toBeLessThan(0.9)
+    expect(nameSimilarity('Bar', 'Bar Harbor')).toBeLessThan(0.9)
+  })
+  it('still scores two unrelated names low', () => {
+    expect(nameSimilarity('Accidental Park', 'Occidental Square')).toBeLessThan(
+      0.3,
+    )
   })
 })
 
@@ -124,6 +148,66 @@ describe('classifyVenue', () => {
     expect(r.action).toBe('review')
   })
 
+  it('stamps a near-coincident operational venue despite name-formatting noise', () => {
+    // "3rd Ave Cafe" vs Google "Third Avenue Cafe" at ~8m — same place.
+    const r = classifyVenue(
+      { name: '3rd Ave Cafe', lat: 47.6431, lng: -122.3468, category: 'cafe' },
+      {
+        businessStatus: 'OPERATIONAL',
+        displayName: 'Third Avenue Cafe',
+        lat: 47.64312,
+        lng: -122.3468,
+      },
+    )
+    expect(r.action).toBe('stamp')
+  })
+
+  it('does NOT proximity-match a wholly different tenant at our pin', () => {
+    const r = classifyVenue(
+      { name: 'Canlis', lat: 47.6431, lng: -122.3468, category: 'restaurant' },
+      {
+        businessStatus: 'OPERATIONAL',
+        displayName: 'Joe Random Vape Shop',
+        lat: 47.6431,
+        lng: -122.3468,
+      },
+    )
+    expect(r.action).toBe('review')
+  })
+
+  it('never proximity-matches a closed venue (proximity is for confirming presence)', () => {
+    const r = classifyVenue(
+      { name: 'Canlis', lat: 47.6431, lng: -122.3468, category: 'restaurant' },
+      {
+        businessStatus: 'CLOSED_PERMANENTLY',
+        displayName: 'Canlis',
+        lat: 47.6431,
+        lng: -122.3468,
+      },
+    )
+    expect(r.verdict).toBe('closed') // still a normal matched closure, just not via proximity
+    expect(r.action).toBe('close')
+  })
+
+  it('matches a same-name park whose centroid is past the business gate (big footprint)', () => {
+    const r = classifyVenue(
+      {
+        name: 'Discovery Park',
+        lat: 47.6573,
+        lng: -122.4063,
+        category: 'park',
+      },
+      {
+        businessStatus: 'OPERATIONAL',
+        displayName: 'Discovery Park',
+        lat: 47.6606, // ~480m away — beyond the 400m business gate, within park slack
+        lng: -122.4063,
+      },
+    )
+    expect(r.matched).toBe(true)
+    expect(r.action).toBe('stamp')
+  })
+
   it('a closed but unmatched candidate does NOT auto-close', () => {
     const r = classifyVenue(v, {
       businessStatus: 'CLOSED_PERMANENTLY',
@@ -155,6 +239,88 @@ describe('shouldAutoClose', () => {
     ])
       expect(shouldAutoClose(c)).toBe(false)
     expect(shouldAutoClose(undefined)).toBe(false)
+  })
+})
+
+describe('decideMatch (shared decision core)', () => {
+  it('expands the distance gate for non-business categories (park past 400m)', () => {
+    expect(
+      decideMatch({
+        nameSim: 1,
+        distanceM: 520,
+        status: 'OPERATIONAL',
+        category: 'park',
+      }).action,
+    ).toBe('stamp')
+    // same distance, a business -> beyond its 400m gate -> review
+    expect(
+      decideMatch({
+        nameSim: 1,
+        distanceM: 520,
+        status: 'OPERATIONAL',
+        category: 'restaurant',
+      }).action,
+    ).toBe('review')
+  })
+  it('proximity override needs the name floor (rejects a different tenant on top of us)', () => {
+    expect(
+      decideMatch({
+        nameSim: 0,
+        distanceM: 5,
+        status: 'OPERATIONAL',
+        category: 'bar',
+      }).action,
+    ).toBe('review')
+  })
+  it('a temporarily-closed near match is watch, not a proximity stamp', () => {
+    expect(
+      decideMatch({
+        nameSim: 1,
+        distanceM: 5,
+        status: 'CLOSED_TEMPORARILY',
+        category: 'cafe',
+      }).action,
+    ).toBe('watch')
+  })
+})
+
+describe('classifyFromStored (offline reclassify, no re-fetch)', () => {
+  it('proximity-stamps a near operational record despite name noise', () => {
+    const rec = {
+      id: 'x',
+      candidateName: 'Third Avenue Cafe',
+      distanceM: 8,
+      businessStatus: 'OPERATIONAL',
+    }
+    const r = classifyFromStored(rec, {
+      name: '3rd Ave Cafe',
+      category: 'cafe',
+    })
+    expect(r.action).toBe('stamp')
+  })
+  it('leaves a far weak match as review', () => {
+    const rec = {
+      id: 'y',
+      candidateName: 'Occidental Square',
+      distanceM: 6772,
+      businessStatus: 'OPERATIONAL',
+    }
+    const r = classifyFromStored(rec, {
+      name: 'Accidental Park',
+      category: 'park',
+    })
+    expect(r.action).toBe('review')
+  })
+  it('passes a NOT_FOUND record through as not_found/review', () => {
+    const rec = {
+      id: 'z',
+      candidateName: null,
+      businessStatus: 'NOT_FOUND',
+      distanceM: null,
+    }
+    const r = classifyFromStored(rec, { name: 'Ghost Cafe', category: 'cafe' })
+    expect(r.verdict).toBe('not_found')
+    expect(r.action).toBe('review')
   })
 })
 
