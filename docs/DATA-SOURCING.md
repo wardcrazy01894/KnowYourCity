@@ -422,12 +422,17 @@ guesses outside fall off from the nearest edge (see PLAN.md §scoring).
 
 ```bash
 npm run add-polygons                 # all cities
-node scripts/add-polygons.mjs --city stpete          # one city
+node scripts/add-polygons.mjs --city chicago         # one city
+node scripts/add-polygons.mjs --city chicago --all   # ALSO benched park/golf rows
 node scripts/add-polygons.mjs --city stpete --dry-run   # show, don't write
 node scripts/add-polygons.mjs --force                # re-fetch existing polygons
 ```
 
-What it does, per in-play `park`/`golf_course` row without a `polygon`:
+By default only **in-play** park/golf rows are backfilled (the only ones the
+daily game scores). Pass **`--all`** to also map benched (`inPlay:false`) rows —
+useful so every footprint is mapped, and what all five cities were run with.
+
+What it does, per eligible `park`/`golf_course` row without a `polygon`:
 
 1. Queries Overpass for **ways + relations matching the row's `name`** within the
    city bbox, recursing into members (`(._;>;);`) and emitting **`out geom;`** —
@@ -477,23 +482,62 @@ without a polygon fall back to centroid scoring with the legacy 300 m freebie
 radius (`LARGE_FALLBACK_RADIUS_M`) so they don't regress.
 
 **When NOT to add a polygon.** Polygons exist to give *large* footprints a fair
-"inside = 100" target. A feature **smaller than the point freebie radius** (≈100 m)
-should stay a point: a polygon there has no freebie outside its edge, so it would
-make the location *harder* to score than the point fallback — the opposite of the
-intent. Tiny sub-features (a single ball diamond, a cluster of volleyball courts)
-therefore stay point-only on purpose.
+"inside = 100" target. Keep these as a **point** instead:
 
-The script is idempotent: without `--force` it skips rows that already have a
-`polygon`, so re-running only retries the misses (and is polite to the public
-Overpass mirrors — a 2 s delay between queries, with mirror fallback + retry).
+- **Buildings & indoor venues** (conservatories, fieldhouses, halls) — a
+  building-footprint polygon adds nothing for scoring. e.g. Garfield Park /
+  Oak Park Conservatory.
+- **Features smaller than the point freebie radius** (≈100 m) — a polygon has no
+  freebie outside its edge, so it would make the location *harder* to score than
+  the point fallback. e.g. a single ball diamond, a cluster of volleyball courts,
+  a small formal garden bed.
+- **Entities with no meaningful single footprint** — a county-wide body (Forest
+  Preserve District of Cook County), a room inside a conservatory (Palm House).
 
-**Current status (St. Pete): 26/28** eligible rows have polygons.
-- Five name-mismatch misses resolved via `NAME_OVERRIDES` (Mangrove Bay, Twin
-  Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens Landing).
-- Two stay **point-only by design**, not as bugs: **North Shore kickball fields**
-  (a ~30 m baseball diamond) and **volleyball courts** (six ~15 m sand courts) —
-  both smaller than the point freebie radius, so a polygon would only make them
-  harder (see "When NOT to add a polygon" above).
+These intentional point-only rows are recorded in
+**`data/point-only-by-design.json`** (per city, with a reason), which doubles as
+the "city is polygon-complete" signal: its `complete` array lists finished
+cities, and a guard test (`src/lib/locations.test.ts`) asserts every in-play
+park/golf in a complete city either has a polygon or is ledgered. To mark a city
+done: finish its backfill, ledger any genuine point-only rows, add the city id to
+`complete`.
+
+**Multi-block linear parks.** A long park split into blocks by cross-streets is
+stored in OSM as a multipolygon with many disjoint `outer` rings (e.g. Midway
+Plaisance = 19 blocks over ~1.6 km). The single-largest-ring rule (step 3) would
+grab only one block, so represent the whole corridor with a **convex hull** over
+all member geometry instead.
+
+The script is idempotent and **crash-safe / resumable**: without `--force` it
+skips rows that already have a `polygon`, and it **checkpoints to disk every 20
+matches** — so a killed or interrupted run keeps its progress and re-running the
+same command simply picks up the remaining rows. It's polite to the public
+Overpass mirrors (a 2 s delay between queries) and resilient under load: a
+**per-request abort timeout** keeps a hung mirror from stalling the whole run,
+and each mirror is **retried with backoff** (flagship first) before falling
+through to the next — so the flagship's 406/429 rate-limiting is ridden out
+rather than wasting time on overloaded mirrors.
+
+> **Big cities & rate limits.** Per-location querying of a very large city (e.g.
+> Chicago = 789 park/golf rows) can hit Overpass per-IP rate limits for hours. A
+> far faster, rate-limit-proof alternative is a **single bulk query** for all
+> named leisure/golf geometry in the city bbox (from any mirror), matched locally
+> with the same helpers (`filterByName → pickBestMatch → extractOuterRing →
+> simplifyToCap → finalizeRing`). Chicago was completed this way. Folding a bulk
+> mode into the script is a tracked follow-up.
+
+**Current status: all five cities are polygon-complete** (`complete` in
+`data/point-only-by-design.json`): St. Pete, State College, Ann Arbor, Seattle,
+Chicago. Every in-play `park`/`golf_course` has a polygon or is ledgered as
+point-only by design. Highlights:
+- **St. Pete**: five name-mismatch misses resolved via `NAME_OVERRIDES` (Mangrove
+  Bay, Twin Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens
+  Landing); North Shore kickball fields + volleyball courts stay point-only.
+- **Seattle**: Washington Park Arboretum pinned via `OSM_ELEMENT_OVERRIDES`
+  (relation 241864 — its centroid is >500 m from the stored point).
+- **Chicago**: completed via a bulk fetch; the conservatories + the Forest
+  Preserve District + Palm House are ledgered point-only; Midway Plaisance uses a
+  convex hull over its 19 blocks; Burnham Park pinned past the 500 m guard.
 
 **Manually-corrected polygons (owner playtest feedback).** Five St. Pete
 footprints the auto-extractor got wrong — the single-largest-ring rule (step 3)

@@ -92,8 +92,11 @@ process — landmark notability + food/drink curation rules — in
 **Polygon scoring:** large footprints (parks, golf courses, lakes) get a real
 `polygon` so a guess anywhere inside scores 100, with distance measured from the
 nearest edge outside it. `npm run add-polygons` backfills them from OpenStreetMap
-and flags any large location it couldn't match in
-`data/polygon-backfill-report.json`. Details in
+(add `--all` to also map benched rows); it's crash-safe and resumable (re-running
+picks up where it left off) and flags any miss in
+`data/polygon-backfill-report.json`. Buildings and small/no-footprint features
+stay points on purpose — recorded in `data/point-only-by-design.json`. **All five
+cities are polygon-complete.** Details in
 [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md) §4d and
 [`docs/PLAN.md`](docs/PLAN.md) §5.4.
 

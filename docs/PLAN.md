@@ -251,6 +251,12 @@ Footprints are backfilled offline by **`scripts/add-polygons.mjs`** (see
 DATA-SOURCING.md §4d) and shaded on the map at reveal (`MapGuess`). All radius
 constants are tunable after playtest.
 
+**Polygon coverage: all five cities are complete.** Every in-play
+`park`/`golf_course` either has a polygon or is deliberately point-only —
+buildings, sub-features smaller than the freebie radius, and no-single-footprint
+entities — recorded with a reason in **`data/point-only-by-design.json`** and
+guarded by a completeness test in `src/lib/locations.test.ts`.
+
 ### 5.5 Round flow (`Game`)
 `guessing` → submit → `revealed` (truth marker + distance line) → next →
 … → `finished` → `Results`. Resume mid-day from localStorage if the player
