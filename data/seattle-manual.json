@@ -1,0 +1,137 @@
+{
+  "note": "Curated manual adds/overrides for Seattle (re-adds of relocated venues verified at current location, 2026-06-17). Matching ids replace OSM candidates on a build-city rebuild.",
+  "locations": [
+    {
+      "id": "ant-gallery",
+      "name": "A/NT Gallery",
+      "lat": 47.6016053,
+      "lng": -122.3308584,
+      "category": "museum",
+      "clue": "A volunteer-run community art gallery, relocated to Pioneer Square.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "arepa-venezuelan-kitchen",
+      "name": "Arepa Venezuelan Kitchen",
+      "lat": 47.6616999,
+      "lng": -122.3181103,
+      "category": "restaurant",
+      "clue": "A University District spot for Venezuelan arepas.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "basilic",
+      "name": "Basilic",
+      "lat": 47.6242406,
+      "lng": -122.3565749,
+      "category": "restaurant",
+      "clue": "A Queen Anne Thai restaurant on Queen Anne Avenue North.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "berlin-wall-fragment",
+      "name": "Berlin Wall Fragment",
+      "lat": 47.6214962,
+      "lng": -122.3508725,
+      "category": "landmark",
+      "clue": "A genuine section of the Berlin Wall displayed at Seattle Center’s Armory.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "burritos-california",
+      "name": "Burritos California",
+      "lat": 47.6151065,
+      "lng": -122.318996,
+      "category": "restaurant",
+      "clue": "A Capitol Hill taqueria on East Pine Street.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "fairmount-park",
+      "name": "Fairmount Park",
+      "lat": 47.55301,
+      "lng": -122.3815,
+      "category": "park",
+      "clue": "A small wooded neighborhood park in West Seattle.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "lowlander-brewing",
+      "name": "Lowlander Brewing",
+      "lat": 47.5985491,
+      "lng": -122.3332623,
+      "category": "bar",
+      "clue": "A Pioneer Square brewery and beer hall on Occidental Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "loxsmith-bagels",
+      "name": "LoxSmith Bagels",
+      "lat": 47.5515779,
+      "lng": -122.3627263,
+      "category": "restaurant",
+      "clue": "A West Seattle bagel shop on Delridge Way.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "nasai-teriyaki",
+      "name": "Nasai Teriyaki",
+      "lat": 47.6600106,
+      "lng": -122.3133359,
+      "category": "restaurant",
+      "clue": "A long-running University Way teriyaki joint.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "un-po-tipsy-pizzeria",
+      "name": "Un Po Tipsy Pizzeria",
+      "lat": 47.5985491,
+      "lng": -122.3332623,
+      "category": "restaurant",
+      "clue": "A Pioneer Square pizzeria on Occidental Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "us-army-corps-of-engineers",
+      "name": "U.S. Army Corps of Engineers",
+      "lat": 47.5583319,
+      "lng": -122.3406341,
+      "category": "landmark",
+      "clue": "The Army Corps of Engineers Seattle District at Federal Center South.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    },
+    {
+      "id": "verve-bowls",
+      "name": "Verve Bowls",
+      "lat": 47.6100865,
+      "lng": -122.3406212,
+      "category": "restaurant",
+      "clue": "A downtown acai-bowl cafe on Pine Street.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL"
+    }
+  ]
+}

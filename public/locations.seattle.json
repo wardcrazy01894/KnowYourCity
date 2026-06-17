@@ -434,7 +434,7 @@
       "lat": 47.598242,
       "lng": -122.324272,
       "category": "restaurant",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "inPlay": true,
       "fameScore": 48,
       "clue": null,
@@ -1411,6 +1411,20 @@
       "lastVerified": "2026-06-16"
     },
     {
+      "id": "ant-gallery",
+      "name": "A/NT Gallery",
+      "lat": 47.6016053,
+      "lng": -122.3308584,
+      "category": "museum",
+      "inPlay": false,
+      "fameScore": 24,
+      "clue": "A volunteer-run community art gallery, relocated to Pioneer Square.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
       "id": "anthonys-bell-street-diner",
       "name": "Anthony's Bell Street Diner",
       "lat": 47.610762,
@@ -1549,6 +1563,21 @@
         [47.61854, -122.32522],
         [47.61857, -122.32537]
       ]
+    },
+    {
+      "id": "arepa-venezuelan-kitchen",
+      "name": "Arepa Venezuelan Kitchen",
+      "lat": 47.6616999,
+      "lng": -122.3181103,
+      "category": "restaurant",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 54,
+      "clue": "A University District spot for Venezuelan arepas.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "argosy-cruises",
@@ -2714,6 +2743,20 @@
       "lastVerified": "2026-06-17"
     },
     {
+      "id": "basilic",
+      "name": "Basilic",
+      "lat": 47.6242406,
+      "lng": -122.3565749,
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 42,
+      "clue": "A Queen Anne Thai restaurant on Queen Anne Avenue North.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
       "id": "batch-baking-company",
       "name": "Batch Baking Company",
       "lat": 47.60954,
@@ -3157,6 +3200,20 @@
         [47.66856, -122.38459],
         [47.66832, -122.38427]
       ]
+    },
+    {
+      "id": "berlin-wall-fragment",
+      "name": "Berlin Wall Fragment",
+      "lat": 47.6214962,
+      "lng": -122.3508725,
+      "category": "landmark",
+      "inPlay": false,
+      "fameScore": 7,
+      "clue": "A genuine section of the Berlin Wall displayed at Seattle Center’s Armory.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "berliner-doner-kebab",
@@ -4305,6 +4362,20 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
       "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "burritos-california",
+      "name": "Burritos California",
+      "lat": 47.6151065,
+      "lng": -122.318996,
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 44,
+      "clue": "A Capitol Hill taqueria on East Pine Street.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "busanjeong",
@@ -9660,6 +9731,20 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
+      "id": "fairmount-park",
+      "name": "Fairmount Park",
+      "lat": 47.55301,
+      "lng": -122.3815,
+      "category": "park",
+      "inPlay": false,
+      "fameScore": 20,
+      "clue": "A small wooded neighborhood park in West Seattle.",
+      "photoUrl": null,
+      "source": "manual",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
     },
@@ -17614,6 +17699,34 @@
       "lastVerified": "2026-06-16"
     },
     {
+      "id": "lowlander-brewing",
+      "name": "Lowlander Brewing",
+      "lat": 47.5985491,
+      "lng": -122.3332623,
+      "category": "bar",
+      "inPlay": false,
+      "fameScore": 22,
+      "clue": "A Pioneer Square brewery and beer hall on Occidental Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
+      "id": "loxsmith-bagels",
+      "name": "LoxSmith Bagels",
+      "lat": 47.5515779,
+      "lng": -122.3627263,
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 28,
+      "clue": "A West Seattle bagel shop on Delridge Way.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
       "id": "loyal-heights-playfield",
       "name": "Loyal Heights Playfield",
       "lat": 47.684107,
@@ -20667,6 +20780,20 @@
         [47.57932, -122.39691],
         [47.57973, -122.39691]
       ]
+    },
+    {
+      "id": "nasai-teriyaki",
+      "name": "Nasai Teriyaki",
+      "lat": 47.6600106,
+      "lng": -122.3133359,
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 36,
+      "clue": "A long-running University Way teriyaki joint.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "national-nordic-museum",
@@ -25660,8 +25787,7 @@
       "lat": 47.659455,
       "lng": -122.34962,
       "category": "restaurant",
-      "difficulty": "hard",
-      "inPlay": true,
+      "inPlay": false,
       "fameScore": 44,
       "clue": null,
       "photoUrl": null,
@@ -33364,6 +33490,20 @@
       "lastVerified": "2026-06-16"
     },
     {
+      "id": "un-po-tipsy-pizzeria",
+      "name": "Un Po Tipsy Pizzeria",
+      "lat": 47.5985491,
+      "lng": -122.3332623,
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 22,
+      "clue": "A Pioneer Square pizzeria on Occidental Avenue.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
       "id": "underbelly",
       "name": "Underbelly",
       "lat": 47.601001,
@@ -33804,6 +33944,20 @@
       ]
     },
     {
+      "id": "us-army-corps-of-engineers",
+      "name": "U.S. Army Corps of Engineers",
+      "lat": 47.5583319,
+      "lng": -122.3406341,
+      "category": "landmark",
+      "inPlay": false,
+      "fameScore": 14,
+      "clue": "The Army Corps of Engineers Seattle District at Federal Center South.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
       "id": "vacil-salvadoreno-taco-loco",
       "name": "Vacil Salvadoreño Taco Loco",
       "lat": 47.67082,
@@ -33941,6 +34095,20 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
+    },
+    {
+      "id": "verve-bowls",
+      "name": "Verve Bowls",
+      "lat": 47.6100865,
+      "lng": -122.3406212,
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 38,
+      "clue": "A downtown acai-bowl cafe on Pine Street.",
+      "photoUrl": null,
+      "source": "manual",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
     },

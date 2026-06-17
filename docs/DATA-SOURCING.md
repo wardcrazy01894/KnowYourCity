@@ -419,8 +419,9 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c, post full-vetting): St. Pete (370 → **370**), State College (227 → **200**),
-Ann Arbor (337 → **300**), Seattle (2294 → **500**), Chicago (4149 → **700**) —
-all enriched.
+Ann Arbor (337 → **300**), Seattle (2304 → **500**), Chicago (4149 → **700**) —
+all enriched. (Seattle gained back 12 relocated venues re-added at their verified
+current in-bounds location — see `data/seattle-manual.json`.)
 
 ### Adding food/drink — `npm run fetch-food`
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
