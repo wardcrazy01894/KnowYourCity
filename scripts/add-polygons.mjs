@@ -884,8 +884,8 @@ const OSM_ELEMENT_OVERRIDES = {
  * rows, and write the updated file (unless --dry-run).
  *
  * @param {{ id: string, bounds: [[number,number],[number,number]] }} city
- * @param {{ dryRun: boolean, force: boolean }} opts
- * @returns {Promise<void>}
+ * @param {{ dryRun: boolean, force: boolean, includeBenched: boolean }} opts
+ * @returns {Promise<{ city: string, eligible: number, withPolygon: number, matched: number, misses: object[] }>}
  *
  * [M-C1]
  */

@@ -57,6 +57,12 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       entries; maintain a per-city ban list / extend `CLOSED`. (St. Pete swept by
       the fame+status pass in PR #40 — 133 closed/junk removed; the other cities
       get the same sweep as part of their difficulty rollout above.)
+- [ ] **Bulk-fetch mode for `add-polygons`.** Per-location querying hits Overpass
+      per-IP rate limits on large cities (Chicago = 789 rows, hours). A single
+      bulk query for all named leisure/golf geometry in the city bbox, matched
+      locally with the existing helpers, is dramatically faster and rate-limit-
+      proof — Chicago was completed this way as a one-off. Fold it into the script
+      (with tests). See `docs/DATA-SOURCING.md` §4d.
 - [ ] **Strip OSM code-prefixed display names in the pipeline.** Some OSM nodes
       carry a survey-code prefix glued to the name (Chicago had `KE34-Cubs`,
       `KE14-The Cubby Bear`, `KE37-Harry Caray's`, `IC6-Gerald J Roper Gateway` —

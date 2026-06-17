@@ -537,7 +537,8 @@ point-only by design. Highlights:
   (relation 241864 — its centroid is >500 m from the stored point).
 - **Chicago**: completed via a bulk fetch; the conservatories + the Forest
   Preserve District + Palm House are ledgered point-only; Midway Plaisance uses a
-  convex hull over its 19 blocks; Burnham Park pinned past the 500 m guard.
+  convex hull over its 19 blocks; Burnham Park assigned its real ring despite a
+  centroid ~530 m from the row point (just past the 500 m proximity guard).
 
 **Manually-corrected polygons (owner playtest feedback).** Five St. Pete
 footprints the auto-extractor got wrong — the single-largest-ring rule (step 3)
