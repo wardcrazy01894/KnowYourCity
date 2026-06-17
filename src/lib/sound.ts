@@ -11,6 +11,10 @@
  */
 
 import { log } from './log'
+// A short CC0 crowd cheer + applause clip (public domain, BigSoundBank) — real
+// recorded applause reads far better than synthesis. Vite fingerprints + bundles
+// it from this import; the URL is resolved at build time.
+import cheerUrl from '../assets/cheer.mp3'
 
 export type ScoreTier = 'perfect' | 'good' | 'mid' | 'womp'
 
@@ -114,5 +118,31 @@ export function playScoreSound(score: number): void {
     }
   } catch (e) {
     log.warn('sound', 'playback failed', { error: String(e) })
+  }
+}
+
+// Lazily-constructed, reused element so the clip is fetched/decoded at most once.
+let cheerAudio: HTMLAudioElement | null = null
+
+/**
+ * Play the crowd cheer + applause for a strong finish (see lib/celebrate.ts).
+ * No-op if muted or without an Audio element (tests/SSR). Restarts from the top
+ * if it's somehow already playing, and swallows the autoplay-policy rejection
+ * (the results screen is reached via a click, so playback is normally allowed).
+ */
+export function playCheer(): void {
+  if (isMuted()) return
+  if (typeof Audio === 'undefined') return
+  try {
+    if (!cheerAudio) {
+      cheerAudio = new Audio(cheerUrl)
+      cheerAudio.volume = 0.7
+    }
+    cheerAudio.currentTime = 0
+    void cheerAudio.play().catch((e) => {
+      log.warn('sound', 'cheer playback blocked', { error: String(e) })
+    })
+  } catch (e) {
+    log.warn('sound', 'cheer playback failed', { error: String(e) })
   }
 }

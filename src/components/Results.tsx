@@ -5,11 +5,15 @@
  * current/best streak, and a "Copy result" button.
  */
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { RoundResult } from '../types'
 import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
 import { ROUNDS_PER_DAY } from '../lib/daily'
 import { log } from '../lib/log'
+import { shouldCelebrate, countGreens } from '../lib/celebrate'
+import { isCelebrateTest } from '../lib/devmode'
+import { fireConfetti } from '../lib/confetti'
+import { playCheer } from '../lib/sound'
 import { loadState } from '../lib/storage'
 import {
   submitDailyScore,
@@ -139,6 +143,37 @@ export function Results({
     // Submit once for this finished day; inputs are stable for a given render.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Celebrate a strong finish (4+ greens or a total over 400): confetti + a crowd
+  // cheer, once when the results screen first mounts. Confetti is visual so it
+  // ignores the mute toggle; the cheer is gated by mute inside playCheer(). The
+  // ref guard makes it fire exactly once even under StrictMode's dev double-mount
+  // (so it also can't be re-forced by `?celebrate` mid-lifetime — fine for a
+  // preview flag). cancelConfetti stops the shower when the leaderboard opens.
+  const celebratedRef = useRef(false)
+  const cancelConfettiRef = useRef<(() => void) | null>(null)
+  useEffect(() => {
+    if (celebratedRef.current) return
+    // `?celebrate` forces it on for previewing/tuning (see lib/devmode.ts).
+    const forced = isCelebrateTest(window.location.search)
+    if (!forced && !shouldCelebrate(results, totalScore)) return
+    celebratedRef.current = true
+    log.info('Results', 'celebrating strong finish', {
+      greens: countGreens(results),
+      totalScore,
+    })
+    cancelConfettiRef.current = fireConfetti()
+    playCheer()
+    // Fire once on mount; results/totalScore are fixed for this finished day.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  /** Open the leaderboard, first stopping any still-raining confetti shower. */
+  function openBoard() {
+    cancelConfettiRef.current?.()
+    setShowBoard(true)
+  }
+
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   // Compute once so the copied text and the preview below can never diverge.
   const shareText = buildShareString(
@@ -227,7 +262,7 @@ export function Results({
         </button>
         {LEADERBOARD_ENABLED && (
           <button
-            onClick={() => setShowBoard(true)}
+            onClick={openBoard}
             style={{
               padding: '10px 16px',
               fontSize: 16,

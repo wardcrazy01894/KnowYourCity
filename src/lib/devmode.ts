@@ -13,6 +13,8 @@
  *                Never official (off the leaderboard); see App.resolveMode.
  *   ?polygons=id1,id2 → same round restricted to those location ids (re-check
  *                a few specific boundaries without playing all of them).
+ *   ?celebrate → force the strong-finish celebration (confetti + cheer) on the
+ *                results screen regardless of score, to preview/tune it.
  *
  * All helpers are pure (take the location.search string) so they're testable.
  */
@@ -27,6 +29,15 @@ export function shouldStartFresh(search: string): boolean {
 export function shouldShuffle(search: string): boolean {
   const p = new URLSearchParams(search)
   return p.has('shuffle') || p.has('random')
+}
+
+/**
+ * True for the `?celebrate` dev flag — forces the results-screen celebration
+ * (confetti + cheer) regardless of score, so it can be previewed and tuned
+ * without having to actually play a strong game.
+ */
+export function isCelebrateTest(search: string): boolean {
+  return new URLSearchParams(search).has('celebrate')
 }
 
 /**
