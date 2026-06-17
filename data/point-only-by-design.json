@@ -1,7 +1,11 @@
 {
   "comment": "Polygon completion ledger. `complete` lists cities whose park/golf polygon backfill is FINISHED — for those, the guard test asserts every in-play park/golf either has a polygon or is listed under `cities` below. `cities` records the in-play park/golf rows DELIBERATELY left point-scored: sub-facilities or features with no distinct OpenStreetMap boundary, where a polygon would be unavailable or wrong (e.g. it would balloon the scoring area to a whole park/arboretum). To mark a city done: finish its backfill, ledger any genuine point-only rows, then add the city id to `complete`. Chicago is intentionally absent — its backfill is still TODO.",
-  "complete": ["annarbor", "seattle", "statecollege", "stpete"],
+  "complete": ["annarbor", "chicago", "seattle", "statecollege", "stpete"],
   "cities": {
+    "chicago": {
+      "forest-preserve-district-of-cook-county": "A county-wide entity (the entire Forest Preserve District), not a single guessable site. Its OSM boundary spans all of Cook County; a polygon would make the answer area absurd. Point scoring is correct.",
+      "palm-house": "A glasshouse room inside Garfield Park Conservatory with no distinct OSM boundary. Point scoring is correct."
+    },
     "stpete": {
       "north-shore-volleyball-courts": "Volleyball courts inside North Shore Park (which has its own polygon). OSM has no named boundary for the courts; point scoring is correct.",
       "north-shore-kickball-fields": "Kickball fields inside North Shore Park (which has its own polygon). OSM has no named boundary for the fields; point scoring is correct."

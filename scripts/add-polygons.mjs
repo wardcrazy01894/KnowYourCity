@@ -125,17 +125,22 @@ const OVERPASS_ENDPOINTS = [
 /** Delay between individual location queries (ms) to avoid throttling. */
 const QUERY_DELAY_MS = 2000
 
-/** How many full passes over the endpoint set to make before giving up a query. */
-const MAX_FETCH_ROUNDS = 2
+/** Per-endpoint retry budget. The flagship rate-limits a fast cadence (HTTP
+ *  406/429 in <1s) but recovers within a couple seconds, so retrying IT with
+ *  backoff lands a valid response far cheaper than falling straight to the
+ *  overloaded secondary mirrors (which accept-then-hang for the full timeout).
+ *  Only after a mirror fails every attempt do we move to the next. */
+const ATTEMPTS_PER_ENDPOINT = 3
+const RETRY_BACKOFF_MS = 2500
 
 /** Per-request timeout (ms). Overpass mirrors sometimes accept a connection then
  *  hang indefinitely; without a client-side abort, `fetch` waits forever and the
  *  whole run stalls on one row (the bug that made Chicago crawl). Abort after
- *  this and fall back to the next mirror. (The server-side `[timeout:90]` in the
- *  query only bounds query EXECUTION, not a dead/hung socket.) Kept short: when
- *  the flagship 429s and the secondary mirrors are overloaded (they accept then
- *  hang), a long timeout makes every throttled row cost ~timeout × mirrors. */
-const FETCH_TIMEOUT_MS = 8000
+ *  this. Long enough to let a busy-but-working flagship return a slow valid
+ *  response (peak responses can take 10-30s), short enough to abandon a hung
+ *  socket — and we mostly stay on the fast flagship via the retry budget above,
+ *  so this only bites on a genuinely dead mirror. */
+const FETCH_TIMEOUT_MS = 25000
 
 /** Write the dataset back every N newly-matched rows so a long, rate-limited run
  *  is crash-safe and resumable: a killed run keeps its progress, and re-running
@@ -160,12 +165,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 async function fetchOverpass(query) {
   let lastErr
-  // Try the mirrors in reliability order (flagship first). On a 429/busy/timeout
-  // we move to the NEXT mirror immediately (no point retrying a throttled or
-  // hung one in place), and only back off between full rounds. This drains far
-  // less wall-clock than hammering one endpoint 4× with escalating sleeps.
-  for (let round = 1; round <= MAX_FETCH_ROUNDS; round++) {
-    for (const endpoint of OVERPASS_ENDPOINTS) {
+  // Mirrors in reliability order (flagship first). Retry EACH endpoint with
+  // backoff before moving on: the flagship rate-limits a fast cadence (406/429)
+  // but recovers in a couple seconds, so a retry there is far cheaper than
+  // falling to the overloaded secondary mirrors. Only after an endpoint fails
+  // every attempt do we drop to the next one.
+  for (const endpoint of OVERPASS_ENDPOINTS) {
+    for (let attempt = 1; attempt <= ATTEMPTS_PER_ENDPOINT; attempt++) {
       try {
         const res = await fetch(endpoint, {
           method: 'POST',
@@ -199,12 +205,14 @@ async function fetchOverpass(query) {
       } catch (err) {
         lastErr = err
         console.warn(
-          `  ${endpoint} failed (round ${round}/${MAX_FETCH_ROUNDS}): ${err.message}`,
+          `  ${endpoint} attempt ${attempt}/${ATTEMPTS_PER_ENDPOINT}: ${err.message}`,
         )
+        // Back off before retrying the SAME endpoint (lets a rate-limited
+        // flagship recover); no sleep before falling to the next endpoint.
+        if (attempt < ATTEMPTS_PER_ENDPOINT)
+          await sleep(attempt * RETRY_BACKOFF_MS)
       }
     }
-    // Every mirror failed this round — back off before another full pass.
-    if (round < MAX_FETCH_ROUNDS) await sleep(round * 4000)
   }
   throw lastErr ?? new Error('All Overpass endpoints failed')
 }
