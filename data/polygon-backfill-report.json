@@ -1,18 +1,9 @@
 {
-  "generatedFrom": "annarbor",
+  "generatedFrom": "statecollege",
   "dryRun": false,
-  "totalEligible": 109,
-  "totalWithPolygon": 108,
-  "totalPointOnly": 1,
-  "newMatchesThisRun": 108,
-  "pointOnly": [
-    {
-      "id": "heathdale-collection",
-      "name": "Heathdale Collection",
-      "city": "annarbor",
-      "lat": 42.280955,
-      "lng": -83.723782,
-      "reason": "no-match"
-    }
-  ]
+  "totalEligible": 50,
+  "totalWithPolygon": 50,
+  "totalPointOnly": 0,
+  "newMatchesThisRun": 17,
+  "pointOnly": []
 }

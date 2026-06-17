@@ -3,6 +3,7 @@ import type { LocationsFile } from '../types'
 import { ROUNDS_PER_DAY, selectDailyLocations } from './daily'
 import { CITIES } from './cities'
 import { DAILY_OVERRIDES } from '../data/dailyOverrides'
+import pointOnlyByDesign from '../../data/point-only-by-design.json'
 import stpete from '../../public/locations.stpete.json'
 import statecollege from '../../public/locations.statecollege.json'
 import annarbor from '../../public/locations.annarbor.json'
@@ -245,4 +246,72 @@ describe('DAILY_OVERRIDES — integration', () => {
       ).toEqual([...ids])
     }
   })
+})
+
+// The point-only-by-design ledger (data/point-only-by-design.json) records the
+// in-play park/golf rows we DELIBERATELY leave without a polygon (sub-facilities
+// or features with no distinct OSM boundary). It's the "checked off as done"
+// signal: a city's polygons are complete when every in-play park/golf either has
+// a polygon or is listed here. This guard keeps the ledger honest so it can't
+// quietly drift — every listed id must still be a real, in-play park/golf that
+// lacks a polygon (if one ever gets a polygon, drop it from the ledger).
+describe('point-only-by-design ledger', () => {
+  const POLY_CATS = new Set(['park', 'golf_course'])
+  const cities = pointOnlyByDesign.cities as Record<
+    string,
+    Record<string, string>
+  >
+
+  for (const [cityId, entries] of Object.entries(cities)) {
+    it(`${cityId}: every listed id is a real, in-play park/golf still lacking a polygon`, () => {
+      const data = DATASETS[cityId]
+      expect(data, `ledger names unknown city "${cityId}"`).toBeTruthy()
+      const byId = new Map(data.locations.map((l) => [l.id, l]))
+      for (const [id, reason] of Object.entries(entries)) {
+        expect(reason, `${cityId}:${id} needs a reason`).toBeTruthy()
+        const loc = byId.get(id)
+        expect(loc, `${cityId}: ledger id "${id}" not in dataset`).toBeTruthy()
+        if (!loc) continue
+        expect(
+          loc.inPlay !== false,
+          `${cityId}: "${id}" is benched — the ledger is for in-play rows only`,
+        ).toBe(true)
+        expect(
+          POLY_CATS.has(loc.category),
+          `${cityId}: "${id}" is ${loc.category}, not a park/golf_course`,
+        ).toBe(true)
+        expect(
+          !(Array.isArray(loc.polygon) && loc.polygon.length > 0),
+          `${cityId}: "${id}" now HAS a polygon — remove it from the ledger`,
+        ).toBe(true)
+      }
+    })
+  }
+
+  // Completeness: for every city flagged `complete`, the polygon backfill is
+  // FINISHED — so every in-play park/golf must EITHER have a polygon or be
+  // ledgered above. This is the "checked off as done" contract; it goes red if
+  // a later dataset change adds an in-play park/golf to a done city without a
+  // polygon (and without a ledger entry). Chicago is deliberately NOT in
+  // `complete` (its backfill is still TODO), so its gaps don't fail here.
+  for (const cityId of pointOnlyByDesign.complete as string[]) {
+    it(`${cityId}: is polygon-complete (every in-play park/golf has a polygon or is ledgered)`, () => {
+      const data = DATASETS[cityId]
+      expect(data, `complete names unknown city "${cityId}"`).toBeTruthy()
+      const ledgered = new Set(Object.keys(cities[cityId] ?? {}))
+      const gaps = data.locations.filter(
+        (l) =>
+          l.inPlay !== false &&
+          POLY_CATS.has(l.category) &&
+          !(Array.isArray(l.polygon) && l.polygon.length > 0) &&
+          !ledgered.has(l.id),
+      )
+      expect(
+        gaps.length,
+        `${cityId}: ${gaps.length} in-play park/golf lack a polygon and aren't ledgered: ${gaps
+          .map((g) => g.id)
+          .join(', ')}`,
+      ).toBe(0)
+    })
+  }
 })

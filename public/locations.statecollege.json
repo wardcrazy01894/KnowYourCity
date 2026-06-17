@@ -248,7 +248,19 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-16",
+      "polygon": [
+        [40.80575, -77.86964],
+        [40.80565, -77.86979],
+        [40.80522, -77.8699],
+        [40.80499, -77.87027],
+        [40.80437, -77.86859],
+        [40.80512, -77.86804],
+        [40.80537, -77.86844],
+        [40.80552, -77.86819],
+        [40.8056, -77.86858],
+        [40.80537, -77.86908]
+      ]
     },
     {
       "id": "beijing-osaka",
@@ -547,7 +559,13 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.81, -77.82086],
+        [40.81024, -77.82066],
+        [40.81007, -77.82021],
+        [40.80982, -77.82053]
+      ]
     },
     {
       "id": "canyon-pizza",
@@ -1312,7 +1330,13 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.80824, -77.82167],
+        [40.8077, -77.82084],
+        [40.80728, -77.82121],
+        [40.80805, -77.82226]
+      ]
     },
     {
       "id": "good-day-cafe",
@@ -1415,7 +1439,13 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.77966, -77.81725],
+        [40.77864, -77.81733],
+        [40.77913, -77.81794],
+        [40.77928, -77.81792]
+      ]
     },
     {
       "id": "hawaiian-poke-bowl-pho-cafe",
@@ -1939,7 +1969,19 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.81387, -77.88796],
+        [40.81343, -77.88895],
+        [40.81307, -77.88945],
+        [40.81409, -77.89048],
+        [40.8143, -77.88991],
+        [40.81521, -77.88854],
+        [40.81466, -77.88773],
+        [40.8145, -77.88795],
+        [40.81406, -77.88755],
+        [40.81396, -77.88787]
+      ]
     },
     {
       "id": "martin-luther-king-jr-memorial",
@@ -2087,7 +2129,21 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.8126, -77.81043],
+        [40.81234, -77.81225],
+        [40.81268, -77.81223],
+        [40.8124, -77.81378],
+        [40.81248, -77.81486],
+        [40.81356, -77.81472],
+        [40.8136, -77.81404],
+        [40.81354, -77.81352],
+        [40.8134, -77.81309],
+        [40.81347, -77.81277],
+        [40.81325, -77.81204],
+        [40.81322, -77.8102]
+      ]
     },
     {
       "id": "nittany-lion-softball-park",
@@ -2117,7 +2173,15 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-16",
+      "polygon": [
+        [40.80708, -77.81512],
+        [40.80675, -77.81357],
+        [40.80597, -77.81462],
+        [40.80549, -77.81511],
+        [40.80587, -77.81619],
+        [40.80666, -77.81549]
+      ]
     },
     {
       "id": "nittany-village-park",
@@ -2132,7 +2196,14 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-16",
+      "polygon": [
+        [40.78387, -77.84471],
+        [40.78338, -77.84417],
+        [40.78388, -77.84348],
+        [40.78393, -77.8435],
+        [40.78389, -77.84448]
+      ]
     },
     {
       "id": "oak-grove-park",
@@ -2145,7 +2216,13 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.79968, -77.82254],
+        [40.79841, -77.8228],
+        [40.79966, -77.82422],
+        [40.79981, -77.82388]
+      ]
     },
     {
       "id": "oakwood-park",
@@ -2351,7 +2428,32 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.79508, -77.89943],
+        [40.795, -77.89896],
+        [40.79483, -77.89859],
+        [40.79361, -77.8974],
+        [40.79368, -77.89725],
+        [40.79456, -77.89803],
+        [40.79473, -77.89774],
+        [40.79477, -77.89778],
+        [40.79462, -77.89808],
+        [40.79563, -77.8991],
+        [40.79607, -77.89869],
+        [40.7961, -77.89876],
+        [40.79567, -77.89914],
+        [40.79625, -77.89981],
+        [40.79704, -77.89998],
+        [40.79746, -77.90039],
+        [40.79774, -77.90005],
+        [40.79751, -77.90043],
+        [40.79787, -77.90138],
+        [40.79769, -77.9015],
+        [40.79737, -77.90063],
+        [40.79696, -77.9002],
+        [40.79508, -77.9001]
+      ]
     },
     {
       "id": "patterson-gallery",
@@ -2421,7 +2523,13 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.81049, -77.84837],
+        [40.81035, -77.84838],
+        [40.81033, -77.84819],
+        [40.81041, -77.84828]
+      ]
     },
     {
       "id": "penn-steaks",
@@ -2704,7 +2812,14 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.7974, -77.85928],
+        [40.79743, -77.85949],
+        [40.7973, -77.85954],
+        [40.79724, -77.85938],
+        [40.79737, -77.85926]
+      ]
     },
     {
       "id": "science-technology-and-society",
@@ -2751,7 +2866,17 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.79899, -77.83486],
+        [40.79891, -77.83491],
+        [40.7987, -77.83439],
+        [40.79841, -77.83457],
+        [40.79792, -77.83361],
+        [40.79896, -77.83304],
+        [40.79915, -77.83411],
+        [40.7988, -77.83433]
+      ]
     },
     {
       "id": "sharkies-bar",
@@ -2920,7 +3045,14 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.79116, -77.84355],
+        [40.79167, -77.84297],
+        [40.79142, -77.84255],
+        [40.79103, -77.84221],
+        [40.79064, -77.84293]
+      ]
     },
     {
       "id": "snap-custom-pizza",
@@ -2948,7 +3080,26 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.7787, -77.87631],
+        [40.77892, -77.87624],
+        [40.77879, -77.87609],
+        [40.779, -77.87574],
+        [40.77959, -77.87621],
+        [40.77925, -77.87625],
+        [40.77905, -77.87651],
+        [40.77904, -77.87673],
+        [40.7792, -77.87677],
+        [40.77901, -77.87711],
+        [40.7796, -77.87761],
+        [40.78012, -77.87855],
+        [40.77972, -77.87913],
+        [40.77916, -77.87865],
+        [40.77889, -77.87901],
+        [40.77731, -77.87681],
+        [40.77809, -77.87654]
+      ]
     },
     {
       "id": "sora-teriyaki-sushi",
@@ -2991,7 +3142,17 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [40.78382, -77.84996],
+        [40.78407, -77.84962],
+        [40.78399, -77.84941],
+        [40.78405, -77.84934],
+        [40.7842, -77.84947],
+        [40.78444, -77.84937],
+        [40.78465, -77.85068],
+        [40.78451, -77.8507]
+      ]
     },
     {
       "id": "sowers-harvest-cafe",
@@ -3827,7 +3988,15 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-16",
+      "polygon": [
+        [40.78501, -77.85215],
+        [40.78508, -77.85248],
+        [40.78382, -77.85477],
+        [40.78306, -77.85377],
+        [40.78345, -77.85332],
+        [40.78475, -77.85235]
+      ]
     },
     {
       "id": "white-course",

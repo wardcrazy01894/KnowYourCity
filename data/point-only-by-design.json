@@ -1,0 +1,13 @@
+{
+  "comment": "Polygon completion ledger. `complete` lists cities whose park/golf polygon backfill is FINISHED — for those, the guard test asserts every in-play park/golf either has a polygon or is listed under `cities` below. `cities` records the in-play park/golf rows DELIBERATELY left point-scored: sub-facilities or features with no distinct OpenStreetMap boundary, where a polygon would be unavailable or wrong (e.g. it would balloon the scoring area to a whole park/arboretum). To mark a city done: finish its backfill, ledger any genuine point-only rows, then add the city id to `complete`. Chicago is intentionally absent — its backfill is still TODO.",
+  "complete": ["annarbor", "seattle", "statecollege", "stpete"],
+  "cities": {
+    "stpete": {
+      "north-shore-volleyball-courts": "Volleyball courts inside North Shore Park (which has its own polygon). OSM has no named boundary for the courts; point scoring is correct.",
+      "north-shore-kickball-fields": "Kickball fields inside North Shore Park (which has its own polygon). OSM has no named boundary for the fields; point scoring is correct."
+    },
+    "annarbor": {
+      "heathdale-collection": "A plant collection inside Nichols Arboretum with no distinct OSM boundary. Forcing the arboretum polygon would make the answer area wrong; point scoring is correct."
+    }
+  }
+}
