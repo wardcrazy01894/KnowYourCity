@@ -292,8 +292,9 @@ describe('point-only-by-design ledger', () => {
   // FINISHED — so every in-play park/golf must EITHER have a polygon or be
   // ledgered above. This is the "checked off as done" contract; it goes red if
   // a later dataset change adds an in-play park/golf to a done city without a
-  // polygon (and without a ledger entry). Chicago is deliberately NOT in
-  // `complete` (its backfill is still TODO), so its gaps don't fail here.
+  // polygon (and without a ledger entry). All five cities are currently in
+  // `complete`; a city is only added once its backfill is finished and any
+  // genuine point-only rows are ledgered.
   for (const cityId of pointOnlyByDesign.complete as string[]) {
     it(`${cityId}: is polygon-complete (every in-play park/golf has a polygon or is ledgered)`, () => {
       const data = DATASETS[cityId]
