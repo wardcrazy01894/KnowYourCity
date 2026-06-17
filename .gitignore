@@ -21,5 +21,12 @@ data/_*-fame-work/
 # Scratch dir created by scripts during local runs (e.g. node compile cache).
 scripts/tmp/
 
+# Transient Google Places freshness-sweep results (scripts/places-freshness.mjs).
+# Holds Google-derived fields used only during a run; per Places ToS we don't
+# persist them — the committed artifacts are the lastVerified stamps + status
+# changes the apply step writes, not this.
+data/.places-*.jsonl
+data/.places-*-report.md
+
 # Local Wrangler state — local D1 SQLite, KV, caches for `wrangler dev`.
 .wrangler/

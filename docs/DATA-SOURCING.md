@@ -350,6 +350,25 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
 > The field lives in the public dataset only (not the fame cache) and survives
 > re-runs via `FIELD_ORDER`. Permanently-closed venues found in the pass are
 > removed the usual way (`status: closed` in the fame cache → dropped).
+>
+> **Tooling.** The sweep is scripted and resumable:
+> `node scripts/places-freshness.mjs --city <id>` queries Places (New) Text
+> Search for every row **missing `lastVerified`** (in-play *and* benched) and
+> streams a classification per venue to a gitignored scratch JSONL
+> (`data/.places-<id>.jsonl`) — re-run to resume; pass `--limit N` to sample.
+> Then `node scripts/places-apply.mjs --city <id>` stamps the confidently-matched
+> OPERATIONAL rows, sets `status: closed` for confidently-matched
+> `CLOSED_PERMANENTLY` ones, leaves `CLOSED_TEMPORARILY` unstamped (watch-list),
+> and writes a `…-report.md` listing closures, the watch-list, **ambiguous /
+> not-found rows to review** (streets and large multi-block parks land here when
+> Google's centroid is >400 m from our pin — never auto-closed), and **fame-drift
+> flags** (review-count swings worth a per-venue recalibration — reported only,
+> never auto-applied; `fameScore` is a curated rubric, not a formula). Finish with
+> `node scripts/apply-difficulty.mjs <id>` to drop closures and recompute the cap.
+> Per Google's ToS the scratch JSONL/report (which hold Google-derived fields) are
+> gitignored — only the boolean outcome (stamp/close) and date are committed. The
+> matching/classification rules are pure + unit-tested in
+> `scripts/places-freshness-lib.mjs`.
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
