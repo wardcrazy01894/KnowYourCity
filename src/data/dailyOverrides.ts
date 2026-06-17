@@ -1,7 +1,12 @@
 /**
  * Hand-curated daily overrides — keyed by selectionSeed ("cityId:YYYY-MM-DD").
- * When a key matches, selectDailyLocations returns these IDs in round order
- * (easy, easy, medium, medium, hard) instead of the PRNG selection.
+ * When a key matches, selectDailyLocations returns these IDs verbatim and in
+ * the listed order instead of running the PRNG selection.
+ *
+ * Order is whatever the curator chooses — it is NOT required to follow the
+ * easy/easy/medium/medium/hard ramp. Most entries do (it makes a nicer day),
+ * but a block may intentionally deviate (e.g. the Seattle Jun 17–23 run below
+ * is all-easy). Do not assume difficulty from slot position.
  *
  * To add more overrides: append entries in the same format and re-deploy.
  * To expire old ones: leave them in place (they never match after the date
