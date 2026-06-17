@@ -287,4 +287,31 @@ describe('point-only-by-design ledger', () => {
       }
     })
   }
+
+  // Completeness: for every city flagged `complete`, the polygon backfill is
+  // FINISHED — so every in-play park/golf must EITHER have a polygon or be
+  // ledgered above. This is the "checked off as done" contract; it goes red if
+  // a later dataset change adds an in-play park/golf to a done city without a
+  // polygon (and without a ledger entry). Chicago is deliberately NOT in
+  // `complete` (its backfill is still TODO), so its gaps don't fail here.
+  for (const cityId of pointOnlyByDesign.complete as string[]) {
+    it(`${cityId}: is polygon-complete (every in-play park/golf has a polygon or is ledgered)`, () => {
+      const data = DATASETS[cityId]
+      expect(data, `complete names unknown city "${cityId}"`).toBeTruthy()
+      const ledgered = new Set(Object.keys(cities[cityId] ?? {}))
+      const gaps = data.locations.filter(
+        (l) =>
+          l.inPlay !== false &&
+          POLY_CATS.has(l.category) &&
+          !(Array.isArray(l.polygon) && l.polygon.length > 0) &&
+          !ledgered.has(l.id),
+      )
+      expect(
+        gaps.length,
+        `${cityId}: ${gaps.length} in-play park/golf lack a polygon and aren't ledgered: ${gaps
+          .map((g) => g.id)
+          .join(', ')}`,
+      ).toBe(0)
+    })
+  }
 })

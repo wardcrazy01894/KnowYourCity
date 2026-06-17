@@ -1,5 +1,6 @@
 {
-  "comment": "In-play park/golf locations DELIBERATELY left without a polygon (point-scored). These are sub-facilities or small features with no distinct OpenStreetMap boundary, where a polygon would be unavailable or wrong (e.g. it would balloon the scoring area to a whole park/arboretum). A city counts as 'polygons done' when every in-play park/golf either HAS a polygon or is listed here. The guard test in src/lib/locations.test.ts keeps this ledger honest: every id must be a real, in-play park/golf row that still lacks a polygon.",
+  "comment": "Polygon completion ledger. `complete` lists cities whose park/golf polygon backfill is FINISHED — for those, the guard test asserts every in-play park/golf either has a polygon or is listed under `cities` below. `cities` records the in-play park/golf rows DELIBERATELY left point-scored: sub-facilities or features with no distinct OpenStreetMap boundary, where a polygon would be unavailable or wrong (e.g. it would balloon the scoring area to a whole park/arboretum). To mark a city done: finish its backfill, ledger any genuine point-only rows, then add the city id to `complete`. Chicago is intentionally absent — its backfill is still TODO.",
+  "complete": ["annarbor", "seattle", "statecollege", "stpete"],
   "cities": {
     "stpete": {
       "north-shore-volleyball-courts": "Volleyball courts inside North Shore Park (which has its own polygon). OSM has no named boundary for the courts; point scoring is correct.",
