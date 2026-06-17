@@ -1,25 +1,73 @@
 {
-  "generatedFrom": "stpete",
+  "generatedFrom": "seattle",
   "dryRun": false,
-  "totalEligible": 28,
-  "totalWithPolygon": 26,
-  "totalPointOnly": 2,
-  "newMatchesThisRun": 2,
+  "totalEligible": 341,
+  "totalWithPolygon": 333,
+  "totalPointOnly": 8,
+  "newMatchesThisRun": 1,
   "pointOnly": [
     {
-      "id": "north-shore-kickball-fields",
-      "name": "North Shore Park Kickball Fields",
-      "city": "stpete",
-      "lat": 27.7803,
-      "lng": -82.6273,
+      "id": "bill-wright-golf-complex-at-jefferson-park",
+      "name": "Bill Wright Golf Complex at Jefferson Park",
+      "city": "seattle",
+      "lat": 47.566583,
+      "lng": -122.304875,
       "reason": "no-match"
     },
     {
-      "id": "north-shore-volleyball-courts",
-      "name": "North Shore Park Volleyball Courts",
-      "city": "stpete",
-      "lat": 27.782942,
-      "lng": -82.624619,
+      "id": "charlestown-park",
+      "name": "Charlestown Park",
+      "city": "seattle",
+      "lat": 47.570032,
+      "lng": -122.393813,
+      "reason": "no-match"
+    },
+    {
+      "id": "demonstration-garden-at-el-centro-de-la-raza-name-tbd",
+      "name": "Demonstration Garden at El Centro de la Raza (name TBD)",
+      "city": "seattle",
+      "lat": 47.580465,
+      "lng": -122.311854,
+      "reason": "no-match"
+    },
+    {
+      "id": "i-5-colonnade-off-leash-area",
+      "name": "I-5 Colonnade Off-Leash Area",
+      "city": "seattle",
+      "lat": 47.634826,
+      "lng": -122.323746,
+      "reason": "no-match"
+    },
+    {
+      "id": "lake-people-xacuabs-park",
+      "name": "Lake People (Xacua'bs) Park",
+      "city": "seattle",
+      "lat": 47.569099,
+      "lng": -122.291954,
+      "reason": "no-match"
+    },
+    {
+      "id": "loderi-valley",
+      "name": "Loderi Valley",
+      "city": "seattle",
+      "lat": 47.636517,
+      "lng": -122.295023,
+      "reason": "no-match"
+    },
+    {
+      "id": "open-water-park",
+      "name": "Open Water Park",
+      "city": "seattle",
+      "lat": 47.62991,
+      "lng": -122.385958,
+      "reason": "no-match"
+    },
+    {
+      "id": "queen-anne-boulevard",
+      "name": "Queen Anne Boulevard",
+      "city": "seattle",
+      "lat": 47.637413,
+      "lng": -122.358434,
       "reason": "no-match"
     }
   ]

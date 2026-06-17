@@ -10,6 +10,8 @@ import {
   buildWayGeomIndex,
   filterByName,
   simplifyToCap,
+  selectEligibleRows,
+  finalizeRing,
 } from './add-polygons.mjs'
 
 // ---------------------------------------------------------------------------
@@ -448,5 +450,121 @@ describe('pickBestMatch', () => {
         'x',
       ),
     ).toBeNull()
+  })
+})
+
+// ---------------------------------------------------------------------------
+// selectEligibleRows
+// ---------------------------------------------------------------------------
+
+describe('selectEligibleRows', () => {
+  const rows = [
+    { id: 'inplay-park', category: 'park', inPlay: true },
+    { id: 'inplay-golf', category: 'golf_course', inPlay: true },
+    { id: 'benched-park', category: 'park', inPlay: false },
+    { id: 'benched-golf', category: 'golf_course', inPlay: false },
+    { id: 'inplay-cafe', category: 'cafe', inPlay: true }, // wrong category
+    {
+      id: 'inplay-park-done',
+      category: 'park',
+      inPlay: true,
+      polygon: [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ],
+    },
+  ]
+
+  it('defaults to in-play, large-footprint rows lacking a polygon', () => {
+    const ids = selectEligibleRows(rows).map((l) => l.id)
+    expect(ids).toEqual(['inplay-park', 'inplay-golf'])
+  })
+
+  it('includeBenched widens to benched park/golf rows too', () => {
+    const ids = selectEligibleRows(rows, { includeBenched: true }).map(
+      (l) => l.id,
+    )
+    expect(ids).toEqual([
+      'inplay-park',
+      'inplay-golf',
+      'benched-park',
+      'benched-golf',
+    ])
+  })
+
+  it('never includes a non-large-footprint category', () => {
+    for (const opts of [{}, { includeBenched: true }, { force: true }]) {
+      expect(
+        selectEligibleRows(rows, opts).some((l) => l.category === 'cafe'),
+      ).toBe(false)
+    }
+  })
+
+  it('force re-includes rows that already have a polygon', () => {
+    expect(
+      selectEligibleRows(rows, { force: true }).map((l) => l.id),
+    ).toContain('inplay-park-done')
+    expect(selectEligibleRows(rows).map((l) => l.id)).not.toContain(
+      'inplay-park-done',
+    )
+  })
+
+  it('force + includeBenched covers every park/golf row regardless of state', () => {
+    const ids = selectEligibleRows(rows, {
+      force: true,
+      includeBenched: true,
+    }).map((l) => l.id)
+    expect(ids).toEqual([
+      'inplay-park',
+      'inplay-golf',
+      'benched-park',
+      'benched-golf',
+      'inplay-park-done',
+    ])
+  })
+})
+
+// ---------------------------------------------------------------------------
+// finalizeRing
+// ---------------------------------------------------------------------------
+
+describe('finalizeRing', () => {
+  it('rounds to 5 dp and keeps a well-formed open ring open', () => {
+    const out = finalizeRing([
+      [47.123456, -122.123456],
+      [47.2, -122.2],
+      [47.3, -122.3],
+    ])
+    expect(out).toEqual([
+      [47.12346, -122.12346],
+      [47.2, -122.2],
+      [47.3, -122.3],
+    ])
+  })
+
+  it('drops a closing duplicate that rounding collapses onto the start', () => {
+    // First and last differ in the 6th dp; at 5 dp they coincide → would be a
+    // CLOSED ring the dataset guard rejects. finalizeRing must re-open it.
+    const out = finalizeRing([
+      [47.100001, -122.2],
+      [47.2, -122.3],
+      [47.3, -122.4],
+      [47.100004, -122.2], // rounds to 47.1, -122.2 == first
+    ])
+    expect(out).toHaveLength(3)
+    const [f, l] = [out[0], out[out.length - 1]]
+    expect(f[0] === l[0] && f[1] === l[1]).toBe(false)
+  })
+
+  it('returns null when re-opening leaves fewer than 3 points', () => {
+    expect(
+      finalizeRing([
+        [47.1, -122.2],
+        [47.2, -122.3],
+        [47.100000001, -122.2], // collapses onto first → only 2 distinct
+      ]),
+    ).toBeNull()
+    expect(finalizeRing([[47.1, -122.2]])).toBeNull()
   })
 })

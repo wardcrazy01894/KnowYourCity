@@ -16,11 +16,13 @@
  * Design details and risk analysis: docs/plans/POLYGON-SCORING.md §4.
  *
  * Usage:
- *   node scripts/add-polygons.mjs [--city <id>] [--dry-run] [--force]
+ *   node scripts/add-polygons.mjs [--city <id>] [--dry-run] [--force] [--all]
  *
  *   --city <id>   Process only one city (default: all cities in cities.json).
  *   --dry-run     Print what would change; do not write any files.
  *   --force       Overwrite existing polygon fields (for re-fetching after OSM edits).
+ *   --all         Also backfill benched (inPlay:false) park/golf rows, not just
+ *                 the in-play play set. See selectEligibleRows.
  *
  * Run: `npm run add-polygons`  (needs Node 18+ for global fetch)
  *
@@ -71,6 +73,32 @@ const CENTROID_MATCH_RADIUS_M = 500
  * `leisure~"park|dog_park|recreation_ground|..."` filter.
  */
 const POLYGON_CATEGORIES = new Set(['park', 'golf_course'])
+
+/**
+ * Select the rows a backfill run should fetch geometry for.
+ *
+ * Default scope is in-play, large-footprint rows still lacking a polygon —
+ * only those are ever scored, so that's all the daily game needs. Pass
+ * `includeBenched` to also polygon benched (`inPlay:false`) park/golf rows
+ * (the operator may want every large footprint mapped, not just the play set);
+ * pass `force` to re-include rows that already carry a polygon (re-fetch after
+ * an OSM edit). The two flags compose.
+ *
+ * @param {object[]} locations
+ * @param {{ force?: boolean, includeBenched?: boolean }} [opts]
+ * @returns {object[]}
+ */
+export function selectEligibleRows(
+  locations,
+  { force = false, includeBenched = false } = {},
+) {
+  const inScope = locations.filter(
+    (l) => POLYGON_CATEGORIES.has(l.category) && (includeBenched || l.inPlay),
+  )
+  return force
+    ? inScope
+    : inScope.filter((l) => !Array.isArray(l.polygon) || l.polygon.length === 0)
+}
 
 /** Overpass endpoints, tried in order with retries. */
 const OVERPASS_ENDPOINTS = [
@@ -635,6 +663,37 @@ function roundCoord([lat, lng]) {
   return [Math.round(lat * f) / f, Math.round(lng * f) / f]
 }
 
+/**
+ * A ring that simplifies below 3 points is a line/degenerate, not an area — it
+ * would fail the dataset's open-ring guard (≥3 pts). Treat it as unusable so the
+ * row falls back to point scoring instead of shipping a 2-point "polygon".
+ */
+function ringTooSmall(location, el) {
+  console.warn(
+    `    WARN: ${location.id} — ${el.type}/${el.id} ring simplified below 3 points (degenerate) — skipping`,
+  )
+  return { ring: null, reason: 'unusable-geometry' }
+}
+
+/**
+ * Round a simplified ring to storage precision and return a well-formed OPEN
+ * ring, or null if it's degenerate. Rounding to 5 dp can collapse two
+ * near-coincident endpoints into the SAME point, turning the open ring the
+ * dataset expects into an accidental CLOSED ring (first === last) — which the
+ * open-ring guard rejects. Drop any such duplicated tail, then require ≥3 pts.
+ *
+ * @param {[number,number][]} simplified
+ * @returns {[number,number][] | null}
+ */
+export function finalizeRing(simplified) {
+  let ring = simplified.map(roundCoord)
+  const same = (a, b) => a[0] === b[0] && a[1] === b[1]
+  while (ring.length >= 2 && same(ring[0], ring[ring.length - 1])) {
+    ring = ring.slice(0, -1)
+  }
+  return ring.length >= 3 ? ring : null
+}
+
 async function fetchPolygonForLocation(location, bbox, nameOverride) {
   const queryName = nameOverride ?? location.name
   const query = buildPolygonQuery(queryName, bbox)
@@ -665,8 +724,10 @@ async function fetchPolygonForLocation(location, bbox, nameOverride) {
       `    NOTE: ${location.id} — ${best.type}/${best.id} coarsened ${baseline.length}→${simplified.length} nodes to fit the ${MAX_NODES}-node cap`,
     )
   }
+  const final = finalizeRing(simplified)
+  if (!final) return ringTooSmall(location, best)
 
-  return { ring: simplified.map(roundCoord), reason: 'ok' }
+  return { ring: final, reason: 'ok' }
 }
 
 /**
@@ -700,7 +761,9 @@ async function fetchPolygonByElement(location, ref) {
       `    NOTE: ${location.id} — ${ref.type}/${ref.id} coarsened ${baseline.length}→${simplified.length} nodes to fit the ${MAX_NODES}-node cap`,
     )
   }
-  return { ring: simplified.map(roundCoord), reason: 'ok' }
+  const final = finalizeRing(simplified)
+  if (!final) return ringTooSmall(location, ref)
+  return { ring: final, reason: 'ok' }
 }
 
 // ---------------------------------------------------------------------------
@@ -755,6 +818,10 @@ const NAME_OVERRIDES = {
 const OSM_ELEMENT_OVERRIDES = {
   'isla-del-sol': { type: 'way', id: 1196843509 },
   'sawgrass-lake-park': { type: 'way', id: 102845485 },
+  // The arboretum IS in OSM (relation 241864, leisure=park) but its computed
+  // centroid sits >500 m from our stored point, so the name match's proximity
+  // filter drops it. Pin the relation directly.
+  'washington-park-arboretum': { type: 'relation', id: 241864 },
 }
 
 // ---------------------------------------------------------------------------
@@ -778,16 +845,16 @@ async function processCity(city, opts) {
   /** @type {[number,number,number,number]} */
   const bbox = [s, w, n, e]
 
-  // Eligible = in-play, large-footprint category. We only backfill in-play rows
-  // because only those are ever scored; the rest carry no difficulty/polygon.
-  const eligible = data.locations.filter(
-    (l) => l.inPlay && POLYGON_CATEGORIES.has(l.category),
-  )
-  const todo = opts.force
-    ? eligible
-    : eligible.filter(
-        (l) => !Array.isArray(l.polygon) || l.polygon.length === 0,
-      )
+  // Eligible large-footprint rows. By default only in-play rows (the only ones
+  // ever scored); --all widens to benched park/golf too. See selectEligibleRows.
+  const eligible = selectEligibleRows(data.locations, {
+    force: true, // full scope (incl. already-polygoned) for the denominator count
+    includeBenched: opts.includeBenched,
+  })
+  const todo = selectEligibleRows(data.locations, {
+    force: opts.force,
+    includeBenched: opts.includeBenched,
+  })
 
   console.log(
     `\n=== ${city.id} === ${eligible.length} eligible large-footprint rows, ${todo.length} to fetch${opts.force ? ' (--force)' : ''}`,
@@ -863,13 +930,19 @@ async function processCity(city, opts) {
 // CLI entry point
 // ---------------------------------------------------------------------------
 
-/** Parse CLI flags: --city <id>, --dry-run, --force. */
+/** Parse CLI flags: --city <id>, --dry-run, --force, --all. */
 function parseArgs(argv) {
-  const opts = { city: null, dryRun: false, force: false }
+  const opts = {
+    city: null,
+    dryRun: false,
+    force: false,
+    includeBenched: false,
+  }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     if (a === '--dry-run') opts.dryRun = true
     else if (a === '--force') opts.force = true
+    else if (a === '--all') opts.includeBenched = true
     else if (a === '--city') opts.city = argv[++i]
   }
   return opts
