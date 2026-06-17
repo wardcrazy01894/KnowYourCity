@@ -374,7 +374,7 @@
       "lat": 27.770905,
       "lng": -82.64111,
       "category": "bar",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
@@ -570,20 +570,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "bongos-beach-bar-grille",
-      "name": "Bongo's Beach Bar & Grille",
-      "lat": 27.725474,
-      "lng": -82.74315,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 45,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "boulevard-burgers-and-tap-house",
@@ -1313,7 +1299,8 @@
       "clue": "A dedicated gluten-free bakery and coffeehouse on Central Ave near 66th St — the original location.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "Manual (geocoded via US Census)"
+      "attribution": "Manual (geocoded via US Census)",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "craft-kafe-dtsp",
@@ -1448,7 +1435,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "draculas-legacy-wine-bar",
@@ -2753,7 +2741,7 @@
       "lat": 27.804315,
       "lng": -82.679919,
       "category": "restaurant",
-      "difficulty": "medium",
+      "difficulty": "easy",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -2804,7 +2792,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "lake-maggiore",
@@ -2973,20 +2962,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "level-11",
-      "name": "Level 11",
-      "lat": 27.725801,
-      "lng": -82.743154,
-      "category": "bar",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 45,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "leverocks",
@@ -3450,7 +3425,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "museum-of-fine-arts",
@@ -3653,7 +3629,8 @@
       "clue": "A neighborhood pub in the Historic Old Northeast.",
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "old-southeast-market",
@@ -4889,20 +4866,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "spinners",
-      "name": "Spinners",
-      "lat": 27.725901,
-      "lng": -82.743015,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 58,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "spring-garden",

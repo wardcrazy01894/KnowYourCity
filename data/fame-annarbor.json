@@ -1651,13 +1651,13 @@
   },
   {
     "id": "huron-parkway-right-of-way",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 15,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open linear greenway trail corridor used for walking, running, and cycling"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Name is a generic OSM road-easement artifact ('right of way'), not a named public park; Google's nearest match 'Huron Parkway Nature Area' is 6km away at a different location."
   },
   {
     "id": "hyperion-coffee",
@@ -3071,13 +3071,13 @@
   },
   {
     "id": "scio-ridge-land-conservancy",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "90-acre conservancy adjacent to Uplands subdivision; trails maintained by HOA dues, not a widely known public park"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Scio Ridge Land Conservancy is a private HOA conservancy for Uplands residents only (not a public park); no Google match near our pin and no public access confirmed."
   },
   {
     "id": "scorekeepers",
@@ -3481,13 +3481,13 @@
   },
   {
     "id": "the-hen-on-the-fly",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 120,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "carry-out/delivery satellite of The Hen restaurant at 1906 Packard, opened 2024"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Google Places shows CLOSED_TEMPORARILY 2m from pin; no web evidence of reopening, and the parent brand operates a separate full-service location — the carryout branch appears to be dormant."
   },
   {
     "id": "the-jagged-fork",

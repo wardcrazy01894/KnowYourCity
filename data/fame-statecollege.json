@@ -71,13 +71,13 @@
   },
   {
     "id": "air-quality-learning-and-demonstration-center",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 5,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Penn State Arboretum educational facility on ag campus, visits by appointment"
+    "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirms CLOSED_PERMANENTLY, 64m from our pin — the attraction no longer exists."
   },
   {
     "id": "allen-street-grill",
@@ -1821,13 +1821,13 @@
   },
   {
     "id": "smash-falafel",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 120,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "local Mediterranean falafel spot on E Calder Way downtown"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Google shows CLOSED_TEMPORARILY at our 214 E Calder Way pin; the restaurant previously appeared to relocate to 334 E Calder Way but that address now hosts different restaurants (Pita Cabana/Shawarma "
   },
   {
     "id": "snap-custom-pizza",

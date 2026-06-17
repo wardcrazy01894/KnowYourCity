@@ -64,19 +64,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "air-quality-learning-and-demonstration-center",
-      "name": "Air Quality Learning and Demonstration Center",
-      "lat": 40.811072,
-      "lng": -77.877083,
-      "category": "attraction",
-      "inPlay": false,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "allen-street-grill",
       "name": "Allen Street Grill",
       "lat": 40.794226,
@@ -160,7 +147,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "as-pub",
@@ -188,7 +176,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "bagel-crust-beaver",
@@ -288,7 +277,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "big-bowl-noodle-house",
@@ -560,6 +550,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.81, -77.82086],
         [40.81024, -77.82066],
@@ -851,7 +842,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "college-buffet",
@@ -1137,7 +1129,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "faculty-cottages",
@@ -1261,7 +1254,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "fresh-bites-pizza",
@@ -1274,7 +1268,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "fuji-jade-garden-my-thai",
@@ -1302,7 +1297,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "giuseppes-pizzeria",
@@ -1331,6 +1327,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.80824, -77.82167],
         [40.8077, -77.82084],
@@ -1440,6 +1437,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.77966, -77.81725],
         [40.77864, -77.81733],
@@ -1970,6 +1968,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.81387, -77.88796],
         [40.81343, -77.88895],
@@ -2124,12 +2123,14 @@
       "lat": 40.812969,
       "lng": -77.812526,
       "category": "park",
-      "inPlay": false,
+      "difficulty": "hard",
+      "inPlay": true,
       "fameScore": 20,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.8126, -77.81043],
         [40.81234, -77.81225],
@@ -2217,6 +2218,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.79968, -77.82254],
         [40.79841, -77.8228],
@@ -2288,7 +2290,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "orchard-park",
@@ -2402,7 +2405,7 @@
       "lat": 40.809196,
       "lng": -77.863454,
       "category": "park",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
@@ -2429,6 +2432,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.79508, -77.89943],
         [40.795, -77.89896],
@@ -2466,7 +2470,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "penang",
@@ -2495,7 +2500,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "penn-state-all-sports-museum",
@@ -2524,6 +2530,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.81049, -77.84837],
         [40.81035, -77.84838],
@@ -2557,7 +2564,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "pennsylvania-state-golf-courses",
@@ -2709,7 +2717,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "ramyun-studio",
@@ -2813,6 +2822,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.7974, -77.85928],
         [40.79743, -77.85949],
@@ -2832,7 +2842,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sculpture-garden",
@@ -2867,6 +2878,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.79899, -77.83486],
         [40.79891, -77.83491],
@@ -2920,7 +2932,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sichuan-house",
@@ -3021,20 +3034,6 @@
       ]
     },
     {
-      "id": "smash-falafel",
-      "name": "Smash Falafel",
-      "lat": 40.796834,
-      "lng": -77.857257,
-      "category": "restaurant",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "smithfield-park",
       "name": "Smithfield Park",
       "lat": 40.791158,
@@ -3046,6 +3045,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.79116, -77.84355],
         [40.79167, -77.84297],
@@ -3081,6 +3081,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.7787, -77.87631],
         [40.77892, -77.87624],
@@ -3143,6 +3144,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [40.78382, -77.84996],
         [40.78407, -77.84962],
@@ -3751,7 +3753,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)"
+      "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, status verified via Google Places)",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "tudek-dog-park",
@@ -3809,7 +3812,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "tussey-view-park",
@@ -3876,7 +3880,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "upper-intramural-fields",
@@ -3958,7 +3963,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "websters-bookstore-cafe",
@@ -4113,7 +4119,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "zen-wings-things",
@@ -4142,7 +4149,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     }
   ]
 }

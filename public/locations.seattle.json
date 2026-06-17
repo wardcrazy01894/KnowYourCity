@@ -101,32 +101,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "15th-avenue-northwest",
-      "name": "15th Avenue Northwest",
-      "lat": 47.660768,
-      "lng": -122.376233,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "15th-avenue-west",
-      "name": "15th Avenue West",
-      "lat": 47.657438,
-      "lng": -122.376229,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 10,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "1890-seattle-fire-department-bell",
       "name": "1890 Seattle Fire Department Bell",
       "lat": 47.6275,
@@ -137,7 +111,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "19-gold",
@@ -166,19 +141,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "206-burger-company",
-      "name": "206 Burger Company",
-      "lat": 47.609034,
-      "lng": -122.326191,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 35,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "2120",
@@ -242,26 +204,6 @@
       ]
     },
     {
-      "id": "36th-avenue-northwest-street-end",
-      "name": "36th Avenue Northwest Street End",
-      "lat": 47.668546,
-      "lng": -122.40348,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 4,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.66867, -122.40357],
-        [47.66845, -122.40364],
-        [47.66838, -122.40357],
-        [47.6686, -122.40332],
-        [47.66871, -122.40353]
-      ]
-    },
-    {
       "id": "3rd-ave-cafe",
       "name": "3rd Ave Cafe",
       "lat": 47.612024,
@@ -272,7 +214,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "45th-stop-n-shop-poke-bar",
@@ -419,7 +362,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "8-ping-yang",
@@ -538,7 +482,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "a-pizza-mart-stewart",
@@ -597,19 +542,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "aburiya-bento-house",
-      "name": "Aburiya Bento House",
-      "lat": 47.611372,
-      "lng": -122.344868,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 36,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "accidental-park",
       "name": "Accidental Park",
       "lat": 47.659518,
@@ -621,6 +553,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.65959, -122.35557],
         [47.65945, -122.35557],
@@ -667,7 +600,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "aditi-chai",
@@ -682,19 +616,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "administration-building",
-      "name": "Administration Building",
-      "lat": 47.66593,
-      "lng": -122.396811,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "admiral-pub",
@@ -791,7 +712,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "agua-verde-cafe",
@@ -847,7 +769,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "aladdin-charburger",
@@ -903,7 +826,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "alberonas-da-vinci-pizza",
@@ -944,7 +868,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "alibertos-mexican-food",
@@ -1191,7 +1116,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "altura",
@@ -1303,7 +1229,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "an-nam-pho",
@@ -1316,7 +1243,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "analog-coffee",
@@ -1440,19 +1368,6 @@
       ]
     },
     {
-      "id": "animated-cafe",
-      "name": "Animated Cafe",
-      "lat": 47.607071,
-      "lng": -122.341404,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 16,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "anna-thomsen-milburn-memorial",
       "name": "Anna Thomsen Milburn Memorial",
       "lat": 47.633336,
@@ -1463,7 +1378,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "annampho",
@@ -1476,7 +1392,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "annapurna-cafe",
@@ -1492,19 +1409,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "ant-gallery",
-      "name": "A/NT Gallery",
-      "lat": 47.622764,
-      "lng": -122.352986,
-      "category": "museum",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "anthonys-bell-street-diner",
@@ -1560,7 +1464,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "aoki-sushi-grill",
@@ -1646,19 +1551,6 @@
       ]
     },
     {
-      "id": "arepa-venezuelan-kitchen",
-      "name": "Arepa Venezuelan Kitchen",
-      "lat": 47.664801,
-      "lng": -122.312685,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "argosy-cruises",
       "name": "Argosy Cruises",
       "lat": 47.605058,
@@ -1715,27 +1607,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "arne-gillam-courtyard",
-      "name": "Arne Gillam Courtyard",
-      "lat": 47.610134,
-      "lng": -122.33277,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.61013, -122.33259],
-        [47.61008, -122.33251],
-        [47.61015, -122.33243],
-        [47.61034, -122.3326],
-        [47.61008, -122.33311],
-        [47.60993, -122.33288]
-      ]
     },
     {
       "id": "aroom",
@@ -1804,7 +1675,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "arthurs",
@@ -1845,7 +1717,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "artly-coffee-hill7",
@@ -2041,7 +1914,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "aurora-avenue-north",
@@ -2429,7 +2303,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "ballard-coffee-co",
@@ -2578,19 +2453,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "band-house",
-      "name": "Band House",
-      "lat": 47.659716,
-      "lng": -122.415688,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "bang-bang-cafe",
       "name": "Bang Bang Cafe",
       "lat": 47.614021,
@@ -2645,6 +2507,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.68455, -122.32214],
         [47.68454, -122.3217],
@@ -2849,19 +2712,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "basilic",
-      "name": "Basilic",
-      "lat": 47.625587,
-      "lng": -122.349926,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 30,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "batch-baking-company",
@@ -3237,7 +3087,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "benvenuto-viewpoint",
@@ -3308,19 +3159,6 @@
       ]
     },
     {
-      "id": "berlin-wall-fragment",
-      "name": "Berlin Wall Fragment",
-      "lat": 47.649407,
-      "lng": -122.347501,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 42,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "berliner-doner-kebab",
       "name": "Berliner Doner Kebab",
       "lat": 47.622664,
@@ -3374,7 +3212,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "betty",
@@ -3563,6 +3402,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.63222, -122.29576],
         [47.63266, -122.29582],
@@ -3587,19 +3427,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "birrieria-gourmet",
-      "name": "Birrieria Gourmet",
-      "lat": 47.667839,
-      "lng": -122.379078,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 16,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "birrieria-pepe-el-toro",
@@ -3771,7 +3598,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "blaine-place",
@@ -3867,7 +3695,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "blue-water-taco-grill",
@@ -3922,7 +3751,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "boba-up",
@@ -3951,32 +3781,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "bober-tea",
-      "name": "Bober Tea",
-      "lat": 47.624476,
-      "lng": -122.321137,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 24,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "boeing-centennial",
-      "name": "Boeing Centennial",
-      "lat": 47.643141,
-      "lng": -122.328854,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 14,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "bombay-burger",
@@ -4018,7 +3822,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "boon-boona-coffee",
@@ -4046,7 +3851,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "boren-place",
@@ -4078,7 +3884,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "bottega-italiana",
@@ -4457,19 +4264,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "bun",
-      "name": "Bun",
-      "lat": 47.597853,
-      "lng": -122.323582,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "burger-hut",
       "name": "Burger Hut",
       "lat": 47.658086,
@@ -4494,7 +4288,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "burke-museum-of-natural-history-and-culture",
@@ -4512,19 +4307,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "burritos-california",
-      "name": "Burritos California",
-      "lat": 47.664331,
-      "lng": -122.313253,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "busanjeong",
       "name": "BusanJeong",
       "lat": 47.624924,
@@ -4535,7 +4317,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "by-george",
@@ -4548,7 +4331,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "byrek-baguette",
@@ -4575,7 +4359,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "bz-family-mexican-restaurant",
@@ -4647,7 +4432,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "cafe-argento",
@@ -4731,7 +4517,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "cafe-flora",
@@ -4916,7 +4703,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "cafe-turko",
@@ -5281,19 +5069,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "canoe-house",
-      "name": "Canoe House",
-      "lat": 47.647789,
-      "lng": -122.300069,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
-    },
-    {
       "id": "canon",
       "name": "Canon",
       "lat": 47.611276,
@@ -5403,7 +5178,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "caravan-restaurant",
@@ -5416,7 +5192,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "cardoon",
@@ -5590,19 +5367,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "casa-patron",
-      "name": "Casa Patron",
-      "lat": 47.675713,
-      "lng": -122.319616,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "cascade-playground",
       "name": "Cascade Playground",
       "lat": 47.621568,
@@ -5725,6 +5489,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.62049, -122.36225],
         [47.62014, -122.36286],
@@ -5827,7 +5592,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "cha-cha-lounge",
@@ -5847,15 +5613,16 @@
     {
       "id": "chan-seattle",
       "name": "Chan Seattle",
-      "lat": 47.609886,
-      "lng": -122.341397,
+      "lat": 47.613159,
+      "lng": -122.333486,
       "category": "restaurant",
       "inPlay": false,
       "fameScore": 40,
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "chandelier-lounge",
@@ -5948,19 +5715,6 @@
       ]
     },
     {
-      "id": "charlestown-park",
-      "name": "Charlestown Park",
-      "lat": 47.570032,
-      "lng": -122.393813,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 5,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "chawlas-2",
       "name": "Chawlas 2",
       "lat": 47.613813,
@@ -5971,7 +5725,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "chebogz",
@@ -6269,7 +6024,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "choice-deli-grocery",
@@ -6652,7 +6408,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "coast-guard-museum-northwest",
@@ -6764,7 +6521,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "coffee-tree",
@@ -6805,7 +6563,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "colibri-mexican-kitchen",
@@ -6976,19 +6735,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "conduit-coffee",
-      "name": "Conduit Coffee",
-      "lat": 47.642427,
-      "lng": -122.343772,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "conor-byrne",
       "name": "Conor Byrne",
       "lat": 47.665465,
@@ -7104,19 +6850,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "cork-kale",
-      "name": "Cork & Kale",
-      "lat": 47.624113,
-      "lng": -122.334599,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "corliss-place",
       "name": "Corliss Place",
       "lat": 47.665239,
@@ -7167,7 +6900,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "corner-pocket",
@@ -7420,19 +7154,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "crawfish-king",
-      "name": "Crawfish King",
-      "lat": 47.59651,
-      "lng": -122.322684,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "creative-justice-cafe",
       "name": "Creative Justice Cafe",
       "lat": 47.602834,
@@ -7493,7 +7214,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "culture-kitchen-seattle",
@@ -7520,7 +7242,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "curbside",
@@ -7993,7 +7716,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "delridge-playfield",
@@ -8328,19 +8052,6 @@
       ]
     },
     {
-      "id": "discovery-portal",
-      "name": "Discovery Portal",
-      "lat": 47.615939,
-      "lng": -122.334652,
-      "category": "museum",
-      "inPlay": false,
-      "fameScore": 14,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "district-h",
       "name": "District H",
       "lat": 47.61869,
@@ -8394,7 +8105,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "do-si-korean-bbq",
@@ -8558,7 +8270,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "donnas",
@@ -8745,7 +8458,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "draft-punk",
@@ -8896,7 +8610,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "dukes-seafood",
@@ -8967,7 +8682,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "duwamish",
@@ -9014,25 +8730,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "east-allison-street-end",
-      "name": "East Allison Street End",
-      "lat": 47.649222,
-      "lng": -122.324962,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.64929, -122.32507],
-        [47.64927, -122.32488],
-        [47.64914, -122.32489],
-        [47.64922, -122.32501]
-      ]
-    },
-    {
       "id": "east-boston-street-end",
       "name": "East Boston Street End",
       "lat": 47.638281,
@@ -9064,6 +8761,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.58363, -122.31848],
         [47.58128, -122.31849],
@@ -9100,6 +8798,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.64443, -122.31638],
         [47.64442, -122.31651],
@@ -9161,6 +8860,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.63649, -122.3543],
         [47.63579, -122.3543],
@@ -9290,7 +8990,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "egan-house",
@@ -9737,7 +9438,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "emma-schmitz-memorial-overlook",
@@ -9976,35 +9678,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "fairmount-park",
-      "name": "Fairmount Park",
-      "lat": 47.579855,
-      "lng": -122.382256,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.57844, -122.38263],
-        [47.57858, -122.38282],
-        [47.57894, -122.38286],
-        [47.5796, -122.38284],
-        [47.58029, -122.38267],
-        [47.58127, -122.38283],
-        [47.58126, -122.38163],
-        [47.58017, -122.38184],
-        [47.57969, -122.38169],
-        [47.5794, -122.38185],
-        [47.5794, -122.38199],
-        [47.57898, -122.3822],
-        [47.57857, -122.38219],
-        [47.57851, -122.38237]
-      ]
-    },
-    {
       "id": "fairmount-playfield",
       "name": "Fairmount Playfield",
       "lat": 47.554059,
@@ -10137,7 +9810,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "fast-fashion-brewing",
@@ -10167,24 +9841,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "fauntleroy-place",
-      "name": "Fauntleroy Place",
-      "lat": 47.562674,
-      "lng": -122.379795,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 4,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.56255, -122.37996],
-        [47.5628, -122.37996],
-        [47.56278, -122.37963]
-      ]
     },
     {
       "id": "federal-center-south",
@@ -10225,7 +9881,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "ferry-noodle-house",
@@ -10438,7 +10095,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "flo-ware-park",
@@ -10791,7 +10449,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "freedom-bar-lounge",
@@ -10804,7 +10463,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "freeway-park",
@@ -10950,19 +10610,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "fremont-dock",
-      "name": "Fremont Dock",
-      "lat": 47.648865,
-      "lng": -122.34379,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "fremont-peak-park",
       "name": "Fremont Peak Park",
       "lat": 47.661095,
@@ -11008,7 +10655,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "fresh-flours",
@@ -11063,7 +10711,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "frink-park",
@@ -11189,20 +10838,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "fuel",
-      "name": "Fuel",
-      "lat": 47.661283,
-      "lng": -122.336944,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 38,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "fuel-sports-grill",
@@ -11243,7 +10880,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "fulcrum-coffee-roasters",
@@ -11284,7 +10922,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "gaga-tea",
@@ -11395,7 +11034,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "gao-lhao",
@@ -11422,7 +11062,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "garden-of-remembrance",
@@ -11567,7 +11208,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "gates-foundation-discovery-center",
@@ -11775,19 +11417,6 @@
       ]
     },
     {
-      "id": "gh-pasta-pizza",
-      "name": "G.H. Pasta & Pizza",
-      "lat": 47.678596,
-      "lng": -122.355101,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "ghost-note-coffee",
       "name": "Ghost Note Coffee",
       "lat": 47.615926,
@@ -11842,6 +11471,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.66614, -122.40265],
         [47.66617, -122.4025],
@@ -11939,7 +11569,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "golden-daisy",
@@ -12023,6 +11654,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.65078, -122.3238],
         [47.65072, -122.32333],
@@ -12227,7 +11859,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "great-state-burger-downtown",
@@ -12255,7 +11888,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "great-state-burger-t-mobile-park",
@@ -12268,7 +11902,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "green-lake-park",
@@ -12356,6 +11991,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.58407, -122.30048],
         [47.58408, -122.30078],
@@ -12379,7 +12015,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "greenlake-sushi-and-roll",
@@ -12503,6 +12140,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.61846, -122.34636],
         [47.61815, -122.34636],
@@ -12749,7 +12387,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "half-shell",
@@ -12829,7 +12468,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "hannyatou",
@@ -12856,7 +12496,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "hapus-village-park-and-shoreline-habitat",
@@ -12934,19 +12575,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "harbour-cruise",
-      "name": "Harbour Cruise",
-      "lat": 47.607237,
-      "lng": -122.346325,
-      "category": "attraction",
-      "inPlay": false,
-      "fameScore": 30,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "harissa",
@@ -13320,7 +12948,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "hi-tea-cafe",
@@ -13408,7 +13037,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "hillside-bar",
@@ -13450,7 +13080,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "himitsu-teriyaki",
@@ -13514,7 +13145,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "historic-ballard-fire-station-no-18",
@@ -13527,7 +13159,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "historic-carousel",
@@ -13715,19 +13348,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "honor-coffee-tea",
-      "name": "Honor Coffee & Tea",
-      "lat": 47.608063,
-      "lng": -122.336577,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 20,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "hood-famous-cafe-and-bar",
       "name": "Hood Famous Cafe and Bar",
       "lat": 47.598059,
@@ -13753,7 +13373,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "hopvine-pub",
@@ -14024,7 +13645,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "husky-softball-stadium",
@@ -14067,6 +13689,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.6365, -122.29618],
         [47.63647, -122.29611],
@@ -14219,7 +13842,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "il-bistro",
@@ -14531,7 +14155,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "irwins-bakery-and-coffee-house",
@@ -14793,7 +14418,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "jaks-grill",
@@ -15046,20 +14672,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "jemels-big-easy",
-      "name": "Jemel's Big Easy",
-      "lat": 47.550186,
-      "lng": -122.363311,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 30,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "jensen-marina",
@@ -15235,7 +14849,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "jose-rizal-bridge",
@@ -15311,7 +14926,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "jucivana",
@@ -15324,7 +14940,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "judge-charles-m-stokes-overlook",
@@ -15383,19 +15000,6 @@
         [47.59097, -122.30482],
         [47.59103, -122.30562]
       ]
-    },
-    {
-      "id": "juicy-cafe",
-      "name": "Juicy Cafe",
-      "lat": 47.622912,
-      "lng": -122.333873,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "juisala",
@@ -15536,7 +15140,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "just-the-tap",
@@ -15605,7 +15210,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "kamakura-japanese-cuisine",
@@ -16020,19 +15626,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "kiki-bakery-cafe",
-      "name": "Kiki Bakery & Cafe",
-      "lat": 47.663493,
-      "lng": -122.316172,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "kilig",
       "name": "Kilig",
       "lat": 47.596501,
@@ -16262,6 +15855,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.62629, -122.35753],
         [47.62629, -122.35685],
@@ -16344,7 +15938,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "kitchen-window",
@@ -16357,7 +15952,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "kite-hill",
@@ -16437,6 +16033,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.66036, -122.40345],
         [47.66036, -122.4028],
@@ -16472,19 +16069,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "knights-of-columbus-hall",
-      "name": "Knights of Columbus Hall",
-      "lat": 47.61317,
-      "lng": -122.322459,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "kobe-friendship-bell",
@@ -16737,7 +16321,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "kwanjai-thai",
@@ -17020,7 +16605,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "ladybug-bikini-espresso",
@@ -17047,7 +16633,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "lake-people-xacuabs-park",
@@ -17136,19 +16723,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "lake-view-point",
-      "name": "Lake View Point",
-      "lat": 47.64458,
-      "lng": -122.334518,
-      "category": "attraction",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "lakeview-place",
@@ -17526,7 +17100,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "lewis-park",
@@ -17628,19 +17203,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "lin-dumpling-and-noodles",
-      "name": "Lin Dumpling and Noodles",
-      "lat": 47.664808,
-      "lng": -122.31541,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 24,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "lindas-tavern",
@@ -17822,19 +17384,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "lobby-espresso",
-      "name": "Lobby Espresso",
-      "lat": 47.649547,
-      "lng": -122.307651,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 10,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "local-bigger-burger",
       "name": "Local Bigger Burger",
       "lat": 47.62365,
@@ -17916,7 +17465,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "log-house-museum",
@@ -17929,7 +17479,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "lola",
@@ -17988,19 +17539,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "lotus",
-      "name": "Lotus",
-      "lat": 47.628119,
-      "lng": -122.33627,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 24,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "lotus-on-the-beach",
@@ -18088,45 +17626,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "lowlander-brewing",
-      "name": "Lowlander Brewing",
-      "lat": 47.623656,
-      "lng": -122.329578,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "loxicha",
-      "name": "Loxicha",
-      "lat": 47.661849,
-      "lng": -122.333909,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 32,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "loxsmith-bagels",
-      "name": "LoxSmith Bagels",
-      "lat": 47.579293,
-      "lng": -122.311097,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 34,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "loyal-heights-playfield",
@@ -18413,19 +17912,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "machine-house-brewery",
-      "name": "Machine House Brewery",
-      "lat": 47.550262,
-      "lng": -122.31713,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 42,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "maclean-park",
       "name": "MacLean Park",
       "lat": 47.636317,
@@ -18470,7 +17956,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "macrina-bakery-aloha",
@@ -18773,19 +18260,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "mahder-cafe",
-      "name": "Mahder Cafe",
-      "lat": 47.5994,
-      "lng": -122.303085,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 20,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "mainstay-provisions",
       "name": "Mainstay Provisions",
       "lat": 47.676099,
@@ -18923,7 +18397,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "maneki",
@@ -19024,6 +18499,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.55856, -122.32023],
         [47.55857, -122.31798],
@@ -19095,7 +18571,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "marination",
@@ -19155,19 +18632,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "market-fresh",
-      "name": "Market Fresh",
-      "lat": 47.614181,
-      "lng": -122.334733,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 20,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "market-pho",
@@ -19609,7 +19073,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "medal-of-honor",
@@ -19637,6 +19102,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.65241, -122.3084],
         [47.65238, -122.30815],
@@ -19669,7 +19135,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "mee-sum-pastry",
@@ -19697,7 +19164,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "meet-korean-bbq",
@@ -19738,7 +19206,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "merchants-cafe-and-saloon",
@@ -19821,7 +19290,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "metier-brewing-company",
@@ -20121,7 +19591,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "minna-mediterranean",
@@ -20318,7 +19789,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "moli-bento",
@@ -20388,7 +19860,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "mon-chou",
@@ -20415,7 +19888,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "monkey-bridge",
@@ -20488,19 +19962,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "montlake-boulevard-northeast",
-      "name": "Montlake Boulevard Northeast",
-      "lat": 47.647425,
-      "lng": -122.304617,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
     },
     {
       "id": "montlake-bridge",
@@ -20602,7 +20063,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "moonlight-cafe",
@@ -20811,7 +20273,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "mount-baker-ridge-tunnel-old-bore-north",
@@ -20824,7 +20287,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "mount-baker-ridge-tunnel-old-bore-south",
@@ -20837,7 +20301,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "mox-boarding-house",
@@ -20950,7 +20415,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "mt-baker-ridge-viewpoint",
@@ -21183,19 +20649,6 @@
       ]
     },
     {
-      "id": "naan-stop",
-      "name": "Naan Stop",
-      "lat": 47.66276,
-      "lng": -122.313282,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "nacho-borracho",
       "name": "Nacho Borracho",
       "lat": 47.620125,
@@ -21228,19 +20681,6 @@
         [47.57932, -122.39691],
         [47.57973, -122.39691]
       ]
-    },
-    {
-      "id": "nasai-teriyaki",
-      "name": "Nasai Teriyaki",
-      "lat": 47.665657,
-      "lng": -122.301097,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 26,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "national-nordic-museum",
@@ -21297,7 +20737,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "needle-thread",
@@ -21487,7 +20928,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "nine-pies-pizzeria",
@@ -21587,7 +21029,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "nom-house",
@@ -21634,7 +21077,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "north-passage-point-park",
@@ -21648,6 +21092,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.65371, -122.3221],
         [47.65393, -122.32196],
@@ -21916,6 +21361,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.64112, -122.2957],
         [47.6412, -122.29527],
@@ -22257,19 +21703,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "olympia-coffee-roasting-company",
-      "name": "Olympia Coffee Roasting Company",
-      "lat": 47.614885,
-      "lng": -122.338128,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 42,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "olympia-pizza-iii",
       "name": "Olympia Pizza III",
       "lat": 47.62381,
@@ -22461,7 +21894,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "orient-express",
@@ -22488,7 +21922,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "orrapin",
@@ -22714,6 +22149,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.63056, -122.29542],
         [47.63065, -122.2951],
@@ -22827,7 +22263,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "pams-caribbean-kitchen",
@@ -22969,7 +22406,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "papas-kitchen",
@@ -23160,7 +22598,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "pasta-casalinga",
@@ -23530,7 +22969,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "pho-ba",
@@ -23672,7 +23112,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "phocific-standard-time",
@@ -23917,6 +23358,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.63936, -122.29765],
         [47.63871, -122.29739],
@@ -24222,7 +23664,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "plaza-garibaldi",
@@ -24409,7 +23852,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "poke-square",
@@ -24874,6 +24318,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.55343, -122.3584],
         [47.55057, -122.35842],
@@ -25119,7 +24564,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "queen-anne-coffee-co",
@@ -25160,7 +24606,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "queen-city-yacht-club",
@@ -25549,19 +24996,6 @@
       ]
     },
     {
-      "id": "raygun-lounge",
-      "name": "Raygun Lounge",
-      "lat": 47.615086,
-      "lng": -122.325137,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 44,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "rays-boathouse-and-cafe",
       "name": "Ray's Boathouse and Café",
       "lat": 47.673377,
@@ -25601,7 +25035,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "re-pc-computer-museum",
@@ -25614,7 +25049,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "realfine-coffee",
@@ -25759,19 +25195,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "regatta-bar-grille",
-      "name": "Regatta Bar & Grille",
-      "lat": 47.608152,
-      "lng": -122.332005,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 12,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "regrade-park",
       "name": "Regrade Park",
       "lat": 47.614329,
@@ -25845,7 +25268,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "restaurant-christine",
@@ -25973,7 +25397,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "revolutions-coffee",
@@ -26359,7 +25784,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "rondo",
@@ -26564,7 +25990,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "royal-grinders",
@@ -26664,7 +26091,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sabine",
@@ -27241,7 +26669,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seacrest-park",
@@ -27536,19 +26965,6 @@
       ]
     },
     {
-      "id": "seattle-cider-taproom",
-      "name": "Seattle Cider Taproom",
-      "lat": 47.560755,
-      "lng": -122.337789,
-      "category": "bar",
-      "inPlay": false,
-      "fameScore": 30,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "seattle-coffee-works",
       "name": "Seattle Coffee Works",
       "lat": 47.610087,
@@ -27559,7 +26975,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seattle-dumpling-company",
@@ -27615,7 +27032,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seattle-fish-company",
@@ -27701,7 +27119,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seattle-magnolia-pizza-pasta",
@@ -27891,7 +27310,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sebis-kitchen",
@@ -27950,19 +27370,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "seeking-ferments",
-      "name": "Seeking Ferments",
-      "lat": 47.620653,
-      "lng": -122.336126,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "sen-noodle-bar",
       "name": "Sen Noodle Bar",
       "lat": 47.668529,
@@ -28001,7 +27408,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seoul-bowl",
@@ -28014,7 +27422,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seoul-tofu-jjim",
@@ -28041,7 +27450,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "serafina",
@@ -28099,7 +27509,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "seven-hills-park",
@@ -28616,7 +28027,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "skal-beer-hall",
@@ -28830,7 +28242,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "smash-that-burger",
@@ -28845,19 +28258,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "smashbox",
-      "name": "Smashbox",
-      "lat": 47.665881,
-      "lng": -122.373909,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 14,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "smile-thai-cuisine",
@@ -29085,7 +28485,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sopranos-pizza-pasta",
@@ -29196,6 +28597,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.65231, -122.32198],
         [47.65195, -122.32202],
@@ -29218,6 +28620,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.55082, -122.35281],
         [47.55083, -122.35338],
@@ -29258,7 +28661,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "spice-bliss",
@@ -29468,7 +28872,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "stampede-cocktail-club",
@@ -29557,7 +28962,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "still-liquor",
@@ -29790,7 +29196,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sugar-bakery-cafe",
@@ -29831,7 +29238,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sullys-lounge",
@@ -29978,7 +29386,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "sunrise-restaurant",
@@ -30057,7 +29466,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "supreme",
@@ -30282,7 +29692,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "swing",
@@ -30374,32 +29785,6 @@
         [47.61327, -122.31014],
         [47.61405, -122.31014]
       ]
-    },
-    {
-      "id": "taco-bus",
-      "name": "Taco Bus",
-      "lat": 47.674955,
-      "lng": -122.318388,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "taco-loco",
-      "name": "Taco Loco",
-      "lat": 47.686729,
-      "lng": -122.376571,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 32,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "taco-time",
@@ -30575,19 +29960,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "tandoori-hut",
-      "name": "Tandoori Hut",
-      "lat": 47.616335,
-      "lng": -122.349176,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 26,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "taneda-sushi",
       "name": "Taneda Sushi",
       "lat": 47.620533,
@@ -30668,7 +30040,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "taqueria-el-ranchero",
@@ -30949,7 +30322,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "teku-tavern",
@@ -31009,19 +30383,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "teriyaki-bowl",
-      "name": "Teriyaki Bowl",
-      "lat": 47.626032,
-      "lng": -122.345783,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "terminal-102-park",
       "name": "Terminal 102 Park",
       "lat": 47.569957,
@@ -31033,6 +30394,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.57058, -122.3508],
         [47.57065, -122.35085],
@@ -31100,7 +30462,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "terry-pettus-park",
@@ -31114,6 +30477,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.6368, -122.32935],
         [47.63688, -122.32923],
@@ -31135,7 +30499,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "thai-lucene",
@@ -31276,7 +30641,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "thanh-tam",
@@ -31289,7 +30655,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "thaprachan",
@@ -31331,7 +30698,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-5-point",
@@ -31642,7 +31010,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-byte-cafe",
@@ -31726,7 +31095,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-collins-pub",
@@ -31840,6 +31210,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.63674, -122.29614],
         [47.63708, -122.2961],
@@ -31876,7 +31247,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-doctors-office",
@@ -31946,7 +31318,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-fishermans-restaurant-bar",
@@ -32201,7 +31574,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-little-beast",
@@ -32258,7 +31632,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-masonry",
@@ -32611,7 +31986,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-rotunda",
@@ -32881,7 +32257,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "the-void",
@@ -33011,32 +32388,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "the-wick",
-      "name": "The Wick",
-      "lat": 47.683115,
-      "lng": -122.344699,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 28,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
-      "id": "the-wild-cup",
-      "name": "The Wild Cup",
-      "lat": 47.666492,
-      "lng": -122.350489,
-      "category": "cafe",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "the-wing-dome",
@@ -33205,7 +32556,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "three-sacks-full",
@@ -33266,7 +32618,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "tidal-seafood",
@@ -33327,7 +32680,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "tilikum-place",
@@ -33646,6 +33000,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.57146, -122.35485],
         [47.57118, -122.35468],
@@ -33933,7 +33288,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "udon",
@@ -33974,7 +33330,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "umi-sake-house",
@@ -34019,19 +33376,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
-    },
-    {
-      "id": "un-po-tipsy-pizzeria",
-      "name": "Un Po Tipsy Pizzeria",
-      "lat": 47.623535,
-      "lng": -122.329571,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 18,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "underbelly",
@@ -34240,19 +33584,6 @@
       ]
     },
     {
-      "id": "union-trust-annex",
-      "name": "Union Trust Annex",
-      "lat": 47.599794,
-      "lng": -122.333406,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 10,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "unity-museum",
       "name": "Unity Museum",
       "lat": 47.66101,
@@ -34265,19 +33596,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "university-of-washington-club",
-      "name": "University of Washington Club",
-      "lat": 47.65563,
-      "lng": -122.304085,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "university-of-washington-golf-driving-range",
@@ -34325,26 +33643,6 @@
         [47.66405, -122.31968],
         [47.66405, -122.31852],
         [47.66487, -122.31851]
-      ]
-    },
-    {
-      "id": "university-street-parklet",
-      "name": "University Street Parklet",
-      "lat": 47.612885,
-      "lng": -122.323701,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 5,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.61295, -122.32393],
-        [47.61295, -122.32347],
-        [47.61282, -122.32368],
-        [47.61286, -122.32388],
-        [47.61293, -122.3239]
       ]
     },
     {
@@ -34520,23 +33818,10 @@
       ]
     },
     {
-      "id": "us-army-corps-of-engineers",
-      "name": "U.S. Army Corps of Engineers",
-      "lat": 47.666598,
-      "lng": -122.395514,
-      "category": "landmark",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "uw-farm",
       "name": "UW Farm",
-      "lat": 47.654221,
-      "lng": -122.317863,
+      "lat": 47.658455,
+      "lng": -122.292454,
       "category": "park",
       "inPlay": false,
       "fameScore": 22,
@@ -34544,6 +33829,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.65427, -122.3183],
         [47.65438, -122.31824],
@@ -34690,19 +33976,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "verve-bowls",
-      "name": "Verve Bowls",
-      "lat": 47.614808,
-      "lng": -122.322714,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 30,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
     },
     {
       "id": "via-tribunali-capitol-hill",
@@ -34880,7 +34153,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "vinason-pho",
@@ -34979,7 +34253,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "vita-at-kexp",
@@ -35146,7 +34421,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "waldo-j-dahl-park",
@@ -35160,6 +34436,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.68487, -122.3006],
         [47.6866, -122.30067],
@@ -35227,24 +34504,6 @@
       ]
     },
     {
-      "id": "wallingford-triangle-park",
-      "name": "Wallingford Triangle Park",
-      "lat": 47.652884,
-      "lng": -122.328864,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 6,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.65307, -122.32904],
-        [47.65269, -122.32904],
-        [47.65308, -122.32868]
-      ]
-    },
-    {
       "id": "war-garden-public-park",
       "name": "War Garden Public Park",
       "lat": 47.665532,
@@ -35275,7 +34534,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "ward-springs-park",
@@ -35584,6 +34844,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17",
       "polygon": [
         [47.64704, -122.33267],
         [47.64731, -122.33284],
@@ -35646,25 +34907,6 @@
         [47.64809, -122.34298],
         [47.64802, -122.34301],
         [47.64796, -122.34237]
-      ]
-    },
-    {
-      "id": "waterway-23",
-      "name": "Waterway 23",
-      "lat": 47.648684,
-      "lng": -122.346769,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 4,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.64866, -122.3469],
-        [47.64866, -122.34665],
-        [47.64871, -122.34663],
-        [47.64869, -122.34686]
       ]
     },
     {
@@ -35782,26 +35024,6 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
-    },
-    {
-      "id": "west-bertona-street-end",
-      "name": "West Bertona Street End",
-      "lat": 47.650518,
-      "lng": -122.418319,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 5,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.6506, -122.41787],
-        [47.65044, -122.41789],
-        [47.65044, -122.41873],
-        [47.65056, -122.41877],
-        [47.65058, -122.41802]
-      ]
     },
     {
       "id": "west-ewing-mini-park",
@@ -36123,7 +35345,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "wild-ginger-mckenzie",
@@ -36316,29 +35539,6 @@
         [47.60008, -122.31317],
         [47.60008, -122.31164],
         [47.60081, -122.31164]
-      ]
-    },
-    {
-      "id": "witch-hazel-family",
-      "name": "Witch Hazel Family",
-      "lat": 47.631029,
-      "lng": -122.294292,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 8,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "polygon": [
-        [47.63063, -122.29478],
-        [47.63065, -122.2951],
-        [47.63104, -122.29512],
-        [47.63141, -122.29479],
-        [47.63147, -122.29451],
-        [47.6313, -122.29406],
-        [47.6312, -122.29343],
-        [47.63059, -122.29388]
       ]
     },
     {
@@ -36589,7 +35789,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "wwii-memorial-interrupted-journey",
@@ -36602,7 +35803,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "xian-noodles",
@@ -37027,19 +36229,6 @@
       "lastVerified": "2026-06-17"
     },
     {
-      "id": "zeeks-pizza-north-queen-anne-fremont",
-      "name": "Zeeks Pizza - North Queen Anne Fremont",
-      "lat": 47.648538,
-      "lng": -122.355871,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 42,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
-    },
-    {
       "id": "zeeks-pizza-queen-anne",
       "name": "Zeeks Pizza - Queen Anne",
       "lat": 47.636516,
@@ -37093,7 +36282,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     },
     {
       "id": "zig-zag-cafe",
@@ -37178,7 +36368,8 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-17"
     }
   ]
 }

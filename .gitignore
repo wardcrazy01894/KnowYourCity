@@ -27,6 +27,7 @@ scripts/tmp/
 # changes the apply step writes, not this.
 data/.places-*.jsonl
 data/.places-*-report.md
+data/.hardtail.json
 
 # Local Wrangler state — local D1 SQLite, KV, caches for `wrangler dev`.
 .wrangler/
