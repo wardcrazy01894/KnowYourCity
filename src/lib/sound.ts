@@ -116,3 +116,54 @@ export function playScoreSound(score: number): void {
     log.warn('sound', 'playback failed', { error: String(e) })
   }
 }
+
+/**
+ * Crowd applause for a strong finish — a swell of filtered noise "claps" plus a
+ * short triumphant fanfare on top. Synthesized (no audio file to license/bundle),
+ * a no-op if muted or without an AudioContext (tests). Played once on the results
+ * screen when the day earns it (see lib/celebrate.ts).
+ */
+export function playApplause(): void {
+  if (isMuted()) return
+  const ac = getCtx()
+  if (!ac) return
+  const t = ac.currentTime
+  try {
+    // --- Crowd: a ~2.2s bed of band-passed white noise that swells then fades,
+    // so it reads as a room of people clapping rather than static. White noise is
+    // broadband, so the bandpass actually has signal to shape (a hand-rolled
+    // tonal oscillator would sit outside the passband and be inaudible). ---
+    const dur = 2.2
+    const frames = Math.floor(ac.sampleRate * dur)
+    const buffer = ac.createBuffer(1, frames, ac.sampleRate)
+    const data = buffer.getChannelData(0)
+    for (let i = 0; i < frames; i++) {
+      data[i] = Math.random() * 2 - 1
+    }
+    const src = ac.createBufferSource()
+    src.buffer = buffer
+
+    const band = ac.createBiquadFilter()
+    band.type = 'bandpass'
+    band.frequency.value = 1500 // claps cluster in the low-mids
+    band.Q.value = 0.6
+
+    const crowd = ac.createGain()
+    crowd.gain.setValueAtTime(0.0001, t)
+    crowd.gain.exponentialRampToValueAtTime(0.18, t + 0.25) // quick swell in
+    crowd.gain.setValueAtTime(0.18, t + 1.2)
+    crowd.gain.exponentialRampToValueAtTime(0.0001, t + dur) // fade out
+
+    src.connect(band).connect(crowd).connect(ac.destination)
+    src.start(t)
+    src.stop(t + dur)
+
+    // --- Fanfare: a bright C-major arpeggio over the cheer for a "you nailed it"
+    // accent (reuses the same note() voice as the per-round sounds). ---
+    ;[523.25, 659.25, 783.99, 1046.5].forEach((f, i) =>
+      note(ac, f, t + 0.08 + i * 0.12, 0.3, 'triangle', 0.22),
+    )
+  } catch (e) {
+    log.warn('sound', 'applause playback failed', { error: String(e) })
+  }
+}

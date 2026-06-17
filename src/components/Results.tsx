@@ -10,6 +10,9 @@ import type { RoundResult } from '../types'
 import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
 import { ROUNDS_PER_DAY } from '../lib/daily'
 import { log } from '../lib/log'
+import { shouldCelebrate, countGreens } from '../lib/celebrate'
+import { fireConfetti } from '../lib/confetti'
+import { playApplause } from '../lib/sound'
 import { loadState } from '../lib/storage'
 import {
   submitDailyScore,
@@ -139,6 +142,23 @@ export function Results({
     // Submit once for this finished day; inputs are stable for a given render.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Celebrate a strong finish (4+ greens or a total over 400): confetti + a burst
+  // of applause, once when the results screen first mounts. Confetti is visual so
+  // it ignores the mute toggle (but respects prefers-reduced-motion); the applause
+  // is gated by mute inside playApplause().
+  useEffect(() => {
+    if (!shouldCelebrate(results, totalScore)) return
+    log.info('Results', 'celebrating strong finish', {
+      greens: countGreens(results),
+      totalScore,
+    })
+    void fireConfetti()
+    playApplause()
+    // Fire once on mount; results/totalScore are fixed for this finished day.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   // Compute once so the copied text and the preview below can never diverge.
   const shareText = buildShareString(

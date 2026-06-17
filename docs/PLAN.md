@@ -321,6 +321,16 @@ Sounds are generated with the Web Audio API (no audio files to bundle/license),
 created on the submit click (satisfies browser autoplay rules). A 🔊/🔇 header
 toggle mutes them (persisted in `localStorage`). `scoreTier` is pure + tested.
 
+### 5.11 Strong-finish celebration
+When the results screen mounts after a strong day it fires a one-shot
+celebration: a confetti burst (`fireConfetti`, `src/lib/confetti.ts`) plus a
+swell of synthesized applause (`playApplause`, `src/lib/sound.ts`). It triggers
+when `shouldCelebrate(results, totalScore)` (`src/lib/celebrate.ts`, pure +
+tested) is true — i.e. **4+ greens** (rounds ≥80, same tier as the 🟩 bar) **or a
+total over 400** (of 500). Confetti is visual so it ignores the mute toggle but
+respects `prefers-reduced-motion`; the applause obeys mute like the round cues.
+`canvas-confetti` is lazy-imported, so it only loads when a celebration fires.
+
 ---
 
 ## 6. Map integration (`MapGuess`)
