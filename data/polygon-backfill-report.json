@@ -1,10 +1,10 @@
 {
   "generatedFrom": "seattle",
-  "dryRun": false,
+  "dryRun": true,
   "totalEligible": 341,
-  "totalWithPolygon": 333,
-  "totalPointOnly": 8,
-  "newMatchesThisRun": 1,
+  "totalWithPolygon": 332,
+  "totalPointOnly": 9,
+  "newMatchesThisRun": 0,
   "pointOnly": [
     {
       "id": "bill-wright-golf-complex-at-jefferson-park",
@@ -29,6 +29,14 @@
       "lat": 47.580465,
       "lng": -122.311854,
       "reason": "no-match"
+    },
+    {
+      "id": "eastmont-place",
+      "name": "Eastmont Place",
+      "city": "seattle",
+      "lat": 47.637721,
+      "lng": -122.405568,
+      "reason": "unusable-geometry"
     },
     {
       "id": "i-5-colonnade-off-leash-area",

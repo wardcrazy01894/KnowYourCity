@@ -501,6 +501,20 @@ describe('selectEligibleRows', () => {
     }
   })
 
+  it('treats an empty polygon array as "no polygon yet" (still eligible)', () => {
+    const empty = [
+      {
+        id: 'inplay-park-emptypoly',
+        category: 'park',
+        inPlay: true,
+        polygon: [],
+      },
+    ]
+    expect(selectEligibleRows(empty).map((l) => l.id)).toEqual([
+      'inplay-park-emptypoly',
+    ])
+  })
+
   it('force re-includes rows that already have a polygon', () => {
     expect(
       selectEligibleRows(rows, { force: true }).map((l) => l.id),
