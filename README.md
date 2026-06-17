@@ -23,8 +23,8 @@ close you got. Share your result Wordle-style.
 - 🔁 **No server** — "same 5 for everyone" is computed from the date (seeded RNG).
 - 🔊 **Sound feedback** — a triumphant arpeggio for a perfect 100, down to a
   womp-womp for a bad miss (🔊/🔇 to mute).
-- 🎉 **Strong-finish celebration** — confetti + applause when you land 4+ greens
-  or score over 400.
+- 🎉 **Strong-finish celebration** — a confetti shower + crowd cheer when you
+  land 4+ greens or score over 400. (Cheer clip: CC0/public-domain, BigSoundBank.)
 - 🧭 **Real local spots** — landmarks, restaurants, bars & cafés per city.
 - 🔎 **"Is my place in the game?"** — search a city's list with autocomplete.
 - 🔗 **SEO-ready** — OG/Twitter unfurl meta, sitemap, robots.txt, and JSON-LD structured data for social sharing.

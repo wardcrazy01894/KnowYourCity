@@ -323,13 +323,25 @@ toggle mutes them (persisted in `localStorage`). `scoreTier` is pure + tested.
 
 ### 5.11 Strong-finish celebration
 When the results screen mounts after a strong day it fires a one-shot
-celebration: a confetti burst (`fireConfetti`, `src/lib/confetti.ts`) plus a
-swell of synthesized applause (`playApplause`, `src/lib/sound.ts`). It triggers
-when `shouldCelebrate(results, totalScore)` (`src/lib/celebrate.ts`, pure +
-tested) is true — i.e. **4+ greens** (rounds ≥80, same tier as the 🟩 bar) **or a
-total over 400** (of 500). Confetti is visual so it ignores the mute toggle but
-respects `prefers-reduced-motion`; the applause obeys mute like the round cues.
-`canvas-confetti` is lazy-imported, so it only loads when a celebration fires.
+celebration: a confetti shower (`fireConfetti`, `src/lib/confetti.ts`, via
+`canvas-confetti`) plus a crowd cheer (`playCheer`, `src/lib/sound.ts`). It
+triggers when `shouldCelebrate(results, totalScore)` (`src/lib/celebrate.ts`,
+pure + tested) is true — i.e. **4+ greens** (rounds ≥80, same tier as the 🟩 bar)
+**or a total over 400** (of 500). A `useRef` guard in `Results` makes it fire
+exactly once even under React StrictMode's dev double-mount.
+
+Confetti is a big lower-centre pop followed by ~2s of side-cannon shower (the
+shower is skipped under `prefers-reduced-motion`, but the pop still shows so the
+moment is always acknowledged). It's visual, so it ignores the mute toggle;
+`canvas-confetti` renders its own fixed, `pointer-events:none` canvas and removes
+it when done, so it never blocks the results card or leaderboard. The cheer is a
+short **CC0 / public-domain** applause clip (`src/assets/cheer.mp3`, BigSoundBank)
+played via a reused `Audio` element and gated by mute like the round cues — real
+recorded applause reads better than synthesis, which is why this one feature is
+the exception to the otherwise file-free Web Audio approach in §5.10.
+
+Append **`?celebrate`** to the URL to force the celebration on the results screen
+regardless of score, for previewing/tuning (`isCelebrateTest`, `src/lib/devmode.ts`).
 
 ---
 

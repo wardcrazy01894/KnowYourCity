@@ -4,6 +4,7 @@ import {
   shouldShuffle,
   isPolygonTest,
   polygonTestIds,
+  isCelebrateTest,
 } from './devmode'
 
 describe('shouldStartFresh', () => {
@@ -62,6 +63,18 @@ describe('polygonTestIds', () => {
   it('is null when not a polygon test at all', () => {
     expect(polygonTestIds('')).toBeNull()
     expect(polygonTestIds('?date=2026-06-06')).toBeNull()
+  })
+})
+
+describe('isCelebrateTest', () => {
+  it('is on only for ?celebrate', () => {
+    expect(isCelebrateTest('?celebrate')).toBe(true)
+    expect(isCelebrateTest('?reset&celebrate')).toBe(true)
+  })
+
+  it('is off otherwise', () => {
+    expect(isCelebrateTest('')).toBe(false)
+    expect(isCelebrateTest('?date=2026-06-06')).toBe(false)
   })
 })
 
