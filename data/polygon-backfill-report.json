@@ -1,81 +1,17 @@
 {
-  "generatedFrom": "seattle",
-  "dryRun": true,
-  "totalEligible": 341,
-  "totalWithPolygon": 332,
-  "totalPointOnly": 9,
-  "newMatchesThisRun": 0,
+  "generatedFrom": "annarbor",
+  "dryRun": false,
+  "totalEligible": 109,
+  "totalWithPolygon": 108,
+  "totalPointOnly": 1,
+  "newMatchesThisRun": 108,
   "pointOnly": [
     {
-      "id": "bill-wright-golf-complex-at-jefferson-park",
-      "name": "Bill Wright Golf Complex at Jefferson Park",
-      "city": "seattle",
-      "lat": 47.566583,
-      "lng": -122.304875,
-      "reason": "no-match"
-    },
-    {
-      "id": "charlestown-park",
-      "name": "Charlestown Park",
-      "city": "seattle",
-      "lat": 47.570032,
-      "lng": -122.393813,
-      "reason": "no-match"
-    },
-    {
-      "id": "demonstration-garden-at-el-centro-de-la-raza-name-tbd",
-      "name": "Demonstration Garden at El Centro de la Raza (name TBD)",
-      "city": "seattle",
-      "lat": 47.580465,
-      "lng": -122.311854,
-      "reason": "no-match"
-    },
-    {
-      "id": "eastmont-place",
-      "name": "Eastmont Place",
-      "city": "seattle",
-      "lat": 47.637721,
-      "lng": -122.405568,
-      "reason": "unusable-geometry"
-    },
-    {
-      "id": "i-5-colonnade-off-leash-area",
-      "name": "I-5 Colonnade Off-Leash Area",
-      "city": "seattle",
-      "lat": 47.634826,
-      "lng": -122.323746,
-      "reason": "no-match"
-    },
-    {
-      "id": "lake-people-xacuabs-park",
-      "name": "Lake People (Xacua'bs) Park",
-      "city": "seattle",
-      "lat": 47.569099,
-      "lng": -122.291954,
-      "reason": "no-match"
-    },
-    {
-      "id": "loderi-valley",
-      "name": "Loderi Valley",
-      "city": "seattle",
-      "lat": 47.636517,
-      "lng": -122.295023,
-      "reason": "no-match"
-    },
-    {
-      "id": "open-water-park",
-      "name": "Open Water Park",
-      "city": "seattle",
-      "lat": 47.62991,
-      "lng": -122.385958,
-      "reason": "no-match"
-    },
-    {
-      "id": "queen-anne-boulevard",
-      "name": "Queen Anne Boulevard",
-      "city": "seattle",
-      "lat": 47.637413,
-      "lng": -122.358434,
+      "id": "heathdale-collection",
+      "name": "Heathdale Collection",
+      "city": "annarbor",
+      "lat": 42.280955,
+      "lng": -83.723782,
       "reason": "no-match"
     }
   ]
