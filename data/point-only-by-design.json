@@ -1,0 +1,12 @@
+{
+  "comment": "In-play park/golf locations DELIBERATELY left without a polygon (point-scored). These are sub-facilities or small features with no distinct OpenStreetMap boundary, where a polygon would be unavailable or wrong (e.g. it would balloon the scoring area to a whole park/arboretum). A city counts as 'polygons done' when every in-play park/golf either HAS a polygon or is listed here. The guard test in src/lib/locations.test.ts keeps this ledger honest: every id must be a real, in-play park/golf row that still lacks a polygon.",
+  "cities": {
+    "stpete": {
+      "north-shore-volleyball-courts": "Volleyball courts inside North Shore Park (which has its own polygon). OSM has no named boundary for the courts; point scoring is correct.",
+      "north-shore-kickball-fields": "Kickball fields inside North Shore Park (which has its own polygon). OSM has no named boundary for the fields; point scoring is correct."
+    },
+    "annarbor": {
+      "heathdale-collection": "A plant collection inside Nichols Arboretum with no distinct OSM boundary. Forcing the arboretum polygon would make the answer area wrong; point scoring is correct."
+    }
+  }
+}
