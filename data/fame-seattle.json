@@ -1751,13 +1751,13 @@
   },
   {
     "id": "arepa-venezuelan-kitchen",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 38,
-    "reviewCount": 449,
+    "fameScore": 54,
+    "reviewCount": 1196,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Arepa Venezuelan Kitchen\" 534m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "argosy-cruises",
@@ -2403,11 +2403,11 @@
     "id": "ant-gallery",
     "status": "closed",
     "currentName": "",
-    "fameScore": 18,
-    "reviewCount": 20,
+    "fameScore": 24,
+    "reviewCount": 60,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"A/NT Gallery\" 2882m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Relocated to Pioneer Square (217 Yesler Way) but temporarily closed as of 2026-06-17 — re-add when it reopens."
   },
   {
     "id": "a-hong-kong-kitchen",
@@ -2521,13 +2521,13 @@
   },
   {
     "id": "berlin-wall-fragment",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 42,
-    "reviewCount": 0,
+    "fameScore": 7,
+    "reviewCount": 4,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Berlin Wall Fragment\" 3134m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "berliner-doner-kebab",
@@ -3861,13 +3861,13 @@
   },
   {
     "id": "fairmount-park",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 12,
-    "reviewCount": 14,
+    "fameScore": 20,
+    "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Fairmount Park\" 2893m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "fairmount-playfield",
@@ -6721,13 +6721,13 @@
   },
   {
     "id": "basilic",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 30,
-    "reviewCount": 237,
+    "fameScore": 42,
+    "reviewCount": 476,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Basilic\" 527m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "batch-206-distillery",
@@ -9001,13 +9001,13 @@
   },
   {
     "id": "burritos-california",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 22,
-    "reviewCount": 37,
+    "fameScore": 44,
+    "reviewCount": 646,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Burritos California\" 5491m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "busanjeong",
@@ -10471,13 +10471,13 @@
   },
   {
     "id": "lowlander-brewing",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 28,
-    "reviewCount": 17,
+    "fameScore": 22,
+    "reviewCount": 44,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Lowlander Brewing\" 2804m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "lowrider-brewing",
@@ -10493,11 +10493,11 @@
     "id": "loxicha",
     "status": "closed",
     "currentName": "",
-    "fameScore": 32,
-    "reviewCount": 137,
+    "fameScore": 38,
+    "reviewCount": 419,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Loxicha\" 6008m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Relocated to 11546 15th Ave NE (Pinehurst), north of the Seattle game bounds — held out pending a bounds decision."
   },
   {
     "id": "juice-press",
@@ -11251,13 +11251,13 @@
   },
   {
     "id": "loxsmith-bagels",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 34,
-    "reviewCount": 29,
+    "fameScore": 28,
+    "reviewCount": 93,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"LoxSmith Bagels\" 4949m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "loyal-heights-playfield",
@@ -14171,13 +14171,13 @@
   },
   {
     "id": "nasai-teriyaki",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 26,
-    "reviewCount": 123,
+    "fameScore": 36,
+    "reviewCount": 268,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Nasai Teriyaki\" 8299m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "national-nordic-museum",
@@ -16291,13 +16291,13 @@
   },
   {
     "id": "us-army-corps-of-engineers",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 8,
-    "reviewCount": 0,
+    "fameScore": 14,
+    "reviewCount": 7,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"U.S. Army Corps of Engineers\" 12519m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "us-government-wharf",
@@ -16381,13 +16381,13 @@
   },
   {
     "id": "un-po-tipsy-pizzeria",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 18,
-    "reviewCount": 11,
+    "fameScore": 22,
+    "reviewCount": 32,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Un Po Tipsy Pizzeria\" 2793m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "underbelly",
@@ -21861,13 +21861,13 @@
   },
   {
     "id": "verve-bowls",
-    "status": "closed",
+    "status": "open",
     "currentName": "",
-    "fameScore": 30,
-    "reviewCount": 335,
+    "fameScore": 38,
+    "reviewCount": 347,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Verve Bowls\" 7297m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Re-added at verified current location (2026-06-17); relocated since original pin."
   },
   {
     "id": "via-tribunali-capitol-hill",
@@ -25333,11 +25333,11 @@
     "id": "machine-house-brewery",
     "status": "closed",
     "currentName": "",
-    "fameScore": 42,
-    "reviewCount": 350,
+    "fameScore": 36,
+    "reviewCount": 249,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Removed via vetting 2026-06-17 (medium): Repin unconfirmed: Nominatim places \"Machine House Brewery\" 2992m from the proposed spot — cannot establish a clean ODbL location."
+    "statusNote": "Relocated to 5718 Rainier Ave S, east of the Seattle game bounds — held out pending a bounds decision."
   },
   {
     "id": "machine-shop",
