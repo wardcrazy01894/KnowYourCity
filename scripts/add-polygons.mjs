@@ -13,6 +13,16 @@
  * post-simplification ring > 100 nodes) are left without a `polygon` and fall
  * back to centroid-point scoring at runtime — no crash, no silent wrong answer.
  *
+ * Durable for big, rate-limited cities (Chicago = 789 park/golf, hours under
+ * Overpass throttling):
+ *  - Each query tries the mirrors in RELIABILITY order (flagship first) with a
+ *    per-request abort (FETCH_TIMEOUT_MS) so a hung/slow mirror can't stall the
+ *    whole run; a 429/busy/timeout falls straight through to the next mirror.
+ *  - The dataset is CHECKPOINTED to disk every CHECKPOINT_EVERY matches, so a
+ *    killed/crashed run keeps its progress. Re-running RESUMES automatically:
+ *    `todo` excludes rows that already have a polygon, so a resumed run only
+ *    fetches what's still missing. (Use --force only to re-fetch everything.)
+ *
  * Design details and risk analysis: docs/plans/POLYGON-SCORING.md §4.
  *
  * Usage:
@@ -100,7 +110,12 @@ export function selectEligibleRows(
     : inScope.filter((l) => !Array.isArray(l.polygon) || l.polygon.length === 0)
 }
 
-/** Overpass endpoints, tried in order with retries. */
+/** Overpass mirrors, in RELIABILITY order — always try the flagship first and
+ *  only fall back. They are NOT equally healthy: overpass-api.de answers fast
+ *  (it 429s under load, but a 429 is instant so falling back is cheap), kumi is
+ *  a solid second, and private.coffee is a last resort that often accepts a
+ *  connection then hangs (hence FETCH_TIMEOUT_MS). Don't round-robin — leading
+ *  with a slow mirror just burns the per-request timeout before falling back. */
 const OVERPASS_ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
   'https://overpass.kumi.systems/api/interpreter',
@@ -109,6 +124,23 @@ const OVERPASS_ENDPOINTS = [
 
 /** Delay between individual location queries (ms) to avoid throttling. */
 const QUERY_DELAY_MS = 2000
+
+/** How many full passes over the endpoint set to make before giving up a query. */
+const MAX_FETCH_ROUNDS = 2
+
+/** Per-request timeout (ms). Overpass mirrors sometimes accept a connection then
+ *  hang indefinitely; without a client-side abort, `fetch` waits forever and the
+ *  whole run stalls on one row (the bug that made Chicago crawl). Abort after
+ *  this and fall back to the next mirror. (The server-side `[timeout:90]` in the
+ *  query only bounds query EXECUTION, not a dead/hung socket.) */
+const FETCH_TIMEOUT_MS = 25000
+
+/** Write the dataset back every N newly-matched rows so a long, rate-limited run
+ *  is crash-safe and resumable: a killed run keeps its progress, and re-running
+ *  (without --force) skips rows that already have a polygon, picking up where it
+ *  left off. Critical for big cities (Chicago = 789 park/golf, ~hours under
+ *  Overpass throttling). */
+const CHECKPOINT_EVERY = 20
 
 // ---------------------------------------------------------------------------
 // Overpass fetch (shared retry logic — mirrors fetch-pois.mjs)
@@ -126,8 +158,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 async function fetchOverpass(query) {
   let lastErr
-  for (const endpoint of OVERPASS_ENDPOINTS) {
-    for (let attempt = 1; attempt <= 4; attempt++) {
+  // Try the mirrors in reliability order (flagship first). On a 429/busy/timeout
+  // we move to the NEXT mirror immediately (no point retrying a throttled or
+  // hung one in place), and only back off between full rounds. This drains far
+  // less wall-clock than hammering one endpoint 4× with escalating sleeps.
+  for (let round = 1; round <= MAX_FETCH_ROUNDS; round++) {
+    for (const endpoint of OVERPASS_ENDPOINTS) {
       try {
         const res = await fetch(endpoint, {
           method: 'POST',
@@ -138,6 +174,8 @@ async function fetchOverpass(query) {
             Accept: 'application/json',
           },
           body: 'data=' + encodeURIComponent(query),
+          // Abort a hung/slow socket so the run never stalls on one mirror.
+          signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
         })
         const text = await res.text()
         if (!res.ok || !text.trimStart().startsWith('{')) {
@@ -158,10 +196,13 @@ async function fetchOverpass(query) {
         return json
       } catch (err) {
         lastErr = err
-        console.warn(`  ${endpoint} attempt ${attempt} failed: ${err.message}`)
-        await sleep(attempt * 3000)
+        console.warn(
+          `  ${endpoint} failed (round ${round}/${MAX_FETCH_ROUNDS}): ${err.message}`,
+        )
       }
     }
+    // Every mirror failed this round — back off before another full pass.
+    if (round < MAX_FETCH_ROUNDS) await sleep(round * 4000)
   }
   throw lastErr ?? new Error('All Overpass endpoints failed')
 }
@@ -861,6 +902,7 @@ async function processCity(city, opts) {
   )
 
   let matched = 0
+  let lastCheckpoint = 0
   /** @type {{id:string,name:string,city:string,lat:number,lng:number,reason:string}[]} */
   const misses = []
 
@@ -895,6 +937,16 @@ async function processCity(city, opts) {
         reason: result.reason,
       })
       console.log(`— (${result.reason})`)
+    }
+    // Crash-safe checkpoint: persist progress every CHECKPOINT_EVERY matches so
+    // a killed run (e.g. an hours-long, rate-limited big-city backfill) keeps
+    // what it found. Re-running resumes automatically — `todo` already excludes
+    // rows that have a polygon, so a resumed run only fetches what's still
+    // missing. See CHECKPOINT_EVERY.
+    if (!opts.dryRun && matched - lastCheckpoint >= CHECKPOINT_EVERY) {
+      await writeFile(file, JSON.stringify(data, null, 2) + '\n')
+      lastCheckpoint = matched
+      console.log(`    …checkpoint: ${matched} matched, saved to disk`)
     }
     // Be polite to the public Overpass instances.
     if (i < todo.length - 1) await sleep(QUERY_DELAY_MS)

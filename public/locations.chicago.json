@@ -161,7 +161,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.88802,
+          -87.63284
+        ],
+        [
+          41.88797,
+          -87.63277
+        ],
+        [
+          41.88798,
+          -87.63325
+        ],
+        [
+          41.88801,
+          -87.63284
+        ]
+      ]
     },
     {
       "id": "312-fish-market",
@@ -695,7 +713,37 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.75757,
+          -87.59816
+        ],
+        [
+          41.7574,
+          -87.59826
+        ],
+        [
+          41.75696,
+          -87.59885
+        ],
+        [
+          41.75688,
+          -87.59913
+        ],
+        [
+          41.75693,
+          -87.5992
+        ],
+        [
+          41.75755,
+          -87.59921
+        ],
+        [
+          41.75757,
+          -87.59821
+        ]
+      ]
     },
     {
       "id": "adamus-lounge",
@@ -877,7 +925,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.91923,
+          -87.7762
+        ],
+        [
+          41.91889,
+          -87.77619
+        ],
+        [
+          41.91889,
+          -87.77664
+        ],
+        [
+          41.91923,
+          -87.77666
+        ]
+      ]
     },
     {
       "id": "aint-she-sweet-cafe",
@@ -1026,7 +1092,53 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.93001,
+          -87.64639
+        ],
+        [
+          41.92981,
+          -87.64638
+        ],
+        [
+          41.92981,
+          -87.64622
+        ],
+        [
+          41.93003,
+          -87.64623
+        ],
+        [
+          41.93003,
+          -87.64569
+        ],
+        [
+          41.92989,
+          -87.64567
+        ],
+        [
+          41.92989,
+          -87.64552
+        ],
+        [
+          41.92982,
+          -87.64552
+        ],
+        [
+          41.92994,
+          -87.64479
+        ],
+        [
+          41.93042,
+          -87.64493
+        ],
+        [
+          41.9303,
+          -87.6464
+        ]
+      ]
     },
     {
       "id": "alegrias-seafood-chicago",
@@ -1093,7 +1205,57 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL; Wikidata CC0",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-16",
+      "polygon": [
+        [
+          41.92415,
+          -87.63325
+        ],
+        [
+          41.92422,
+          -87.63372
+        ],
+        [
+          41.92413,
+          -87.63389
+        ],
+        [
+          41.92425,
+          -87.63423
+        ],
+        [
+          41.92515,
+          -87.63453
+        ],
+        [
+          41.9251,
+          -87.63475
+        ],
+        [
+          41.92528,
+          -87.63482
+        ],
+        [
+          41.92558,
+          -87.63421
+        ],
+        [
+          41.92553,
+          -87.63395
+        ],
+        [
+          41.92541,
+          -87.63383
+        ],
+        [
+          41.92436,
+          -87.63328
+        ],
+        [
+          41.92424,
+          -87.63329
+        ]
+      ]
     },
     {
       "id": "algonquin-park",
@@ -1106,7 +1268,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.93527,
+          -87.69468
+        ],
+        [
+          41.93514,
+          -87.69468
+        ],
+        [
+          41.93514,
+          -87.69514
+        ],
+        [
+          41.93527,
+          -87.69514
+        ]
+      ]
     },
     {
       "id": "alhambra-palace",
@@ -1411,7 +1591,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.87485,
+          -87.69364
+        ],
+        [
+          41.87391,
+          -87.69363
+        ],
+        [
+          41.87394,
+          -87.69158
+        ],
+        [
+          41.87486,
+          -87.6916
+        ],
+        [
+          41.87486,
+          -87.69298
+        ]
+      ]
     },
     {
       "id": "alulu-brewery-pub",
@@ -1450,7 +1652,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.79294,
+          -87.59365
+        ],
+        [
+          41.79294,
+          -87.59348
+        ],
+        [
+          41.79314,
+          -87.59348
+        ],
+        [
+          41.79314,
+          -87.59365
+        ]
+      ]
     },
     {
       "id": "amano-bistro",
@@ -1608,7 +1828,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.91288,
+          -87.78106
+        ],
+        [
+          41.91293,
+          -87.77708
+        ],
+        [
+          41.91472,
+          -87.77713
+        ],
+        [
+          41.91466,
+          -87.78115
+        ],
+        [
+          41.91294,
+          -87.7811
+        ]
+      ]
     },
     {
       "id": "amuse",
@@ -1660,7 +1902,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.97723,
+          -87.66946
+        ],
+        [
+          41.97724,
+          -87.66909
+        ],
+        [
+          41.97705,
+          -87.66908
+        ],
+        [
+          41.97704,
+          -87.66945
+        ]
+      ]
     },
     {
       "id": "andies",
@@ -1805,7 +2065,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.95438,
+          -87.65641
+        ],
+        [
+          41.95407,
+          -87.65639
+        ],
+        [
+          41.95406,
+          -87.65661
+        ],
+        [
+          41.95437,
+          -87.65665
+        ]
+      ]
     },
     {
       "id": "ann-sather-restaurant",
@@ -1859,7 +2137,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.89748,
+          -87.62088
+        ],
+        [
+          41.89748,
+          -87.62022
+        ],
+        [
+          41.89698,
+          -87.62021
+        ],
+        [
+          41.89697,
+          -87.62087
+        ]
+      ]
     },
     {
       "id": "antepli-mediterranean-grill",
@@ -2006,7 +2302,37 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.88668,
+          -87.61978
+        ],
+        [
+          41.88674,
+          -87.62028
+        ],
+        [
+          41.88668,
+          -87.62046
+        ],
+        [
+          41.88589,
+          -87.62049
+        ],
+        [
+          41.8859,
+          -87.61931
+        ],
+        [
+          41.88676,
+          -87.61933
+        ],
+        [
+          41.88669,
+          -87.61976
+        ]
+      ]
     },
     {
       "id": "arabia-cafe-hookah-lounge",
@@ -2058,7 +2384,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.80581,
+          -87.73565
+        ],
+        [
+          41.80583,
+          -87.73396
+        ],
+        [
+          41.80235,
+          -87.73386
+        ],
+        [
+          41.80233,
+          -87.73556
+        ]
+      ]
     },
     {
       "id": "archies",
@@ -2138,7 +2482,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.91774,
+          -87.64378
+        ],
+        [
+          41.91752,
+          -87.64378
+        ],
+        [
+          41.91751,
+          -87.64415
+        ],
+        [
+          41.91773,
+          -87.64416
+        ]
+      ]
     },
     {
       "id": "armour-square-park",
@@ -2151,7 +2513,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.83278,
+          -87.63512
+        ],
+        [
+          41.8345,
+          -87.63516
+        ],
+        [
+          41.83453,
+          -87.63287
+        ],
+        [
+          41.83281,
+          -87.63285
+        ]
+      ]
     },
     {
       "id": "armstrong-park",
@@ -2164,7 +2544,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.81322,
+          -87.60917
+        ],
+        [
+          41.81319,
+          -87.61144
+        ],
+        [
+          41.81484,
+          -87.61147
+        ],
+        [
+          41.81488,
+          -87.6092
+        ],
+        [
+          41.81393,
+          -87.60919
+        ]
+      ]
     },
     {
       "id": "arnita-young-boswell-park",
@@ -2177,7 +2579,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.77385,
+          -87.59861
+        ],
+        [
+          41.77384,
+          -87.59906
+        ],
+        [
+          41.77357,
+          -87.59906
+        ],
+        [
+          41.77358,
+          -87.5986
+        ]
+      ]
     },
     {
       "id": "aroid-house",
@@ -2190,7 +2610,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.88657,
+          -87.71802
+        ],
+        [
+          41.88639,
+          -87.71801
+        ],
+        [
+          41.88638,
+          -87.71827
+        ],
+        [
+          41.88657,
+          -87.71828
+        ]
+      ]
     },
     {
       "id": "aroma-hot-pot",
@@ -2229,7 +2667,37 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.87117,
+          -87.66157
+        ],
+        [
+          41.87214,
+          -87.6616
+        ],
+        [
+          41.87216,
+          -87.65813
+        ],
+        [
+          41.87134,
+          -87.65813
+        ],
+        [
+          41.87131,
+          -87.66009
+        ],
+        [
+          41.87119,
+          -87.66023
+        ],
+        [
+          41.87118,
+          -87.66059
+        ]
+      ]
     },
     {
       "id": "art-of-pizza",
@@ -2257,7 +2725,33 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.87677,
+          -87.62166
+        ],
+        [
+          41.8767,
+          -87.62166
+        ],
+        [
+          41.8767,
+          -87.62156
+        ],
+        [
+          41.8767,
+          -87.62142
+        ],
+        [
+          41.87677,
+          -87.62142
+        ],
+        [
+          41.87677,
+          -87.62165
+        ]
+      ]
     },
     {
       "id": "artango",
@@ -2296,7 +2790,33 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.87062,
+          -87.67388
+        ],
+        [
+          41.8706,
+          -87.67506
+        ],
+        [
+          41.87039,
+          -87.67505
+        ],
+        [
+          41.87036,
+          -87.67595
+        ],
+        [
+          41.87017,
+          -87.67594
+        ],
+        [
+          41.87026,
+          -87.67387
+        ]
+      ]
     },
     {
       "id": "arthur-h-compton-house",
@@ -2465,7 +2985,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.96885,
+          -87.74829
+        ],
+        [
+          41.9685,
+          -87.74828
+        ],
+        [
+          41.96851,
+          -87.74799
+        ],
+        [
+          41.96886,
+          -87.74791
+        ]
+      ]
     },
     {
       "id": "asian-station",
@@ -2491,7 +3029,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.81721,
+          -87.62448
+        ],
+        [
+          41.81722,
+          -87.6239
+        ],
+        [
+          41.81707,
+          -87.62389
+        ],
+        [
+          41.81707,
+          -87.62448
+        ]
+      ]
     },
     {
       "id": "aster-hall",
@@ -2519,7 +3075,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.96669,
+          -87.65555
+        ],
+        [
+          41.96655,
+          -87.65555
+        ],
+        [
+          41.96654,
+          -87.65608
+        ],
+        [
+          41.96668,
+          -87.65608
+        ]
+      ]
     },
     {
       "id": "atardecer-acapulqueno",
@@ -2575,7 +3149,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.85102,
+          -87.74899
+        ],
+        [
+          41.84947,
+          -87.74895
+        ],
+        [
+          41.84951,
+          -87.74679
+        ],
+        [
+          41.85105,
+          -87.74683
+        ]
+      ]
     },
     {
       "id": "athletic-field-park",
@@ -2588,7 +3180,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.94662,
+          -87.71652
+        ],
+        [
+          41.94661,
+          -87.7175
+        ],
+        [
+          41.94731,
+          -87.71752
+        ],
+        [
+          41.94825,
+          -87.71754
+        ],
+        [
+          41.94826,
+          -87.71657
+        ]
+      ]
     },
     {
       "id": "atkins-garden",
@@ -2601,7 +3215,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.87146,
+          -87.67123
+        ],
+        [
+          41.87146,
+          -87.67087
+        ],
+        [
+          41.87121,
+          -87.67087
+        ],
+        [
+          41.87121,
+          -87.67122
+        ]
+      ]
     },
     {
       "id": "atlantic-bar-grill",
@@ -2668,7 +3300,73 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.75291,
+          -87.63446
+        ],
+        [
+          41.75397,
+          -87.63442
+        ],
+        [
+          41.75391,
+          -87.63456
+        ],
+        [
+          41.7535,
+          -87.63483
+        ],
+        [
+          41.75326,
+          -87.63543
+        ],
+        [
+          41.75301,
+          -87.63572
+        ],
+        [
+          41.75235,
+          -87.63603
+        ],
+        [
+          41.75216,
+          -87.63625
+        ],
+        [
+          41.75161,
+          -87.63756
+        ],
+        [
+          41.75157,
+          -87.63872
+        ],
+        [
+          41.7512,
+          -87.63872
+        ],
+        [
+          41.75132,
+          -87.63704
+        ],
+        [
+          41.75158,
+          -87.6368
+        ],
+        [
+          41.75185,
+          -87.63577
+        ],
+        [
+          41.7524,
+          -87.63548
+        ],
+        [
+          41.75286,
+          -87.63451
+        ]
+      ]
     },
     {
       "id": "auditorium-theatre",
@@ -2709,7 +3407,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.89871,
+          -87.73838
+        ],
+        [
+          41.89873,
+          -87.73728
+        ],
+        [
+          41.89839,
+          -87.73727
+        ],
+        [
+          41.89837,
+          -87.73837
+        ]
+      ]
     },
     {
       "id": "aura-by-uvae",
@@ -2735,7 +3451,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.97575,
+          -87.77953
+        ],
+        [
+          41.97742,
+          -87.77951
+        ],
+        [
+          41.97741,
+          -87.77823
+        ],
+        [
+          41.97574,
+          -87.77827
+        ],
+        [
+          41.97573,
+          -87.77951
+        ]
+      ]
     },
     {
       "id": "austin-town-hall-park",
@@ -2748,7 +3486,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.88787,
+          -87.76634
+        ],
+        [
+          41.88921,
+          -87.76638
+        ],
+        [
+          41.8892,
+          -87.76526
+        ],
+        [
+          41.88779,
+          -87.76521
+        ],
+        [
+          41.88784,
+          -87.76633
+        ]
+      ]
     },
     {
       "id": "autea-sweets-eats",
@@ -2787,7 +3547,41 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.74398,
+          -87.59528
+        ],
+        [
+          41.74401,
+          -87.59302
+        ],
+        [
+          41.74057,
+          -87.59295
+        ],
+        [
+          41.74052,
+          -87.5974
+        ],
+        [
+          41.74088,
+          -87.59755
+        ],
+        [
+          41.74186,
+          -87.59772
+        ],
+        [
+          41.74224,
+          -87.59771
+        ],
+        [
+          41.74227,
+          -87.59526
+        ]
+      ]
     },
     {
       "id": "avec",
@@ -2854,7 +3648,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.94115,
+          -87.71399
+        ],
+        [
+          41.94144,
+          -87.71477
+        ],
+        [
+          41.94204,
+          -87.71569
+        ],
+        [
+          41.94111,
+          -87.71567
+        ],
+        [
+          41.94114,
+          -87.71462
+        ]
+      ]
     },
     {
       "id": "avondale-tap",
@@ -3036,7 +3852,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL; Wikidata CC0"
+      "attribution": "OpenStreetMap ODbL; Wikidata CC0",
+      "polygon": [
+        [
+          41.8046,
+          -87.65769
+        ],
+        [
+          41.80418,
+          -87.65768
+        ],
+        [
+          41.80416,
+          -87.65878
+        ],
+        [
+          41.80458,
+          -87.65879
+        ],
+        [
+          41.80458,
+          -87.65858
+        ]
+      ]
     },
     {
       "id": "backlot-coffee",
@@ -3339,7 +4177,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.84719,
+          -87.68141
+        ],
+        [
+          41.84705,
+          -87.68131
+        ],
+        [
+          41.84706,
+          -87.68072
+        ],
+        [
+          41.84746,
+          -87.68073
+        ]
+      ]
     },
     {
       "id": "barbara-jordan-jose-sarria",
@@ -3417,7 +4273,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.8526,
+          -87.67708
+        ],
+        [
+          41.85226,
+          -87.67707
+        ],
+        [
+          41.85227,
+          -87.67624
+        ],
+        [
+          41.85261,
+          -87.67624
+        ]
+      ]
     },
     {
       "id": "barrio",
@@ -3577,7 +4451,33 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.85795,
+          -87.61956
+        ],
+        [
+          41.85804,
+          -87.61956
+        ],
+        [
+          41.85805,
+          -87.61912
+        ],
+        [
+          41.85764,
+          -87.61892
+        ],
+        [
+          41.85755,
+          -87.61931
+        ],
+        [
+          41.85791,
+          -87.61951
+        ]
+      ]
     },
     {
       "id": "battle-of-midway-memorial",
@@ -3603,7 +4503,29 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.91638,
+          -87.64229
+        ],
+        [
+          41.91609,
+          -87.64227
+        ],
+        [
+          41.91607,
+          -87.64128
+        ],
+        [
+          41.9164,
+          -87.64129
+        ],
+        [
+          41.91639,
+          -87.64179
+        ]
+      ]
     },
     {
       "id": "bavettes-bar-boeuf",
@@ -3767,7 +4689,25 @@
       "clue": null,
       "photoUrl": null,
       "source": "overpass",
-      "attribution": "OpenStreetMap ODbL"
+      "attribution": "OpenStreetMap ODbL",
+      "polygon": [
+        [
+          41.78275,
+          -87.59185
+        ],
+        [
+          41.78276,
+          -87.59151
+        ],
+        [
+          41.78245,
+          -87.5915
+        ],
+        [
+          41.78245,
+          -87.59184
+        ]
+      ]
     },
     {
       "id": "beermiscuous",
