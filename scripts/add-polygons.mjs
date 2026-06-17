@@ -132,8 +132,10 @@ const MAX_FETCH_ROUNDS = 2
  *  hang indefinitely; without a client-side abort, `fetch` waits forever and the
  *  whole run stalls on one row (the bug that made Chicago crawl). Abort after
  *  this and fall back to the next mirror. (The server-side `[timeout:90]` in the
- *  query only bounds query EXECUTION, not a dead/hung socket.) */
-const FETCH_TIMEOUT_MS = 25000
+ *  query only bounds query EXECUTION, not a dead/hung socket.) Kept short: when
+ *  the flagship 429s and the secondary mirrors are overloaded (they accept then
+ *  hang), a long timeout makes every throttled row cost ~timeout × mirrors. */
+const FETCH_TIMEOUT_MS = 8000
 
 /** Write the dataset back every N newly-matched rows so a long, rate-limited run
  *  is crash-safe and resumable: a killed run keeps its progress, and re-running
