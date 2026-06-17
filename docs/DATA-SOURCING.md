@@ -384,15 +384,17 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
 > **Full vetting (the hard tail).** Items the matcher can't confidently auto-stamp
 > (ambiguous, not-found, temporarily-closed, delisted-landmark) are driven to a
 > terminal state by a multi-agent verification pass: each agent re-queries Places
-> + web-searches one batch and returns **keep / remove / repin** with a cited
-> reason (the `verify-hardtail` workflow). `scripts/places-vet-apply.mjs --city
-> <id> --decisions <file>` then stamps the keeps, drops the removes (synthesizing
-> a `status: closed` fame entry when a row had none), and moves the repins —
-> **repin coordinates are re-geocoded through Nominatim (ODbL) and only accepted
-> when Nominatim independently lands within ~400 m**; an unconfirmed relocation is
-> removed rather than committing Google-derived coordinates (a notable relocated
-> landmark is better re-added cleanly via the `add-location` skill). This is how
-> all four launched cities were taken to **zero unverified rows**.
+> + web-searches one batch and returns **keep / remove** with a cited reason (the
+> `verify-hardtail` workflow). `scripts/places-vet-apply.mjs --city <id>
+> --decisions <file>` then stamps the keeps **at their existing pin** and drops the
+> removes (synthesizing a `status: closed` fame entry when a row had none, so a
+> no-fame row still drops). It **never writes moved coordinates** — a relocation is
+> resolved as a *keep* (a small pin nudge where the committed pin is still accurate)
+> or a *remove* (a large move: the committed pin is stale, so the venue is dropped
+> and re-added cleanly via the `add-location` skill, which sources ODbL coords from
+> Nominatim/Census). This keeps committed coordinates ODbL-clean and guarantees no
+> pin drifts away from its polygon. It's how all four launched cities reached
+> **zero unverified rows**.
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows

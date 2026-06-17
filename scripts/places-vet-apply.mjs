@@ -5,8 +5,11 @@
 //      from the verify-hardtail workflow), filtered to this city.
 //
 // For every committed row that still lacks `lastVerified`:
-//   - if the workflow ruled on it: keep -> stamp; remove -> status:closed in the
-//     fame cache (apply-difficulty drops it); repin -> move coords (+stamp).
+//   - if the workflow ruled on it: keep -> stamp at the existing pin; remove ->
+//     status:closed in the fame cache (apply-difficulty drops it). We never write
+//     moved coordinates — a relocation is resolved as a 'keep' (small nudge, pin
+//     still accurate) or a 'remove' (far move; re-add cleanly via add-location),
+//     so committed coords stay ODbL-clean and no pin drifts off its polygon.
 //   - else (the auto-resolved tier) reclassify the stored sweep record with the
 //     CURRENT matcher (scripts/places-freshness-lib.mjs): stamp -> lastVerified,
 //     food CLOSED_PERMANENTLY -> status:closed.
@@ -61,7 +64,6 @@ const decisionById = new Map(decisions.map((d) => [d.id, d]))
 const out = {
   stamped: [],
   removed: [],
-  repinned: [],
   closedFood: [],
   leftover: [],
 }
@@ -103,17 +105,12 @@ for (const row of ds.locations) {
         ),
       )
       out.removed.push({ id: row.id, name: row.name, reason: d.reason })
-    } else if (
-      d.decision === 'repin' &&
-      typeof d.repinLat === 'number' &&
-      typeof d.repinLng === 'number'
-    ) {
-      row.lat = d.repinLat
-      row.lng = d.repinLng
-      row.lastVerified = DATE
-      out.repinned.push({ id: row.id, name: row.name, reason: d.reason })
     } else {
-      // keep (or repin without coords) -> stamp present
+      // keep -> stamp present at the EXISTING (ODbL) pin. We never write moved
+      // coordinates here: a relocation is resolved upstream (a small pin nudge is
+      // a 'keep' at the current pin; a far move is a 'remove' to be re-added
+      // cleanly via add-location), so committed coords stay Nominatim/Census-clean
+      // and no pin ever drifts away from its polygon.
       row.lastVerified = DATE
       out.stamped.push(row.id)
     }
@@ -166,7 +163,6 @@ if (!DRY) {
 const lines = [`# Vetting apply — ${CITY} (${DATE})`, '']
 lines.push(`- stamped (kept/verified present): **${out.stamped.length}**`)
 lines.push(`- removed (workflow): **${out.removed.length}**`)
-lines.push(`- repinned (workflow): **${out.repinned.length}**`)
 lines.push(
   `- auto-closed food (Google CLOSED_PERMANENTLY): **${out.closedFood.length}**`,
 )
@@ -180,13 +176,12 @@ const sec = (t, a, f) => {
   lines.push('')
 }
 sec('Removed', out.removed, (x) => `${x.name} (${x.id}) — ${x.reason}`)
-sec('Repinned', out.repinned, (x) => `${x.name} (${x.id}) — ${x.reason}`)
 sec('Auto-closed food', out.closedFood, (x) => `${x.name} (${x.id})`)
 sec('LEFTOVER', out.leftover, (x) => `${x.name} (${x.id}) — ${x.why}`)
 if (!DRY) writeFileSync(REPORT, lines.join('\n') + '\n')
 
 console.log(
-  `${DRY ? '[dry] ' : ''}${CITY}: stamped=${out.stamped.length} removed=${out.removed.length} repinned=${out.repinned.length} closedFood=${out.closedFood.length} leftover=${out.leftover.length}`,
+  `${DRY ? '[dry] ' : ''}${CITY}: stamped=${out.stamped.length} removed=${out.removed.length} closedFood=${out.closedFood.length} leftover=${out.leftover.length}`,
 )
 if (out.leftover.length)
   console.log(

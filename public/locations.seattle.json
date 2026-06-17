@@ -5611,20 +5611,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "chan-seattle",
-      "name": "Chan Seattle",
-      "lat": 47.613159,
-      "lng": -122.333486,
-      "category": "restaurant",
-      "inPlay": false,
-      "fameScore": 40,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-17"
-    },
-    {
       "id": "chandelier-lounge",
       "name": "Chandelier Lounge",
       "lat": 47.622546,
@@ -33815,25 +33801,6 @@
         [47.63249, -122.38974],
         [47.63227, -122.39044],
         [47.63223, -122.39092]
-      ]
-    },
-    {
-      "id": "uw-farm",
-      "name": "UW Farm",
-      "lat": 47.658455,
-      "lng": -122.292454,
-      "category": "park",
-      "inPlay": false,
-      "fameScore": 22,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-17",
-      "polygon": [
-        [47.65427, -122.3183],
-        [47.65438, -122.31824],
-        [47.65437, -122.31848]
       ]
     },
     {

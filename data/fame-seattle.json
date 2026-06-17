@@ -6231,13 +6231,13 @@
   },
   {
     "id": "chan-seattle",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 40,
     "reviewCount": 1193,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "progressive Korean restaurant at the Paramount Hotel downtown, well-reviewed food destination"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Relocated ~696m (verified operational elsewhere); committed pin is stale — removed to re-add cleanly via add-location. (Google confirms Chan Seattle is OPERATIONAL at 724 Pine St (47.6131,-122.3334);"
   },
   {
     "id": "chandala-thai",
@@ -17671,13 +17671,13 @@
   },
   {
     "id": "uw-farm",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "active 2.5-acre student-run organic farm on UW campus, established 2006"
+    "statusNote": "Removed via vetting 2026-06-17 (medium): Relocated ~1960m (verified operational elsewhere); committed pin is stale — removed to re-add cleanly via add-location. (UW official site and Google both confirm UW Farm is at 3501 NE 41st St (47.658"
   },
   {
     "id": "vacil-salvadoreno-taco-loco",

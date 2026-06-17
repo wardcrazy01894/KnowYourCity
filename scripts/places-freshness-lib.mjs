@@ -113,8 +113,12 @@ export function nameSimilarity(a, b) {
   if (sa.size === 0 || sb.size === 0) return 0
   let inter = 0
   for (const t of sa) if (sb.has(t)) inter++
+  // Subset-containment bonus, but only when the smaller name has >=2 tokens —
+  // otherwise a single generic token ("Park" ⊂ "Lincoln Park", "Bar" ⊂ "Bar
+  // Harbor") would falsely score 0.9. A genuine 2+ token subset ("Serious Pie" ⊂
+  // "Serious Pie Ballard") is a real identity signal.
   const smallSize = Math.min(sa.size, sb.size)
-  if (inter === smallSize && smallSize > 0)
+  if (inter === smallSize && smallSize >= 2)
     return Math.max(0.9, (2 * inter) / (sa.size + sb.size))
   return (2 * inter) / (sa.size + sb.size)
 }

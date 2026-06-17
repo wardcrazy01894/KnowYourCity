@@ -4,6 +4,7 @@ import {
   nameSimilarity,
   classifyVenue,
   classifyFromStored,
+  decideMatch,
   driftFlag,
   shouldAutoClose,
 } from './places-freshness-lib.mjs'
@@ -34,10 +35,16 @@ describe('nameSimilarity', () => {
     expect(nameSimilarity('AnNamPho', 'An Nam Pho')).toBe(1)
     expect(nameSimilarity('Boathouse Deli', 'Boat House Deli')).toBe(1)
   })
-  it('scores a contained name high ("Agelgil" ⊂ "Agelgil Ethiopian Restaurant")', () => {
+  it('scores a 2+ token contained name high ("Serious Pie" ⊂ "Serious Pie Ballard")', () => {
     expect(
-      nameSimilarity('Agelgil', 'Agelgil Ethiopian Restaurant Seattle'),
+      nameSimilarity('Serious Pie', 'Serious Pie Ballard'),
     ).toBeGreaterThanOrEqual(0.9)
+  })
+  it('does NOT award the 0.9 containment bonus to a single generic token', () => {
+    // "Park" ⊂ "Lincoln Park" must not score 0.9 — it would falsely auto-match
+    // any nearby place whose name contains the word. Dice keeps it modest.
+    expect(nameSimilarity('Park', 'Lincoln Park')).toBeLessThan(0.9)
+    expect(nameSimilarity('Bar', 'Bar Harbor')).toBeLessThan(0.9)
   })
   it('still scores two unrelated names low', () => {
     expect(nameSimilarity('Accidental Park', 'Occidental Square')).toBeLessThan(
@@ -232,6 +239,48 @@ describe('shouldAutoClose', () => {
     ])
       expect(shouldAutoClose(c)).toBe(false)
     expect(shouldAutoClose(undefined)).toBe(false)
+  })
+})
+
+describe('decideMatch (shared decision core)', () => {
+  it('expands the distance gate for non-business categories (park past 400m)', () => {
+    expect(
+      decideMatch({
+        nameSim: 1,
+        distanceM: 520,
+        status: 'OPERATIONAL',
+        category: 'park',
+      }).action,
+    ).toBe('stamp')
+    // same distance, a business -> beyond its 400m gate -> review
+    expect(
+      decideMatch({
+        nameSim: 1,
+        distanceM: 520,
+        status: 'OPERATIONAL',
+        category: 'restaurant',
+      }).action,
+    ).toBe('review')
+  })
+  it('proximity override needs the name floor (rejects a different tenant on top of us)', () => {
+    expect(
+      decideMatch({
+        nameSim: 0,
+        distanceM: 5,
+        status: 'OPERATIONAL',
+        category: 'bar',
+      }).action,
+    ).toBe('review')
+  })
+  it('a temporarily-closed near match is watch, not a proximity stamp', () => {
+    expect(
+      decideMatch({
+        nameSim: 1,
+        distanceM: 5,
+        status: 'CLOSED_TEMPORARILY',
+        category: 'cafe',
+      }).action,
+    ).toBe('watch')
   })
 })
 
