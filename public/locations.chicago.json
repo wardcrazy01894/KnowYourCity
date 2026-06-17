@@ -3221,7 +3221,8 @@
       "lat": 41.868872,
       "lng": -87.683929,
       "category": "restaurant",
-      "inPlay": false,
+      "difficulty": "hard",
+      "inPlay": true,
       "fameScore": 50,
       "clue": null,
       "photoUrl": null,
@@ -28594,28 +28595,6 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
-      "id": "ke22-gale-street-inn",
-      "name": "Ke22-Gale Street Inn",
-      "lat": 41.951148,
-      "lng": -87.726806,
-      "category": "park",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 52,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16",
-      "polygon": [
-        [41.9514, -87.72725],
-        [41.95111, -87.72689],
-        [41.95091, -87.72646],
-        [41.95091, -87.72636],
-        [41.95139, -87.72723]
-      ]
-    },
-    {
       "id": "kedvale-park",
       "name": "Kedvale Park",
       "lat": 41.906702,
@@ -53397,7 +53376,7 @@
       "lat": 41.790031,
       "lng": -87.703693,
       "category": "restaurant",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 52,
       "clue": null,
