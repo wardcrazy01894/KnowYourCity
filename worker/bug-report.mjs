@@ -107,7 +107,13 @@ async function verifyTurnstile(token, secret, ip) {
     )
     const data = await r.json()
     return Boolean(data.success)
-  } catch {
+  } catch (e) {
+    // Distinguish a siteverify NETWORK failure from a genuine bot rejection
+    // (both return false → 403): an unreachable siteverify silently blocks
+    // every legit reporter, which would otherwise be invisible.
+    console.warn('bug-report turnstile siteverify network error', {
+      error: String(e),
+    })
     return false
   }
 }
@@ -222,9 +228,9 @@ export default {
       '</details>',
     ].join('\n')
 
-    const res = await fetch(
-      `https://api.github.com/repos/${env.GH_REPO}/issues`,
-      {
+    let res
+    try {
+      res = await fetch(`https://api.github.com/repos/${env.GH_REPO}/issues`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${env.GH_TOKEN}`,
@@ -237,10 +243,25 @@ export default {
           body: issueBody,
           labels: ['bug', 'from-app'],
         }),
-      },
-    )
-    if (!res.ok)
+      })
+    } catch (e) {
+      // Network throw / timeout reaching GitHub — without this the worker 500s
+      // with no trace; intake silently breaks. Log it. (Never the token.)
+      console.error('bug-report github issue create threw', {
+        error: String(e),
+      })
+      return json({ error: 'github error' }, 502, headers)
+    }
+    if (!res.ok) {
+      // Log status AND the GitHub error body so a broken intake (expired PAT,
+      // archived repo, secondary rate limit) is diagnosable from logs alone.
+      const detail = await res.text().catch(() => '')
+      console.error('bug-report github issue create failed', {
+        status: res.status,
+        body: detail.slice(0, 300),
+      })
       return json({ error: 'github error', status: res.status }, 502, headers)
+    }
     const issue = await res.json()
     return json({ ok: true, url: issue.html_url }, 200, headers)
   },

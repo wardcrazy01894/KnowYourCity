@@ -50,8 +50,15 @@ beforeEach(() => {
       }
       if (u.includes('api.github.com')) {
         githubCall = { url: u, init, body: JSON.parse(init.body) }
+        if (globalThis.__githubThrows === true)
+          throw new Error('GH_NETWORK_DOWN')
         return globalThis.__githubOk === false
-          ? { ok: false, status: 422, json: async () => ({}) }
+          ? {
+              ok: false,
+              status: 422,
+              json: async () => ({}),
+              text: async () => '{"message":"Validation Failed"}',
+            }
           : {
               ok: true,
               status: 201,
@@ -65,6 +72,7 @@ beforeEach(() => {
   )
   globalThis.__turnstileOk = true
   globalThis.__githubOk = true
+  globalThis.__githubThrows = false
 })
 
 afterEach(() => {
@@ -164,10 +172,27 @@ describe('bug-report worker handler', () => {
     expect(githubCall.body.labels).toContain('bug')
   })
 
-  it('surfaces a GitHub API failure as 502', async () => {
+  it('surfaces a GitHub API failure as 502 and logs the status + body', async () => {
     globalThis.__githubOk = false
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
     const res = await handler.fetch(post({ message: 'hi' }), makeEnv())
     expect(res.status).toBe(502)
+    // An expired PAT / archived repo must be diagnosable: log status + reason.
+    expect(spy).toHaveBeenCalled()
+    const logged = JSON.stringify(spy.mock.calls)
+    expect(logged).toMatch(/422/)
+    expect(logged).toMatch(/Validation Failed/)
+    spy.mockRestore()
+  })
+
+  it('returns 502 and logs when the GitHub call throws (network down)', async () => {
+    globalThis.__githubThrows = true
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const res = await handler.fetch(post({ message: 'hi' }), makeEnv())
+    expect(res.status).toBe(502)
+    expect(spy).toHaveBeenCalled()
+    expect(JSON.stringify(spy.mock.calls)).toMatch(/GH_NETWORK_DOWN/)
+    spy.mockRestore()
   })
 
   it('omits a phishing URL not from our origin from the issue body', async () => {
