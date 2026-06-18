@@ -134,25 +134,27 @@ describe('saveState', () => {
 })
 
 describe('clearState', () => {
-  it('removes only this app version’s namespaced keys, leaving others intact', () => {
+  it('removes ONLY the given city’s key, leaving other cities + namespaces intact', () => {
     saveState('stpete', sample())
+    saveState('stpete__shuffle', sample())
     saveState('seattle', sample())
     stub.map.set('unrelated:key', 'keep-me')
-    stub.map.set('kyc:v0:olddata', 'older-version-keep') // different PREFIX
-    clearState()
+    clearState('stpete')
+    // Only the official stpete save is gone.
     expect(loadState('stpete')).toEqual(defaultState())
-    expect(loadState('seattle')).toEqual(defaultState())
+    // The isolated shuffle namespace and other cities are untouched.
+    expect(loadState('stpete__shuffle')).not.toEqual(defaultState())
+    expect(loadState('seattle')).not.toEqual(defaultState())
     expect(stub.map.get('unrelated:key')).toBe('keep-me')
-    expect(stub.map.get('kyc:v0:olddata')).toBe('older-version-keep')
   })
 
   it('never throws when storage access fails', () => {
     vi.stubGlobal('localStorage', {
-      get length() {
+      removeItem: () => {
         throw new Error('disabled')
       },
     } as unknown as Storage)
-    expect(() => clearState()).not.toThrow()
+    expect(() => clearState('stpete')).not.toThrow()
   })
 })
 
@@ -164,14 +166,31 @@ describe('applyStartupReset', () => {
   it('does nothing and returns false when there is no fresh-start flag', () => {
     vi.stubGlobal('window', { location: { search: '' } })
     saveState('stpete', sample())
-    expect(applyStartupReset()).toBe(false)
+    expect(applyStartupReset('stpete')).toBe(false)
     expect(loadState('stpete')).not.toEqual(defaultState())
   })
 
-  it('clears saved state and returns true when the URL asks for a fresh start', () => {
+  it('clears the active namespace and returns true when the URL asks for a fresh start', () => {
     vi.stubGlobal('window', { location: { search: '?reset' } })
     saveState('stpete', sample())
-    expect(applyStartupReset()).toBe(true)
+    expect(applyStartupReset('stpete')).toBe(true)
     expect(loadState('stpete')).toEqual(defaultState())
+  })
+
+  it('a ?shuffle reset clears ONLY the shuffle namespace, never the official daily', () => {
+    // The bug: ?shuffle wiped the real in-progress daily via a blanket clear.
+    vi.stubGlobal('window', { location: { search: '?shuffle' } })
+    saveState('stpete', sample()) // the official daily in progress
+    saveState('stpete__shuffle', sample()) // a previous shuffle game
+    expect(applyStartupReset('stpete__shuffle')).toBe(true)
+    expect(loadState('stpete')).not.toEqual(defaultState()) // daily preserved
+    expect(loadState('stpete__shuffle')).toEqual(defaultState()) // shuffle cleared
+  })
+
+  it('returns false (clears nothing) when no active city namespace is known', () => {
+    vi.stubGlobal('window', { location: { search: '?reset' } })
+    saveState('stpete', sample())
+    expect(applyStartupReset(null)).toBe(false)
+    expect(loadState('stpete')).not.toEqual(defaultState())
   })
 })
