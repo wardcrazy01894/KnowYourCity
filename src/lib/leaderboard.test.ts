@@ -12,6 +12,7 @@ import {
   buildLeaderboardRows,
   PERCENTILE_MIN_TOTAL,
 } from './leaderboard'
+import { log } from './log'
 
 /**
  * Minimal in-memory localStorage stub — vitest runs in the node environment (no
@@ -126,6 +127,7 @@ describe('submitDailyScore', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
     vi.unstubAllEnvs()
+    vi.restoreAllMocks()
   })
 
   it('does NOT submit a non-official game (shuffle / date override)', async () => {
@@ -190,6 +192,41 @@ describe('submitDailyScore', () => {
       }),
     )
     expect(await submitDailyScore(args)).toBeNull()
+  })
+
+  it('logs a warning with the server status + reason when a submit is rejected', async () => {
+    // The exact diagnosis we lacked for the negative-lineup 400: surface the
+    // status AND the server's error body so it shows up in window.kycDumpLogs().
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: false,
+        status: 400,
+        text: async () => JSON.stringify({ error: 'invalid lineup' }),
+      })),
+    )
+    const warn = vi.spyOn(log, 'warn')
+    expect(await submitDailyScore(args)).toBeNull()
+    const call = warn.mock.calls.find((c) => /reject/i.test(String(c[1])))
+    expect(call).toBeTruthy()
+    expect(JSON.stringify(call?.[2])).toMatch(/400/)
+    expect(JSON.stringify(call?.[2])).toMatch(/invalid lineup/)
+  })
+
+  it('logs a warning when a submit throws (offline)', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        throw new Error('offline')
+      }),
+    )
+    const warn = vi.spyOn(log, 'warn')
+    expect(await submitDailyScore(args)).toBeNull()
+    const call = warn.mock.calls.find((c) => /network/i.test(String(c[1])))
+    expect(call).toBeTruthy()
+    expect(JSON.stringify(call?.[2])).toMatch(/offline/)
   })
 
   it('parses the server streak into the standing when present', async () => {
@@ -305,6 +342,35 @@ describe('fetchLeaderboard', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
     vi.unstubAllEnvs()
+    vi.restoreAllMocks()
+  })
+
+  it('logs a warning with the status when a read is rejected', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example/')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({ ok: false, status: 503, json: async () => null })),
+    )
+    const warn = vi.spyOn(log, 'warn')
+    expect(await fetchLeaderboard('stpete', '2026-06-15')).toBeNull()
+    const call = warn.mock.calls.find((c) => /reject/i.test(String(c[1])))
+    expect(call).toBeTruthy()
+    expect(JSON.stringify(call?.[2])).toMatch(/503/)
+  })
+
+  it('logs a warning when a read throws (offline)', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example/')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        throw new Error('offline')
+      }),
+    )
+    const warn = vi.spyOn(log, 'warn')
+    expect(await fetchLeaderboard('stpete', '2026-06-15')).toBeNull()
+    const call = warn.mock.calls.find((c) => /network/i.test(String(c[1])))
+    expect(call).toBeTruthy()
+    expect(JSON.stringify(call?.[2])).toMatch(/offline/)
   })
 
   it('returns null when no endpoint is configured', async () => {
