@@ -139,11 +139,24 @@ the client. The bug worker (`kyl-bug`) deploys the same way with
 
 Every build stamps a git build hash into the bundle (`VITE_BUILD_HASH`, defined
 in `vite.config.ts`) and also emits a static **`/version.json`** carrying the
-same hash. On an interval an open tab fetches `version.json` and, if the hash no
-longer matches the one it booted with, forces a one-time reload **before** a city
-is selected (so progress is never interrupted mid-game). The logic lives in
-`src/lib/version.ts` (#91). Both values come from the same build, so they can
-never disagree within a single deploy — no reload loop.
+same hash. An open tab fetches `version.json` **on tab focus and every ~5 min**;
+if the hash no longer matches the one it booted with, it picks up the new deploy
+**automatically and silently** — no banner, no click. It only reloads when the
+reload wouldn't change what the player is looking at: the **city picker**, or
+**today's results screen** (a reload there just re-renders the same results — so a
+feature like confetti reaches a finished player without a click). It **defers** in
+every disruptive case: a game **actively mid-round** (never interrupt a guess),
+and **any game for a day other than the real current date** — e.g. sitting on
+yesterday's results after the day rolled over, where a reload would drop them into
+the new day's game. Leaving the results screen for the next day is the player's
+click; whenever they do start a fresh game it loads on the newest bundle anyway.
+The decision is `shouldDeferReload(current, todayKey)` — with `todayKey` computed
+fresh from the city timezone at check time, so a tab open past midnight is judged
+correctly. Logic lives in `src/lib/version.ts` and `src/App.tsx` (#91; silent
+auto-reload in #127). Both hashes come from the same build (no intra-deploy
+disagreement), and a `reloadScheduled` guard plus the post-reload hash match rule
+out a reload loop. (No service worker, so a reload is all it takes to load new
+code.)
 
 ## Before opening a PR
 

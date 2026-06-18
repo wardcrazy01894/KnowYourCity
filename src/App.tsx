@@ -8,7 +8,8 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { versionCheckAction } from './lib/version'
+import { versionCheckAction, shouldDeferReload } from './lib/version'
+import { loadState } from './lib/storage'
 import type { LocationsFile, Location } from './types'
 import {
   getDateKey,
@@ -133,32 +134,51 @@ export function App() {
   const [reporting, setReporting] = useState(false)
   const [reportPrefill, setReportPrefill] = useState('')
   const [attribution, setAttribution] = useState('')
-  const [newVersionAvailable, setNewVersionAvailable] = useState(false)
 
-  // Inline ref — always reflects the latest cityId without an async useEffect.
-  // The visibility handler reads this so it never sees a stale value.
-  const cityIdRef = useRef(cityId)
-  cityIdRef.current = cityId
+  // Inline ref — the version-check effect reads the latest game context without
+  // re-subscribing. Updated below once a city is known (null on the picker). We
+  // keep the timeZone (not a captured dateKey) so the effect can compute the REAL
+  // current date itself — correct even for a tab left open past midnight.
+  const gameCtxRef = useRef<{ storageCityId: string; timeZone: string } | null>(
+    null,
+  )
 
-  // On tab focus, check whether a new deploy has landed by comparing the build
-  // hash embedded at compile time against /version.json served by CF Pages.
-  // If the hashes differ and no city is chosen yet, reload silently (safe — no
-  // game in progress); otherwise show a banner so mid-game players can choose
-  // when to refresh.
+  // Keep players on the latest deploy automatically — no banner, no click. Poll
+  // /version.json (served by CF Pages) on tab focus AND on an interval, comparing
+  // the build hash embedded at compile time. When it differs we silently reload,
+  // EXCEPT when a reload would disrupt the player (see shouldDeferReload): mid-
+  // round, or sitting on the results screen after the day has rolled over (a
+  // reload would drop them into the new day's game — that should be their click).
+  // In those cases we defer; a later check reloads on its own once it's safe. (No
+  // service worker, so a reload is all it takes to pick up new code.)
   useEffect(() => {
     if (import.meta.env.DEV) return
+    const POLL_MS = 5 * 60_000
+    let reloadScheduled = false
     async function checkVersion() {
+      if (reloadScheduled) return
       try {
         const r = await fetch(`/version.json?_=${Date.now()}`)
         if (!r.ok) return
         const data = (await r.json()) as { hash: string }
-        const action = versionCheckAction(
-          BUILD_HASH,
-          data.hash,
-          cityIdRef.current !== null,
-        )
-        if (action === 'reload') window.location.reload()
-        else if (action === 'banner') setNewVersionAvailable(true)
+        const ctx = gameCtxRef.current
+        const defer = ctx
+          ? shouldDeferReload(
+              loadState(ctx.storageCityId).current,
+              getDateKey(new Date(), ctx.timeZone),
+            )
+          : false
+        const action = versionCheckAction(BUILD_HASH, data.hash, defer)
+        if (action === 'noop') return
+        log.info('App', 'new deploy detected', {
+          local: BUILD_HASH,
+          remote: data.hash,
+          action,
+        })
+        if (action === 'reload') {
+          reloadScheduled = true // guard overlapping checks from double-reloading
+          window.location.reload()
+        }
       } catch {
         // offline, fetch blocked, etc. — ignore
       }
@@ -167,11 +187,20 @@ export function App() {
       if (!document.hidden) void checkVersion()
     }
     document.addEventListener('visibilitychange', onVisible)
-    return () => document.removeEventListener('visibilitychange', onVisible)
+    const timer = setInterval(() => void checkVersion(), POLL_MS)
+    return () => {
+      document.removeEventListener('visibilitychange', onVisible)
+      clearInterval(timer)
+    }
   }, [])
 
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
+  // Feed the latest game context to the version-check effect (read via ref).
+  gameCtxRef.current =
+    city && mode
+      ? { storageCityId: mode.storageCityId, timeZone: city.timeZone }
+      : null
 
   useEffect(() => {
     if (!city || !mode) return
@@ -277,28 +306,6 @@ export function App() {
 
   return (
     <main>
-      {newVersionAvailable && (
-        <div
-          role="alert"
-          style={{
-            background: '#f4b400',
-            color: '#000',
-            padding: '8px 16px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontSize: 14,
-          }}
-        >
-          <span>New questions are available — reload when you're done.</span>
-          <button
-            onClick={() => window.location.reload()}
-            style={{ marginLeft: 12, cursor: 'pointer', fontWeight: 600 }}
-          >
-            Reload now
-          </button>
-        </div>
-      )}
       <header
         style={{
           padding: '12px 16px',
