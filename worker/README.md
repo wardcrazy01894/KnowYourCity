@@ -81,9 +81,12 @@ issue tracker, add Turnstile before sharing widely.
 
 A **second** Cloudflare Worker — separate from the bug worker but in this same
 directory because it imports the bug worker's `cors`/origin helpers. It backs the
-**anonymous daily leaderboard**: store one score per `(city, date, device)` in
+**anonymous daily leaderboard**: store a keep-max score per
+`(city, date, device, lineup)` in
 [Cloudflare **D1**](https://developers.cloudflare.com/d1/) (serverless SQLite)
-and answer "you placed **Xth of Y** today".
+and answer "you placed **Xth of Y** today". (`lineup` — migration `0003` — lets a
+device hold a second row when it replays a *changed* official set; the day's board
+is the union of rows, keep-max per lineup.)
 
 - **Anonymous.** Identity is a random UUID in the browser's `localStorage`
   (`kyc:clientId`) — no accounts, no names, no PII. The `scores.user_id` column

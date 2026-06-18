@@ -162,8 +162,8 @@ pipeline's dupe rule). Sweep hits must be web-verified before adding — OSM is
 stale (most "missing" hits around a downtown block turn out to be
 already-known closures recorded in the fame cache).
 
-### Status: 374 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
-`public/locations.stpete.json` holds **373 St. Pete places** (peaked at 401 after
+### Status: 370 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
+`public/locations.stpete.json` holds **370 St. Pete places** (peaked at 401 after
 the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +7
 player-requested/nearby-sweep adds; −1 closed bar removed via issue #81; +3
 John's Pass Village adds; −1 closed McAuley's Pub removed; a Google Places
@@ -332,7 +332,7 @@ stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
 filters to `inPlay !== false`. Current caps: St. Pete 400 (370 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4149).
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4141).
 
 > **Removing a row reshuffles the cap.** Because in-play membership and the
 > 40/40/20 buckets are recomputed from fame rank on every `apply-difficulty` run,
@@ -419,7 +419,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c, post full-vetting): St. Pete (370 → **370**), State College (227 → **200**),
-Ann Arbor (337 → **300**), Seattle (2304 → **500**), Chicago (4149 → **700**) —
+Ann Arbor (337 → **300**), Seattle (2303 → **500**), Chicago (4141 → **700**) —
 all enriched. (Seattle gained back 12 relocated venues re-added at their verified
 current in-bounds location — see `data/seattle-manual.json`.)
 

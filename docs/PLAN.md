@@ -124,7 +124,7 @@ KnowYourCity/
 |---|-----------|--------|
 | **M0** | Scaffold: Vite+React+TS, deps, `npm run dev` | ✅ done |
 | **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests) | ✅ done |
-| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 373; 4 more cities) | ✅ done |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 370; 4 more cities) | ✅ done |
 | **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds | ✅ done |
 | **M4** | Game flow: round → reveal → next → finished | ✅ done |
 | **M5** | Persistence: resume + streak/history | ✅ done |
@@ -189,7 +189,7 @@ residents would instantly recognise it. Fame is scored 0–100 by a one-time
 Google/Yelp review counts *relative to the city*, Wikipedia). Every enriched
 city today sets a **`playCap`** (see §5.1 and `docs/DATA-SOURCING.md` §4c), so
 the live bucketing is **count-based over the in-play set — 40% easy / 40% medium
-/ 20% hard** (e.g. St. Pete 373 → 149/149/75, Seattle 500 → 200/200/100). An
+/ 20% hard** (e.g. St. Pete 370 → 148/148/74, Seattle 500 → 200/200/100). An
 *uncapped* enriched city (none currently) would instead bucket by **city-relative
 percentile** with a narrow-easy split — top 20% easy / next 45% medium / bottom
 35% hard — keeping "easy" close to "everyone knows it" even when a city has few
@@ -448,15 +448,21 @@ This is the project's **first persistent storage**. A second Cloudflare Worker
 fronts a **Cloudflare D1** (serverless SQLite) table:
 
 ```
-scores(city, date, client_id, score, user_id NULL, created_at, updated_at,
-       PRIMARY KEY(city, date, client_id))   + INDEX(city, date, score)
+scores(city, date, client_id, lineup, score, user_id NULL, created_at, updated_at,
+       PRIMARY KEY(city, date, client_id, lineup))   + INDEX(city, date, score)
 ```
 
 - `city` is part of the **primary key**, so leaderboards are independent by
   construction (not just a filtered query).
+- `lineup` (a short hash of the day's location ids; migration `0003`) is also in
+  the key, so one device can hold **more than one** row per `(city, date)`: if the
+  official set changes under a player mid-day they may replay the new set, and
+  that genuine second completion gets its own row. The day's board is the **union**
+  of all rows; legacy rows predating lineups use the empty-string `''` bucket.
 - Rank = `COUNT(*) WHERE city=? AND date=? AND score > stored`; ties share a rank
   (standard competition ranking), `rank = better + 1`. UPSERT keeps the **max**
-  score, so a replay can't lower it and is idempotent.
+  score **per lineup**, so a reload of the same completion can't lower it or
+  duplicate it (idempotent), while a changed-lineup replay still appends its row.
 - Two routes on the one worker: **POST** submits a score → `{rank, total}`;
   **GET** `?city=&date=` views the board → `{total, scores[]}` (top 100, desc,
   **scores only — no ids/names**). The "🏆 View leaderboard" button on the
