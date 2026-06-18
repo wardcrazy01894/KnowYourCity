@@ -21,8 +21,9 @@ describe('versionCheckAction', () => {
     expect(versionCheckAction('abc123', 'def456', false)).toBe('reload')
   })
 
-  it('shows the banner (no auto-reload) when a game is mid-round', () => {
-    expect(versionCheckAction('abc123', 'def456', true)).toBe('banner')
+  it('defers (no reload, no banner) when a game is mid-round', () => {
+    // A later check auto-reloads once the player is no longer mid-round.
+    expect(versionCheckAction('abc123', 'def456', true)).toBe('defer')
   })
 
   it('treats "dev" fallback hash the same as any other value', () => {

@@ -141,14 +141,16 @@ Every build stamps a git build hash into the bundle (`VITE_BUILD_HASH`, defined
 in `vite.config.ts`) and also emits a static **`/version.json`** carrying the
 same hash. An open tab fetches `version.json` **on tab focus and every ~5 min**;
 if the hash no longer matches the one it booted with, it picks up the new deploy
-**automatically**: it silently reloads whenever nothing would be interrupted —
-the city picker, the results screen, or no game today — and only when a game is
-actively **mid-round** does it hold off and show a dismissible "reload" banner
-instead (so a player is never yanked away from a guess). "Mid-round" is decided
-by `gameInProgress()`; the decision + reload logic live in `src/lib/version.ts`
-and `src/App.tsx` (#91, auto-reload broadened in #127). Both hashes come from the
-same build, so they can never disagree within a deploy — no reload loop. (There's
-no service worker, so a reload is all it takes to load new code.)
+**automatically and silently** — no banner, no click. It reloads whenever nothing
+would be interrupted (the city picker, the results screen, or no game today), and
+only **defers** while a game is actively **mid-round** so a player is never yanked
+off a guess; a later check then reloads on its own once the round/day is over.
+"Mid-round" is decided by `gameInProgress()`; the decision + reload logic live in
+`src/lib/version.ts` and `src/App.tsx` (#91; auto-reload-instead-of-banner in
+#127). Both hashes come from the same build, so they can never disagree within a
+deploy, and a `reloadScheduled` guard plus the post-reload hash match rule out a
+reload loop. (There's no service worker, so a reload is all it takes to load new
+code.)
 
 ## Before opening a PR
 

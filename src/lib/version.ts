@@ -27,20 +27,23 @@ export function gameInProgress(
 /**
  * Decide what to do when /version.json reports a (possibly new) deploy.
  *
- * @param localHash      - Git hash embedded at build time (import.meta.env.VITE_BUILD_HASH)
- * @param remoteHash     - Hash returned by /version.json on the live CDN
- * @param gameInProgress - Whether a game is actively mid-round (see gameInProgress)
+ * @param localHash  - Git hash embedded at build time (import.meta.env.VITE_BUILD_HASH)
+ * @param remoteHash - Hash returned by /version.json on the live CDN
+ * @param midRound   - Whether a game is actively mid-round (see gameInProgress)
  *
  * Returns:
  *   'noop'   — hashes match; nothing to do
  *   'reload' — new deploy detected and nothing would be interrupted; auto-reload
- *   'banner' — new deploy detected but a game is mid-round; prompt instead
+ *   'defer'  — new deploy detected but a game is mid-round; do nothing now. We
+ *              never interrupt a guess, so the update is silently picked up by a
+ *              later check (interval/tab-focus) once the round/day is over —
+ *              there's no banner to click.
  */
 export function versionCheckAction(
   localHash: string,
   remoteHash: string,
-  gameInProgress: boolean,
-): 'noop' | 'reload' | 'banner' {
+  midRound: boolean,
+): 'noop' | 'reload' | 'defer' {
   if (localHash === remoteHash) return 'noop'
-  return gameInProgress ? 'banner' : 'reload'
+  return midRound ? 'defer' : 'reload'
 }

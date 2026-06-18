@@ -134,7 +134,6 @@ export function App() {
   const [reporting, setReporting] = useState(false)
   const [reportPrefill, setReportPrefill] = useState('')
   const [attribution, setAttribution] = useState('')
-  const [newVersionAvailable, setNewVersionAvailable] = useState(false)
 
   // Inline ref — the version-check effect reads the latest game context without
   // re-subscribing. Updated below once `mode` is known (null on the picker).
@@ -142,34 +141,37 @@ export function App() {
     null,
   )
 
-  // Keep players on the latest deploy automatically. Poll /version.json (served
-  // by CF Pages) on tab focus AND on an interval — comparing the build hash
-  // embedded at compile time — and silently reload when nothing would be
-  // interrupted (picker, results screen, or no game today). Only when a game is
-  // actively mid-round do we hold off and show a dismissible banner instead, so
-  // we never yank someone away from a guess. (No service worker, so a reload is
-  // all it takes to pick up new code.)
+  // Keep players on the latest deploy automatically — no banner, no click. Poll
+  // /version.json (served by CF Pages) on tab focus AND on an interval, comparing
+  // the build hash embedded at compile time. When it differs we silently reload,
+  // EXCEPT while a game is actively mid-round (we never yank someone off a guess):
+  // there we defer, and a later check reloads on its own once the round/day is
+  // over. (No service worker, so a reload is all it takes to pick up new code.)
   useEffect(() => {
     if (import.meta.env.DEV) return
     const POLL_MS = 5 * 60_000
+    let reloadScheduled = false
     async function checkVersion() {
+      if (reloadScheduled) return
       try {
         const r = await fetch(`/version.json?_=${Date.now()}`)
         if (!r.ok) return
         const data = (await r.json()) as { hash: string }
         const ctx = gameCtxRef.current
-        const inProgress = ctx
+        const midRound = ctx
           ? gameInProgress(loadState(ctx.storageCityId).current, ctx.dateKey)
           : false
-        const action = versionCheckAction(BUILD_HASH, data.hash, inProgress)
+        const action = versionCheckAction(BUILD_HASH, data.hash, midRound)
         if (action === 'noop') return
         log.info('App', 'new deploy detected', {
           local: BUILD_HASH,
           remote: data.hash,
           action,
         })
-        if (action === 'reload') window.location.reload()
-        else setNewVersionAvailable(true)
+        if (action === 'reload') {
+          reloadScheduled = true // guard overlapping checks from double-reloading
+          window.location.reload()
+        }
       } catch {
         // offline, fetch blocked, etc. — ignore
       }
@@ -296,28 +298,6 @@ export function App() {
 
   return (
     <main>
-      {newVersionAvailable && (
-        <div
-          role="alert"
-          style={{
-            background: '#f4b400',
-            color: '#000',
-            padding: '8px 16px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontSize: 14,
-          }}
-        >
-          <span>New questions are available — reload when you're done.</span>
-          <button
-            onClick={() => window.location.reload()}
-            style={{ marginLeft: 12, cursor: 'pointer', fontWeight: 600 }}
-          >
-            Reload now
-          </button>
-        </div>
-      )}
       <header
         style={{
           padding: '12px 16px',
