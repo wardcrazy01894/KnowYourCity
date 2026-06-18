@@ -16,7 +16,7 @@ import { log } from './log'
 // it from this import; the URL is resolved at build time.
 import cheerUrl from '../assets/cheer.mp3'
 
-export type ScoreTier = 'perfect' | 'good' | 'mid' | 'womp'
+type ScoreTier = 'perfect' | 'good' | 'mid' | 'womp'
 
 /** Map a 0–100 round score to a feedback tier (mirrors the share emoji tiers). */
 export function scoreTier(score: number): ScoreTier {

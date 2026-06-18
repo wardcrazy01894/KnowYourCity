@@ -60,8 +60,8 @@ export const MIN_NON_FOOD_PER_DAY = 1
  * any remaining location. If a bucket is empty/exhausted, that slot falls back
  * to any remaining location so we always return a full set.
  */
-export type RoundSlot = 'cafe' | 'restaurant' | 'bar' | 'landmark' | 'wildcard'
-export const CATEGORY_PLAN: RoundSlot[] = [
+type RoundSlot = 'cafe' | 'restaurant' | 'bar' | 'landmark' | 'wildcard'
+const CATEGORY_PLAN: RoundSlot[] = [
   'cafe',
   'restaurant',
   'bar',
@@ -82,7 +82,7 @@ function matchesSlot(slot: RoundSlot, loc: Location): boolean {
 }
 
 /** Default city timezone (St. Pete); each city in cities.json carries its own. */
-export const DEFAULT_TIMEZONE = 'America/New_York'
+const DEFAULT_TIMEZONE = 'America/New_York'
 
 /**
  * Returns the calendar day in the given IANA timezone as "YYYY-MM-DD".

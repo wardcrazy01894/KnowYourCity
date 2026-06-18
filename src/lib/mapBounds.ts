@@ -10,7 +10,7 @@
  * viewport room to reach every corner of the play area.
  */
 
-export type LatLngBoundsTuple = [[number, number], [number, number]]
+type LatLngBoundsTuple = [[number, number], [number, number]]
 
 /** How much slack MapGuess gives `maxBounds` around the play area, per side. */
 export const MAX_BOUNDS_PAD = 0.3

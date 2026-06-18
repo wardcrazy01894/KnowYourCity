@@ -7,7 +7,7 @@
  * Cloudflare → Web Analytics.
  */
 
-export interface BeaconAttrs {
+interface BeaconAttrs {
   src: string
   'data-cf-beacon': string
 }
