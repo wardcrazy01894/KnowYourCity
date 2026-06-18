@@ -18,7 +18,7 @@ import {
 } from './lib/daily'
 import { resolveMode } from './lib/mode'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
-import { getCity, cityDataUrl } from './lib/cities'
+import { getCity, cityDataUrl, storedCityId, CITY_KEY } from './lib/cities'
 import { isMuted, setMuted } from './lib/sound'
 import { log } from './lib/log'
 import { Game } from './components/Game'
@@ -26,7 +26,6 @@ import { CityPicker } from './components/CityPicker'
 import { DatasetSearch } from './components/DatasetSearch'
 import { BugReport } from './components/BugReport'
 
-const CITY_KEY = 'kyc:city'
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
 const SHUFFLE_SEED = Math.random().toString(36).slice(2)
 
@@ -42,12 +41,9 @@ async function loadLocations(cityId: string): Promise<LocationsFile> {
 }
 
 function initialCityId(): string | null {
-  if (typeof window === 'undefined') return null
-  const fromUrl = new URLSearchParams(window.location.search).get('city')
-  if (getCity(fromUrl)) return fromUrl
-  const saved = localStorage.getItem(CITY_KEY)
-  if (getCity(saved)) return saved
-  return null
+  return typeof window === 'undefined'
+    ? null
+    : storedCityId(window.location.search)
 }
 
 export function App() {

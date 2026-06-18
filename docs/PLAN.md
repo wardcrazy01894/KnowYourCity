@@ -290,8 +290,15 @@ URL params (all client-side, no build flags; see `src/lib/devmode.ts`):
 - `?date=YYYY-MM-DD` — play a specific day's puzzle.
 - `?polygons` — dev verification round: every polygon location in the city in
   one game (sorted by id), so each shaded boundary can be checked against the
-  map. Never official; stored under an isolated `<city>__polygons` key so it
-  doesn't clobber the daily save. See `selectPolygonLocations` in `daily.ts`.
+  map. See `selectPolygonLocations` in `daily.ts`.
+
+**Storage isolation.** Only the official daily writes the real per-city save
+(`<city>`). Every non-official mode is namespaced so it can't bump the real
+streak/history or clobber an in-progress daily: `?shuffle` → `<city>__shuffle`,
+`?date=` → `<city>__date`, `?polygons` → `<city>__polygons` (see
+`resolveMode` in `src/lib/mode.ts`). A startup reset is likewise scoped to the
+active mode's namespace — `?reset`/`?fresh` clear the official daily (replay it
+fresh), while `?shuffle` clears only its own scratch.
 - `?debug` (or `localStorage kyc:debug='1'`) enables verbose `debug` logs.
 
 Logging (`src/lib/log.ts`): `[KYC]`-prefixed console output + an in-memory ring
