@@ -45,6 +45,17 @@ describe('defang', () => {
     expect(defang('![beacon][1]')).not.toMatch(/!\[/)
   })
 
+  it('neutralizes a reference-style DISGUISED link (text hiding the destination)', () => {
+    const out = defang('[click here][1]\n\n[1]: https://evil.example/phish')
+    // The reference usage can't resolve (`][` broken) AND the `[1]:` definition
+    // marker is broken — so it can't render as a link whose text hides the URL.
+    expect(out).not.toMatch(/\]\[/)
+    expect(out).not.toMatch(/^\s*\[[^\]]+\]:/m)
+    // Text is preserved for triage (the bare URL stays visible, just not hidden).
+    expect(out).toContain('click here')
+    expect(out).toContain('evil.example')
+  })
+
   it('coerces non-strings without throwing', () => {
     expect(() => defang(null)).not.toThrow()
     expect(defang(undefined)).toBe('undefined')

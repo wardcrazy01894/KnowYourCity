@@ -70,18 +70,30 @@ function json(obj, status, headers) {
 }
 
 /** Neutralize report text so it can't ping users, break out of its block, or
- *  inject live Markdown into the (potentially public) issue: @mentions, code
- *  fences, and Markdown link/image syntax. Breaking `![` and `](` makes a
- *  `[text](url)` phishing link or an `![](beacon.png)` tracking image render as
- *  inert plain text — the report stays readable, just not clickable/auto-loading.
- *  Uses a zero-width space (U+200B). (A private triage repo, per GH_REPO above,
- *  remains the recommended defense-in-depth.) */
+ *  inject a DISGUISED live link/image into the (potentially public) issue:
+ *  @mentions, code fences, and Markdown link/image syntax. We break the markers
+ *  with a zero-width space (U+200B):
+ *    - `![`  → defuses every image (inline + reference), so no auto-loading
+ *      tracking-beacon.
+ *    - `](`  → defuses inline links/images (`[text](url)`).
+ *    - `][`  → defuses reference-style links (`[text][ref]`), and the
+ *      line-leading `[ref]:` definition is broken too, so a `[click][1]` /
+ *      `[1]: https://evil` pair can't render as a link whose text hides its
+ *      destination.
+ *  Disguised links/images thus render as inert plain text (the report stays
+ *  readable). Note this does NOT stop a *bare* URL — GitHub auto-linkifies
+ *  `https://…` and we leave it visible so triagers can read it; it's the
+ *  hidden-destination case we defang. A PRIVATE triage repo (per GH_REPO above)
+ *  remains the recommended defense-in-depth, and GitHub already sanitizes raw
+ *  HTML (`<a>`/`<img>`) in issue bodies. */
 export function defang(s) {
   return String(s)
     .replace(/```/g, '`​`​`')
     .replace(/@/g, '@​')
     .replace(/!\[/g, '!​[')
     .replace(/\]\(/g, ']​(')
+    .replace(/\]\[/g, ']​[')
+    .replace(/^(\s*\[[^\]]+\]):/gm, '$1​:')
     .replace(/\r/g, '')
 }
 
