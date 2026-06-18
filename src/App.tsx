@@ -8,7 +8,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { versionCheckAction, gameInProgress } from './lib/version'
+import { versionCheckAction, shouldDeferReload } from './lib/version'
 import { loadState } from './lib/storage'
 import type { LocationsFile, Location } from './types'
 import {
@@ -136,17 +136,21 @@ export function App() {
   const [attribution, setAttribution] = useState('')
 
   // Inline ref — the version-check effect reads the latest game context without
-  // re-subscribing. Updated below once `mode` is known (null on the picker).
-  const gameCtxRef = useRef<{ storageCityId: string; dateKey: string } | null>(
+  // re-subscribing. Updated below once a city is known (null on the picker). We
+  // keep the timeZone (not a captured dateKey) so the effect can compute the REAL
+  // current date itself — correct even for a tab left open past midnight.
+  const gameCtxRef = useRef<{ storageCityId: string; timeZone: string } | null>(
     null,
   )
 
   // Keep players on the latest deploy automatically — no banner, no click. Poll
   // /version.json (served by CF Pages) on tab focus AND on an interval, comparing
   // the build hash embedded at compile time. When it differs we silently reload,
-  // EXCEPT while a game is actively mid-round (we never yank someone off a guess):
-  // there we defer, and a later check reloads on its own once the round/day is
-  // over. (No service worker, so a reload is all it takes to pick up new code.)
+  // EXCEPT when a reload would disrupt the player (see shouldDeferReload): mid-
+  // round, or sitting on the results screen after the day has rolled over (a
+  // reload would drop them into the new day's game — that should be their click).
+  // In those cases we defer; a later check reloads on its own once it's safe. (No
+  // service worker, so a reload is all it takes to pick up new code.)
   useEffect(() => {
     if (import.meta.env.DEV) return
     const POLL_MS = 5 * 60_000
@@ -158,10 +162,13 @@ export function App() {
         if (!r.ok) return
         const data = (await r.json()) as { hash: string }
         const ctx = gameCtxRef.current
-        const midRound = ctx
-          ? gameInProgress(loadState(ctx.storageCityId).current, ctx.dateKey)
+        const defer = ctx
+          ? shouldDeferReload(
+              loadState(ctx.storageCityId).current,
+              getDateKey(new Date(), ctx.timeZone),
+            )
           : false
-        const action = versionCheckAction(BUILD_HASH, data.hash, midRound)
+        const action = versionCheckAction(BUILD_HASH, data.hash, defer)
         if (action === 'noop') return
         log.info('App', 'new deploy detected', {
           local: BUILD_HASH,
@@ -190,9 +197,10 @@ export function App() {
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
   // Feed the latest game context to the version-check effect (read via ref).
-  gameCtxRef.current = mode
-    ? { storageCityId: mode.storageCityId, dateKey: mode.dateKey }
-    : null
+  gameCtxRef.current =
+    city && mode
+      ? { storageCityId: mode.storageCityId, timeZone: city.timeZone }
+      : null
 
   useEffect(() => {
     if (!city || !mode) return
