@@ -490,7 +490,7 @@ submission.
 
 ### Integrity (only the official challenge counts)
 The client (`src/lib/leaderboard.ts`) submits **only** the official daily
-challenge — `App.resolveMode` sets `official: true` only for today's date-seeded
+challenge — `resolveMode` (`src/lib/mode.ts`) sets `official: true` only for today's date-seeded
 set; **shuffle (`?shuffle`) and date overrides (`?date=`) never submit**, so the
 board isn't polluted by results from a different set of places. Defence in depth,
 the worker independently **rejects unknown cities** and any **date outside a
