@@ -50,7 +50,8 @@ beforeEach(() => {
       }
       if (u.includes('api.github.com')) {
         githubCall = { url: u, init, body: JSON.parse(init.body) }
-        if (globalThis.__githubThrows) throw new Error('GH_NETWORK_DOWN')
+        if (globalThis.__githubThrows === true)
+          throw new Error('GH_NETWORK_DOWN')
         return globalThis.__githubOk === false
           ? {
               ok: false,
@@ -71,6 +72,7 @@ beforeEach(() => {
   )
   globalThis.__turnstileOk = true
   globalThis.__githubOk = true
+  globalThis.__githubThrows = false
 })
 
 afterEach(() => {
@@ -191,7 +193,6 @@ describe('bug-report worker handler', () => {
     expect(spy).toHaveBeenCalled()
     expect(JSON.stringify(spy.mock.calls)).toMatch(/GH_NETWORK_DOWN/)
     spy.mockRestore()
-    delete globalThis.__githubThrows
   })
 
   it('omits a phishing URL not from our origin from the issue body', async () => {
