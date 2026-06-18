@@ -13,13 +13,12 @@ import { loadState } from './lib/storage'
 import type { LocationsFile, Location } from './types'
 import {
   getDateKey,
-  isValidDateKey,
   selectDailyLocations,
   selectPolygonLocations,
 } from './lib/daily'
+import { resolveMode } from './lib/mode'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
-import { getCity, cityDataUrl, type City } from './lib/cities'
-import { shouldShuffle, isPolygonTest, polygonTestIds } from './lib/devmode'
+import { getCity, cityDataUrl } from './lib/cities'
 import { isMuted, setMuted } from './lib/sound'
 import { log } from './lib/log'
 import { Game } from './components/Game'
@@ -49,80 +48,6 @@ function initialCityId(): string | null {
   const saved = localStorage.getItem(CITY_KEY)
   if (getCity(saved)) return saved
   return null
-}
-
-interface Mode {
-  dateKey: string
-  selectionSeed: string
-  label: string
-  /**
-   * True ONLY for the real daily challenge (today's date-seeded 5). Shuffle and
-   * date overrides are false, so their scores never reach the leaderboard — the
-   * board only ranks the official daily set everyone shares. See Results.
-   */
-  official: boolean
-  /**
-   * `?polygons` dev round: every polygon location in the city, one game, for
-   * eyeballing each shaded boundary. The load effect uses selectPolygonLocations
-   * instead of the daily selection; progress is stored under an isolated cityId
-   * (see `storageCityId`) so it never touches the real daily save.
-   */
-  polygonTest: boolean
-  /** localStorage namespace for Game — isolated in `?polygons` mode. */
-  storageCityId: string
-  /**
-   * In `?polygons` mode, the id subset from `?polygons=id1,id2` (or `null` for
-   * every polygon). Ignored unless `polygonTest` is true.
-   */
-  polygonIds: string[] | null
-}
-
-function resolveMode(city: City): Mode {
-  const today = getDateKey(new Date(), city.timeZone)
-  const search = typeof window !== 'undefined' ? window.location.search : ''
-  if (isPolygonTest(search)) {
-    return {
-      dateKey: today,
-      selectionSeed: `${city.id}:polygons`,
-      label: 'polygon test — every shaded boundary (dev)',
-      official: false,
-      polygonTest: true,
-      storageCityId: `${city.id}__polygons`,
-      polygonIds: polygonTestIds(search),
-    }
-  }
-  if (shouldShuffle(search)) {
-    return {
-      dateKey: today,
-      selectionSeed: `${city.id}:shuffle-${SHUFFLE_SEED}`,
-      label: 'shuffle — random 5 (refresh for a new set)',
-      official: false,
-      polygonTest: false,
-      storageCityId: city.id,
-      polygonIds: null,
-    }
-  }
-  const param = new URLSearchParams(search).get('date')
-  if (param && isValidDateKey(param)) {
-    return {
-      dateKey: param,
-      selectionSeed: `${city.id}:${param}`,
-      label: `${param} (override)`,
-      official: false,
-      polygonTest: false,
-      storageCityId: city.id,
-      polygonIds: null,
-    }
-  }
-  return {
-    dateKey: today,
-    selectionSeed: `${city.id}:${today}`,
-    label: today,
-    official: true,
-    polygonTest: false,
-    storageCityId: city.id,
-    polygonIds: null,
-  }
 }
 
 export function App() {
@@ -195,7 +120,8 @@ export function App() {
   }, [])
 
   const city = getCity(cityId)
-  const mode = city ? resolveMode(city) : null
+  const search = typeof window !== 'undefined' ? window.location.search : ''
+  const mode = city ? resolveMode(city, search, new Date(), SHUFFLE_SEED) : null
   // Feed the latest game context to the version-check effect (read via ref).
   gameCtxRef.current =
     city && mode
