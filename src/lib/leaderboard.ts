@@ -16,6 +16,8 @@
  * leaderboard can never block or break the game.
  */
 
+import { log } from './log'
+
 const CLIENT_ID_KEY = 'kyc:clientId'
 const CACHE_PREFIX = 'kyc:lb:v1'
 
@@ -189,10 +191,24 @@ export async function submitDailyScore(
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(buildSubmitPayload(args)),
     })
-    if (!r.ok) return null
-    const data = (await r.json().catch(() => null)) as Standing | null
-    if (typeof data?.rank !== 'number' || typeof data?.total !== 'number')
+    if (!r.ok) {
+      // Surface the status AND the server's error reason — this is exactly the
+      // signal that was missing when negative-lineup submits silently 400'd. It
+      // lands in the log buffer (window.kycDumpLogs()) for after-the-fact triage.
+      const body = await r.text().catch(() => '')
+      log.warn('leaderboard', 'submit rejected', {
+        status: r.status,
+        city: args.cityId,
+        lineup: args.lineup,
+        body: body.slice(0, 200),
+      })
       return null
+    }
+    const data = (await r.json().catch(() => null)) as Standing | null
+    if (typeof data?.rank !== 'number' || typeof data?.total !== 'number') {
+      log.warn('leaderboard', 'submit: unexpected response shape', { data })
+      return null
+    }
     const standing: Standing = { rank: data.rank, total: data.total }
     if (
       data.streak &&
@@ -201,8 +217,17 @@ export async function submitDailyScore(
     )
       standing.streak = { current: data.streak.current, best: data.streak.best }
     writeStanding(args.cityId, args.dateKey, args.lineup, standing)
+    log.info('leaderboard', 'score submitted', {
+      city: args.cityId,
+      rank: standing.rank,
+      total: standing.total,
+    })
     return standing
-  } catch {
+  } catch (e) {
+    log.warn('leaderboard', 'submit failed (network)', {
+      city: args.cityId,
+      error: String(e),
+    })
     return null
   }
 }
@@ -231,15 +256,31 @@ export async function fetchLeaderboard(
     u.searchParams.set('city', cityId)
     u.searchParams.set('date', dateKey)
     const r = await fetch(u.toString())
-    if (!r.ok) return null
-    const data = (await r.json().catch(() => null)) as LeaderboardData | null
-    if (!data || !Array.isArray(data.scores) || typeof data.total !== 'number')
+    if (!r.ok) {
+      log.warn('leaderboard', 'read rejected', {
+        status: r.status,
+        city: cityId,
+      })
       return null
+    }
+    const data = (await r.json().catch(() => null)) as LeaderboardData | null
+    if (
+      !data ||
+      !Array.isArray(data.scores) ||
+      typeof data.total !== 'number'
+    ) {
+      log.warn('leaderboard', 'read: unexpected response shape', { data })
+      return null
+    }
     return {
       total: data.total,
       scores: data.scores.filter((s) => typeof s === 'number'),
     }
-  } catch {
+  } catch (e) {
+    log.warn('leaderboard', 'read failed (network)', {
+      city: cityId,
+      error: String(e),
+    })
     return null
   }
 }
