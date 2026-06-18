@@ -63,7 +63,7 @@ export function lineupHash(locations: Pick<Location, 'id'>[]): string {
   ).toString(36)
 }
 
-export interface CompletedDay {
+interface CompletedDay {
   dateKey: string
   /** lineupHash of the set actually played. */
   lineup: string

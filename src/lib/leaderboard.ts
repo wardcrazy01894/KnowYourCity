@@ -143,7 +143,7 @@ function writeStanding(
   }
 }
 
-export interface SubmitArgs {
+interface SubmitArgs {
   cityId: string
   dateKey: string
   score: number
@@ -235,7 +235,7 @@ export async function submitDailyScore(
   }
 }
 
-export interface LeaderboardData {
+interface LeaderboardData {
   /** Total entries for the city + day. */
   total: number
   /** The day's scores, highest first, capped at the server's TOP_LIMIT. */

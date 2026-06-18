@@ -80,7 +80,7 @@ export function buildShareString(
  * Vite `base`, so it's correct on the custom domain (`knowyourcity.gg`) and on a
  * future custom domain without hardcoding.
  */
-export function shareSiteUrl(): string {
+function shareSiteUrl(): string {
   return window.location.origin + import.meta.env.BASE_URL
 }
 

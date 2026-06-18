@@ -57,7 +57,7 @@ export function bugReportUrl(ctx: ReportContext = {}, message = ''): string {
   )}&body=${encodeURIComponent(body)}`
 }
 
-export interface SubmitOptions {
+interface SubmitOptions {
   /** Attach recent session logs (default true). */
   includeLogs?: boolean
   /** Cloudflare Turnstile token, when the widget is enabled. */
@@ -83,7 +83,7 @@ export function buildReportPayload(
   }
 }
 
-export interface SubmitResult {
+interface SubmitResult {
   ok: boolean
   /** Created issue URL when the backend handled it. */
   url?: string
