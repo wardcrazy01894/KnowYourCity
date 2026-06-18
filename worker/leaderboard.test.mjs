@@ -228,6 +228,25 @@ describe('validateSubmission', () => {
     expect(r).toMatchObject({ ok: false, error: 'invalid lineup' })
   })
 
+  // REGRESSION (the bug this guards both sides of): a client that stringified a
+  // negative 32-bit hash sent a leading-'-' lineup, which this rejected with 400
+  // — silently dropping the score. The client now coerces to unsigned
+  // (progress.ts:lineupHash), but pin the server contract so a future regex
+  // "simplification" that allowed '-' can't reopen the hole unnoticed.
+  it("rejects a leading-'-' lineup (negative-hash regression)", () => {
+    const r = validateSubmission(
+      {
+        city: 'stpete',
+        date: today,
+        score: 250,
+        clientId: 'a'.repeat(12),
+        lineup: '-z9cl16',
+      },
+      now,
+    )
+    expect(r).toMatchObject({ ok: false, error: 'invalid lineup' })
+  })
+
   it('rejects an unknown city', () => {
     const r = validateSubmission(
       { city: 'atlantis', date: today, score: 1, clientId: 'a'.repeat(12) },
