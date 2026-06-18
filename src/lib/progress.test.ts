@@ -45,7 +45,9 @@ describe('lineupHash', () => {
   // so a negative-hash lineup silently dropped the player's score from the board.
   // The hash MUST always be charset-safe. `['a','b','e']` is a known negative case.
   it('is always charset-safe for the leaderboard (never a leading "-")', () => {
-    // Mirrors the worker's isValidLineup regex (worker/leaderboard-lib.mjs).
+    // The worker's isValidLineup charset (worker/leaderboard-lib.mjs); {1,16}
+    // here (vs the server's {0,16}) because a real hash is always ≥1 char — the
+    // empty '' legacy bucket only comes from old clients that send no lineup.
     const SERVER_OK = /^[0-9a-z]{1,16}$/
     expect(lineupHash(lineup(['a', 'b', 'e']))).toMatch(SERVER_OK) // known negative
     // Sweep many lineups so we'd catch any other sign/charset escape.
