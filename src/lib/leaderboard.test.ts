@@ -224,7 +224,9 @@ describe('submitDailyScore', () => {
     )
     const warn = vi.spyOn(log, 'warn')
     expect(await submitDailyScore(args)).toBeNull()
-    expect(warn).toHaveBeenCalled()
+    const call = warn.mock.calls.find((c) => /network/i.test(String(c[1])))
+    expect(call).toBeTruthy()
+    expect(JSON.stringify(call?.[2])).toMatch(/offline/)
   })
 
   it('parses the server streak into the standing when present', async () => {
@@ -354,6 +356,21 @@ describe('fetchLeaderboard', () => {
     const call = warn.mock.calls.find((c) => /reject/i.test(String(c[1])))
     expect(call).toBeTruthy()
     expect(JSON.stringify(call?.[2])).toMatch(/503/)
+  })
+
+  it('logs a warning when a read throws (offline)', async () => {
+    vi.stubEnv('VITE_LEADERBOARD_ENDPOINT', 'https://lb.example/')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        throw new Error('offline')
+      }),
+    )
+    const warn = vi.spyOn(log, 'warn')
+    expect(await fetchLeaderboard('stpete', '2026-06-15')).toBeNull()
+    const call = warn.mock.calls.find((c) => /network/i.test(String(c[1])))
+    expect(call).toBeTruthy()
+    expect(JSON.stringify(call?.[2])).toMatch(/offline/)
   })
 
   it('returns null when no endpoint is configured', async () => {

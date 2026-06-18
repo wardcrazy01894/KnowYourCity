@@ -206,7 +206,10 @@ export async function submitDailyScore(
     }
     const data = (await r.json().catch(() => null)) as Standing | null
     if (typeof data?.rank !== 'number' || typeof data?.total !== 'number') {
-      log.warn('leaderboard', 'submit: unexpected response shape', { data })
+      log.warn('leaderboard', 'submit: unexpected response shape', {
+        city: args.cityId,
+        data,
+      })
       return null
     }
     const standing: Standing = { rank: data.rank, total: data.total }
@@ -269,7 +272,10 @@ export async function fetchLeaderboard(
       !Array.isArray(data.scores) ||
       typeof data.total !== 'number'
     ) {
-      log.warn('leaderboard', 'read: unexpected response shape', { data })
+      log.warn('leaderboard', 'read: unexpected response shape', {
+        city: cityId,
+        data,
+      })
       return null
     }
     return {
