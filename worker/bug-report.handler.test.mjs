@@ -198,6 +198,17 @@ describe('bug-report worker handler', () => {
     expect(githubCall.body.body).not.toContain('evil.com')
   })
 
+  it('defangs a markdown link injected in the message (no live link in the issue)', async () => {
+    await handler.fetch(
+      post({ message: 'bug here [click](https://evil.example/phish)' }),
+      makeEnv(),
+    )
+    // The issue body keeps the words but breaks the `](` so it can't render as
+    // a clickable phishing link on a public issues page.
+    expect(githubCall.body.body).not.toMatch(/\]\(/)
+    expect(githubCall.body.body).toContain('click')
+  })
+
   it('rejects an oversized body (413) even without a Content-Length header', async () => {
     // HTTP clients may omit Content-Length; the size cap must hold on the
     // actual bytes read, not just the header.

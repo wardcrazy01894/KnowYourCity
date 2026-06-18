@@ -25,6 +25,26 @@ describe('defang', () => {
     expect(defang('a\r\nb')).toBe('a\nb')
   })
 
+  it('neutralizes inline markdown links (no disguised phishing link in a public issue)', () => {
+    const out = defang('[click here](https://evil.example/phish)')
+    // The link syntax `](` is broken so GitHub renders it as plain text…
+    expect(out).not.toMatch(/\]\(/)
+    // …but the text is preserved so a triager still sees what was reported.
+    expect(out).toContain('click here')
+    expect(out).toContain('evil.example')
+  })
+
+  it('neutralizes markdown images (no auto-loading tracking-beacon)', () => {
+    const out = defang('![x](https://evil.example/track.png)')
+    // Both the image marker `![` and the target `](` are broken.
+    expect(out).not.toMatch(/!\[/)
+    expect(out).not.toMatch(/\]\(/)
+  })
+
+  it('also defuses reference-style image markers', () => {
+    expect(defang('![beacon][1]')).not.toMatch(/!\[/)
+  })
+
   it('coerces non-strings without throwing', () => {
     expect(() => defang(null)).not.toThrow()
     expect(defang(undefined)).toBe('undefined')

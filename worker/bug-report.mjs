@@ -69,12 +69,19 @@ function json(obj, status, headers) {
   })
 }
 
-/** Neutralize @mentions and code-fence breakout so report text can't ping users
- *  or inject Markdown outside its block. Uses a zero-width space. */
+/** Neutralize report text so it can't ping users, break out of its block, or
+ *  inject live Markdown into the (potentially public) issue: @mentions, code
+ *  fences, and Markdown link/image syntax. Breaking `![` and `](` makes a
+ *  `[text](url)` phishing link or an `![](beacon.png)` tracking image render as
+ *  inert plain text — the report stays readable, just not clickable/auto-loading.
+ *  Uses a zero-width space (U+200B). (A private triage repo, per GH_REPO above,
+ *  remains the recommended defense-in-depth.) */
 export function defang(s) {
   return String(s)
     .replace(/```/g, '`​`​`')
     .replace(/@/g, '@​')
+    .replace(/!\[/g, '!​[')
+    .replace(/\]\(/g, ']​(')
     .replace(/\r/g, '')
 }
 
