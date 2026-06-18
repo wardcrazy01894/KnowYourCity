@@ -71,7 +71,13 @@ async function verifyTurnstile(token, secret, ip) {
     )
     const data = await r.json()
     return Boolean(data.success)
-  } catch {
+  } catch (e) {
+    // A siteverify NETWORK failure looks identical to a bot rejection (both
+    // return false → 403). Log it distinctly so "every legit user is blocked"
+    // is diagnosable from an unreachable-siteverify outage.
+    console.warn('leaderboard turnstile siteverify network error', {
+      error: String(e),
+    })
     return false
   }
 }
@@ -128,7 +134,12 @@ export default {
       try {
         const board = await topScores(env.DB, vv.value.city, vv.value.date)
         return json({ ok: true, ...board }, 200, headers)
-      } catch {
+      } catch (e) {
+        console.error('leaderboard read failed', {
+          city: vv.value.city,
+          date: vv.value.date,
+          error: String(e),
+        })
         return json({ error: 'leaderboard unavailable' }, 503, headers)
       }
     }
@@ -164,13 +175,24 @@ export default {
       let streak
       try {
         streak = await updateStreak(env.DB, v.value, now)
-      } catch {
+      } catch (e) {
+        // Best-effort, but a PERSISTENT streak failure (e.g. a missing
+        // migration) would silently strip everyone's streak — make it visible.
+        console.warn('leaderboard streak update failed', {
+          city: v.value.city,
+          error: String(e),
+        })
         streak = undefined
       }
       return json({ ok: true, ...standing, streak }, 200, headers)
-    } catch {
+    } catch (e) {
       // D1 outage / quota exhaustion — degrade gracefully; the client just
-      // omits the leaderboard line. Never 500 on the player.
+      // omits the leaderboard line. Never 500 on the player. Log it: this 503
+      // was the missing signal when a failing submit had no server-side trace.
+      console.error('leaderboard submit failed', {
+        city: v.value.city,
+        error: String(e),
+      })
       return json({ error: 'leaderboard unavailable' }, 503, headers)
     }
   },
@@ -183,7 +205,11 @@ export default {
   async scheduled(_event, env, ctx) {
     if (!env.DB) return
     ctx.waitUntil(
-      pruneOldScores(env.DB, cutoffDateKey(new Date())).catch(() => {}),
+      pruneOldScores(env.DB, cutoffDateKey(new Date())).catch((e) =>
+        // A failure just retries next run, but a PERMANENT one (table grows
+        // unbounded) must not be invisible.
+        console.error('leaderboard prune failed', { error: String(e) }),
+      ),
     )
   },
 }

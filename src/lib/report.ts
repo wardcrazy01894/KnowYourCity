@@ -108,7 +108,15 @@ export async function submitBugReport(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(buildReportPayload(message, ctx, opts)),
   })
-  if (!r.ok) throw new Error(`Bug endpoint HTTP ${r.status}`)
+  if (!r.ok) {
+    // Carry the server's reason (rate limited / forbidden origin / verification
+    // failed), not just the status — BugReport.tsx logs this error, so without
+    // the body a "couldn't send a bug report" report can't be diagnosed.
+    const detail = await r.text().catch(() => '')
+    throw new Error(
+      `Bug endpoint HTTP ${r.status}${detail ? `: ${detail.slice(0, 200)}` : ''}`,
+    )
+  }
   const data = (await r.json().catch(() => ({}))) as { url?: string }
   return { ok: true, url: data.url }
 }
