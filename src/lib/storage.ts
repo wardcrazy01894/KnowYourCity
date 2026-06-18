@@ -66,17 +66,17 @@ export function defaultState(): PersistedState {
   }
 }
 
-/** Remove all persisted per-city game state (used by the dev fresh-start helper). */
-export function clearState(): void {
+/**
+ * Remove the persisted game state for ONE storage namespace (a city id, or an
+ * isolated mode namespace like `<city>__shuffle`). Scoped on purpose: a blanket
+ * wipe would also destroy the official daily when resetting a non-official mode,
+ * and clobber other cities' streaks. Best-effort — never throws.
+ */
+export function clearState(cityId: string): void {
   try {
-    const toRemove: string[] = []
-    for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i)
-      if (k && k.startsWith(PREFIX + ':')) toRemove.push(k)
-    }
-    toRemove.forEach((k) => localStorage.removeItem(k))
+    localStorage.removeItem(keyFor(cityId))
   } catch (e) {
-    log.warn('storage', 'clear failed', { error: String(e) })
+    log.warn('storage', 'clear failed', { error: String(e), cityId })
   }
 }
 
@@ -84,11 +84,18 @@ export function clearState(): void {
  * Clears saved progress on load when the URL asks for it (`?reset`/`?fresh`/
  * `?shuffle`) — see src/lib/devmode.ts. Default loads persist. Returns true if
  * it cleared. Call once at startup, before any component reads state.
+ *
+ * `storageCityId` is the ACTIVE mode's namespace (from resolveMode): `?reset`/
+ * `?fresh` resolve to the official `<city>` (replay today's set fresh), while
+ * `?shuffle` resolves to `<city>__shuffle` — so a shuffle reset clears only the
+ * shuffle scratch and leaves the real in-progress daily intact. `null` (no city
+ * resolved yet) clears nothing.
  */
-export function applyStartupReset(): boolean {
+export function applyStartupReset(storageCityId: string | null): boolean {
   if (typeof window === 'undefined') return false
   if (!shouldStartFresh(window.location.search)) return false
-  clearState()
-  log.info('storage', 'startup reset: cleared saved state')
+  if (!storageCityId) return false
+  clearState(storageCityId)
+  log.info('storage', 'startup reset: cleared saved state', { storageCityId })
   return true
 }

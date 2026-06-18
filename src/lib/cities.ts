@@ -36,6 +36,28 @@ export function getCity(id: string | null | undefined): City | undefined {
   return CITIES.find((c) => c.id === id)
 }
 
+/** localStorage key holding the player's last-picked city. */
+export const CITY_KEY = 'kyc:city'
+
+/**
+ * The active city id from the URL (`?city=`) or the saved preference, validated
+ * against the registry; `null` if neither names a known city. Mirrors App's
+ * initial-city resolution so startup logic (e.g. the per-namespace reset) can
+ * scope itself to the right city without duplicating the lookup.
+ */
+export function storedCityId(search: string): string | null {
+  if (typeof window === 'undefined') return null
+  const fromUrl = new URLSearchParams(search).get('city')
+  if (getCity(fromUrl)) return fromUrl
+  try {
+    const saved = localStorage.getItem(CITY_KEY)
+    if (getCity(saved)) return saved
+  } catch {
+    /* storage disabled (private mode) — fall through to null */
+  }
+  return null
+}
+
 /**
  * Path to a city's bundled dataset (respects Vite's base).
  *

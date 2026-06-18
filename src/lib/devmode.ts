@@ -10,7 +10,7 @@
  *   ?date=YYYY-MM-DD → play a specific day's puzzle (persists, no reset).
  *   ?polygons  → DEV verification round: every polygon location in the current
  *                city, in one game, so each shaded boundary can be eyeballed.
- *                Never official (off the leaderboard); see App.resolveMode.
+ *                Never official (off the leaderboard); see resolveMode in mode.ts.
  *   ?polygons=id1,id2 → same round restricted to those location ids (re-check
  *                a few specific boundaries without playing all of them).
  *   ?celebrate → force the strong-finish celebration (confetti + cheer) on the

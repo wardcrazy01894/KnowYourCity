@@ -9,7 +9,7 @@
  * INTEGRITY: only the official daily challenge counts. Shuffle mode (?shuffle)
  * and date overrides (?date=) are NOT submitted — their scores would pollute the
  * real board with results from a different set of places. That gate is the
- * `official` flag, set by App.resolveMode and threaded down to here.
+ * `official` flag, set by resolveMode (src/lib/mode.ts) and threaded down to here.
  *
  * GRACEFUL: every failure path (endpoint unset, offline, non-official game, bad
  * response) resolves to `null` so the Results screen simply omits the line — the

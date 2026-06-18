@@ -1,5 +1,12 @@
-import { describe, it, expect } from 'vitest'
-import { CITIES, getCity, DEFAULT_CITY_ID, cityDataUrl } from './cities'
+import { describe, it, expect, vi, afterEach } from 'vitest'
+import {
+  CITIES,
+  getCity,
+  DEFAULT_CITY_ID,
+  cityDataUrl,
+  storedCityId,
+  CITY_KEY,
+} from './cities'
 
 describe('cities registry', () => {
   it('has the five expected cities', () => {
@@ -21,6 +28,45 @@ describe('cities registry', () => {
 
   it('the default city exists', () => {
     expect(getCity(DEFAULT_CITY_ID)).toBeTruthy()
+  })
+
+  describe('storedCityId', () => {
+    afterEach(() => vi.unstubAllGlobals())
+
+    it('prefers a valid ?city= param', () => {
+      vi.stubGlobal('window', {})
+      vi.stubGlobal('localStorage', {
+        getItem: () => 'seattle',
+      } as unknown as Storage)
+      expect(storedCityId('?city=annarbor')).toBe('annarbor')
+    })
+
+    it('falls back to the saved city preference', () => {
+      vi.stubGlobal('window', {})
+      vi.stubGlobal('localStorage', {
+        getItem: (k: string) => (k === CITY_KEY ? 'seattle' : null),
+      } as unknown as Storage)
+      expect(storedCityId('')).toBe('seattle')
+    })
+
+    it('is null when neither names a known city', () => {
+      vi.stubGlobal('window', {})
+      vi.stubGlobal('localStorage', {
+        getItem: () => null,
+      } as unknown as Storage)
+      expect(storedCityId('?city=atlantis')).toBeNull()
+    })
+
+    it('never throws when storage is disabled', () => {
+      vi.stubGlobal('window', {})
+      vi.stubGlobal('localStorage', {
+        getItem: () => {
+          throw new Error('disabled')
+        },
+      } as unknown as Storage)
+      expect(() => storedCityId('')).not.toThrow()
+      expect(storedCityId('')).toBeNull()
+    })
   })
 
   // The dataset JSON has a STABLE filename (locations.<id>.json), so a mobile
