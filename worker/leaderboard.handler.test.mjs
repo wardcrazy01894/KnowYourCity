@@ -295,11 +295,16 @@ describe('leaderboard worker handler', () => {
       { results: [] },
       { results: [{ better: 2, total: 7 }] },
     ])
+    const spy = vi.spyOn(console, 'warn').mockImplementation(() => {})
     const res = await handler.fetch(post(goodBody()), makeEnv({ DB: db }))
     expect(res.status).toBe(200)
     const body = await res.json()
     expect(body).toMatchObject({ ok: true, rank: 3, total: 7 })
     expect(body.streak).toBeUndefined()
+    // A persistent streak failure must be visible even though it's best-effort.
+    expect(spy).toHaveBeenCalled()
+    expect(JSON.stringify(spy.mock.calls)).toMatch(/streak/i)
+    spy.mockRestore()
   })
 
   it('ranks a lone player 1st of 1', async () => {
@@ -308,13 +313,39 @@ describe('leaderboard worker handler', () => {
     expect(await res.json()).toEqual({ ok: true, rank: 1, total: 1 })
   })
 
-  it('degrades to 503 (not 500) when D1 throws', async () => {
+  it('degrades to 503 (not 500) when D1 throws, and logs the failure', async () => {
     const broken = fakeDB()
     broken.batch = vi.fn(async () => {
       throw new Error('D1_ERROR')
     })
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
     const res = await handler.fetch(post(goodBody()), makeEnv({ DB: broken }))
     expect(res.status).toBe(503)
+    // The 503 must not be silent — a D1 outage has to be diagnosable from logs.
+    expect(spy).toHaveBeenCalled()
+    const logged = JSON.stringify(spy.mock.calls)
+    expect(logged).toMatch(/submit/i)
+    expect(logged).toMatch(/D1_ERROR/)
+    expect(logged).toMatch(/stpete/)
+    spy.mockRestore()
+  })
+
+  it('logs the failure when the GET board read throws', async () => {
+    const broken = fakeViewDB()
+    broken.batch = vi.fn(async () => {
+      throw new Error('READ_D1_ERROR')
+    })
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const res = await handler.fetch(
+      get(`city=stpete&date=${TODAY}`),
+      makeEnv({ DB: broken }),
+    )
+    expect(res.status).toBe(503)
+    expect(spy).toHaveBeenCalled()
+    const logged = JSON.stringify(spy.mock.calls)
+    expect(logged).toMatch(/read/i)
+    expect(logged).toMatch(/READ_D1_ERROR/)
+    spy.mockRestore()
   })
 })
 
@@ -350,5 +381,30 @@ describe('leaderboard worker scheduled (retention prune)', () => {
   it('is a no-op when D1 is not bound', async () => {
     // Must not throw.
     await handler.scheduled({}, {}, ctx())
+  })
+
+  it('logs when the prune fails (so an unbounded table is visible)', async () => {
+    const db = {
+      prepare: vi.fn(() => ({
+        bind: () => ({
+          run: async () => {
+            throw new Error('PRUNE_D1_ERROR')
+          },
+        }),
+      })),
+    }
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    // scheduled() hands the prune to ctx.waitUntil and returns; capture the
+    // promise so we can await the (logged) rejection.
+    const pending = []
+    await handler.scheduled(
+      {},
+      { DB: db },
+      { waitUntil: (p) => pending.push(p) },
+    )
+    await Promise.allSettled(pending)
+    expect(spy).toHaveBeenCalled()
+    expect(JSON.stringify(spy.mock.calls)).toMatch(/prune/i)
+    spy.mockRestore()
   })
 })
