@@ -8,7 +8,8 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { versionCheckAction } from './lib/version'
+import { versionCheckAction, gameInProgress } from './lib/version'
+import { loadState } from './lib/storage'
 import type { LocationsFile, Location } from './types'
 import {
   getDateKey,
@@ -135,30 +136,40 @@ export function App() {
   const [attribution, setAttribution] = useState('')
   const [newVersionAvailable, setNewVersionAvailable] = useState(false)
 
-  // Inline ref — always reflects the latest cityId without an async useEffect.
-  // The visibility handler reads this so it never sees a stale value.
-  const cityIdRef = useRef(cityId)
-  cityIdRef.current = cityId
+  // Inline ref — the version-check effect reads the latest game context without
+  // re-subscribing. Updated below once `mode` is known (null on the picker).
+  const gameCtxRef = useRef<{ storageCityId: string; dateKey: string } | null>(
+    null,
+  )
 
-  // On tab focus, check whether a new deploy has landed by comparing the build
-  // hash embedded at compile time against /version.json served by CF Pages.
-  // If the hashes differ and no city is chosen yet, reload silently (safe — no
-  // game in progress); otherwise show a banner so mid-game players can choose
-  // when to refresh.
+  // Keep players on the latest deploy automatically. Poll /version.json (served
+  // by CF Pages) on tab focus AND on an interval — comparing the build hash
+  // embedded at compile time — and silently reload when nothing would be
+  // interrupted (picker, results screen, or no game today). Only when a game is
+  // actively mid-round do we hold off and show a dismissible banner instead, so
+  // we never yank someone away from a guess. (No service worker, so a reload is
+  // all it takes to pick up new code.)
   useEffect(() => {
     if (import.meta.env.DEV) return
+    const POLL_MS = 5 * 60_000
     async function checkVersion() {
       try {
         const r = await fetch(`/version.json?_=${Date.now()}`)
         if (!r.ok) return
         const data = (await r.json()) as { hash: string }
-        const action = versionCheckAction(
-          BUILD_HASH,
-          data.hash,
-          cityIdRef.current !== null,
-        )
+        const ctx = gameCtxRef.current
+        const inProgress = ctx
+          ? gameInProgress(loadState(ctx.storageCityId).current, ctx.dateKey)
+          : false
+        const action = versionCheckAction(BUILD_HASH, data.hash, inProgress)
+        if (action === 'noop') return
+        log.info('App', 'new deploy detected', {
+          local: BUILD_HASH,
+          remote: data.hash,
+          action,
+        })
         if (action === 'reload') window.location.reload()
-        else if (action === 'banner') setNewVersionAvailable(true)
+        else setNewVersionAvailable(true)
       } catch {
         // offline, fetch blocked, etc. — ignore
       }
@@ -167,11 +178,19 @@ export function App() {
       if (!document.hidden) void checkVersion()
     }
     document.addEventListener('visibilitychange', onVisible)
-    return () => document.removeEventListener('visibilitychange', onVisible)
+    const timer = setInterval(() => void checkVersion(), POLL_MS)
+    return () => {
+      document.removeEventListener('visibilitychange', onVisible)
+      clearInterval(timer)
+    }
   }, [])
 
   const city = getCity(cityId)
   const mode = city ? resolveMode(city) : null
+  // Feed the latest game context to the version-check effect (read via ref).
+  gameCtxRef.current = mode
+    ? { storageCityId: mode.storageCityId, dateKey: mode.dateKey }
+    : null
 
   useEffect(() => {
     if (!city || !mode) return

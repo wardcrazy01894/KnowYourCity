@@ -139,11 +139,16 @@ the client. The bug worker (`kyl-bug`) deploys the same way with
 
 Every build stamps a git build hash into the bundle (`VITE_BUILD_HASH`, defined
 in `vite.config.ts`) and also emits a static **`/version.json`** carrying the
-same hash. On an interval an open tab fetches `version.json` and, if the hash no
-longer matches the one it booted with, forces a one-time reload **before** a city
-is selected (so progress is never interrupted mid-game). The logic lives in
-`src/lib/version.ts` (#91). Both values come from the same build, so they can
-never disagree within a single deploy — no reload loop.
+same hash. An open tab fetches `version.json` **on tab focus and every ~5 min**;
+if the hash no longer matches the one it booted with, it picks up the new deploy
+**automatically**: it silently reloads whenever nothing would be interrupted —
+the city picker, the results screen, or no game today — and only when a game is
+actively **mid-round** does it hold off and show a dismissible "reload" banner
+instead (so a player is never yanked away from a guess). "Mid-round" is decided
+by `gameInProgress()`; the decision + reload logic live in `src/lib/version.ts`
+and `src/App.tsx` (#91, auto-reload broadened in #127). Both hashes come from the
+same build, so they can never disagree within a deploy — no reload loop. (There's
+no service worker, so a reload is all it takes to load new code.)
 
 ## Before opening a PR
 
