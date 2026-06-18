@@ -6,7 +6,6 @@ import {
   formatDistance,
   isLargeFootprintCategory,
   MAX_ROUND_SCORE,
-  PERFECT_RADIUS_M,
   POINT_PERFECT_RADIUS_M,
   LARGE_FALLBACK_RADIUS_M,
   ZERO_DISTANCE_M,
@@ -39,7 +38,7 @@ describe('haversineMeters', () => {
 describe('scoreForDistance', () => {
   it('awards full points within the perfect radius', () => {
     expect(scoreForDistance(0)).toBe(MAX_ROUND_SCORE)
-    expect(scoreForDistance(PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)
+    expect(scoreForDistance(LARGE_FALLBACK_RADIUS_M)).toBe(MAX_ROUND_SCORE)
   })
 
   it('awards zero at/after the zero distance', () => {
@@ -53,7 +52,7 @@ describe('scoreForDistance', () => {
   })
 
   it('falls off linearly (midpoint distance ≈ half score)', () => {
-    const mid = (PERFECT_RADIUS_M + ZERO_DISTANCE_M) / 2
+    const mid = (LARGE_FALLBACK_RADIUS_M + ZERO_DISTANCE_M) / 2
     expect(scoreForDistance(mid)).toBe(50)
   })
 
@@ -92,7 +91,7 @@ describe('scoreForDistance with an explicit perfect radius', () => {
     // default which would still award 100 here).
     expect(scoreForDistance(100, 0)).toBeLessThan(MAX_ROUND_SCORE)
     expect(scoreForDistance(100, 0)).toBeGreaterThan(0)
-    expect(scoreForDistance(100, PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)
+    expect(scoreForDistance(100, LARGE_FALLBACK_RADIUS_M)).toBe(MAX_ROUND_SCORE)
   })
 })
 
@@ -147,7 +146,7 @@ describe('scoreGuess', () => {
       // Pin the constant: changing it (e.g. back to 130/300) must be a
       // deliberate edit that breaks this test, not a silent drift.
       expect(POINT_PERFECT_RADIUS_M).toBe(100)
-      expect(POINT_PERFECT_RADIUS_M).toBeLessThan(PERFECT_RADIUS_M)
+      expect(POINT_PERFECT_RADIUS_M).toBeLessThan(LARGE_FALLBACK_RADIUS_M)
     })
     it('full marks within POINT_PERFECT_RADIUS_M', () => {
       // ~50 m away, well inside the 100 m freebie.
@@ -164,7 +163,9 @@ describe('scoreGuess', () => {
       expect(scoreGuess(point, northOf(point, 150)).score).toBeLessThan(
         MAX_ROUND_SCORE,
       )
-      expect(scoreForDistance(150, PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)
+      expect(scoreForDistance(150, LARGE_FALLBACK_RADIUS_M)).toBe(
+        MAX_ROUND_SCORE,
+      )
     })
     it('less than full marks beyond POINT_PERFECT_RADIUS_M', () => {
       // ~250 m away, outside the 100 m point radius.

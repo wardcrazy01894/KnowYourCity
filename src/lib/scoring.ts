@@ -50,16 +50,6 @@ export const POINT_PERFECT_RADIUS_M = 100
 export const LARGE_FALLBACK_RADIUS_M = 300
 
 /**
- * @deprecated Use POINT_PERFECT_RADIUS_M for point-location scoring or
- * LARGE_FALLBACK_RADIUS_M for large-footprint fallback. scoreForDistance now
- * accepts a perfectRadiusM parameter so this constant is no longer used as
- * a hardcoded default inside that function. The existing scoring.test.ts
- * tests that call scoreForDistance(300) remain valid because the OLD default
- * was 300 and callers may still pass 300 explicitly.
- */
-export const PERFECT_RADIUS_M = 300
-
-/**
  * Returns true when a location category is "large-footprint" — i.e. the
  * guessable area is inherently a large polygon and should get the legacy
  * fallback radius when NO polygon geometry is available.
@@ -87,22 +77,21 @@ export const ZERO_DISTANCE_M = 5000
  * Map a distance (meters) to an integer score in [0, MAX_ROUND_SCORE] with a
  * linear falloff between `perfectRadiusM` and ZERO_DISTANCE_M.
  *
- * The `perfectRadiusM` parameter defaults to PERFECT_RADIUS_M (300) so that
- * existing callers (e.g. `scoreForDistance(300)` in scoring.test.ts) remain
- * backward-compatible. `scoreGuess` passes the appropriate radius for each
- * case:
+ * The `perfectRadiusM` parameter defaults to LARGE_FALLBACK_RADIUS_M (300) so
+ * direct callers (e.g. `scoreForDistance(300)` in scoring.test.ts) stay
+ * backward-compatible. `scoreGuess` always passes the appropriate radius:
  *  - polygon outside: perfectRadiusM = 0 (falloff starts at the polygon edge)
  *  - point normal:    perfectRadiusM = POINT_PERFECT_RADIUS_M (100)
  *  - point large-footprint no polygon: perfectRadiusM = LARGE_FALLBACK_RADIUS_M (300)
  *
  * @param distanceMeters  - Distance to score (metres).
  * @param perfectRadiusM  - Radius within which the score is MAX_ROUND_SCORE.
- *                          Defaults to PERFECT_RADIUS_M (300) for backwards
- *                          compatibility with direct callers.
+ *                          Defaults to LARGE_FALLBACK_RADIUS_M (300) for
+ *                          backward compatibility with direct callers.
  */
 export function scoreForDistance(
   distanceMeters: number,
-  perfectRadiusM: number = PERFECT_RADIUS_M,
+  perfectRadiusM: number = LARGE_FALLBACK_RADIUS_M,
 ): number {
   if (distanceMeters <= perfectRadiusM) return MAX_ROUND_SCORE
   if (distanceMeters >= ZERO_DISTANCE_M) return 0

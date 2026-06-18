@@ -23,8 +23,9 @@ applied. Open follow-ups live in `BACKLOG.md`.
    full bounds on each round, min/max zoom allow zooming in to building level.*
 
 6. **Scoring** — **0–100 per round**, **linear**: 100 within **300 m**, down to
-   0 at **5 km**. *Applied: `scoring.ts` (`MAX_ROUND_SCORE=100`,
-   `PERFECT_RADIUS_M=300`, `ZERO_DISTANCE_M=5000`, linear). Share emoji tiers
+   0 at **5 km**. *Applied: `scoring.ts` (`MAX_ROUND_SCORE=100`, perfect radius
+   300 m, `ZERO_DISTANCE_M=5000`, linear; polygon scoring later refined the
+   radius per location type — see §5.4/POLYGON-SCORING.md). Share emoji tiers
    rescaled (🟩≥80 🟨≥50 🟧≥20 ⬛<20). Perfect day = 500.*
 
 7. **Clues** — **no clues by default** for now. *Applied: `SHOW_CLUES=false` in
