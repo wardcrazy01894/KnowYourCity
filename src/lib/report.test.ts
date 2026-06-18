@@ -1,8 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, afterEach } from 'vitest'
 import {
   addLocationRequestMessage,
   bugReportUrl,
   buildReportPayload,
+  submitBugReport,
   REPO_URL,
 } from './report'
 
@@ -54,6 +55,33 @@ describe('addLocationRequestMessage', () => {
     expect(m.toLowerCase()).toContain('add')
     expect(m).toContain('St. Pete')
     expect(m).not.toContain('""')
+  })
+})
+
+describe('submitBugReport', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    vi.unstubAllEnvs()
+  })
+
+  it('includes the server error status AND body when the endpoint rejects', async () => {
+    vi.stubEnv('VITE_BUG_ENDPOINT', 'https://bug.example/report')
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: false,
+        status: 429,
+        text: async () => '{"error":"rate limited, try later"}',
+      })),
+    )
+    // The error a failed submit surfaces (and logs) must carry the reason, not
+    // just "HTTP 429" — so a "couldn't report a bug" report is diagnosable.
+    const err = await submitBugReport('hi').then(
+      () => null,
+      (e: unknown) => e,
+    )
+    expect(String(err)).toMatch(/429/)
+    expect(String(err)).toMatch(/rate limited/)
   })
 })
 
