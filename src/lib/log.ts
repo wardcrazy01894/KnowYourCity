@@ -15,9 +15,9 @@
  *         log.info('Game', 'round submitted', { round, distanceMeters, score })
  */
 
-export type LogLevel = 'debug' | 'info' | 'warn' | 'error'
+type LogLevel = 'debug' | 'info' | 'warn' | 'error'
 
-export interface LogEntry {
+interface LogEntry {
   t: string
   level: LogLevel
   scope: string

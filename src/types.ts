@@ -135,7 +135,7 @@ export interface RoundResult {
 }
 
 /** Status of the in-progress daily game. */
-export type GamePhase = 'guessing' | 'revealed' | 'finished'
+type GamePhase = 'guessing' | 'revealed' | 'finished'
 
 /** Full state of today's game session (also the shape persisted to localStorage). */
 export interface GameState {
