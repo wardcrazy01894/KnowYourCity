@@ -52,7 +52,15 @@ export function bumpStreak(prev: Streak, dateKey: string): Streak {
  * replay is a distinct completion while a reload of the same game is not.
  */
 export function lineupHash(locations: Pick<Location, 'id'>[]): string {
-  return hashStringToSeed(locations.map((l) => l.id).join('|')).toString(36)
+  // `>>> 0` coerces the (possibly negative) 32-bit hash to UNSIGNED before
+  // base36, so the result is always charset-safe ([0-9a-z]). Without it a
+  // negative hash stringifies with a leading '-', which the leaderboard worker's
+  // isValidLineup rejects (HTTP 400) — silently dropping the score from the board
+  // on ~half of all city-days. (Coerce here, not in hashStringToSeed, whose raw
+  // value also seeds the daily selection — changing that would reshuffle picks.)
+  return (
+    hashStringToSeed(locations.map((l) => l.id).join('|')) >>> 0
+  ).toString(36)
 }
 
 export interface CompletedDay {

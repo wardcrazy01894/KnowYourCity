@@ -38,6 +38,23 @@ describe('lineupHash', () => {
     expect(lineupHash(lineup(['a', 'b', 'd']))).not.toBe(base)
     expect(lineupHash(lineup(['c', 'b', 'a']))).not.toBe(base)
   })
+
+  // REGRESSION: the underlying 32-bit hash is negative ~half the time, and a
+  // naive `.toString(36)` then prefixes a '-'. The leaderboard worker's
+  // isValidLineup rejects anything outside [0-9a-z] (a leading '-' → HTTP 400),
+  // so a negative-hash lineup silently dropped the player's score from the board.
+  // The hash MUST always be charset-safe. `['a','b','e']` is a known negative case.
+  it('is always charset-safe for the leaderboard (never a leading "-")', () => {
+    // Mirrors the worker's isValidLineup regex (worker/leaderboard-lib.mjs).
+    const SERVER_OK = /^[0-9a-z]{1,16}$/
+    expect(lineupHash(lineup(['a', 'b', 'e']))).toMatch(SERVER_OK) // known negative
+    // Sweep many lineups so we'd catch any other sign/charset escape.
+    for (let i = 0; i < 500; i++) {
+      expect(lineupHash(lineup([`loc-${i}`, `x-${i}`, `y-${i}`]))).toMatch(
+        SERVER_OK,
+      )
+    }
+  })
 })
 
 describe('bumpStreak', () => {
