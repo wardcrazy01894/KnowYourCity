@@ -48,10 +48,11 @@ export default tseslint.config(
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
-      // The bug-report defang() deliberately uses zero-width spaces (U+200B) in
-      // string AND regex literals to neutralize @mentions / Markdown. Strings are
-      // skipped by default; extend the same allowance to regexes so the linter
-      // still catches *accidental* irregular whitespace in code.
+      // bug-report's defang() inserts zero-width spaces (U+200B) to neutralize
+      // @mentions / Markdown — in string literals (skipped by default) — and its
+      // test asserts that output with a regex literal that embeds the same ZWSP.
+      // Allow ZWSP in regexes too so the test passes, while the rule still flags
+      // *accidental* irregular whitespace in code.
       'no-irregular-whitespace': [
         'error',
         { skipStrings: true, skipRegExps: true },
@@ -60,10 +61,12 @@ export default tseslint.config(
   },
   // The Worker runs on the Cloudflare/service-worker runtime, so it sees the
   // fetch-platform globals (fetch, Response, URL, TextEncoder, …) on top of Node.
+  // serviceworker — not browser — on purpose: a Worker has no window/document,
+  // so this still flags an accidental DOM reference as an undefined global.
   {
     files: ['worker/**/*.mjs'],
     languageOptions: {
-      globals: { ...globals.serviceworker, ...globals.browser },
+      globals: { ...globals.serviceworker },
     },
   },
 )

@@ -6,9 +6,11 @@
   //
   // strict is OFF here on purpose: the worker is loosely JSDoc-typed and its
   // runtime handler signatures (request/env/ctx) would need @cloudflare/workers-
-  // types to satisfy noImplicitAny. This pass is a safety net for real structural
-  // breakage (wrong property names, mismatched arg types/counts) — not a full
-  // strict-typing retrofit. Tighten later if the worker grows.
+  // types to satisfy noImplicitAny. This pass is a safety net for structural
+  // breakage it CAN catch without strict — non-existent property access (TS2339),
+  // wrong arg counts (TS2554), unused locals — but NOT wrong arg *types* (that
+  // needs strict + workers-types). It's a net, not a full strict-typing retrofit;
+  // tighten later if the worker grows.
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
