@@ -13,10 +13,10 @@ a raw scrape — curation is what makes the game good.
 
 ## 0. Why these sources
 
-| Source | Cost | Key? | License | Good for |
-|--------|------|------|---------|----------|
-| **OpenStreetMap (Overpass API)** | free | none | ODbL (attribution + share-alike of *data*) | the bulk: POIs with coords + tags |
-| **Wikidata / Wikipedia** | free | none | CC0 (public domain) | notability signal + landmark descriptions |
+| Source                           | Cost | Key? | License                                    | Good for                                  |
+| -------------------------------- | ---- | ---- | ------------------------------------------ | ----------------------------------------- |
+| **OpenStreetMap (Overpass API)** | free | none | ODbL (attribution + share-alike of _data_) | the bulk: POIs with coords + tags         |
+| **Wikidata / Wikipedia**         | free | none | CC0 (public domain)                        | notability signal + landmark descriptions |
 
 Both are free, no API key, no credit card. (Google Places was rejected: its ToS
 forbids storing place data beyond 30 days, which a committed dataset
@@ -51,6 +51,7 @@ out center tags;
 ```
 
 Notes:
+
 - `nwr` = nodes + ways + relations; `out center` gives ways/relations a single
   representative lat/lng (good enough for a guessing game).
 - Restaurants/bars/cafés are only pulled **if they carry a `wikidata` or
@@ -72,7 +73,7 @@ Implemented in `isNotable(el)` / `NAME_DENYLIST` in `fetch-pois.mjs`:
    - has `wikipedia=*` or `wikidata=*` (someone wrote it up → it's a real place),
      OR
    - its tag is inherently notable: `tourism=museum|attraction|gallery|zoo|
-     aquarium|theme_park`, `leisure=golf_course|stadium|marina`, `historic=*`,
+aquarium|theme_park`, `leisure=golf_course|stadium|marina`, `historic=*`,
      `building=stadium`. (Parks are kept but are the most likely to need manual
      pruning — neighborhood pocket parks aren't interesting.)
 3. **Denylist** by name regex regardless of tags: laundromat, Great Clips,
@@ -90,6 +91,7 @@ SELECT ?item ?itemLabel ?desc ?coord WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 ```
+
 Run at <https://query.wikidata.org>. This is optional polish — the OSM
 `wikipedia`/`wikidata` tag gate already does the heavy lifting.
 
@@ -163,6 +165,7 @@ stale (most "missing" hits around a downtown block turn out to be
 already-known closures recorded in the fame cache).
 
 ### Status: 370 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
+
 `public/locations.stpete.json` holds **370 St. Pete places** (peaked at 401 after
 the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +7
 player-requested/nearby-sweep adds; −1 closed bar removed via issue #81; +3
@@ -207,6 +210,7 @@ future `build-city` rebuild preserves it. Lakes use the `park` category (there i
 no `lake` bucket). Parks are now 24.
 
 Earlier hand-picked highlights (with clues):
+
 - **Landmarks** (non-food): museums, Tropicana Field & venues, golf courses,
   parks (Fort De Soto, North Shore volleyball/kickball), the Don CeSar, etc.
 - **Food & drink**: cafés (Bandit, ParaDeco, Central Coffee Shoppe…),
@@ -252,7 +256,7 @@ background workflow that fans out ~25 locations per agent):
    **up-weight raw local ubiquity** — most restaurants/bars land 20–60; 80+ is
    almost exclusively non-food landmarks.
 3. **Bucket into easy/medium/hard.** This is the percentile path — **narrow-easy:
-   top 20% easy / next 45% medium / bottom 35% hard** — used only for an *uncapped*
+   top 20% easy / next 45% medium / bottom 35% hard** — used only for an _uncapped_
    enriched city. **Every enriched city today sets a `playCap`**, so the live
    bucketing is instead **count-based — 40% easy / 40% medium / 20% hard** over the
    in-play set; see §4c. Either split is city-relative so the 2-easy/2-medium/1-hard
@@ -276,7 +280,7 @@ background workflow that fans out ~25 locations per agent):
 > per-city calibration anchors in one place. The Workflow persists each batch
 > agent's result to `agent-*.jsonl` in its transcript dir as it finishes, so a
 > session/limit death only costs in-flight batches. **`scripts/harvest-fame-transcripts.mjs
-> <workflowsDir> <out.json> [tuples.json]`** rebuilds `{results}` from those
+<workflowsDir> <out.json> [tuples.json]`** rebuilds `{results}` from those
 > transcripts (recursive across runs + merge-mode, so it accumulates), and reports
 > which ids are still MISSING (writing their tuples for a follow-up workflow over
 > just the remainder — no re-research). Loop generate → launch → harvest → advance
@@ -286,7 +290,7 @@ background workflow that fans out ~25 locations per agent):
 > cities (e.g. `3rd-coast-cafe`), so harvesting the whole project transcript tree
 > would apply another city's fame to a colliding id. Discover only this city's
 > `wf_*` dirs by the rubric string — `grep -rl "places in <City, ST>" <projDir> |
-> grep /subagents/workflows/ | sed -E 's#(/wf_[^/]+)/.*#\1#' | sort -u` — and
+grep /subagents/workflows/ | sed -E 's#(/wf_[^/]+)/.*#\1#' | sort -u` — and
 > harvest each into the accumulator. Source-scoping is the only safe fix;
 > post-filtering by id can't undo a collision.
 >
@@ -324,7 +328,7 @@ restaurants/cafés/bars. A city may therefore set a **`playCap`** in `cities.jso
 `apply-difficulty.mjs` ranks the kept rows by fame — ties broken by **review
 count** then id (`byFameRank`), since the coarse 0–100 fame leaves many rows level
 at the cut — marks the **top `playCap`**
-`inPlay: true`, and rebuckets *those* by **count — 40% easy / 40% medium / 20%
+`inPlay: true`, and rebuckets _those_ by **count — 40% easy / 40% medium / 20%
 hard** (so 500 → 200/200/100, 200 → 80/80/40). Every kept row gets its
 **`fameScore`** written onto it; the in-play rows get a `difficulty`; the
 benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
@@ -340,7 +344,7 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4141).
 > benched row** into the play set and can **nudge a few venues across a bucket
 > boundary** (e.g. medium↔hard). That's expected, not churn — a freshness sweep
 > that removes N venues will show N promotions plus a handful of difficulty
-> flips. Any promoted *business* gets re-verified + stamped (below); promoted
+> flips. Any promoted _business_ gets re-verified + stamped (below); promoted
 > parks/landmarks are stamped as stable.
 
 > **Freshness (`lastVerified`).** A periodic Google Places pass stamps each
@@ -355,7 +359,7 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4141).
 >
 > **Tooling.** The sweep is scripted and resumable:
 > `node scripts/places-freshness.mjs --city <id>` queries Places (New) Text
-> Search for every row **missing `lastVerified`** (in-play *and* benched) and
+> Search for every row **missing `lastVerified`** (in-play _and_ benched) and
 > streams a classification per venue to a gitignored scratch JSONL
 > (`data/.places-<id>.jsonl`) — re-run to resume; pass `--limit N` to sample.
 > Then `node scripts/places-apply.mjs --city <id>` stamps the confidently-matched
@@ -384,17 +388,18 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4141).
 > **Full vetting (the hard tail).** Items the matcher can't confidently auto-stamp
 > (ambiguous, not-found, temporarily-closed, delisted-landmark) are driven to a
 > terminal state by a multi-agent verification pass: each agent re-queries Places
-> + web-searches one batch and returns **keep / remove** with a cited reason (the
-> `verify-hardtail` workflow). `scripts/places-vet-apply.mjs --city <id>
-> --decisions <file>` then stamps the keeps **at their existing pin** and drops the
-> removes (synthesizing a `status: closed` fame entry when a row had none, so a
-> no-fame row still drops). It **never writes moved coordinates** — a relocation is
-> resolved as a *keep* (a small pin nudge where the committed pin is still accurate)
-> or a *remove* (a large move: the committed pin is stale, so the venue is dropped
-> and re-added cleanly via the `add-location` skill, which sources ODbL coords from
-> Nominatim/Census). This keeps committed coordinates ODbL-clean and guarantees no
-> pin drifts away from its polygon. It's how all four launched cities reached
-> **zero unverified rows**.
+>
+> - web-searches one batch and returns **keep / remove** with a cited reason (the
+>   `verify-hardtail` workflow). `scripts/places-vet-apply.mjs --city <id>
+--decisions <file>` then stamps the keeps **at their existing pin** and drops the
+>   removes (synthesizing a `status: closed` fame entry when a row had none, so a
+>   no-fame row still drops). It **never writes moved coordinates** — a relocation is
+>   resolved as a _keep_ (a small pin nudge where the committed pin is still accurate)
+>   or a _remove_ (a large move: the committed pin is stale, so the venue is dropped
+>   and re-added cleanly via the `add-location` skill, which sources ODbL coords from
+>   Nominatim/Census). This keeps committed coordinates ODbL-clean and guarantees no
+>   pin drifts away from its polygon. It's how all four launched cities reached
+>   **zero unverified rows**.
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
@@ -403,12 +408,14 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4141).
 > Chicago 44.
 
 ### Category buckets
+
 The pipeline tags each row with a `category`. For round selection:
 `cafe`, `restaurant`, `bar` are the food/drink buckets; **everything else**
 (`attraction`, `museum`, `park`, `landmark`, `venue`, `golf_course`, `plaza`,
 `other`) counts as a **landmark**.
 
 ### Multiple cities — `npm run build-city -- <id>`
+
 `scripts/build-city.mjs` generates a whole city's `public/locations.<id>.json` in
 one shot: it runs the landmark query (`fetch-pois` logic) and the inclusive food
 query (`fetch-food` logic) for the city's bbox, then **balances** the mix
@@ -424,6 +431,7 @@ all enriched. (Seattle gained back 12 relocated venues re-added at their verifie
 current in-bounds location — see `data/seattle-manual.json`.)
 
 ### Adding food/drink — `npm run fetch-food`
+
 Independent eateries usually lack `wikipedia`/`wikidata`, so the notability-gated
 `fetch-pois` misses them. `scripts/fetch-food.mjs` does an **inclusive** pull
 instead: every `restaurant|bar|cafe|pub|fast_food|brewery` in the bbox that is
@@ -438,6 +446,7 @@ ODbL (storable), so the established-business signal is the license-clean proxy. 
 true review threshold would need a paid Yelp/Google integration — see BACKLOG.
 
 Inclusion rules (current):
+
 - **Include local mini-chains** people know (Hawkers, 3 Daughters, Datz…) —
   only genuine **national chains** are excluded (`NATIONAL_CHAIN` in
   `fetch-food.mjs`).
@@ -462,7 +471,7 @@ busy error under load).
 
 Parks, golf courses, lakes, and other large areas are stored in OSM as a single
 **centroid point** by `fetch-pois` (`out center`). Scoring a sprawling park by
-its centroid is unfair: a player who correctly pins the *edge* of a big park can
+its centroid is unfair: a player who correctly pins the _edge_ of a big park can
 be hundreds of metres from the centre. `scripts/add-polygons.mjs` backfills the
 real **footprint** so a guess anywhere inside the shape scores a perfect 100, and
 guesses outside fall off from the nearest edge (see PLAN.md §scoring).
@@ -505,14 +514,14 @@ What it does, per eligible `park`/`golf_course` row without a `polygon`:
 4. **Simplifies** with Douglas–Peucker (ε = 0.00005° ≈ 5 m). If the result is
    still over the **100-node** bundle-size cap, the epsilon is escalated (×1.7
    per pass, up to 20 passes) until it fits — so a huge park (e.g. Fort De Soto)
-   is *coarsened* rather than dropped, and a `NOTE:` line records the
+   is _coarsened_ rather than dropped, and a `NOTE:` line records the
    before→after node counts. Coords are rounded to 5 dp and the open ring is
    written back onto the row in-place.
 
 **Flagging the misses.** Every eligible large-footprint row that does **not**
 receive a polygon (no OSM match, unusable geometry, or over the node cap) is
 written to **`data/polygon-backfill-report.json`** with its id, name, city,
-lat/lng, and reason. The rule: *no large park should remain a single point.* Work
+lat/lng, and reason. The rule: _no large park should remain a single point._ Work
 the report by web-searching the geometry. Two override maps in the script handle
 the misses, in priority order:
 
@@ -521,21 +530,21 @@ the misses, in priority order:
    by the corrected name.
 2. **`OSM_ELEMENT_OVERRIDES`** (`id → {type, id}`) — when name matching can't
    work at all: a malformed/ambiguous relation, or a footprint stored as an
-   *unnamed* way. Pin the exact element id verified on openstreetmap.org and the
+   _unnamed_ way. Pin the exact element id verified on openstreetmap.org and the
    script fetches it directly (`buildElementQuery`).
 
 If OSM has no usable polygon at all, hand-add the ring to the row. Rows left
 without a polygon fall back to centroid scoring with the legacy 300 m freebie
 radius (`LARGE_FALLBACK_RADIUS_M`) so they don't regress.
 
-**When NOT to add a polygon.** Polygons exist to give *large* footprints a fair
+**When NOT to add a polygon.** Polygons exist to give _large_ footprints a fair
 "inside = 100" target. Keep these as a **point** instead:
 
 - **Buildings & indoor venues** (conservatories, fieldhouses, halls) — a
   building-footprint polygon adds nothing for scoring. e.g. Garfield Park /
   Oak Park Conservatory.
 - **Features smaller than the point freebie radius** (≈100 m) — a polygon has no
-  freebie outside its edge, so it would make the location *harder* to score than
+  freebie outside its edge, so it would make the location _harder_ to score than
   the point fallback. e.g. a single ball diamond, a cluster of volleyball courts,
   a small formal garden bed.
 - **Entities with no meaningful single footprint** — a county-wide body (Forest
@@ -570,13 +579,14 @@ rather than wasting time on overloaded mirrors.
 > far faster, rate-limit-proof alternative is a **single bulk query** for all
 > named leisure/golf geometry in the city bbox (from any mirror), matched locally
 > with the same helpers (`filterByName → pickBestMatch → extractOuterRing →
-> simplifyToCap → finalizeRing`). Chicago was completed this way. Folding a bulk
+simplifyToCap → finalizeRing`). Chicago was completed this way. Folding a bulk
 > mode into the script is a tracked follow-up.
 
 **Current status: all five cities are polygon-complete** (`complete` in
 `data/point-only-by-design.json`): St. Pete, State College, Ann Arbor, Seattle,
 Chicago. Every in-play `park`/`golf_course` has a polygon or is ledgered as
 point-only by design. Highlights:
+
 - **St. Pete**: five name-mismatch misses resolved via `NAME_OVERRIDES` (Mangrove
   Bay, Twin Brooks, Pasadena Yacht & Country Club, St. Pete Pier, Demens
   Landing); North Shore kickball fields + volleyball courts stay point-only.
@@ -593,6 +603,7 @@ drops secondary outer rings, and a couple of footprints aren't a clean single
 OSM polygon. These were rebuilt by hand from their OSM geometry and written
 straight onto the rows, so a plain re-run leaves them alone (idempotent skip);
 **`--force` would regress them to the wrong auto-extracted shape — don't.**
+
 - **Azalea Park** — multipolygon relation with **two `outer` rings**; the
   extractor kept only the larger and dropped the south/centre block. Fixed with
   the **convex hull of both outer rings** so the whole footprint is covered.
@@ -608,8 +619,8 @@ straight onto the rows, so a plain re-run leaves them alone (idempotent skip);
   outer), so the footprint is the **convex hull of the entire golf course**
   (all 8 member rings + both `golf_course` ways), spanning the whole island —
   the earlier single-parcel pin was much too small.
-- **Sawgrass Lake Park** — no *named* park boundary exists near the point, but an
-  **unnamed `leisure=park` way (215108300)** found via Overpass `is_in` *does*
+- **Sawgrass Lake Park** — no _named_ park boundary exists near the point, but an
+  **unnamed `leisure=park` way (215108300)** found via Overpass `is_in` _does_
   enclose it (~1.2 × 2.1 km); that boundary is now the footprint, replacing the
   small "Sawgrass Lake" water body used before.
 
@@ -622,9 +633,11 @@ State College is fully backfilled (33/33).
 ---
 
 ## 5. Future: photos
+
 When adding photo rounds, fill `photoUrl` from a **freely-licensed** source:
+
 - **Wikimedia Commons** (best for landmarks; CC-BY-SA / public domain) — no key.
 - **Mapillary** (street-level; CC-BY-SA) — free key, patchy coverage.
 - Google Street View only if you accept a billing account + its ToS.
-Record the image's own attribution alongside it. No schema change needed —
-`photoUrl` already exists on `Location`.
+  Record the image's own attribution alongside it. No schema change needed —
+  `photoUrl` already exists on `Location`.

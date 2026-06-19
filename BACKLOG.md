@@ -4,6 +4,7 @@ Ordered by priority. Each item ships as its own PR through the protected `main`
 flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
+
 - [x] **Difficulty rollout — all cities done.** St. Pete (PR #40), **State
       College**, **Ann Arbor**, **Seattle**, and **Chicago** SHIPPED: every
       location has an `easy`/`medium`/`hard` `difficulty` (inverse of local fame,
@@ -99,7 +100,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       populated in the fame cache — Seattle 2499/2782 non-zero), then id. It drives
       difficulty bucketing, the play cap, and the de-dupe survivor pick, so the more
       established of two equally-famous spots is preferred over the alphabetically
-      earlier one. (A richer popularity signal — see *Precise popularity filter* —
+      earlier one. (A richer popularity signal — see _Precise popularity filter_ —
       could refine it further.)
 - [ ] **Manual force-include famous OSM-untagged landmarks.** Seattle's fetch
       missed the **Fremont Troll** and **The Spheres** (tagged `tourism=artwork`/
@@ -118,6 +119,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       `docs/DATA-SOURCING.md` §4c, PLAN §5.
 
 ## Multi-city (shipped — extend as desired)
+
 - [x] **City picker + 5 cities** — St. Pete, State College, Ann Arbor, Seattle,
       Chicago, via `cities.json` + `build-city`. Picker landing screen; per-city
       bounds/timezone/streaks.
@@ -128,6 +130,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       `build-city`.
 
 ## Soon
+
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside
       the name. `photoUrl` is already in the schema; source from Wikimedia
       Commons (free). v1 stays text-only by decision.
@@ -137,11 +140,12 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       `.github/workflows/deploy.yml`; now served at `knowyourcity.gg`.
 
 ## Later / nice-to-have
+
 - [x] **Custom domain** — DONE 2026-06-10: `knowyourcity.gg` (Porkbun), Vite
       `base: '/'`, Pages custom domain + HTTPS. See `docs/OPERATIONS.md`.
 - [ ] **Difficulty tiers (named, not "easy/medium/hard")** — the base
       easy/medium/hard difficulty SHIPPED (PR #40) and drives the daily ramp; this
-      item is now the *optional* polish of renaming/expanding those into a
+      item is now the _optional_ polish of renaming/expanding those into a
       player-pickable ladder. Let the player pick how deep-cut the day's places
       are, from instantly-recognizable to only-a-regular-would-know. Proposed
       ladder (creative names, tune later):
@@ -151,7 +155,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       Legend** (obscure small restaurants, dive bars, the long tail). Implement
       by scoring each location's "obscurity" (e.g. presence of a
       `wikipedia`/`wikidata` tag, `category`, and a future popularity signal —
-      see *Precise popularity filter* above) into a tier, then filter the daily
+      see _Precise popularity filter_ above) into a tier, then filter the daily
       pool by the chosen tier. Selection stays deterministic per day; tier just
       narrows the candidate set (and could feed the share string so friends
       compare tiers). Bigger datasets per city make the hard tiers viable.
@@ -179,9 +183,10 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       retention cron (#93). A **server-side per-player streak** (#95, migration
       `0002_create_streaks.sql`, `streaks` table) was added alongside it, keyed by
       anonymous client id and built to be accounts-ready. See PLAN §11 and
-      `worker/README.md`. *Still open:* named/account-based leaderboards.
+      `worker/README.md`. _Still open:_ named/account-based leaderboards.
 
 ## Done
+
 - [x] **State College enriched + uncapped + parks fix** — removed the size cap
       (`target: null` → `composeLocations` keeps everything in-bounds), re-fetched
       (80 → 282), ran the fame pass, enriched to 234 rows (the 20/45/35
@@ -205,7 +210,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       national chains; **373** after a whole-fleet freshness sweep — −4 closed,
       +3 successors, `lastVerified` stamps; **370** after the four-city
       full-vetting pass removed 3 long-closed resort venues). PR #40. (Rollout to
-      other cities tracked under *In progress / next*.)
+      other cities tracked under _In progress / next_.)
 - [x] Project scaffold + plan/docs (PLAN, DATA-SOURCING, QUESTIONS-FOR-ALEX).
 - [x] Deterministic daily selection (midnight-Eastern, DST-aware) + 0–100 linear
       scoring, with unit tests.

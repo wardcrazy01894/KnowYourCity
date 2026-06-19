@@ -85,7 +85,7 @@ unexpectedly.
 ## 5. Tests + docs (same PR)
 
 - `npm run typecheck && npm run lint && npm run format:check && npm test &&
-  npm run build` — the dataset guard test validates the new rows.
+npm run build` — the dataset guard test validates the new rows.
 - Update the dataset counts in `docs/DATA-SOURCING.md` (status + caps lines),
   `docs/PLAN.md` (M2 row + bucket example), `BACKLOG.md`, and
   `docs/QUESTIONS-FOR-ALEX.md` if they reference the city's size.
@@ -97,10 +97,11 @@ node scripts/nearby-sweep.mjs <city> "<lat>,<lng>"   # per added location
 ```
 
 For each `MISSING` hit:
+
 - Check `data/fame-<city>.json` first — many will be **known-closed** (OSM is
   stale; 9 of 13 around Where's Jubes were already-researched closures).
 - Web-verify the rest (open/closed/moved), and add the worthy ones via this
-  same flow (steps 1–5). Sweep around *those* adds too until dry.
+  same flow (steps 1–5). Sweep around _those_ adds too until dry.
 
 OSM can't surface what it doesn't have, so ALSO do one non-OSM check per
 requested venue: search "what's next to <venue>" / "<owner>'s other venues" —

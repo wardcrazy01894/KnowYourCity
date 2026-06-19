@@ -18,36 +18,39 @@ Addressed in response to the adversarial reviewer's BLOCK. Each item is
 a second parameter (default 300 preserves backward compatibility for all
 existing callers). `scoreGuess` is updated to branch on FOUR cases and pass
 the right radius to each:
+
 - **polygon + inside** → `{ distanceMeters: 0, score: MAX_ROUND_SCORE }`.
 - **polygon + outside** → `scoreForDistance(edgeDist, 0)` — falloff starts
   at the polygon edge, no freebie ring.
 - **point + large-footprint category + no polygon** → `scoreForDistance(centroidDist, LARGE_FALLBACK_RADIUS_M)` (300m) — prevents regression for parks whose polygon was dropped.
 - **point + normal** → `scoreForDistance(centroidDist, POINT_PERFECT_RADIUS_M)` (100m).  
-New helper `isLargeFootprintCategory(category)` (exported, testable) decides
-the third case. `LARGE_FALLBACK_RADIUS_M = 300` is a new exported constant.
-See §3.4 for the updated spec and §6.1 for new `scoreGuess` test cases.  
-Files: `src/lib/scoring.ts`.
+  New helper `isLargeFootprintCategory(category)` (exported, testable) decides
+  the third case. `LARGE_FALLBACK_RADIUS_M = 300` is a new exported constant.
+  See §3.4 for the updated spec and §6.1 for new `scoreGuess` test cases.  
+  Files: `src/lib/scoring.ts`.
 
 **MF-2 — Ray-casting vertex/edge boundary is undeliverable with naive even-odd counting** — FIXED  
 Algorithm spec updated in `geo.ts` JSDoc (the `pointInPolygon` function
 comment) and §3.3 of this plan. The implementer must:
+
 1. Run an explicit point-on-segment check (epsilon = 1e-10 degrees) over all
    edges FIRST; return true immediately if the point is on any edge/vertex.
 2. THEN run ray-casting with the half-open vertex rule
    `(yi > py) !== (yj > py)` to avoid vertex double-counting for interior
    points.  
-Test cases for vertex and edge boundary are preserved.  
-Files: `src/lib/geo.ts` (JSDoc), §3.3 in this plan.
+   Test cases for vertex and edge boundary are preserved.  
+   Files: `src/lib/geo.ts` (JSDoc), §3.3 in this plan.
 
 **MF-3 — MapGuess polygon CREATION half missing from stub** — FIXED  
 `MapGuess.tsx` now carries a clearly marked TODO block showing:
+
 - Where to create `L.polygon(...)` and assign to `polygonLayerRef.current`.
 - The full `L.featureGroup([truthMarkerRef, lineRef, polygonLayerRef])` -based
   `fitBounds` pattern that replaces the current guess↔truth bounding box so
   the polygon is always framed in the reveal view (not clipped).  
-§5 of this plan is updated to be unambiguous about both creation and
-`featureGroup`-based `fitBounds`.  
-Files: `src/components/MapGuess.tsx`, §5 in this plan.
+  §5 of this plan is updated to be unambiguous about both creation and
+  `featureGroup`-based `fitBounds`.  
+  Files: `src/components/MapGuess.tsx`, §5 in this plan.
 
 **MF-4 — `geo.ts` contradiction: "not exported" banner above exported `haversineMeters`** — FIXED  
 The misleading banner ("Internal helpers (not exported)") has been replaced
@@ -134,16 +137,16 @@ they clicked. This feature:
 
 ## 2. Key numbers from reading the codebase
 
-| Metric | Value |
-|--------|-------|
-| In-play park + golf_course locations (all 5 cities) | **210** |
-| Of those with `source: 'overpass'` | 190 (matchable by name+bbox) |
-| Of those with `source: 'manual'` | 20 (name+bbox still matchable in OSM) |
-| Locations with an `osmId` field stored | **0** (biggest risk — see §7.1) |
-| Largest city JSON (`chicago.json`) | **1.3 MB** |
-| Estimated polygon data added to chicago.json | **~35 KB** (35 nodes/polygon avg, 5-dp coords) |
-| Estimated polygon data added across all 5 files | **~165 KB total** |
-| Venue-category locations | 112 total but mix of theaters + stadiums; **excluded from v1 polygon scope** |
+| Metric                                              | Value                                                                        |
+| --------------------------------------------------- | ---------------------------------------------------------------------------- |
+| In-play park + golf_course locations (all 5 cities) | **210**                                                                      |
+| Of those with `source: 'overpass'`                  | 190 (matchable by name+bbox)                                                 |
+| Of those with `source: 'manual'`                    | 20 (name+bbox still matchable in OSM)                                        |
+| Locations with an `osmId` field stored              | **0** (biggest risk — see §7.1)                                              |
+| Largest city JSON (`chicago.json`)                  | **1.3 MB**                                                                   |
+| Estimated polygon data added to chicago.json        | **~35 KB** (35 nodes/polygon avg, 5-dp coords)                               |
+| Estimated polygon data added across all 5 files     | **~165 KB total**                                                            |
+| Venue-category locations                            | 112 total but mix of theaters + stadiums; **excluded from v1 polygon scope** |
 
 The venue category conflates large-footprint stadiums (Tropicana Field, Beaver
 Stadium, Michigan Stadium) with small theaters (Jannus Live, Benaroya Hall).
@@ -164,6 +167,7 @@ polygon?: [number, number][]   // outer ring only: [[lat, lng], ...]
 ```
 
 **Rationale:**
+
 - A flat `[lat, lng][]` array is the minimal shape; no GeoJSON wrapper overhead.
 - Outer ring only in v1. GeoJSON's multi-ring format (`[ring, hole, hole]`) is
   left for a future follow-up (see §7.4). The vast majority of city parks have
@@ -187,6 +191,7 @@ polygon?: [number, number][]   // outer ring only: [[lat, lng], ...]
 ### 3.2 Geometry module — `src/lib/geo.ts` (new)
 
 Extracted into a dedicated file (not appended to scoring.ts) for these reasons:
+
 - `scoring.ts` is already a coherent "distance → score" unit; polygon geometry
   is a different concern.
 - `geo.ts` can be imported by both `scoring.ts` (for `scoreGuess`) and the
@@ -235,6 +240,7 @@ edge hits). The implementer MUST use the following two-step approach:
 For every edge (vertices[i] → vertices[j]), test whether the query point lies
 on the segment within epsilon (1e-10 degrees). If yes, return `true`
 immediately. This correctly handles:
+
 - Vertex hits: a naive ray that passes exactly through a shared vertex
   counts it twice (once for each adjacent edge), giving wrong parity.
 - Edge hits: FP arithmetic makes "exactly on a line" unreliable in
@@ -299,7 +305,7 @@ export const PERFECT_RADIUS_M = 300
 ```ts
 export function scoreForDistance(
   distanceMeters: number,
-  perfectRadiusM: number = PERFECT_RADIUS_M,  // default = 300, backward compat
+  perfectRadiusM: number = PERFECT_RADIUS_M, // default = 300, backward compat
 ): number
 ```
 
@@ -307,22 +313,21 @@ export function scoreForDistance(
 
 ```ts
 /** Returns true for categories that are inherently large-footprint. */
-export function isLargeFootprintCategory(
-  _category: LocationCategory,
-): boolean
+export function isLargeFootprintCategory(_category: LocationCategory): boolean
 ```
+
 Initial set: `{ 'park', 'golf_course' }`. Extend here if new large-footprint
 categories are added. Exported so `add-polygons.mjs` can reuse the same
 predicate for its Overpass scope (mirrors `POLYGON_CATEGORIES` in that script).
 
 **`scoreGuess` — four branches (implement in this order):**
 
-| # | Condition | `distanceMeters` | `score` |
-|---|-----------|-----------------|---------|
-| 1 | polygon non-empty AND `pointInPolygon` | `0` | `MAX_ROUND_SCORE` |
-| 2 | polygon non-empty AND NOT `pointInPolygon` | `distanceToPolygonMeters(...)` | `scoreForDistance(edgeDist, 0)` |
-| 3 | `isLargeFootprintCategory` AND no polygon | haversine to centroid | `scoreForDistance(centroidDist, LARGE_FALLBACK_RADIUS_M)` |
-| 4 | everything else (normal point) | haversine to centroid | `scoreForDistance(centroidDist, POINT_PERFECT_RADIUS_M)` |
+| #   | Condition                                  | `distanceMeters`               | `score`                                                   |
+| --- | ------------------------------------------ | ------------------------------ | --------------------------------------------------------- |
+| 1   | polygon non-empty AND `pointInPolygon`     | `0`                            | `MAX_ROUND_SCORE`                                         |
+| 2   | polygon non-empty AND NOT `pointInPolygon` | `distanceToPolygonMeters(...)` | `scoreForDistance(edgeDist, 0)`                           |
+| 3   | `isLargeFootprintCategory` AND no polygon  | haversine to centroid          | `scoreForDistance(centroidDist, LARGE_FALLBACK_RADIUS_M)` |
+| 4   | everything else (normal point)             | haversine to centroid          | `scoreForDistance(centroidDist, POINT_PERFECT_RADIUS_M)`  |
 
 Branch 2 uses `perfectRadiusM = 0`: falloff begins AT the polygon edge — even
 1 m outside scores <100. No freebie ring outside the polygon.
@@ -333,6 +338,7 @@ correctly pins "inside" a large park (but whose polygon is missing) gets
 penalised by the tighter 100m radius instead of the old generous 300m.
 
 **Explicit test cases for `scoreGuess` (add to `scoring.test.ts` [M-B1]):**
+
 - point-normal at exactly 100m → score: `MAX_ROUND_SCORE`
 - point-normal at 131m → score: `< MAX_ROUND_SCORE`
 - point-large-no-polygon at 250m → score: `MAX_ROUND_SCORE` (LARGE_FALLBACK covers)
@@ -341,6 +347,7 @@ penalised by the tighter 100m radius instead of the old generous 300m.
 - polygon-inside → `{ distanceMeters: 0, score: MAX_ROUND_SCORE }`
 
 **`distanceMeters` semantics in `RoundResult`:**
+
 - Polygon inside-hit → `0`. UI shows "0 m", which is honest.
 - Polygon outside-hit → distance to nearest polygon edge (NOT centroid).
 - Point → haversine to centroid.
@@ -355,6 +362,7 @@ three cases (see §9 doc-update checklist).
 ### 4.1 Approach
 
 A new idempotent script that:
+
 1. Reads each `public/locations.<city>.json`.
 2. Selects rows where `category` is `park` or `golf_course` AND `polygon` is not
    already set.
@@ -382,6 +390,7 @@ identifiers available are `name` (display name) and `{lat, lng}` (the
 representative point). The script uses a two-stage match:
 
 **Stage 1 — Overpass name query (within city bbox):**
+
 ```
 [out:json][timeout:90];
 (
@@ -463,10 +472,12 @@ creation goes.
 ### 5.1 Cleanup (already in stub)
 
 At the top of the reveal useEffect (before `if (!reveal) return`):
+
 ```ts
 polygonLayerRef.current?.remove()
 polygonLayerRef.current = null
 ```
+
 This mirrors the existing `truthMarkerRef` / `lineRef` cleanup and runs on
 every dependency change (including `reveal` becoming null at round reset).
 No cross-round layer leak is possible.
@@ -475,15 +486,16 @@ No cross-round layer leak is possible.
 
 After creating `truthMarkerRef.current`, and BEFORE building the `fitBounds`
 call, add:
+
 ```ts
 if (reveal.location.polygon?.length) {
   polygonLayerRef.current = L.polygon(
     reveal.location.polygon as L.LatLngExpression[],
     {
-      color: '#2ecc71',      // same green as truth marker
+      color: '#2ecc71', // same green as truth marker
       weight: 2,
       fillColor: '#2ecc71',
-      fillOpacity: 0.15,     // subtle fill; satellite imagery stays visible
+      fillOpacity: 0.15, // subtle fill; satellite imagery stays visible
     },
   ).addTo(map)
 }
@@ -500,10 +512,9 @@ layers, then call `getBounds()`:
 const revealLayers: L.Layer[] = [truthMarkerRef.current!]
 if (lineRef.current) revealLayers.push(lineRef.current)
 if (polygonLayerRef.current) revealLayers.push(polygonLayerRef.current)
-map.fitBounds(
-  L.featureGroup(revealLayers).getBounds().pad(0.2),
-  { maxZoom: 17 },
-)
+map.fitBounds(L.featureGroup(revealLayers).getBounds().pad(0.2), {
+  maxZoom: 17,
+})
 ```
 
 This replaces the existing `L.latLngBounds(...).pad(0.4)` call inside the
@@ -524,11 +535,13 @@ Tasks within the same milestone that have no dependency on each other can run in
 ### M-A: Types and geometry (parallel: A1 + A2)
 
 **A1 — `src/types.ts` polygon field** (no dependencies)
+
 - Add `polygon?: [number, number][]` to `Location`.
 - Add a JSDoc comment explaining the open-ring convention and 5-dp precision.
 - No test needed: schema is guarded by the dataset guard test once data exists.
 
 **A2 — `src/lib/geo.ts` + `src/lib/geo.test.ts`** (no dependencies)
+
 - Write `geo.test.ts` first (RED).
 - Implement stubs → make pass (GREEN).
 - See §6.1 for the complete test-case list.
@@ -536,6 +549,7 @@ Tasks within the same milestone that have no dependency on each other can run in
 ### M-B: Scoring update (depends on A2)
 
 **B1 — `src/lib/scoring.ts` constant rename + `scoreGuess` polygon branch**
+
 - Update `scoring.test.ts` first: change tests for `PERFECT_RADIUS_M` to use
   the new value; add polygon-branch tests for `scoreGuess`.
 - Make stubs → make pass.
@@ -543,6 +557,7 @@ Tasks within the same milestone that have no dependency on each other can run in
 ### M-C: Backfill script (depends on A1 for the output schema)
 
 **C1 — `scripts/add-polygons.mjs`**
+
 - Implement the name+proximity match, Douglas–Peucker, node-cap logic.
 - Dry-run against stpete first; inspect 5–10 polygons in overpass-turbo before
   committing data.
@@ -564,10 +579,12 @@ parallel with M-B and M-C once A1 is merged, but NOT before A1.
 ### M-E: Docs (same PR — CLAUDE.md requirement)
 
 **E1 — `docs/DATA-SOURCING.md`**
+
 - Update the Location schema block to include `polygon?`.
 - Add a section on the `add-polygons.mjs` backfill and the `out geom` approach.
 
 **E2 — `docs/PLAN.md` §5.4 Scoring**
+
 - Update the scoring section with the new point radius constant and the polygon
   branch description.
 - Add `src/lib/geo.ts` to the architecture overview in §2.
@@ -579,61 +596,62 @@ parallel with M-B and M-C once A1 is merged, but NOT before A1.
 #### `pointInPolygon`
 
 The ring used in most tests is a unit square at St. Pete coordinates:
+
 ```
 ring = [[27.77, -82.64], [27.77, -82.63], [27.76, -82.63], [27.76, -82.64]]
 // (open ring — first point not repeated)
 ```
 
-| Test | Input point | Expected | Notes |
-|------|-------------|----------|-------|
-| Interior point | [27.765, -82.635] | `true` | centroid of square |
-| Corner point (vertex) | [27.77, -82.64] | `true` | boundary = inside |
-| Point on edge | [27.765, -82.64] | `true` | boundary = inside |
-| Point outside (north) | [27.78, -82.635] | `false` | past north edge |
-| Point outside (east) | [27.765, -82.62] | `false` | past east edge |
-| Point outside (SW) | [27.75, -82.65] | `false` | diagonal outside |
-| Concave ring (L-shape): outside the notch | [27.77x, -82.63x] | `false` | tests concavity |
-| Identical point list (degenerate ring, 1 point) | any | `false` | guard against empty ring |
-| Ring with 2 points (degenerate) | any | `false` | no enclosed area |
-| Seattle latitude test (higher lat) | interior | `true` | tests no lat-dependency in ray-cast |
+| Test                                            | Input point       | Expected | Notes                               |
+| ----------------------------------------------- | ----------------- | -------- | ----------------------------------- |
+| Interior point                                  | [27.765, -82.635] | `true`   | centroid of square                  |
+| Corner point (vertex)                           | [27.77, -82.64]   | `true`   | boundary = inside                   |
+| Point on edge                                   | [27.765, -82.64]  | `true`   | boundary = inside                   |
+| Point outside (north)                           | [27.78, -82.635]  | `false`  | past north edge                     |
+| Point outside (east)                            | [27.765, -82.62]  | `false`  | past east edge                      |
+| Point outside (SW)                              | [27.75, -82.65]   | `false`  | diagonal outside                    |
+| Concave ring (L-shape): outside the notch       | [27.77x, -82.63x] | `false`  | tests concavity                     |
+| Identical point list (degenerate ring, 1 point) | any               | `false`  | guard against empty ring            |
+| Ring with 2 points (degenerate)                 | any               | `false`  | no enclosed area                    |
+| Seattle latitude test (higher lat)              | interior          | `true`   | tests no lat-dependency in ray-cast |
 
 #### `distanceToPolygonMeters`
 
-| Test | Input | Expected | Notes |
-|------|-------|----------|-------|
-| Point at centroid (inside) | [27.765, -82.635] | `0` | inside = 0 |
-| Point at vertex (inside by boundary rule) | [27.77, -82.64] | `0` | boundary = 0 |
-| Point 200m outside (north) | computed from ring | `≈ 200` (±5m) | tests north edge segment |
-| Point 500m outside (east) | computed from ring | `≈ 500` (±10m) | tests east edge segment |
+| Test                                              | Input                       | Expected                           | Notes                                               |
+| ------------------------------------------------- | --------------------------- | ---------------------------------- | --------------------------------------------------- |
+| Point at centroid (inside)                        | [27.765, -82.635]           | `0`                                | inside = 0                                          |
+| Point at vertex (inside by boundary rule)         | [27.77, -82.64]             | `0`                                | boundary = 0                                        |
+| Point 200m outside (north)                        | computed from ring          | `≈ 200` (±5m)                      | tests north edge segment                            |
+| Point 500m outside (east)                         | computed from ring          | `≈ 500` (±10m)                     | tests east edge segment                             |
 | Point outside at corner angle (nearest is vertex) | 45° diagonal from NW corner | `≈ haversine to that corner` (±1%) | nearest point is the vertex, not a segment interior |
-| Large park ring (Boyd Hill, ~500m radius) | pin 100m outside | `≈ 100` (±5m) | real-world scale test |
-| Points further away | 1km, 2km, 5km outside | monotonically increasing | no plateau |
+| Large park ring (Boyd Hill, ~500m radius)         | pin 100m outside            | `≈ 100` (±5m)                      | real-world scale test                               |
+| Points further away                               | 1km, 2km, 5km outside       | monotonically increasing           | no plateau                                          |
 
 #### `douglasPeucker`
 
-| Test | Input | Expected |
-|------|-------|----------|
-| Collinear points | 5 collinear points | reduces to 2 endpoints |
-| Zigzag points (large deviation) | retained | all kept |
-| ε = 0 | ring of n points | all n points returned |
-| ε very large | ring of n points | 2 endpoints only |
-| Open ring in, open ring out | input has n points | output has ≤ n points, still open |
+| Test                            | Input              | Expected                          |
+| ------------------------------- | ------------------ | --------------------------------- |
+| Collinear points                | 5 collinear points | reduces to 2 endpoints            |
+| Zigzag points (large deviation) | retained           | all kept                          |
+| ε = 0                           | ring of n points   | all n points returned             |
+| ε very large                    | ring of n points   | 2 endpoints only                  |
+| Open ring in, open ring out     | input has n points | output has ≤ n points, still open |
 
 #### `scoreGuess` — four-branch test cases (add to `scoring.test.ts` [M-B1])
 
 The exact cases from §3.4, expressed as a table for `scoring.test.ts` authors:
 
-| Branch | Location type | Polygon | Distance | Expected score |
-|--------|--------------|---------|----------|---------------|
-| 1 — polygon inside | park | set, non-empty | guess inside | `MAX_ROUND_SCORE`; `distanceMeters: 0` |
-| 2 — polygon outside 1m | park | set, non-empty | 1m from edge | `< MAX_ROUND_SCORE` (perfectRadius=0) |
-| 2 — polygon outside 500m | park | set, non-empty | 500m from edge | same as `scoreForDistance(500, 0)` |
-| 3 — large-footprint no polygon at 250m | park | absent | 250m to centroid | `MAX_ROUND_SCORE` (LARGE_FALLBACK=300) |
-| 3 — large-footprint no polygon at 301m | park | absent | 301m to centroid | `< MAX_ROUND_SCORE` |
-| 3 — golf_course no polygon at 250m | golf_course | absent | 250m to centroid | `MAX_ROUND_SCORE` |
-| 4 — normal point at 100m | restaurant | absent | 100m to centroid | `MAX_ROUND_SCORE` |
-| 4 — normal point at 131m | restaurant | absent | 131m to centroid | `< MAX_ROUND_SCORE` |
-| 4 — normal point at 0m | landmark | absent | 0m | `MAX_ROUND_SCORE`; `distanceMeters: 0` |
+| Branch                                 | Location type | Polygon        | Distance         | Expected score                         |
+| -------------------------------------- | ------------- | -------------- | ---------------- | -------------------------------------- |
+| 1 — polygon inside                     | park          | set, non-empty | guess inside     | `MAX_ROUND_SCORE`; `distanceMeters: 0` |
+| 2 — polygon outside 1m                 | park          | set, non-empty | 1m from edge     | `< MAX_ROUND_SCORE` (perfectRadius=0)  |
+| 2 — polygon outside 500m               | park          | set, non-empty | 500m from edge   | same as `scoreForDistance(500, 0)`     |
+| 3 — large-footprint no polygon at 250m | park          | absent         | 250m to centroid | `MAX_ROUND_SCORE` (LARGE_FALLBACK=300) |
+| 3 — large-footprint no polygon at 301m | park          | absent         | 301m to centroid | `< MAX_ROUND_SCORE`                    |
+| 3 — golf_course no polygon at 250m     | golf_course   | absent         | 250m to centroid | `MAX_ROUND_SCORE`                      |
+| 4 — normal point at 100m               | restaurant    | absent         | 100m to centroid | `MAX_ROUND_SCORE`                      |
+| 4 — normal point at 131m               | restaurant    | absent         | 131m to centroid | `< MAX_ROUND_SCORE`                    |
+| 4 — normal point at 0m                 | landmark      | absent         | 0m               | `MAX_ROUND_SCORE`; `distanceMeters: 0` |
 
 ---
 
@@ -646,6 +664,7 @@ cannot issue a direct `way(<id>)` or `relation(<id>)` query. It must match by
 name + bbox proximity.
 
 **Mitigation:**
+
 1. The city bounding box is tight (0.25°–0.5° boxes). A name collision within
    one box is rare.
 2. The 500m centroid proximity filter eliminates most false matches.
@@ -681,9 +700,11 @@ on a lake inside it.
 way segments (arcs) that must be stitched head-to-tail. v1 does NOT implement
 stitching. If the first outer member's geometry array is not a closed ring (last
 node ≠ first node), `extractOuterRing` returns null and logs:
+
 > `WARN [add-polygons] <id>: OSM element matched but outer ring is multi-arc (not stitched, v1 skip)`
 
 This is DISTINCT from:
+
 > `WARN [add-polygons] <id>: OSM element has no outer member geometry`
 > `WARN [add-polygons] <id>: no OSM match found (name not in bbox or centroid too far)`
 
@@ -737,12 +758,14 @@ distance, so 0 m / 100 score produces 🟩 correctly.
 ### 7.7 Existing scoring tests break on radius change
 
 `scoring.test.ts` currently asserts:
+
 ```ts
-expect(scoreForDistance(0)).toBe(MAX_ROUND_SCORE)              // still passes
-expect(scoreForDistance(PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE)  // still passes
+expect(scoreForDistance(0)).toBe(MAX_ROUND_SCORE) // still passes
+expect(scoreForDistance(PERFECT_RADIUS_M)).toBe(MAX_ROUND_SCORE) // still passes
 ```
 
 Both continue to pass because:
+
 - `PERFECT_RADIUS_M` is kept at 300 (value unchanged; marked deprecated).
 - `scoreForDistance` now takes `perfectRadiusM` as a second parameter with
   default 300. A call `scoreForDistance(300)` (no second arg) is identical to
@@ -752,6 +775,7 @@ No existing `scoreForDistance` test breaks.
 
 **New `scoreGuess` test cases to add in `scoring.test.ts` [M-B1]** (spec'd
 in §3.4 — repeating here for traceability):
+
 - point-normal at 100m → `MAX_ROUND_SCORE`; at 131m → `< MAX_ROUND_SCORE`.
 - point-large-no-polygon (park) at 250m → `MAX_ROUND_SCORE` (LARGE_FALLBACK=300 covers it);
   at 301m → `< MAX_ROUND_SCORE`.
@@ -766,10 +790,12 @@ This also confirms SF-7 is resolved: large parks with no polygon regress to
 The reveal useEffect already removes `truthMarkerRef.current` and
 `lineRef.current` at its top before the `if (!reveal) return` guard. The new
 `polygonLayerRef.current` follows the exact same pattern:
+
 ```ts
 polygonLayerRef.current?.remove()
 polygonLayerRef.current = null
 ```
+
 This fires on every dependency change (including `reveal` becoming null when a
 new round starts), so the polygon is always cleaned up. The `polygonLayerRef` is
 declared with `useRef<L.Polygon | null>(null)` immediately after `lineRef`.
@@ -844,20 +870,20 @@ polygon branch — absent or empty polygon falls through to point scoring.
 
 ## 10. Files created/changed summary
 
-| File | Action | Milestone |
-|------|--------|-----------|
-| `src/types.ts` | Add `polygon?` to `Location` | A1 |
-| `src/lib/geo.ts` | New file: `pointInPolygon`, `distanceToPolygonMeters`, `douglasPeucker` | A2 |
-| `src/lib/geo.test.ts` | New file: full test suite for geo.ts | A2 (RED first) |
-| `src/lib/scoring.ts` | Add `POINT_PERFECT_RADIUS_M`, update `scoreGuess` | B1 |
-| `src/lib/scoring.test.ts` | Update for new constant, add polygon branch tests | B1 (RED first) |
-| `scripts/add-polygons.mjs` | New script: backfill polygon data from Overpass | C1 |
-| `src/components/MapGuess.tsx` | Add `polygonLayerRef`, render polygon on reveal | D1 |
-| `public/locations.stpete.json` | Polygon data added for park/golf rows | C1 |
-| `public/locations.statecollege.json` | Polygon data added for park/golf rows | C1 |
-| `public/locations.annarbor.json` | Polygon data added for park/golf rows | C1 |
-| `public/locations.seattle.json` | Polygon data added for park/golf rows | C1 |
-| `public/locations.chicago.json` | Polygon data added for park/golf rows | C1 |
-| `docs/DATA-SOURCING.md` | Schema update + new §4d | E1 |
-| `docs/PLAN.md` | Scoring section + geo.ts in architecture | E2 |
-| `docs/plans/POLYGON-SCORING.md` | This file | — |
+| File                                 | Action                                                                  | Milestone      |
+| ------------------------------------ | ----------------------------------------------------------------------- | -------------- |
+| `src/types.ts`                       | Add `polygon?` to `Location`                                            | A1             |
+| `src/lib/geo.ts`                     | New file: `pointInPolygon`, `distanceToPolygonMeters`, `douglasPeucker` | A2             |
+| `src/lib/geo.test.ts`                | New file: full test suite for geo.ts                                    | A2 (RED first) |
+| `src/lib/scoring.ts`                 | Add `POINT_PERFECT_RADIUS_M`, update `scoreGuess`                       | B1             |
+| `src/lib/scoring.test.ts`            | Update for new constant, add polygon branch tests                       | B1 (RED first) |
+| `scripts/add-polygons.mjs`           | New script: backfill polygon data from Overpass                         | C1             |
+| `src/components/MapGuess.tsx`        | Add `polygonLayerRef`, render polygon on reveal                         | D1             |
+| `public/locations.stpete.json`       | Polygon data added for park/golf rows                                   | C1             |
+| `public/locations.statecollege.json` | Polygon data added for park/golf rows                                   | C1             |
+| `public/locations.annarbor.json`     | Polygon data added for park/golf rows                                   | C1             |
+| `public/locations.seattle.json`      | Polygon data added for park/golf rows                                   | C1             |
+| `public/locations.chicago.json`      | Polygon data added for park/golf rows                                   | C1             |
+| `docs/DATA-SOURCING.md`              | Schema update + new §4d                                                 | E1             |
+| `docs/PLAN.md`                       | Scoring section + geo.ts in architecture                                | E2             |
+| `docs/plans/POLYGON-SCORING.md`      | This file                                                               | —              |
