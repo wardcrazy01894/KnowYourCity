@@ -52,6 +52,13 @@ describe('sameLineup', () => {
   it('true for two empty lineups (vacuously the same)', () => {
     expect(sameLineup([], [])).toBe(true)
   })
+
+  it('false when a location was re-pinned (same id, different coords)', () => {
+    const a = lineup(['a', 'b', 'c'])
+    const b = lineup(['a', 'b', 'c'])
+    b[1] = { ...b[1], lat: b[1].lat + 0.004 } // override edited the answer pin
+    expect(sameLineup(a, b)).toBe(false)
+  })
 })
 
 describe('freshGame', () => {
@@ -112,6 +119,21 @@ describe('resolveInitialGame', () => {
     }
     const result = resolveInitialGame(saved, today, todays)
     expect(result.locations.map((l) => l.id)).toEqual(['a', 'b', 'c'])
+    expect(result.roundIndex).toBe(0)
+    expect(result.results).toEqual([])
+  })
+
+  // A location's answer pin was corrected (same ids/order, moved coords) after
+  // the player started today. Don't keep serving the stale pin on reload — start
+  // fresh so today's reload reflects the fix instead of waiting for tomorrow.
+  it('starts fresh when a location was re-pinned today', () => {
+    const saved = savedGame(today, ['a', 'b', 'c'])
+    const corrected = lineup(['a', 'b', 'c'])
+    corrected[1] = { ...corrected[1], lat: corrected[1].lat + 0.004 }
+    const result = resolveInitialGame(saved, today, corrected)
+    expect(result).not.toBe(saved)
+    expect(result.locations[1].lat).toBe(corrected[1].lat)
+    expect(result.phase).toBe('guessing')
     expect(result.roundIndex).toBe(0)
     expect(result.results).toEqual([])
   })
