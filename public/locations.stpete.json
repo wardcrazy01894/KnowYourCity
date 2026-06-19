@@ -1033,21 +1033,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "ceviche",
-      "name": "Ceviche",
-      "lat": 27.775469,
-      "lng": -82.632148,
-      "category": "restaurant",
-      "difficulty": "easy",
-      "inPlay": true,
-      "fameScore": 65,
-      "clue": null,
-      "photoUrl": null,
-      "source": "manual",
-      "attribution": "OpenStreetMap ODbL (re-pinned via US Census geocoder, verified via Google Places)",
-      "lastVerified": "2026-06-19"
-    },
-    {
       "id": "ceviche-tapas-bar",
       "name": "Ceviche Tapas Bar",
       "lat": 27.775469,
@@ -4242,7 +4227,7 @@
       "lat": 27.77015,
       "lng": -82.63535,
       "category": "restaurant",
-      "difficulty": "medium",
+      "difficulty": "easy",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
