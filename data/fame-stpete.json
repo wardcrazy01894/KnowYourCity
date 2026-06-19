@@ -745,11 +745,13 @@
   },
   {
     "id": "ceviche",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 65,
     "reviewCount": 1152,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Duplicate listing of ceviche-tapas-bar (same business: Ceviche Tapas Bar and Restaurant, 332 Beach Dr NE). Collapsed 2026-06-19 — the canonical entry is ceviche-tapas-bar, which the daily override references. Dropped here so a rebuild can't reintroduce the OSM 'Ceviche' double-listing."
   },
   {
     "id": "ceviche-tapas-bar",
