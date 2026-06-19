@@ -20,10 +20,20 @@ export function freshGame(dateKey: string, locations: Location[]): GameState {
   return { dateKey, locations, roundIndex: 0, results: [], phase: 'guessing' }
 }
 
-/** True when two lineups are the same locations in the same order (by id). */
+/**
+ * True when two lineups are the same locations in the same order — matched by
+ * id AND answer-pin coordinates. Coords are part of the identity check so that
+ * a re-pinned venue (same id, corrected lat/lng — e.g. an override edited after
+ * a wrong location was reported) counts as a CHANGED lineup. That makes a reload
+ * the same day start fresh against the corrected pin instead of resuming the
+ * stale one, rather than waiting for the next day's selection.
+ */
 export function sameLineup(a: Location[], b: Location[]): boolean {
   if (a.length !== b.length) return false
-  return a.every((loc, i) => loc.id === b[i].id)
+  return a.every(
+    (loc, i) =>
+      loc.id === b[i].id && loc.lat === b[i].lat && loc.lng === b[i].lng,
+  )
 }
 
 /**

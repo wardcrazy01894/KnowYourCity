@@ -90,6 +90,28 @@
       "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
+      "id": "ceviche",
+      "name": "Ceviche",
+      "lat": 27.775469,
+      "lng": -82.632148,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via US Census geocoder, verified via Google Places)"
+    },
+    {
+      "id": "ceviche-tapas-bar",
+      "name": "Ceviche Tapas Bar",
+      "lat": 27.775469,
+      "lng": -82.632148,
+      "category": "restaurant",
+      "clue": "A long-running Spanish tapas bar known for its sangria.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via US Census geocoder, verified via Google Places)"
+    },
+    {
       "id": "china-crossings",
       "name": "China Crossings",
       "lat": 27.86801,

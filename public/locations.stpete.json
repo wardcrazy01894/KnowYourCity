@@ -1035,8 +1035,8 @@
     {
       "id": "ceviche",
       "name": "Ceviche",
-      "lat": 27.77142,
-      "lng": -82.633518,
+      "lat": 27.775469,
+      "lng": -82.632148,
       "category": "restaurant",
       "difficulty": "easy",
       "inPlay": true,
@@ -1045,13 +1045,13 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-19"
     },
     {
       "id": "ceviche-tapas-bar",
       "name": "Ceviche Tapas Bar",
-      "lat": 27.77142,
-      "lng": -82.633518,
+      "lat": 27.775469,
+      "lng": -82.632148,
       "category": "restaurant",
       "difficulty": "easy",
       "inPlay": true,
@@ -1060,7 +1060,7 @@
       "photoUrl": null,
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-19"
     },
     {
       "id": "chihuly-collection",
