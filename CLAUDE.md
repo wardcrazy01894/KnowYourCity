@@ -42,7 +42,7 @@ never in a follow-up. The PR template has the checklist; the relevant targets:
 Every behavior change is **test-first**: red → green → refactor.
 
 1. **RED** — write the smallest failing `*.test.ts` that captures the behavior;
-   run it and watch it fail for the *right* reason. No impl before a red test.
+   run it and watch it fail for the _right_ reason. No impl before a red test.
 2. **GREEN** — the least code that makes it pass. No untested branches.
 3. **REFACTOR** — clean up with the suite green.
 
@@ -59,7 +59,7 @@ guard test, `src/lib/locations.test.ts`.)
 ```bash
 npm install          # first time
 npm run dev          # local dev server
-npm run typecheck    # tsc --noEmit
+npm run typecheck    # tsc --noEmit (app) + tsconfig.worker.json (worker)
 npm run lint         # eslint
 npm test             # vitest run (write the test first!)
 npm run format       # prettier --write (format:check in CI)
@@ -72,7 +72,10 @@ npm run build` before opening a PR — that's exactly what CI gates on. Don't dr
 `format:check`: CI runs `prettier --check` separately, and `npm run build`/`lint`
 do **not** cover it, so a formatting-only diff can pass locally and still fail CI.
 A PostToolUse hook auto-formats/lints TS files on edit
-(`.claude/hooks/lint-on-edit.sh`), but it doesn't touch other file types.
+(`.claude/hooks/lint-on-edit.sh`), but it doesn't touch other file types — so
+after editing Markdown or `.mjs`, run `npm run format` yourself (`format:check`
+now covers `*.md` too). ESLint also lints the `.mjs` scripts/worker, and
+`typecheck` type-checks the worker source via `tsconfig.worker.json`.
 
 ## Secrets
 

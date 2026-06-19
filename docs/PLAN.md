@@ -57,6 +57,7 @@ date string in the city's timezone (St. Pete → `America/New_York`), so two
 browsers compute the identical selection offline.
 
 ### Tech stack (locked)
+
 - **React + TypeScript + Vite**, static build.
 - **Leaflet** for the map; **free satellite tiles** (Esri World Imagery default,
   optional Mapbox Satellite via free token).
@@ -120,16 +121,16 @@ KnowYourCity/
 
 ## 4. Milestones (status)
 
-| # | Milestone | Status |
-|---|-----------|--------|
-| **M0** | Scaffold: Vite+React+TS, deps, `npm run dev` | ✅ done |
-| **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests) | ✅ done |
-| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 370; 4 more cities) | ✅ done |
-| **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds | ✅ done |
-| **M4** | Game flow: round → reveal → next → finished | ✅ done |
-| **M5** | Persistence: resume + streak/history | ✅ done |
-| **M6** | Results + Wordle-style share string | ✅ done |
-| **M7** | Deploy to GitHub Pages | ✅ done — live at <https://knowyourcity.gg/> (custom domain since 2026-06-10; auto-deploys on every merge to `main`) |
+| #      | Milestone                                                                            | Status                                                                                                               |
+| ------ | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| **M0** | Scaffold: Vite+React+TS, deps, `npm run dev`                                         | ✅ done                                                                                                              |
+| **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests)                          | ✅ done                                                                                                              |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 370; 4 more cities) | ✅ done                                                                                                              |
+| **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds                          | ✅ done                                                                                                              |
+| **M4** | Game flow: round → reveal → next → finished                                          | ✅ done                                                                                                              |
+| **M5** | Persistence: resume + streak/history                                                 | ✅ done                                                                                                              |
+| **M6** | Results + Wordle-style share string                                                  | ✅ done                                                                                                              |
+| **M7** | Deploy to GitHub Pages                                                               | ✅ done — live at <https://knowyourcity.gg/> (custom domain since 2026-06-10; auto-deploys on every merge to `main`) |
 
 v1 is feature-complete, live, and playable. Remaining work (grow datasets,
 photos, …) is tracked in `BACKLOG.md`. CI gates every PR with
@@ -140,6 +141,7 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
 ## 5. Game mechanics detail
 
 ### 5.1 Deterministic daily selection (`src/lib/daily.ts` — implemented)
+
 - `getDateKey()` → `"YYYY-MM-DD"` for the city's timezone (`America/New_York`),
   so the puzzle rolls over at **midnight Eastern**, DST-aware (via `Intl`).
   Each future city carries its own IANA timezone.
@@ -151,12 +153,12 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
   - **Difficulty plan** (`DIFFICULTY_PLAN`, default): when **every in-play**
     location in the city carries a `difficulty`, the 5 rounds run **easy → easy →
     medium → medium → hard** (gentle warm-up, hardest finisher). Within each slot
-    we *layer both* constraints — prefer a location of that difficulty whose
+    we _layer both_ constraints — prefer a location of that difficulty whose
     **category** hasn't appeared yet today — so a day doesn't turn into five
     restaurants. On top of that a **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`)
     reserves a pick for a park/landmark/museum so a day is never all
     cafés/restaurants/bars — without breaking the difficulty ramp (only a non-food
-    *of the slot's difficulty* is preferred). If a difficulty bucket runs short,
+    _of the slot's difficulty_ is preferred). If a difficulty bucket runs short,
     the slot falls back to any remaining location (still preferring a fresh
     category).
   - **Play cap** (`City.playCap`): big/uncapped cities would otherwise be
@@ -168,8 +170,8 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
     200, Seattle 500, Chicago 700. See `docs/DATA-SOURCING.md` §4c.
   - **Category plan** (`CATEGORY_PLAN`, legacy fallback): for cities **not yet
     enriched** with difficulty, the 5 rounds are filled by category in order —
-    **cafe → restaurant → bar → landmark → wildcard** (*landmark* = anything that
-    isn't a cafe/restaurant/bar; *wildcard* = any remaining). Empty buckets fall
+    **cafe → restaurant → bar → landmark → wildcard** (_landmark_ = anything that
+    isn't a cafe/restaurant/bar; _wildcard_ = any remaining). Empty buckets fall
     back to any remaining location.
   - **Daily overrides** (`src/data/dailyOverrides.ts`): a hand-curated escape
     hatch — a `Record<"cityId:YYYY-MM-DD", string[]>` map of location IDs. When
@@ -183,14 +185,15 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
     time (St. Petersburg first); see §5.3b and `docs/DATA-SOURCING.md`.
 
 ### 5.1b Difficulty (`difficulty: 'easy' | 'medium' | 'hard'`)
+
 Each location's difficulty is the **inverse of its local fame** — how many
 residents would instantly recognise it. Fame is scored 0–100 by a one-time
 **agentic web-research pass** (TripAdvisor "things to do"/"best of" presence,
-Google/Yelp review counts *relative to the city*, Wikipedia). Every enriched
+Google/Yelp review counts _relative to the city_, Wikipedia). Every enriched
 city today sets a **`playCap`** (see §5.1 and `docs/DATA-SOURCING.md` §4c), so
 the live bucketing is **count-based over the in-play set — 40% easy / 40% medium
 / 20% hard** (e.g. St. Pete 370 → 148/148/74, Seattle 500 → 200/200/100). An
-*uncapped* enriched city (none currently) would instead bucket by **city-relative
+_uncapped_ enriched city (none currently) would instead bucket by **city-relative
 percentile** with a narrow-easy split — top 20% easy / next 45% medium / bottom
 35% hard — keeping "easy" close to "everyone knows it" even when a city has few
 true icons. Either way fame is calibrated to **down-weight tourist/critic fame**
@@ -198,6 +201,7 @@ true icons. Either way fame is calibrated to **down-weight tourist/critic fame**
 local ubiquity** — see `docs/DATA-SOURCING.md`.
 
 ### 5.2 Daily selection integrity (the honest tradeoff)
+
 Selection is a function of `(dateKey, list, overrides)`. For most days the
 `overrides` map has no entry and selection is purely deterministic from
 `(dateKey, list)`. **If you edit the location list, the PRNG shuffle changes for
@@ -207,13 +211,15 @@ chosen ids into a committed `manifest.json` and read from that instead of
 reshuffling. Not worth it for v1.
 
 ### 5.3 List size vs repetition
+
 5 unique places/day. With **N** curated locations, you can run ~`N/5` days
-before a place *must* repeat, and repeats feel frequent well before that.
+before a place _must_ repeat, and repeats feel frequent well before that.
 **Launch target per city: ~200 locations** (so repeats are rare). Food & drink
 (restaurants/bars/cafés) is the bulk of each city's dataset — pulled inclusively
 by `fetch-food` — alongside notable landmarks from `fetch-pois`.
 
 ### 5.3b Difficulty rollout (per city)
+
 Difficulty is added **one city at a time** (each needs its own fame pass). A city
 without it keeps the legacy category plan, so partial rollout is safe.
 **Status: all 5 cities enriched — St. Petersburg, State College, Ann Arbor,
@@ -225,6 +231,7 @@ the generalized, re-runnable `scripts/apply-difficulty.mjs <city>` (it generaliz
 an earlier St. Pete-only one-off pass, since removed).
 
 ### 5.4 Scoring (`src/lib/scoring.ts` — implemented)
+
 Per-round score is on a **0–100 scale** (perfect day = **500**), with a linear
 falloff between a "perfect radius" and **`ZERO_DISTANCE_M`** (5 km → 0).
 `scoreForDistance(distanceMeters, perfectRadiusM)` is the pure core;
@@ -258,32 +265,39 @@ entities — recorded with a reason in **`data/point-only-by-design.json`** and
 guarded by a completeness test in `src/lib/locations.test.ts`.
 
 ### 5.5 Round flow (`Game`)
+
 `guessing` → submit → `revealed` (truth marker + distance line) → next →
 … → `finished` → `Results`. Resume mid-day from localStorage if the player
 reloads.
 
 ### 5.6 Persistence (`storage.ts`)
+
 `localStorage` key namespaced with `STORAGE_VERSION`. Stores in-progress game
 (to resume), `history[]`, and `streak`. **Load must tolerate old/corrupt data**
 and fall back to defaults — never throw on read, or a schema bump bricks
 returning players.
 
 ### 5.7 Share string (`Results.buildShareString`, pure)
+
 ```
 Know Your City — <City>
 2026-06-06 · 428/500
 🟩🟩🟩🟨⬛
 ```
+
 Emoji tiers by round score on the 0–100 scale (🟩≥80 🟨≥50 🟧≥20 ⬛<20). No
 coordinates → no spoilers. Copied via `navigator.clipboard`.
 
 ### 5.8 Clues
+
 Each location has an optional one-line `clue`. **Hidden by default** in v1
 (`SHOW_CLUES = false` in `Game.tsx`) for more challenge; kept in the data so it
 can be toggled on or made a per-game setting later.
 
 ### 5.9 Local testing & logging
+
 URL params (all client-side, no build flags; see `src/lib/devmode.ts`):
+
 - _(none)_ — normal: today's 5, progress persists.
 - `?reset` (alias `?fresh`) — same 5 for the day, wipe progress every refresh.
 - `?shuffle` (alias `?random`) — a brand-new random 5 every refresh.
@@ -299,6 +313,7 @@ streak/history or clobber an in-progress daily: `?shuffle` → `<city>__shuffle`
 `resolveMode` in `src/lib/mode.ts`). A startup reset is likewise scoped to the
 active mode's namespace — `?reset`/`?fresh` clear the official daily (replay it
 fresh), while `?shuffle` clears only its own scratch.
+
 - `?debug` (or `localStorage kyc:debug='1'`) enables verbose `debug` logs.
 
 Logging (`src/lib/log.ts`): `[KYC]`-prefixed console output + an in-memory ring
@@ -307,6 +322,7 @@ buffer + uncaught-error/rejection capture. In the browser console,
 intended way to capture a repro and hand it to a developer.
 
 ### 5.10b Utilities: dataset search + bug report
+
 - **Dataset search** (`DatasetSearch` + `src/lib/search.ts`): pick a city, type a
   name, and see if it's in that city's list (autocomplete via `searchLocations`,
   exact check via `isIncluded`). Reachable from the picker and the game header.
@@ -321,6 +337,7 @@ intended way to capture a repro and hand it to a developer.
   `worker/README.md`.
 
 ### 5.10 Sound feedback
+
 On each reveal, `playScoreSound(score)` (`src/lib/sound.ts`) plays a synthesized
 cue by tier — **perfect** (100): bright arpeggio; **good** (green, ≥80): rising
 chime; **mid** (yellow, ≥50): single note; **womp** (<50): descending womp-womp.
@@ -329,6 +346,7 @@ created on the submit click (satisfies browser autoplay rules). A 🔊/🔇 head
 toggle mutes them (persisted in `localStorage`). `scoreTier` is pure + tested.
 
 ### 5.11 Strong-finish celebration
+
 When the results screen mounts after a strong day it fires a one-shot
 celebration: a confetti shower (`fireConfetti`, `src/lib/confetti.ts`, via
 `canvas-confetti`) plus a crowd cheer (`playCheer`, `src/lib/sound.ts`). It
@@ -357,7 +375,7 @@ regardless of score, for previewing/tuning (`isCelebrateTest`, `src/lib/devmode.
 - **Tiles (free):**
   - **Default — Esri World Imagery**, no API key. Required attribution:
     `Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS
-    User Community`. Native max zoom ≈ **19** → set `maxNativeZoom={19}`,
+User Community`. Native max zoom ≈ **19** → set `maxNativeZoom={19}`,
     `maxZoom={19}` (optionally let Leaflet overzoom to 20 by upscaling).
     Honesty note: Esri World Imagery is widely used in Leaflet via its public
     ArcGIS REST endpoint and is fine for a hobby project with attribution, but
@@ -373,6 +391,7 @@ regardless of score, for previewing/tuning (`isCelebrateTest`, `src/lib/devmode.
   draw the truth marker + a polyline to the guess, labelled with the distance.
 
 ### Anti-cheat (deliberate non-goal)
+
 The answers ship in the per-city `locations.<id>.json` and are readable in devtools. For a friends
 game this is **acceptable and intentional** — we will not add obfuscation
 theater. If a public competitive version ever needs it, that requires a backend
@@ -381,6 +400,7 @@ that withholds coordinates until after submit (future work).
 ---
 
 ## 7. Map key handling
+
 - Esri path needs **no key** → the app always works out of the box.
 - Mapbox path: copy `.env.example` → `.env.local` (gitignored), set
   `VITE_MAPBOX_TOKEN`. `MapGuess` reads `import.meta.env.VITE_MAPBOX_TOKEN` and
@@ -394,6 +414,7 @@ that withholds coordinates until after submit (future work).
 http://localhost:5173/ (the site serves from the root — `base: '/'`).
 
 **GitHub Pages:**
+
 1. `vite.config.ts` sets `base: '/'` (custom domain serves from the root).
 2. **Auto-deploy** via `.github/workflows/deploy.yml` on every push to `main`.
    It **self-enables Pages** on first run (`configure-pages` `enablement: true`),
@@ -411,6 +432,7 @@ http://localhost:5173/ (the site serves from the root — `base: '/'`).
 ---
 
 ## 9. Multi-city (implemented)
+
 The app ships **5 cities**: St. Pete, State College, Ann Arbor, Seattle, Chicago.
 A **landing picker** (`CityPicker`) chooses the city; the choice is saved
 (localStorage `kyc:city` + `?city=` in the URL). Each city is data:
@@ -432,6 +454,7 @@ set after enrichment — see §5.1 and `docs/DATA-SOURCING.md` §4c.)
 - To add a city: append to `cities.json`, run `npm run build-city -- <id>`.
 
 ## 10. Decisions & open items
+
 Resolved decisions are recorded in `docs/QUESTIONS-FOR-ALEX.md`. Still open:
 must-include / banned lists per city, and growing each city to ~200 places.
 
@@ -443,6 +466,7 @@ Each finished **official** daily challenge tells the player where they placed:
 College is never ranked against a 415 in St. Pete).
 
 ### Architecture
+
 This is the project's **first persistent storage**. A second Cloudflare Worker
 (`worker/leaderboard.mjs`, deployed from `worker/wrangler.leaderboard.toml`)
 fronts a **Cloudflare D1** (serverless SQLite) table:
@@ -476,6 +500,7 @@ scores(city, date, client_id, lineup, score, user_id NULL, created_at, updated_a
   and complicates cross-day/account queries.
 
 ### Identity & the accounts seam
+
 Identity is an anonymous random UUID minted in `localStorage` (`kyc:clientId`) —
 the seam a future login would link to via the reserved `scores.user_id` column
 (NULL today). Honest caveat: that migration is **lossy** — a player who cleared
@@ -483,6 +508,7 @@ localStorage has no `client_id` to reattach, so some pre-account history can't b
 linked. Accepted tradeoff of anonymous-first.
 
 ### Per-player streak (server-side, accounts-ready)
+
 On each official submission the worker advances a **consecutive-day streak** for
 `(city, client_id)` in its own `streaks` table (migration `0002`) and returns
 `{ current, best }` in the response; the results screen shows the **server**
@@ -495,6 +521,7 @@ NULL `user_id`, per city. Best-effort: a streak hiccup never fails the score
 submission.
 
 ### Integrity (only the official challenge counts)
+
 The client (`src/lib/leaderboard.ts`) submits **only** the official daily
 challenge — `resolveMode` (`src/lib/mode.ts`) sets `official: true` only for today's date-seeded
 set; **shuffle (`?shuffle`) and date overrides (`?date=`) never submit**, so the
@@ -510,6 +537,7 @@ the residual; Turnstile is plumbed through and documented as the next step
 (`worker/README.md`) if abuse appears.
 
 ### Retention (bounded storage)
+
 Old daily boards have no value once the day passes, so a **Cloudflare Cron
 Trigger** on the worker (`scheduled` handler, daily 05:00 UTC) prunes `scores`
 rows older than **`RETENTION_DAYS` (90)**. This keeps the table bounded forever
@@ -518,6 +546,7 @@ extra cost. The prune touches **only** `scores` — never the per-player streak
 table — so a long streak survives even after its early daily rows age out.
 
 ### Graceful + optional
+
 Everything is behind `VITE_LEADERBOARD_ENDPOINT`. Unset, offline, a non-official
 game, or any error → the standing line is simply omitted; the game never blocks.
 The returned `{rank,total}` is cached under `kyc:lb:v1:<city>:<date>` so a reload

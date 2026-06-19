@@ -55,22 +55,23 @@ repo):
 
 1. **Turn on Turnstile (strongly recommended).** Create a free
    [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) widget:
-   - `wrangler secret put TURNSTILE_SECRET` (the Turnstile *secret* key)
-   - set `VITE_TURNSTILE_SITEKEY` in the app to the Turnstile *site* key
+   - `wrangler secret put TURNSTILE_SECRET` (the Turnstile _secret_ key)
+   - set `VITE_TURNSTILE_SITEKEY` in the app to the Turnstile _site_ key
    - **add your live hostname to the widget's allowed Hostnames** in the
      Turnstile dashboard (e.g. `knowyourcity.gg`). If the hostname
      isn't listed, the check fails on the live site and the fail-closed worker
      rejects every report. (Verified working from the live Pages site 2026-06-07.)
-   The form then shows a check and the worker rejects unverified posts. This is
-   the real defense against scripted spam (the rate limit is per-IP, so a botnet
-   can still trickle in without it).
-2. **Or use a private triage repo.** Point `GH_REPO` at a *private* repo so any
+     The form then shows a check and the worker rejects unverified posts. This is
+     the real defense against scripted spam (the rate limit is per-IP, so a botnet
+     can still trickle in without it).
+2. **Or use a private triage repo.** Point `GH_REPO` at a _private_ repo so any
    spam that slips through isn't world-visible; copy genuine reports over.
 
 The rate limit alone makes a fresh deploy non-trivial to abuse, but for a public
 issue tracker, add Turnstile before sharing widely.
 
 ## Notes
+
 - Token is a Worker **secret**, never committed. Use a **fine-grained PAT,
   Issues: read & write, this repo only** — not a classic `repo`-scoped token.
 - The worker caps message (2k) / logs (6k) / body (20k) and labels issues
@@ -89,7 +90,7 @@ directory because it imports the bug worker's `cors`/origin helpers. It backs th
 `(city, date, device, lineup)` in
 [Cloudflare **D1**](https://developers.cloudflare.com/d1/) (serverless SQLite)
 and answer "you placed **Xth of Y** today". (`lineup` — migration `0003` — lets a
-device hold a second row when it replays a *changed* official set; the day's board
+device hold a second row when it replays a _changed_ official set; the day's board
 is the union of rows, keep-max per lineup.)
 
 - **Anonymous.** Identity is a random UUID in the browser's `localStorage`
@@ -120,6 +121,7 @@ is the union of rows, keep-max per lineup.)
   when present, else the local one.
 
 Request/response shape:
+
 - **Submit:** `POST { city, date, score, clientId, turnstileToken? }` → `{ ok, rank, total, streak? }` (`streak` = `{ current, best }`).
 - **View:** `GET ?city=&date=` → `{ ok, total, scores[] }` — the day's top 100
   scores (desc), anonymous (scores only, no ids/names). Powers the "🏆 View

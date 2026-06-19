@@ -42,14 +42,14 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
 
 The site is a static client bundle, so all of its config is **public** (it ships
 in the JS). It's injected at build time from repo **Variables** (Settings →
-Secrets and variables → Actions → **Variables** tab — *not* Secrets):
+Secrets and variables → Actions → **Variables** tab — _not_ Secrets):
 
-| Variable | Current value | Purpose |
-|----------|---------------|---------|
-| `VITE_BUG_ENDPOINT` | `https://kyl-bug.wardcrazy01894.workers.dev` | bug-report worker (one-click GitHub issues) |
-| `VITE_TURNSTILE_SITEKEY` | `0x4AAAAAADgHt68jxl4onK-C` | public Turnstile site key for the bug form's bot check |
-| `VITE_MAPBOX_TOKEN` | *(unset, on purpose)* | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles |
-| `VITE_CF_BEACON_TOKEN` | `38e507931236442a83feeb410f152878` | Cloudflare Web Analytics beacon — cookieless page-view tracking |
+| Variable                    | Current value                                                       | Purpose                                                                                          |
+| --------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `VITE_BUG_ENDPOINT`         | `https://kyl-bug.wardcrazy01894.workers.dev`                        | bug-report worker (one-click GitHub issues)                                                      |
+| `VITE_TURNSTILE_SITEKEY`    | `0x4AAAAAADgHt68jxl4onK-C`                                          | public Turnstile site key for the bug form's bot check                                           |
+| `VITE_MAPBOX_TOKEN`         | _(unset, on purpose)_                                               | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles                             |
+| `VITE_CF_BEACON_TOKEN`      | `38e507931236442a83feeb410f152878`                                  | Cloudflare Web Analytics beacon — cookieless page-view tracking                                  |
 | `VITE_LEADERBOARD_ENDPOINT` | the `kyc-leaderboard` worker URL (`…workers.dev` or a custom route) | anonymous daily leaderboard + per-player streak worker; **unset → the leaderboard UI is hidden** |
 
 If `VITE_BUG_ENDPOINT` is unset, the bug form falls back to opening a prefilled
@@ -66,7 +66,7 @@ visits, referrers, countries, and Core Web Vitals. The beacon script only
 loads when `VITE_CF_BEACON_TOKEN` is set (a **public** value), so local dev
 and forks are untracked. Changing/rotating the token = update the repo
 Variable, then re-run the deploy workflow (Variables bake in at build time).
-Note: the beacon *script* is allowlisted in the CSP `script-src`, but its
+Note: the beacon _script_ is allowlisted in the CSP `script-src`, but its
 data reporting rides on the currently-wide `connect-src *` — if `connect-src`
 is ever tightened, add `https://cloudflareinsights.com` or analytics dies
 silently.

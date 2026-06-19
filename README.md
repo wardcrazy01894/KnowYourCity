@@ -65,14 +65,14 @@ npm run dev          # → http://localhost:5173/
 
 Add a query param to the URL:
 
-| Param | Effect |
-|-------|--------|
-| _(none)_ | Today's 5; **progress persists** across refreshes. |
-| `?reset` | Same 5, but **wipes progress every refresh** — replay one set. _(`?fresh` is an alias.)_ |
-| `?shuffle` | A **brand-new random 5 every refresh** — try different sets. |
-| `?date=YYYY-MM-DD` | Play a specific day's puzzle. |
-| `?polygons` | **Dev verification round:** one game of _every_ polygon location in the city, so each shaded boundary can be eyeballed against the map. Off the leaderboard; stored separately so it never clobbers the daily save. |
-| `?debug` | Verbose `[KYC]` logging in the console. |
+| Param              | Effect                                                                                                                                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _(none)_           | Today's 5; **progress persists** across refreshes.                                                                                                                                                                  |
+| `?reset`           | Same 5, but **wipes progress every refresh** — replay one set. _(`?fresh` is an alias.)_                                                                                                                            |
+| `?shuffle`         | A **brand-new random 5 every refresh** — try different sets.                                                                                                                                                        |
+| `?date=YYYY-MM-DD` | Play a specific day's puzzle.                                                                                                                                                                                       |
+| `?polygons`        | **Dev verification round:** one game of _every_ polygon location in the city, so each shaded boundary can be eyeballed against the map. Off the leaderboard; stored separately so it never clobbers the daily save. |
+| `?debug`           | Verbose `[KYC]` logging in the console.                                                                                                                                                                             |
 
 🐞 **Reporting a bug?** Run **`kycDumpLogs()`** in the browser console — it prints
 the full session log and copies it to your clipboard. Paste that in.
@@ -149,10 +149,10 @@ npm run typecheck && npm run lint && npm run format:check && npm test && npm run
 
 ## 📚 Docs
 
-| File | What |
-|------|------|
-| [`docs/PLAN.md`](docs/PLAN.md) | Architecture, milestones, game mechanics. |
-| [`docs/OPERATIONS.md`](docs/OPERATIONS.md) | Live URL, deploy, env/Variables, worker — runbook. |
-| [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md) | How the dataset is built & curated. |
-| [`docs/QUESTIONS-FOR-ALEX.md`](docs/QUESTIONS-FOR-ALEX.md) | Decisions log. |
-| [`BACKLOG.md`](BACKLOG.md) | What's next (more places, photos, multi-city). |
+| File                                                       | What                                               |
+| ---------------------------------------------------------- | -------------------------------------------------- |
+| [`docs/PLAN.md`](docs/PLAN.md)                             | Architecture, milestones, game mechanics.          |
+| [`docs/OPERATIONS.md`](docs/OPERATIONS.md)                 | Live URL, deploy, env/Variables, worker — runbook. |
+| [`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md)           | How the dataset is built & curated.                |
+| [`docs/QUESTIONS-FOR-ALEX.md`](docs/QUESTIONS-FOR-ALEX.md) | Decisions log.                                     |
+| [`BACKLOG.md`](BACKLOG.md)                                 | What's next (more places, photos, multi-city).     |

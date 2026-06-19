@@ -179,7 +179,6 @@ async function main() {
   console.log('Querying Overpass for food/drink…')
   const data = await fetchOverpass(buildFoodQuery())
   const out = foodLocationsFromElements(data.elements).map(
-    // eslint-disable-next-line no-unused-vars
     ({ _signal, ...l }) => l,
   )
   out.sort((a, b) => a.name.localeCompare(b.name))
