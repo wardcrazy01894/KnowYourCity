@@ -1043,8 +1043,8 @@
       "fameScore": 65,
       "clue": null,
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via US Census geocoder, verified via Google Places)",
       "lastVerified": "2026-06-19"
     },
     {
@@ -1058,8 +1058,8 @@
       "fameScore": 65,
       "clue": "A long-running Spanish tapas bar known for its sangria.",
       "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (re-pinned via US Census geocoder, verified via Google Places)",
       "lastVerified": "2026-06-19"
     },
     {

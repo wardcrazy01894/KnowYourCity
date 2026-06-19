@@ -134,5 +134,7 @@ describe('resolveInitialGame', () => {
     expect(result).not.toBe(saved)
     expect(result.locations[1].lat).toBe(corrected[1].lat)
     expect(result.phase).toBe('guessing')
+    expect(result.roundIndex).toBe(0)
+    expect(result.results).toEqual([])
   })
 })
