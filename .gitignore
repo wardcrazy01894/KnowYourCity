@@ -29,5 +29,19 @@ data/.places-*.jsonl
 data/.places-*-report.md
 data/.hardtail.json
 
+# Transient local-chain disambiguation scratch (scripts/detect-chains.mjs):
+# cached Overpass pulls, candidate lists, Google-derived neighborhood labels,
+# and the review report. The committed artifact is the renamed names in
+# public/locations.<city>.json, not this scratch.
+data/.osm-food.*.json
+data/.chain-candidates.*.json
+data/.chain-label-cache.json
+data/.chain-rename-report.md
+data/.chain-brands-report.md
+data/.nominatim-cache.json
+data/.chain-verify-cache.json
+data/.chain-reviews-cache.json
+data/.chain-open-cache.json
+
 # Local Wrangler state — local D1 SQLite, KV, caches for `wrangler dev`.
 .wrangler/

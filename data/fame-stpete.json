@@ -4546,5 +4546,45 @@
     "fameScore": 26,
     "reviewCount": 68,
     "hasWikipedia": false
+  },
+  {
+    "id": "carmelitas-mexican-restaurant-park-street-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 70,
+    "reviewCount": 2517,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "casita-taqueria-holiday-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 63,
+    "reviewCount": 1352,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "casita-taqueria-historic-kenwood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 72,
+    "reviewCount": 2990,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "frays-donut-house-historic-kenwood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 1032,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
   }
 ]

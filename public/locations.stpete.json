@@ -374,7 +374,7 @@
       "lat": 27.770905,
       "lng": -82.64111,
       "category": "bar",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "inPlay": true,
       "fameScore": 30,
       "clue": null,
@@ -498,7 +498,7 @@
     },
     {
       "id": "black-crow-coffee",
-      "name": "Black Crow Coffee",
+      "name": "Black Crow Coffee - Grand Central District",
       "lat": 27.770439,
       "lng": -82.662786,
       "category": "cafe",
@@ -513,7 +513,7 @@
     },
     {
       "id": "black-crow-coffee-shop",
-      "name": "Black Crow Coffee Shop",
+      "name": "Black Crow Coffee - Historic Old Northeast",
       "lat": 27.779779,
       "lng": -82.635734,
       "category": "cafe",
@@ -929,7 +929,7 @@
     },
     {
       "id": "carmelitas-mexican-restaurant",
-      "name": "Carmelita's Mexican Restaurant",
+      "name": "Carmelita's Mexican Restaurant - 62nd Ave N",
       "lat": 27.828682,
       "lng": -82.729004,
       "category": "restaurant",
@@ -943,8 +943,23 @@
       "lastVerified": "2026-06-16"
     },
     {
+      "id": "carmelitas-mexican-restaurant-park-street-north",
+      "name": "Carmelita's Mexican Restaurant - Park Street North",
+      "lat": 27.8192238,
+      "lng": -82.7533876,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 70,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-24"
+    },
+    {
       "id": "casita-taqueria",
-      "name": "Casita Taqueria",
+      "name": "Casita Taqueria - Historic Old Northeast",
       "lat": 27.797011,
       "lng": -82.638177,
       "category": "restaurant",
@@ -956,6 +971,36 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "casita-taqueria-historic-kenwood",
+      "name": "Casita Taqueria - Historic Kenwood",
+      "lat": 27.7712496,
+      "lng": -82.6696999,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 72,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-24"
+    },
+    {
+      "id": "casita-taqueria-holiday-park",
+      "name": "Casita Taqueria - Holiday Park",
+      "lat": 27.7989295,
+      "lng": -82.7283819,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 63,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-24"
     },
     {
       "id": "cassis",
@@ -1203,7 +1248,7 @@
       "lat": 27.732295,
       "lng": -82.747476,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -1274,7 +1319,7 @@
     },
     {
       "id": "craft-kafe",
-      "name": "Craft Kafe",
+      "name": "Craft Kafe - Pasadena On The Gulf",
       "lat": 27.7708566,
       "lng": -82.7292451,
       "category": "cafe",
@@ -1289,7 +1334,7 @@
     },
     {
       "id": "craft-kafe-dtsp",
-      "name": "Craft Kafé DTSP",
+      "name": "Craft Kafe - Waterfront Arts District",
       "lat": 27.771054,
       "lng": -82.6357411,
       "category": "cafe",
@@ -1665,7 +1710,7 @@
     },
     {
       "id": "five-bucks-drinkery",
-      "name": "Five Bucks Drinkery (Pinellas Park)",
+      "name": "Five Bucks Drinkery - Pinellas Park",
       "lat": 27.839533,
       "lng": -82.70131,
       "category": "bar",
@@ -1680,7 +1725,7 @@
     },
     {
       "id": "five-bucks-drinkery-downtown",
-      "name": "Five Bucks Drinkery (DTSP)",
+      "name": "Five Bucks Drinkery - Downtown",
       "lat": 27.771384,
       "lng": -82.636368,
       "category": "bar",
@@ -1872,7 +1917,7 @@
     },
     {
       "id": "frays-donut-house",
-      "name": "Fray's Donut House",
+      "name": "Fray's Donut House - 49th St N",
       "lat": 27.838815,
       "lng": -82.700216,
       "category": "restaurant",
@@ -1884,6 +1929,21 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "frays-donut-house-historic-kenwood",
+      "name": "Fray's Donut House - Historic Kenwood",
+      "lat": 27.7788111,
+      "lng": -82.6790138,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 60,
+      "clue": null,
+      "photoUrl": null,
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-24"
     },
     {
       "id": "frescos-waterfront-bistro",
@@ -2587,7 +2647,7 @@
     },
     {
       "id": "kahwa-coffee",
-      "name": "Kahwa Coffee",
+      "name": "Kahwa Coffee - Park Street",
       "lat": 27.816127,
       "lng": -82.754504,
       "category": "cafe",
@@ -2602,7 +2662,7 @@
     },
     {
       "id": "kahwa-coffee-north",
-      "name": "Kahwa Coffee North",
+      "name": "Kahwa Coffee - Downtown",
       "lat": 27.777416,
       "lng": -82.635366,
       "category": "cafe",
@@ -2617,7 +2677,7 @@
     },
     {
       "id": "kahwa-south",
-      "name": "Kahwa South",
+      "name": "Kahwa Coffee - Waterfront Arts District",
       "lat": 27.76928,
       "lng": -82.63586,
       "category": "cafe",
@@ -2726,7 +2786,7 @@
       "lat": 27.804315,
       "lng": -82.679919,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -3370,7 +3430,7 @@
     },
     {
       "id": "mr-empanada",
-      "name": "Mr. Empanada",
+      "name": "Mr. Empanada - Edge District",
       "lat": 27.76785,
       "lng": -82.64615,
       "category": "restaurant",
@@ -4227,7 +4287,7 @@
       "lat": 27.77015,
       "lng": -82.63535,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -4854,7 +4914,7 @@
     },
     {
       "id": "spring-garden",
-      "name": "Spring Garden",
+      "name": "Spring Garden - Disston Heights",
       "lat": 27.780108,
       "lng": -82.700772,
       "category": "restaurant",
@@ -5461,7 +5521,7 @@
     },
     {
       "id": "the-lemon-grass",
-      "name": "The Lemon Grass",
+      "name": "The Lemon Grass - Central Arts District",
       "lat": 27.77101,
       "lng": -82.637495,
       "category": "restaurant",
@@ -5731,7 +5791,7 @@
     },
     {
       "id": "trips-diner",
-      "name": "Trip's Diner",
+      "name": "Trip's Diner - Crescent Heights",
       "lat": 27.793731,
       "lng": -82.646503,
       "category": "restaurant",

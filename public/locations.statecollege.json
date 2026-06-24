@@ -412,18 +412,18 @@
     },
     {
       "id": "brothers-pizza",
-      "name": "Brothers Pizza",
-      "lat": 40.787464,
-      "lng": -77.856365,
       "category": "restaurant",
       "difficulty": "easy",
       "inPlay": true,
-      "fameScore": 45,
+      "fameScore": 57,
       "clue": null,
       "photoUrl": null,
+      "lat": 40.8025524,
+      "lng": -77.88607,
+      "name": "Brothers Pizza - Northland Center",
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-24"
     },
     {
       "id": "bryce-jordan-center",
@@ -4079,18 +4079,18 @@
     },
     {
       "id": "yallah-taco",
-      "name": "Yallah Taco",
-      "lat": 40.796782,
-      "lng": -77.858071,
       "category": "restaurant",
       "difficulty": "easy",
       "inPlay": true,
-      "fameScore": 52,
+      "fameScore": 63,
       "clue": null,
       "photoUrl": null,
+      "lat": 40.795218,
+      "lng": -77.8591819,
+      "name": "Yallah Taco - McAllister Alley",
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
+      "lastVerified": "2026-06-24"
     },
     {
       "id": "yogurt-express",
@@ -4151,6 +4151,34 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-17"
+    },
+    {
+      "id": "brothers-pizza-northland-center",
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 45,
+      "clue": null,
+      "photoUrl": null,
+      "lat": 40.787464,
+      "lng": -77.856365,
+      "name": "Brothers Pizza - Highlands",
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "yallah-taco-mcallister-alley",
+      "category": "restaurant",
+      "inPlay": false,
+      "fameScore": 52,
+      "clue": null,
+      "photoUrl": null,
+      "lat": 40.796782,
+      "lng": -77.858071,
+      "name": "Yallah Taco - Downtown",
+      "source": "overpass",
+      "attribution": "OpenStreetMap ODbL",
+      "lastVerified": "2026-06-16"
     }
   ]
 }

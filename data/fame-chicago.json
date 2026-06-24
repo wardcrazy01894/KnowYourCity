@@ -53278,5 +53278,2655 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "Taco counter attached to Moxy Hotel downtown; small 3-city boutique hotel chain, not a mass national chain"
+  },
+  {
+    "id": "5411-empanadas-wrigleyville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 442,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "all-too-well-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 19,
+    "reviewCount": 16,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "allende-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 327,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "als-beef-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3311,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "als-beef-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1415,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "als-beef-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2729,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "antique-taco-bridgeport",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1185,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "avec-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 915,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "azul-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 24,
+    "reviewCount": 29,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "bacci-pizzeria-portage-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1129,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "bacci-pizzeria-near-west-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 83,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "beatrix-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 67,
+    "reviewCount": 7348,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "beggars-pizza-garfield-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 1033,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "beggars-pizza-grand-crossing",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 1029,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "beggars-pizza-kenwood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 960,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "benjyehuda-chicago-loop-north-wells-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "bias-cafe-marianao-schorsch-village",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 899,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-mini-putt-club-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 593,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-shoulders-coffee-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 55,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-shoulders-coffee-garfield-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 128,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-shoulders-coffee-chicago-loop-west-lake-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 253,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-shoulders-coffee-sheffield-depaul",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 59,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-star-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 63,
+    "reviewCount": 4405,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "billy-goat-tavern-garfield-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 302,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "billy-goat-tavern-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 2021,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "birrieria-zaragoza-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 550,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "blackwood-bbq-chicago-loop-west-adams-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 215,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "bocadillo-market-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 318,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "brasa-roja-irving-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1702,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "breakfast-house-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 407,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "breakfast-house-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 51,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "breakfast-house-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1280,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "breakfast-house-lake-view",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 564,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "breakfast-house-kelvyn-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 177,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "breakfast-house-old-irving-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 522,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "brightwok-kitchen-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 359,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "brown-bag-seafood-lake-view",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 566,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "brown-bag-seafood-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "buona-west-roosevelt-road",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1654,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "buona-west-touhy-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 806,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "burrito-beach-hyde-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 24,
+    "reviewCount": 29,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "burrito-beach-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 37,
+    "reviewCount": 164,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "burrito-house-irving-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1123,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "burrito-house-lake-view",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1076,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "byrons-hot-dogs-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1142,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafe-deko-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 389,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafe-lappetito-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 5,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafe-tola-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 232,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafecito-chicago-loop-north-wells-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 853,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafecito-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2749,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafecito-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 746,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-umbria-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1097,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cant-believe-its-not-meat-near-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 482,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "carnitas-uruapan-restaurant-gage-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1483,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chengdu-bistro-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 127,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chengdu-impression-magnolia-glen",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 216,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chicago-bagel-authority-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 902,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chicago-french-press-little-italy-south-morgan-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 13,
+    "reviewCount": 7,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chicago-french-press-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 282,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chicago-waffles-near-south-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2797,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chicagos-pizza-old-irving-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1266,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "chinese-kitchen-portage-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 251,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "coalfire-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1048,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "colectivo-coffee-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 621,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "colectivo-coffee-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 655,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "connies-pizza-armour-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 64,
+    "reviewCount": 5291,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "connies-pizza-garfield-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 99,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cozy-corner-belmont-gardens",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 2011,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "crave-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 537,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "deep-purpl-near-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 148,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "deep-purpl-bucktown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 16,
+    "reviewCount": 11,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "devil-dawgs-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 685,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "devil-dawgs-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 4017,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "devil-dawgs-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 62,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dimos-lincoln-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 294,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dimos-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1856,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dollop-streeterville-east-ohio-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 895,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dollop-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 290,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dollop-ravenswood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 37,
+    "reviewCount": 159,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dollop-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 25,
+    "reviewCount": 33,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dollop-chicago-loop-south-wacker-drive",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 4,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "drink-happy-thoughts-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 258,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dulce-de-leche-cafe-albany-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 760,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "egg-harbor-cafe-near-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 246,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "egg-tuck-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 369,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "elevate-coffee-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 465,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "emporium-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1855,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "epic-burger-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1937,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "epic-burger-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 981,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fairgrounds-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 506,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fairgrounds-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 251,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "falafel-grill-lake-view",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 807,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fatsos-last-stand-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 485,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "federales-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 3073,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "firecakes-donuts-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2347,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "flacos-tacos-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1114,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "flacos-tacos-edgewater",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 800,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "foxtrot-west-town-west-division-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 93,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "foxtrot-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 109,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "foxtrot-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 24,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "friends-sushi-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 247,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "gaslight-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1930,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ghareeb-nawaz-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 522,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ghareeb-nawaz-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1627,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "goddess-and-the-baker-chicago-loop-north-lasalle-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1484,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "goddess-and-the-baker-chicago-loop-west-madison-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 413,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "goddess-and-the-baker-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 980,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "golden-nugget-ravenswood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2266,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "golden-nugget-avondale",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2598,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "halsted-street-deli-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 15,
+    "reviewCount": 9,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "happy-lamb-hot-pot-bridgeport",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 324,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "happy-lamb-hot-pot-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 507,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "happy-monday-coffee-roasters-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 27,
+    "reviewCount": 44,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "happy-monday-coffee-roasters-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 276,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hello-jasmine-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 634,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hello-jasmine-lincoln-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 375,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hero-coffee-bar-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 287,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hero-coffee-bar-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 1011,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "home-run-inn-pizzeria-south-lawndale",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3511,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "home-run-inn-pizzeria-garfield-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1901,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hot-woks-cool-sushi-old-irving-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 731,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hubbard-inn-garfield-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 228,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "idof-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 416,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "idof-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 451,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "idof-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 545,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "innjoy-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 491,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "intelligentsia-chicago-loop-west-jackson-boulevard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 673,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jerk-taco-man-greater-grand-crossing",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3306,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jerky-jerk-tri-taylor",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 860,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jims-original-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 69,
+    "reviewCount": 9748,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jordyns-soul-cafe-hyde-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 696,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "joy-yee-noodle-roscoe-village",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 37,
+    "reviewCount": 170,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "juicerx-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kai-sushi-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 177,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kanela-breakfast-club-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 691,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kanela-breakfast-club-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 874,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kanela-breakfast-club-near-north-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 633,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kimchi-pop-rogers-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 296,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kimchi-pop-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 37,
+    "reviewCount": 158,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "la-boulangerie-co-hyde-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 179,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "la-boulangerie-co-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 652,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lao-sze-chuan-armour-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1646,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lao-sze-chuan-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 306,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lao-sze-chuan-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 676,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "little-wok-washington-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 37,
+    "reviewCount": 152,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "little-wok-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 445,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lonesome-rose-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 927,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lotus-banh-mi-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 109,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 69,
+    "reviewCount": 9804,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 251,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 65,
+    "reviewCount": 5958,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-old-irving-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 555,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 66,
+    "reviewCount": 6318,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2694,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-north-center",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2566,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-clearing",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3458,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-north-lawndale",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 873,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-river-north-north-wells-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 71,
+    "reviewCount": 12979,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lou-malnatis-pizzeria-north-lincoln-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3489,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mammoth-poke-ramen-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 73,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "market-creations-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 92,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "market-creations-west-loop-west-adams-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 6,
+    "reviewCount": 3,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mia-francesca-west-touhy-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 700,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mikos-italian-ice-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 602,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "minghin-cuisine-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1511,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "minghin-cuisine-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1248,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mk-noodle-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 69,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mojo-coffee-chicago-loop-south-upper-wacker-drive",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mojo-coffee-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 87,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mollys-cupcakes-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1223,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mr-greek-gyros-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 95,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mr-submarine-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 427,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mr-submarine-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 470,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mr-submarine-archer-heights",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 291,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mr-submarine-west-cermak-road",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 401,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "nepal-house-near-north-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 323,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "nepal-house-near-south-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 2105,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "parlor-pizza-bar-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2285,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "parlor-pizza-bar-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3723,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "parsons-chicken-fish-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 991,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pasta-bowl-north-center",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 520,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "paulie-gees-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1596,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "penelopes-vegan-taqueria-near-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 620,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pepes-mexican-restaurant-grand-crossing",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 543,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pepes-mexican-restaurant-south-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 980,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pita-pita-tri-taylor",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 667,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pizanos-pizza-rush-division",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 261,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pizza-lobo-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 51,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pizza-lobo-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 833,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pizza-nova-west-elsdon",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1152,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "poke-poke-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 252,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "poke-poke-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 213,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pollo-express-lower-west-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 738,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "printers-row-coffee-goose-island",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 115,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ramen-san-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 73,
+    "reviewCount": 16596,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ramen-san-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 68,
+    "reviewCount": 8139,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ramen-san-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 62,
+    "reviewCount": 4024,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ramen-wasabi-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 90,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ranallis-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2343,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "red-snapper-bronzeville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 64,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "redhot-ranch-lake-view",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1673,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "replay-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1212,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "retro-pizza-north-center",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 56,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "saigon-sisters-west-loop-north-clinton-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 71,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "savanna-restaurant-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 429,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "see-thru-chinese-kitchen-humboldt-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 117,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "seoul-taco-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 65,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sharks-fish-chicken-bronzeville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 669,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sharks-fish-chicken-goose-island",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 100,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sharks-fish-chicken-near-south-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 525,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "silk-road-of-chicago-chicago-loop-west-adams-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 364,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sip-savor-bronzeville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 773,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sip-savor-bronzeville-east-47th-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 509,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "small-cheval-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 2182,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "small-cheval-lincoln-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 273,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "small-cheval-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 205,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "small-cheval-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 63,
+    "reviewCount": 4825,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1730,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-lake-view-east-north-clark-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 977,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 245,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-streeterville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 639,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2588,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-streeterville-east-erie-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1400,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 921,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-hyde-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 229,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-chicago-loop-west-washington-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 37,
+    "reviewCount": 155,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 138,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stans-donuts-coffee-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 76,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "stax-cafe-little-italy",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1562,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "steingolds-wrigleyville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 751,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "strings-ramen-armour-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2741,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sultans-market-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 733,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sultans-market-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 264,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sushi-plus-rotary-sushi-bar-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 75,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sushi-san-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 3146,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sushi-taku-logan-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1354,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-burrito-house-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 262,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-burrito-king-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1180,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-burrito-king-austin",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 883,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-burrito-king-west-touhy-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 56,
+    "reviewCount": 1801,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-pros-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 411,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-pros-tri-taylor",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 466,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-pros-edgewater",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 294,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-pros-west-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 133,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taipei-cafe-lake-view-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 264,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tanoshii-andersonville",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 583,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taqueria-traspasada-west-town",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 645,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "teamo-boba-bar-armour-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 981,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "teamo-boba-bar-chicago-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 365,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "teamo-boba-bar-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 691,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "the-bad-apple-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 112,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "the-bakehouse-lake-view",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 118,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "the-goddess-and-grocer-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 109,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "the-stopalong-bucktown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1088,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "the-wild-hare-fulton-market-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1353,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tortorices-pizza-north-center",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 215,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tsaocaa-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 232,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "uni-uni-armour-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 597,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "vanille-patisserie-lincoln-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 698,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "west-town-bakery-river-north",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 193,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "xian-cuisine-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 412,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "xurro-lower-west-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1585,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "xurro-clearing",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 668,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "xurro-north-center",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 357,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "yolk-west-loop",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1619,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
   }
 ]

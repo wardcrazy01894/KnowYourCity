@@ -2818,5 +2818,25 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "Borough stormwater detention basin converted to public wetland education site with trails and signage; opened May 2012"
+  },
+  {
+    "id": "brothers-pizza-northland-center",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 276,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "yallah-taco-mcallister-alley",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 63,
+    "reviewCount": 461,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
   }
 ]

@@ -41,6 +41,22 @@ for (const city of CITIES) {
       expect(new Set(ids).size).toBe(ids.length)
     })
 
+    it('has no two in-play locations with an identical display name', () => {
+      // A multi-location local chain (Top Pot, Ivar's Fish Bar, Daniel's
+      // Broiler…) must carry a neighborhood so the player can tell which branch
+      // a pin is — see scripts/detect-chains.mjs + normalize-chains.mjs and
+      // issues #139/#140/#142. Two in-play pins sharing an identical name are
+      // the bug; benched rows never reach the player so they're exempt.
+      const names = data.locations
+        .filter((l) => l.inPlay !== false)
+        .map((l) => l.name)
+      const dups = [...new Set(names.filter((n, i) => names.indexOf(n) !== i))]
+      expect(
+        dups,
+        `${city.id}: identical in-play names need a neighborhood: ${dups.join(', ')}`,
+      ).toEqual([])
+    })
+
     it('every location is inside the city bounds with finite coords', () => {
       const [[s, w], [n, e]] = city.bounds
       for (const l of data.locations) {
