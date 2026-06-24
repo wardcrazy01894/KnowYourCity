@@ -65,6 +65,10 @@ npm test             # vitest run (write the test first!)
 npm run format       # prettier --write (format:check in CI)
 npm run build        # typecheck + vite build (what CI runs)
 npm run fetch-pois   # rebuild data/candidates.json from OpenStreetMap
+npm run fetch-food   # rebuild data/food-candidates.json from OpenStreetMap
+npm run build-city   # assemble one city's public/locations.<id>.json
+npm run add-polygons # backfill park/golf footprint rings from OSM
+npm run check-chains # flag national chains that leaked past the fame pass
 ```
 
 Run `npm run typecheck && npm run lint && npm run format:check && npm test &&

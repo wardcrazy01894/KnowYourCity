@@ -85,7 +85,13 @@ bounds, target size). Each city's data lives at `public/locations.<id>.json`.
 ```bash
 npm run build-city -- seattle   # landmarks + inclusive food → public/locations.seattle.json
 npm run add-polygons            # backfill park/golf footprints from OSM (all cities)
+npm run check-chains            # flag national chains that leaked past the fame pass
 ```
+
+Local chains (multiple branches of one brand, e.g. a regional coffee mini-chain)
+are disambiguated by a separate toolchain — `detect-chains` → `normalize-chains`
+→ `add-chain-branches` — documented in
+[`docs/DATA-SOURCING.md`](docs/DATA-SOURCING.md) §4e.
 
 To **add a city**: append it to `cities.json`, then run `build-city`. Full
 process — landmark notability + food/drink curation rules — in
