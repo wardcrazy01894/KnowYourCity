@@ -654,6 +654,11 @@ node scripts/apply-difficulty.mjs <city>      #    re-bucket a loose-cap city (e
 node scripts/assign-flagship-pins.mjs         # 4. point each in-play slot at its flagship branch
 ```
 
+The brand-grouping, multi-location test, and Places name-matching are shared in
+**`scripts/chain-grouping.mjs`** (unit-tested in `chain-grouping.test.mjs`) so the
+steps below can't diverge — an earlier copy in one step was missing the
+multi-location guard and prefix-merged two different businesses.
+
 1. **`detect-chains.mjs`** — pulls every named food POI in the city bbox from
    Overpass; a normalized name with **2+ distinct branches** is a chain. Writes a
    review table + cached candidate files. Pure helpers (`brandPrefix`,

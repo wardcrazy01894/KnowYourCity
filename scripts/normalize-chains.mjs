@@ -37,19 +37,15 @@ import {
   saveRgCache,
   countOsmBranches,
 } from './detect-chains.mjs'
+import { normalizeBusinessName } from './apply-difficulty-lib.mjs'
 import {
-  normalizeBusinessName,
-  matchNationalChain,
-  haversineMeters,
-} from './apply-difficulty-lib.mjs'
-
-const FOOD_CATS = new Set(['cafe', 'bar', 'restaurant'])
-
-// Force-merge irregular siblings that prefix-grouping can't catch (the bare
-// name lacks the brand's main word). Values are id arrays in one brand.
-const GROUP_OVERRIDE = {
-  stpete: [['kahwa-coffee', 'kahwa-coffee-north', 'kahwa-south']],
-}
+  FOOD,
+  baseOf,
+  brandGroups,
+  canonicalBase,
+  isMultiLocation,
+  isNationalBrand,
+} from './chain-grouping.mjs'
 
 // Canonical base name for a brand, by any member id (overrides the auto-picked
 // shortest base) — mainly to lock a consistent "&" spelling.
@@ -123,33 +119,12 @@ async function reverseRoad(lat, lng) {
   return road
 }
 
-const tokens = (s) => s.split(' ').filter(Boolean)
-const isPrefix = (a, b) => a.length < b.length && a.every((t, i) => t === b[i])
 /** True if a name already ends with a " - X" disambiguator. */
 const hasDash = (name) => /\s-\s\S/.test(name)
 /** Trailing "(X)" content, or null. */
 const parenOf = (name) => {
   const m = name.match(/\(([^)]+)\)\s*$/)
   return m ? m[1].trim() : null
-}
-/** Strip a trailing " - X" / " (X)" to recover the brand base. */
-const baseOf = (name) =>
-  name
-    .replace(/\s+-\s.*$/, '')
-    .replace(/\s*\([^)]*\)\s*$/, '')
-    .trim()
-
-/** Union-find. */
-function makeUF(n) {
-  const p = Array.from({ length: n }, (_, i) => i)
-  const find = (i) => {
-    while (p[i] !== i) {
-      p[i] = p[p[i]]
-      i = p[i]
-    }
-    return i
-  }
-  return { find, union: (a, b) => (p[find(a)] = find(b)) }
 }
 
 async function processCity(cityId, cities, dry, rgCache, report) {
@@ -181,86 +156,19 @@ async function processCity(cityId, cities, dry, rgCache, report) {
 
   const dsUrl = new URL(`../public/locations.${cityId}.json`, import.meta.url)
   const ds = JSON.parse(await readFile(dsUrl, 'utf8'))
-  const rows = ds.locations.filter((l) => FOOD_CATS.has(l.category))
-
-  // ---- group into brands ----
-  const norm = rows.map((l) =>
-    normalizeBusinessName(baseOf(l.name), cityTokens),
-  )
-  const uf = makeUF(rows.length)
-  const byFirst = new Map()
-  rows.forEach((_, i) => {
-    const f = tokens(norm[i])[0] ?? ''
-    if (!byFirst.has(f)) byFirst.set(f, [])
-    byFirst.get(f).push(i)
-  })
-  for (const idxs of byFirst.values()) {
-    for (let a = 0; a < idxs.length; a++) {
-      for (let b = a + 1; b < idxs.length; b++) {
-        const i = idxs[a]
-        const j = idxs[b]
-        const ti = tokens(norm[i])
-        const tj = tokens(norm[j])
-        if (norm[i] === norm[j] || isPrefix(ti, tj) || isPrefix(tj, ti))
-          uf.union(i, j)
-      }
-    }
-  }
-  const idToIdx = new Map(rows.map((l, i) => [l.id, i]))
-  for (const pairs of GROUP_OVERRIDE[cityId] ?? [])
-    for (let k = 1; k < pairs.length; k++)
-      if (idToIdx.has(pairs[0]) && idToIdx.has(pairs[k]))
-        uf.union(idToIdx.get(pairs[0]), idToIdx.get(pairs[k]))
-
-  const groups = new Map()
-  rows.forEach((l, i) => {
-    const root = uf.find(i)
-    if (!groups.has(root)) groups.set(root, [])
-    groups.get(root).push(i)
-  })
+  const rows = ds.locations.filter((l) => FOOD.has(l.category))
 
   // ---- per group: canonical base, multi-location test, rename targets ----
   const renames = [] // {id, old, newName}
   const listing = [] // {brand, members:[{name, inPlay}]}
-  for (const idxs of groups.values()) {
-    const members = idxs.map((i) => rows[i])
-    // canonical base: override wins, else fewest-token base, tie→shortest string
-    let canonical =
-      members.map((m) => CANONICAL_OVERRIDE[m.id]).find(Boolean) ?? null
-    if (!canonical) {
-      const bases = members.map((m) => baseOf(m.name))
-      canonical = bases.sort(
-        (a, b) => tokens(a).length - tokens(b).length || a.length - b.length,
-      )[0]
-    }
+  for (const members of brandGroups(rows, cityTokens, cityId)) {
+    // canonical base: override wins, else the shared fewest-token base
+    const canonical =
+      members.map((m) => CANONICAL_OVERRIDE[m.id]).find(Boolean) ??
+      canonicalBase(members)
     const canonNorm = normalizeBusinessName(canonical, cityTokens)
-    const osmCount = osmCounts.get(canonNorm)?.count ?? 0
-    // Reliable multi-location signal. "≥2 dataset entries" alone is NOT enough —
-    // it catches co-located duplicates (same place listed twice) and prefix-
-    // merged DIFFERENT businesses (Lucky Star vs Lucky Star Lounge). Require:
-    //   · OSM has ≥2 branches of the canonical name (primary), OR
-    //   · ≥2 entries of the SAME category sit >300m apart — real branches far
-    //     apart (Black Crow cafe+cafe), not a co-located dup and not a
-    //     restaurant+bar prefix collision, OR
-    //   · a manual GROUP_OVERRIDE asserted the brand (Kahwa).
-    let twoBranches = false
-    for (let a = 0; a < members.length && !twoBranches; a++)
-      for (let b = a + 1; b < members.length; b++)
-        if (
-          members[a].category === members[b].category &&
-          haversineMeters(members[a], members[b]) > 300
-        ) {
-          twoBranches = true
-          break
-        }
-    const overridden = (GROUP_OVERRIDE[cityId] ?? []).some((set) =>
-      members.some((m) => set.includes(m.id)),
-    )
-    const multi = osmCount >= 2 || twoBranches || overridden
-    const isNational =
-      !!matchNationalChain(canonical, nat) ||
-      members.some((m) => fameNat.has(m.id))
-    if (!multi || isNational) continue
+    if (!isMultiLocation(members, canonNorm, osmCounts, cityId)) continue
+    if (isNationalBrand(canonical, nat, fameNat, members)) continue
 
     // resolve a label for every member, build new names
     const used = new Map() // newName -> member (collision guard within brand)
@@ -306,7 +214,7 @@ async function processCity(cityId, cities, dry, rgCache, report) {
     }
     listing.push({
       brand: canonical,
-      osmCount,
+      osmCount: osmCounts.get(canonNorm)?.count ?? 0,
       members: groupRenames.map((r) => ({ name: r.newName, inPlay: r.inPlay })),
     })
     for (const r of groupRenames) if (r.newName !== r.old) renames.push(r)

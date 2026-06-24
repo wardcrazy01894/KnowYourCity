@@ -33,15 +33,20 @@ import prettier from 'prettier'
 import {
   slug,
   normalizeBusinessName,
-  matchNationalChain,
   haversineMeters,
 } from './apply-difficulty-lib.mjs'
 import { countOsmBranches } from './detect-chains.mjs'
+import {
+  FOOD,
+  tok,
+  isPrefix,
+  brandGroups,
+  canonicalBase,
+  isMultiLocation,
+  isNationalBrand,
+  nameMatches,
+} from './chain-grouping.mjs'
 
-const FOOD = new Set(['cafe', 'bar', 'restaurant'])
-const GROUP_OVERRIDE = {
-  stpete: [['kahwa-coffee', 'kahwa-coffee-north', 'kahwa-south']],
-}
 const LABEL_NORMALIZE = {
   'Downtown Seattle': 'Downtown',
   'Central Business District': 'Downtown',
@@ -61,42 +66,6 @@ const KEY = (() => {
   }
 })()
 
-// Generic words dropped before name-matching, so a brand's DISTINCTIVE tokens
-// must be present in the matched place — else a stale OSM pin that's now a
-// DIFFERENT business (our "Mr. Empanada" pin is now "Red Mesa") gets added.
-const GENERIC = new Set([
-  'the',
-  'and',
-  'of',
-  'co',
-  'company',
-  'pizza',
-  'pizzeria',
-  'coffee',
-  'cafe',
-  'restaurant',
-  'bar',
-  'grill',
-  'doughnuts',
-  'donuts',
-  'kitchen',
-  'deli',
-  'bakery',
-  'tavern',
-  'house',
-  'roasters',
-  'seafood',
-  'pub',
-  'taco',
-  'tacos',
-])
-const tok = (s) => s.split(' ').filter(Boolean)
-const isPrefix = (a, b) => a.length < b.length && a.every((t, i) => t === b[i])
-const baseOf = (n) =>
-  n
-    .replace(/\s+-\s.*$/, '')
-    .replace(/\s*\([^)]*\)\s*$/, '')
-    .trim()
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 const VCACHE = new URL('../data/.chain-verify-cache.json', import.meta.url)
@@ -115,9 +84,6 @@ function loadVerify() {
 async function verifyBranch(name, lat, lng, cityQuery, cityTokens, cache) {
   const ck = `${name}@${lat.toFixed(5)},${lng.toFixed(5)}`
   if (ck in cache) return cache[ck]
-  const want = normalizeBusinessName(name, cityTokens)
-    .split(' ')
-    .filter((t) => t && !GENERIC.has(t))
   const d = 0.004 // ~400m box
   const res = await fetch(
     'https://places.googleapis.com/v1/places:searchText',
@@ -146,8 +112,7 @@ async function verifyBranch(name, lat, lng, cityQuery, cityTokens, cache) {
   let bestD = Infinity
   for (const p of places) {
     if (!p.location) continue
-    const pn = normalizeBusinessName(p.displayName?.text ?? '', cityTokens)
-    if (!want.every((t) => pn.includes(t))) continue // must be the same brand
+    if (!nameMatches(p.displayName?.text ?? '', name, cityTokens)) continue
     const dm = haversineMeters(
       { lat, lng },
       { lat: p.location.latitude, lng: p.location.longitude },
@@ -181,51 +146,6 @@ async function verifyBranch(name, lat, lng, cityQuery, cityTokens, cache) {
   writeFileSync(VCACHE, JSON.stringify(cache, null, 2) + '\n')
   await sleep(120)
   return rec
-}
-
-function buildGroups(rows, cityTokens, cityId) {
-  const norm = rows.map((l) =>
-    normalizeBusinessName(baseOf(l.name), cityTokens),
-  )
-  const parent = rows.map((_, i) => i)
-  const find = (i) => {
-    while (parent[i] !== i) {
-      parent[i] = parent[parent[i]]
-      i = parent[i]
-    }
-    return i
-  }
-  const union = (a, b) => (parent[find(a)] = find(b))
-  const byFirst = new Map()
-  rows.forEach((_, i) => {
-    const f = tok(norm[i])[0] ?? ''
-    if (!byFirst.has(f)) byFirst.set(f, [])
-    byFirst.get(f).push(i)
-  })
-  for (const idxs of byFirst.values())
-    for (let a = 0; a < idxs.length; a++)
-      for (let b = a + 1; b < idxs.length; b++) {
-        const i = idxs[a]
-        const j = idxs[b]
-        if (
-          norm[i] === norm[j] ||
-          isPrefix(tok(norm[i]), tok(norm[j])) ||
-          isPrefix(tok(norm[j]), tok(norm[i]))
-        )
-          union(i, j)
-      }
-  const idToIdx = new Map(rows.map((l, i) => [l.id, i]))
-  for (const set of GROUP_OVERRIDE[cityId] ?? [])
-    for (let k = 1; k < set.length; k++)
-      if (idToIdx.has(set[0]) && idToIdx.has(set[k]))
-        union(idToIdx.get(set[0]), idToIdx.get(set[k]))
-  const groups = new Map()
-  rows.forEach((l, i) => {
-    const r = find(i)
-    if (!groups.has(r)) groups.set(r, [])
-    groups.get(r).push(l)
-  })
-  return [...groups.values()]
 }
 
 async function processCity(cityId, cities, dry, vcache) {
@@ -302,33 +222,21 @@ async function processCity(cityId, cities, dry, vcache) {
     : []
   const osmCounts = countOsmBranches(osm, cityTokens)
 
+  const fameNatIds = new Set(
+    fame.filter((r) => r.isNationalChain).map((r) => r.id),
+  )
   const foodRows = ds.locations.filter((l) => FOOD.has(l.category))
-  const groups = buildGroups(foodRows, cityTokens, cityId)
+  const groups = brandGroups(foodRows, cityTokens, cityId)
 
   const addedRows = []
   const addedFame = []
   const report = []
 
   for (const members of groups) {
-    // canonical display base = shortest base among members
-    const canonical = members
-      .map((m) => baseOf(m.name))
-      .sort((a, b) => tok(a).length - tok(b).length || a.length - b.length)[0]
+    const canonical = canonicalBase(members)
     const canonNorm = normalizeBusinessName(canonical, cityTokens)
-    const osmCount = osmCounts.get(canonNorm)?.count ?? 0
-    let twoBranches = false
-    for (let a = 0; a < members.length && !twoBranches; a++)
-      for (let b = a + 1; b < members.length; b++)
-        if (
-          members[a].category === members[b].category &&
-          haversineMeters(members[a], members[b]) > 300
-        )
-          twoBranches = true
-    const overridden = (GROUP_OVERRIDE[cityId] ?? []).some((set) =>
-      members.some((m) => set.includes(m.id)),
-    )
-    if (!(osmCount >= 2 || twoBranches || overridden)) continue
-    if (matchNationalChain(canonical, natList)) continue
+    if (!isMultiLocation(members, canonNorm, osmCounts, cityId)) continue
+    if (isNationalBrand(canonical, natList, fameNatIds, members)) continue
 
     // anchor fame = the highest-fame existing member with a fame record
     let anchor = null

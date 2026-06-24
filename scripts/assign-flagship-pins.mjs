@@ -1,7 +1,7 @@
 // @ts-check
 /**
  * assign-flagship-pins.mjs — make each chain's IN-PLAY entry represent its most
- * famous (most-reviewed) branch. Replaces the fame-only rebalance.
+ * famous (most-reviewed) branch.
  *
  * The original per-chain entry carried a brand-level fame attached to whatever
  * branch the build happened to keep — often a minor one (e.g. Top Pot's Capitol
@@ -13,6 +13,10 @@
  * Each entry keeps its `id` and `inPlay`, and the per-brand SET of fame scores is
  * unchanged, so the play-cap and difficulty distribution are untouched — the
  * in-play slot just lands on the flagship branch.
+ *
+ * Only GENUINE multi-location chains are touched (shared isMultiLocation guard) —
+ * a prefix collision of different businesses ("LTD" vs "LTD Edition Sushi") is
+ * left alone.
  *
  * Run after add-chain-branches.mjs (and apply-difficulty for a loose-cap city):
  *   node scripts/assign-flagship-pins.mjs            (all cities)
@@ -29,19 +33,28 @@ import {
   normalizeBusinessName,
   haversineMeters,
 } from './apply-difficulty-lib.mjs'
+import { countOsmBranches } from './detect-chains.mjs'
+import {
+  FOOD,
+  baseOf,
+  brandGroups,
+  canonicalBase,
+  isMultiLocation,
+  isNationalBrand,
+  nameMatches,
+} from './chain-grouping.mjs'
 
-const FOOD = new Set(['cafe', 'bar', 'restaurant'])
-const GROUP_OVERRIDE = {
-  stpete: [['kahwa-coffee', 'kahwa-coffee-north', 'kahwa-south']],
-}
-const tok = (s) => s.split(' ').filter(Boolean)
-const isPrefix = (a, b) => a.length < b.length && a.every((t, i) => t === b[i])
-const baseOf = (n) =>
-  n
-    .replace(/\s+-\s.*$/, '')
-    .replace(/\s*\([^)]*\)\s*$/, '')
-    .trim()
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+const inPlay = (l) => l.inPlay !== false
+// Location-identifying fields that travel together when a branch is reassigned.
+const LOC_FIELDS = [
+  'lat',
+  'lng',
+  'name',
+  'source',
+  'attribution',
+  'lastVerified',
+]
 
 const KEY = (() => {
   try {
@@ -58,40 +71,6 @@ const RCACHE = new URL('../data/.chain-reviews-cache.json', import.meta.url)
 const rcache = existsSync(RCACHE)
   ? JSON.parse(readFileSync(RCACHE, 'utf8'))
   : {}
-
-// Generic words dropped before name-matching, so a brand's DISTINCTIVE tokens
-// must be present in the matched place (else a co-located different concept of
-// the same brand — Ivar's Fish Bar vs Ivar's Salmon House — gets picked up).
-const GENERIC = new Set([
-  'the',
-  'and',
-  'of',
-  'co',
-  'company',
-  'pizza',
-  'pizzeria',
-  'coffee',
-  'cafe',
-  'restaurant',
-  'bar',
-  'grill',
-  'doughnuts',
-  'donuts',
-  'kitchen',
-  'deli',
-  'bakery',
-  'tavern',
-  'house',
-  'roasters',
-  'seafood',
-  'pub',
-  'taco',
-  'tacos',
-])
-const distinctive = (base, cityTokens) =>
-  normalizeBusinessName(base, cityTokens)
-    .split(' ')
-    .filter((t) => t && !GENERIC.has(t))
 
 /** Accurate per-pin Google review count (hard-boxed to the pin). Only counts a
  *  match whose NAME carries the brand's distinctive tokens, so a co-located
@@ -123,13 +102,11 @@ async function reviewCount(name, lat, lng, cityQuery, cityTokens) {
     },
   )
   const ps = (await res.json()).places ?? []
-  const want = distinctive(name, cityTokens)
   let best = null
   let bd = Infinity
   for (const p of ps) {
     if (!p.location) continue
-    const pn = normalizeBusinessName(p.displayName?.text ?? '', cityTokens)
-    if (!want.every((t) => pn.includes(t))) continue // name must match the brand
+    if (!nameMatches(p.displayName?.text ?? '', name, cityTokens)) continue
     const dm = haversineMeters(
       { lat, lng },
       { lat: p.location.latitude, lng: p.location.longitude },
@@ -146,62 +123,6 @@ async function reviewCount(name, lat, lng, cityQuery, cityTokens) {
   return rc
 }
 
-function brandGroups(rows, cityTokens, cityId) {
-  const norm = rows.map((l) =>
-    normalizeBusinessName(baseOf(l.name), cityTokens),
-  )
-  const parent = rows.map((_, i) => i)
-  const find = (i) => {
-    while (parent[i] !== i) {
-      parent[i] = parent[parent[i]]
-      i = parent[i]
-    }
-    return i
-  }
-  const union = (a, b) => (parent[find(a)] = find(b))
-  const byFirst = new Map()
-  rows.forEach((_, i) => {
-    const f = tok(norm[i])[0] ?? ''
-    if (!byFirst.has(f)) byFirst.set(f, [])
-    byFirst.get(f).push(i)
-  })
-  for (const idxs of byFirst.values())
-    for (let a = 0; a < idxs.length; a++)
-      for (let b = a + 1; b < idxs.length; b++) {
-        const i = idxs[a]
-        const j = idxs[b]
-        if (
-          norm[i] === norm[j] ||
-          isPrefix(tok(norm[i]), tok(norm[j])) ||
-          isPrefix(tok(norm[j]), tok(norm[i]))
-        )
-          union(i, j)
-      }
-  const idToIdx = new Map(rows.map((l, i) => [l.id, i]))
-  for (const set of GROUP_OVERRIDE[cityId] ?? [])
-    for (let k = 1; k < set.length; k++)
-      if (idToIdx.has(set[0]) && idToIdx.has(set[k]))
-        union(idToIdx.get(set[0]), idToIdx.get(set[k]))
-  const groups = new Map()
-  rows.forEach((l, i) => {
-    const r = find(i)
-    if (!groups.has(r)) groups.set(r, [])
-    groups.get(r).push(l)
-  })
-  return [...groups.values()]
-}
-
-const inPlay = (l) => l.inPlay !== false
-// Location-identifying fields that travel together when a branch is reassigned.
-const LOC_FIELDS = [
-  'lat',
-  'lng',
-  'name',
-  'source',
-  'attribution',
-  'lastVerified',
-]
-
 async function processCity(cityId, cities, dry) {
   const city = cities.find((c) => c.id === cityId)
   const cityTokens = [
@@ -215,8 +136,24 @@ async function processCity(cityId, cities, dry) {
   const ds = JSON.parse(await readFile(dsUrl, 'utf8'))
   const rows = ds.locations.filter((l) => FOOD.has(l.category))
 
-  // Existing fame→difficulty thresholds for the in-play set, so a promoted
-  // branch lands in the right tier without re-bucketing the whole city.
+  // chain-detection inputs (same as add-chain-branches / normalize-chains)
+  const osmUrl = new URL(`../data/.osm-food.${cityId}.json`, import.meta.url)
+  const osm = existsSync(osmUrl) ? JSON.parse(readFileSync(osmUrl, 'utf8')) : []
+  const osmCounts = countOsmBranches(osm, cityTokens)
+  const natTokens = JSON.parse(
+    await readFile(
+      new URL('../data/national-chains.json', import.meta.url),
+      'utf8',
+    ),
+  ).chains
+  const fameNatIds = new Set()
+  const fameUrl = new URL(`../data/fame-${cityId}.json`, import.meta.url)
+  if (existsSync(fameUrl))
+    for (const r of JSON.parse(readFileSync(fameUrl, 'utf8')))
+      if (r.isNationalChain) fameNatIds.add(r.id)
+
+  // Existing fame→difficulty thresholds for the in-play set, so a promoted branch
+  // lands in the right tier without re-bucketing the whole city.
   const playing = ds.locations.filter(inPlay)
   const easyFames = playing
     .filter((l) => l.difficulty === 'easy')
@@ -224,6 +161,10 @@ async function processCity(cityId, cities, dry) {
   const hardFames = playing
     .filter((l) => l.difficulty === 'hard')
     .map((l) => l.fameScore)
+  if (!easyFames.length || !hardFames.length)
+    console.warn(
+      `⚠️  ${cityId}: in-play set has no ${!easyFames.length ? 'easy' : 'hard'} rows — promoted tiers may be off`,
+    )
   const easyBound = easyFames.length ? Math.min(...easyFames) : Infinity
   const hardBound = hardFames.length ? Math.max(...hardFames) : -Infinity
   const tierFor = (f) =>
@@ -232,12 +173,19 @@ async function processCity(cityId, cities, dry) {
   const moves = []
   for (const members of brandGroups(rows, cityTokens, cityId)) {
     if (members.length < 2) continue
+    // Must be a GENUINE multi-location local chain — not a prefix collision of
+    // different businesses (LTD vs LTD Edition Sushi) and not a national chain.
+    const canonical = canonicalBase(members)
+    const canonNorm = normalizeBusinessName(canonical, cityTokens)
+    if (!isMultiLocation(members, canonNorm, osmCounts, cityId)) continue
+    if (isNationalBrand(canonical, natTokens, fameNatIds, members)) continue
     // Only matters when some branches are benched: then the flagship might be a
     // benched one that should take an in-play slot. If every branch is already
-    // in-play (e.g. Dick's Drive-In, or a loose-cap city), the flagship is
-    // already playable — permuting would only churn ids for no benefit.
+    // in-play (Dick's Drive-In, or a loose-cap city), the flagship is already
+    // playable — permuting would only churn ids for no benefit.
     const playN = members.filter(inPlay).length
     if (playN === 0 || playN === members.length) continue
+
     // locations (the movable bundles) + their review counts
     const locs = []
     for (const m of members) {
@@ -264,12 +212,10 @@ async function processCity(cityId, cities, dry) {
     const locOrder = [...locs].sort((a, b) => b.rc - a.rc)
     // Fame travels too: the brand's fame scores, highest first, are handed out in
     // flagship order — so the most-reviewed (in-play) branch always carries the
-    // highest fame, never a benched sibling. Difficulty is re-derived for in-play
-    // rows from the city's tier bounds.
+    // highest fame, never a benched sibling.
     const fames = members.map((m) => m.fameScore ?? 0).sort((a, b) => b - a)
     entryOrder.forEach(({ m }, rank) => {
       const before = m.name
-      // strip old location fields, then graft the assigned location's bundle
       for (const f of LOC_FIELDS) delete m[f]
       Object.assign(m, locOrder[rank].bundle)
       m.fameScore = fames[rank]
