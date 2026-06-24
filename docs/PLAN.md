@@ -89,6 +89,11 @@ KnowYourCity/
 │   ├─ build-city.mjs           assemble a city's locations.<id>.json
 │   ├─ add-polygons.mjs         backfill park/golf footprint rings from OSM
 │   ├─ apply-difficulty.mjs     fame → difficulty enrichment (+ -lib.mjs)
+│   ├─ detect-chains.mjs · normalize-chains.mjs · add-chain-branches.mjs   local-chain disambiguation
+│   ├─ chain-grouping.mjs       shared chain name-grouping lib (no CLI)
+│   ├─ check-chains.mjs         flag national chains that leaked past the fame pass
+│   ├─ assign-flagship-pins.mjs flagship-branch pin assignment for chains
+│   ├─ places-freshness.mjs · places-apply.mjs · places-vet-apply.mjs   Google Places open/closed sweep
 │   ├─ gen-fame-workflow.mjs · harvest-fame-transcripts.mjs   crash-safe fame pass
 │   ├─ nearby-sweep.mjs         block-radius sweep around a new location
 │   └─ protect-main.sh          (re)apply branch protection
@@ -125,7 +130,7 @@ KnowYourCity/
 | ------ | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | **M0** | Scaffold: Vite+React+TS, deps, `npm run dev`                                         | ✅ done                                                                                                              |
 | **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests)                          | ✅ done                                                                                                              |
-| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 370; 4 more cities) | ✅ done                                                                                                              |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 373; 4 more cities) | ✅ done                                                                                                              |
 | **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds                          | ✅ done                                                                                                              |
 | **M4** | Game flow: round → reveal → next → finished                                          | ✅ done                                                                                                              |
 | **M5** | Persistence: resume + streak/history                                                 | ✅ done                                                                                                              |
@@ -192,7 +197,7 @@ residents would instantly recognise it. Fame is scored 0–100 by a one-time
 Google/Yelp review counts _relative to the city_, Wikipedia). Every enriched
 city today sets a **`playCap`** (see §5.1 and `docs/DATA-SOURCING.md` §4c), so
 the live bucketing is **count-based over the in-play set — 40% easy / 40% medium
-/ 20% hard** (e.g. St. Pete 370 → 148/148/74, Seattle 500 → 200/200/100). An
+/ 20% hard** (e.g. St. Pete 373 → 149/149/75, Seattle 500 → 200/200/100). An
 _uncapped_ enriched city (none currently) would instead bucket by **city-relative
 percentile** with a narrow-easy split — top 20% easy / next 45% medium / bottom
 35% hard — keeping "easy" close to "everyone knows it" even when a city has few
