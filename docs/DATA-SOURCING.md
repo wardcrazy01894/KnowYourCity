@@ -632,6 +632,80 @@ State College is fully backfilled (33/33).
 
 ---
 
+## 4e. Local-chain disambiguation & branch completeness
+
+A player who sees a pin labelled just **"Top Pot Doughnuts"** can't tell which of
+the chain's branches it is, and can't pin it accurately (issues #139/#140/#142).
+Three scripts give every branch of a multi-location **local** chain a
+`<Brand> - <Neighborhood>` name and make sure every open branch is in the
+dataset. National chains (`data/national-chains.json` + `isNationalChain` fame
+flags) are excluded — only locals get this treatment.
+
+Detection is **free** (OpenStreetMap); only the neighborhood labels and the
+open-status checks use Google Places, and only for the affected venues, so the
+spend is small. All three cache their Overpass pulls and Places results under
+`data/.*` (git-ignored) so re-runs are cheap.
+
+```bash
+node scripts/detect-chains.mjs --all          # 1. report candidate chains (Overpass)
+node scripts/normalize-chains.mjs             # 2. rename every multi-branch entry
+node scripts/add-chain-branches.mjs --all     # 3. add the missing open branches
+node scripts/apply-difficulty.mjs <city>      #    re-bucket a loose-cap city (e.g. stpete)
+node scripts/assign-flagship-pins.mjs         # 4. point each in-play slot at its flagship branch
+```
+
+The brand-grouping, multi-location test, and Places name-matching are shared in
+**`scripts/chain-grouping.mjs`** (unit-tested in `chain-grouping.test.mjs`) so the
+steps below can't diverge — an earlier copy in one step was missing the
+multi-location guard and prefix-merged two different businesses.
+
+1. **`detect-chains.mjs`** — pulls every named food POI in the city bbox from
+   Overpass; a normalized name with **2+ distinct branches** is a chain. Writes a
+   review table + cached candidate files. Pure helpers (`brandPrefix`,
+   `countOsmBranches`) are unit-tested in `detect-chains.test.mjs`.
+2. **`normalize-chains.mjs`** — brand-group aware (two entries are the same brand
+   if their suffix-stripped names match or one is a token-prefix of the other). A
+   brand is **multi-location** if OSM≥2, or it has two **same-category** branches
+   > 300m apart (so a co-located duplicate or a `Lucky Star` vs `Lucky Star Lounge`
+   > prefix-collision is _not_ flagged), or a manual `GROUP_OVERRIDE`. Each branch
+   > becomes `<canonical base> - <area>`; the neighborhood comes from Google Places
+   > (hard-restricted to a box around the pin — free Nominatim mislabels Capitol
+   > Hill pins as "Madison Valley"), with a street fallback on same-neighborhood
+   > collisions. Only the `name` changes; the `id` is kept, so daily overrides and
+   > fame records still line up.
+3. **`add-chain-branches.mjs`** — for each multi-location brand, adds the other
+   open in-bounds OSM branches the curated build left out, so the dataset holds
+   **all** real locations. Each candidate is **Places-verified `OPERATIONAL`** —
+   **name-matched**, so a stale OSM pin that's now a different business (an old
+   "Mr. Empanada" node that's since become "Red Mesa") is skipped, not added —
+   takes **ODbL coordinates from OSM** (not Google),
+   and gets a fame score fit to the city's own `reviews → fameScore` curve
+   (`a·log10(reviews)+b`). Branches are added **benched** (`inPlay:false`, no
+   `difficulty`) and a fame record is appended to `data/fame-<city>.json` — so a
+   busy chain outlet never bumps a curated landmark out of the fame-capped in-play
+   set (review popularity must not outrank a monument); the already-selected
+   flagship stays the one in play. A city whose cap isn't full (e.g. St. Pete,
+   total < `playCap`) flips everything in-play on the next `apply-difficulty` run
+   anyway — there's room, so still no displacement.
+4. **`assign-flagship-pins.mjs`** — makes each chain's in-play entry represent
+   its **flagship** (most-reviewed) branch. The original entry carried a
+   brand-level fame attached to whatever branch the build kept — often a minor
+   one (e.g. Top Pot's Capitol Hill, 474 reviews, while the 2,923-review Downtown
+   flagship sat benched). This permutes the LOCATION each entry of a brand points
+   to (coords, name, `lastVerified`), pairing the in-play entries with the
+   highest Google-review-count locations — name-matched so a co-located sibling
+   concept (Ivar's Fish Bar vs Ivar's Salmon House) can't pollute the count.
+   Every entry keeps its `id`, `inPlay`, `fameScore` and `difficulty`, so the
+   play-cap is untouched and no landmark is displaced — the in-play slot just
+   lands on the flagship. Brands already entirely in-play are skipped (the
+   flagship is playable already). Run last.
+
+The dataset guard `src/lib/locations.test.ts` asserts **no two in-play locations
+share an identical display name**, so a chain can never silently lose its
+disambiguation.
+
+---
+
 ## 5. Future: photos
 
 When adding photo rounds, fill `photoUrl` from a **freely-licensed** source:

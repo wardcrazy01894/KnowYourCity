@@ -27848,5 +27848,1605 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "Removed via vetting 2026-06-17 (high): Google Places confirmed CLOSED_PERMANENTLY at 5m from our pin."
+  },
+  {
+    "id": "a-pizza-mart-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 299,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "anchorhead-coffee-downtown-7th-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 1921,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "atulea-phinney-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 98,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "avole-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 27,
+    "reviewCount": 61,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ba-bar-minor",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2547,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "backyard-bagel-ravenna",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 26,
+    "reviewCount": 54,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "belle-epicurean-washington-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 490,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "berry-much-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 8,
+    "reviewCount": 6,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-marios-pizza-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 984,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "big-marios-pizza-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1243,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "blue-water-taco-grill-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 410,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "blue-water-taco-grill-downtown-madison-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 77,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "blue-water-taco-grill-sodo",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 205,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "boon-boona-coffee-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 79,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "burritos-california-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 55,
+    "reviewCount": 1594,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cafe-hagen-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1170,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-ladro-west-queen-anne",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 233,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-ladro-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 383,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-ladro-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 6,
+    "reviewCount": 5,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-ladro-roosevelt",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 143,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-ladro-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 353,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-ladro-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 169,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-migliore-downtown-4th-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 272,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-umbria-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 413,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-umbria-westlake",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 428,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-vita-west-queen-anne",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 398,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-vita-pioneer-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 34,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-vita-pioneer-square-prefontaine-place-south",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 22,
+    "reviewCount": 34,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "caffe-vita-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 940,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cherry-street-coffee-house-downtown-1st-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1155,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cherry-street-coffee-house-downtown-olive-way",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 453,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cookies-country-chicken-west-woodland",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 829,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cornelly-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 593,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cracklemi-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 455,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "daniels-broiler-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2214,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "diva-espresso-wallingford",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 264,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "diva-espresso-greenwood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 415,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "diy-tea-lab-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 150,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dough-joy-junction",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 321,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dough-zone-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 279,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dough-zone-downtown-5th-avenue-south",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3243,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "dough-zone-downtown-university-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 312,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "due-cucina-junction",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1060,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "el-chupacabra-phinney-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 57,
+    "reviewCount": 1900,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "emerald-city-smoothie-west-queen-anne",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 147,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "emerald-city-smoothie-capitol-hill-broadway-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 140,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "emerald-city-smoothie-green-lake",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 23,
+    "reviewCount": 37,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "evergreens-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 344,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "evergreens-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 169,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "evergreens-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 143,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "ezells-chicken-wallingford",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2214,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fainting-goat-gelato-wallingford",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 532,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "flair-taco-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 227,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fob-poke-bar-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 370,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fresh-flours-phinney-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 634,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "fresh-flours-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 411,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "freya-bakery-and-cafe-downtown-5th-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 222,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hello-robin-ravenna",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 224,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "hot-cakes-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2363,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "husky-grind-cafe-university-of-washington-little-canoe-channel-northeast",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 10,
+    "reviewCount": 8,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "india-bistro-roosevelt",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 586,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "isarn-thai-soul-kitchen-ravenna",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 386,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jacks-bbq-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 20,
+    "reviewCount": 25,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jacks-bbq-industrial-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3002,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "jai-thai-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 697,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "just-burgers-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 477,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "just-poke-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 27,
+    "reviewCount": 58,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "just-poke-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 170,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "just-poke-junction",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 30,
+    "reviewCount": 80,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "just-poke-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 252,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "just-poke-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 105,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kitanda-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 241,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kitanda-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 165,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "kitanda-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 239,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lil-woodys-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2500,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "lil-woodys-wallingford",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 70,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "macrina-bakery-west-queen-anne",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 635,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "macrina-bakery-sodo",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 878,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mainstay-provisions-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 89,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "maiz-downtown-6th-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 378,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "matador-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2582,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mee-sum-pastry-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1196,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "metropolitan-cafe-yesler-terrace",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 31,
+    "reviewCount": 97,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mighty-o-donuts-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 643,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mighty-o-donuts-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 907,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mioposto-north-admiral",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 828,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "monorail-espresso-downtown-westlake-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 376,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "monorail-espresso-downtown-5th-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 75,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "moto-junction",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 664,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mr-gyros-wallingford",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 327,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "nikos-gyros-southeast-magnolia",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 554,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "noi-thai-cuisine-green-lake",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 917,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "olympia-coffee-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 386,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "overcast-coffee-company-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 293,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-montlake",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 328,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 441,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-uptown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 201,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-northgate",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 532,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-interbay",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 415,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 46,
+    "reviewCount": 540,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 35,
+    "reviewCount": 153,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pagliacci-pizza-madison-valley",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 616,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "palermo-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 666,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "paseo-sodo",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2168,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pecado-bueno-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 878,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pho-than-brothers-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 345,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pho-than-brothers-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 375,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pho-than-brothers-green-lake",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 604,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pho-than-brothers-wallingford",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 240,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pie-bar-phinney-ridge",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 34,
+    "reviewCount": 129,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pike-place-chowder-downtown-pine-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1337,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "pluto-organic-cafe-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 405,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "portage-bay-cafe-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 2502,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "portage-bay-cafe-junction",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 267,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "portage-bay-cafe-roosevelt",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1285,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "radiator-whiskey-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 1399,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "realfine-coffee-fairmount-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 236,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "rubinstein-bagels-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 479,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "rubinstein-bagels-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 23,
+    "reviewCount": 37,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "saigon-deli-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 331,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "shawarma-king-university-heights",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 674,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "shawn-odonnells-american-grill-and-irish-pub-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 971,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sizzle-crunch-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 980,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "spice-king-downtown-5th-avenue-south",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 23,
+    "reviewCount": 37,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "spice-waala-stevens",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 48,
+    "reviewCount": 669,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "storyville-coffee-downtown-pike-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3089,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sugar-bakery-capitol-hill",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 21,
+    "reviewCount": 29,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sunny-teriyaki-interbay",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 38,
+    "reviewCount": 219,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sushi-kudasai-downtown-4th-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 26,
+    "reviewCount": 52,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-time-west-queen-anne",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 952,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-time-central-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 820,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "taco-time-fairmount-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 954,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tacos-chukis-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 3028,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tacos-chukis-greater-duwamish",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 747,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tacos-chukis-minor",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 636,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tavolata-downtown-2nd-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1235,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tavolata-fremont",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 347,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tea-addicts-roosevelt",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 33,
+    "reviewCount": 117,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "the-station-rainier-vista",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 36,
+    "reviewCount": 166,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "toasted-bagels-coffee-university-district",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 568,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "toasted-bagels-coffee-pioneer-square",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 28,
+    "reviewCount": 69,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-junction",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 26,
+    "reviewCount": 50,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 61,
+    "reviewCount": 2923,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-west-woodland",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 40,
+    "reviewCount": 264,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-downtown-madison-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 289,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-downtown-western-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 47,
+    "reviewCount": 612,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-downtown-3rd-avenue",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 41,
+    "reviewCount": 285,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "top-pot-doughnuts-ravenna",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 722,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "tp-tea-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 371,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "un-bien-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 50,
+    "reviewCount": 865,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "un-bien-ballard-15th-avenue-northwest",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 58,
+    "reviewCount": 2300,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "uptown-espresso-southeast-magnolia",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 39,
+    "reviewCount": 244,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "uptown-espresso-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 52,
+    "reviewCount": 1028,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "verve-bowls-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 378,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "victrola-coffee-roasters-ballard",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1172,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "victrola-coffee-roasters-greater-duwamish",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 43,
+    "reviewCount": 369,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "victrola-coffee-roasters-downtown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 419,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "victrola-coffee-roasters-slu",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 44,
+    "reviewCount": 408,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "victrola-coffee-roasters-capitol-hill-east-pike-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 53,
+    "reviewCount": 1211,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "westmans-bagel-coffee-university-heights",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 32,
+    "reviewCount": 101,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
   }
 ]

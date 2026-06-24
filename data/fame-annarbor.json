@@ -4018,5 +4018,75 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "Reopened ~mid-Feb 2026 after a 6-week renovation; Yelp updated June 2026 confirms normal operations"
+  },
+  {
+    "id": "cottage-inn-pizza-lakewood",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 54,
+    "reviewCount": 393,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "cottage-inn-pizza-packard-street",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 51,
+    "reviewCount": 298,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "no-thai-burns-park",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 59,
+    "reviewCount": 618,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "no-thai-kerrytown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 646,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "no-thai-bryant-pattengill-east",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 29,
+    "reviewCount": 43,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sweetwaters-coffee-tea-kerrytown",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 49,
+    "reviewCount": 263,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "sweetwaters-coffee-tea-old-west-side",
+    "status": "operating",
+    "currentName": "",
+    "fameScore": 60,
+    "reviewCount": 689,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "chain branch added from OSM, Places-verified open"
   }
 ]
