@@ -337,7 +337,7 @@ stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
 filters to `inPlay !== false`. Current caps: St. Pete 400 (373 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4406).
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4198).
 
 > **Removing a row reshuffles the cap.** Because in-play membership and the
 > 40/40/20 buckets are recomputed from fame rank on every `apply-difficulty` run,
@@ -399,14 +399,16 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4406).
 >   or a _remove_ (a large move: the committed pin is stale, so the venue is dropped
 >   and re-added cleanly via the `add-location` skill, which sources ODbL coords from
 >   Nominatim/Census). This keeps committed coordinates ODbL-clean and guarantees no
->   pin drifts away from its polygon. It's how all four launched cities reached
->   **zero unverified rows**.
+>   pin drifts away from its polygon. It's how all five cities reached
+>   **zero unverified rows** (Chicago completed 2026-06-25: 3,447 swept, 2,953
+>   auto-stamped, a 460-item hard tail verified by 58 agents → 286 kept / 174
+>   removed, plus 34 food auto-closed).
 
 > **Not just food.** Because fame rank skews to food, daily selection enforces a
 > **non-food floor** (`MIN_NON_FOOD_PER_DAY = 1`) so a park/landmark/museum shows
 > up every day — see PLAN.md §5. Parks survive the cap well (their famous ones
 > rank high): St. Pete keeps all 24, Ann Arbor 69, State College 34, Seattle 33,
-> Chicago 43.
+> Chicago 35.
 
 ### Category buckets
 
@@ -428,7 +430,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c, post full-vetting + chain-branch re-adds §4e): St. Pete (373 → **373**),
 State College (229 → **200**), Ann Arbor (344 → **300**), Seattle (2463 →
-**500**), Chicago (4406 → **700**) —
+**500**), Chicago (4198 → **700**) —
 all enriched. (Seattle gained back 12 relocated venues re-added at their verified
 current in-bounds location — see `data/seattle-manual.json`.)
 
