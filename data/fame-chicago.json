@@ -81,13 +81,13 @@
   },
   {
     "id": "5411-empanadas",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 400,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Local Argentine empanada chain founded 2009; Southport and Wicker Park locations remain open after several closures in 2025"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No active 5411 Empanadas location near the pin (River North); nearest operational location is Wicker Park at 3.8km — no venue to repin to at original address."
   },
   {
     "id": "5411-empanadas-division",
@@ -121,13 +121,13 @@
   },
   {
     "id": "5lua",
-    "status": "open",
+    "status": "closed",
     "currentName": "Pho Nam Lua",
     "fameScore": 32,
     "reviewCount": 259,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Vietnamese pho restaurant in North Park, operating as Pho Nam Lua at 6261 N McCormick Rd"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google matched 'Pho Nam Lua' at 6m from the pin with CLOSED_TEMPORARILY status; restaurant at this location is closed."
   },
   {
     "id": "5th-province",
@@ -461,13 +461,13 @@
   },
   {
     "id": "1959-kitchen-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 98,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open gastropub on second floor above Second City comedy club on N Wells"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "1st-softball-game-1887",
@@ -761,13 +761,13 @@
   },
   {
     "id": "richard-wright",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 30,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Chicago Landmark designation (2010) for the Richard Wright House in Bronzeville at 4831 S Vincennes Ave, publicly recognized historic site"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms Richard Wright House is at 4831 S Vincennes Ave, 2.8km south of our pin; actual address is within game bbox."
   },
   {
     "id": "richards-bar",
@@ -1211,13 +1211,13 @@
   },
   {
     "id": "pipeworks-brewing",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 52,
     "reviewCount": 38,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "independent craft brewery with taproom at 3912 W McLean Ave, limited hours Thu-Sat"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Their own website confirms 'The Dojo is currently closed' with no reopening date, and the Google listing explicitly says 'Production - Not Open to Public'; no public-facing bar exists at this address."
   },
   {
     "id": "pippins-tavern",
@@ -2001,13 +2001,13 @@
   },
   {
     "id": "raymonds-tacos",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 167,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Local Chicago mini-chain since 1975-1979 with multiple open locations across the city"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Raymond's Tacos location exists near our pin; multiple chain locations exist but all are 4+ km away, making the correct repin ambiguous."
   },
   {
     "id": "razpachos-neveria",
@@ -2031,23 +2031,23 @@
   },
   {
     "id": "reading-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Outdoor reading garden at Logan Square Branch of Chicago Public Library; open during library hours"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No reading garden found near the South Shore pin; the only Google match (Logan Sq Reading Garden) is 18.7km away — our pin is a likely OSM artifact."
   },
   {
     "id": "reading-room",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Library-themed ultra lounge/bar open at 858 W Lake St, West Loop"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "rebar",
@@ -2131,13 +2131,13 @@
   },
   {
     "id": "red-kangaroo",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Animal exhibit at Lincoln Park Zoo; free admission zoo is open year-round"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No 'Red Kangaroo' venue exists in Google for Chicago; all results are unrelated 'Blue Kangaroo' businesses nowhere near our pin."
   },
   {
     "id": "red-light-chicken",
@@ -2371,13 +2371,13 @@
   },
   {
     "id": "ralph-h-metcalfe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 77,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open federal office building at 77 W Jackson Blvd, named after Olympian and U.S. Rep. Ralph Harold Metcalfe, built 1991"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Ralph H. Metcalfe Federal Building is OPERATIONAL at 77 W Jackson Blvd; our pin is 4452m away in the wrong neighborhood."
   },
   {
     "id": "ramen-wasabi",
@@ -2611,13 +2611,13 @@
   },
   {
     "id": "ramo-i-zenkich-memorial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Vietnam War memorial granite monument inside Lane Tech College Prep's courtyard garden, accessible to school community"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google returns no relevant match; no memorial by this name is verifiable — likely an OSM artifact."
   },
   {
     "id": "ramova-grill-taproom",
@@ -3311,13 +3311,13 @@
   },
   {
     "id": "pollos-al-carbon",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 25,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "neighborhood charcoal-grilled chicken taqueria; at least one active Chicago location confirmed as of March 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match within 150m of our pin; the closest result ('Taqueria Pollo Al Carbon') is 6324m away in a completely different neighborhood."
   },
   {
     "id": "polombia",
@@ -3631,13 +3631,13 @@
   },
   {
     "id": "ruk-sushi-thai",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 329,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Milwaukee Ave (Jefferson Park) location open; Albany Park location closed Feb 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Restaurant is OPERATIONAL at 4431 N Milwaukee Ave (41.9613903,-87.7549237), 4053m from the current pin — wrong coordinates in the dataset."
   },
   {
     "id": "rumi-middle-eastern-grill",
@@ -3651,13 +3651,13 @@
   },
   {
     "id": "ruschman",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "contemporary art gallery in Irving Park (4148 N Elston), open since 2020, niche arts audience"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms CLOSED_PERMANENTLY at 5m from the pin; museum is no longer operating."
   },
   {
     "id": "rush-bar-lounge",
@@ -4041,13 +4041,13 @@
   },
   {
     "id": "rooks-corner",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 120,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "American bistro and lounge inside Chicago Marriott at Medical District/UIC, open since 2004"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "roop",
@@ -4511,13 +4511,13 @@
   },
   {
     "id": "saigon-pho-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 26,
     "reviewCount": 57,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Vietnamese pho spot at 3222 W Bryn Mawr Ave, operating with regular hours"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match for this restaurant name anywhere near the pin; no evidence it operates at or near 41.888763,-87.794035."
   },
   {
     "id": "saigon-sisters",
@@ -4841,13 +4841,13 @@
   },
   {
     "id": "sarnos",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 90,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Family Italian-American restaurant operating in Cicero/near-west Chicago at 5615 W Roosevelt Rd with over 60 years in business"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google Places confirms Sarno's Restaurant at our exact pin but status is CLOSED_TEMPORARILY — not operational."
   },
   {
     "id": "sarpinos-pizzeria",
@@ -5231,13 +5231,13 @@
   },
   {
     "id": "serai",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 13,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Malaysian restaurant relocated to 2142 N Clybourn Ave in late 2024, currently operating"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Serai is confirmed OPERATIONAL at 2142 N Clybourn Ave (870 ratings); our pin is 2550m west of the actual location."
   },
   {
     "id": "serai-cafe-deli",
@@ -5381,13 +5381,13 @@
   },
   {
     "id": "shang-noodle",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 44,
     "reviewCount": 490,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chinese noodle restaurant at 215 E Grand Ave Streeterville, active as of May 2026 with expansion planned"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Shang Noodle Streeterville is OPERATIONAL at 215 E Grand Ave (1140 ratings); our pin is 2508m away from the actual location."
   },
   {
     "id": "shanghai-terrace",
@@ -5871,13 +5871,13 @@
   },
   {
     "id": "sheeba-mandi-house",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 57,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Authentic Yemeni restaurant on W Foster Ave, active as of May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): 3456 W Foster Ave is now occupied by 'Alyemen alsaeed' (1038 ratings); Sheeba Mandi House identity is gone and no longer exists at this location."
   },
   {
     "id": "sheffields",
@@ -6051,13 +6051,13 @@
   },
   {
     "id": "silk-road-of-chicago",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 137,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open downtown Chinese lunch spot at 312 W Adams St, weekday-only hours"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Restaurant confirmed OPERATIONAL with 364 ratings but pin is 401m off; Google places it at 312 W Adams St within the game bbox."
   },
   {
     "id": "silli-kori",
@@ -6431,13 +6431,13 @@
   },
   {
     "id": "somethin-sweet-donuts",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 124,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open at 3244 W Montrose Ave; a prior Fullerton Ave location closed Feb 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] OPERATIONAL at 3244 W Montrose Ave per Google; original pin (41.9244, -87.7543) is 5.5 km off — correct address is (41.9613, -87.7100), within bbox."
   },
   {
     "id": "sonic",
@@ -6481,13 +6481,13 @@
   },
   {
     "id": "soul-prime",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 34,
     "reviewCount": 158,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Elevated soul food at 1969 N Halsted in Lincoln Park; active website and reservations"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "soul-veg-city",
@@ -6771,13 +6771,13 @@
   },
   {
     "id": "st-clair-drake-horace-cayton",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago Tribute Marker commemorating the Black Metropolis authors; a historical plaque/marker"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No physical landmark, plaque, or destination found at the pin; Google returns only street/address results, indicating this is an OSM artifact rather than a real game destination."
   },
   {
     "id": "st-josephs-hospital-lake-shore-cafe",
@@ -6891,13 +6891,13 @@
   },
   {
     "id": "so-gong-dong-korean-tofu-bbq",
-    "status": "open",
+    "status": "closed",
     "currentName": "SGD Dubu So Gong Dong Tofu & Korean BBQ",
     "fameScore": 30,
     "reviewCount": 77,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "H-Mart food court location (711 W Jackson Blvd) open; regional chain with ~11 US locations"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms 'SGD So Gong Dong Korean Tofu & BBQ & Bento' at 2101 S China Pl is CLOSED_PERMANENTLY at the exact pin location."
   },
   {
     "id": "so-gong-dong-tofu-korean-bbq",
@@ -6951,13 +6951,13 @@
   },
   {
     "id": "soju-bbq",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 287,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "halal Korean BBQ restaurant in the West Loop, open since 2018"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms 'SoJu BBQ' at 36 S Ashland Ave is CLOSED_PERMANENTLY at the pin location (~15m away)."
   },
   {
     "id": "sol-de-mexico",
@@ -7271,13 +7271,13 @@
   },
   {
     "id": "southside-grinds-coffee-co",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 40,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Black woman-owned coffee roaster and mobile espresso bar in Woodlawn; small brick-and-mortar at 330 E 51st St"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google result; confirmed by web search to be a mobile espresso catering service with no brick-and-mortar location, so the pin is meaningless."
   },
   {
     "id": "sovereign-liquors",
@@ -7691,13 +7691,13 @@
   },
   {
     "id": "suite-lounge",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 150,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "cocktail lounge in Old Town at 1446 N Wells St, open since 2005"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "sukhadias-sweets-and-snacks",
@@ -7901,13 +7901,13 @@
   },
   {
     "id": "sunshine-daydream",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 400,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "rooftop bar atop Paradise Park in Wicker Park; part of Happy Camper restaurant group"
+    "statusNote": "Removed via vetting 2026-06-25 (high): The business at this pin has rebranded to 'Paradise Park | Pizza & Patio'; Sunshine Daydream no longer exists as an identity here."
   },
   {
     "id": "sunshine-garden",
@@ -8011,13 +8011,13 @@
   },
   {
     "id": "steves-sports-bar-lounge",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small neighborhood tavern on W North Ave in Wicker Park/Humboldt Park area; active liquor license"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "stevenson-park",
@@ -8031,13 +8031,13 @@
   },
   {
     "id": "stewarts-private-blend-coffee",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago coffee institution since 1913, roaster and cafe at 4110 W Wrightwood Ave; local brand with loyal following"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Only Google match is in Carol Stream (lng -88.11), well outside the game bbox; no Chicago location found."
   },
   {
     "id": "still-life-by-solemn-oath",
@@ -8091,13 +8091,13 @@
   },
   {
     "id": "stockyard-gardens",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 14,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "community garden/urban farm (Star Farm Chicago) in Back of the Yards neighborhood, steward-preserved by NeighborSpace"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google match for a park or garden at this pin; closest result is a materials company, not a named public green space."
   },
   {
     "id": "stony-island-arts-bank",
@@ -8231,13 +8231,13 @@
   },
   {
     "id": "steak-egger",
-    "status": "open",
+    "status": "closed",
     "currentName": "Steak 'n Egger",
     "fameScore": 50,
     "reviewCount": 200,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Alternate name/spelling for the same Steak 'N Egger regional chain; open 24/7"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Steak 'n Egger Inc is OPERATIONAL at 1174 W Cermak Rd — our pin is 9.1km off; new coords are within the game bbox."
   },
   {
     "id": "steak-48",
@@ -8261,13 +8261,13 @@
   },
   {
     "id": "stehman-school-playground",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 4,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Small school playground in Avondale/Jackowo neighborhood; very low public profile"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match for this named playground at the pin; the sweep's closest result was a completely different park 8.2km away."
   },
   {
     "id": "steingolds",
@@ -8481,13 +8481,13 @@
   },
   {
     "id": "sweet-vegan-bakes",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 40,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Vegan bakery at 50 E Chicago Ave with a Yelp listing updated April 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google confirms CLOSED_TEMPORARILY at the exact pin; this status commonly persists after permanent closure and the venue is not operational."
   },
   {
     "id": "sweet-virginias-kitchen",
@@ -9191,13 +9191,13 @@
   },
   {
     "id": "taqueria-amigo-chino",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 347,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open at 5601 W Irving Park Rd in Portage Park; longtime neighborhood taqueria with two Chicago locations for over two decades"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms OPERATIONAL at 5601 W Irving Park Rd (41.9530136, -87.7671757) with 2558 ratings, 1811m from current pin."
   },
   {
     "id": "taqueria-atotonilco",
@@ -9311,13 +9311,13 @@
   },
   {
     "id": "taqueria-lpatron",
-    "status": "open",
+    "status": "closed",
     "currentName": "L' Patron Tacos",
     "fameScore": 44,
     "reviewCount": 649,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Known as L' Patron Tacos, Logan Square taqueria since 2012 with strong local following"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms OPERATIONAL 'L' Patron' at 3749 W Fullerton Ave with 2175 ratings; current pin is 3648m off."
   },
   {
     "id": "taqueria-la-estrella",
@@ -9831,13 +9831,13 @@
   },
   {
     "id": "tasty-asian-restaurant",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "pickup-only neighborhood Asian restaurant on N Broadway, Lakeview"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "tatas-tacos",
@@ -9931,13 +9931,13 @@
   },
   {
     "id": "taylors-tacos",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 72,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Black-owned taco shop with locations in The Hatchery and on Taylor Street"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms OPERATIONAL 'Taylor's Tacos' at 135 N Kedzie Ave (41.884045, -87.705700) with 171 ratings; current pin is 3762m off."
   },
   {
     "id": "taza",
@@ -10001,13 +10001,13 @@
   },
   {
     "id": "tease-tea-shoppe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 230,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Operating neighborhood tea shop in Portage Park since 2014"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "tecalitlan",
@@ -11091,13 +11091,13 @@
   },
   {
     "id": "the-green",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 36,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "indoor golf simulator venue at 2131 N Elston Ave with food and full bar"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Golf course confirmed CLOSED_PERMANENTLY by Google Places; no operational replacement found at this location."
   },
   {
     "id": "the-green-at-320",
@@ -11671,13 +11671,13 @@
   },
   {
     "id": "the-hometavern",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 24,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Lakeview neighborhood dive bar on Lincoln Ave"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Home Tavern confirmed CLOSED_PERMANENTLY by Google Places at the exact pin location (3m offset)."
   },
   {
     "id": "the-hot-dog-box",
@@ -11691,13 +11691,13 @@
   },
   {
     "id": "the-hyde",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 40,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Prohibition-themed speakeasy in Hyde Park, open when red light is lit"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "the-irish-nobleman",
@@ -11751,23 +11751,23 @@
   },
   {
     "id": "the-jibarito-stop",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 475,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Relocated from Pilsen to Loop (174 N Wabash) after fire; now open at new location"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google consistently returns this restaurant only at 174 N Wabash Ave (Loop), 4.5km from pin; even a location-biased search near the old pin yields the same"
   },
   {
     "id": "the-junction",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 25,
     "reviewCount": 39,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Sports bar inside Union Station open for commuters; South Side location separately closed"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No bar named The Junction found anywhere near the River North pin; the only Google match is a completely different venue 15km south in Gresham."
   },
   {
     "id": "the-kedzie-inn",
@@ -11871,13 +11871,13 @@
   },
   {
     "id": "the-library",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 120,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open speakeasy in the basement of Gilt Bar, River North, Thu–Sat only"
+    "statusNote": "Removed via vetting 2026-06-25 (high): 230 W Kinzie St (our exact pin coords) is now Gilt Bar — querying 'The Library bar 230 W Kinzie' returns only Gilt Bar, confirming the bar no longer operates under that name at that address."
   },
   {
     "id": "the-licking",
@@ -11931,13 +11931,13 @@
   },
   {
     "id": "the-living-room",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open cocktail bar at Hyatt Regency Chicago, 151 E Wacker Dr, Tue–Sat evenings"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No restaurant called The Living Room found at or near the Streeterville pin; the only Google result is a nonprofit facility 9km away."
   },
   {
     "id": "the-living-room-bar",
@@ -12221,13 +12221,13 @@
   },
   {
     "id": "the-stanley-club",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Hockey-rink bar inside Johnny's IceHouse with two locations on Madison St; known to West Loop hockey community"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google places The Stanley Club OPERATIONAL at 2550 W Madison St, ~2.4km west of our pin; Google coords are within bounds."
   },
   {
     "id": "the-stockyard-coffeehouse",
@@ -12271,13 +12271,13 @@
   },
   {
     "id": "the-tamale-spaceship",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 33,
     "reviewCount": 269,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Pioneer Chicago food truck turned catering business operating since 2011; storefront at 2296 S Blue Island Ave"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms The Tamale Spaceship OPERATIONAL at 2296 S Blue Island Ave (Pilsen), ~6.2km south of our pin; within bounds."
   },
   {
     "id": "the-tankard",
@@ -12381,13 +12381,13 @@
   },
   {
     "id": "the-walk-in-chicago",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 91,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Logan Square cocktail lounge connected to Red Star Liquor; closed for remodel Sep 2025, expected back open by Nov 2025"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google confirms location matches our pin but status remains CLOSED_TEMPORARILY — not operational so does not meet keep threshold."
   },
   {
     "id": "the-warbler",
@@ -12491,13 +12491,13 @@
   },
   {
     "id": "the-patio",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 96,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Long-running fast-casual Chicago institution on Taylor St in Little Italy, open since 1948"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No restaurant called The Patio found at or near the Pilsen pin; the only sweep match (The Patio - Bridgeview) is a suburb venue 19km away."
   },
   {
     "id": "the-patio-at-cafe-brauer",
@@ -12571,13 +12571,13 @@
   },
   {
     "id": "the-playground-theater",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 75,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Active donation-based improv theater at 4416 N Clark St in Lakeview, operating 7 nights a week as of June 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Theater confirmed OPERATIONAL at 4416 N Clark St (41.9622, -87.6663), in-bounds but 2.8km from the stale pin."
   },
   {
     "id": "the-pony-inn",
@@ -13351,13 +13351,13 @@
   },
   {
     "id": "vero-coffee-gelato",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 15,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open Italian-style cafe and gelato at 2112 N Ashland Ave; small local chain"
+    "statusNote": "Removed via vetting 2026-06-25 (high): The only Google match is in Franklin Park, IL at lng -87.858, which is outside the game bbox (west bound -87.8); the Chicago location at the pin appears to have closed."
   },
   {
     "id": "veteran-shrine",
@@ -13371,13 +13371,13 @@
   },
   {
     "id": "veterans-memorial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 15,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago Park District Veterans' Memorial Park at 2820 E 98th St in South Deering, established 1954"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google returned zero results near the NW Chicago pin (41.952613, -87.786268); generic name with no confirmed distinct named memorial in that Norwood Park area."
   },
   {
     "id": "via-carducci",
@@ -13481,13 +13481,13 @@
   },
   {
     "id": "vietnam-war-memorial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 31,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "likely refers to the older Chicago Remembers marker at Wacker and State; stones incorporated into current plaza"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google match near the NW Chicago pin; the closest Chicago Vietnam memorial is ~24km away downtown, suggesting this is an unlisted OSM artifact."
   },
   {
     "id": "vigo-coffee",
@@ -13561,23 +13561,23 @@
   },
   {
     "id": "vinci",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 329,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "longtime Lincoln Park Italian restaurant open since 1991, currently operating per Yelp March 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "vines-on-clark",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 378,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Wrigleyville sports bar with largest outdoor patio in the area, open per Yelp March 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms CLOSED_TEMPORARILY at the exact pin location (6m); not operational per the keep-only-if-operational rule for businesses."
   },
   {
     "id": "vinnies-sub-shop",
@@ -13681,13 +13681,13 @@
   },
   {
     "id": "vivian-harsh",
-    "status": "open",
+    "status": "closed",
     "currentName": "Vivian G. Harsh Research Collection",
     "fameScore": 28,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Largest African American history collection in the Midwest, housed at Woodson Regional Library; Harsh has her own Wikipedia article"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Vivian G. Harsh Park is a real, operational park but our pin is 2692m north of its actual location at 4458 S Oakenwald Ave; new coords are within the game bb"
   },
   {
     "id": "vogle-park",
@@ -13761,13 +13761,13 @@
   },
   {
     "id": "wabi-sabi",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 309,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Neighborhood sushi restaurant in Albany Park at 4720 N Kedzie Ave, open daily"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Our pin is the former Wabi Sabi Rotary at ~4521 N Sheridan, confirmed permanently closed on Yelp (May 2025); the live Wabi Sabi at 4720 N Kedzie is a different restaurant 4.5km away."
   },
   {
     "id": "wadsworth-campus-park",
@@ -14201,13 +14201,13 @@
   },
   {
     "id": "toro-sushi",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 1189,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "operating at 2546 N Clark St in Lincoln Park since 2005, BYOB sushi spot"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google found 'Toro Sushi' OPERATIONAL but 400m from pin; repinning to the verified Google location which is within the Chicago bbox."
   },
   {
     "id": "tortazo",
@@ -14481,13 +14481,13 @@
   },
   {
     "id": "urban-essentials-coffee-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 11,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Black-owned coffee shop in Austin neighborhood at 5300 W Chicago Ave; opened 2021"
+    "statusNote": "Removed via vetting 2026-06-25 (high): The business at the pin (5300 W Chicago Ave) is now 'Spill The Beans' — a completely different business identity replaced Urban Essentials Coffee Café."
   },
   {
     "id": "urban-rivers-floating-garden",
@@ -14541,13 +14541,13 @@
   },
   {
     "id": "us-merchant-marine-memorial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "WWII Merchant Marine memorial at Navy Pier, 600 E Grand Ave; publicly accessible"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google confirmation of a US Merchant Marine Memorial in Chicago; pin sits at lng -87.599, the far eastern tip of Navy Pier near the water, indicating an OSM artifact rather than a real named destina"
   },
   {
     "id": "usagi-ya",
@@ -14591,13 +14591,13 @@
   },
   {
     "id": "uss-illinois-bell",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "ship's bell from 1893 World's Columbian Exposition replica battleship; on display inside Smith Stained Glass Museum at Navy Pier"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google found no named place for 'USS Illinois Bell' near the pin; the only result was Navy Pier itself (a different entity entirely), suggesting this is an OSM-tagged artifact with no standalone land"
   },
   {
     "id": "wake-n-bacon",
@@ -14641,13 +14641,13 @@
   },
   {
     "id": "walter-dyett",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 40,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Walter H. Dyett High School for the Arts in Washington Park, reopened as arts school 2016 after community activism"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Walter H. Dyett High School for the Arts is real and operational at 555 E 51st St, but our pin is 4650m north; new coords are within the game bbox."
   },
   {
     "id": "walter-t-bailey",
@@ -14971,13 +14971,13 @@
   },
   {
     "id": "university-of-illinois-hospital-cafeteria-and-coffee-shop",
-    "status": "open",
+    "status": "closed",
     "currentName": "Taylor Street Café",
     "fameScore": 12,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Hospital cafeteria at UI Health/1740 W Taylor St; now branded Taylor Street Café internally but still listed under original name on Yelp"
+    "statusNote": "Removed via vetting 2026-06-25 (high): This is an internal hospital amenity (an OSM node inside UI Health), not a named standalone destination; Google returns only the hospital itself with no distinct cafeteria entity."
   },
   {
     "id": "uno-pizzeria-grill",
@@ -15071,13 +15071,13 @@
   },
   {
     "id": "the-wild-hare",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 256,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "legendary reggae club relocated in 2025 from Lincoln Park to 950 W Fulton St in Fulton Market"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google places The Wild Hare OPERATIONAL at 952 W Fulton St (West Loop), ~4.7km south of our Lakeview pin; within bounds."
   },
   {
     "id": "the-willis-terrace",
@@ -15121,13 +15121,13 @@
   },
   {
     "id": "the-woodlawn",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "pop-up restaurant and event space at 1200 E 79th St in Avalon Park neighborhood"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google confirms location matches our pin but status is CLOSED_TEMPORARILY — not operational so does not meet keep threshold."
   },
   {
     "id": "the-wormhole-coffee",
@@ -15151,13 +15151,13 @@
   },
   {
     "id": "theaster-gates-studio",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "working studio and Rebuild Foundation cultural hub at 7200 S Kimbark Ave; not a formal public museum"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] No Google Place named 'Theaster Gates Studio' exists; best verified match is the Stony Island Arts Bank (a Theaster Gates cultural institution) at 6760 S S"
   },
   {
     "id": "themart-river-park",
@@ -15191,13 +15191,13 @@
   },
   {
     "id": "theresa-needham",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "historical marker on S MLK Drive honoring the Godmother of Chicago Blues who ran Theresa's Lounge 1949-1986"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google Place found; Theresa Needham is a person (blues promoter/Checkerboard Lounge owner), not a venue — data artifact."
   },
   {
     "id": "the-row-tavern",
@@ -15531,13 +15531,13 @@
   },
   {
     "id": "west-town-bakery",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 550,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Multi-location Chicago bakery chain; flagship at 1916 W Chicago Ave open, though some satellite locations have closed"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google Places confirms CLOSED_PERMANENTLY at (41.9478, -87.6572), only ~18m from our pin — definitively gone."
   },
   {
     "id": "west-town-bakery-diner",
@@ -16191,13 +16191,13 @@
   },
   {
     "id": "leons-bbq",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 50,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "historic South Side BBQ chain founded 1940; The Original Leon's BBQ operating at 3309 E 106th St after reopening in 2017"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Only Google match (Leon's Barbeque Zone) is 18km away and at lat 41.7025, which is outside the game bbox floor of 41.74; no BBQ place exists at or near our SW-side pin."
   },
   {
     "id": "la-cueva",
@@ -16231,13 +16231,13 @@
   },
   {
     "id": "la-fogata",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 27,
     "reviewCount": 91,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open at 3433 W Lawrence Ave (Albany Park); a second location at 4701 W Lawrence closed"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Restaurant confirmed OPERATIONAL at 3433 W Lawrence Ave, 2.5km east of our pin; repin to actual address."
   },
   {
     "id": "la-fontanella",
@@ -17221,13 +17221,13 @@
   },
   {
     "id": "lahore-food-and-grill",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 68,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Family-run Indo-Pakistani restaurant on Devon Ave; Yelp updated April 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "lake-meadows-park",
@@ -17361,13 +17361,13 @@
   },
   {
     "id": "langston-hughes",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Langston Hughes STEM Elementary School at 240 W 104th St in Roseland; active CPS school named after the poet"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Fame note confirms this is the CPS school at 240 W 104th St (lat 41.705), outside the game bbox; our pin is 14km away with no confirmed landmark at the pin location."
   },
   {
     "id": "lao-der",
@@ -17501,13 +17501,13 @@
   },
   {
     "id": "lfc-cafeteria-and-handcut-foods",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "School cafeteria inside Lycée Français de Chicago; operated by HandCut Foods; not publicly accessible"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): HandCut Foods is 5.8km away in Lincoln Park, not at our Rogers Park pin; the original appears to be a defunct cafeteria at a Loyola facility, not a standalone navigable destination."
   },
   {
     "id": "lgs-bar",
@@ -17571,13 +17571,13 @@
   },
   {
     "id": "lieutenant-george-l-giles",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Historical marker and memorial portrait in Bronzeville near 35th and MLK Dr; honoring WWI Black officer"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google confirms 'George L Giles Post' (American Legion) is operational at 5745 S State St, 4.6km south of our pin; repin to the confirmed address."
   },
   {
     "id": "life-cafe",
@@ -17711,13 +17711,13 @@
   },
   {
     "id": "kavi-gupta-gallery",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 33,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Established West Loop contemporary art gallery founded 2000; Wikipedia article exists for founder/gallery"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Gallery is OPERATIONAL at 835 W Washington Blvd; our pin is 850m off — repin to confirmed Google location."
   },
   {
     "id": "kawayan",
@@ -17811,23 +17811,23 @@
   },
   {
     "id": "john-pat-andersons-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Campus dining cafe inside IIT's Kaplan Institute; minimal public presence"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match for this cafe; all results return completely different businesses far from the pin, indicating this venue no longer exists."
   },
   {
     "id": "john-caldwell-meeker",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Appears on Chicago Landmarks list; obscure historical marker or named building with very low public recognition"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Only reference found is a named fellowship at the Field Museum; no physical Chicago landmark or named park at the Uptown pin coordinates; likely an OSM artifact."
   },
   {
     "id": "john-h-johnson",
@@ -17871,13 +17871,13 @@
   },
   {
     "id": "john-lee-sonny-boy-williamson",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Historical marker (HMDB #51375) commemorating blues pioneer murdered in Chicago 1948; primarily recognized by blues history enthusiasts"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Chicago landmark or plaque found; all commemorative markers for this blues musician are in Tennessee near his birthplace and burial site, not at this South Side pin."
   },
   {
     "id": "john-moutoussamy",
@@ -18011,13 +18011,13 @@
   },
   {
     "id": "light-plate",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "the sun-loving perennial section of Lurie Garden in Millennium Park, not a standalone park"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match and no web evidence of a real named place called 'Light Plate' in Chicago; appears to be an OSM artifact near Millennium Park."
   },
   {
     "id": "light-tower",
@@ -18451,13 +18451,13 @@
   },
   {
     "id": "louisiana-famous-fried-chicken",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 60,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "local Southern fried chicken chain with multiple Chicago locations including 315 E 51st St"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Louisiana Famous Fried Chicken found in Chicago; no match near pin and the brand appears absent from the city."
   },
   {
     "id": "love-light-cafe",
@@ -18731,13 +18731,13 @@
   },
   {
     "id": "litehouse-whole-food-grill",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 189,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Hyde Park location at 1368 E 53rd St open as of May 2026; former Clark St location closed"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms LiteHouse Whole Food Grill is operational at 1368 E 53rd St (844 ratings), 835m from our pin; repin to the confirmed address."
   },
   {
     "id": "litos-empanadas",
@@ -18941,13 +18941,13 @@
   },
   {
     "id": "lombard-lamp",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Permanent cast-iron Hamburg-gift lamppost in Lincoln Square, outdoor public landmark"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Chicago landmark named 'Lombard Lamp' found on Google; sweep matched an unrelated lamp shop 3.3km away — likely an OSM artifact, not a real destination."
   },
   {
     "id": "london-park",
@@ -19001,13 +19001,13 @@
   },
   {
     "id": "lush-wine-spirits",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 312,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Two active Chicago locations (West Town and Roscoe Village), boutique wine bar and shop"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Lush Wine & Spirits - West Town at 1412 W Chicago Ave (5m from pin) is confirmed CLOSED_PERMANENTLY."
   },
   {
     "id": "luxbar",
@@ -19171,13 +19171,13 @@
   },
   {
     "id": "mad-west-atrium-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "All-day food and beverage concept in the United Center atrium, open to public on non-event days"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google Places result for 'Mad West & Atrium Bar' at or near the pin; multiple searches return unrelated bars at that address, with no web trace of this name ever operating there."
   },
   {
     "id": "maddanthonys-bar-grill",
@@ -19391,13 +19391,13 @@
   },
   {
     "id": "loud-pizza-records-carry-out",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open woman-owned vinyl record shop with pizza carry-out inside the Salt Shed at 1357 N Elston Ave"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] The only operational Loud Pizza Records is 7km away at 1748 W Lawrence Ave; no business near original pin."
   },
   {
     "id": "mariposa",
@@ -19511,13 +19511,13 @@
   },
   {
     "id": "market-square",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 148,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "family-owned café in Lincoln Square (formerly Yogurt Square), updated August 2025"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "marovitz-savannah-natural-area",
@@ -19941,13 +19941,13 @@
   },
   {
     "id": "maison-parisienne",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 34,
     "reviewCount": 77,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "French bakery and cafe with locations in Lincoln Park (2564 N Clark) and on Armitage Ave; open as of May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Business is operational but has two branches neither near our pin; the Clark St location (41.929342, -87.642909) is the closest confirmed address at ~1.6km a"
   },
   {
     "id": "major-robert-h-lawrence",
@@ -19981,13 +19981,13 @@
   },
   {
     "id": "maman-zari",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 41,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "intimate Persian tasting-menu restaurant in Albany Park at 4639 N Kedzie Ave; open as of April 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "mambo-wings",
@@ -20301,13 +20301,13 @@
   },
   {
     "id": "manolos-tamales",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 205,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Local Chicago tamale chain with multiple South/Southwest Side locations, several open 24 hours"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match exists near the pin; the nearest confirmed 'Manolos Tamales #4' is 8.9km away at 6641 Cicero Ave, with no evidence of a branch at the Little Village/Lawndale pin location."
   },
   {
     "id": "manor-park",
@@ -20631,13 +20631,13 @@
   },
   {
     "id": "mathers-more-than-a-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Senior-focused multi-location café and wellness center run by Mather nonprofit, multiple Chicago locations open"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google Places explicitly returns CLOSED_PERMANENTLY for Mather's—More Than a Café at 3235 N Central Ave, matching our pin to within meters."
   },
   {
     "id": "matilda",
@@ -21241,13 +21241,13 @@
   },
   {
     "id": "mccormick-rooftop-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Same rooftop growing facility atop McCormick Place West as the Rooftop Farm; 'farm' and 'garden' used interchangeably for the same site"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Only 44m from the confirmed mccormick-rooftop-farm entry with no distinct named identity; this is a duplicate OSM node for the same rooftop green space."
   },
   {
     "id": "mccormick-square",
@@ -22071,13 +22071,13 @@
   },
   {
     "id": "morettis-pizzeria-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 34,
     "reviewCount": 23,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open at 2251 N Lincoln Ave, Lincoln Park; part of local Chicago-only Moretti's family"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Moretti's operational near pin (41.923,-87.645); the only Chicago-area Moretti's location is at Olmsted Ave (lng -87.8176), outside the game bbox."
   },
   {
     "id": "morettis-ristorante-pizzeria",
@@ -22531,13 +22531,13 @@
   },
   {
     "id": "mr-zees-famous-chicken",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 34,
     "reviewCount": 141,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "northwest-side roast chicken institution at 3958 N Narragansett Ave, actively operating per May 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "mr-bs-caribbean-grill",
@@ -22651,13 +22651,13 @@
   },
   {
     "id": "my-pollo",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open at 4630 N Cumberland Ave; local rotisserie chicken spot with multiple Chicago locations"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No My Pollo location exists near our pin; the closest Google result is 3261m away at a different neighborhood."
   },
   {
     "id": "naan-on-devon",
@@ -22751,13 +22751,13 @@
   },
   {
     "id": "nano-ramen-and-sushi",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 186,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open at 4256 N Western Ave in Lincoln Square; well-reviewed neighborhood ramen and sushi spot"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Operational at 4256 N Western Ave, but our pin is 3255m off; repinning to the confirmed Google location."
   },
   {
     "id": "naples-pizza",
@@ -22791,13 +22791,13 @@
   },
   {
     "id": "nashville-hot-chicken",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 11,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open at 2431 N Western Ave in Bucktown/Logan Square; independent local hot chicken spot established 2018"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Pin is accurate (4m match) but Google reports CLOSED_TEMPORARILY; not operational per decision rules."
   },
   {
     "id": "moes-cantina",
@@ -23001,13 +23001,13 @@
   },
   {
     "id": "nat-king-cole",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 25,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Nat King Cole Park and Fieldhouse (Chicago Park District) in Chatham, plus historical marker at 4023 S Vincennes Ave; both open public sites"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Landmark confirmed at 4023 S Vincennes Ave, but our pin is 2891m off; repinning to the Google-confirmed address."
   },
   {
     "id": "national-cambodian-heritage-museum",
@@ -23181,13 +23181,13 @@
   },
   {
     "id": "neiu-tennis-court-gardens",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 6,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "NEIU's Green Conservation Group converting two abandoned back tennis courts into community garden beds at 5264 N St Louis Ave; project underway as of 2025"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google entity for this name exists; it is an OSM artifact (unlabeled campus tennis courts) rather than a real named destination."
   },
   {
     "id": "nekter-juice-bar",
@@ -23321,13 +23321,13 @@
   },
   {
     "id": "new-pine-valley-restaurant",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Neighborhood restaurant at 1600 S Pulaski Rd with Yelp and OpenTable listings"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "new-polonia-club",
@@ -23521,13 +23521,13 @@
   },
   {
     "id": "murphys-lounge",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Neighborhood bar and lounge at 7628 S Cottage Grove Ave in Greater Grand Crossing; Black-owned dive bar"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms the exact pin address (7628 S Cottage Grove Ave) is now operating as 'BLAQ's' — Murphy's Lounge is no longer the business at this location."
   },
   {
     "id": "murray-park",
@@ -23571,13 +23571,13 @@
   },
   {
     "id": "museum-campus-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 25,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Outdoor food stand at 1200 S Lake Shore Dr near Shedd Aquarium; seasonal operation serving hot dogs and snacks"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No specific business with this identity found within 150m of the pin; 'Museum Campus Cafe' is a generic OSM artifact, not an identifiable named venue."
   },
   {
     "id": "museum-of-broadcast-communications",
@@ -23841,13 +23841,13 @@
   },
   {
     "id": "nisos-prime",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 158,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Mediterranean steakhouse in West Loop on Randolph St, opened circa 2022"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google Places directly confirms 'Nisos Prime - Chicago' at 802 W Randolph St is CLOSED_PERMANENTLY (444 ratings); a different restaurant Adalina Prime now occupies the area."
   },
   {
     "id": "niu-b",
@@ -23901,13 +23901,13 @@
   },
   {
     "id": "nobs-wine-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 24,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "wine bar with multiple Chicago locations; one location (N Clybourn) closed but others active"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "noble-thai",
@@ -24271,13 +24271,13 @@
   },
   {
     "id": "nicholas-senn",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Senn (Nicholas) Park in Edgewater; Chicago Park District park named for physician Nicholas Senn, contains Young Lincoln statue"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Nicholas Senn High School is OPERATIONAL at 5900 N Glenwood Ave (41.989013, -87.666774) — confirmed by Google Places — but our pin is 3341m away from the act"
   },
   {
     "id": "nichols-park",
@@ -25031,13 +25031,13 @@
   },
   {
     "id": "overton-center-for-excellence",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "adaptive reuse of closed Anthony Overton Elementary into community hub in Bronzeville; plaza opened 2024, still being developed"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms Overton Elementary School at our pin (24m away) is CLOSED_PERMANENTLY; the school that was the landmark no longer operates."
   },
   {
     "id": "overton-hygienic-building",
@@ -25051,13 +25051,13 @@
   },
   {
     "id": "ovie-bar-grill",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 250,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open at 131 N Clinton St in Fulton River District, full-service bar and grill"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "owen-bruner-goodman-theatre",
@@ -25071,13 +25071,13 @@
   },
   {
     "id": "owens-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 40,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Jesse Owens Park, Chicago Park District facility at 8800 S Clyde Ave in South Calumet"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google finds no park named Owens Park near our pin (41.751077,-87.749326); the only match is Jesse Owens Park 14.6km away at lng -87.5745, which is outside the game bbox eastern bound of -87.58."
   },
   {
     "id": "oz-park",
@@ -25361,13 +25361,13 @@
   },
   {
     "id": "os-donuts-and-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 40,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "donut and coffee shop at 7601 S Cicero Ave, opened 2019"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "os-tap",
@@ -25811,13 +25811,13 @@
   },
   {
     "id": "oggi-trattoria",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 270,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open Italian restaurant at 1461 W Chicago Ave, West Town"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Oggi Trattoria is OPERATIONAL at 1461 W Chicago Ave (41.895978, -87.664759) per Google Places (510 ratings), but our pin is 926m away at the wrong location."
   },
   {
     "id": "ogilvie-pertl-gallery",
@@ -26081,13 +26081,13 @@
   },
   {
     "id": "oscar-stanton-depriest",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 10,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Historical marker and honorary street designation for prominent Chicago civil rights politician"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Oscar Stanton De Priest House (National Historic Landmark) is confirmed at 4536 S MLK Drive (41.8119, -87.6172); our pin is ~2.5km north at the wrong locatio"
   },
   {
     "id": "oscar-wilde-audre-lorde",
@@ -26181,13 +26181,13 @@
   },
   {
     "id": "outdoor-grill",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 161,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Family-owned Greek and American fast-casual at 3265 N Milwaukee Ave in Avondale, open Mon-Sat"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "output-lounge-sports-bar",
@@ -26291,13 +26291,13 @@
   },
   {
     "id": "patterson-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago Park District park near the Near West Side; low public profile compared to major Chicago parks"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google finds no park at this Chicago pin — only a street (W Patterson Ave) and a suburban Hometown IL park 8+ km away; likely an OSM street-name artifact."
   },
   {
     "id": "paul-gabriella-rosenbaum-garden",
@@ -26391,13 +26391,13 @@
   },
   {
     "id": "peace-pole",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Peace Pole at Loyola University Lakeshore Campus; multilingual 'May Peace Prevail On Earth' monument; very low public profile"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Peace Pole landmark found near pin (41.876,-87.782 in Austin/Galewood); no Google result within meaningful distance confirms a real monument here."
   },
   {
     "id": "park-west",
@@ -26841,23 +26841,23 @@
   },
   {
     "id": "perry-ave-commons",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Sweet Water Foundation community garden and public space on South Side; active urban agriculture project"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google returns only 'South Perry Avenue' street for this pin; no park called Perry Ave Commons exists in Google's data — OSM street artifact."
   },
   {
     "id": "persona",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Persona Lounge in River North appears open; a similarly named Per.so.na in Loop/Wells St is closed as of May 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "peru-criollo",
@@ -27531,13 +27531,13 @@
   },
   {
     "id": "povos",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "artist-run contemporary art gallery in West Town at 1541 W Chicago Ave, founded 2020"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms 'Povos Gallery West Town' is CLOSED_PERMANENTLY at our exact pin location."
   },
   {
     "id": "pozoleria-el-mexicano",
@@ -27601,13 +27601,13 @@
   },
   {
     "id": "backstory-tavern",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 80,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "active neighborhood bar in Bucktown, open as of early 2025"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google Places listing for 'Backstory Tavern' found anywhere in Chicago across two searches; sweep matched an unrelated bar 1.9km away, indicating the tavern is permanently closed with no online pres"
   },
   {
     "id": "backyard-grill",
@@ -28991,13 +28991,13 @@
   },
   {
     "id": "afro-joes",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 175,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Beloved Black-owned coffee shop in Beverly at 1818 W 99th St; named to Yelp's Top 100 in 2025"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms Afro Joe's Coffee & Tea is operational at 1818 W 99th St (lat 41.714), which is outside the game bbox (min lat 41.74); out-of-bounds relocation must be removed per rules."
   },
   {
     "id": "all-star-press",
@@ -29351,13 +29351,13 @@
   },
   {
     "id": "athletic-field",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago Park District park in Irving Park (same facility as Athletic Field Park)"
+    "statusNote": "Removed via vetting 2026-06-25 (high): The only Google 'Athletic Field Park' is ~11km north of our pin at a completely different location; our pin at (41.850,-87.748) has no named park match — this is a generic OSM athletic-field tag, not a"
   },
   {
     "id": "athletic-field-park",
@@ -29461,13 +29461,13 @@
   },
   {
     "id": "american-beaver",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "American Beaver exhibit in Lincoln Park Zoo's Pritzker Family Children's Zoo, currently active"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google match or web confirmation of any public artwork, sculpture, or attraction named 'American Beaver' at this urban Lakeview pin; fameScore=30 with no photo/clue suggests an obscure OSM artifac"
   },
   {
     "id": "american-girl-cafe",
@@ -30921,23 +30921,23 @@
   },
   {
     "id": "benj-yehuda",
-    "status": "open",
+    "status": "closed",
     "currentName": "BenjYehuda",
     "fameScore": 30,
     "reviewCount": 215,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Israeli falafel and shawarma chain with multiple Loop locations, branded as BenjYehuda"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] BenjYehuda - Wells is OPERATIONAL at 145 N Wells St; our pin is ~549m away from the actual restaurant."
   },
   {
     "id": "benjyehuda",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 215,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Israeli falafel and shawarma fast-casual with multiple downtown locations, active June 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] BenjYehuda - Wacker is OPERATIONAL at 300 S Wacker Dr; our pin is ~561m away from the actual restaurant."
   },
   {
     "id": "bennett-park",
@@ -30961,13 +30961,13 @@
   },
   {
     "id": "bennys-pizza",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 125,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Pilsen neighborhood pizza spot at 18th St, updated May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Benny's Pizza is OPERATIONAL at 1244 W 18th St (Pilsen); our pin at -87.793 is 11km away and was clearly wrong."
   },
   {
     "id": "beograd-cafe",
@@ -31081,13 +31081,13 @@
   },
   {
     "id": "bobs-pizza",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 308,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Pilsen original at 1659 W 21st St remains open; Hyde Park and Evanston locations closed in 2025-2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Nearest Bob's Pizza (1659 W 21st St) is 8.9 km from our pin — no Bob's Pizza exists anywhere near the south-east pin location."
   },
   {
     "id": "bobbies-runaway",
@@ -31131,13 +31131,13 @@
   },
   {
     "id": "bocadillo-market",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 140,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "original Lincoln Park location closed; relaunched in West Town at 1117 W Grand Ave in 2025 under same name"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Bocadillo Market is OPERATIONAL at 1117 W Grand Ave (River West), 4 km from the current Lincoln Park pin; repinning to the correct location."
   },
   {
     "id": "bocaditos-chicago",
@@ -31251,13 +31251,13 @@
   },
   {
     "id": "brickhouse-bar-grill",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 12,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Neighborhood sports bar at 3154 W Irving Park Rd, listed open as of early 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match within 150m of our pin; the only Chicago result ('Budweiser Brickhouse Tavern' at 3647 N Clark) is 4.3km away and is a completely different establishment."
   },
   {
     "id": "brickyard-garden",
@@ -31561,13 +31561,13 @@
   },
   {
     "id": "blue-jay-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open seasonally (summer) at Loyola Beach/Loyola Park; small beachside hot dog and snack stand"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No business named 'Blue Light' exists at or near the West Loop pin; Google only returns 'Bluelight' at Roscoe Village (3251 N Western Ave), 7.4 km away — this is an OSM artifact."
   },
   {
     "id": "blue-light",
@@ -31581,23 +31581,23 @@
   },
   {
     "id": "blue-line-lounge-grill",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 825,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open at 1548 N Damen Ave in Wicker Park/Bucktown under the Blue Line CTA stop; vintage train car themed bar since 2002"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] The real Blue Line Lounge & Grill is OPERATIONAL at 1548 N Damen Ave, not at Rush & Division; repinning to the correct address."
   },
   {
     "id": "blue-spot-sushi",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 26,
     "reviewCount": 25,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open at Chicago French Market (131 N Clinton St); small family-owned sushi stall, weekday lunch hours"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No 'Blue Light' restaurant exists at or near the West Town pin; the only Bluelight Google returns is the Roscoe Village bar 3.6 km away — OSM artifact."
   },
   {
     "id": "big-bowl-chinese-sushi",
@@ -32181,13 +32181,13 @@
   },
   {
     "id": "birrieria-y-carnitas-el-gallito",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 15,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "neighborhood Mexican restaurant at 7021 N Clark St in Rogers Park, modest local presence"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "birrieria-y-taqueria-el-arandas",
@@ -32371,13 +32371,13 @@
   },
   {
     "id": "buena-park-neighborhood-association-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "community garden space associated with Buena Park Neighbors association in Uptown"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google presence near the pin (closest match is 5.75km away and unrelated); this appears to be a minor informal OSM community garden with no discoverability as a game destination."
   },
   {
     "id": "bueno-days",
@@ -32841,23 +32841,23 @@
   },
   {
     "id": "broken-english",
-    "status": "open",
+    "status": "closed",
     "currentName": "Broken English Taco Pub",
     "fameScore": 38,
     "reviewCount": 800,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Loop location (75 E Lake St) open; name 'Broken English' is the shorthand for Broken English Taco Pub"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "broken-english-taco-pub",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 42,
     "reviewCount": 1211,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Loop location active as of June 2026; Old Town location closed May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Broken English found within 150m of the Near North Side pin; the only existing location is 2.6km away in the Loop (a separate pre-existing branch, not a move)."
   },
   {
     "id": "broken-hearts",
@@ -34351,13 +34351,13 @@
   },
   {
     "id": "carnitas-don-rafa",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 44,
     "reviewCount": 87,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "multi-generational carnitas specialist on Archer Ave, open as of May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms the restaurant is OPERATIONAL at 4597 S Archer Ave (~559m west of our pin on the same corridor); within game bbox."
   },
   {
     "id": "carnitas-uruapan-restaurant",
@@ -34601,13 +34601,13 @@
   },
   {
     "id": "central-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small 0.25-acre Chicago Park District playground in East Garfield Park, renovated 2014"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google's 'Central Park' is 12.6km from our pin — too extreme even for a park; no identifiable Central Park exists near our pin in far northwest Chicago, suggesting an OSM artifact at the wrong locati"
   },
   {
     "id": "central-park-bar",
@@ -34711,13 +34711,13 @@
   },
   {
     "id": "chacoan-peccary",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "hoofstock exhibit at Lincoln Park Zoo; zoo has funded Chacoan peccary conservation since 1986"
+    "statusNote": "Removed via vetting 2026-06-25 (high): OSM animal-species node inside Lincoln Park Zoo with no separate Google Places entry; not a recognizable named visitor destination."
   },
   {
     "id": "chai-asian-bistro",
@@ -35071,13 +35071,13 @@
   },
   {
     "id": "chicago-city-hall-roof-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Exists as a green roof demonstration project but not open to public; maintenance access only"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google marks the rooftop garden as CLOSED_PERMANENTLY at 25m from our pin; not a publicly accessible park destination."
   },
   {
     "id": "chicago-cultural-center",
@@ -35411,13 +35411,13 @@
   },
   {
     "id": "child-wild",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Outdoor nature play area at Garfield Park Conservatory; reopened as part of revamped Children's Garden May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google returns zero results near the pin coords (41.887, -87.719); 27550m sweep miss to an unrelated venue; OSM artifact with no real named park at that location."
   },
   {
     "id": "childrens-museum-of-art-and-social-justice",
@@ -35461,13 +35461,13 @@
   },
   {
     "id": "chimpanzee",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 50,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Housed in Regenstein Center for African Apes at Lincoln Park Zoo; major exhibit"
+    "statusNote": "Removed via vetting 2026-06-25 (high): OSM animal-species node within Lincoln Park Zoo; the actual named building at that pin is the Regenstein Center for African Apes, not a place called 'Chimpanzee'."
   },
   {
     "id": "china-cafe",
@@ -35601,13 +35601,13 @@
   },
   {
     "id": "chicago-grilled-cheese-mac-factory",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 51,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small Uptown comfort-food spot, active as of December 2025"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "chicago-harbor",
@@ -35741,13 +35741,13 @@
   },
   {
     "id": "chicago-rib-house",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 18,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "BBQ spot at 3851 S Michigan Ave, operating as of May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match near our pin; 1699m sweep miss with no direct results; no evidence this restaurant exists at that location."
   },
   {
     "id": "chicago-riverwalk",
@@ -35971,13 +35971,13 @@
   },
   {
     "id": "casa-yari",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 40,
     "reviewCount": 291,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Open Puerto Rican-Honduran restaurant relocated to 2745 W Division St in Humboldt Park's Paseo Boricua in February 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms Casa Yari OPERATIONAL at 2743 W Division St, 2.7km from our pin — pin is in the wrong neighborhood; new location is within game bbox."
   },
   {
     "id": "cascabel-taco-joint",
@@ -36111,13 +36111,13 @@
   },
   {
     "id": "chi-tea",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 19,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "halal hot chicken and bubble tea spot opened January 2025 at 6474 N Sheridan Rd in Rogers Park"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "chicago-state-park",
@@ -36701,13 +36701,13 @@
   },
   {
     "id": "chromium",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 17,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Bucktown cafe at 2444 N Elston, open as of June 2026 with very low review count"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match for a cafe named Chromium near the pin; 6269m sweep miss to an unrelated business; no evidence this venue exists."
   },
   {
     "id": "chubby-cattle-bbq",
@@ -36881,13 +36881,13 @@
   },
   {
     "id": "cluckn-wings",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 18,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Halal chicken wings and burgers at 2114 W Lawrence Ave in Ravenswood/Lincoln Square"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "clybourn-park",
@@ -37151,13 +37151,13 @@
   },
   {
     "id": "commissioners-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "Brighton Park Community Campus",
     "fameScore": 14,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "17-acre CPD HQ park in Brighton Park (Park 596), proposed rename to Commissioners Park in May 2025, not yet official"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): All Google and web results for 'Commissioners Park' in the area point to suburban parks in Oak Lawn, Chicago Ridge, and Alsip — no Chicago Park District park by this name found near the pin, suggesti"
   },
   {
     "id": "commitment",
@@ -37181,13 +37181,13 @@
   },
   {
     "id": "commons-club",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 46,
     "reviewCount": 300,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Bar and restaurant at Virgin Hotels Chicago (203 N Wabash), part of the Virgin Hotels brand"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "commonwealth-tavern",
@@ -37201,13 +37201,13 @@
   },
   {
     "id": "community-roots-demonstration-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 6,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Active Chicago Park District demonstration garden at Skinner Park on the Near West Side"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google Places result near the pin (41.879,-87.660); nearest named community garden is 4.5 km away; no web evidence of this specific named garden at this location — likely an OSM artifact."
   },
   {
     "id": "community-tavern",
@@ -37311,23 +37311,23 @@
   },
   {
     "id": "connections-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Campus coffeehouse at Loyola University Chicago between the libraries, Lakeshore campus"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google Places match near the pin; only a stale 2010 Foursquare listing with no operational evidence; sweep match was 12 km away indicating no live business here."
   },
   {
     "id": "connies-coffee",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 150,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Well-regarded specialty coffee shop at 2255 S Michigan Ave with 4.9-star community following"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms Connie's Coffee at ~376 m from pin but status is CLOSED_TEMPORARILY; rules require OPERATIONAL to keep a business."
   },
   {
     "id": "connies-pizza",
@@ -37351,13 +37351,13 @@
   },
   {
     "id": "conscious-plates",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 34,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Alkaline plant-based restaurant in Woodlawn at 820 E 63rd St; financially stressed but currently operating"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "consignment-lounge",
@@ -37771,13 +37771,13 @@
   },
   {
     "id": "cole-porter-pyotr-ilyich-tchaikovsky",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "bronze biographical plaques on the Legacy Walk outdoor museum along Halsted St in Boystown"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No entry in the Chicago Park District monuments database, no web confirmation of a combined Cole Porter + Tchaikovsky monument at or near the pin, and Google found nothing relevant nearby — likely an"
   },
   {
     "id": "coles-bar",
@@ -38791,13 +38791,13 @@
   },
   {
     "id": "crave",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 17,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Small comfort food and bubble tea spot at 185 N Franklin St, The Loop; modest online presence"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match near the Loop pin; the only 'Crave' found is Crave Kabob 2.5km away on W Madison — the Chicago Loop location is no longer operating."
   },
   {
     "id": "dads-park",
@@ -39001,13 +39001,13 @@
   },
   {
     "id": "el-heredero",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 103,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Multiple locations; main Armitage Ave location open, some branches closed"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Taqueria El Heredero II is operational with 769 ratings but the pin is ~1.2km off; repinning to the confirmed Google location."
   },
   {
     "id": "el-ideas",
@@ -39101,13 +39101,13 @@
   },
   {
     "id": "el-pacifico",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 115,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Fullerton Ave location open; Belmont Ave and Mariscos locations confirmed closed"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "el-palmar",
@@ -39701,13 +39701,13 @@
   },
   {
     "id": "drexel-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 14,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Drexel (Francis) Park is a 0.31-acre Chicago Park District playlot in West Englewood"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms Drexel (Francis) Park at 6931 S Damen Ave, 9.7km from our pin which falls in a completely different neighborhood; repinning to the confirmed "
   },
   {
     "id": "drexel-square",
@@ -40261,13 +40261,13 @@
   },
   {
     "id": "dugout",
-    "status": "open",
+    "status": "closed",
     "currentName": "The Dugout",
     "fameScore": 32,
     "reviewCount": 103,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Wrigleyville rooftop bar at 950 W Addison St, open for Cubs games"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Dugout restaurant exists near our pin (41.748693,-87.778004); the only Google matches are The Dugout Bar near Wrigley (24km away) and one in Elmwood Park — both are nowhere close to the pin."
   },
   {
     "id": "duke-of-perth",
@@ -40871,13 +40871,13 @@
   },
   {
     "id": "dimos-pizza",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 1120,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "well-known local Chicago pizza chain; Logan Square location reopened Sep 2025, Wrigleyville open"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] The West Town / Wicker Park location (1615 N Damen Ave) permanently closed August 2025 and relocated to 2246 N Milwaukee Ave in Logan Square."
   },
   {
     "id": "dinah-washington",
@@ -41001,13 +41001,13 @@
   },
   {
     "id": "amandas-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 8,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small community garden at William Ray Elementary in Hyde Park, active Facebook presence"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): fameScore of 8, no Google match anywhere near the pin, and no web evidence of a named public garden at (41.793, -87.594); almost certainly an OSM-tagged residential plot rather than a real destinatio"
   },
   {
     "id": "cumin",
@@ -41371,13 +41371,13 @@
   },
   {
     "id": "dolphins-fish-chicken",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 60,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "south side fish and chicken spot at 1828 W 79th St active per Yelp May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Sweep match was 34km away and CLOSED_PERMANENTLY; Google finds no Dolphin's Fish & Chicken operating in Chicago at or near our pin."
   },
   {
     "id": "doma-cafe",
@@ -41591,13 +41591,13 @@
   },
   {
     "id": "dr-jose-rizal-18611896",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "same Lincoln Park bronze monument as above; José Rizal bust also sits at the Filipino American Council of Chicago"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms 'Jose Rizal Monument' at Marine Drive & Leland, 1.88km from our pin; repinning to the confirmed monument location."
   },
   {
     "id": "elite-boba",
@@ -41841,13 +41841,13 @@
   },
   {
     "id": "el-taconazo",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 102,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open; El Original #1 at 4124 W North Ave (Humboldt Park) plus several related El Taconazo/El Nuevo Taconazo locations citywide"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No El Taconazo restaurant exists within 2km of the pin; the closest candidates (El Nuevo Taconazo) are different businesses and still nearly 2km away."
   },
   {
     "id": "el-tejado-mexican-grill",
@@ -42051,13 +42051,13 @@
   },
   {
     "id": "event-horizon-gallery-vr-lounge",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 65,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "art gallery and VR lounge at 5517 N Clark St, Andersonville, active per late 2025 Yelp"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms CLOSED_PERMANENTLY at 7m from the pin."
   },
   {
     "id": "ever",
@@ -42121,13 +42121,13 @@
   },
   {
     "id": "evitas-steakhouse",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 78,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Kosher Argentinian steakhouse at 6255 McCormick Blvd, North Park, CRC-certified, active per May 2026 Yelp"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): CLOSED_TEMPORARILY on Google and the actual location is 222m from our pin, outside the ~150m threshold for a restaurant."
   },
   {
     "id": "excelsior-garden",
@@ -42531,13 +42531,13 @@
   },
   {
     "id": "feed-your-head",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 14,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "vegan food stand on the Chicago Riverwalk, woman-owned, operating seasonally"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No business found at our pin; the only Google 'Feed Your Head' result is 4677m away in Ukrainian Village and CLOSED_TEMPORARILY — different location."
   },
   {
     "id": "fellger-park",
@@ -42831,13 +42831,13 @@
   },
   {
     "id": "field-park",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 15,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "tiny 0.11-acre neighborhood playlot in North Center at 1822 W Larchmont Ave"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Our pin in Galewood/Austin has no 'Field Park'; the only Google match is Eugene Field Park 10254m away in Albany Park — OSM artifact with wrong location."
   },
   {
     "id": "fiesta-tapatia-restaurant",
@@ -44311,13 +44311,13 @@
   },
   {
     "id": "fruitful-delight-smoothie-juice-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Black-owned smoothie and juice bar near Cermak, limited hours"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google confirms the business OPERATIONAL at 2 E Cermak Rd (41.853077, -87.626745), 942m from current pin; current pin is significantly misplaced."
   },
   {
     "id": "fruve-xpress-juicery",
@@ -44811,13 +44811,13 @@
   },
   {
     "id": "gaslight",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 241,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "active Lincoln Park sports bar and patio at 2450 N Clark St, Yelp updated May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms Gaslight Bar OPERATIONAL at 2450 N Clark St (41.9267986, -87.641603) with 1932 reviews; current pin is 1421m west of the actual location."
   },
   {
     "id": "gaslight-coffee-roasters",
@@ -44951,13 +44951,13 @@
   },
   {
     "id": "georges",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 39,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small fast-food spot in Archer Heights at 5341 S Archer Ave, minimal profile, Yelp updated May 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Yelp (updated June 2026) explicitly lists George's at 5341 S Archer Ave as CLOSED, and no active 'George's - Garfield Ridge' business was found near the pin."
   },
   {
     "id": "georges-deep-dish",
@@ -45041,13 +45041,13 @@
   },
   {
     "id": "green-garden-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 20,
     "reviewCount": 596,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Mexican cafe/restaurant at 3517 W Arthington in North Lawndale; Yelp listing updated February 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google Places finds no match at the pin; nearest named result (Green Tomato Cafe) is 1.9km away at a different address; no reviews or hours data support operational status."
   },
   {
     "id": "green-mill-cocktail-lounge",
@@ -45221,13 +45221,13 @@
   },
   {
     "id": "gorilla-sushi",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 34,
     "reviewCount": 200,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago-local mini-chain with several open locations (Western, Wicker Park, Jefferson Park, Diversey, Clark); some locations closed"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "gorilla-sushi-bar",
@@ -46881,13 +46881,13 @@
   },
   {
     "id": "gold-star-men-of-the-world-war",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 7,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small WWI-era commemorative plaque or monument in a Chicago park; very low public visibility"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google Places result near the Galewood pin; the identically-named monument type is confirmed in Oak Park (not at this location); Chicago's WWI Gold Star street markers are documented as largely go"
   },
   {
     "id": "gold-star-of-the-world-war",
@@ -46971,13 +46971,13 @@
   },
   {
     "id": "golden-gai-sushi-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 23,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "family-owned Pilsen sushi and all-you-can-eat spot at 1144 W 18th St, open as of March 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "golden-house-restaurant",
@@ -47021,13 +47021,13 @@
   },
   {
     "id": "hangovers-sports-bar-and-liquor-store",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 25,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small neighborhood sports bar and liquor store on N Pulaski Rd, Avondale"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms CLOSED_TEMPORARILY at exact pin (~2m); bar is not operational."
   },
   {
     "id": "hangrys",
@@ -47131,13 +47131,13 @@
   },
   {
     "id": "harold-washington-memorial-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small 0.21-acre memorial playground park in Rogers Park operated by Chicago Park District"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): The official Harold Washington Memorial Park is 13km away in Rogers Park; no CPD or Google entry exists at our Humboldt Park pin, suggesting an OSM artifact."
   },
   {
     "id": "harold-washington-park",
@@ -47301,13 +47301,13 @@
   },
   {
     "id": "healing-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 15,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "community healing garden feature (likely at Skinner Park or Ronan Park); active public green space"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No named place found at the Near West Side pin; closest Google match is 6.6km away with a completely different name, indicating an OSM artifact."
   },
   {
     "id": "healthy-and-simple",
@@ -47351,13 +47351,13 @@
   },
   {
     "id": "heineken-pub97",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 26,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago Fire soccer fans sports bar at 3626 N Talman Ave; updated March 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms CLOSED_TEMPORARILY at exact pin (~6m); bar is not operational."
   },
   {
     "id": "helen-doria-beach-park",
@@ -47561,13 +47561,13 @@
   },
   {
     "id": "heritage-outpost",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 101,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "local coffee mini-chain; multiple locations closed but Lawrence Ave location still open as of 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Heritage Outpost is operational at 1020 W Lawrence Ave (Uptown), 8.5km from our Loop pin; repinning to the actual address which is within bbox."
   },
   {
     "id": "hermitage-park",
@@ -47591,13 +47591,13 @@
   },
   {
     "id": "hero-coffee-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 32,
     "reviewCount": 570,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago local coffee chain; many individual locations closed but brand still operating multiple spots"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Yelp confirms the West Town location (1651 W Chicago Ave) is permanently closed; no operational Hero Coffee at our pin."
   },
   {
     "id": "hery-gerber-house",
@@ -48081,13 +48081,13 @@
   },
   {
     "id": "idof",
-    "status": "open",
+    "status": "closed",
     "currentName": "IDOF Fresh Mediterranean",
     "fameScore": 32,
     "reviewCount": 200,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago-area falafel mini-chain; several locations closed but Belmont Ave and Jackson Blvd remain open as of 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No IDOF location within 150m of pin; all three operational Chicago locations are 1300m+ away with no evidence this specific pin was ever a valid IDOF site."
   },
   {
     "id": "idof-i-dream-of-falafel",
@@ -48471,13 +48471,13 @@
   },
   {
     "id": "independence-square",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 30,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Historic 1902 public fountain plaza at end of Independence Boulevard in North Lawndale; fountain has been dry for decades but space is publicly accessible"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google confirms Independence Square exists in Chicago IL 60623 but places it at (41.862657, -87.711874), 680m from our pin; repinning to match Google's con"
   },
   {
     "id": "india-house",
@@ -48601,13 +48601,13 @@
   },
   {
     "id": "infuse-coffee-and-tea-bar",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 50,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Coffee bar at 350 N Orleans St (River North) run by Infuse Hospitality; open weekdays, active as of April 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google Maps presence found for Infuse Coffee and Tea Bar anywhere in Chicago; sweep match was to unrelated catering company Infuse Hospitality."
   },
   {
     "id": "hudson-tampa-red-whittaker",
@@ -48891,13 +48891,13 @@
   },
   {
     "id": "iron-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Small cafe inside the Iron Lab creative space at 3700 S Iron St, Bridgeport; limited hours, appears operational"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google confirms Iron Cafe at the exact pin but status is CLOSED_TEMPORARILY; rules require OPERATIONAL to keep, and with only 15 ratings it has minimal fame."
   },
   {
     "id": "ironside-bar-galley",
@@ -48911,13 +48911,13 @@
   },
   {
     "id": "iroquois-theatre-fire-memorial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 30,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "Lorado Taft bronze tablet at Chicago City Hall (121 N LaSalle St) commemorating the 1903 fire that killed 602; rededicated 2010"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Pin is in Rogers Park (~13.5km from the actual Iroquois Theatre site); the memorial plaque is at/near the Nederlander Theatre (former Iroquois Theatre) at "
   },
   {
     "id": "isabelle-jones",
@@ -49021,13 +49021,13 @@
   },
   {
     "id": "hong-kong-restaurant",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 58,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "longtime neighborhood Chinese restaurant at 2757 W 55th St in Gage Park, still open as of 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Hong Kong Restaurant found near pin; only Google result is 18km south on W 55th St, a completely different establishment."
   },
   {
     "id": "honor",
@@ -49191,13 +49191,13 @@
   },
   {
     "id": "hot-chi",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 69,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago-based Nashville hot chicken mini-chain with several locations including a 2025 Lakeview opening"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] No Hot Chi at pin location; closest confirmed operational Hot Chi Chicken is at 433 W Van Buren St, ~750m away."
   },
   {
     "id": "hot-dougs-wrigley-field",
@@ -49241,13 +49241,13 @@
   },
   {
     "id": "jackson-shore-apartments",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "historic 1916-18 Classical Revival co-op building in Hyde Park at 5490 S Shore Dr"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google listing exists for 'Jackson Shore Apartments'; the sweep matched the Shoreland Apartments (a distinct, different building) 81m away, suggesting this is an OSM artifact rather than a recogni"
   },
   {
     "id": "jacob-a-riis-memorial",
@@ -49361,13 +49361,13 @@
   },
   {
     "id": "jamaica-island-jerk-chicken",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 18,
     "reviewCount": 14,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small Jamaican-owned jerk chicken restaurant at 5049 S Halsted"
+    "statusNote": "Removed via vetting 2026-06-25 (high): No Google match for any jerk chicken restaurant at or near the pin (41.802, -87.645); the business does not appear to exist at that location."
   },
   {
     "id": "jamaican-jerk-king",
@@ -49391,13 +49391,13 @@
   },
   {
     "id": "james-big-jim-colosimo",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 45,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "mausoleum/grave site of Chicago Outfit founder at Oak Woods Cemetery; Colosimo's Cafe site also a historic landmark"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Google confirms historical marker 'Colosimo's Restaurant 1909-c.1960' at 2126 S Wabash Ave; our pin is ~9.5km south of the actual landmark location."
   },
   {
     "id": "james-c-petrillo-music-shell",
@@ -49501,13 +49501,13 @@
   },
   {
     "id": "intelligentsia-roasting-works-offices",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 28,
     "reviewCount": 29,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Production roasting facility and offices at 1850 W Fulton St; open by appointment only, not a public cafe"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Intelligentsia's Chicago Roasting Works relocated to Bedford Park (outside bbox); no Intelligentsia location found near the Near West Side pin."
   },
   {
     "id": "interfaith-park",
@@ -49651,13 +49651,13 @@
   },
   {
     "id": "ivory-gate-gallery",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "small contemporary gallery at 44 E Cedar St, founded 2023; very limited public profile"
+    "statusNote": "Removed via vetting 2026-06-25 (high): Google confirms CLOSED_PERMANENTLY at the exact pin location."
   },
   {
     "id": "ixcateco-grill",
@@ -49731,13 +49731,13 @@
   },
   {
     "id": "js-snack-house",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 14,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open in Chinatown's Richland Center food court at 2002 S Wentworth Ave; Yelp updated April 2026"
+    "statusNote": "Removed via vetting 2026-06-25 (high): A different Chinese restaurant now occupies this address (~19m from pin); J's Snack House is gone with no trace at this location."
   },
   {
     "id": "jm-tap",
@@ -49981,13 +49981,13 @@
   },
   {
     "id": "jerez",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 25,
     "reviewCount": 42,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Mexican restaurant at 4803 N Pulaski Rd in Jefferson Park neighborhood"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): Google Places now shows 'Santiago's Restaurant' at our pin address (4803 N Pulaski area); Jerez appears permanently closed there, and the 'Jerez Sports Bar & Grill' 6.4km away is a different unrelate"
   },
   {
     "id": "jerk-jamaican-barbecue",
@@ -50051,13 +50051,13 @@
   },
   {
     "id": "jesse-binga",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 0,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "registered Chicago landmark — Binga's house at 5922 S King Dr still stands; has own Wikipedia article"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Jesse Binga House confirmed at 5922 S MLK Dr (41.786828,-87.616009); our pin at 41.832 is ~5.1km north of the actual landmark."
   },
   {
     "id": "jesse-owens",
@@ -50091,13 +50091,13 @@
   },
   {
     "id": "jessie-ma-houston",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "commemorated via a 1994 mural near Rainbow PUSH Coalition; recognized civil rights figure but limited broader local fame"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Google confirms Houston (Jessie 'Ma') Park at 5001 S Cottage Grove Ave (41.803297,-87.604643); our pin at 41.834 is ~3.6km north of the actual park."
   },
   {
     "id": "jessie-ma-houston-park",
@@ -50361,13 +50361,13 @@
   },
   {
     "id": "jarabe-mexican-street-food",
-    "status": "open",
+    "status": "closed",
     "currentName": "Jarabe",
     "fameScore": 38,
     "reviewCount": 297,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Same restaurant as Jarabe at 1104 W Taylor St; operating name is simply Jarabe"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Jarabe - Taqueria confirmed OPERATIONAL at 1104 W Taylor St (41.86971,-87.65453) with 705 ratings; our pin is ~2.4km too far west."
   },
   {
     "id": "jardine-bird-sanctuary",
@@ -50791,13 +50791,13 @@
   },
   {
     "id": "kanlaya",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 35,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "neighborhood Thai restaurant in Lincoln Square at 4757 N Western Ave, active through March 2026"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "kapej-coffee",
@@ -50831,13 +50831,13 @@
   },
   {
     "id": "jinsei-motto",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 150,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Original West Loop location (564 W Randolph) closed; reopened at 2456 N California Ave in Logan Square under same name"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Restaurant confirmed moved from West Loop (our pin) to 2456 N California Ave in Logan Square; OPERATIONAL there with 286 ratings; new coords within game boun"
   },
   {
     "id": "jj-fish-chicken",
@@ -51851,13 +51851,13 @@
   },
   {
     "id": "whale-tale",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 90,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Lincoln Park bar affiliated with Pequod's Pizza group, limited weekend hours"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "wheats-end-cafe",
@@ -52061,13 +52061,13 @@
   },
   {
     "id": "wild-hare",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 48,
     "reviewCount": 257,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "legendary reggae venue; original Clark St location closed 2011, reopened at 950 W Fulton Market by 2025"
+    "statusNote": "Removed via vetting 2026-06-25 (high): [repin>150m or oob -> remove, re-add later] Wild Hare moved from Wrigleyville to 952 W Fulton St in Fulton Market in May 2025 and is OPERATIONAL there; repin to new confirmed location."
   },
   {
     "id": "wild-mile",
@@ -52361,13 +52361,13 @@
   },
   {
     "id": "winthrop-garden",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 10,
     "reviewCount": 0,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Winthrop Garden POP! Plaza opened October 2022 at 4628 N Winthrop in Uptown"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] The actual Winthrop Family Historical Garden is at 4628 N Winthrop Ave (Uptown, lat 41.9661); our pin at 42.0018 is 3.9km north with nothing verified there"
   },
   {
     "id": "winthrop-harmony-arts-garden",
@@ -52441,13 +52441,13 @@
   },
   {
     "id": "woke-soul-coffee",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 12,
     "reviewCount": 20,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "mobile pop-up coffee operation without a fixed storefront; runs pop-ups at partner venues"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): No Google Places result matches 'Woke Soul Coffee' anywhere in Chicago; the only nearby match is a different business (Soul Full Chicago) that is itself temporarily closed."
   },
   {
     "id": "wolcott-park",
@@ -52651,13 +52651,13 @@
   },
   {
     "id": "world-war-i-memorial",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 22,
     "reviewCount": 10,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "Chicago has multiple WWI memorials in parks (Monument Park, West Pullman, Edison Park); low-profile public monuments"
+    "statusNote": "Removed via vetting 2026-06-25 (medium): OSM Nominatim reverse-geocodes the pin to North Francisco Avenue (a residential street in Palmer Square/Logan Square), and no WWI memorial is documented at or near this location — the Landmarks Illin"
   },
   {
     "id": "world-war-one-memorial",
@@ -52841,13 +52841,13 @@
   },
   {
     "id": "xurro",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 30,
     "reviewCount": 280,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "regional churro chain with 13 locations in IL/WI/IN/FL; Navy Pier location closed, other Chicago shops open"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "y-bar",
@@ -53031,13 +53031,13 @@
   },
   {
     "id": "yummy-thai",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 38,
     "reviewCount": 307,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "woman-owned Thai spot on W Taylor St in Little Italy, consistently active"
+    "statusNote": "Permanently closed per Google Places (verified 2026-06-25)"
   },
   {
     "id": "yummy-yummy-asian-cuisine",
@@ -55928,5 +55928,15 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "mazala-pizza-by-moti",
+    "status": "closed",
+    "currentName": "",
+    "fameScore": 0,
+    "reviewCount": 0,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Removed via vetting 2026-06-25 (medium): [repin>150m or oob -> remove, re-add later] Mazala Pizza River North at 70 W Huron St is OPERATIONAL in Chicago; original pin was 3.3km off from the actual restaurant location."
   }
 ]

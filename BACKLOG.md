@@ -60,6 +60,18 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       entries; maintain a per-city ban list / extend `CLOSED`. (St. Pete swept by
       the fame+status pass in PR #40 — 133 closed/junk removed; the other cities
       get the same sweep as part of their difficulty rollout above.)
+- [ ] **Re-add relocated Chicago venues (post full-vetting, PR #145).** The
+      2026-06-25 freshness+vetting pass removed 56 venues that had relocated >150 m
+      (never-commit-moved-coords policy) — all are operational but at a stale pin.
+      Re-add the in-bounds, currently-open ones cleanly via the `add-location`
+      skill (Nominatim/Census coords, Google-calibrated fame). Prominent ones to
+      prioritize: **Wild Hare** (moved to Fulton Market, 952 W Fulton St — note
+      there are two dead slugs `wild-hare` + `the-wild-hare`; pick one, retire the
+      other), **Iroquois Theatre Fire Memorial** (Nederlander/Oriental Theatre,
+      in-bounds), **Steak 'n Egger**, **Shang Noodle** (Streeterville), **Serai**,
+      **Ralph H. Metcalfe** (federal building). Skip out-of-bbox relocations
+      (e.g. `afro-joes` → 1818 W 99th St, south of bounds) per the no-bounds-
+      expansion rule. Full list of 56 in the PR #145 vetting decisions.
 - [ ] **Bulk-fetch mode for `add-polygons`.** Per-location querying hits Overpass
       per-IP rate limits on large cities (Chicago = 789 rows, hours). A single
       bulk query for all named leisure/golf geometry in the city bbox, matched
