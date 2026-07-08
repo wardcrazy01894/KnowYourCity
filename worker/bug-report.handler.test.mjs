@@ -245,6 +245,26 @@ describe('bug-report worker handler', () => {
     expect(githubCall.body.body).not.toMatch(/<a\s/i)
   })
 
+  it('neutralizes MARKDOWN smuggled in an own-origin URL query', async () => {
+    // new URL().href percent-encodes <>" but NOT markdown metachars []()! —
+    // so an own-origin URL like ?a=![beacon](https://evil/track.png) would
+    // render as an auto-loading image (or a [text](url) disguised link) unless
+    // the parsed href is ALSO defanged before embedding.
+    await handler.fetch(
+      post({
+        message: 'hi',
+        context: {
+          url: ORIGIN + '/?a=![beacon](https://evil.example/track.png)',
+        },
+      }),
+      makeEnv(),
+    )
+    expect(githubCall.body.body).not.toMatch(/!\[/)
+    expect(githubCall.body.body).not.toMatch(/\]\(/)
+    // Still readable for triage.
+    expect(githubCall.body.body).toContain('evil.example')
+  })
+
   it('caps an absurdly long reported URL', async () => {
     await handler.fetch(
       post({

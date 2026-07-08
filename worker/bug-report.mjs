@@ -219,17 +219,21 @@ export default {
 
     // Keep the reported URL only if it's from our own site (else it's a
     // potential attacker-planted phishing link in a public issue). Even an
-    // own-origin URL can smuggle raw HTML in its path/fragment
-    // (https://site/#<img src=…>) or hide a payload behind a newline that
-    // new URL() parses around but a template string preserves — so embed the
-    // PARSED href (which percent-encodes <>/quotes/whitespace), never the raw
-    // string. Length-capped like every other reported field.
+    // own-origin URL can smuggle a payload in its path/query/fragment, so two
+    // layers on the kept URL:
+    //  - embed the PARSED href, never the raw string — percent-encodes raw
+    //    HTML (<>/quotes) and strips the newline new URL() parses around but a
+    //    template string would preserve;
+    //  - defang() the href too — href does NOT encode markdown metachars, so
+    //    ?a=![beacon](https://evil/track.png) would still render as an
+    //    auto-loading image (or [text](url) as a disguised link) without it.
+    // Length-capped like every other reported field.
     const url = String(ctx.url ?? '').slice(0, MAX_URL)
     const origins = allowedOrigins(env)
     const safeUrl = origins.includes('*')
       ? defang(url)
       : urlFromAllowedOrigin(url, origins)
-        ? new URL(url).href
+        ? defang(new URL(url).href)
         : '(omitted)'
 
     const title =
