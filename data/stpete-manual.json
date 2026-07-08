@@ -178,6 +178,17 @@
       "attribution": "OpenStreetMap ODbL"
     },
     {
+      "id": "fortunatos-italian-pizzeria-pasadena",
+      "name": "Fortunatos Italian Pizzeria Pasadena",
+      "lat": 27.75904,
+      "lng": -82.7357,
+      "category": "restaurant",
+      "clue": null,
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (Nominatim address point)"
+    },
+    {
       "id": "fossil-park",
       "name": "Fossil Park",
       "lat": 27.8334822,
@@ -220,6 +231,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap Nominatim"
+    },
+    {
+      "id": "horse-and-jockey",
+      "name": "The Horse & Jockey",
+      "lat": 27.75814,
+      "lng": -82.73655,
+      "category": "bar",
+      "clue": "A proper British pub — live music, footy on the telly, and fish and chips.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (Nominatim address point)"
     },
     {
       "id": "hubbards-marina",
@@ -506,6 +528,17 @@
       "photoUrl": null,
       "source": "manual",
       "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
+    },
+    {
+      "id": "valentys-lounge",
+      "name": "Valenty's Lounge",
+      "lat": 27.75912,
+      "lng": -82.73601,
+      "category": "bar",
+      "clue": "A time-capsule cocktail lounge behind a liquor store, pouring cheap old fashioneds since 1987.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (Nominatim address point)"
     },
     {
       "id": "welcome-to-the-farm",

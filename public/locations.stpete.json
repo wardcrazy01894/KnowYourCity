@@ -1857,6 +1857,21 @@
       "lastVerified": "2026-06-16"
     },
     {
+      "id": "fortunatos-italian-pizzeria-pasadena",
+      "name": "Fortunatos Italian Pizzeria Pasadena",
+      "lat": 27.75904,
+      "lng": -82.7357,
+      "category": "restaurant",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 45,
+      "clue": null,
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (Nominatim address point)",
+      "lastVerified": "2026-07-08"
+    },
+    {
       "id": "fossil-park",
       "name": "Fossil Park",
       "lat": 27.8334822,
@@ -2080,7 +2095,7 @@
       "lat": 27.809623,
       "lng": -82.754823,
       "category": "restaurant",
-      "difficulty": "easy",
+      "difficulty": "medium",
       "inPlay": true,
       "fameScore": 45,
       "clue": null,
@@ -2328,6 +2343,21 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "horse-and-jockey",
+      "name": "The Horse & Jockey",
+      "lat": 27.75814,
+      "lng": -82.73655,
+      "category": "bar",
+      "difficulty": "easy",
+      "inPlay": true,
+      "fameScore": 64,
+      "clue": "A proper British pub — live music, footy on the telly, and fish and chips.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (Nominatim address point)",
+      "lastVerified": "2026-07-08"
     },
     {
       "id": "huaroche-veloz",
@@ -5924,6 +5954,21 @@
       "source": "overpass",
       "attribution": "OpenStreetMap ODbL",
       "lastVerified": "2026-06-16"
+    },
+    {
+      "id": "valentys-lounge",
+      "name": "Valenty's Lounge",
+      "lat": 27.75912,
+      "lng": -82.73601,
+      "category": "bar",
+      "difficulty": "medium",
+      "inPlay": true,
+      "fameScore": 42,
+      "clue": "A time-capsule cocktail lounge behind a liquor store, pouring cheap old fashioneds since 1987.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (Nominatim address point)",
+      "lastVerified": "2026-07-08"
     },
     {
       "id": "victors-kitchen",
