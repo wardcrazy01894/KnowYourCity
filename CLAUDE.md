@@ -69,6 +69,7 @@ npm run fetch-food   # rebuild data/food-candidates.json from OpenStreetMap
 npm run build-city   # assemble one city's public/locations.<id>.json
 npm run add-polygons # backfill park/golf footprint rings from OSM
 npm run check-chains # flag national chains that leaked past the fame pass
+npm run pin-day      # freeze a city's live day BEFORE any dataset edit (owner rule)
 ```
 
 Run `npm run typecheck && npm run lint && npm run format:check && npm test &&

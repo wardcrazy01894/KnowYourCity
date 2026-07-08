@@ -26,6 +26,16 @@ context"_, the session is on the 1M-context model. Fix before starting: run
 
 Arguments: **$ARGUMENTS** — a city name or id (and optionally `uncapped`).
 
+## 0. REFRESHING A LIVE CITY? Pin its day first (owner rule, 2026-07-08)
+
+A rebuild/refresh is the biggest dataset mutation there is, and the PRNG daily
+selection is a function of the in-play pool — so it WILL re-roll the lineup
+players are living through. **Before touching a launched city's dataset, run
+`npm run pin-day -- <city>`** and commit `src/data/dailyOverrides.ts` in the
+same PR (see docs/DATA-SOURCING.md §4 warning). Skip only for a brand-new,
+not-yet-launched city. If a re-roll already shipped, restore with
+`npm run pin-day -- <city> --ref <pre-edit-sha>`.
+
 ## 1. Register / confirm the city in `cities.json`
 
 Each city is one object: `id` (kebab slug), `name`, `short`, `timeZone` (IANA),

@@ -52,7 +52,17 @@ node -e 'const d=require("./public/locations.<city>.json").locations;
   pipeline already researched and dropped it — don't re-add without fresh
   evidence it reopened.
 
-## 4. Add the entry — three files, then recalibrate
+## 4. Add the entry — PIN THE LIVE DAY FIRST, then three files + recalibrate
+
+**MANDATORY step 0 (owner rule, 2026-07-08): `npm run pin-day -- <city>`
+BEFORE touching the dataset.** The PRNG daily selection is a function of the
+in-play pool, so any dataset edit can re-roll the lineup players are already
+playing mid-day (this exact flow caused it once — the Horse & Jockey batch).
+`pin-day` freezes the city-local current day as a `DAILY_OVERRIDES` entry
+using the real selection code; commit `src/data/dailyOverrides.ts` with the
+same PR. If a re-roll already shipped, restore with
+`npm run pin-day -- <city> --ref <pre-edit-sha>`. Skips safely if the day is
+already pinned.
 
 1. **`data/<city>-manual.json`** (committed source of curated adds; create from
    `stpete-manual.json`'s shape if the city has none): id (kebab slug), name,
