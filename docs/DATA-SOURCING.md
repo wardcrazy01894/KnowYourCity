@@ -579,7 +579,7 @@ through to the next — so the flagship's 406/429 rate-limiting is ridden out
 rather than wasting time on overloaded mirrors.
 
 > **Big cities & rate limits.** Per-location querying of a very large city (e.g.
-> Chicago = 789 park/golf rows) can hit Overpass per-IP rate limits for hours. A
+> Chicago = 764 park/golf rows) can hit Overpass per-IP rate limits for hours. A
 > far faster, rate-limit-proof alternative is a **single bulk query** for all
 > named leisure/golf geometry in the city bbox (from any mirror), matched locally
 > with the same helpers (`filterByName → pickBestMatch → extractOuterRing →
@@ -632,7 +632,8 @@ straight onto the rows, so a plain re-run leaves them alone (idempotent skip);
 README / docs/PLAN.md) — it plays one round per polygon location in the city so
 each shaded boundary can be eyeballed against the satellite map. Append a
 comma-separated id list to re-check just a few: **`?polygons=azalea-park,isla-del-sol`**.
-State College is fully backfilled (33/33).
+State College is fully backfilled (38/38 in play; 50/50 including benched
+rows via `--all`).
 
 ---
 

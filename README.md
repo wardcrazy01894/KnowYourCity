@@ -59,6 +59,7 @@ New puzzle daily at **midnight in the city's timezone**.
 ```bash
 npm install
 npm run dev          # → http://localhost:5173/
+npm run preview      # serve the production build locally (after npm run build)
 ```
 
 ## 🧪 Local testing
