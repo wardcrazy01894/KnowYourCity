@@ -1,8 +1,10 @@
 /**
- * Pure decision helpers for the stale-tab version check.
- * Extracted so they can be unit-tested independently of React and fetch.
+ * The stale-tab version check: pure decision helpers plus the /version.json
+ * fetch. Extracted so they can be unit-tested independently of React (the
+ * fetch is injectable for the same reason).
  */
 
+import { log } from './log'
 import type { GameState } from '../types'
 
 /**
@@ -45,6 +47,39 @@ export function shouldDeferReload(
  *              later check (interval/tab-focus) picks it up once it's safe — there's
  *              no banner to click.
  */
+/**
+ * Fetch the deployed build hash from /version.json (cache-busted). Returns the
+ * hash, or null on any failure — never throws.
+ *
+ * Failure logging is deliberate (scan finding): if /version.json persistently
+ * 404s/breaks after a bad deploy, players silently stop auto-updating, and
+ * without these lines that would be invisible in kycDumpLogs(). HTTP/shape
+ * failures are warn (a real server-side problem, rare, actionable); a network
+ * throw is debug (offline is expected transient noise — visible under ?debug).
+ */
+export async function fetchRemoteHash(
+  fetchFn: typeof fetch = fetch,
+): Promise<string | null> {
+  try {
+    const r = await fetchFn(`/version.json?_=${Date.now()}`)
+    if (!r.ok) {
+      log.warn('App', 'version check failed', { status: r.status })
+      return null
+    }
+    const data = (await r.json()) as { hash?: unknown }
+    if (typeof data.hash !== 'string') {
+      log.warn('App', 'version check failed', {
+        reason: 'malformed version.json',
+      })
+      return null
+    }
+    return data.hash
+  } catch (e) {
+    log.debug('App', 'version check failed', { error: String(e) })
+    return null
+  }
+}
+
 export function versionCheckAction(
   localHash: string,
   remoteHash: string,

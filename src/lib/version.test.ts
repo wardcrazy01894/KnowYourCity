@@ -1,6 +1,15 @@
-import { describe, expect, it } from 'vitest'
-import { versionCheckAction, shouldDeferReload } from './version'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import {
+  versionCheckAction,
+  shouldDeferReload,
+  fetchRemoteHash,
+} from './version'
+import { log } from './log'
 import type { GameState } from '../types'
+
+afterEach(() => {
+  vi.restoreAllMocks()
+})
 
 const game = (over: Partial<GameState> = {}): GameState => ({
   dateKey: '2026-06-18',
@@ -63,5 +72,54 @@ describe('shouldDeferReload', () => {
 
   it('defers on any unfinished game from a different day too', () => {
     expect(shouldDeferReload(game({ dateKey: '2026-06-17' }), today)).toBe(true)
+  })
+})
+
+describe('fetchRemoteHash', () => {
+  const res = (over: Partial<Response> = {}) =>
+    ({
+      ok: true,
+      status: 200,
+      json: async () => ({ hash: 'abc123' }),
+      ...over,
+    }) as Response
+
+  it('returns the deployed hash on a good response', async () => {
+    const fetchFn = vi.fn(async () => res()) as unknown as typeof fetch
+    expect(await fetchRemoteHash(fetchFn)).toBe('abc123')
+  })
+
+  it('returns null and logs the HTTP status when /version.json is failing', async () => {
+    // A persistent 404/500 after a bad deploy means players silently stop
+    // auto-updating — that must be diagnosable from kycDumpLogs() alone.
+    const warn = vi.spyOn(log, 'warn')
+    const fetchFn = vi.fn(async () =>
+      res({ ok: false, status: 404 }),
+    ) as unknown as typeof fetch
+    expect(await fetchRemoteHash(fetchFn)).toBeNull()
+    const call = warn.mock.calls.find((c) => /version/i.test(String(c[1])))
+    expect(JSON.stringify(call)).toMatch(/404/)
+  })
+
+  it('returns null and logs when version.json is malformed', async () => {
+    const warn = vi.spyOn(log, 'warn')
+    const fetchFn = vi.fn(async () =>
+      res({ json: async () => ({ nope: true }) }),
+    ) as unknown as typeof fetch
+    expect(await fetchRemoteHash(fetchFn)).toBeNull()
+    const call = warn.mock.calls.find((c) => /version/i.test(String(c[1])))
+    expect(JSON.stringify(call)).toMatch(/malformed/)
+  })
+
+  it('returns null quietly (debug level) on a network error', async () => {
+    // Offline/fetch-blocked is expected transient noise — keep it at debug so
+    // normal play isn't noisy, but still traceable under ?debug.
+    const debug = vi.spyOn(log, 'debug')
+    const fetchFn = vi.fn(async () => {
+      throw new Error('offline')
+    }) as unknown as typeof fetch
+    expect(await fetchRemoteHash(fetchFn)).toBeNull()
+    const call = debug.mock.calls.find((c) => /version/i.test(String(c[1])))
+    expect(JSON.stringify(call)).toMatch(/offline/)
   })
 })
