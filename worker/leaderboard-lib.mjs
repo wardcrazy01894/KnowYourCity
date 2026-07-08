@@ -127,11 +127,16 @@ export function validateSubmission(body, now = new Date()) {
 /**
  * UPSERT the device's score for a (city, date, client_id, LINEUP) and read back
  * the standing in one atomic D1 batch. Keying on `lineup` means a replay against
- * a CHANGED official set inserts its OWN row (a player can hold more than one
- * entry that day), while a reload of the SAME completion keeps-max in place —
- * a replay can't lower a given lineup's stored score. Rank counts strictly-higher
- * stored scores across the whole day's board (every lineup), so ties share a
- * rank and rank = better + 1; `total` is every row for the day.
+ * a CHANGED official set inserts its OWN row (a device can hold more than one
+ * stored entry that day), while a reload of the SAME completion keeps-max in
+ * place — a replay can't lower a given lineup's stored score.
+ *
+ * The STANDING, though, treats one human as one competitor (scan fix): rank and
+ * `total` are computed over each device's BEST score for the day, not raw rows —
+ * otherwise a single replayer holds 2+ rows, inflating "of N today" and pushing
+ * every other player's rank down by counting the same human twice. Ties share a
+ * rank (strictly-greater counting), rank = better + 1; `total` is the number of
+ * distinct devices on the day's board.
  */
 export async function upsertAndRank(
   db,
@@ -149,16 +154,18 @@ export async function upsertAndRank(
     .bind(city, date, clientId, lineup, score, now)
   const standing = db
     .prepare(
-      `SELECT
-         (SELECT COUNT(*) FROM scores s
-            WHERE s.city = ?1 AND s.date = ?2
-              AND s.score > (SELECT score FROM scores
-                             WHERE city = ?1 AND date = ?2
-                               AND client_id = ?3 AND lineup = ?4)
+      `WITH best AS (
+         SELECT client_id, MAX(score) AS score FROM scores
+         WHERE city = ?1 AND date = ?2
+         GROUP BY client_id
+       )
+       SELECT
+         (SELECT COUNT(*) FROM best
+            WHERE score > (SELECT score FROM best WHERE client_id = ?3)
          ) AS better,
-         (SELECT COUNT(*) FROM scores WHERE city = ?1 AND date = ?2) AS total`,
+         (SELECT COUNT(*) FROM best) AS total`,
     )
-    .bind(city, date, clientId, lineup)
+    .bind(city, date, clientId)
   const results = await db.batch([upsert, standing])
   const row = results[1].results[0]
   return { rank: Number(row.better) + 1, total: Number(row.total) }
@@ -253,20 +260,25 @@ export async function updateStreak(db, { city, clientId, date }, now) {
 
 /**
  * Read the day's top scores (desc, capped at TOP_LIMIT) plus the total entry
- * count for a city + date. Anonymous: scores only — no ids, no names. The client
- * assigns display ranks (ties share a rank) and highlights the player's own row.
+ * count for a city + date. Anonymous: scores only — no ids, no names. One row
+ * per DEVICE — its best score of the day — matching upsertAndRank's standing
+ * semantics (a replayer's stored second row never occupies a second board
+ * slot). The client assigns display ranks (ties share a rank) and highlights
+ * the player's own row.
  */
 export async function topScores(db, city, date, limit = TOP_LIMIT) {
   const list = db
     .prepare(
-      `SELECT score FROM scores
+      `SELECT MAX(score) AS score FROM scores
        WHERE city = ?1 AND date = ?2
+       GROUP BY client_id
        ORDER BY score DESC LIMIT ?3`,
     )
     .bind(city, date, limit)
   const count = db
     .prepare(
-      `SELECT COUNT(*) AS total FROM scores WHERE city = ?1 AND date = ?2`,
+      `SELECT COUNT(DISTINCT client_id) AS total FROM scores
+       WHERE city = ?1 AND date = ?2`,
     )
     .bind(city, date)
   const [listRes, countRes] = await db.batch([list, count])

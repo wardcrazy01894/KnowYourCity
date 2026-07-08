@@ -270,8 +270,10 @@ describe('buildLeaderboardRows', () => {
     )
   })
 
-  // A player who replayed a changed lineup has TWO scores on the day's board;
-  // both their rows are flagged (multiset), distinct scores or tied.
+  // The live board is one-row-per-device now (per-client best), so a viewer
+  // passes at most ONE score — but buildLeaderboardRows deliberately keeps its
+  // multiset capability as a safety net (see its docstring). These pin that
+  // RETAINED capability, not a scenario the deduped board can still produce.
   it('flags both of the viewer’s scores when they have two entries', () => {
     const rows = buildLeaderboardRows([480, 420, 380, 300], [420, 380])
     expect(rows.filter((r) => r.you).map((r) => r.score)).toEqual([420, 380])

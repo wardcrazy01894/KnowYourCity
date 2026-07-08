@@ -90,8 +90,9 @@ directory because it imports the bug worker's `cors`/origin helpers. It backs th
 `(city, date, device, lineup)` in
 [Cloudflare **D1**](https://developers.cloudflare.com/d1/) (serverless SQLite)
 and answer "you placed **Xth of Y** today". (`lineup` — migration `0003` — lets a
-device hold a second row when it replays a _changed_ official set; the day's board
-is the union of rows, keep-max per lineup.)
+device hold a second stored row when it replays a _changed_ official set;
+keep-max per lineup. Rank/total/board are computed over each device's **best**
+score — one human = one competitor.)
 
 - **Anonymous.** Identity is a random UUID in the browser's `localStorage`
   (`kyc:clientId`) — no accounts, no names, no PII. The `scores.user_id` column

@@ -339,11 +339,12 @@ export interface LeaderboardRow {
 /**
  * Turn a desc-sorted score list into ranked rows. Ties share a rank (standard
  * competition ranking: 480, 480, 420 → ranks 1, 1, 3). `yourScores` are the
- * viewer's own totals for the day — usually one, but a player who replayed a
- * changed official set has two (both rows are theirs). Each of your scores
- * flags ONE matching row (a multiset: two of your rows at 380 flag two 380s);
- * anonymous play can't distinguish tied players, so among equal scores we just
- * flag the first unflagged ones. Pure.
+ * viewer's own totals for the day — the board is one row per device (its best;
+ * see topScores in worker/leaderboard-lib.mjs), so Results passes at most the
+ * viewer's single best score. The function stays multiset-capable (each of
+ * your scores flags ONE matching row) for safety; anonymous play can't
+ * distinguish tied players, so among equal scores we just flag the first
+ * unflagged ones. Pure.
  */
 export function buildLeaderboardRows(
   scores: number[],
