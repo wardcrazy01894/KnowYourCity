@@ -20,8 +20,7 @@
     "fetch-food": "node scripts/fetch-food.mjs",
     "build-city": "node scripts/build-city.mjs",
     "check-chains": "node scripts/check-chains.mjs",
-    "add-polygons": "node scripts/add-polygons.mjs",
-    "deploy": "npm run build && gh-pages -d dist"
+    "add-polygons": "node scripts/add-polygons.mjs"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",
@@ -41,7 +40,6 @@
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.9",
-    "gh-pages": "^6.1.1",
     "globals": "^15.9.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.3.3",
