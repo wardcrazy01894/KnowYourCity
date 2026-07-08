@@ -13,7 +13,7 @@
  * post-simplification ring > 100 nodes) are left without a `polygon` and fall
  * back to centroid-point scoring at runtime — no crash, no silent wrong answer.
  *
- * Durable for big, rate-limited cities (Chicago = 789 park/golf, hours under
+ * Durable for big, rate-limited cities (Chicago = 764 park/golf, hours under
  * Overpass throttling):
  *  - Each query tries the mirrors in RELIABILITY order (flagship first) with a
  *    per-request abort (FETCH_TIMEOUT_MS) so a hung/slow mirror can't stall the
@@ -145,7 +145,7 @@ const FETCH_TIMEOUT_MS = 25000
 /** Write the dataset back every N newly-matched rows so a long, rate-limited run
  *  is crash-safe and resumable: a killed run keeps its progress, and re-running
  *  (without --force) skips rows that already have a polygon, picking up where it
- *  left off. Critical for big cities (Chicago = 789 park/golf, ~hours under
+ *  left off. Critical for big cities (Chicago = 764 park/golf, ~hours under
  *  Overpass throttling). */
 const CHECKPOINT_EVERY = 20
 

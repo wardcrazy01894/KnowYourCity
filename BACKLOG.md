@@ -73,7 +73,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       (e.g. `afro-joes` → 1818 W 99th St, south of bounds) per the no-bounds-
       expansion rule. Full list of 56 in the PR #145 vetting decisions.
 - [ ] **Bulk-fetch mode for `add-polygons`.** Per-location querying hits Overpass
-      per-IP rate limits on large cities (Chicago = 789 rows, hours). A single
+      per-IP rate limits on large cities (Chicago = 764 rows, hours). A single
       bulk query for all named leisure/golf geometry in the city bbox, matched
       locally with the existing helpers, is dramatically faster and rate-limit-
       proof — Chicago was completed this way as a one-off. Fold it into the script
