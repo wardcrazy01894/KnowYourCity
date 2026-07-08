@@ -338,8 +338,8 @@ intended way to capture a repro and hand it to a developer.
   configured, it falls back to opening a prefilled GitHub issue page. The token
   is never in the client bundle. The worker is hardened for a public endpoint:
   defangs `@mentions`/code-fences, Origin allowlist, payload caps, optional
-  Cloudflare Turnstile + per-IP KV rate limit. Go-live checklist in
-  `worker/README.md`.
+  Cloudflare Turnstile + per-IP rate limit (native Rate Limiting binding, with
+  a KV-counter fallback). Go-live checklist in `worker/README.md`.
 
 ### 5.10 Sound feedback
 
