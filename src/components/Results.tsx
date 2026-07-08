@@ -117,16 +117,19 @@ export function Results({
     return totals.length ? [Math.max(...totals)] : []
   })
   const [showBoard, setShowBoard] = useState(false)
-  // Day rollover under an open tab: the mounted session stays on its day (App
-  // freezes the mode — see resolveSessionMode), so advancing is THIS click. A
-  // reload re-resolves the mode fresh (and picks up any new deploy with it).
+  // Day rollover under an open tab — OFFICIAL sessions only: App freezes the
+  // official mode across midnight (resolveSessionMode), so advancing is THIS
+  // click; the reload re-resolves the mode fresh (and picks up any pending
+  // deploy with it). Non-official modes (?date=/?shuffle) keep their fixed or
+  // per-load seed across a reload, so the button would be a lie there.
   const [rolled, setRolled] = useState(false)
   useEffect(() => {
+    if (!official) return
     const check = () => setRolled(getDateKey(new Date(), timeZone) !== dateKey)
     check()
     const t = setInterval(check, 30_000)
     return () => clearInterval(t)
-    // dateKey/timeZone are fixed for this mounted results screen.
+    // official/dateKey/timeZone are fixed for this mounted results screen.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   // Prefer the server-computed streak (authoritative, accounts-ready) when the

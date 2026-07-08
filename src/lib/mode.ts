@@ -101,8 +101,9 @@ export function resolveMode(
 }
 
 /**
- * Which mode a MOUNTED session should keep rendering when a re-render
- * recomputes `resolveMode` with a fresh clock (scan M3).
+ * Which mode a mounted OFFICIAL session should keep rendering when a
+ * re-render recomputes `resolveMode` with a fresh clock (scan M3) — the only
+ * mode whose seed embeds the date; non-official modes pass through untouched.
  *
  * The official selectionSeed embeds the city-local date, so the first re-render
  * after midnight would otherwise remount <Game> and yank the player into the

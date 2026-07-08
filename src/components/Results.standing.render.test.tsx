@@ -66,6 +66,7 @@ it('a lower-scoring replay still shows the standing of the device’s BEST entry
       cityId="t"
       cityShort="T"
       dateKey="2026-07-08"
+      timeZone="America/New_York"
       results={[result(70), result(70), result(70), result(70), result(70)]}
       totalScore={350}
       lineup="bbbb"
