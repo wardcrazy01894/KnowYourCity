@@ -8,7 +8,11 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { versionCheckAction, shouldDeferReload } from './lib/version'
+import {
+  fetchRemoteHash,
+  versionCheckAction,
+  shouldDeferReload,
+} from './lib/version'
 import { loadState } from './lib/storage'
 import type { LocationsFile, Location } from './types'
 import {
@@ -78,30 +82,28 @@ export function App() {
     let reloadScheduled = false
     async function checkVersion() {
       if (reloadScheduled) return
-      try {
-        const r = await fetch(`/version.json?_=${Date.now()}`)
-        if (!r.ok) return
-        const data = (await r.json()) as { hash: string }
-        const ctx = gameCtxRef.current
-        const defer = ctx
-          ? shouldDeferReload(
-              loadState(ctx.storageCityId).current,
-              getDateKey(new Date(), ctx.timeZone),
-            )
-          : false
-        const action = versionCheckAction(BUILD_HASH, data.hash, defer)
-        if (action === 'noop') return
-        log.info('App', 'new deploy detected', {
-          local: BUILD_HASH,
-          remote: data.hash,
-          action,
-        })
-        if (action === 'reload') {
-          reloadScheduled = true // guard overlapping checks from double-reloading
-          window.location.reload()
-        }
-      } catch {
-        // offline, fetch blocked, etc. — ignore
+      // fetchRemoteHash never throws: it logs its own failures (a persistently
+      // broken /version.json must be diagnosable from kycDumpLogs) and returns
+      // null, so a failed check simply skips this round.
+      const remote = await fetchRemoteHash()
+      if (!remote) return
+      const ctx = gameCtxRef.current
+      const defer = ctx
+        ? shouldDeferReload(
+            loadState(ctx.storageCityId).current,
+            getDateKey(new Date(), ctx.timeZone),
+          )
+        : false
+      const action = versionCheckAction(BUILD_HASH, remote, defer)
+      if (action === 'noop') return
+      log.info('App', 'new deploy detected', {
+        local: BUILD_HASH,
+        remote,
+        action,
+      })
+      if (action === 'reload') {
+        reloadScheduled = true // guard overlapping checks from double-reloading
+        window.location.reload()
       }
     }
     function onVisible() {
