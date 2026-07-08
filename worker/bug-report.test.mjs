@@ -56,6 +56,38 @@ describe('defang', () => {
     expect(out).toContain('evil.example')
   })
 
+  it('escapes raw HTML so an <a href> can’t render as a disguised link', () => {
+    // GitHub's issue-body sanitizer allows <a>/<img> with safe schemes — it
+    // strips ATTRIBUTES like onerror/javascript:, not the tags themselves. So
+    // raw HTML would survive every Markdown defang above and still render as a
+    // live link whose visible text hides its destination.
+    const out = defang(
+      '<a href="https://evil.example/login">Verify your KnowYourCity account</a>',
+    )
+    expect(out).not.toMatch(/<a\s/i)
+    expect(out).not.toContain('</a>')
+    // Text is preserved for triage — it renders as inert plain text.
+    expect(out).toContain('Verify your KnowYourCity account')
+    expect(out).toContain('evil.example')
+  })
+
+  it('escapes raw HTML <img> so no auto-loading beacon renders', () => {
+    const out = defang('<img src="https://evil.example/beacon.png">')
+    expect(out).not.toMatch(/<img/i)
+    expect(out).toContain('evil.example')
+  })
+
+  it('neutralizes issue cross-references so a report can’t spam backlinks', () => {
+    // `#123` / `GH-123` in an issue body create backlink notifications on the
+    // referenced issues — noise an abuser can aim at the whole tracker.
+    const out = defang('see #123 and GH-45 and owner/repo#678')
+    expect(out).not.toMatch(/#\d/)
+    expect(out).not.toMatch(/\bGH-\d/)
+    // The digits stay readable for triage.
+    expect(out).toContain('123')
+    expect(out).toContain('45')
+  })
+
   it('coerces non-strings without throwing', () => {
     expect(() => defang(null)).not.toThrow()
     expect(defang(undefined)).toBe('undefined')

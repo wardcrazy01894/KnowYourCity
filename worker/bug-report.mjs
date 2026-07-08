@@ -80,12 +80,18 @@ function json(obj, status, headers) {
  *      line-leading `[ref]:` definition is broken too, so a `[click][1]` /
  *      `[1]: https://evil` pair can't render as a link whose text hides its
  *      destination.
+ *  Raw HTML gets the same treatment via entity-escaping `<`/`>`: GitHub's
+ *  issue-body sanitizer strips unsafe ATTRIBUTES (onerror, javascript:) but
+ *  keeps allowed TAGS, so an un-escaped `<a href="https://evil">text</a>`
+ *  would render as a live disguised link and `<img>` as an auto-loading
+ *  beacon. Issue cross-references (`#123`/`GH-123`) are ZWSP-broken too, so a
+ *  report can't spray backlink notifications across the tracker.
  *  Disguised links/images thus render as inert plain text (the report stays
  *  readable). Note this does NOT stop a *bare* URL — GitHub auto-linkifies
  *  `https://…` and we leave it visible so triagers can read it; it's the
  *  hidden-destination case we defang. A PRIVATE triage repo (per GH_REPO above)
- *  remains the recommended defense-in-depth, and GitHub already sanitizes raw
- *  HTML (`<a>`/`<img>`) in issue bodies. */
+ *  remains the recommended defense-in-depth while GH_REPO points at the
+ *  public repo. */
 export function defang(s) {
   return String(s)
     .replace(/```/g, '`​`​`')
@@ -94,6 +100,10 @@ export function defang(s) {
     .replace(/\]\(/g, ']​(')
     .replace(/\]\[/g, ']​[')
     .replace(/^(\s*\[[^\]]+\]):/gm, '$1​:')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/#(\d)/g, '#​$1')
+    .replace(/\bGH-(\d)/g, 'GH-​$1')
     .replace(/\r/g, '')
 }
 
