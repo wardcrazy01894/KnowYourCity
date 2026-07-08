@@ -29,6 +29,7 @@
 const MAX_BODY_BYTES = 20_000
 const MAX_MESSAGE = 2_000
 const MAX_LOGS = 6_000
+const MAX_URL = 500
 // KV-fallback rate limit: max reports per IP per RL_WINDOW_SECONDS. Kept in step
 // with the native [[ratelimits]] binding (5 per 60s) in wrangler.toml.
 const RL_MAX = 5
@@ -80,12 +81,18 @@ function json(obj, status, headers) {
  *      line-leading `[ref]:` definition is broken too, so a `[click][1]` /
  *      `[1]: https://evil` pair can't render as a link whose text hides its
  *      destination.
+ *  Raw HTML gets the same treatment via entity-escaping `<`/`>`: GitHub's
+ *  issue-body sanitizer strips unsafe ATTRIBUTES (onerror, javascript:) but
+ *  keeps allowed TAGS, so an un-escaped `<a href="https://evil">text</a>`
+ *  would render as a live disguised link and `<img>` as an auto-loading
+ *  beacon. Issue cross-references (`#123`/`GH-123`) are ZWSP-broken too, so a
+ *  report can't spray backlink notifications across the tracker.
  *  Disguised links/images thus render as inert plain text (the report stays
  *  readable). Note this does NOT stop a *bare* URL — GitHub auto-linkifies
  *  `https://…` and we leave it visible so triagers can read it; it's the
  *  hidden-destination case we defang. A PRIVATE triage repo (per GH_REPO above)
- *  remains the recommended defense-in-depth, and GitHub already sanitizes raw
- *  HTML (`<a>`/`<img>`) in issue bodies. */
+ *  remains the recommended defense-in-depth while GH_REPO points at the
+ *  public repo. */
 export function defang(s) {
   return String(s)
     .replace(/```/g, '`​`​`')
@@ -94,6 +101,10 @@ export function defang(s) {
     .replace(/\]\(/g, ']​(')
     .replace(/\]\[/g, ']​[')
     .replace(/^(\s*\[[^\]]+\]):/gm, '$1​:')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/#(\d)/g, '#​$1')
+    .replace(/\bGH-(\d)/g, 'GH-​$1')
     .replace(/\r/g, '')
 }
 
@@ -207,13 +218,22 @@ export default {
     const logs = String(body?.logs ?? '').slice(0, MAX_LOGS)
 
     // Keep the reported URL only if it's from our own site (else it's a
-    // potential attacker-planted phishing link in a public issue).
-    const url = String(ctx.url ?? '')
+    // potential attacker-planted phishing link in a public issue). Even an
+    // own-origin URL can smuggle a payload in its path/query/fragment, so two
+    // layers on the kept URL:
+    //  - embed the PARSED href, never the raw string — percent-encodes raw
+    //    HTML (<>/quotes) and strips the newline new URL() parses around but a
+    //    template string would preserve;
+    //  - defang() the href too — href does NOT encode markdown metachars, so
+    //    ?a=![beacon](https://evil/track.png) would still render as an
+    //    auto-loading image (or [text](url) as a disguised link) without it.
+    // Length-capped like every other reported field.
+    const url = String(ctx.url ?? '').slice(0, MAX_URL)
     const origins = allowedOrigins(env)
     const safeUrl = origins.includes('*')
       ? defang(url)
       : urlFromAllowedOrigin(url, origins)
-        ? url
+        ? defang(new URL(url).href)
         : '(omitted)'
 
     const title =
