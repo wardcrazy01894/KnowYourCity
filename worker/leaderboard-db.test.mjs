@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { readFileSync, readdirSync } from 'node:fs'
+// node:sqlite needs Node >= 22.5 (package.json `engines` enforces this).
 import { DatabaseSync } from 'node:sqlite'
 import { upsertAndRank, topScores } from './leaderboard-lib.mjs'
 

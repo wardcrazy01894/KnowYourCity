@@ -117,6 +117,11 @@ export function Results({
   // Prefer the server-computed streak (authoritative, accounts-ready) when the
   // submission returns one; otherwise fall back to the local streak.
   const shownStreak = standing?.streak ?? streak
+  // Every standing computation must speak in the viewer's BEST score of the
+  // day — the board is one-row-per-device (its best), so feeding a lower
+  // replay's score to refreshStanding would count the viewer's own better row
+  // as a competitor ("2nd of 2" while their row shows rank 1).
+  const bestScore = yourScores[0] ?? totalScore
 
   useEffect(() => {
     let live = true
@@ -134,7 +139,7 @@ export function Results({
       // rank/total would otherwise freeze at finish time. Refresh them against a
       // fresh read so "Nth of Y · top Z%" stays current as more players finish.
       const fresh = await fetchLeaderboard(cityId, dateKey)
-      if (live && fresh) setStanding(refreshStanding(s, fresh, totalScore))
+      if (live && fresh) setStanding(refreshStanding(s, fresh, bestScore))
     }
     // Best-effort: any failure leaves the cached standing in place — the
     // leaderboard never blocks or breaks the results screen.
@@ -204,7 +209,7 @@ export function Results({
         cityId={cityId}
         cityShort={cityShort}
         dateKey={dateKey}
-        yourScore={official ? totalScore : undefined}
+        yourScore={official ? bestScore : undefined}
         yourScores={yourScores}
         yourStanding={standing}
         onClose={() => setShowBoard(false)}

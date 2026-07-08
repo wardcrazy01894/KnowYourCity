@@ -24,10 +24,12 @@ export interface LeaderboardProps {
   cityId: string
   cityShort: string
   dateKey: string
-  /** The viewer's latest total today — drives the "you placed Xth" line. */
+  /** The viewer's BEST total today — the board is one-row-per-device (its
+   *  best), so both the "you placed Xth" refresh and the caption must speak in
+   *  the best score, not a lower replay's. */
   yourScore?: number
-  /** ALL of the viewer's totals today (one normally, two after a changed-lineup
-   *  replay) — highlights each of their rows. Defaults to [yourScore]. */
+  /** The viewer's own totals today for row-flagging — with the best-of-device
+   *  board this is at most [best]. Defaults to [yourScore]. */
   yourScores?: number[]
   /** The viewer's standing, for the "you placed Xth" line when off the shown list. */
   yourStanding?: Standing | null
