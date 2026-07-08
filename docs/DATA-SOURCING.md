@@ -154,6 +154,18 @@ Then set the file's top-level `attribution` and `version`. The app loads
 > `locations.<id>.json` — your curation is never clobbered. (`build-city`
 > regenerates a city's file in full, so keep any manual entries reproducible.)
 
+> ⚠️ **Pin the live day BEFORE any dataset edit.** The PRNG daily selection is
+> a function of the in-play pool, so ANY change to a city's dataset (even
+> adding one venue) can re-roll the lineup players are already playing. Owner
+> rule: **once a day's lineup is set it never changes.** Run
+> `npm run pin-day -- <city>` first — it freezes the city-local current day as
+> a `DAILY_OVERRIDES` entry (computed with the real selection code; use
+> `--ref <sha>` to restore from a pre-edit dataset if a re-roll already
+> shipped) — and commit `src/data/dailyOverrides.ts` in the same PR. The
+> dataset guard test validates every pinned id, so a removal that breaks a pin
+> fails CI. Expired pins are cleaned up in later passes (they never match once
+> the date is gone).
+
 **Adding one venue** (e.g. a player request from the in-app bug reporter): use
 the `add-location` skill — it verifies open/moved status, geocodes, writes the
 `data/<city>-manual.json` + `data/fame-<city>.json` records, recalibrates via

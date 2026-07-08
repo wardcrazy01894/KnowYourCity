@@ -20,7 +20,8 @@
     "fetch-food": "node scripts/fetch-food.mjs",
     "build-city": "node scripts/build-city.mjs",
     "check-chains": "node scripts/check-chains.mjs",
-    "add-polygons": "node scripts/add-polygons.mjs"
+    "add-polygons": "node scripts/add-polygons.mjs",
+    "pin-day": "node --experimental-strip-types scripts/pin-day.ts"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",
