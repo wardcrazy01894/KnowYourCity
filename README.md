@@ -87,6 +87,7 @@ bounds, target size). Each city's data lives at `public/locations.<id>.json`.
 npm run build-city -- seattle   # landmarks + inclusive food → public/locations.seattle.json
 npm run add-polygons            # backfill park/golf footprints from OSM (all cities)
 npm run check-chains            # flag national chains that leaked past the fame pass
+npm run pin-day -- <city>       # freeze today's lineup BEFORE any dataset edit
 ```
 
 Local chains (multiple branches of one brand, e.g. a regional coffee mini-chain)

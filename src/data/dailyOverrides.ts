@@ -17,4 +17,13 @@
  * cleanup passes (the Jun 14 – Jul 2 2026 St. Pete/Seattle/Ann Arbor runs live
  * in git history).
  */
-export const DAILY_OVERRIDES: Record<string, readonly string[]> = {}
+export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
+  // stpete — pinned 2026-07-08 (pin-day from e5b0478)
+  'stpete:2026-07-08': [
+    'vinoy-park',
+    'la-v-vietnamese-fusion',
+    'grove-surf-coffee',
+    'the-bends',
+    'round-lake',
+  ],
+}
