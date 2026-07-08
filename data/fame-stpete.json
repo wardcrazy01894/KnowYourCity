@@ -1364,11 +1364,12 @@
   },
   {
     "id": "fortunato-italian-pizzeria",
-    "status": "uncertain",
-    "currentName": "",
+    "status": "renamed",
+    "currentName": "Fortunatos Italian Pizzeria Pasadena",
     "fameScore": 22,
     "reviewCount": 44,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "Superseded by fortunatos-italian-pizzeria-pasadena (fresh Places research 2026-07-08; same Gulfport Blvd branch, previously uncertain on 44 stale reviews)."
   },
   {
     "id": "fossil-park",
@@ -4586,5 +4587,35 @@
     "hasWikipedia": false,
     "isNationalChain": false,
     "statusNote": "chain branch added from OSM, Places-verified open"
+  },
+  {
+    "id": "horse-and-jockey",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 64,
+    "reviewCount": 1449,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Verified open via Google Places 2026-07-08 (OPERATIONAL, 4.3/1449 reviews); long-running British pub at 1155 Pasadena Ave S"
+  },
+  {
+    "id": "valentys-lounge",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 42,
+    "reviewCount": 274,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Verified open via Google Places 2026-07-08 (OPERATIONAL, 274 reviews); family-run lounge behind Pasadena Liquors since 1987 (I Love the Burg feature)"
+  },
+  {
+    "id": "fortunatos-italian-pizzeria-pasadena",
+    "status": "open",
+    "currentName": "",
+    "fameScore": 45,
+    "reviewCount": 568,
+    "hasWikipedia": false,
+    "isNationalChain": false,
+    "statusNote": "Verified open via Google Places 2026-07-08 (OPERATIONAL, 568 reviews) at 6890 Gulfport Blvd S; second branch of the local Fortunatos mini-chain (all-open-branches rule)"
   }
 ]
