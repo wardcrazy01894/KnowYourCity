@@ -36,7 +36,7 @@ to ~200 in PLAN/BACKLOG; the curation step takes force-include/ban lists._
    IANA timezone._
 
 9. **Dataset size** — **~200 before launch** (more is better); anything is fine
-   while prototyping. _Applied: target documented; current shipped set is 373 (plus 4 more cities)._
+   while prototyping. _Applied: target documented; current shipped set is 376 (plus 4 more cities)._
 
 10. **Hosting** — free `github.io` for now (it is free for public repos); a
     **custom domain later** (name TBD). _Applied: repo made public; custom
