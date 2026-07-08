@@ -29,6 +29,7 @@
 const MAX_BODY_BYTES = 20_000
 const MAX_MESSAGE = 2_000
 const MAX_LOGS = 6_000
+const MAX_URL = 500
 // KV-fallback rate limit: max reports per IP per RL_WINDOW_SECONDS. Kept in step
 // with the native [[ratelimits]] binding (5 per 60s) in wrangler.toml.
 const RL_MAX = 5
@@ -217,13 +218,18 @@ export default {
     const logs = String(body?.logs ?? '').slice(0, MAX_LOGS)
 
     // Keep the reported URL only if it's from our own site (else it's a
-    // potential attacker-planted phishing link in a public issue).
-    const url = String(ctx.url ?? '')
+    // potential attacker-planted phishing link in a public issue). Even an
+    // own-origin URL can smuggle raw HTML in its path/fragment
+    // (https://site/#<img src=…>) or hide a payload behind a newline that
+    // new URL() parses around but a template string preserves — so embed the
+    // PARSED href (which percent-encodes <>/quotes/whitespace), never the raw
+    // string. Length-capped like every other reported field.
+    const url = String(ctx.url ?? '').slice(0, MAX_URL)
     const origins = allowedOrigins(env)
     const safeUrl = origins.includes('*')
       ? defang(url)
       : urlFromAllowedOrigin(url, origins)
-        ? url
+        ? new URL(url).href
         : '(omitted)'
 
     const title =

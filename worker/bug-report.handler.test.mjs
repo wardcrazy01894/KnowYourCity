@@ -212,6 +212,53 @@ describe('bug-report worker handler', () => {
     expect(githubCall.body.body).toContain(`URL: ${ORIGIN}/`)
   })
 
+  it('neutralizes raw HTML smuggled in an own-origin URL fragment', async () => {
+    // The origin check only inspects new URL(url).origin — path/fragment are
+    // attacker-controlled, so an own-origin URL can carry a live <img> beacon
+    // or disguised <a> link. The PARSED href must be embedded (percent-encodes
+    // <>), never the raw string.
+    await handler.fetch(
+      post({
+        message: 'hi',
+        context: {
+          url: ORIGIN + '/#<img src="https://evil.example/beacon.png">',
+        },
+      }),
+      makeEnv(),
+    )
+    expect(githubCall.body.body).not.toMatch(/<img/i)
+    // The own-site link survives, normalized: <> percent-encoded.
+    expect(githubCall.body.body).toContain(`URL: ${ORIGIN}/#%3Cimg`)
+  })
+
+  it('a newline inside an own-origin URL cannot break HTML onto its own body line', async () => {
+    // new URL() strips raw newlines when parsing (so the origin check passes),
+    // but a template string would preserve them — landing the payload on its
+    // own Markdown line where it renders cleanly.
+    await handler.fetch(
+      post({
+        message: 'hi',
+        context: { url: ORIGIN + '/\n<a href="https://evil.example">x</a>' },
+      }),
+      makeEnv(),
+    )
+    expect(githubCall.body.body).not.toMatch(/<a\s/i)
+  })
+
+  it('caps an absurdly long reported URL', async () => {
+    await handler.fetch(
+      post({
+        message: 'hi',
+        context: { url: ORIGIN + '/' + 'a'.repeat(2000) },
+      }),
+      makeEnv(),
+    )
+    const line = githubCall.body.body
+      .split('\n')
+      .find((l) => l.startsWith('URL: '))
+    expect(line.length).toBeLessThanOrEqual(600)
+  })
+
   it('omits a lookalike-origin URL (prefix attack) from the issue body', async () => {
     // knowyourcity.gg.evil.com starts with the allowed origin string but is a
     // different host — a startsWith check would let this phishing link through.
