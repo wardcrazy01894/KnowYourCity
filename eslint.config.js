@@ -5,7 +5,9 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist', 'data', 'node_modules'] },
+  // scripts/tmp holds untracked one-off scratch scripts — linting them makes
+  // `npm run lint` fail locally on files CI never sees.
+  { ignores: ['dist', 'data', 'node_modules', 'scripts/tmp'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],

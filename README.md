@@ -132,9 +132,9 @@ anonymous daily leaderboard — unset just omits the standing line; see
 works and the bug form falls back to a prefilled issue. (If your account blocks
 API-enabling Pages, fall back to Settings → Pages → Source = GitHub Actions.)
 
-**Manual alternative:** `npm run build && npm run deploy` pushes `dist/` to a
-`gh-pages` branch (requires `.env.local` for the bug endpoint/Turnstile, and
-Pages Source set to the `gh-pages` branch instead of Actions).
+**Manual alternative:** re-run the deploy workflow from the Actions tab
+(`workflow_dispatch` on `deploy.yml`) — it rebuilds and republishes `main`
+without needing a new commit.
 
 Site lives at `https://knowyourcity.gg/` (custom domain on GitHub Pages;
 `vite.config.ts` sets `base: '/'` accordingly).

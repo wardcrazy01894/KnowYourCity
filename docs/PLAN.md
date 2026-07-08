@@ -428,8 +428,8 @@ http://localhost:5173/ (the site serves from the root — `base: '/'`).
    `VITE_CF_BEACON_TOKEN` for Cloudflare Web Analytics) is read from repo
    **Variables** so it bakes into the build; unset is fine (bug form falls back
    to a prefilled issue; analytics is a no-op).
-3. **Manual alternative:** `npm run deploy` (uses `gh-pages` to push `dist/` to a
-   `gh-pages` branch); then set Pages Source = `gh-pages` branch instead.
+3. **Manual alternative:** re-run `deploy.yml` from the Actions tab
+   (`workflow_dispatch`) to rebuild and republish `main` without a new commit.
 4. App lives at `https://knowyourcity.gg/` (custom domain configured in repo
    Settings → Pages; DNS is an ALIAS at Porkbun → `wardcrazy01894.github.io`).
    Repo is **public** with branch protection enforced.
