@@ -20,7 +20,7 @@ import {
   selectDailyLocations,
   selectPolygonLocations,
 } from './lib/daily'
-import { resolveMode } from './lib/mode'
+import { resolveMode, resolveSessionMode, type Mode } from './lib/mode'
 import { DAILY_OVERRIDES } from './data/dailyOverrides'
 import { getCity, cityDataUrl, storedCityId, CITY_KEY } from './lib/cities'
 import { isMuted, setMuted } from './lib/sound'
@@ -119,7 +119,20 @@ export function App() {
 
   const city = getCity(cityId)
   const search = typeof window !== 'undefined' ? window.location.search : ''
-  const mode = city ? resolveMode(city, search, new Date(), SHUFFLE_SEED) : null
+  // Freeze the mounted session's mode across city-local midnight: re-renders
+  // recompute resolveMode with a fresh clock, but a rolled official seed only
+  // takes effect when adopting it wouldn't disturb a saved game (mid-round, or
+  // sitting on a past day's results) — day-advance stays the player's click
+  // (Results shows a "Play today's puzzle" button). See resolveSessionMode.
+  const sessionModeRef = useRef<Mode | null>(null)
+  const mode = city
+    ? resolveSessionMode(
+        sessionModeRef.current,
+        resolveMode(city, search, new Date(), SHUFFLE_SEED),
+        () => loadState(city.id).current,
+      )
+    : null
+  sessionModeRef.current = mode
   // Feed the latest game context to the version-check effect (read via ref).
   gameCtxRef.current =
     city && mode
@@ -317,6 +330,7 @@ export function App() {
         cityId={mode.storageCityId}
         cityShort={city.short}
         dateKey={mode.dateKey}
+        timeZone={city.timeZone}
         bounds={city.bounds}
         locations={today}
         official={mode.official}

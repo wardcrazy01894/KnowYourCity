@@ -14,7 +14,9 @@
 
 import { getDateKey, isValidDateKey } from './daily'
 import { shouldShuffle, isPolygonTest, polygonTestIds } from './devmode'
+import { shouldDeferReload } from './version'
 import type { City } from './cities'
+import type { GameState } from '../types'
 
 export interface Mode {
   dateKey: string
@@ -96,4 +98,34 @@ export function resolveMode(
     storageCityId: city.id,
     polygonIds: null,
   }
+}
+
+/**
+ * Which mode a MOUNTED session should keep rendering when a re-render
+ * recomputes `resolveMode` with a fresh clock (scan M3).
+ *
+ * The official selectionSeed embeds the city-local date, so the first re-render
+ * after midnight would otherwise remount <Game> and yank the player into the
+ * new day — losing a mid-round guess, or pulling them off a finished day's
+ * results without a click. Day-advance is the player's call (the same rule the
+ * auto-reload path follows — shouldDeferReload in version.ts), so:
+ *
+ *  - freeze on `prev` when the seed changed under a same-city official session
+ *    AND adopting `next` would disturb a saved game (mid-round, or any game for
+ *    a day other than next's today);
+ *  - otherwise pass `next` through (first render, same seed, city change,
+ *    non-official modes — their seeds don't roll at midnight anyway).
+ *
+ * `getSaved` is a thunk so the storage read only happens on an actual rollover.
+ * Pure given its inputs.
+ */
+export function resolveSessionMode(
+  prev: Mode | null,
+  next: Mode,
+  getSaved: () => GameState | undefined,
+): Mode {
+  if (!prev || !next.official || !prev.official) return next
+  if (prev.storageCityId !== next.storageCityId) return next
+  if (prev.selectionSeed === next.selectionSeed) return prev
+  return shouldDeferReload(getSaved(), next.dateKey) ? prev : next
 }

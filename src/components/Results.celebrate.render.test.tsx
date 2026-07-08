@@ -53,6 +53,7 @@ function renderResults(
       cityId="t"
       cityShort="T"
       dateKey="2026-06-17"
+      timeZone="America/New_York"
       results={results}
       totalScore={totalScore}
       lineup="L"
