@@ -29,6 +29,8 @@ export interface GameProps {
   cityShort: string
   /** Calendar date key (YYYY-MM-DD) in the city's timezone. */
   dateKey: string
+  /** City IANA timezone — lets Results detect a day rollover under the tab. */
+  timeZone: string
   /** Map play bounds for this city, [[south, west], [north, east]]. */
   bounds: [[number, number], [number, number]]
   /** The 5 locations selected for today (from selectDailyLocations). */
@@ -45,6 +47,7 @@ export function Game({
   cityId,
   cityShort,
   dateKey,
+  timeZone,
   bounds,
   locations,
   official,
@@ -154,6 +157,7 @@ export function Game({
         cityId={cityId}
         cityShort={cityShort}
         dateKey={game.dateKey}
+        timeZone={timeZone}
         results={game.results}
         totalScore={totalScore}
         lineup={lineupHash(game.locations)}

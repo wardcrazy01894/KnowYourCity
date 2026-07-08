@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { resolveMode } from './mode'
+import { resolveMode, resolveSessionMode } from './mode'
+import type { GameState } from '../types'
 import type { City } from './cities'
 
 const CITY: City = {
@@ -65,5 +66,59 @@ describe('resolveMode', () => {
       expect(m.official).toBe(false)
       expect(m.storageCityId).not.toBe(CITY.id)
     }
+  })
+})
+
+describe('resolveSessionMode — midnight rollover freeze', () => {
+  // The scan-M3 bug: `mode` was recomputed with a fresh Date on EVERY App
+  // render, so the first re-render after city-local midnight flipped the
+  // official selectionSeed, remounted <Game>, and yanked a mid-round player
+  // into the new day (losing their unsubmitted round) — contradicting
+  // version.ts's rule that day-advance is the player's click.
+  const before = resolveMode(CITY, '', new Date('2026-06-18T12:00:00Z'), SEED)
+  const after = resolveMode(CITY, '', new Date('2026-06-19T12:00:00Z'), SEED)
+  const game = (over: Partial<GameState> = {}): GameState => ({
+    dateKey: '2026-06-18',
+    locations: [],
+    roundIndex: 0,
+    results: [],
+    phase: 'guessing',
+    ...over,
+  })
+
+  it('keeps the mounted day while a game is mid-round (never yank a guess)', () => {
+    expect(resolveSessionMode(before, after, () => game())).toBe(before)
+  })
+
+  it('keeps the mounted day on a finished PAST day (leaving results is a click)', () => {
+    expect(
+      resolveSessionMode(before, after, () => game({ phase: 'finished' })),
+    ).toBe(before)
+  })
+
+  it('adopts the new day when there is no saved game to disturb', () => {
+    expect(resolveSessionMode(before, after, () => undefined)).toBe(after)
+  })
+
+  it('is a pass-through on first render / same seed', () => {
+    expect(resolveSessionMode(null, after, () => game())).toBe(after)
+    expect(resolveSessionMode(before, before, () => game())).toBe(before)
+  })
+
+  it('never freezes across a city change or a non-official mode', () => {
+    const otherCity = resolveMode(
+      { ...CITY, id: 'seattle', timeZone: 'America/Los_Angeles' },
+      '',
+      new Date('2026-06-19T12:00:00Z'),
+      SEED,
+    )
+    expect(resolveSessionMode(before, otherCity, () => game())).toBe(otherCity)
+    const shuffle = resolveMode(
+      CITY,
+      '?shuffle',
+      new Date('2026-06-19T12:00:00Z'),
+      SEED,
+    )
+    expect(resolveSessionMode(before, shuffle, () => game())).toBe(shuffle)
   })
 })

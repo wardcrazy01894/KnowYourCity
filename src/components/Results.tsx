@@ -8,7 +8,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { RoundResult } from '../types'
 import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
-import { ROUNDS_PER_DAY } from '../lib/daily'
+import { ROUNDS_PER_DAY, getDateKey } from '../lib/daily'
 import { log } from '../lib/log'
 import { shouldCelebrate, countGreens } from '../lib/celebrate'
 import { isCelebrateTest } from '../lib/devmode'
@@ -34,6 +34,8 @@ export interface ResultsProps {
   /** City label for the share card, e.g. "Seattle". */
   cityShort: string
   dateKey: string
+  /** City IANA timezone — detects the day rolling over under an open tab. */
+  timeZone: string
   results: RoundResult[]
   totalScore: number
   /** Hash of the lineup just played (progress.ts:lineupHash) — keys the
@@ -88,6 +90,7 @@ export function Results({
   cityId,
   cityShort,
   dateKey,
+  timeZone,
   results,
   totalScore,
   lineup,
@@ -114,6 +117,21 @@ export function Results({
     return totals.length ? [Math.max(...totals)] : []
   })
   const [showBoard, setShowBoard] = useState(false)
+  // Day rollover under an open tab — OFFICIAL sessions only: App freezes the
+  // official mode across midnight (resolveSessionMode), so advancing is THIS
+  // click; the reload re-resolves the mode fresh (and picks up any pending
+  // deploy with it). Non-official modes (?date=/?shuffle) keep their fixed or
+  // per-load seed across a reload, so the button would be a lie there.
+  const [rolled, setRolled] = useState(false)
+  useEffect(() => {
+    if (!official) return
+    const check = () => setRolled(getDateKey(new Date(), timeZone) !== dateKey)
+    check()
+    const t = setInterval(check, 30_000)
+    return () => clearInterval(t)
+    // official/dateKey/timeZone are fixed for this mounted results screen.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   // Prefer the server-computed streak (authoritative, accounts-ready) when the
   // submission returns one; otherwise fall back to the local streak.
   const shownStreak = standing?.streak ?? streak
@@ -219,7 +237,27 @@ export function Results({
 
   return (
     <section style={{ padding: 16, maxWidth: 560, margin: '0 auto' }}>
-      <h2 style={{ marginBottom: 4 }}>Done for today!</h2>
+      <h2 style={{ marginBottom: 4 }}>
+        {rolled ? `Done for ${dateKey}!` : 'Done for today!'}
+      </h2>
+      {rolled && (
+        <button
+          onClick={() => window.location.reload()}
+          style={{
+            padding: '10px 16px',
+            fontSize: 16,
+            fontWeight: 700,
+            borderRadius: 8,
+            border: 'none',
+            background: '#2ecc71',
+            color: '#0f1720',
+            cursor: 'pointer',
+            marginBottom: 8,
+          }}
+        >
+          ▶ Play today’s puzzle
+        </button>
+      )}
       <p style={{ fontSize: 28, fontWeight: 700, margin: '4px 0' }}>
         {totalScore.toLocaleString('en-US')}{' '}
         <span style={{ fontSize: 16, opacity: 0.6 }}>
