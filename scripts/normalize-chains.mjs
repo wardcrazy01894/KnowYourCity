@@ -30,6 +30,7 @@
 
 import { readFile, writeFile } from 'node:fs/promises'
 import { existsSync, readFileSync } from 'node:fs'
+import { pathToFileURL } from 'node:url'
 import prettier from 'prettier'
 import {
   labelVenue,
@@ -199,10 +200,7 @@ async function processCity(cityId, cities, dry, rgCache, report) {
       // disambiguate with the street name (reverse-geocoded), else a counter.
       if (used.has(newName) && used.get(newName) !== m) {
         const road = await reverseRoad(m.lat, m.lng)
-        newName =
-          road && !newName.includes(road)
-            ? `${newName} (${road})`
-            : `${newName} #${used.size + 1}`
+        newName = disambiguateCollision(newName, road, used.size + 1)
       }
       used.set(newName, m)
       groupRenames.push({
@@ -286,7 +284,21 @@ async function main() {
   )
 }
 
-main().catch((err) => {
-  console.error(err)
-  process.exit(1)
-})
+/**
+ * Resolve a within-brand name collision (two branches labeled into the same
+ * neighborhood): append the reverse-geocoded street when it adds information,
+ * else fall back to a counter. Exported for tests (normalize-chains.test.mjs).
+ */
+export function disambiguateCollision(newName, road, counter) {
+  return road && !newName.includes(road)
+    ? `${newName} (${road})`
+    : `${newName} #${counter}`
+}
+
+// Run only when invoked as a CLI — importing the module (tests pull the
+// exported helper) must never kick off a network-heavy rename pass.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href)
+  main().catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })
