@@ -486,12 +486,16 @@ scores(city, date, client_id, lineup, score, user_id NULL, created_at, updated_a
 - `lineup` (a short hash of the day's location ids; migration `0003`) is also in
   the key, so one device can hold **more than one** row per `(city, date)`: if the
   official set changes under a player mid-day they may replay the new set, and
-  that genuine second completion gets its own row. The day's board is the **union**
-  of all rows; legacy rows predating lineups use the empty-string `''` bucket.
-- Rank = `COUNT(*) WHERE city=? AND date=? AND score > stored`; ties share a rank
-  (standard competition ranking), `rank = better + 1`. UPSERT keeps the **max**
-  score **per lineup**, so a reload of the same completion can't lower it or
-  duplicate it (idempotent), while a changed-lineup replay still appends its row.
+  that genuine second completion gets its own stored row. The day's board,
+  though, is computed over each device's **best** score (one human = one
+  competitor — a replayer's extra rows never inflate the field or occupy a
+  second board slot); legacy rows predating lineups use the empty-string `''`
+  bucket.
+- Rank = count of devices whose best score beats yours + 1; ties share a rank
+  (standard competition ranking); `total` = distinct devices on the board.
+  UPSERT keeps the **max** score **per lineup**, so a reload of the same
+  completion can't lower it or duplicate it (idempotent), while a
+  changed-lineup replay still appends its stored row.
 - Two routes on the one worker: **POST** submits a score → `{rank, total}`;
   **GET** `?city=&date=` views the board → `{total, scores[]}` (top 100, desc,
   **scores only — no ids/names**). The "🏆 View leaderboard" button on the

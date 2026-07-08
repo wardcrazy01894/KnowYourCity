@@ -101,16 +101,18 @@ export function Results({
   const [standing, setStanding] = useState<Standing | null>(() =>
     official ? readStanding(cityId, dateKey, lineup) : null,
   )
-  // All of the viewer's totals for the day (one normally; two after a
-  // changed-set replay) — highlights each of their rows on the board. Read once
-  // from history, which already holds this completion's record by now.
-  const [yourScores] = useState<number[]>(() =>
-    official
-      ? loadState(cityId)
-          .history.filter((h) => h.dateKey === dateKey)
-          .map((h) => h.totalScore)
-      : [],
-  )
+  // The viewer's BEST total for the day. The board shows one row per device
+  // (its best score — see topScores in worker/leaderboard-lib.mjs), so even a
+  // changed-set replayer has exactly one row to highlight; passing a lower
+  // replay score too would mis-flag another player's tied row as "you". Read
+  // once from history, which already holds this completion's record by now.
+  const [yourScores] = useState<number[]>(() => {
+    if (!official) return []
+    const totals = loadState(cityId)
+      .history.filter((h) => h.dateKey === dateKey)
+      .map((h) => h.totalScore)
+    return totals.length ? [Math.max(...totals)] : []
+  })
   const [showBoard, setShowBoard] = useState(false)
   // Prefer the server-computed streak (authoritative, accounts-ready) when the
   // submission returns one; otherwise fall back to the local streak.
