@@ -29,10 +29,15 @@ export function DatasetSearch({
     let live = true
     setLocations(null)
     fetch(cityDataUrl(cityId))
-      .then((r) => r.json() as Promise<LocationsFile>)
+      .then((r) => {
+        // Surface the real HTTP status — parsing a 404 page as JSON would
+        // misreport the failure as a parse error (mirrors App's loadLocations).
+        if (!r.ok) throw new Error(`HTTP ${r.status}`)
+        return r.json() as Promise<LocationsFile>
+      })
       .then((f) => live && setLocations(f.locations))
       .catch((e) => {
-        log.warn('DatasetSearch', 'load failed', { error: String(e) })
+        log.warn('DatasetSearch', 'load failed', { cityId, error: String(e) })
         if (live) setLocations([])
       })
     return () => {
