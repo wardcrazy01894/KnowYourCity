@@ -28,7 +28,8 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
 ## Deploy
 
 - **Automatic:** every push to `main` runs `.github/workflows/deploy.yml`
-  (`npm run build` → upload Pages artifact → deploy). Takes a couple of minutes;
+  (test/lint/format gate → `npm run build` → upload Pages artifact → deploy).
+  Takes a couple of minutes;
   the live URL updates when the `deploy` run goes green.
 - **Manual re-run:** Actions tab → **deploy** → **Run workflow** (it also has
   `workflow_dispatch`). Useful after changing a repo Variable (below) — Variables
@@ -37,6 +38,8 @@ How the **live** site is hosted, deployed, and operated. (Architecture is in
   pull the site entirely, Settings → Pages → disable.
 - `deploy.yml` is **not** a required status check, so a failed deploy never blocks
   merges; it just means the last publish didn't happen. Check the Actions tab.
+  (Its own test gate also means a manual `workflow_dispatch` re-run of a broken
+  tree fails instead of publishing it.)
 
 ## Client configuration — repo **Variables**
 

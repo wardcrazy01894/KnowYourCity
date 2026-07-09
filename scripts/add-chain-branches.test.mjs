@@ -53,8 +53,20 @@ describe('fitFameCurve + fameFromReviews', () => {
 
   it('clamps to the 5..90 band (never a flagship score from reviews alone)', () => {
     const fit = fitFameCurve(fame)
-    expect(fameFromReviews(fit, 1)).toBeGreaterThanOrEqual(5)
     expect(fameFromReviews(fit, 10_000_000)).toBeLessThanOrEqual(90)
+    // The floor needs a curve that actually dips below 5 at low review counts
+    // (the calibration fit above evaluates to 10 at rc=1, which would let a
+    // broken floor pass unnoticed).
+    const steep = fitFameCurve([
+      { status: 'open', isNationalChain: false, reviewCount: 10, fameScore: 2 },
+      {
+        status: 'open',
+        isNationalChain: false,
+        reviewCount: 1000,
+        fameScore: 62,
+      },
+    ])
+    expect(fameFromReviews(steep, 1)).toBe(5)
   })
 })
 
