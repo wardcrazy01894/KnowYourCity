@@ -34,8 +34,29 @@ never in a follow-up. The PR template has the checklist; the relevant targets:
 - `README.md` — setup, commands, features.
 - `docs/PLAN.md` — architecture, milestones, mechanics, scoring constants.
 - `docs/DATA-SOURCING.md` — pipeline, query, the `Location` schema.
+- `docs/OPERATIONS.md` — deploy, workers, dashboards, runbooks.
 - `docs/QUESTIONS-FOR-ALEX.md` — strike questions as they get answered.
 - `.env.example` / code comments — config and contracts.
+
+**Docs map — when you touch the left, check the right (before opening the PR,
+and again in every PR review):**
+
+| Change touches…                                    | Update / verify                                                                               |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`   | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                              |
+| `src/lib/scoring.ts`, `src/lib/geo.ts`             | PLAN §5.4 (constants, polygon rules)                                                          |
+| `src/lib/version.ts`, `src/lib/mode.ts`, App shell | PLAN §5.12 (auto-reload + midnight rollover)                                                  |
+| `src/lib/leaderboard.ts`, `worker/leaderboard*`    | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                    |
+| `worker/bug-report.mjs`                            | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                              |
+| `.github/workflows/*`, `scripts/protect-main.sh`   | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                     |
+| `public/locations.*.json`, fame caches             | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
+| `package.json` scripts / engines                   | README + this file's command lists                                                            |
+| `scripts/*.mjs` pipeline behavior                  | DATA-SOURCING §§1–4 (the step that script implements)                                         |
+
+Two habits make the rule stick: (1) PR bodies written via `gh pr create
+--body-file` bypass the template checklist — walk the table yourself before
+opening; (2) every PR **review** must include a docs-map pass over the diff
+(the reviewer checks the right-hand column for every touched left-hand path).
 
 ## How we write code — TDD is mandatory
 
