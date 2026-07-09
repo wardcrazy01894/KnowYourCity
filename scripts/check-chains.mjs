@@ -8,7 +8,7 @@
 //
 // Usage: node scripts/check-chains.mjs [cityId]   (omit cityId to scan all)
 import { readFileSync, readdirSync } from 'node:fs'
-import { matchNationalChain } from './apply-difficulty-lib.mjs'
+import { chainCandidates } from './check-chains-lib.mjs'
 
 const cfg = JSON.parse(
   readFileSync(new URL('../data/national-chains.json', import.meta.url)),
@@ -28,10 +28,7 @@ for (const city of cities) {
   const locs = JSON.parse(
     readFileSync(new URL(`../public/locations.${city}.json`, import.meta.url)),
   ).locations
-  const hits = locs
-    .filter((l) => l.inPlay !== false)
-    .map((l) => ({ l, chain: matchNationalChain(l.name, cfg.chains) }))
-    .filter((x) => x.chain && !cfg.keepIds[x.l.id])
+  const hits = chainCandidates(locs, cfg)
   if (hits.length) {
     console.log(`\n=== ${city}: ${hits.length} to review ===`)
     for (const { l, chain } of hits)

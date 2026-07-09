@@ -29,6 +29,7 @@
 
 import { readFile, writeFile } from 'node:fs/promises'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+import { pathToFileURL } from 'node:url'
 import prettier from 'prettier'
 import {
   slug,
@@ -53,6 +54,71 @@ const LABEL_NORMALIZE = {
   Adams: 'Ballard',
 }
 const BAD_HOOD = /council|census|township|county|unincorporated/i
+
+/**
+ * Least-squares fit fame = a·log10(reviews) + b over THIS city's operating,
+ * non-chain venues with reviews — added branches are scored on the city's own
+ * absolute scale, not relative to a (maybe minor) kept pin. Exported for tests
+ * (add-chain-branches.test.mjs): a silent regression here mis-scores every
+ * added branch.
+ */
+export function fitFameCurve(fame) {
+  const xs = []
+  const ys = []
+  for (const r of fame)
+    if (
+      r.status !== 'closed' &&
+      !r.isNationalChain &&
+      (r.reviewCount || 0) > 0
+    ) {
+      xs.push(Math.log10(r.reviewCount))
+      ys.push(r.fameScore)
+    }
+  const nn = xs.length
+  const mx = xs.reduce((a, b) => a + b, 0) / nn
+  const my = ys.reduce((a, b) => a + b, 0) / nn
+  let num = 0
+  let den = 0
+  for (let i = 0; i < nn; i++) {
+    num += (xs[i] - mx) * (ys[i] - my)
+    den += (xs[i] - mx) ** 2
+  }
+  const a = den ? num / den : 0
+  return { a, b: my - a * mx }
+}
+
+/** Fame for a review count on the fitted curve, clamped to 5..90 — review
+ *  popularity alone never mints a flagship score. */
+export function fameFromReviews(fit, rc) {
+  return Math.max(
+    5,
+    Math.min(90, Math.round(fit.a * Math.log10(Math.max(rc, 1)) + fit.b)),
+  )
+}
+
+/**
+ * Name + id for a new branch: `<brand> - <hood>`. On a collision with an
+ * existing/added entry (same brand + neighborhood), disambiguate with the OSM
+ * street; if there's no street or the street-form still collides, return null
+ * — skip rather than emit a duplicate or an ugly numeric suffix. Exported for
+ * tests.
+ */
+export function resolveBranchName(
+  canonical,
+  hood,
+  street,
+  { usedNames, existingIds },
+) {
+  let name = `${canonical} - ${hood}`
+  let id = slug(name)
+  if (usedNames.has(name) || existingIds.has(id)) {
+    if (!street) return null
+    name = `${canonical} - ${hood} (${street})`
+    id = slug(name)
+  }
+  if (usedNames.has(name) || existingIds.has(id)) return null
+  return { name, id }
+}
 
 const KEY = (() => {
   try {
@@ -177,38 +243,8 @@ async function processCity(cityId, cities, dry, vcache) {
   // name), so collisions must be checked on the NAME too, not just the id.
   const usedNames = new Set(ds.locations.map((l) => l.name))
 
-  // Calibrate fame = a*log10(reviews)+b from THIS city's existing venues (least
-  // squares over operating, non-chain rows with reviews) so added branches are
-  // scored on the same absolute scale, not relative to our (maybe minor) kept pin.
-  const fit = (() => {
-    const xs = []
-    const ys = []
-    for (const r of fame)
-      if (
-        r.status !== 'closed' &&
-        !r.isNationalChain &&
-        (r.reviewCount || 0) > 0
-      ) {
-        xs.push(Math.log10(r.reviewCount))
-        ys.push(r.fameScore)
-      }
-    const nn = xs.length
-    const mx = xs.reduce((a, b) => a + b, 0) / nn
-    const my = ys.reduce((a, b) => a + b, 0) / nn
-    let num = 0
-    let den = 0
-    for (let i = 0; i < nn; i++) {
-      num += (xs[i] - mx) * (ys[i] - my)
-      den += (xs[i] - mx) ** 2
-    }
-    const a = den ? num / den : 0
-    return { a, b: my - a * mx }
-  })()
-  const fameFromReviews = (rc) =>
-    Math.max(
-      5,
-      Math.min(90, Math.round(fit.a * Math.log10(Math.max(rc, 1)) + fit.b)),
-    )
+  // Calibrate fame from THIS city's existing venues — see fitFameCurve above.
+  const fit = fitFameCurve(fame)
 
   const osm = existsSync(
     new URL(`../data/.osm-food.${cityId}.json`, import.meta.url),
@@ -286,24 +322,19 @@ async function processCity(cityId, cities, dry, vcache) {
         continue
       }
       // fame from this branch's review count on the city's absolute scale
-      const fameScore = fameFromReviews(v.reviews || 0)
-      let name = `${canonical} - ${hood}`
-      let id = slug(name)
-      // Collision (same brand, same neighborhood as an existing/added entry) →
-      // disambiguate with the OSM street; if that still collides or there's no
-      // street, skip rather than emit a duplicate or an ugly numeric suffix.
-      if (usedNames.has(name) || existingIds.has(id)) {
-        if (!p.street) {
-          report.push(`  skip ${name} — duplicate, no street to disambiguate`)
-          continue
-        }
-        name = `${canonical} - ${hood} (${p.street})`
-        id = slug(name)
-      }
-      if (usedNames.has(name) || existingIds.has(id)) {
-        report.push(`  skip ${name} — duplicate`)
+      const fameScore = fameFromReviews(fit, v.reviews || 0)
+      // Naming + collision policy lives in resolveBranchName (tested).
+      const resolved = resolveBranchName(canonical, hood, p.street, {
+        usedNames,
+        existingIds,
+      })
+      if (!resolved) {
+        report.push(
+          `  skip ${canonical} - ${hood} — duplicate (no usable street disambiguation)`,
+        )
         continue
       }
+      const { name, id } = resolved
       existingIds.add(id)
       usedNames.add(name)
       // member used for dedup against further pins
@@ -376,7 +407,14 @@ async function main() {
   console.log(`\nTotal added: ${total}${dry ? ' (dry)' : ''}`)
 }
 
-main().catch((e) => {
-  console.error(e)
-  process.exit(1)
-})
+// Run only when invoked as a CLI — importing the module (tests pull the
+// exported helpers) must never kick off a network-heavy city pass.
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
+  main().catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })
+}
