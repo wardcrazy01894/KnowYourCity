@@ -182,10 +182,12 @@ typecheck/lint/format/test/secret-scan; `main` is protected (PR-only).
     hatch — a `Record<"cityId:YYYY-MM-DD", string[]>` map of location IDs. When
     a key matches today's selection seed, `selectDailyLocations` returns those
     IDs in the given order instead of running the PRNG. Used to hand-pick a set
-    for special days or to guarantee variety during a launch window. Only affects
-    the matching date; all other days use the PRNG as normal. Unresolved or
-    `inPlay:false` IDs in an override silently fall back to the PRNG
-    (`console.warn`), so malformed entries degrade gracefully.
+    for special days or to guarantee variety during a launch window, and by
+    `npm run pin-day` to freeze a live day before a dataset edit (§5.2). Only
+    affects the matching date; all other days use the PRNG as normal.
+    Unresolved or `inPlay:false` IDs in an override fall back to the PRNG
+    LOUDLY (`console.error` naming the seed and dropped ids — #112), so a
+    malformed entry degrades gracefully but never silently.
   - Either way a full set of 5 is always returned. Cities are enriched one at a
     time (St. Petersburg first); see §5.3b and `docs/DATA-SOURCING.md`.
 
@@ -205,15 +207,22 @@ true icons. Either way fame is calibrated to **down-weight tourist/critic fame**
 (Michelin/James Beard/TripAdvisor rank, lore-only Wikipedia) and **up-weight raw
 local ubiquity** — see `docs/DATA-SOURCING.md`.
 
-### 5.2 Daily selection integrity (the honest tradeoff)
+### 5.2 Daily selection integrity — a set day never changes (owner rule)
 
 Selection is a function of `(dateKey, list, overrides)`. For most days the
 `overrides` map has no entry and selection is purely deterministic from
-`(dateKey, list)`. **If you edit the location list, the PRNG shuffle changes for
-every non-overridden date** — past and future puzzles shift. For a friends game
-this is fine (nobody audits yesterday). If it ever matters, freeze each day's
-chosen ids into a committed `manifest.json` and read from that instead of
-reshuffling. Not worth it for v1.
+`(dateKey, list)` — which means **editing a city's location list re-rolls the
+PRNG pick for every non-overridden date**, including the day players are
+living through. v1 originally accepted that as a friends-game tradeoff; it
+bit for real when a mid-day venue add re-rolled a live lineup (#151), and the
+rule is now the opposite: **once a day's lineup is set it never changes.**
+`npm run pin-day -- <city>` freezes the city-local current day as a
+`DAILY_OVERRIDES` entry (computed with the real selection code; `--ref <sha>`
+restores a day an edit already re-rolled) and is a **mandatory step before
+any dataset-changing PR** — see `docs/DATA-SOURCING.md` §4 and the
+`add-location` / `add-or-update-city` skills. Past days and not-yet-played
+future days still shift on edits (nobody is mid-game in them); the live day
+is what the pin protects.
 
 ### 5.3 List size vs repetition
 
@@ -337,9 +346,12 @@ intended way to capture a repro and hand it to a developer.
   a GitHub issue** with city/date/URL/browser + session logs attached. If not
   configured, it falls back to opening a prefilled GitHub issue page. The token
   is never in the client bundle. The worker is hardened for a public endpoint:
-  defangs `@mentions`/code-fences, Origin allowlist, payload caps, optional
-  Cloudflare Turnstile + per-IP rate limit (native Rate Limiting binding, with
-  a KV-counter fallback). Go-live checklist in `worker/README.md`.
+  defangs `@mentions`/code-fences/Markdown links + raw HTML (`<`/`>`
+  entity-escaped — GitHub keeps allowed tags) + issue-refs (`#123`), and embeds
+  only the parsed-and-defanged own-origin URL; Origin allowlist, payload caps,
+  optional Cloudflare Turnstile + per-IP rate limit (native Rate Limiting
+  binding, with a KV-counter fallback). Go-live checklist in
+  `worker/README.md`.
 
 ### 5.10 Sound feedback
 
@@ -369,6 +381,28 @@ short **CC0 / public-domain** applause clip (`src/assets/cheer.mp3`, BigSoundBan
 played via a reused `Audio` element and gated by mute like the round cues — real
 recorded applause reads better than synthesis, which is why this one feature is
 the exception to the otherwise file-free Web Audio approach in §5.10.
+
+### 5.12 Stale tabs: auto-reload + midnight rollover (day-advance is a click)
+
+Two mechanisms keep a long-lived tab correct without ever yanking the player:
+
+- **New-deploy auto-reload** (#127): the app polls `/version.json` (5-min
+  interval + tab focus; `fetchRemoteHash` in `src/lib/version.ts` logs its
+  failures) and compares the build hash baked in at compile time. On a
+  mismatch it reloads **only when non-disruptive** — `shouldDeferReload` defers
+  mid-round and on a past day's results; a later check retries once it's safe.
+- **Midnight rollover freeze** (#154): the official selection seed embeds the
+  city-local date, so a re-render after midnight would otherwise remount the
+  game and drop the player into the new day. `resolveSessionMode`
+  (`src/lib/mode.ts`, pure + tested) freezes the mounted session's mode
+  whenever adopting the rolled seed would disturb a saved game (same rule as
+  `shouldDeferReload`). **Day-advance is the player's click**: once the
+  city-local day moves past the results screen's date, `Results` shows a
+  "▶ Play today's puzzle" button (official mode only — non-official modes
+  aren't tied to today's official puzzle, so the button would lie there:
+  `?date=` keeps its fixed override across a reload, `?shuffle` just rolls
+  another random set) whose reload re-resolves the day fresh and picks up any
+  pending deploy with it.
 
 Append **`?celebrate`** to the URL to force the celebration on the results screen
 regardless of score, for previewing/tuning (`isCelebrateTest`, `src/lib/devmode.ts`).

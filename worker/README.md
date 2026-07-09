@@ -42,13 +42,19 @@ worker is hardened against the main abuse vectors out of the box:
 
 - **Fails closed** — refuses to run without a rate limit or Turnstile configured.
 - **Rate limit ON by default** — 5 reports / IP / 60s (`[[ratelimits]]`).
-- **Content injection** — defangs `@mentions`, code fences, and Markdown
-  link/image syntax (inline + reference): no pinging users, no breaking out of
+- **Content injection** — defangs `@mentions`, code fences, Markdown
+  link/image syntax (inline + reference), **raw HTML** (`<`/`>`
+  entity-escaped — GitHub's sanitizer keeps allowed tags like `<a>`/`<img>`,
+  only stripping unsafe attributes), and **issue cross-references**
+  (`#123`/`GH-123`, no backlink spam): no pinging users, no breaking out of
   the issue body, and no _disguised_ (text-hides-destination) link or
   auto-loading image beacon. A **bare** `https://…` URL is still auto-linkified
   by GitHub and left visible on purpose (so triagers can read it); a private
   triage repo (below) is the defense-in-depth for that residual.
-- **Phishing** — drops off-site `url`s; **Origin allowlist**; **payload caps**.
+- **Phishing** — drops off-site `url`s; the kept own-origin URL is embedded as
+  the **parsed, defanged href** (never the raw string — its path/query/
+  fragment are attacker-controlled too); **Origin allowlist**; **payload
+  caps** (per-field on message/logs/url, a 20 KB whole-body cap over the rest).
 
 Recommended hardening on top (especially since reports are filed to the **public**
 repo):
