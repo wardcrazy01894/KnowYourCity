@@ -41,22 +41,31 @@ never in a follow-up. The PR template has the checklist; the relevant targets:
 **Docs map — when you touch the left, check the right (before opening the PR,
 and again in every PR review):**
 
-| Change touches…                                    | Update / verify                                                                               |
-| -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`   | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                              |
-| `src/lib/scoring.ts`, `src/lib/geo.ts`             | PLAN §5.4 (constants, polygon rules)                                                          |
-| `src/lib/version.ts`, `src/lib/mode.ts`, App shell | PLAN §5.12 (auto-reload + midnight rollover)                                                  |
-| `src/lib/leaderboard.ts`, `worker/leaderboard*`    | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                    |
-| `worker/bug-report.mjs`                            | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                              |
-| `.github/workflows/*`, `scripts/protect-main.sh`   | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                     |
-| `public/locations.*.json`, fame caches             | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
-| `package.json` scripts / engines                   | README + this file's command lists                                                            |
-| `scripts/*.mjs` pipeline behavior                  | DATA-SOURCING §§1–4 (the step that script implements)                                         |
+| Change touches…                                     | Update / verify                                                                               |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                              |
+| `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                          |
+| `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                  |
+| `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                    |
+| `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                              |
+| `.github/workflows/*`, `scripts/protect-main.sh`    | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                     |
+| `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
+| `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)      |
+| `package.json` scripts / engines                    | README + this file's command lists                                                            |
+| `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                         |
 
 Two habits make the rule stick: (1) PR bodies written via `gh pr create
 --body-file` bypass the template checklist — walk the table yourself before
 opening; (2) every PR **review** must include a docs-map pass over the diff
 (the reviewer checks the right-hand column for every touched left-hand path).
+
+**The map itself is part of the contract**: a PR that adds a subsystem, moves
+or renames a file/doc section in the left or right column, or introduces a new
+doc target must update the corresponding row (or add one) **in the same PR** —
+a stale map quietly exempts new code from the rule. The reviewer's docs-map
+pass covers this too: if the diff touches something no row maps, that's a
+finding (add the row), and if a mapped section number no longer exists, that's
+a finding (fix the row).
 
 ## How we write code — TDD is mandatory
 

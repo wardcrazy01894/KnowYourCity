@@ -398,9 +398,11 @@ Two mechanisms keep a long-lived tab correct without ever yanking the player:
   whenever adopting the rolled seed would disturb a saved game (same rule as
   `shouldDeferReload`). **Day-advance is the player's click**: once the
   city-local day moves past the results screen's date, `Results` shows a
-  "▶ Play today's puzzle" button (official mode only — `?date=`/`?shuffle`
-  keep their seed across a reload, so the button would lie there) whose reload
-  re-resolves the day fresh and picks up any pending deploy with it.
+  "▶ Play today's puzzle" button (official mode only — non-official modes
+  aren't tied to today's official puzzle, so the button would lie there:
+  `?date=` keeps its fixed override across a reload, `?shuffle` just rolls
+  another random set) whose reload re-resolves the day fresh and picks up any
+  pending deploy with it.
 
 Append **`?celebrate`** to the URL to force the celebration on the results screen
 regardless of score, for previewing/tuning (`isCelebrateTest`, `src/lib/devmode.ts`).

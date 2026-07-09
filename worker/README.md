@@ -54,7 +54,7 @@ worker is hardened against the main abuse vectors out of the box:
 - **Phishing** — drops off-site `url`s; the kept own-origin URL is embedded as
   the **parsed, defanged href** (never the raw string — its path/query/
   fragment are attacker-controlled too); **Origin allowlist**; **payload
-  caps** on every reported field.
+  caps** (per-field on message/logs/url, a 20 KB whole-body cap over the rest).
 
 Recommended hardening on top (especially since reports are filed to the **public**
 repo):
