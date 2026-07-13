@@ -180,13 +180,13 @@
     {
       "id": "fortunatos-italian-pizzeria-pasadena",
       "name": "Fortunatos Italian Pizzeria Pasadena",
-      "lat": 27.75904,
+      "lat": 27.75825,
       "lng": -82.7357,
       "category": "restaurant",
       "clue": null,
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (Nominatim address point)"
+      "attribution": "OpenStreetMap ODbL (centroid of building way 306860566, storefront verified via Google Places)"
     },
     {
       "id": "fossil-park",

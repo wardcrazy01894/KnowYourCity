@@ -26,4 +26,12 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'the-bends',
     'round-lake',
   ],
+  // stpete — pinned 2026-07-13 (pin-day)
+  'stpete:2026-07-13': [
+    'williams-park',
+    'fortunatos-italian-pizzeria-pasadena',
+    'webbs-city-cellar',
+    'black-crow-coffee-shop',
+    'the-neon-lunchbox',
+  ],
 }
