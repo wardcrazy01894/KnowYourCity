@@ -235,13 +235,13 @@
     {
       "id": "horse-and-jockey",
       "name": "The Horse & Jockey",
-      "lat": 27.75814,
-      "lng": -82.73655,
+      "lat": 27.7585,
+      "lng": -82.73708,
       "category": "bar",
       "clue": "A proper British pub — live music, footy on the telly, and fish and chips.",
       "photoUrl": null,
       "source": "manual",
-      "attribution": "OpenStreetMap ODbL (Nominatim address point)"
+      "attribution": "OpenStreetMap ODbL (centroid of building way 231479421, storefront verified via Google Places)"
     },
     {
       "id": "hubbards-marina",

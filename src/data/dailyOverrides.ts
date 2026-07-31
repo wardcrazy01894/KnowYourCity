@@ -34,4 +34,12 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'black-crow-coffee-shop',
     'the-neon-lunchbox',
   ],
+  // stpete — pinned 2026-07-31 (pin-day)
+  'stpete:2026-07-31': [
+    'florida-holocaust-museum',
+    'horse-and-jockey',
+    'burger-monger',
+    'mangrove-bay-golf-course',
+    'cafe-1001-and-creative-catering-company',
+  ],
 }
