@@ -176,9 +176,9 @@ pipeline's dupe rule). Sweep hits must be web-verified before adding — OSM is
 stale (most "missing" hits around a downtown block turn out to be
 already-known closures recorded in the fame cache).
 
-### Status: 376 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
+### Status: 375 locations (after the fame pass cleanup + parks/lakes + play-cap re-run)
 
-`public/locations.stpete.json` holds **376 St. Pete places** (peaked at 401 after
+`public/locations.stpete.json` holds **375 St. Pete places** (peaked at 401 after
 the +19 parks/lakes pass; the play-cap re-run, §4c/PR #59, re-deduped to 389; +7
 player-requested/nearby-sweep adds; −1 closed bar removed via issue #81; +3
 John's Pass Village adds; −1 closed McAuley's Pub removed; a Google Places
@@ -192,7 +192,9 @@ spots (Perry's Porch, China Crossings, Whiskey on Park) → 373; then the
 four-city full-vetting pass (PR #122 + the benched sweep) removed 3 long-closed
 resort venues (Bongo's, Level 11, Spinners) → 370; then the local-chain
 disambiguation pass (§4e, #142) re-added 3 benched same-name branches → 373,
-then +3 player-request adds around the Horse & Jockey block (#146) → **376**,
+then +3 player-request adds around the Horse & Jockey block (#146) → 376, then
+−1 in-stadium sub-space (Ballpark & Rec, an arcade bar inside Tropicana Field)
+dropped as junk via issue #160 → **375**,
 all in play, since the cap is 400). It started at ~516
 from the inclusive pull below, then the fame+status pass (§4b) **removed 133** —
 104 permanently-closed, 28 zero-web-presence junk entries (generic OSM nodes like
@@ -287,6 +289,19 @@ background workflow that fans out ~25 locations per agent):
 > `apply-difficulty.mjs` after. (Status verification likewise prefers Google Places
 > `business_status` over stale OSM.)
 
+> **Sub-spaces inside a bigger venue are not standalone answers.** Co-located
+> entries are fine in general — the gate is per-entry fame, not proximity (a
+> counter inside a deli can earn its own pin). But a room _inside_ a larger
+> pinned venue that a player can only reach through that venue's gate — a
+> stadium concourse bar, a ticket-only club level — is the same pin twice, and
+> the map shows it as a second dot on top of the first. Drop it by setting
+> `status: "uncertain"` on its `data/fame-<city>.json` row (with a `statusNote`
+> saying why) and re-running `apply-difficulty.mjs`; never hand-delete from
+> `public/locations.<city>.json`, or the next pipeline run resurrects it.
+> Precedent: **Ballpark & Rec** (issue #160) — an arcade bar inside Tropicana
+> Field, 128m from the `tropicana-field` pin, with no Google Places listing of
+> its own.
+
 > **Crash-safe harvesting (large cities).** Generate the fame `Workflow` with
 > **`scripts/gen-fame-workflow.mjs "<City, ST>" <tuples.json> <out.workflow.js>`** —
 > it embeds the tuples as a literal so you launch via `scriptPath` (an `args`
@@ -349,7 +364,7 @@ benched rows (`inPlay: false`) keep their fame but carry **no `difficulty`** (no
 stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
-filters to `inPlay !== false`. Current caps: St. Pete 400 (376 rows, all in
+filters to `inPlay !== false`. Current caps: St. Pete 400 (375 rows, all in
 play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4198).
 
 > **Removing a row reshuffles the cap.** Because in-play membership and the
@@ -441,7 +456,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 (uncapped; let the fame pass trim the tail). Cities are defined once in the root
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
-§4c, post full-vetting + chain-branch re-adds §4e): St. Pete (376 → **376**),
+§4c, post full-vetting + chain-branch re-adds §4e): St. Pete (375 → **375**),
 State College (229 → **200**), Ann Arbor (344 → **300**), Seattle (2463 →
 **500**), Chicago (4198 → **700**) —
 all enriched. (Seattle gained back 12 relocated venues re-added at their verified

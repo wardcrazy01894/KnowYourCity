@@ -205,11 +205,12 @@
   },
   {
     "id": "ballpark-and-rec",
-    "status": "open",
+    "status": "uncertain",
     "currentName": "",
     "fameScore": 35,
     "reviewCount": 100,
-    "hasWikipedia": false
+    "hasWikipedia": false,
+    "statusNote": "not a standalone venue — an arcade bar INSIDE Tropicana Field (behind the Budweiser Porch, left field), ticket-only and open only around Rays games; no Google Places listing of its own. Duplicates the tropicana-field pin 128m away. Dropped as junk (issue #160)."
   },
   {
     "id": "banana-hammock",

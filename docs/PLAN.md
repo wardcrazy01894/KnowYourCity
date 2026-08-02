@@ -130,7 +130,7 @@ KnowYourCity/
 | ------ | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | **M0** | Scaffold: Vite+React+TS, deps, `npm run dev`                                         | ✅ done                                                                                                              |
 | **M1** | Domain core: `types.ts`, `daily.ts`, `scoring.ts` (+ tests)                          | ✅ done                                                                                                              |
-| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 376; 4 more cities) | ✅ done                                                                                                              |
+| **M2** | Data pipeline + curated per-city `locations.<id>.json` (St. Pete 375; 4 more cities) | ✅ done                                                                                                              |
 | **M3** | Map: `MapGuess` — satellite tiles, pin, reveal line, bounds                          | ✅ done                                                                                                              |
 | **M4** | Game flow: round → reveal → next → finished                                          | ✅ done                                                                                                              |
 | **M5** | Persistence: resume + streak/history                                                 | ✅ done                                                                                                              |
@@ -199,7 +199,7 @@ residents would instantly recognise it. Fame is scored 0–100 by a one-time
 Google/Yelp review counts _relative to the city_, Wikipedia). Every enriched
 city today sets a **`playCap`** (see §5.1 and `docs/DATA-SOURCING.md` §4c), so
 the live bucketing is **count-based over the in-play set — 40% easy / 40% medium
-/ 20% hard** (e.g. St. Pete 376 → 150/151/75, Seattle 500 → 200/200/100). An
+/ 20% hard** (e.g. St. Pete 375 → 150/150/75, Seattle 500 → 200/200/100). An
 _uncapped_ enriched city (none currently) would instead bucket by **city-relative
 percentile** with a narrow-easy split — top 20% easy / next 45% medium / bottom
 35% hard — keeping "easy" close to "everyone knows it" even when a city has few
@@ -223,6 +223,12 @@ any dataset-changing PR** — see `docs/DATA-SOURCING.md` §4 and the
 `add-location` / `add-or-update-city` skills. Past days and not-yet-played
 future days still shift on edits (nobody is mid-game in them); the live day
 is what the pin protects.
+
+**Sweep expired entries when you pin.** A pinned day that has passed can no
+longer match a seed, but it still counts for the cross-day uniqueness guard in
+`src/lib/locations.test.ts` — and the PRNG that `pin-day` freezes is free to
+re-pick a venue an expired day used, which fails CI on a pin that is perfectly
+correct. Delete the past-dated entries in the same PR (git history keeps them).
 
 ### 5.3 List size vs repetition
 
