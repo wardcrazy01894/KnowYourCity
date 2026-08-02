@@ -309,21 +309,6 @@
       "lastVerified": "2026-06-16"
     },
     {
-      "id": "ballpark-and-rec",
-      "name": "Ballpark and Rec",
-      "lat": 27.768939,
-      "lng": -82.65235,
-      "category": "bar",
-      "difficulty": "medium",
-      "inPlay": true,
-      "fameScore": 35,
-      "clue": null,
-      "photoUrl": null,
-      "source": "overpass",
-      "attribution": "OpenStreetMap ODbL",
-      "lastVerified": "2026-06-16"
-    },
-    {
       "id": "banana-hammock",
       "name": "Banana Hammock",
       "lat": 27.771388,

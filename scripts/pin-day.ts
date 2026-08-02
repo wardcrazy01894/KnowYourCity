@@ -18,7 +18,10 @@
  * commit src/data/dailyOverrides.ts in the same PR as the dataset change.
  * The locations guard test validates every pinned id (exists, inPlay,
  * distinct) against the CURRENT dataset — if a dataset edit removes a pinned
- * venue, CI fails and the pin must be resolved consciously.
+ * venue, CI fails and the pin must be resolved consciously. That suite also
+ * rejects a venue reused across two override days, so delete the past-dated
+ * entries while you're in the file — an expired pin can never match a seed,
+ * but it can still collide with the day you just froze.
  *
  * Runtime: uses Node's TypeScript type-stripping to import the REAL selection
  * code (src/lib/daily.ts) — no duplicated PRNG logic to drift. Node 24+

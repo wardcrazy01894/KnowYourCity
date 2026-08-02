@@ -14,32 +14,18 @@
  * (src/lib/locations.test.ts) — ids must exist, be inPlay, and be distinct.
  *
  * Expired entries never match once the date passes; they're deleted during
- * cleanup passes (the Jun 14 – Jul 2 2026 St. Pete/Seattle/Ann Arbor runs live
- * in git history).
+ * cleanup passes (the Jun 14 – Jul 31 2026 St. Pete/Seattle/Ann Arbor runs live
+ * in git history). Sweep them when you pin a new day: the cross-day uniqueness
+ * guard compares every entry in this file, and the PRNG that `pin-day` freezes
+ * is free to re-pick a venue that an already-expired day used.
  */
 export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
-  // stpete — pinned 2026-07-08 (pin-day from e5b0478)
-  'stpete:2026-07-08': [
-    'vinoy-park',
-    'la-v-vietnamese-fusion',
-    'grove-surf-coffee',
-    'the-bends',
-    'round-lake',
-  ],
-  // stpete — pinned 2026-07-13 (pin-day)
-  'stpete:2026-07-13': [
-    'williams-park',
-    'fortunatos-italian-pizzeria-pasadena',
-    'webbs-city-cellar',
+  // stpete — pinned 2026-08-02 (pin-day)
+  'stpete:2026-08-02': [
+    'boyd-hill-nature-preserve',
+    'saint-petersburg-ale-house',
+    'el-huarache-veloz',
     'black-crow-coffee-shop',
-    'the-neon-lunchbox',
-  ],
-  // stpete — pinned 2026-07-31 (pin-day)
-  'stpete:2026-07-31': [
-    'florida-holocaust-museum',
-    'horse-and-jockey',
-    'burger-monger',
-    'mangrove-bay-golf-course',
-    'cafe-1001-and-creative-catering-company',
+    'salems-fresh-eats',
   ],
 }
