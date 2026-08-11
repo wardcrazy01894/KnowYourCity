@@ -90,6 +90,17 @@
       "attribution": "OpenStreetMap ODbL (re-pinned via Nominatim, verified via Google Places)"
     },
     {
+      "id": "central-pizza-subs",
+      "name": "Central Pizza & Subs",
+      "lat": 27.7709162,
+      "lng": -82.7245569,
+      "category": "restaurant",
+      "clue": "A family-run carryout pizza and sub shop on Central Avenue near Pasadena.",
+      "photoUrl": null,
+      "source": "manual",
+      "attribution": "OpenStreetMap ODbL (address point via Nominatim, verified via Google Places)"
+    },
+    {
       "id": "ceviche-tapas-bar",
       "name": "Ceviche Tapas Bar",
       "lat": 27.775469,

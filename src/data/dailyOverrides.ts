@@ -20,12 +20,14 @@
  * is free to re-pick a venue that an already-expired day used.
  */
 export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
-  // stpete — pinned 2026-08-02 (pin-day)
-  'stpete:2026-08-02': [
-    'boyd-hill-nature-preserve',
-    'saint-petersburg-ale-house',
-    'el-huarache-veloz',
-    'black-crow-coffee-shop',
-    'salems-fresh-eats',
+  // stpete — pinned 2026-08-11 (pin-day). The 5th pick was pinned as
+  // 'central-pizza'; that row is the same physical venue at 7280 49th St N,
+  // renamed in this PR to its current name — the day's places are unchanged.
+  'stpete:2026-08-11': [
+    'williams-park',
+    'kahwa-coffee-north',
+    'copa',
+    'old-northeast-tavern',
+    'off-the-brick-new-york-pizza',
   ],
 }
