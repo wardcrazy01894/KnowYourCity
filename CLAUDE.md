@@ -45,6 +45,7 @@ and again in every PR review):**
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                                      |
 | `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                                  |
+| `src/components/MapGuess.tsx` (+ its render test)   | PLAN §6 (map integration)                                                                             |
 | `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                          |
 | `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                            |
 | `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                                      |
@@ -85,7 +86,7 @@ Use the **`/tdd-cycle`** skill to drive one change through the loop. Prefer
 keep React/Leaflet shells thin. Those shells are largely verified manually, but
 the parts with a checkable structural invariant are not exempt — `MapGuess` now
 has `MapGuess.render.test.tsx` asserting one map instance under StrictMode and
-no cross-round Leaflet layer leaks, which is what caught the `[M-D1]` polygon
+no cross-round Leaflet layer leaks, which is what guards the `[M-D1]` polygon
 cleanup. New logic that lands
 without a test that would fail before it is incomplete — reviewers should push
 back. (Pure data edits like adding a curated location are covered by the dataset
