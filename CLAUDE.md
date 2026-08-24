@@ -52,6 +52,7 @@ and again in every PR review):**
 | `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
 | `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed    |
 | `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)      |
+| `eslint.config.js` rule severities                  | This file's §Lint rule policy (staged/downgraded rules need a why)                            |
 | `package.json` scripts / engines                    | README + this file's command lists                                                            |
 | `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                         |
 
@@ -84,6 +85,20 @@ keep React/Leaflet shells thin and verify those manually. New logic that lands
 without a test that would fail before it is incomplete — reviewers should push
 back. (Pure data edits like adding a curated location are covered by the dataset
 guard test, `src/lib/locations.test.ts`.)
+
+## Lint rule policy
+
+`npm run lint` gates on **errors**; warnings are advisory and do not fail CI
+(there is no `--max-warnings`). A rule may be set to `warn` instead of `error`
+only as a **staged migration** — the config must carry a comment saying what
+downgraded it, why the violations weren't fixed in that PR, and that fixing
+them is a follow-up. Never set a rule to `off` to make an upgrade land.
+
+Currently staged (from `eslint-plugin-react-hooks` v5 → v7, which ESLint 10
+requires): `react-hooks/refs` and `react-hooks/set-state-in-effect` — 7
+violations across `App.tsx`, `MapGuess.tsx`, `DatasetSearch.tsx`, all
+deliberate documented patterns. Fixing them changes runtime behavior, so per
+the TDD rule above it must be test-first.
 
 ## Local commands
 
