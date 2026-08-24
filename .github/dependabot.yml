@@ -13,9 +13,11 @@ updates:
       interval: weekly
       day: monday
     # 10, not the default 5: majors are excluded from the group below, so each
-    # one takes its own slot. With a dozen majors currently available, a limit
-    # of 5 could be fully occupied by long-lived major PRs and starve the
-    # batched minor/patch PR that is the whole point of this config.
+    # one takes its own slot, and a small limit can be fully occupied by
+    # long-lived major PRs while the batched minor/patch PR — the point of this
+    # config — waits. 10 makes that unlikely, but it is not a guarantee (there
+    # is no documented ordering between the group PR and individual ones). The
+    # real fix is keeping the major backlog short.
     open-pull-requests-limit: 10
     commit-message:
       prefix: chore
@@ -35,6 +37,8 @@ updates:
     schedule:
       interval: weekly
       day: monday
+    # Left at the default 5 on purpose: only 6 distinct actions are used, and
+    # simultaneous action majors are rare and merge quickly.
     open-pull-requests-limit: 5
     commit-message:
       prefix: chore
