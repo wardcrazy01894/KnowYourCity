@@ -54,7 +54,7 @@ and again in every PR review):**
 | `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed            |
 | `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)              |
 | `eslint.config.js` (rules, ignores, files blocks)   | This file's §Lint rule policy (staged/downgraded rules need a why)                                    |
-| `package.json` scripts / engines                    | README + this file's command lists                                                                    |
+| `package.json` scripts / engines                    | README + this file's command lists + DATA-SOURCING §1 (it cites `engines` for the Node baseline)      |
 | `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                                 |
 
 Two habits make the rule stick: (1) PR bodies written via `gh pr create
