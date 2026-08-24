@@ -41,19 +41,20 @@ never in a follow-up. The PR template has the checklist; the relevant targets:
 **Docs map — when you touch the left, check the right (before opening the PR,
 and again in every PR review):**
 
-| Change touches…                                     | Update / verify                                                                               |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                              |
-| `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                          |
-| `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                  |
-| `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                    |
-| `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                              |
-| `.github/workflows/*`, `scripts/protect-main.sh`    | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                     |
-| `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
-| `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed    |
-| `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)      |
-| `package.json` scripts / engines                    | README + this file's command lists                                                            |
-| `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                         |
+| Change touches…                                     | Update / verify                                                                                       |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                                      |
+| `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                                  |
+| `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                          |
+| `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                            |
+| `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                                      |
+| `.github/workflows/*`, `scripts/protect-main.sh`    | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                             |
+| `.github/dependabot.yml`, `package-lock.json`       | `docs/OPERATIONS.md` §Dependency updates (policy). Routine lockfile bumps: verify only, no doc change |
+| `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS         |
+| `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed            |
+| `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)              |
+| `package.json` scripts / engines                    | README + this file's command lists                                                                    |
+| `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                                 |
 
 Two habits make the rule stick: (1) PR bodies written via `gh pr create
 --body-file` bypass the template checklist — walk the table yourself before
