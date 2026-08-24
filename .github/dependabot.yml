@@ -7,6 +7,14 @@
 # gets reviewed on its own merits — ESLint 10 (#167) and React 19 (#168) both
 # landed that way. (Cite merged PR numbers, not status: "in flight" in a
 # committed comment is stale the moment the PR merges.)
+#
+# That guarantee has ONE hole, and it is semver's, not Dependabot's: for a 0.x
+# package a middle-digit bump is semver-MINOR, so it rides the grouped PR even
+# though it is semantically breaking. eslint-plugin-react-refresh 0.4 -> 0.5
+# was grouped into PR #171 for exactly that reason. Current 0.x exposure:
+# eslint-plugin-react-refresh. Treat a grouped PR as low-noise, not risk-free —
+# check whether it moved a 0.x package before waving it through.
+# See docs/OPERATIONS.md §Dependency updates.
 version: 2
 updates:
   - package-ecosystem: npm
