@@ -170,8 +170,23 @@ Dependabot PR is safe to squash-merge like a normal one.
 
 **Grouping.** Minor + patch bumps arrive batched as a single PR per ecosystem to
 keep routine churn to one review. Major bumps are deliberately left out of that
-group so each breaking upgrade (React 19, TypeScript 7, ESLint 10, …) lands as
-its own reviewable PR.
+group so each breaking upgrade lands as its own reviewable PR — ESLint 10
+(#167) and React 19 (#168) went that way.
+
+Caveat: for a **`0.x`** package a middle-digit bump is semver-_minor_, so it
+rides the grouped PR even when it's semantically breaking
+(`eslint-plugin-react-refresh` 0.4 → 0.5 did exactly that). Grouped PRs are
+low-noise, not risk-free.
+
+**Ignored majors.** A major may be suppressed with an `ignore` entry when it is
+blocked upstream and so could never go green. Each one carries a comment in
+`dependabot.yml` saying why and when to remove it, plus a `BACKLOG.md` entry.
+Current exceptions:
+
+- **`typescript` majors** — no `typescript-eslint` release supports TS 7 (all
+  pin `peerDependencies.typescript: ">=4.8.4 <6.1.0"`, and forcing it crashes
+  `typescript-estree`), so `npm run lint` — a required check — cannot pass.
+  Remove the ignore once upstream support lands.
 
 **Vulnerabilities.** `.github/workflows/ci.yml` runs `npm audit`
 (informational, `continue-on-error`, so a new advisory never wedges a PR). It
