@@ -41,20 +41,21 @@ never in a follow-up. The PR template has the checklist; the relevant targets:
 **Docs map — when you touch the left, check the right (before opening the PR,
 and again in every PR review):**
 
-| Change touches…                                     | Update / verify                                                                               |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                              |
-| `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                          |
-| `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                  |
-| `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                    |
-| `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                              |
-| `.github/workflows/*`, `scripts/protect-main.sh`    | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                     |
-| `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
-| `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed    |
-| `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)      |
-| `eslint.config.js` (rules, ignores, files blocks)   | This file's §Lint rule policy (staged/downgraded rules need a why)                            |
-| `package.json` scripts / engines                    | README + this file's command lists                                                            |
-| `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                         |
+| Change touches…                                     | Update / verify                                                                                       |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                                      |
+| `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                                  |
+| `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                          |
+| `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                            |
+| `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                                      |
+| `.github/workflows/*`, `scripts/protect-main.sh`    | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                             |
+| `.github/dependabot.yml`, `package-lock.json`       | `docs/OPERATIONS.md` §Dependency updates (policy). Routine lockfile bumps: verify only, no doc change |
+| `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS         |
+| `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed            |
+| `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)              |
+| `eslint.config.js` (rules, ignores, files blocks)   | This file's §Lint rule policy (staged/downgraded rules need a why)                                    |
+| `package.json` scripts / engines                    | README + this file's command lists                                                                    |
+| `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                                 |
 
 Two habits make the rule stick: (1) PR bodies written via `gh pr create
 --body-file` bypass the template checklist — walk the table yourself before
@@ -95,8 +96,9 @@ downgraded it, why the violations weren't fixed in that PR, and that fixing
 them is a follow-up. Never set a rule to `off` to make an upgrade land.
 
 An **inline** `eslint-disable-line` / `eslint-disable-next-line` is allowed for
-a one-off, and must carry a comment saying why (see the two
-`react-hooks/exhaustive-deps` disables in `App.tsx` and `MapGuess.tsx`). Prefer
+a one-off, and must carry a comment saying why — see the eight
+`react-hooks/exhaustive-deps` disables across `App.tsx`, `Game.tsx`,
+`MapGuess.tsx`, `Leaderboard.tsx` and `Results.tsx`, each of which does. Prefer
 an inline disable with a reason over downgrading a rule repo-wide.
 
 Currently staged (from `eslint-plugin-react-hooks` v5 → v7, which ESLint 10
@@ -107,11 +109,12 @@ the TDD rule above it must be test-first. Tracked in `BACKLOG.md`, which
 records the trigger condition: they are safe only while the app uses no
 concurrent React features.
 
-Note that v7's `recommended` also enables ~12 further React-Compiler rules at
-`error` (`purity`, `immutability`, `static-components`, `use-memo`,
-`preserve-manual-memoization`, `error-boundaries`, `set-state-in-render`, …).
-They all pass as of PR #167 and are deliberately left at `error` — recorded
-here so a future failure from one is traceable to that upgrade.
+Note that v7's `recommended` also enables 12 further React-Compiler rules — 10
+at `error` (`purity`, `immutability`, `static-components`, `use-memo`,
+`preserve-manual-memoization`, `error-boundaries`, `set-state-in-render`,
+`globals`, `config`, `gating`) and 2 at `warn` (`incompatible-library`,
+`unsupported-syntax`). They all pass as of PR #167 — recorded here so a future
+failure from one is traceable to that upgrade.
 
 ## Local commands
 

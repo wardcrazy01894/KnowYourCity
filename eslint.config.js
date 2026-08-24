@@ -9,9 +9,19 @@ export default tseslint.config(
   // `npm run lint` fail locally on files CI never sees. Same for
   // .claude/worktrees, where review agents check out full copies of the repo
   // (gitignored, so CI never sees them either — but `eslint .` would otherwise
-  // lint every file in every live agent worktree, and fail on their vendored
-  // node_modules).
-  { ignores: ['dist', 'data', 'node_modules', 'scripts/tmp', '.claude'] },
+  // lint 600+ duplicated source files across every live agent worktree).
+  // Scoped to worktrees, not all of .claude, so harness code committed there
+  // later (alongside .claude/hooks/lint-on-edit.sh) still gets linted — and to
+  // match .prettierignore, which already uses the narrow path.
+  {
+    ignores: [
+      'dist',
+      'data',
+      'node_modules',
+      'scripts/tmp',
+      '.claude/worktrees',
+    ],
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],

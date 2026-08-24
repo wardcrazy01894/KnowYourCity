@@ -158,9 +158,10 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       `App.tsx`, `MapGuess.tsx`, `DatasetSearch.tsx`. **They are benign only
       because this app uses no concurrent features** — no `Suspense`,
       `React.lazy`, `startTransition`, `useTransition`, `useDeferredValue`, or
-      `useSyncExternalStore` anywhere in `src/`, so no render is ever computed
-      and discarded. **Fix these BEFORE adopting any of those**: with
-      concurrent rendering, `App.tsx:130/135` becomes a real bug — a discarded
+      `useSyncExternalStore` anywhere in `src/`, so no render is discarded in
+      production. (`main.tsx` does wrap the app in `StrictMode`, which
+      double-renders in dev, but these writes converge.) **Fix these BEFORE adopting any of those**: with
+      concurrent rendering, `App.tsx:130/135/137` becomes a real bug — a discarded
       render advances `sessionModeRef` past the freeze, and the next committed
       render sees matching selection seeds and silently yanks the player into
       the new day, defeating the midnight-freeze protection
