@@ -6,8 +6,22 @@ import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   // scripts/tmp holds untracked one-off scratch scripts — linting them makes
-  // `npm run lint` fail locally on files CI never sees.
-  { ignores: ['dist', 'data', 'node_modules', 'scripts/tmp'] },
+  // `npm run lint` fail locally on files CI never sees. Same for
+  // .claude/worktrees, where review agents check out full copies of the repo
+  // (gitignored, so CI never sees them either — but `eslint .` would otherwise
+  // lint 600+ duplicated source files across every live agent worktree).
+  // Scoped to worktrees, not all of .claude, so harness code committed there
+  // later (alongside .claude/hooks/lint-on-edit.sh) still gets linted — and to
+  // match .prettierignore, which already uses the narrow path.
+  {
+    ignores: [
+      'dist',
+      'data',
+      'node_modules',
+      'scripts/tmp',
+      '.claude/worktrees',
+    ],
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -25,6 +39,25 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      // --- Staged from the eslint-plugin-react-hooks v5 → v7 upgrade ---
+      // v7's `recommended` adds two rules that flag deliberate, commented,
+      // test-covered patterns in this codebase. They are set to `warn` (NOT
+      // off) so the signal stays visible while the upgrade lands, rather than
+      // bundling behavior-risk refactors of a live game into a dep bump.
+      //
+      // `refs` — the "latest ref" idiom (MapGuess's onGuessRef/lockedRef keep
+      // the map click handler from re-binding every render) and App's
+      // sessionModeRef, which is *read during render* to freeze the mounted
+      // session's mode across city-local midnight. The latter can't move into
+      // an effect without restructuring how `mode` is computed.
+      //
+      // `set-state-in-effect` — the reset-on-input-change pattern
+      // (`setToday(null)` / `setLocations(null)` before an async refetch).
+      //
+      // Fixing these properly is a follow-up, and per CLAUDE.md must be
+      // test-first since it changes runtime behavior.
+      'react-hooks/refs': 'warn',
+      'react-hooks/set-state-in-effect': 'warn',
       // Allow intentionally-unused stub params/vars when prefixed with `_`.
       '@typescript-eslint/no-unused-vars': [
         'error',

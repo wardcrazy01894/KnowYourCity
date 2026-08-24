@@ -152,6 +152,27 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside
       the name. `photoUrl` is already in the schema; source from Wikimedia
       Commons (free). v1 stays text-only by decision.
+- [ ] **Clear the staged `react-hooks` v7 warnings** — `react-hooks/refs` and
+      `react-hooks/set-state-in-effect` are set to `warn` in `eslint.config.js`
+      (staged during the ESLint 10 upgrade, PR #167); 7 violations across
+      `App.tsx`, `MapGuess.tsx`, `DatasetSearch.tsx`. **They are benign only
+      because this app uses no concurrent features** — no `Suspense`,
+      `React.lazy`, `startTransition`, `useTransition`, `useDeferredValue`, or
+      `useSyncExternalStore` anywhere in `src/`, so no render is discarded in
+      production. (`main.tsx` does wrap the app in `StrictMode`, which
+      double-renders in dev, but these writes converge.) **Fix these BEFORE
+      adopting any of those** — the two ref sites fail differently:
+      `App.tsx:130/135` (`sessionModeRef`) is the midnight-rollover bug — a
+      discarded render advances the ref past the freeze, the next committed
+      render sees matching selection seeds, and the player is silently
+      yanked into the new day, defeating what `resolveSessionMode` exists
+      for. `App.tsx:137` (`gameCtxRef`) is narrower: its payload is
+      invariant across a day roll (`storageCityId` is `city.id` in official
+      mode, `timeZone` comes from the city), so its hazard is a discarded
+      render from a city switch or a `__shuffle`/`__date`/`__polygons`
+      namespace change leaving the ref on a never-committed namespace,
+      feeding `shouldDeferReload` the wrong saved state. Test-first per
+      CLAUDE.md.
 - [ ] **Persistence / stats UI** — surface a stats panel + an "already played
       today" view (resume mid-day + streaks already work under the hood).
 - [x] **Deploy to GitHub Pages** — DONE 2026-06-07 via
