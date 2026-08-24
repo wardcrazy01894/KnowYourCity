@@ -56,10 +56,10 @@ New puzzle daily at **midnight in the city's timezone**.
 
 ## 🚀 Quick start
 
-Requires Node **22.22.2+, 24.15+, or 26+** (`engines` in `package.json`) — jsdom
-30, the test DOM environment, supports only those release lines, so the
-constraint is a disjunction rather than a single floor. Other versions still
-install, with an `npm warn EBADENGINE`, but are untested.
+Requires Node **22.22.2+ (22.x), 24.15+ (24.x), or 26+** — see `engines` in
+`package.json`. jsdom 30, the test DOM environment, supports only those three
+release lines, so the constraint is a disjunction rather than a single floor.
+Other versions still install, with an `npm warn EBADENGINE`, but are untested.
 
 ```bash
 npm install
