@@ -4,8 +4,9 @@
 # Grouping policy: minor + patch updates land as ONE batched PR per ecosystem
 # so routine bumps stay low-noise on a solo repo. Major updates are excluded
 # from the group on purpose — each arrives as its own PR so a breaking upgrade
-# gets reviewed on its own merits — ESLint 10 (#167) landed that way, and
-# React 19 (#168) is in flight.
+# gets reviewed on its own merits — ESLint 10 (#167) and React 19 (#168) both
+# landed that way. (Cite merged PR numbers, not status: "in flight" in a
+# committed comment is stale the moment the PR merges.)
 version: 2
 updates:
   - package-ecosystem: npm

@@ -174,9 +174,10 @@ group so each breaking upgrade lands as its own reviewable PR — ESLint 10
 (#167) and React 19 (#168) went that way.
 
 Caveat: for a **`0.x`** package a middle-digit bump is semver-_minor_, so it
-rides the grouped PR even when it's semantically breaking
-(`eslint-plugin-react-refresh` 0.4 → 0.5 did exactly that). Grouped PRs are
-low-noise, not risk-free.
+rides the grouped PR even when it's semantically breaking — Dependabot put
+`eslint-plugin-react-refresh` 0.4 → 0.5 into the grouped PR #171 for exactly
+that reason (it actually reached `main` via #167, the dedicated ESLint 10
+PR). Grouped PRs are low-noise, not risk-free.
 
 **Ignored majors.** A major may be suppressed with an `ignore` entry when it is
 blocked upstream and so could never go green. Each one carries a comment in
