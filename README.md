@@ -56,6 +56,10 @@ New puzzle daily at **midnight in the city's timezone**.
 
 ## 🚀 Quick start
 
+Requires **Node >= 22.22.2** (`engines` in `package.json`). The `.22.2` is not
+arbitrary — jsdom 30, the test DOM environment, rejects anything below it, so an
+older 22.x installs but fails the test suite.
+
 ```bash
 npm install
 npm run dev          # → http://localhost:5173/
