@@ -6,8 +6,12 @@ import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   // scripts/tmp holds untracked one-off scratch scripts — linting them makes
-  // `npm run lint` fail locally on files CI never sees.
-  { ignores: ['dist', 'data', 'node_modules', 'scripts/tmp'] },
+  // `npm run lint` fail locally on files CI never sees. Same for
+  // .claude/worktrees, where review agents check out full copies of the repo
+  // (gitignored, so CI never sees them either — but `eslint .` would otherwise
+  // lint every file in every live agent worktree, and fail on their vendored
+  // node_modules).
+  { ignores: ['dist', 'data', 'node_modules', 'scripts/tmp', '.claude'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],

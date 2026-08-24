@@ -152,6 +152,19 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside
       the name. `photoUrl` is already in the schema; source from Wikimedia
       Commons (free). v1 stays text-only by decision.
+- [ ] **Clear the staged `react-hooks` v7 warnings** — `react-hooks/refs` and
+      `react-hooks/set-state-in-effect` are set to `warn` in `eslint.config.js`
+      (staged during the ESLint 10 upgrade, PR #167); 7 violations across
+      `App.tsx`, `MapGuess.tsx`, `DatasetSearch.tsx`. **They are benign only
+      because this app uses no concurrent features** — no `Suspense`,
+      `React.lazy`, `startTransition`, `useTransition`, `useDeferredValue`, or
+      `useSyncExternalStore` anywhere in `src/`, so no render is ever computed
+      and discarded. **Fix these BEFORE adopting any of those**: with
+      concurrent rendering, `App.tsx:130/135` becomes a real bug — a discarded
+      render advances `sessionModeRef` past the freeze, and the next committed
+      render sees matching selection seeds and silently yanks the player into
+      the new day, defeating the midnight-freeze protection
+      `resolveSessionMode` exists for. Test-first per CLAUDE.md.
 - [ ] **Persistence / stats UI** — surface a stats panel + an "already played
       today" view (resume mid-day + streaks already work under the hood).
 - [x] **Deploy to GitHub Pages** — DONE 2026-06-07 via

@@ -52,7 +52,7 @@ and again in every PR review):**
 | `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
 | `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed    |
 | `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)      |
-| `eslint.config.js` rule severities                  | This file's §Lint rule policy (staged/downgraded rules need a why)                            |
+| `eslint.config.js` (rules, ignores, files blocks)   | This file's §Lint rule policy (staged/downgraded rules need a why)                            |
 | `package.json` scripts / engines                    | README + this file's command lists                                                            |
 | `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                         |
 
@@ -94,11 +94,24 @@ only as a **staged migration** — the config must carry a comment saying what
 downgraded it, why the violations weren't fixed in that PR, and that fixing
 them is a follow-up. Never set a rule to `off` to make an upgrade land.
 
+An **inline** `eslint-disable-line` / `eslint-disable-next-line` is allowed for
+a one-off, and must carry a comment saying why (see the two
+`react-hooks/exhaustive-deps` disables in `App.tsx` and `MapGuess.tsx`). Prefer
+an inline disable with a reason over downgrading a rule repo-wide.
+
 Currently staged (from `eslint-plugin-react-hooks` v5 → v7, which ESLint 10
 requires): `react-hooks/refs` and `react-hooks/set-state-in-effect` — 7
 violations across `App.tsx`, `MapGuess.tsx`, `DatasetSearch.tsx`, all
 deliberate documented patterns. Fixing them changes runtime behavior, so per
-the TDD rule above it must be test-first.
+the TDD rule above it must be test-first. Tracked in `BACKLOG.md`, which
+records the trigger condition: they are safe only while the app uses no
+concurrent React features.
+
+Note that v7's `recommended` also enables ~12 further React-Compiler rules at
+`error` (`purity`, `immutability`, `static-components`, `use-memo`,
+`preserve-manual-memoization`, `error-boundaries`, `set-state-in-render`, …).
+They all pass as of PR #167 and are deliberately left at `error` — recorded
+here so a future failure from one is traceable to that upgrade.
 
 ## Local commands
 
