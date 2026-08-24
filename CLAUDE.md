@@ -53,7 +53,8 @@ and again in every PR review):**
 | `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS         |
 | `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed            |
 | `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)              |
-| `package.json` scripts / engines                    | README + this file's command lists                                                                    |
+| `eslint.config.js` (rules, ignores, files blocks)   | This file's §Lint rule policy (staged/downgraded rules need a why)                                    |
+| `package.json` scripts / engines                    | README + this file's command lists + DATA-SOURCING §1 (it cites `engines` for the Node baseline)      |
 | `scripts/*.mjs` pipeline behavior                   | DATA-SOURCING §§1–4 (the step that script implements)                                                 |
 
 Two habits make the rule stick: (1) PR bodies written via `gh pr create
@@ -81,10 +82,43 @@ Every behavior change is **test-first**: red → green → refactor.
 Use the **`/tdd-cycle`** skill to drive one change through the loop. Prefer
 **pure functions** for logic (e.g. `scoreForDistance`, `selectDailyLocations`,
 `shouldStartFresh`, `buildShareString`) so it's unit-testable without the DOM;
-keep React/Leaflet shells thin and verify those manually. New logic that lands
+keep React/Leaflet shells thin. Those shells are largely verified manually, but
+the parts with a checkable structural invariant are not exempt — `MapGuess` now
+has `MapGuess.render.test.tsx` asserting one map instance under StrictMode and
+no cross-round Leaflet layer leaks, which is what caught the `[M-D1]` polygon
+cleanup. New logic that lands
 without a test that would fail before it is incomplete — reviewers should push
 back. (Pure data edits like adding a curated location are covered by the dataset
 guard test, `src/lib/locations.test.ts`.)
+
+## Lint rule policy
+
+`npm run lint` gates on **errors**; warnings are advisory and do not fail CI
+(there is no `--max-warnings`). A rule may be set to `warn` instead of `error`
+only as a **staged migration** — the config must carry a comment saying what
+downgraded it, why the violations weren't fixed in that PR, and that fixing
+them is a follow-up. Never set a rule to `off` to make an upgrade land.
+
+An **inline** `eslint-disable-line` / `eslint-disable-next-line` is allowed for
+a one-off, and must carry a comment saying why — see the eight
+`react-hooks/exhaustive-deps` disables across `App.tsx`, `Game.tsx`,
+`MapGuess.tsx`, `Leaderboard.tsx` and `Results.tsx`, each of which does. Prefer
+an inline disable with a reason over downgrading a rule repo-wide.
+
+Currently staged (from `eslint-plugin-react-hooks` v5 → v7, which ESLint 10
+requires): `react-hooks/refs` and `react-hooks/set-state-in-effect` — 7
+violations across `App.tsx`, `MapGuess.tsx`, `DatasetSearch.tsx`, all
+deliberate documented patterns. Fixing them changes runtime behavior, so per
+the TDD rule above it must be test-first. Tracked in `BACKLOG.md`, which
+records the trigger condition: they are safe only while the app uses no
+concurrent React features.
+
+Note that v7's `recommended` also enables 12 further React-Compiler rules — 10
+at `error` (`purity`, `immutability`, `static-components`, `use-memo`,
+`preserve-manual-memoization`, `error-boundaries`, `set-state-in-render`,
+`globals`, `config`, `gating`) and 2 at `warn` (`incompatible-library`,
+`unsupported-syntax`). They all pass as of PR #167 — recorded here so a future
+failure from one is traceable to that upgrade.
 
 ## Local commands
 

@@ -27,14 +27,27 @@ const BOUNDS: [[number, number], [number, number]] = [
   [27.85, -82.55],
 ]
 
+/**
+ * `category: 'park'` with an open ring, because only park/golf_course rows
+ * carry a polygon — and the polygon layer is the one tagged [M-D1] in
+ * MapGuess.tsx as the cross-round leak risk. A point-only fixture leaves that
+ * branch untested (verified: deleting only the polygon cleanup passes against
+ * a point fixture).
+ */
 const loc = (id: string, lat: number, lng: number): Location => ({
   id,
   name: id,
   lat,
   lng,
-  category: 'landmark',
+  category: 'park',
   source: 'manual',
   attribution: 'test fixture',
+  polygon: [
+    [lat - 0.002, lng - 0.002],
+    [lat - 0.002, lng + 0.002],
+    [lat + 0.002, lng + 0.002],
+    [lat + 0.002, lng - 0.002],
+  ],
 })
 
 afterEach(cleanup)
@@ -67,8 +80,9 @@ describe('MapGuess Leaflet lifecycle', () => {
         />
       </StrictMode>,
     )
+    // Truth marker + distance line + polygon ring all render as SVG paths.
     const revealed = container.querySelectorAll('.leaflet-overlay-pane path')
-    expect(revealed.length).toBeGreaterThan(0)
+    expect(revealed.length).toBeGreaterThan(2)
 
     // Advance to a fresh, unrevealed round: every truth marker, distance line
     // and polygon from the previous round must be gone.
