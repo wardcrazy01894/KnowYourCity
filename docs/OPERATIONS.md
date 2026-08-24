@@ -161,6 +161,29 @@ disagreement), and a `reloadScheduled` guard plus the post-reload hash match rul
 out a reload loop. (No service worker, so a reload is all it takes to load new
 code.)
 
+## Dependency updates
+
+Dependabot (`.github/dependabot.yml`) opens update PRs every **Monday** for two
+ecosystems: `npm` (the root `package.json`) and `github-actions` (the workflow
+files). Its PRs run the same required CI checks as any other change, so a green
+Dependabot PR is safe to squash-merge like a normal one.
+
+**Grouping.** Minor + patch bumps arrive batched as a single PR per ecosystem to
+keep routine churn to one review. Major bumps are deliberately left out of that
+group so each breaking upgrade (React 19, TypeScript 7, ESLint 10, …) lands as
+its own reviewable PR.
+
+**Check for vulnerabilities out of band** with `npm audit`. Transitive-only
+advisories with a non-breaking fix are resolved by `npm audit fix`, which touches
+`package-lock.json` alone — verify that with `git diff --stat` before opening the
+PR, since `audit fix` will edit `package.json` too if a fix needs a range change.
+
+> GitHub's **Dependabot alerts** (the security tab feed) are a separate,
+> repo-settings-level toggle from this config file and are currently **disabled**
+> for this repo. The weekly version bumps above run regardless; enable alerts in
+> Settings → Code security if you also want advisory notifications for deps that
+> a version bump alone wouldn't flag.
+
 ## Before opening a PR
 
 `main` is protected; CI must pass. Run the full gate locally (the same checks CI

@@ -49,6 +49,7 @@ and again in every PR review):**
 | `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                    |
 | `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                              |
 | `.github/workflows/*`, `scripts/protect-main.sh`    | `docs/OPERATIONS.md` §Deploy + this file's CI-checks list                                     |
+| `.github/dependabot.yml`, `package-lock.json` bumps | `docs/OPERATIONS.md` §Dependency updates                                                      |
 | `public/locations.*.json`, fame caches              | Counts in DATA-SOURCING (status/caps/§-table), PLAN (M2 + bucket example), BACKLOG, QUESTIONS |
 | `data/<city>-manual.json` (manual must-includes)    | DATA-SOURCING §4 (manual entries) + the counts targets above if entries were added/removed    |
 | `cities.json` (bounds, playCap, timeZone, new city) | PLAN §5.1 (playCap example) + DATA-SOURCING §4c + worker `CITY_TZ` (leaderboard-lib.mjs)      |
