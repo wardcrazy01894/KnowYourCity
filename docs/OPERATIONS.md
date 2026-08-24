@@ -184,8 +184,9 @@ blocked upstream and so could never go green. Each one carries a comment in
 `dependabot.yml` saying why and when to remove it, plus a `BACKLOG.md` entry.
 Current exceptions:
 
-- **`typescript` majors** — no `typescript-eslint` release supports TS 7 (all
-  pin `peerDependencies.typescript: ">=4.8.4 <6.1.0"`, and forcing it crashes
+- **`typescript` majors** — as of 2026-08-24, no `typescript-eslint` release
+  through `8.67.1-alpha.29` supports TS 7 (all pin
+  `peerDependencies.typescript: ">=4.8.4 <6.1.0"`, and forcing it crashes
   `typescript-estree`), so `npm run lint` — a required check — cannot pass.
   Remove the ignore once upstream support lands.
 

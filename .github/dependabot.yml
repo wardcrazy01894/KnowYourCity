@@ -34,8 +34,8 @@ updates:
           - minor
           - patch
     ignore:
-      # TypeScript 7 is blocked UPSTREAM, not by this repo. Every published
-      # typescript-eslint — including 8.67.1-alpha.29 — pins
+      # TypeScript 7 is blocked UPSTREAM, not by this repo. As of 2026-08-24,
+      # every published typescript-eslint through 8.67.1-alpha.29 pins
       # `peerDependencies.typescript: ">=4.8.4 <6.1.0"`, and forcing the install
       # crashes typescript-estree outright:
       #   TypeError: Cannot read properties of undefined (reading 'Cjs')
