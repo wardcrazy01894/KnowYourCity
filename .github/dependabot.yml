@@ -4,7 +4,9 @@
 # Grouping policy: minor + patch updates land as ONE batched PR per ecosystem
 # so routine bumps stay low-noise on a solo repo. Major updates are excluded
 # from the group on purpose — each arrives as its own PR so a breaking upgrade
-# (React 19, TypeScript 7, ESLint 10, …) gets reviewed on its own merits.
+# gets reviewed on its own merits — ESLint 10 (#167) and React 19 (#168) both
+# landed that way. (Cite merged PR numbers, not status: "in flight" in a
+# committed comment is stale the moment the PR merges.)
 version: 2
 updates:
   - package-ecosystem: npm
@@ -31,6 +33,23 @@ updates:
         update-types:
           - minor
           - patch
+    ignore:
+      # TypeScript 7 is blocked UPSTREAM, not by this repo. As of 2026-08-24,
+      # every published typescript-eslint through 8.67.1-alpha.29 pins
+      # `peerDependencies.typescript: ">=4.8.4 <6.1.0"`, and forcing the install
+      # crashes typescript-estree outright:
+      #   TypeError: Cannot read properties of undefined (reading 'Cjs')
+      # `npm run lint` then dies, and build/typecheck/lint is a required check,
+      # so a TS 7 PR can never go green. Ignored so it doesn't reopen every
+      # Monday with the same blocker.
+      #
+      # TS 7 itself works here — it needs one line, `"types": ["node"]` in
+      # tsconfig.json, since it no longer auto-includes @types/node.
+      #
+      # REMOVE THIS ENTRY once typescript-eslint supports TS 7. See BACKLOG.md.
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
 
   - package-ecosystem: github-actions
     directory: /
