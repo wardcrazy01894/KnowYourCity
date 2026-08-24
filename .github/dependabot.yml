@@ -1,0 +1,54 @@
+# Dependabot keeps dependencies patched and surfaces upgrades as PRs, which
+# then run the same required CI checks as any other change (see CLAUDE.md).
+#
+# Grouping policy: minor + patch updates land as ONE batched PR per ecosystem
+# so routine bumps stay low-noise on a solo repo. Major updates are excluded
+# from the group on purpose — each arrives as its own PR so a breaking upgrade
+# (React 19, TypeScript 7, ESLint 10, …) gets reviewed on its own merits.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    # 10, not the default 5: majors are excluded from the group below, so each
+    # one takes its own slot, and a small limit can be fully occupied by
+    # long-lived major PRs while the batched minor/patch PR — the point of this
+    # config — waits. 10 makes that unlikely, but it is not a guarantee (there
+    # is no documented ordering between the group PR and individual ones). The
+    # real fix is keeping the major backlog short.
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: chore
+      include: scope
+    labels:
+      - dependencies
+    groups:
+      npm-minor-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    # Left at the default 5 on purpose: only 6 distinct actions are used, and
+    # simultaneous action majors are rare and merge quickly.
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    labels:
+      - dependencies
+    groups:
+      actions-minor-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch

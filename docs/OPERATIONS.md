@@ -161,6 +161,44 @@ disagreement), and a `reloadScheduled` guard plus the post-reload hash match rul
 out a reload loop. (No service worker, so a reload is all it takes to load new
 code.)
 
+## Dependency updates
+
+Dependabot (`.github/dependabot.yml`) opens update PRs every **Monday** for two
+ecosystems: `npm` (the root `package.json`) and `github-actions` (the workflow
+files). Its PRs run the same required CI checks as any other change, so a green
+Dependabot PR is safe to squash-merge like a normal one.
+
+**Grouping.** Minor + patch bumps arrive batched as a single PR per ecosystem to
+keep routine churn to one review. Major bumps are deliberately left out of that
+group so each breaking upgrade (React 19, TypeScript 7, ESLint 10, …) lands as
+its own reviewable PR.
+
+**Vulnerabilities.** `.github/workflows/ci.yml` runs `npm audit`
+(informational, `continue-on-error`, so a new advisory never wedges a PR). It
+deliberately audits **dev dependencies too**: it previously passed `--omit=dev`
+to mute a since-resolved esbuild/vite advisory, and that blind spot is exactly
+why five high-severity dev-only advisories sat unnoticed until a manual sweep
+caught them (#165). Build tooling is a real supply-chain surface. Because the
+step is non-blocking, **read its output** — a green PR can still carry a new
+advisory.
+
+**Fixing them.** Plain `npm audit fix` never edits `package.json`: anything it
+cannot resolve within the existing ranges it skips and reports as
+`fix available via 'npm audit fix --force'`. So a clean run touches
+`package-lock.json` only — confirm with `git diff --stat` anyway.
+
+> ⚠️ **Don't reach for `npm audit fix --force` to close an advisory.** It
+> installs versions outside the declared ranges and rewrites those ranges in
+> `package.json`. That is not always a major bump — it will happily rewrite
+> `"3.3.1"` to `"^3.3.18"` — but it is always a dependency change that belongs
+> in its own reviewed PR, not folded into a security fix.
+
+> GitHub's **Dependabot alerts** (the security tab feed) are a separate,
+> repo-settings-level toggle from this config file and are currently **disabled**
+> for this repo. The weekly version bumps above run regardless; enable alerts in
+> Settings → Code security if you also want advisory notifications for deps that
+> a version bump alone wouldn't flag.
+
 ## Before opening a PR
 
 `main` is protected; CI must pass. Run the full gate locally (the same checks CI
