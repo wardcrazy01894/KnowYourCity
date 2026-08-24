@@ -173,6 +173,26 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       namespace change leaving the ref on a never-committed namespace,
       feeding `shouldDeferReload` the wrong saved state. Test-first per
       CLAUDE.md.
+- [ ] **TypeScript 7 — blocked upstream, recheck periodically.** `typescript`
+      majors are `ignore`d in `.github/dependabot.yml` because no
+      `typescript-eslint` release supports TS 7: every version through
+      `8.67.1-alpha.29` pins `peerDependencies.typescript: ">=4.8.4 <6.1.0"`,
+      and forcing it crashes `typescript-estree`
+      (`TypeError: ... reading 'Cjs'`), killing `npm run lint` — a required CI
+      check. **TS 7 itself is fine in this repo**: it needs exactly one line,
+      `"types": ["node"]` in `tsconfig.json` `compilerOptions`, because TS 7 no
+      longer auto-includes `@types/node` (without it, `scripts/pin-day.ts` and
+      `src/lib/seo-meta.test.ts` throw `TS2591`). Narrowing `types` is safe
+      here — it only gates **ambient** auto-inclusion, and every other
+      `@types` package in this repo (`react`, `react-dom`, `leaflet`,
+      `canvas-confetti`) is module-typed and reached via `import`; vitest
+      globals aren't enabled (tests import `describe`/`it`/`expect`
+      explicitly), and `vite/client` comes from the triple-slash reference in
+      `src/vite-env.d.ts`. `tsconfig.worker.json` already sets
+      `types: ["node"]` itself. With that line, both typecheck passes, all
+      tests and the build were verified clean (2026-08-24).
+      **When `typescript-eslint` ships TS 7 support: remove the ignore entry,
+      add the `types` line, done.**
 - [ ] **Persistence / stats UI** — surface a stats panel + an "already played
       today" view (resume mid-day + streaks already work under the hood).
 - [x] **Deploy to GitHub Pages** — DONE 2026-06-07 via
