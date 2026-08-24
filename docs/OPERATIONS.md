@@ -173,10 +173,21 @@ keep routine churn to one review. Major bumps are deliberately left out of that
 group so each breaking upgrade (React 19, TypeScript 7, ESLint 10, …) lands as
 its own reviewable PR.
 
-**Check for vulnerabilities out of band** with `npm audit`. Transitive-only
-advisories with a non-breaking fix are resolved by `npm audit fix`, which touches
-`package-lock.json` alone — verify that with `git diff --stat` before opening the
-PR, since `audit fix` will edit `package.json` too if a fix needs a range change.
+**Check for vulnerabilities out of band** with `npm audit` — and note that CI
+does _not_ cover this. `.github/workflows/ci.yml` runs `npm audit --omit=dev`
+(informational, `continue-on-error`), so it flags advisories in **shipped**
+deps only. Dev/build-tool advisories are invisible to it, which is exactly what
+the five high-severity ones fixed in #165 were. A periodic manual `npm audit`
+is the only thing that catches those.
+
+Plain `npm audit fix` installs only semver-compatible versions — by definition
+already inside the existing `^` ranges — so it rewrites `package-lock.json` and
+leaves `package.json` alone. Confirm with `git diff --stat` anyway.
+
+> ⚠️ **Never reach for `npm audit fix --force` to close an advisory.** It
+> performs major-version upgrades and rewrites the ranges in `package.json`.
+> That is a breaking change and belongs in its own reviewed PR, not folded into
+> a security fix.
 
 > GitHub's **Dependabot alerts** (the security tab feed) are a separate,
 > repo-settings-level toggle from this config file and are currently **disabled**

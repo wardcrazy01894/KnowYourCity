@@ -12,7 +12,11 @@ updates:
     schedule:
       interval: weekly
       day: monday
-    open-pull-requests-limit: 5
+    # 10, not the default 5: majors are excluded from the group below, so each
+    # one takes its own slot. With a dozen majors currently available, a limit
+    # of 5 could be fully occupied by long-lived major PRs and starve the
+    # batched minor/patch PR that is the whole point of this config.
+    open-pull-requests-limit: 10
     commit-message:
       prefix: chore
       include: scope
