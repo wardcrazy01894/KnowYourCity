@@ -162,5 +162,19 @@ secrets (worker `GH_TOKEN`, `TURNSTILE_SECRET`) live in Cloudflare via
 
 ## Git identity
 
-Commits Claude makes are authored as `wardcrazy01894 <alanc3939@gmail.com>` via
-inline `-c` overrides; pushes use the `github-wardcrazy` SSH remote alias.
+Everything Claude does here is attributed to the `wardcrazy01894` account, wired
+through the local Claude Code config (`~/.claude/settings.json` → `env`) rather
+than per-command flags — so no `-c` overrides or `--user` flags are needed:
+
+| Surface                     | Mechanism                                                     |
+| --------------------------- | ------------------------------------------------------------- |
+| Commit author + committer   | `GIT_AUTHOR_*` / `GIT_COMMITTER_*` env vars                   |
+| `git push`                  | the `github-wardcrazy` SSH remote alias (see `git remote -v`) |
+| `gh` CLI (PRs, issues, API) | `GH_CONFIG_DIR=~/.claude/gh-wardcrazy`, authed as wardcrazy   |
+
+Because the env vars cover committer as well as author, merge/rebase/amend commits
+are attributed correctly too — including merges made to satisfy branch protection.
+The owner's own terminal has none of these vars set, so manual commits and `gh`
+calls keep using their personal account. Don't run `git config --global user.*` or
+`gh auth switch` to fix an identity problem: both change the owner's manual-commit
+identity. Full rationale lives in the owner's global `~/.claude/CLAUDE.md`.
