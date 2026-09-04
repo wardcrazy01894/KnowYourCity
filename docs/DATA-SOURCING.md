@@ -743,6 +743,95 @@ disambiguation.
 
 ---
 
+## 4f. Blurbs — `public/blurbs.<city>.json` (day-recap write-ups)
+
+The end-of-day recap (PLAN §5.13) shows a short write-up per location — why
+it's famous, a bit of history, a fun fact. They live in a **sidecar** per city,
+NOT on the `Location` rows: the dataset is rewritten by `apply-difficulty`
+(canonical `FIELD_ORDER`), the prose is only needed after a day is finished, and
+a sidecar lets a city roll out incrementally. Missing file or missing id ⇒ the
+recap shows the rollout placeholder for that spot (`BLURB_PLACEHOLDER` in
+`src/lib/blurbs.ts`), so nothing here is required for a city to be playable.
+
+```jsonc
+{
+  "version": 1, // schema version (parseBlurbsFile rejects others)
+  "city": "stpete", // must equal the city id in the file name
+  "blurbs": {
+    "sunken-gardens": {
+      // keyed by Location.id
+      "text": "A century-old botanical garden that began as a sinkhole: …",
+      "sources": ["https://en.wikipedia.org/wiki/Sunken_Gardens_(Florida)"], // optional, https only
+      "writtenFor": {
+        "name": "Sunken Gardens",
+        "lat": 27.78584,
+        "lng": -82.63859,
+      }, // snapshot (sync)
+      "writtenOn": "2026-09-04",
+      // "needsReview": "moved 812 m since written"  ← set by sync; CI blocks while present
+    },
+  },
+  "retired": {
+    // blurbs of ids that left the dataset — kept, never deleted
+    "old-tavern": { "text": "…", "writtenFor": {}, "retiredOn": "2026-09-10" },
+  },
+}
+```
+
+The app reads only `version` / `city` / `blurbs[id].text` / `sources`
+(`parseBlurbsFile` ignores the rest), so the bookkeeping fields cost nothing at
+runtime.
+
+**Staying in sync with the dataset (`scripts/sync-blurbs-lib.mjs`)**
+
+A blurb is written against a specific venue, but ids get renamed, rows get
+dropped, pins get moved. Two layers keep the sidecar honest:
+
+1. **Automatic reconciliation.** `apply-difficulty.mjs` — the one script that
+   rewrites a dataset — runs `syncBlurbs` after every write: a renamed row's
+   blurb **follows the rename** to the new id (if the new id already has its
+   own blurb, the incoming one is retired with `collidedWith` instead — both
+   texts survive); a dropped row's blurb is **retired** into `retired` (re-adds
+   happen — it's **restored** automatically if the id returns; note the
+   name+proximity de-dupe merges a duplicate _away_ rather than renaming it, so
+   its blurb retires too); and any entry whose live location no longer matches its
+   `writtenFor` snapshot (display name changed, or moved more than
+   `STALE_MOVE_METERS` = 150 m) is flagged `needsReview: <why>` with the text
+   left untouched. For hand edits that don't go through `apply-difficulty`, run
+   the same thing yourself: `npm run sync-blurbs -- <city>`.
+2. **CI guard.** `src/lib/blurbs.data.test.ts` recomputes staleness from the
+   snapshots (it does not trust that a sync was run) and fails on any stale or
+   flagged entry, any orphaned id, or any entry with no snapshot — so the PR
+   that changed the location cannot merge until the blurb is dealt with.
+
+Resolving a flag: re-read the text against the changed location (fix it if the
+name or address in the prose is now wrong), then
+`npm run sync-blurbs -- <city> --accept <id>[,<id>]` re-snapshots those entries
+and clears the flag (an id with no live blurb — a typo, or one sitting in
+`retired` — is an error, nothing is written). `--accept-all` does every entry
+(first-time authoring or a bulk import); `--check` reports without writing
+(exit 1 if anything is stale).
+
+**Authoring rules**
+
+- 1–3 player-facing sentences, plain text (rendered as text, never HTML).
+  Lead with the hook (the fact a local would tell a visitor), not a category
+  description. Say "legend says" for folklore; don't state contested claims.
+- **Source it** via web/LLM research — Wikipedia, the city's own pages, local
+  press, the venue's site — and put the best 1–2 URLs in `sources` (they render
+  as "read more" links by host). Do **not** spend Google Places quota on this;
+  Places is reserved for open/closed + fame verification (§4b).
+- After writing or editing an entry, `npm run sync-blurbs -- <city> --accept
+<id>` stamps the snapshot; a hand-added entry with no `writtenFor` fails CI.
+- A city gets a sidecar only when it has at least one entry; every city's
+  `blurbs.<id>.json` already has a `no-cache` rule in `public/_headers`.
+
+Status: **St. Pete has 4 demo entries** (Sunken Gardens, The Dalí Museum,
+Demens Landing Park, Tampa Bay Watch Discovery Center) written to preview the
+feature; no other city has a sidecar yet. Bulk authoring is a backlog item.
+
+---
+
 ## 5. Future: photos
 
 When adding photo rounds, fill `photoUrl` from a **freely-licensed** source:

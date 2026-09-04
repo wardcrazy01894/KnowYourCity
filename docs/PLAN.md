@@ -47,7 +47,9 @@ Browser (static site, no backend)
      ├─ CityPicker   → landing screen: choose a city (see §9)
      ├─ Game         → 5-round flow (guess → reveal → next → results)
      ├─ MapGuess     → Leaflet + free satellite tiles, pin + reveal line
-     ├─ Results      → totals, streak, share string
+     ├─ Results      → totals, streak, share string, "Learn about today's locations"
+     ├─ DayRecap     → all 5 guesses on one map + a blurb per place (§5.13)
+     ├─ RecapMap     → read-only Leaflet map of every round (numbered markers)
      ├─ DatasetSearch→ "is it in the list?" lookup (lib/search.ts)
      └─ BugReport    → in-app bug form → worker → GitHub issue (lib/report.ts)
 ```
@@ -80,6 +82,7 @@ KnowYourCity/
 ├─ README.md · CLAUDE.md · BACKLOG.md
 ├─ public/
 │   ├─ locations.<id>.json      per-city datasets (stpete, seattle, …)
+│   ├─ blurbs.<id>.json         per-city location write-ups for the day recap (§5.13; optional per city)
 │   ├─ favicon.svg/.ico · apple-touch-icon.png · og-image.png   icons + share image
 │   ├─ robots.txt · sitemap.xml  crawler directives (guarded by seo-meta.test.ts)
 │   └─ (cities.json at repo root is the city registry)
@@ -107,10 +110,10 @@ KnowYourCity/
 │   ├─ data/
 │   │   └─ dailyOverrides.ts    hand-curated daily puzzles keyed "cityId:YYYY-MM-DD"
 │   ├─ lib/                     daily · scoring · storage · devmode · sound · log
-│   │                           · cities · search · report · analytics
+│   │                           · cities · search · report · analytics · blurbs · tiles
 │   │                           (+ co-located *.test.ts; locations.test.ts guards data)
-│   └─ components/              Game · MapGuess · Results · CityPicker ·
-│                               DatasetSearch · BugReport (+ tests)
+│   └─ components/              Game · MapGuess · Results · DayRecap · RecapMap ·
+│                               CityPicker · DatasetSearch · BugReport (+ tests)
 ├─ worker/                      Cloudflare Workers: bug report → GitHub issue;
 │                               leaderboard → D1 (leaderboard.mjs + migrations/)
 ├─ .github/                     workflows/ci.yml · workflows/deploy.yml · pull_request_template.md
@@ -297,7 +300,7 @@ reloads.
 and fall back to defaults — never throw on read, or a schema bump bricks
 returning players.
 
-### 5.7 Share string (`Results.buildShareString`, pure)
+### 5.7 Share string (`src/lib/share.ts` → `buildShareString`, pure)
 
 ```
 Know Your City — <City>
@@ -415,9 +418,46 @@ regardless of score, for previewing/tuning (`isCelebrateTest`, `src/lib/devmode.
 
 ---
 
+### 5.13 Day recap: every guess on one map + a blurb per place
+
+After the share card, a deliberately **large** "📍 Learn about today's
+locations" button (full width, above the per-round list — regulars who've seen
+the results screen a hundred times should still notice it) opens the
+**DayRecap** screen:
+
+- **RecapMap** — a read-only satellite map (same tile layer as play,
+  `src/lib/tiles.ts`) showing all five rounds at once: numbered green markers
+  for the real spots (play order), amber pins for the player's guesses, a
+  dashed line per pair, and the footprint polygon where a location has one.
+  Tapping a card frames that round; tapping it again frames the whole day.
+- **One card per location** — number, name, category, the round's emoji tier /
+  distance / points, and a short **blurb**: why the place matters, a bit of
+  history, or a fun fact, with optional "read more" links.
+
+Blurbs live in a **per-city sidecar**, `public/blurbs.<cityId>.json`, keyed by
+location id (schema + authoring in DATA-SOURCING §4f) — not on the `Location`
+rows, so the pipeline's dataset rewrites can't drop them and the prose is only
+fetched when the recap opens. **Rollout is incremental by design:** a city with
+no sidecar (HTTP 404), or a location with no entry, shows the placeholder
+_"Write-ups haven't rolled out for this spot yet — check back soon."_ — the map
+and score facts work for every location from day one. `fetchBlurbs` never
+throws (404 / offline / malformed file all degrade to placeholders, with a
+warning in `kycDumpLogs`). Sourcing is web/LLM research (Wikipedia, local press,
+the venue's site), **not** the paid Google Places API. **Sync:** every entry
+carries a `writtenFor` snapshot; `apply-difficulty` follows renames, retires
+dropped rows' blurbs and flags name/coordinate drift, and the guard test fails
+CI on any stale entry (DATA-SOURCING §4f, `scripts/sync-blurbs-lib.mjs`).
+Guarded by
+`src/lib/blurbs.test.ts` (pure helpers), `blurbs.data.test.ts` (every sidecar
+id must exist in its dataset), `RecapMap.render.test.tsx` and
+`Results.recap.render.test.tsx`.
+
+---
+
 ## 6. Map integration (`MapGuess`)
 
-- **Tiles (free):**
+- **Tiles (free)** — one shared layer factory, `makeTileLayer` in
+  `src/lib/tiles.ts`, used by both `MapGuess` (play) and `RecapMap` (§5.13):
   - **Default — Esri World Imagery**, no API key. Required attribution:
     `Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS
 User Community`. Native max zoom ≈ **19** → set `maxNativeZoom={19}`,

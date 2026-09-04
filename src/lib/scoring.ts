@@ -178,3 +178,11 @@ export function formatDistance(meters: number): string {
     ? `${Math.round(meters)} m`
     : `${(meters / 1000).toFixed(1)} km`
 }
+
+/** Emoji tier for a single round score (0–100 scale): 🟩≥80 🟨≥50 🟧≥20 ⬛<20. */
+export function scoreEmoji(score: number): string {
+  if (score >= 80) return '🟩'
+  if (score >= 50) return '🟨'
+  if (score >= 20) return '🟧'
+  return '⬛'
+}

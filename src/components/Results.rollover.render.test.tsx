@@ -39,6 +39,10 @@ function renderResults(dateKey: string, official = true) {
       cityShort="T"
       dateKey={dateKey}
       timeZone="America/New_York"
+      bounds={[
+        [27.62, -82.79],
+        [27.87, -82.58],
+      ]}
       results={[result(50)]}
       totalScore={50}
       lineup="L"

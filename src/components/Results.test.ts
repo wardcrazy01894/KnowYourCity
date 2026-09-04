@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { buildShareString, scoreEmoji } from './Results'
+import { buildShareString } from '../lib/share'
+import { scoreEmoji } from '../lib/scoring'
 import type { RoundResult, Location } from '../types'
 
 function result(score: number, name: string): RoundResult {

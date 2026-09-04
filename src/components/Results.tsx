@@ -2,12 +2,15 @@
  * Results — end-of-day summary + Wordle-style shareable string.
  *
  * Shows total score (x / 500), a per-round breakdown (distance + score),
- * current/best streak, and a "Copy result" button.
+ * current/best streak, and a "Copy result" button — plus the big
+ * "Learn about today's locations" entry point to the DayRecap (all guesses on
+ * one map + a blurb per place).
  */
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import type { RoundResult } from '../types'
-import { MAX_ROUND_SCORE, formatDistance } from '../lib/scoring'
+import { MAX_ROUND_SCORE, formatDistance, scoreEmoji } from '../lib/scoring'
+import { buildShareString } from '../lib/share'
 import { ROUNDS_PER_DAY, getDateKey } from '../lib/daily'
 import { log } from '../lib/log'
 import { shouldCelebrate, countGreens } from '../lib/celebrate'
@@ -24,6 +27,7 @@ import {
   type Standing,
 } from '../lib/leaderboard'
 import { Leaderboard } from './Leaderboard'
+import { DayRecap } from './DayRecap'
 
 /** Whether the leaderboard endpoint is configured at build time. */
 const LEADERBOARD_ENABLED = Boolean(import.meta.env.VITE_LEADERBOARD_ENDPOINT)
@@ -36,6 +40,8 @@ export interface ResultsProps {
   dateKey: string
   /** City IANA timezone — detects the day rolling over under an open tab. */
   timeZone: string
+  /** City play bounds — the recap map's widest view. */
+  bounds: [[number, number], [number, number]]
   results: RoundResult[]
   totalScore: number
   /** Hash of the lineup just played (progress.ts:lineupHash) — keys the
@@ -46,36 +52,10 @@ export interface ResultsProps {
   official: boolean
 }
 
-/** Emoji tier for a single round score (0–100 scale). */
-export function scoreEmoji(score: number): string {
-  if (score >= 80) return '🟩'
-  if (score >= 50) return '🟨'
-  if (score >= 20) return '🟧'
-  return '⬛'
-}
-
-/**
- * Pure: builds the clipboard share text from a finished day's results.
- * When `url` is given, it's appended as the last line so a shared result links
- * back to the game (drives new players). Callers pass the site's own URL.
- */
-export function buildShareString(
-  cityShort: string,
-  dateKey: string,
-  results: RoundResult[],
-  totalScore: number,
-  url?: string,
-): string {
-  const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
-  const bar = results.map((r) => scoreEmoji(r.score)).join('')
-  const lines = [
-    `Know Your City — ${cityShort}`,
-    `${dateKey} · ${totalScore.toLocaleString('en-US')}/${maxTotal.toLocaleString('en-US')}`,
-    bar,
-  ]
-  if (url) lines.push(url)
-  return lines.join('\n')
-}
+// Re-exported for existing callers; the pure pieces live in lib/scoring and
+// lib/share so tests (Node env) and the recap screen can use them without
+// importing this Leaflet-bearing component tree.
+export { scoreEmoji, buildShareString }
 
 /**
  * The game's own absolute URL, for the share text. Uses the current origin +
@@ -91,6 +71,7 @@ export function Results({
   cityShort,
   dateKey,
   timeZone,
+  bounds,
   results,
   totalScore,
   lineup,
@@ -98,6 +79,7 @@ export function Results({
   official,
 }: ResultsProps) {
   const [copied, setCopied] = useState(false)
+  const [showRecap, setShowRecap] = useState(false)
   // Leaderboard standing: seed from any cached value (instant on reload), then
   // submit once on mount. Stays null when the leaderboard is off/unavailable, in
   // which case nothing renders — the feature never blocks the results screen.
@@ -199,6 +181,13 @@ export function Results({
     setShowBoard(true)
   }
 
+  /** Open the day recap (map of every guess + blurbs), stopping confetti too. */
+  function openRecap() {
+    cancelConfettiRef.current?.()
+    log.info('Results', 'opened day recap')
+    setShowRecap(true)
+  }
+
   const maxTotal = ROUNDS_PER_DAY * MAX_ROUND_SCORE
   // Compute once so the copied text and the preview below can never diverge.
   const shareText = buildShareString(
@@ -219,6 +208,19 @@ export function Results({
       // Clipboard blocked — no-op; the text is visible below anyway.
       log.warn('Results', 'clipboard copy failed', { error: String(e) })
     }
+  }
+
+  if (showRecap) {
+    return (
+      <DayRecap
+        cityId={cityId}
+        cityShort={cityShort}
+        dateKey={dateKey}
+        bounds={bounds}
+        results={results}
+        onClose={() => setShowRecap(false)}
+      />
+    )
   }
 
   if (showBoard) {
@@ -279,6 +281,17 @@ export function Results({
         </p>
       )}
 
+      {/* Deliberately LARGE and above the breakdown: regulars who've seen the
+          results screen a hundred times should still notice it (owner ask). */}
+      <button onClick={openRecap} style={recapButton}>
+        <span style={{ fontSize: 18, fontWeight: 700 }}>
+          📍 Learn about today’s locations
+        </span>
+        <span style={{ fontSize: 13, opacity: 0.8, fontWeight: 500 }}>
+          See every guess on one map + the story behind each spot
+        </span>
+      </button>
+
       <ol style={{ paddingLeft: 20, lineHeight: 1.6 }}>
         {results.map((r) => (
           <li key={r.location.id}>
@@ -338,4 +351,21 @@ export function Results({
       </pre>
     </section>
   )
+}
+
+const recapButton: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: 2,
+  width: '100%',
+  margin: '12px 0 4px',
+  padding: '14px 16px',
+  borderRadius: 12,
+  border: '2px solid #2ecc71',
+  background:
+    'linear-gradient(135deg, rgba(46,204,113,0.22), rgba(127,178,255,0.18))',
+  color: '#f5f7fa',
+  cursor: 'pointer',
+  textAlign: 'center',
 }

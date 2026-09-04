@@ -54,6 +54,10 @@ function renderResults(
       cityShort="T"
       dateKey="2026-06-17"
       timeZone="America/New_York"
+      bounds={[
+        [27.62, -82.79],
+        [27.87, -82.58],
+      ]}
       results={results}
       totalScore={totalScore}
       lineup="L"

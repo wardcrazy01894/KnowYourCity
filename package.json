@@ -21,7 +21,8 @@
     "build-city": "node scripts/build-city.mjs",
     "check-chains": "node scripts/check-chains.mjs",
     "add-polygons": "node scripts/add-polygons.mjs",
-    "pin-day": "node --experimental-strip-types scripts/pin-day.ts"
+    "pin-day": "node --experimental-strip-types scripts/pin-day.ts",
+    "sync-blurbs": "node scripts/sync-blurbs.mjs"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",

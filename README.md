@@ -30,6 +30,10 @@ close you got. Share your result Wordle-style.
 - 🔗 **SEO-ready** — OG/Twitter unfurl meta, sitemap, robots.txt, and JSON-LD structured data for social sharing.
 - 🐛 **Report a bug** — type it in-app; a tiny serverless function files a GitHub
   issue (falls back to a prefilled issue page if not deployed). See [`worker/`](worker/).
+- 📍 **Learn about today's locations** — after the results, one big button opens
+  a recap: every guess and real spot on one satellite map, plus a short blurb
+  per place (why it's famous, a fun fact). Blurbs roll out city by city; spots
+  without one yet say so.
 - 🏆 **Anonymous daily leaderboard** — finish the official daily and see "you
   placed Xth of Y today", per city. No accounts, no names; optional (a Cloudflare
   D1-backed Worker). See [`worker/`](worker/).
@@ -93,6 +97,7 @@ npm run build-city -- seattle   # landmarks + inclusive food → public/location
 npm run add-polygons            # backfill park/golf footprints from OSM (all cities)
 npm run check-chains            # flag national chains that leaked past the fame pass
 npm run pin-day -- <city>       # freeze today's lineup BEFORE any dataset edit
+npm run sync-blurbs -- <city>   # reconcile the day-recap blurb sidecar with the dataset
 ```
 
 Local chains (multiple branches of one brand, e.g. a regional coffee mini-chain)

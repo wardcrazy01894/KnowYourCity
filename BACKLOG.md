@@ -149,6 +149,14 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## Soon
 
+- [ ] **Write location blurbs for every city** — the day recap (PLAN §5.13)
+      ships with 4 demo St. Pete entries in `public/blurbs.stpete.json`; every
+      other spot shows the rollout placeholder. Author the rest via web/LLM
+      research (NOT Google Places — quota is for verification), in-play rows
+      first, famous-first within a city; schema + rules in DATA-SOURCING §4f.
+      Consider a `scripts/gen-blurbs-workflow.mjs` in the style of the fame
+      pass for the big cities.
+
 - [ ] **Photo rounds** — show a photo (e.g. the Don CeSar) instead of/alongside
       the name. `photoUrl` is already in the schema; source from Wikimedia
       Commons (free). v1 stays text-only by decision.

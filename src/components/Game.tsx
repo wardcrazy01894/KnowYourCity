@@ -158,6 +158,7 @@ export function Game({
         cityShort={cityShort}
         dateKey={game.dateKey}
         timeZone={timeZone}
+        bounds={bounds}
         results={game.results}
         totalScore={totalScore}
         lineup={lineupHash(game.locations)}

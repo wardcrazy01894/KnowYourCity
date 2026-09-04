@@ -46,6 +46,8 @@ and again in every PR review):**
 | `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                                      |
 | `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                                  |
 | `src/components/MapGuess.tsx` (+ its render test)   | PLAN §6 (map integration)                                                                             |
+| `DayRecap.tsx`, `RecapMap.tsx`, `lib/blurbs.ts`     | PLAN §5.13 (day recap) + DATA-SOURCING §4f (`public/blurbs.*.json` schema, authoring, status)         |
+| `scripts/sync-blurbs*.mjs`, `public/blurbs.*.json`  | DATA-SOURCING §4f (sync mechanism, `--accept` flow) + the blurb guard test if the file shape changes  |
 | `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                          |
 | `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                            |
 | `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                                      |
@@ -137,6 +139,7 @@ npm run build-city   # assemble one city's public/locations.<id>.json
 npm run add-polygons # backfill park/golf footprint rings from OSM
 npm run check-chains # flag national chains that leaked past the fame pass
 npm run pin-day      # freeze a city's live day BEFORE any dataset edit (owner rule)
+npm run sync-blurbs  # reconcile a city's blurb sidecar with its dataset (--accept <id> after re-reading)
 ```
 
 Run `npm run typecheck && npm run lint && npm run format:check && npm test &&
