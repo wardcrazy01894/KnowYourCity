@@ -452,7 +452,8 @@ id must exist in its dataset), `RecapMap.render.test.tsx` and
 
 ## 6. Map integration (`MapGuess`)
 
-- **Tiles (free):**
+- **Tiles (free)** — one shared layer factory, `makeTileLayer` in
+  `src/lib/tiles.ts`, used by both `MapGuess` (play) and `RecapMap` (§5.13):
   - **Default — Esri World Imagery**, no API key. Required attribution:
     `Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS
 User Community`. Native max zoom ≈ **19** → set `maxNativeZoom={19}`,

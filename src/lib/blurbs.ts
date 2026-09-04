@@ -88,14 +88,19 @@ export function parseBlurbsFile(raw: unknown): BlurbsFile | null {
     if (typeof v !== 'object' || v === null) return null
     const e = v as Record<string, unknown>
     if (typeof e.text !== 'string') return null
+    let sources: string[] | undefined
     if (e.sources !== undefined) {
       if (
         !Array.isArray(e.sources) ||
         !e.sources.every((s) => typeof s === 'string')
       )
         return null
+      // Defense in depth: sources render as <a href>, so only https:// survives
+      // parsing — a `javascript:`/`http:` URL is dropped here, not just caught
+      // by the CI guard over the committed file (blurbs.data.test.ts).
+      sources = (e.sources as string[]).filter((s) => s.startsWith('https://'))
     }
-    blurbs[id] = { text: e.text, ...(e.sources ? { sources: e.sources } : {}) }
+    blurbs[id] = { text: e.text, ...(sources ? { sources } : {}) }
   }
   return { version: o.version, city: o.city, blurbs }
 }

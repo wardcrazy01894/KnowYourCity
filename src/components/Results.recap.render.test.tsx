@@ -123,4 +123,19 @@ describe('Results → day recap', () => {
     expect(link.getAttribute('href')).toBe('https://example.org/two')
     expect(link.getAttribute('rel')).toMatch(/noreferrer/)
   })
+
+  it('shows a per-card loading line until the blurb fetch settles', () => {
+    // A fetch that never resolves during the test: the cards must still render
+    // (name, distance, points) with a "Loading…" line in the blurb slot.
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => new Promise(() => {})),
+    )
+    renderResults()
+    fireEvent.click(
+      screen.getByRole('button', { name: /learn about today’s locations/i }),
+    )
+    expect(screen.getAllByText('Loading…')).toHaveLength(5)
+    expect(screen.queryByText(BLURB_PLACEHOLDER)).toBeNull()
+  })
 })

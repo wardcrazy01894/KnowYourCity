@@ -87,6 +87,24 @@ describe('parseBlurbsFile', () => {
     ).toBeNull()
   })
 
+  it('drops non-https sources (defense in depth: sources become <a href>)', () => {
+    const parsed = parseBlurbsFile({
+      version: 1,
+      city: 'x',
+      blurbs: {
+        a: {
+          text: 'ok',
+          sources: [
+            'javascript:alert(1)',
+            'http://plain.example',
+            'https://ok.example/p',
+          ],
+        },
+      },
+    })
+    expect(parsed?.blurbs.a.sources).toEqual(['https://ok.example/p'])
+  })
+
   it('rejects an unknown schema version', () => {
     expect(parseBlurbsFile({ ...FILE, version: 2 })).toBeNull()
   })
