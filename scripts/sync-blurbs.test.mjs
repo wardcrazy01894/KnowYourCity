@@ -78,10 +78,12 @@ describe('syncBlurbs', () => {
     expect(out.file.blurbs.a).toEqual(entry(a))
     expect(out.audit).toEqual({
       renamed: [],
+      collided: [],
       retired: [],
       restored: [],
       stale: [],
       accepted: [],
+      acceptNotFound: [],
     })
   })
 
@@ -97,6 +99,33 @@ describe('syncBlurbs', () => {
     expect(out.file.blurbs['new-name'].needsReview).toMatch(/name changed/)
     expect(out.audit.renamed).toEqual(['old-name -> new-name'])
     expect(out.audit.stale).toEqual(['new-name'])
+  })
+
+  it('a rename onto an id that already has a blurb retires the incoming one (never last-key-wins)', () => {
+    // dedupeById can rename "coffee-shop" -> "corner-cafe" while "corner-cafe"
+    // already exists (and already has its own blurb). Both texts must survive:
+    // the existing entry keeps its id, the renamed one is retired under its
+    // OLD id with a pointer to the collision — deterministic and auditable.
+    const cafe = loc('corner-cafe', { name: 'Corner Cafe' })
+    const shop = loc('coffee-shop', { name: 'Coffee Shop' })
+    for (const order of [
+      { 'corner-cafe': entry(cafe), 'coffee-shop': entry(shop) },
+      { 'coffee-shop': entry(shop), 'corner-cafe': entry(cafe) },
+    ]) {
+      const out = syncBlurbs(file(order), [cafe], {
+        renames: new Map([['coffee-shop', 'corner-cafe']]),
+        today: '2026-09-05',
+      })
+      expect(out.file.blurbs['corner-cafe']).toEqual(entry(cafe))
+      expect(out.file.retired['coffee-shop']).toEqual({
+        ...entry(shop),
+        retiredOn: '2026-09-05',
+        collidedWith: 'corner-cafe',
+      })
+      expect(out.audit.renamed).toEqual([])
+      expect(out.audit.collided).toEqual(['coffee-shop -> corner-cafe'])
+      expect(out.audit.stale).toEqual([])
+    }
   })
 
   it('retires (never deletes) the blurb of a location that left the dataset', () => {
@@ -158,6 +187,20 @@ describe('syncBlurbs', () => {
       today: '2026-09-05',
     })
     expect(out.file.blurbs.a.writtenFor).toEqual(snapshotFor(a))
+  })
+
+  it('reports an --accept id that matches no live blurb (typo, or a retired id)', () => {
+    const a = loc('a')
+    const out = syncBlurbs(
+      file(
+        { a: entry(a) },
+        { gone: { ...entry(loc('gone')), retiredOn: 'x' } },
+      ),
+      [a],
+      { accept: ['typo-id', 'gone'], today: '2026-09-05' },
+    )
+    expect(out.audit.accepted).toEqual([])
+    expect(out.audit.acceptNotFound).toEqual(['gone', 'typo-id'])
   })
 
   it('does not mutate its inputs and keeps ids sorted for stable diffs', () => {

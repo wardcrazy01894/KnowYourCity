@@ -53,6 +53,12 @@ if (audit.stale.length)
     `\n${audit.stale.length} entr${audit.stale.length === 1 ? 'y' : 'ies'} need review — re-read the text against the live location, then --accept <id>`,
   )
 
+if (audit.acceptNotFound.length) {
+  console.error(
+    `--accept: no live blurb for ${audit.acceptNotFound.join(', ')} (typo? or retired — check the \`retired\` section). Nothing written.`,
+  )
+  process.exit(1)
+}
 if (check) process.exit(audit.stale.length ? 1 : 0)
 
 // Format through the repo's Prettier config so the output is directly committable.

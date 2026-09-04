@@ -13,7 +13,9 @@
 //    location the text was researched against — and `writtenOn`.
 //  - `syncBlurbs` (run by apply-difficulty after every dataset rewrite, or by
 //    `npm run sync-blurbs -- <city>` by hand):
-//      · follows renames (old id → new id) so the text travels with the venue;
+//      · follows renames (old id → new id) so the text travels with the venue
+//        (a rename onto an id that already has a blurb retires the incoming
+//        entry instead — both texts survive, `collidedWith` says why);
 //      · RETIRES the entry of any id that left the dataset into `retired`
 //        (never deletes — re-adds happen) and RESTORES it if the id returns;
 //      · marks any entry whose live location no longer matches its snapshot
@@ -62,7 +64,8 @@ const sortKeys = (obj) =>
  *   accept:  ids whose text has been re-read against the live location — their
  *            snapshot is refreshed and the review flag cleared ('*' = all)
  *   today:   YYYY-MM-DD stamp for retiredOn / writtenOn
- * @returns {{file: object, audit: {renamed:string[], retired:string[], restored:string[], stale:string[], accepted:string[]}}}
+ * @returns {{file: object, audit: {renamed:string[], collided:string[], retired:string[], restored:string[], stale:string[], accepted:string[], acceptNotFound:string[]}}}
+ *   acceptNotFound: requested accept ids with no live blurb (typo / retired id)
  */
 export function syncBlurbs(file, locations, opts) {
   const { renames = new Map(), accept = [], today } = opts
@@ -72,26 +75,36 @@ export function syncBlurbs(file, locations, opts) {
   const acceptSet = new Set(accept)
   const audit = {
     renamed: [],
+    collided: [],
     retired: [],
     restored: [],
     stale: [],
     accepted: [],
+    acceptNotFound: [],
   }
+  const original = file.blurbs ?? {}
+  const retired = { ...(file.retired ?? {}) }
 
-  // 1. Follow renames.
+  // 1. Follow renames. A rename whose target id ALREADY has its own blurb
+  //    (dedupeById: "renames can collide with an existing entry") must not
+  //    let iteration order pick a winner — the existing entry keeps its id and
+  //    the incoming one is retired under its old id, pointing at the collision,
+  //    so both texts survive and the audit says what happened.
   const blurbs = {}
-  for (const [id, entry] of Object.entries(file.blurbs ?? {})) {
+  for (const [id, entry] of Object.entries(original)) {
     const to = renames.get(id)
-    if (to && to !== id && !(id in byId)) {
+    if (!to || to === id || id in byId) {
+      blurbs[id] = { ...entry }
+    } else if (to in original) {
+      audit.collided.push(`${id} -> ${to}`)
+      retired[id] = { ...entry, retiredOn: today, collidedWith: to }
+    } else {
       audit.renamed.push(`${id} -> ${to}`)
       blurbs[to] = { ...entry }
-    } else {
-      blurbs[id] = { ...entry }
     }
   }
 
   // 2. Retire ids that left the dataset; restore retired ids that came back.
-  const retired = { ...(file.retired ?? {}) }
   for (const id of Object.keys(blurbs)) {
     if (byId.has(id)) continue
     retired[id] = { ...blurbs[id], retiredOn: today }
@@ -125,6 +138,9 @@ export function syncBlurbs(file, locations, opts) {
       delete entry.needsReview
     }
   }
+
+  for (const id of acceptSet)
+    if (id !== '*' && !(id in blurbs)) audit.acceptNotFound.push(id)
 
   for (const k of Object.keys(audit)) audit[k].sort()
   const out = { ...file, blurbs: sortKeys(blurbs) }

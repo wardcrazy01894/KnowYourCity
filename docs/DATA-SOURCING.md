@@ -789,9 +789,12 @@ dropped, pins get moved. Two layers keep the sidecar honest:
 
 1. **Automatic reconciliation.** `apply-difficulty.mjs` — the one script that
    rewrites a dataset — runs `syncBlurbs` after every write: a renamed row's
-   blurb **follows the rename** to the new id; a dropped row's blurb is
-   **retired** into `retired` (re-adds happen — it's **restored** automatically
-   if the id returns); and any entry whose live location no longer matches its
+   blurb **follows the rename** to the new id (if the new id already has its
+   own blurb, the incoming one is retired with `collidedWith` instead — both
+   texts survive); a dropped row's blurb is **retired** into `retired` (re-adds
+   happen — it's **restored** automatically if the id returns; note the
+   name+proximity de-dupe merges a duplicate _away_ rather than renaming it, so
+   its blurb retires too); and any entry whose live location no longer matches its
    `writtenFor` snapshot (display name changed, or moved more than
    `STALE_MOVE_METERS` = 150 m) is flagged `needsReview: <why>` with the text
    left untouched. For hand edits that don't go through `apply-difficulty`, run
@@ -804,8 +807,10 @@ dropped, pins get moved. Two layers keep the sidecar honest:
 Resolving a flag: re-read the text against the changed location (fix it if the
 name or address in the prose is now wrong), then
 `npm run sync-blurbs -- <city> --accept <id>[,<id>]` re-snapshots those entries
-and clears the flag. `--accept-all` does every entry (first-time authoring or a
-bulk import); `--check` reports without writing (exit 1 if anything is stale).
+and clears the flag (an id with no live blurb — a typo, or one sitting in
+`retired` — is an error, nothing is written). `--accept-all` does every entry
+(first-time authoring or a bulk import); `--check` reports without writing
+(exit 1 if anything is stale).
 
 **Authoring rules**
 
