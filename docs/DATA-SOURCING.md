@@ -743,6 +743,50 @@ disambiguation.
 
 ---
 
+## 4f. Blurbs — `public/blurbs.<city>.json` (day-recap write-ups)
+
+The end-of-day recap (PLAN §5.13) shows a short write-up per location — why
+it's famous, a bit of history, a fun fact. They live in a **sidecar** per city,
+NOT on the `Location` rows: the dataset is rewritten by `apply-difficulty`
+(canonical `FIELD_ORDER`), the prose is only needed after a day is finished, and
+a sidecar lets a city roll out incrementally. Missing file or missing id ⇒ the
+recap shows the rollout placeholder for that spot (`BLURB_PLACEHOLDER` in
+`src/lib/blurbs.ts`), so nothing here is required for a city to be playable.
+
+```jsonc
+{
+  "version": 1, // schema version (parseBlurbsFile rejects others)
+  "city": "stpete", // must equal the city id in the file name
+  "blurbs": {
+    "sunken-gardens": {
+      // keyed by Location.id
+      "text": "A century-old botanical garden that began as a sinkhole: …",
+      "sources": ["https://en.wikipedia.org/wiki/Sunken_Gardens_(Florida)"], // optional, https only
+    },
+  },
+}
+```
+
+**Authoring rules**
+
+- 1–3 player-facing sentences, plain text (rendered as text, never HTML).
+  Lead with the hook (the fact a local would tell a visitor), not a category
+  description. Say "legend says" for folklore; don't state contested claims.
+- **Source it** via web/LLM research — Wikipedia, the city's own pages, local
+  press, the venue's site — and put the best 1–2 URLs in `sources` (they render
+  as "read more" links by host). Do **not** spend Google Places quota on this;
+  Places is reserved for open/closed + fame verification (§4b).
+- Keep the id in sync with the dataset: renames/merges in `apply-difficulty`
+  change ids, and `src/lib/blurbs.data.test.ts` fails CI on any orphaned key.
+- A city gets a sidecar only when it has at least one entry; every city's
+  `blurbs.<id>.json` already has a `no-cache` rule in `public/_headers`.
+
+Status: **St. Pete has 4 demo entries** (Sunken Gardens, The Dalí Museum,
+Demens Landing Park, Tampa Bay Watch Discovery Center) written to preview the
+feature; no other city has a sidecar yet. Bulk authoring is a backlog item.
+
+---
+
 ## 5. Future: photos
 
 When adding photo rounds, fill `photoUrl` from a **freely-licensed** source:

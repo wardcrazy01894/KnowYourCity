@@ -29,3 +29,30 @@ body,
   height: 60vh;
   min-height: 320px;
 }
+
+/* End-of-day recap map: shorter than the play map so the cards stay in reach. */
+.map-container.recap-map {
+  height: 45vh;
+  min-height: 280px;
+  border-radius: 10px;
+}
+
+/* Numbered "real spot" markers on the recap map (RecapMap.numberedIcon). */
+.recap-marker-wrap {
+  background: transparent;
+  border: none;
+}
+.recap-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2ecc71;
+  border: 2px solid #ffffff;
+  color: #0f1720;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}

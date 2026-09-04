@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "city": "stpete",
+  "blurbs": {
+    "demens-landing-park": {
+      "text": "Named for Peter Demens, the Russian-born railroad man who brought the Orange Belt Railway to town in 1888 and — legend says after winning a coin toss with his partner John C. Williams — named the new city after his hometown of St. Petersburg. Today it's the downtown waterfront park on Bayboro Harbor beside the Municipal Marina, home to the city's sailing center.",
+      "sources": ["https://en.wikipedia.org/wiki/Peter_Demens"]
+    },
+    "sunken-gardens": {
+      "text": "A century-old botanical garden that began as a sinkhole: plumber George Turner Sr. bought the lot in 1903, drained its shallow lake, and found the rich muck grew just about anything. He started charging a nickel for tours in the 1930s, and the city bought the gardens in 1999 to save them from redevelopment — today it's four acres of tropical plants, flamingos, and one of St. Pete's oldest roadside attractions.",
+      "sources": ["https://en.wikipedia.org/wiki/Sunken_Gardens_(Florida)"]
+    },
+    "tampa-bay-watch-discovery-center": {
+      "text": "The nonprofit Tampa Bay Watch's marine education center at the St. Pete Pier, opened alongside the new Pier in 2020. Touch tanks, a wet lab, and exhibits on the bay's oysters, seagrass, and sea life make it the science stop on a Pier walk.",
+      "sources": ["https://tampabaywatch.org/"]
+    },
+    "the-dali-museum": {
+      "text": "Home to the largest collection of Salvador Dalí's work outside Europe, built from the private collection of Ohio industrialist A. Reynolds Morse and his wife Eleanor, who chose St. Petersburg for it in 1982. The 2011 waterfront building's free-form glass bubble, nicknamed the Enigma, nods to the geodesic dome on Dalí's own museum in Figueres, Spain.",
+      "sources": ["https://en.wikipedia.org/wiki/Salvador_Dal%C3%AD_Museum"]
+    }
+  }
+}

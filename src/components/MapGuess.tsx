@@ -5,10 +5,8 @@
  * avoid the default-marker-icon bundler breakage — we draw guess/truth as
  * circle markers and connect them with a polyline on reveal.
  *
- * Tiles (free):
- *  - Default: Esri World Imagery (no key), native max zoom ~19. Attribution
- *    required (rendered by Leaflet's attribution control).
- *  - If VITE_MAPBOX_TOKEN is set: Mapbox Satellite (sharper, zoom to ~22).
+ * Tiles: the shared satellite layer from src/lib/tiles.ts (Esri by default,
+ * Mapbox when VITE_MAPBOX_TOKEN is set) — also used by RecapMap.
  *
  * The map is locked NEAR `bounds` (maxBounds + viscosity) so players can't pan
  * far from the city's play area. The lock box is padded (see padBounds, #71):
@@ -25,6 +23,7 @@ import L from 'leaflet'
 import type { Guess, Location } from '../types'
 import { log } from '../lib/log'
 import { padBounds } from '../lib/mapBounds'
+import { makeTileLayer } from '../lib/tiles'
 
 export interface MapGuessProps {
   /** Bounding box the map is locked to, [[south, west], [north, east]]. */
@@ -38,33 +37,6 @@ export interface MapGuessProps {
   locked?: boolean
   /** Change this (e.g. the round index) to re-frame the map to full bounds. */
   resetViewKey?: number
-}
-
-const ESRI_URL =
-  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
-const ESRI_ATTR =
-  'Tiles &copy; Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
-
-function makeTileLayer(): L.TileLayer {
-  const token = import.meta.env.VITE_MAPBOX_TOKEN
-  log.debug('MapGuess', `tile provider: ${token ? 'mapbox' : 'esri'}`)
-  if (token) {
-    return L.tileLayer(
-      `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/512/{z}/{x}/{y}@2x?access_token=${token}`,
-      {
-        attribution:
-          '&copy; <a href="https://www.mapbox.com/">Mapbox</a> &copy; Maxar',
-        tileSize: 512,
-        zoomOffset: -1,
-        maxZoom: 22,
-      },
-    )
-  }
-  return L.tileLayer(ESRI_URL, {
-    attribution: ESRI_ATTR,
-    maxNativeZoom: 19,
-    maxZoom: 19,
-  })
 }
 
 export function MapGuess({

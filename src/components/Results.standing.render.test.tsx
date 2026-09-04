@@ -67,6 +67,10 @@ it('a lower-scoring replay still shows the standing of the device’s BEST entry
       cityShort="T"
       dateKey="2026-07-08"
       timeZone="America/New_York"
+      bounds={[
+        [27.62, -82.79],
+        [27.87, -82.58],
+      ]}
       results={[result(70), result(70), result(70), result(70), result(70)]}
       totalScore={350}
       lineup="bbbb"

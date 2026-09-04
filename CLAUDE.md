@@ -46,6 +46,7 @@ and again in every PR review):**
 | `src/lib/daily.ts`, `src/data/dailyOverrides.ts`    | PLAN §5.1 (selection + overrides), §5.2 (pin-day integrity rule)                                      |
 | `src/lib/scoring.ts`, `src/lib/geo.ts`              | PLAN §5.4 (constants, polygon rules)                                                                  |
 | `src/components/MapGuess.tsx` (+ its render test)   | PLAN §6 (map integration)                                                                             |
+| `DayRecap.tsx`, `RecapMap.tsx`, `lib/blurbs.ts`     | PLAN §5.13 (day recap) + DATA-SOURCING §4f (`public/blurbs.*.json` schema, authoring, status)         |
 | `src/lib/version.ts`, `src/lib/mode.ts`, App shell  | PLAN §5.12 (auto-reload + midnight rollover)                                                          |
 | `src/lib/leaderboard.ts`, `worker/leaderboard*`     | PLAN §11 (leaderboard) + `worker/README.md` (schema, rank/board semantics)                            |
 | `worker/bug-report.mjs`                             | `worker/README.md` hardening list + PLAN §5.10b (defang vectors)                                      |

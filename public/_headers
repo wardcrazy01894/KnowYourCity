@@ -21,3 +21,22 @@
 
 /locations.statecollege.json
   Cache-Control: no-cache, must-revalidate
+
+# Blurb sidecars (public/blurbs.<city>.json — see docs/DATA-SOURCING.md §4f).
+# Listed for every city up front; a rule for a file that doesn't exist yet is
+# harmless, and it means a new sidecar can't ship without its no-cache rule.
+
+/blurbs.stpete.json
+  Cache-Control: no-cache, must-revalidate
+
+/blurbs.annarbor.json
+  Cache-Control: no-cache, must-revalidate
+
+/blurbs.chicago.json
+  Cache-Control: no-cache, must-revalidate
+
+/blurbs.seattle.json
+  Cache-Control: no-cache, must-revalidate
+
+/blurbs.statecollege.json
+  Cache-Control: no-cache, must-revalidate
