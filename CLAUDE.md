@@ -140,6 +140,8 @@ npm run add-polygons # backfill park/golf footprint rings from OSM
 npm run check-chains # flag national chains that leaked past the fame pass
 npm run pin-day      # freeze a city's live day BEFORE any dataset edit (owner rule)
 npm run sync-blurbs  # reconcile a city's blurb sidecar with its dataset (--accept <id> after re-reading)
+npm run gen-blurbs   # emit the blurb-research Workflow script for a city (web only, no Google spend)
+npm run apply-blurbs # merge a research run's results into the sidecar (+ snapshots)
 ```
 
 Run `npm run typecheck && npm run lint && npm run format:check && npm test &&
