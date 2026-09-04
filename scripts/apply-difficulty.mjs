@@ -38,6 +38,7 @@ import {
   EASY_PCT,
   HARD_PCT,
 } from './apply-difficulty-lib.mjs'
+import { syncBlurbs } from './sync-blurbs-lib.mjs'
 
 const CITY = process.argv[2]
 if (!CITY)
@@ -140,6 +141,34 @@ const formatted = await prettier.format(JSON.stringify(ds, null, 2), {
 })
 writeFileSync(DATASET, formatted)
 
+// ---- keep the blurb sidecar (day recap write-ups) in lockstep ----
+// Renames applied above move the blurb to the new id; rows that were dropped
+// (closed/chain/junk/de-duped) have their blurb retired, not deleted; anything
+// whose name/coords no longer match its snapshot is flagged needsReview so the
+// guard test blocks the PR until it's re-read. See sync-blurbs-lib.mjs / §4f.
+const SIDECAR = new URL(`../public/blurbs.${CITY}.json`, import.meta.url)
+let blurbAudit = null
+if (existsSync(SIDECAR)) {
+  const renames = new Map(
+    kept
+      .filter((l) => l._renamedFrom && l._renamedFrom !== l.id)
+      .map((l) => [l._renamedFrom, l.id]),
+  )
+  const synced = syncBlurbs(
+    JSON.parse(readFileSync(SIDECAR, 'utf8')),
+    outLocations,
+    { renames, today: new Date().toISOString().slice(0, 10) },
+  )
+  blurbAudit = synced.audit
+  writeFileSync(
+    SIDECAR,
+    await prettier.format(JSON.stringify(synced.file, null, 2), {
+      ...prettierCfg,
+      parser: 'json',
+    }),
+  )
+}
+
 // ---- audit ----
 const dist = { easy: 0, medium: 0, hard: 0 }
 for (const l of outLocations) if (l.difficulty) dist[l.difficulty]++
@@ -193,4 +222,14 @@ if (playCap) {
   console.log(
     `easy=${dist.easy} (fame >= ${easyBound})  medium=${dist.medium}  hard=${dist.hard} (fame <= ${hardBound})`,
   )
+}
+
+if (blurbAudit) {
+  console.log('\nBlurb sidecar sync:')
+  for (const [k, v] of Object.entries(blurbAudit))
+    if (v.length) console.log(`  ${k} (${v.length}): ${v.join(', ')}`)
+  if (blurbAudit.stale.length)
+    console.log(
+      `  → ${blurbAudit.stale.length} blurb(s) need review: re-read against the live location, then \`npm run sync-blurbs -- ${CITY} --accept <id>\``,
+    )
 }

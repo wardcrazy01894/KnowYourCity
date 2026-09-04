@@ -166,6 +166,7 @@ export function cleanLocations(
         id: newId,
         name: newName,
         clue: null, // old clue may reference the old identity
+        _renamedFrom: loc.id, // scratch: lets the blurb sidecar follow the rename
         _fame: f.fameScore,
         _reviewCount: f.reviewCount ?? 0,
       })

@@ -5,6 +5,8 @@ import path from 'node:path'
 import type { LocationsFile } from '../types'
 import { CITIES } from './cities'
 import { parseBlurbsFile } from './blurbs'
+// @ts-expect-error plain-JS pipeline module (unit-tested in scripts/sync-blurbs.test.mjs)
+import { staleReason } from '../../scripts/sync-blurbs-lib.mjs'
 
 /**
  * Guard for the hand-edited blurb sidecars (`public/blurbs.<city>.json`, see
@@ -12,6 +14,12 @@ import { parseBlurbsFile } from './blurbs'
  * shows placeholders everywhere), but one that exists must parse, name its own
  * city, key only REAL location ids (a typo or a renamed id would silently
  * orphan a write-up), and carry player-ready text with https "read more" links.
+ *
+ * Sync guard: every entry must carry a `writtenFor` snapshot that still matches
+ * the live location (same name, moved < STALE_MOVE_METERS) and no `needsReview`
+ * flag. Staleness is COMPUTED here, not read from the file, so a dataset edit
+ * that skipped `npm run sync-blurbs` still fails CI. Resolve by re-reading the
+ * text against the changed location, then `sync-blurbs -- <city> --accept <id>`.
  */
 
 const PUBLIC = fileURLToPath(new URL('../../public/', import.meta.url))
@@ -40,6 +48,25 @@ for (const city of CITIES) {
     it('keys only ids that exist in the city dataset', () => {
       const orphans = Object.keys(parsed!.blurbs).filter((id) => !ids.has(id))
       expect(orphans, 'blurb ids not in the dataset').toEqual([])
+    })
+
+    it('is in sync with the dataset: snapshots match, nothing awaits review', () => {
+      const raw = JSON.parse(readFileSync(file, 'utf8')) as {
+        blurbs: Record<string, { needsReview?: string }>
+      }
+      const byId = new Map(dataset.locations.map((l) => [l.id, l]))
+      const problems: string[] = []
+      for (const [id, entry] of Object.entries(raw.blurbs)) {
+        const loc = byId.get(id)
+        if (!loc) continue // reported by the orphan check above
+        const why =
+          (staleReason(entry, loc) as string | null) ?? entry.needsReview
+        if (why) problems.push(`${id}: ${why}`)
+      }
+      expect(
+        problems,
+        `blurbs out of sync with locations.${city.id}.json — re-read, then \`npm run sync-blurbs -- ${city.id} --accept <id>\``,
+      ).toEqual([])
     })
 
     it('has non-empty text and https sources on every entry', () => {

@@ -762,10 +762,50 @@ recap shows the rollout placeholder for that spot (`BLURB_PLACEHOLDER` in
       // keyed by Location.id
       "text": "A century-old botanical garden that began as a sinkhole: …",
       "sources": ["https://en.wikipedia.org/wiki/Sunken_Gardens_(Florida)"], // optional, https only
+      "writtenFor": {
+        "name": "Sunken Gardens",
+        "lat": 27.78584,
+        "lng": -82.63859,
+      }, // snapshot (sync)
+      "writtenOn": "2026-09-04",
+      // "needsReview": "moved 812 m since written"  ← set by sync; CI blocks while present
     },
+  },
+  "retired": {
+    // blurbs of ids that left the dataset — kept, never deleted
+    "old-tavern": { "text": "…", "writtenFor": {}, "retiredOn": "2026-09-10" },
   },
 }
 ```
+
+The app reads only `version` / `city` / `blurbs[id].text` / `sources`
+(`parseBlurbsFile` ignores the rest), so the bookkeeping fields cost nothing at
+runtime.
+
+**Staying in sync with the dataset (`scripts/sync-blurbs-lib.mjs`)**
+
+A blurb is written against a specific venue, but ids get renamed, rows get
+dropped, pins get moved. Two layers keep the sidecar honest:
+
+1. **Automatic reconciliation.** `apply-difficulty.mjs` — the one script that
+   rewrites a dataset — runs `syncBlurbs` after every write: a renamed row's
+   blurb **follows the rename** to the new id; a dropped row's blurb is
+   **retired** into `retired` (re-adds happen — it's **restored** automatically
+   if the id returns); and any entry whose live location no longer matches its
+   `writtenFor` snapshot (display name changed, or moved more than
+   `STALE_MOVE_METERS` = 150 m) is flagged `needsReview: <why>` with the text
+   left untouched. For hand edits that don't go through `apply-difficulty`, run
+   the same thing yourself: `npm run sync-blurbs -- <city>`.
+2. **CI guard.** `src/lib/blurbs.data.test.ts` recomputes staleness from the
+   snapshots (it does not trust that a sync was run) and fails on any stale or
+   flagged entry, any orphaned id, or any entry with no snapshot — so the PR
+   that changed the location cannot merge until the blurb is dealt with.
+
+Resolving a flag: re-read the text against the changed location (fix it if the
+name or address in the prose is now wrong), then
+`npm run sync-blurbs -- <city> --accept <id>[,<id>]` re-snapshots those entries
+and clears the flag. `--accept-all` does every entry (first-time authoring or a
+bulk import); `--check` reports without writing (exit 1 if anything is stale).
 
 **Authoring rules**
 
@@ -776,8 +816,8 @@ recap shows the rollout placeholder for that spot (`BLURB_PLACEHOLDER` in
   press, the venue's site — and put the best 1–2 URLs in `sources` (they render
   as "read more" links by host). Do **not** spend Google Places quota on this;
   Places is reserved for open/closed + fame verification (§4b).
-- Keep the id in sync with the dataset: renames/merges in `apply-difficulty`
-  change ids, and `src/lib/blurbs.data.test.ts` fails CI on any orphaned key.
+- After writing or editing an entry, `npm run sync-blurbs -- <city> --accept
+<id>` stamps the snapshot; a hand-added entry with no `writtenFor` fails CI.
 - A city gets a sidecar only when it has at least one entry; every city's
   `blurbs.<id>.json` already has a `no-cache` rule in `public/_headers`.
 

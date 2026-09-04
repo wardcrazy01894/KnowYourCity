@@ -443,7 +443,11 @@ _"Write-ups haven't rolled out for this spot yet — check back soon."_ — the 
 and score facts work for every location from day one. `fetchBlurbs` never
 throws (404 / offline / malformed file all degrade to placeholders, with a
 warning in `kycDumpLogs`). Sourcing is web/LLM research (Wikipedia, local press,
-the venue's site), **not** the paid Google Places API. Guarded by
+the venue's site), **not** the paid Google Places API. **Sync:** every entry
+carries a `writtenFor` snapshot; `apply-difficulty` follows renames, retires
+dropped rows' blurbs and flags name/coordinate drift, and the guard test fails
+CI on any stale entry (DATA-SOURCING §4f, `scripts/sync-blurbs-lib.mjs`).
+Guarded by
 `src/lib/blurbs.test.ts` (pure helpers), `blurbs.data.test.ts` (every sidecar
 id must exist in its dataset), `RecapMap.render.test.tsx` and
 `Results.recap.render.test.tsx`.

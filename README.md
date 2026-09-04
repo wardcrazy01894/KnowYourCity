@@ -97,6 +97,7 @@ npm run build-city -- seattle   # landmarks + inclusive food → public/location
 npm run add-polygons            # backfill park/golf footprints from OSM (all cities)
 npm run check-chains            # flag national chains that leaked past the fame pass
 npm run pin-day -- <city>       # freeze today's lineup BEFORE any dataset edit
+npm run sync-blurbs -- <city>   # reconcile the day-recap blurb sidecar with the dataset
 ```
 
 Local chains (multiple branches of one brand, e.g. a regional coffee mini-chain)
