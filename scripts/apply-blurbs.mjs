@@ -6,8 +6,8 @@
 // recovers from the agent transcripts (it's generic: any StructuredOutput with
 // `results[].id`; the fact-check stage runs last so its rows win).
 //
-// Rules (docs/DATA-SOURCING.md §4f): keep only rows with non-empty text and
-// confidence high|medium, https sources only, text capped at MAX_CHARS; never
+// Rules (docs/DATA-SOURCING.md §4f): keep rows with a story (confidence
+// high|medium) and/or a factual descriptor, https sources only, capped; never
 // overwrite an existing hand-written entry unless --force; every merged entry
 // gets its writtenFor snapshot via syncBlurbs(accept). Skipped rows are listed
 // so the tail can be re-run or hand-written.
@@ -42,8 +42,8 @@ const { accepted, skipped } = normalizeBlurbResults(rows, {
   existing: file.blurbs,
   force,
 })
-for (const { id, text, sources } of accepted)
-  file.blurbs[id] = { ...(file.blurbs[id] ?? {}), text, sources }
+for (const { id, text, descriptor, sources } of accepted)
+  file.blurbs[id] = { ...(file.blurbs[id] ?? {}), text, descriptor, sources }
 
 const today = new Date().toISOString().slice(0, 10)
 const { file: out, audit } = syncBlurbs(file, locations, {

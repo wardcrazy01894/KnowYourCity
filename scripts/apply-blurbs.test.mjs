@@ -2,12 +2,14 @@ import { describe, it, expect } from 'vitest'
 import {
   normalizeBlurbResults,
   MAX_CHARS,
+  MAX_DESCRIPTOR_CHARS,
   ACCEPTED_CONFIDENCE,
 } from './apply-blurbs-lib.mjs'
 
 const row = (id, over = {}) => ({
   id,
   text: `About ${id}.`,
+  descriptor: '',
   sources: ['https://en.wikipedia.org/wiki/X'],
   confidence: 'high',
   note: '',
@@ -25,11 +27,13 @@ describe('normalizeBlurbResults', () => {
       {
         id: 'a',
         text: 'About a.',
+        descriptor: '',
         sources: ['https://en.wikipedia.org/wiki/X'],
       },
       {
         id: 'b',
         text: 'About b.',
+        descriptor: '',
         sources: ['https://en.wikipedia.org/wiki/X'],
       },
     ])
@@ -37,7 +41,7 @@ describe('normalizeBlurbResults', () => {
     expect(ACCEPTED_CONFIDENCE.has('low')).toBe(false)
   })
 
-  it('skips unknown ids, blank text, low confidence and over-long text — with reasons', () => {
+  it('skips unknown ids, rows with nothing usable, and over-long text — with reasons', () => {
     const { accepted, skipped } = normalizeBlurbResults(
       [
         row('zzz'),
@@ -49,9 +53,49 @@ describe('normalizeBlurbResults', () => {
     )
     expect(accepted).toEqual([])
     expect(skipped['unknown id']).toEqual(['zzz'])
-    expect(skipped['blank text']).toEqual(['a'])
-    expect(skipped['low confidence']).toEqual(['b'])
+    expect(skipped['nothing usable (no text, no descriptor)']).toEqual([
+      'a',
+      'b',
+    ])
     expect(skipped['too long']).toEqual(['c'])
+  })
+
+  it('keeps the descriptor when the story is blank or low-confidence (never a placeholder after research)', () => {
+    const { accepted } = normalizeBlurbResults(
+      [
+        row('a', { text: '', descriptor: 'Neighborhood dive bar' }),
+        row('b', { confidence: 'low', descriptor: '  Cuban  café  ' }),
+      ],
+      { knownIds: known },
+    )
+    expect(accepted).toEqual([
+      {
+        id: 'a',
+        text: '',
+        descriptor: 'Neighborhood dive bar',
+        sources: ['https://en.wikipedia.org/wiki/X'],
+      },
+      // low-confidence STORY is dropped; the factual descriptor survives
+      {
+        id: 'b',
+        text: '',
+        descriptor: 'Cuban café',
+        sources: ['https://en.wikipedia.org/wiki/X'],
+      },
+    ])
+  })
+
+  it('caps the descriptor length', () => {
+    const { skipped } = normalizeBlurbResults(
+      [
+        row('a', {
+          text: '',
+          descriptor: 'd'.repeat(MAX_DESCRIPTOR_CHARS + 1),
+        }),
+      ],
+      { knownIds: known },
+    )
+    expect(skipped['too long']).toEqual(['a'])
   })
 
   it('keeps only https sources (max 2, deduped) and skips a row left with none', () => {
@@ -102,6 +146,7 @@ describe('normalizeBlurbResults', () => {
       {
         id: 'a',
         text: 'Two lines.',
+        descriptor: '',
         sources: ['https://en.wikipedia.org/wiki/X'],
       },
     ])

@@ -138,4 +138,41 @@ describe('Results → day recap', () => {
     expect(screen.getAllByText('Loading…')).toHaveLength(5)
     expect(screen.queryByText(BLURB_PLACEHOLDER)).toBeNull()
   })
+
+  it('shows the descriptor for a researched spot with no story, and both when present', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(
+        async () =>
+          new Response(
+            JSON.stringify({
+              version: 1,
+              city: 'stpete',
+              blurbs: {
+                two: {
+                  text: '',
+                  descriptor: 'Cuban sandwich counter on Central Ave',
+                },
+                three: {
+                  text: 'Opened in 1948 by two brothers.',
+                  descriptor: 'Old-school seafood house',
+                },
+              },
+            }),
+            { status: 200 },
+          ),
+      ),
+    )
+    renderResults()
+    fireEvent.click(
+      screen.getByRole('button', { name: /learn about today’s locations/i }),
+    )
+    expect(
+      await screen.findByText('Cuban sandwich counter on Central Ave'),
+    ).toBeTruthy()
+    expect(screen.getByText('Old-school seafood house')).toBeTruthy()
+    expect(screen.getByText('Opened in 1948 by two brothers.')).toBeTruthy()
+    // Only the three never-researched spots show the placeholder.
+    expect(screen.getAllByText(BLURB_PLACEHOLDER)).toHaveLength(3)
+  })
 })

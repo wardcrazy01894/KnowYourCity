@@ -440,7 +440,10 @@ rows, so the pipeline's dataset rewrites can't drop them and the prose is only
 fetched when the recap opens. **Rollout is incremental by design:** a city with
 no sidecar (HTTP 404), or a location with no entry, shows the placeholder
 _"Write-ups haven't rolled out for this spot yet — check back soon."_ — the map
-and score facts work for every location from day one. `fetchBlurbs` never
+and score facts work for every location from day one. The placeholder means
+_never attempted_: a researched spot always carries a one-line **descriptor**
+(what kind of place it is) even when it has no story, and the card shows
+whichever of descriptor/story exist. `fetchBlurbs` never
 throws (404 / offline / malformed file all degrade to placeholders, with a
 warning in `kycDumpLogs`). Sourcing is web/LLM research (Wikipedia, local press,
 the venue's site), **not** the paid Google Places API. **Sync:** every entry

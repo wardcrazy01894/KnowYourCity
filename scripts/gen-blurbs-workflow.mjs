@@ -17,7 +17,19 @@
 //   that have no non-placeholder entry in public/blurbs.<cityId>.json.
 // - [batchSize]: locations per research agent (default 6 — each needs several
 //   searches, so keep batches small).
-// - [--ids]: restrict to these ids (a resume over the missing set).
+// - [--ids]: restrict to these ids.
+// - [--skip results.json]: exclude ids already present in a (harvested) results
+//   file — THE RESUME PATH after a session/token-limit reset: every finished
+//   batch is on disk in the workflow's agent-*.jsonl; harvest them, then
+//   regenerate over what's left and launch again. Nothing is re-researched.
+//
+// Resume runbook (also in docs/DATA-SOURCING.md §4f):
+//   node scripts/harvest-fame-transcripts.mjs <workflow-dir> scripts/tmp/blurbs-<city>.results.json
+//   npm run gen-blurbs -- <city> scripts/tmp/blurbs-<city>.workflow.js --skip scripts/tmp/blurbs-<city>.results.json
+//   (launch the new script) … repeat until the generator says nothing is left,
+//   then: npm run apply-blurbs -- <city> scripts/tmp/blurbs-<city>.results.json
+//   The harvester is merge-mode (seeds from the existing results file), so one
+//   accumulating results file spans every run.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 
 const args = process.argv.slice(2)
@@ -31,6 +43,13 @@ const BATCH = Number(BATCH_ARG) || 6
 const idsFlag = args.indexOf('--ids')
 const onlyIds =
   idsFlag >= 0 ? new Set(args[idsFlag + 1].split(',').filter(Boolean)) : null
+const skipFlag = args.indexOf('--skip')
+const skipIds = new Set()
+if (skipFlag >= 0) {
+  const raw = JSON.parse(readFileSync(args[skipFlag + 1], 'utf8'))
+  for (const r of raw.result?.results ?? raw.results ?? raw)
+    if (r && typeof r.id === 'string') skipIds.add(r.id)
+}
 
 const cities = JSON.parse(
   readFileSync(new URL('../cities.json', import.meta.url), 'utf8'),
@@ -53,10 +72,15 @@ const tuples = locations
   .filter((l) => l.inPlay !== false)
   .filter((l) => !(existing[l.id]?.text ?? '').trim())
   .filter((l) => !onlyIds || onlyIds.has(l.id))
+  .filter((l) => !skipIds.has(l.id))
   .sort((a, b) => (b.fameScore ?? 0) - (a.fameScore ?? 0)) // famous first
   .map((l) => [l.id, l.name, l.category, l.lat, l.lng])
+if (skipIds.size)
+  console.log(`skipping ${skipIds.size} ids already in the results file`)
 if (tuples.length === 0)
-  throw new Error('nothing to research — every in-play row has a blurb')
+  throw new Error(
+    'nothing to research — every in-play row has a blurb or a result',
+  )
 
 const script = `export const meta = {
   name: 'blurbs-${CITY}',
@@ -73,10 +97,11 @@ log(\`blurb research: \${LOCS.length} locations in \${batches.length} batches of
 
 const ENTRY = {
   type: 'object', additionalProperties: false,
-  required: ['id', 'text', 'sources', 'confidence', 'note'],
+  required: ['id', 'text', 'descriptor', 'sources', 'confidence', 'note'],
   properties: {
     id: { type: 'string' },
     text: { type: 'string' },
+    descriptor: { type: 'string' },
     sources: { type: 'array', items: { type: 'string' } },
     confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
     note: { type: 'string' },
@@ -91,14 +116,16 @@ const researchPrompt = (batch, i) => \`You are writing short, accurate "why this
 
 For EACH location below, research it on the web (web search + fetch: Wikipedia, the venue's own site, local press like the Tampa Bay Times / Creative Loafing / St. Pete Catalyst / I Love the Burg, the city's own pages, Atlas Obscura). Do NOT use Google Maps/Places APIs.
 
-Write 1–3 sentences (max ~450 characters) of plain text: lead with the hook a local would tell a visitor — the history, the claim to fame, a fun fact, what it's known for. No marketing fluff, no "nestled in the heart of". Say "legend says" for folklore. Never state something you did not find in a source. If you can find nothing reliable about a spot (many neighborhood bars/cafés), set text to "" and confidence "low" — a blank is far better than an invented fact.
+For each, produce TWO things:
+1. descriptor — ONE short factual line (max ~80 characters) saying what kind of place it is: cuisine or style, the neighborhood/street, a signature item or since-year if known. E.g. "Cuban sandwich counter on Central Ave since 1985", "Neighborhood dive bar with a tiki patio", "Waterfront park with a sailing center on Bayboro Harbor". This should exist for essentially EVERY spot — the venue's own site, Yelp/TripAdvisor listings, or a local roundup is enough. Do NOT include star ratings or review counts.
+2. text — the story: 1–3 sentences (max ~450 characters) of plain text. Lead with the hook a local would tell a visitor — the history, the claim to fame, a fun fact, what it's known for. No marketing fluff, no "nestled in the heart of". Say "legend says" for folklore. Never state something you did not find in a source. If there is no reliable story (common for neighborhood bars/cafés), set text to "" and confidence "low" — a blank story plus a good descriptor is the correct answer there; an invented fact is the worst answer.
 
-Return one result per id (all \${batch.length}), with 1–2 https source URLs you actually read (no http, no search-result pages), a confidence (high = facts confirmed by a solid source; medium = one decent source; low = nothing usable), and a one-line note on what you found or why you skipped.
+Return one result per id (all \${batch.length}), with 1–2 https source URLs you actually read (no http, no search-result pages), a confidence for the STORY (high = facts confirmed by a solid source; medium = one decent source; low = no usable story), and a one-line note on what you found or why you skipped.
 
 Locations (id | name | category | lat,lng):
 \${batch.map(([id, name, cat, lat, lng]) => \`- \${id} | \${name} | \${cat} | \${lat},\${lng}\`).join('\\n')}\`
 
-const checkPrompt = (r) => \`Fact-check these draft blurbs for \${CITY} against their cited sources (fetch each URL). For each: keep the text if every claim is supported; FIX it (minimal edit) if a detail is wrong or unsupported; set text to "" and confidence "low" if the sources don't support the gist or don't load. Also drop any source URL that is not https or does not actually discuss the place. Keep 1–3 sentences, max ~450 characters, plain text. Return every id.
+const checkPrompt = (r) => \`Fact-check these draft blurbs for \${CITY} against their cited sources (fetch each URL). For each: keep the text if every claim is supported; FIX it (minimal edit) if a detail is wrong or unsupported; set text to "" and confidence "low" if the sources don't support the gist or don't load. Check the descriptor too — it must be a plain factual "what kind of place" line (max ~80 chars, no ratings/review counts) supported by a source; fix or trim it, but only blank it if it is actually wrong. Also drop any source URL that is not https or does not actually discuss the place. Keep the story to 1–3 sentences, max ~450 characters, plain text. Return every id.
 
 \${JSON.stringify(r.results, null, 1)}\`
 
@@ -108,8 +135,9 @@ const results = await pipeline(
   (r, _b, i) => r ? agent(checkPrompt(r), { label: \`check:\${i + 1}/\${batches.length}\`, phase: 'Fact-check', schema: SCHEMA }) : null,
 )
 const all = results.filter(Boolean).flatMap((r) => r.results)
-const written = all.filter((r) => r.text.trim()).length
-log(\`done: \${written} blurbs written, \${all.length - written} left blank (no reliable source), \${LOCS.length - all.length} ids missing (failed batches)\`)
+const stories = all.filter((r) => r.text.trim()).length
+const described = all.filter((r) => r.descriptor.trim()).length
+log(\`done: \${stories} stories, \${described} descriptors over \${all.length} researched; \${LOCS.length - all.length} ids missing (failed batches — harvest + --skip to resume)\`)
 return { results: all }
 `
 

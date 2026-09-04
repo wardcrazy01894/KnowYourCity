@@ -3,6 +3,8 @@
 
 /** Hard cap on blurb length: ~3 sentences; the recap card is a phone-width box. */
 export const MAX_CHARS = 480
+/** Hard cap on the one-line "what kind of place" descriptor. */
+export const MAX_DESCRIPTOR_CHARS = 90
 /** Research confidence tiers that are allowed into the shipped sidecar. */
 export const ACCEPTED_CONFIDENCE = new Set(['high', 'medium'])
 
@@ -10,16 +12,15 @@ const collapse = (s) => s.replace(/\s+/g, ' ').trim()
 
 /**
  * Filter + clean research rows.
- * @param {Array<{id:string,text:string,sources?:string[],confidence?:string}>} rows
+ * @param {Array<{id:string,text:string,descriptor?:string,sources?:string[],confidence?:string}>} rows
  * @param {{knownIds:Set<string>, existing?:Record<string,{text?:string}>, force?:boolean}} opts
- * @returns {{accepted: Array<{id:string,text:string,sources:string[]}>, skipped: Record<string,string[]>}}
+ * @returns {{accepted: Array<{id:string,text:string,descriptor:string,sources:string[]}>, skipped: Record<string,string[]>}}
  */
 export function normalizeBlurbResults(rows, opts) {
   const { knownIds, existing = {}, force = false } = opts
   const skipped = {
     'unknown id': [],
-    'blank text': [],
-    'low confidence': [],
+    'nothing usable (no text, no descriptor)': [],
     'too long': [],
     'already written (use --force)': [],
     'no https source': [],
@@ -29,20 +30,22 @@ export function normalizeBlurbResults(rows, opts) {
   for (const r of rows) {
     if (!r || typeof r.id !== 'string' || seen.has(r.id)) continue
     seen.add(r.id)
-    const text = collapse(String(r.text ?? ''))
+    // The STORY is gated on confidence (an invented fact is worse than none);
+    // the factual DESCRIPTOR survives regardless — a researched spot must at
+    // least say what kind of place it is (owner rule, 2026-09-04).
+    const text = ACCEPTED_CONFIDENCE.has(r.confidence)
+      ? collapse(String(r.text ?? ''))
+      : ''
+    const descriptor = collapse(String(r.descriptor ?? ''))
     if (!knownIds.has(r.id)) {
       skipped['unknown id'].push(r.id)
       continue
     }
-    if (!text) {
-      skipped['blank text'].push(r.id)
+    if (!text && !descriptor) {
+      skipped['nothing usable (no text, no descriptor)'].push(r.id)
       continue
     }
-    if (!ACCEPTED_CONFIDENCE.has(r.confidence)) {
-      skipped['low confidence'].push(r.id)
-      continue
-    }
-    if (text.length > MAX_CHARS) {
+    if (text.length > MAX_CHARS || descriptor.length > MAX_DESCRIPTOR_CHARS) {
       skipped['too long'].push(r.id)
       continue
     }
@@ -57,7 +60,7 @@ export function normalizeBlurbResults(rows, opts) {
       skipped['no https source'].push(r.id)
       continue
     }
-    accepted.push({ id: r.id, text, sources })
+    accepted.push({ id: r.id, text, descriptor, sources })
   }
   for (const k of Object.keys(skipped)) skipped[k].sort()
   return { accepted, skipped }
