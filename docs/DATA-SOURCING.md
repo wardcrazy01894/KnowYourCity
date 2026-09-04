@@ -826,6 +826,29 @@ and clears the flag (an id with no live blurb — a typo, or one sitting in
 - A city gets a sidecar only when it has at least one entry; every city's
   `blurbs.<id>.json` already has a `no-cache` rule in `public/_headers`.
 
+**Bulk authoring — the blurb research pass (`gen-blurbs` → Workflow → `apply-blurbs`)**
+
+The same crash-safe shape as the fame pass (§4b), with no Google Places calls:
+
+```bash
+npm run gen-blurbs -- stpete scripts/tmp/blurbs-stpete.workflow.js   # in-play rows without a blurb, famous first
+# launch the generated script with the Workflow tool (scriptPath) — batches of 6:
+#   Research agent: web search + fetch (Wikipedia, venue site, local press), 1–3
+#   sentences, 1–2 https sources, confidence high|medium|low, "" if nothing reliable
+#   Fact-check agent: re-reads each cited source, fixes or blanks unsupported claims
+npm run apply-blurbs -- stpete <results.json>                         # merge + snapshot
+# crashed mid-run? node scripts/harvest-fame-transcripts.mjs <wf-dir> out.json
+#   recovers finished batches (generic StructuredOutput harvester), then
+#   npm run gen-blurbs -- stpete … --ids <missing> for the rest
+```
+
+`apply-blurbs` keeps only rows with non-empty text, confidence high/medium,
+≤ 480 chars, and at least one https source (max 2); it never overwrites a
+hand-written entry without `--force`; every merged entry gets its `writtenFor`
+snapshot via `syncBlurbs(accept)`. Rows the research left blank stay on the
+placeholder — a blank beats an invented fact — and are listed so the tail can
+be re-run or written by hand.
+
 Status: **St. Pete has 4 demo entries** (Sunken Gardens, The Dalí Museum,
 Demens Landing Park, Tampa Bay Watch Discovery Center) written to preview the
 feature; no other city has a sidecar yet. Bulk authoring is a backlog item.

@@ -98,6 +98,8 @@ npm run add-polygons            # backfill park/golf footprints from OSM (all ci
 npm run check-chains            # flag national chains that leaked past the fame pass
 npm run pin-day -- <city>       # freeze today's lineup BEFORE any dataset edit
 npm run sync-blurbs -- <city>   # reconcile the day-recap blurb sidecar with the dataset
+npm run gen-blurbs -- <city> <out.js>   # blurb-research workflow script (web research, no Google spend)
+npm run apply-blurbs -- <city> <results.json>   # merge research results into the sidecar
 ```
 
 Local chains (multiple branches of one brand, e.g. a regional coffee mini-chain)
