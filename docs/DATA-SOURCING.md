@@ -760,7 +760,8 @@ recap shows the rollout placeholder for that spot (`BLURB_PLACEHOLDER` in
   "blurbs": {
     "sunken-gardens": {
       // keyed by Location.id
-      "text": "A century-old botanical garden that began as a sinkhole: …",
+      "text": "A century-old botanical garden that began as a sinkhole: …", // the story ("" allowed)
+      "descriptor": "Century-old botanical garden in a former sinkhole", // one factual line: what kind of place
       "sources": ["https://en.wikipedia.org/wiki/Sunken_Gardens_(Florida)"], // optional, https only
       "writtenFor": {
         "name": "Sunken Gardens",
@@ -812,6 +813,16 @@ and clears the flag (an id with no live blurb — a typo, or one sitting in
 (first-time authoring or a bulk import); `--check` reports without writing
 (exit 1 if anything is stale).
 
+**Placeholder rule (owner, 2026-09-04):** the recap's placeholder ("Write-ups
+haven't rolled out for this spot yet") means _nobody has tried_. A spot that
+was researched must at least carry a `descriptor` — what kind of place it is
+(cuisine/style, street, signature item, since-year) — even when there is no
+story worth telling (`text: ""`). `resolveBlurb` shows the placeholder only
+when an entry is absent or has neither text nor descriptor. **No Google
+ratings/review counts**: Places content may not be stored past 30 days or shown
+off a Google map (the same rule `places-freshness.mjs` follows), so the
+descriptor is sourced from the venue's site, listings, and local press instead.
+
 **Authoring rules**
 
 - 1–3 player-facing sentences, plain text (rendered as text, never HTML).
@@ -825,6 +836,45 @@ and clears the flag (an id with no live blurb — a typo, or one sitting in
 <id>` stamps the snapshot; a hand-added entry with no `writtenFor` fails CI.
 - A city gets a sidecar only when it has at least one entry; every city's
   `blurbs.<id>.json` already has a `no-cache` rule in `public/_headers`.
+
+**Bulk authoring — the blurb research pass (`gen-blurbs` → Workflow → `apply-blurbs`)**
+
+The same crash-safe shape as the fame pass (§4b), with no Google Places calls:
+
+```bash
+npm run gen-blurbs -- stpete scripts/tmp/blurbs-stpete.workflow.js   # in-play rows without a blurb, famous first
+# launch the generated script with the Workflow tool (scriptPath) — batches of 6:
+#   Research agent: web search + fetch (Wikipedia, venue site, local press), 1–3
+#   sentences, 1–2 https sources, confidence high|medium|low, "" if nothing reliable
+#   Fact-check agent: re-reads each cited source, fixes or blanks unsupported claims
+npm run apply-blurbs -- stpete <results.json>                         # merge + snapshot
+# crashed mid-run? node scripts/harvest-fame-transcripts.mjs <wf-dir> out.json
+#   recovers finished batches (generic StructuredOutput harvester), then
+#   npm run gen-blurbs -- stpete … --ids <missing> for the rest
+```
+
+`apply-blurbs` keeps a row's **story** only at confidence high/medium (≤ 480
+chars) and its **descriptor** regardless (≤ 90 chars) — a low-confidence story
+is dropped, the descriptor survives, so a researched spot never falls back to
+the placeholder; rows need at least one https source (max 2). It never
+overwrites a hand-written entry without `--force`; every merged entry gets its
+`writtenFor` snapshot via `syncBlurbs(accept)`. Rows with nothing usable are
+listed so the tail can be re-run or written by hand.
+
+**Surviving a token/session limit mid-run.** The Workflow harness persists
+every finished batch to `agent-*.jsonl` as it completes, so a limit reset loses
+at most the batches in flight. When the run stops:
+
+```bash
+node scripts/harvest-fame-transcripts.mjs <workflow-dir> scripts/tmp/blurbs-stpete.results.json   # merge-mode: accumulates
+npm run gen-blurbs -- stpete scripts/tmp/blurbs-stpete.workflow.js --skip scripts/tmp/blurbs-stpete.results.json
+# launch the new script (only the unfinished ids); repeat until "nothing to research"
+npm run apply-blurbs -- stpete scripts/tmp/blurbs-stpete.results.json
+```
+
+Nothing is re-researched; the same results file spans every run. (The
+Workflow tool's own `resumeFromRunId` also replays cached agents for free when
+the script is unchanged.)
 
 Status: **St. Pete has 4 demo entries** (Sunken Gardens, The Dalí Museum,
 Demens Landing Park, Tampa Bay Watch Discovery Center) written to preview the

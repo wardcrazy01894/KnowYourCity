@@ -19,6 +19,11 @@ const FILE: BlurbsFile = {
     },
     'no-sources': { text: 'Just text.' },
     'blank-text': { text: '   ' },
+    'descriptor-only': {
+      text: '',
+      descriptor: 'Neighborhood dive bar with a tiki patio',
+      sources: ['https://example.org/d'],
+    },
   },
 }
 
@@ -26,6 +31,7 @@ describe('resolveBlurb', () => {
   it('returns the written blurb + sources when the id is present', () => {
     expect(resolveBlurb(FILE, 'sunken-gardens')).toEqual({
       text: 'A century-old botanical garden built in a drained sinkhole.',
+      descriptor: '',
       sources: ['https://en.wikipedia.org/wiki/Sunken_Gardens_(Florida)'],
       placeholder: false,
     })
@@ -34,7 +40,19 @@ describe('resolveBlurb', () => {
   it('defaults sources to an empty list', () => {
     expect(resolveBlurb(FILE, 'no-sources')).toEqual({
       text: 'Just text.',
+      descriptor: '',
       sources: [],
+      placeholder: false,
+    })
+  })
+
+  it('a researched spot with no fun fact still shows what kind of place it is', () => {
+    // Placeholder means "never attempted" — a spot we DID research but found
+    // no story for keeps its descriptor line and is NOT a placeholder.
+    expect(resolveBlurb(FILE, 'descriptor-only')).toEqual({
+      text: '',
+      descriptor: 'Neighborhood dive bar with a tiki patio',
+      sources: ['https://example.org/d'],
       placeholder: false,
     })
   })
@@ -42,18 +60,20 @@ describe('resolveBlurb', () => {
   it('falls back to the rollout placeholder for an unknown id', () => {
     expect(resolveBlurb(FILE, 'the-vinoy')).toEqual({
       text: BLURB_PLACEHOLDER,
+      descriptor: '',
       sources: [],
       placeholder: true,
     })
   })
 
-  it('treats a whitespace-only blurb as not written yet', () => {
+  it('treats a blurb with neither text nor descriptor as not written yet', () => {
     expect(resolveBlurb(FILE, 'blank-text').placeholder).toBe(true)
   })
 
   it('falls back to the placeholder when no file loaded (404/offline)', () => {
     expect(resolveBlurb(null, 'sunken-gardens')).toEqual({
       text: BLURB_PLACEHOLDER,
+      descriptor: '',
       sources: [],
       placeholder: true,
     })
@@ -103,6 +123,19 @@ describe('parseBlurbsFile', () => {
       },
     })
     expect(parsed?.blurbs.a.sources).toEqual(['https://ok.example/p'])
+  })
+
+  it('keeps a string descriptor and rejects a non-string one', () => {
+    expect(parseBlurbsFile(FILE)?.blurbs['descriptor-only'].descriptor).toBe(
+      'Neighborhood dive bar with a tiki patio',
+    )
+    expect(
+      parseBlurbsFile({
+        version: 1,
+        city: 'x',
+        blurbs: { a: { text: 'ok', descriptor: 42 } },
+      }),
+    ).toBeNull()
   })
 
   it('rejects an unknown schema version', () => {

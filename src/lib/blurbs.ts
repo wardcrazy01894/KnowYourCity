@@ -27,8 +27,19 @@ import { log } from './log'
 export const BLURBS_FILE_VERSION = 1
 
 export interface Blurb {
-  /** 1–3 player-facing sentences: why it's famous / a fun fact. Plain text. */
+  /**
+   * 1–3 player-facing sentences: why it's famous / a fun fact. Plain text. May
+   * be "" for a spot that was researched but has no story worth telling —
+   * then `descriptor` carries the card.
+   */
   text: string
+  /**
+   * What kind of place it is, in one short factual line ("Cuban sandwich
+   * counter on Central Ave", "Neighborhood dive bar with a tiki patio").
+   * Owner rule (2026-09-04): the placeholder is ONLY for spots nobody has
+   * tried yet — a researched spot must at least say what it is.
+   */
+  descriptor?: string
   /** Optional "read more" URLs (rendered as links, so keep them https). */
   sources?: string[]
 }
@@ -43,9 +54,12 @@ export interface BlurbsFile {
 
 /** What a resolved blurb looks like to the UI — never undefined/null. */
 export interface ResolvedBlurb {
+  /** The story, or the placeholder copy, or "" (descriptor-only spot). */
   text: string
+  /** One-line "what kind of place" — "" when not written. */
+  descriptor: string
   sources: string[]
-  /** True when nothing is written for this spot yet (rollout placeholder). */
+  /** True only when NOTHING has been written for this spot (never attempted). */
   placeholder: boolean
 }
 
@@ -58,18 +72,31 @@ export const BLURB_PLACEHOLDER =
   'Write-ups haven’t rolled out for this spot yet — check back soon.'
 
 /**
- * Pure: the blurb to show for `id`, with the placeholder when the file is
- * missing (null), the id is absent, or the text is blank.
+ * Pure: the blurb to show for `id`. Placeholder only when the file is missing
+ * (null), the id is absent, or the entry has neither text nor descriptor — a
+ * researched spot with just a descriptor is NOT a placeholder.
  */
 export function resolveBlurb(
   file: BlurbsFile | null,
   id: string,
 ): ResolvedBlurb {
   const entry = file?.blurbs[id]
-  if (!entry || entry.text.trim() === '') {
-    return { text: BLURB_PLACEHOLDER, sources: [], placeholder: true }
+  const text = entry?.text.trim() ?? ''
+  const descriptor = entry?.descriptor?.trim() ?? ''
+  if (!entry || (text === '' && descriptor === '')) {
+    return {
+      text: BLURB_PLACEHOLDER,
+      descriptor: '',
+      sources: [],
+      placeholder: true,
+    }
   }
-  return { text: entry.text, sources: entry.sources ?? [], placeholder: false }
+  return {
+    text,
+    descriptor,
+    sources: entry.sources ?? [],
+    placeholder: false,
+  }
 }
 
 /**
@@ -88,6 +115,8 @@ export function parseBlurbsFile(raw: unknown): BlurbsFile | null {
     if (typeof v !== 'object' || v === null) return null
     const e = v as Record<string, unknown>
     if (typeof e.text !== 'string') return null
+    if (e.descriptor !== undefined && typeof e.descriptor !== 'string')
+      return null
     let sources: string[] | undefined
     if (e.sources !== undefined) {
       if (
@@ -100,7 +129,11 @@ export function parseBlurbsFile(raw: unknown): BlurbsFile | null {
       // by the CI guard over the committed file (blurbs.data.test.ts).
       sources = (e.sources as string[]).filter((s) => s.startsWith('https://'))
     }
-    blurbs[id] = { text: e.text, ...(sources ? { sources } : {}) }
+    blurbs[id] = {
+      text: e.text,
+      ...(typeof e.descriptor === 'string' ? { descriptor: e.descriptor } : {}),
+      ...(sources ? { sources } : {}),
+    }
   }
   return { version: o.version, city: o.city, blurbs }
 }

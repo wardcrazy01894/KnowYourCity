@@ -71,7 +71,10 @@ for (const city of CITIES) {
 
     it('has non-empty text and https sources on every entry', () => {
       for (const [id, b] of Object.entries(parsed!.blurbs)) {
-        expect(b.text.trim().length, `${id}: empty text`).toBeGreaterThan(0)
+        expect(
+          (b.text + (b.descriptor ?? '')).trim().length,
+          `${id}: neither text nor descriptor — delete the entry instead`,
+        ).toBeGreaterThan(0)
         for (const s of b.sources ?? [])
           expect(s, `${id}: source must be https`).toMatch(/^https:\/\//)
       }

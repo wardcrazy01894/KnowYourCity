@@ -4,10 +4,11 @@
  * WHY each place matters (a short blurb per location, with "read more" links).
  *
  * Blurbs come from the per-city sidecar `public/blurbs.<city>.json`, loaded
- * lazily when this screen opens (src/lib/blurbs.ts). A location without a
- * write-up yet shows the rollout placeholder — the map and the score/distance
- * facts work for every location regardless, so the feature is useful from day
- * one and gets richer as blurbs are added. Tapping a card frames that round on
+ * lazily when this screen opens (src/lib/blurbs.ts). Each card shows a one-line
+ * descriptor (what kind of place) and/or the story; a location nobody has
+ * researched yet shows the rollout placeholder — the map and the
+ * score/distance facts work for every location regardless, so the feature is
+ * useful from day one and gets richer as blurbs are added. Tapping a card frames that round on
  * the map. Reached from the results screen; "back" returns there.
  */
 
@@ -154,9 +155,25 @@ export function DayRecap({
                       </p>
                     ) : (
                       <>
-                        <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5 }}>
-                          {blurb.text}
-                        </p>
+                        {blurb.descriptor && (
+                          <p
+                            style={{
+                              margin: '0 0 4px',
+                              fontSize: 14,
+                              fontWeight: 600,
+                              opacity: 0.85,
+                            }}
+                          >
+                            {blurb.descriptor}
+                          </p>
+                        )}
+                        {blurb.text && (
+                          <p
+                            style={{ margin: 0, fontSize: 15, lineHeight: 1.5 }}
+                          >
+                            {blurb.text}
+                          </p>
+                        )}
                         {blurb.sources.length > 0 && (
                           <p
                             style={{
