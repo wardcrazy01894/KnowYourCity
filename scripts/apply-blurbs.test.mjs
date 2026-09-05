@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {
   normalizeBlurbResults,
+  isWritten,
   MAX_CHARS,
   MAX_DESCRIPTOR_CHARS,
   ACCEPTED_CONFIDENCE,
@@ -119,6 +120,22 @@ describe('normalizeBlurbResults', () => {
       'https://two.example',
     ])
     expect(skipped['no https source']).toEqual(['b'])
+  })
+
+  it('a descriptor-only entry counts as written (never a research candidate, never overwritten)', () => {
+    expect(isWritten({ text: '', descriptor: 'Neighborhood dive bar' })).toBe(
+      true,
+    )
+    expect(isWritten({ text: 'story' })).toBe(true)
+    expect(isWritten({ text: '  ', descriptor: ' ' })).toBe(false)
+    expect(isWritten(undefined)).toBe(false)
+    const existing = { a: { text: '', descriptor: 'Cuban café' } }
+    const soft = normalizeBlurbResults([row('a')], {
+      knownIds: known,
+      existing,
+    })
+    expect(soft.accepted).toEqual([])
+    expect(soft.skipped['already written (use --force)']).toEqual(['a'])
   })
 
   it('never overwrites a hand-written entry unless --force', () => {

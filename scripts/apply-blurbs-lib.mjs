@@ -11,6 +11,16 @@ export const ACCEPTED_CONFIDENCE = new Set(['high', 'medium'])
 const collapse = (s) => s.replace(/\s+/g, ' ').trim()
 
 /**
+ * Has this sidecar entry been written? A descriptor-only entry (researched,
+ * no story) counts — it is NOT a placeholder, must not be re-researched, and
+ * must not be overwritten without --force. Shared by the generator's
+ * candidate filter and the apply gate so the two can't disagree.
+ */
+export function isWritten(entry) {
+  return Boolean(((entry?.text ?? '') + (entry?.descriptor ?? '')).trim())
+}
+
+/**
  * Filter + clean research rows.
  * @param {Array<{id:string,text:string,descriptor?:string,sources?:string[],confidence?:string}>} rows
  * @param {{knownIds:Set<string>, existing?:Record<string,{text?:string}>, force?:boolean}} opts
@@ -49,7 +59,7 @@ export function normalizeBlurbResults(rows, opts) {
       skipped['too long'].push(r.id)
       continue
     }
-    if (!force && (existing[r.id]?.text ?? '').trim()) {
+    if (!force && isWritten(existing[r.id])) {
       skipped['already written (use --force)'].push(r.id)
       continue
     }

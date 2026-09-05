@@ -31,9 +31,16 @@
 //   The harvester is merge-mode (seeds from the existing results file), so one
 //   accumulating results file spans every run.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { isWritten } from './apply-blurbs-lib.mjs'
 
 const args = process.argv.slice(2)
-const positional = args.filter((a) => !a.startsWith('--'))
+// Flag VALUES (`--ids a,b`, `--skip file.json`) are not positionals.
+const flagValueIdx = new Set(
+  ['--ids', '--skip'].map((f) => args.indexOf(f) + 1).filter((i) => i > 0),
+)
+const positional = args.filter(
+  (a, i) => !a.startsWith('--') && !flagValueIdx.has(i),
+)
 const [CITY, OUT_PATH, BATCH_ARG] = positional
 if (!CITY || !OUT_PATH)
   throw new Error(
@@ -70,7 +77,7 @@ const existing = existsSync(sidecarUrl)
 
 const tuples = locations
   .filter((l) => l.inPlay !== false)
-  .filter((l) => !(existing[l.id]?.text ?? '').trim())
+  .filter((l) => !isWritten(existing[l.id]))
   .filter((l) => !onlyIds || onlyIds.has(l.id))
   .filter((l) => !skipIds.has(l.id))
   .sort((a, b) => (b.fameScore ?? 0) - (a.fameScore ?? 0)) // famous first
@@ -129,6 +136,10 @@ const checkPrompt = (r) => \`Fact-check these draft blurbs for \${CITY} against 
 
 \${JSON.stringify(r.results, null, 1)}\`
 
+// pipeline() (a documented Workflow hook, unlike the fame pass's parallel+then)
+// lets a batch's fact-check start the moment its research finishes. No model
+// pin: the fame pass pins sonnet for cheap scoring; blurbs are prose that
+// ships to players, so they inherit the session model.
 const results = await pipeline(
   batches,
   (batch, _b, i) => agent(researchPrompt(batch, i), { label: \`research:\${i + 1}/\${batches.length}\`, phase: 'Research', schema: SCHEMA }),
