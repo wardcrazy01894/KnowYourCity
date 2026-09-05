@@ -139,11 +139,13 @@ const checkPrompt = (r) => \`Fact-check these draft blurbs for \${CITY} against 
 // pipeline() (a documented Workflow hook, unlike the fame pass's parallel+then)
 // lets a batch's fact-check start the moment its research finishes. No model
 // pin: the fame pass pins sonnet for cheap scoring; blurbs are prose that
-// ships to players, so they inherit the session model.
+// ships to players, so they inherit the session model. The fact-check is
+// mechanical (fetch each source, compare) so it runs at low effort — research
+// is the expensive stage.
 const results = await pipeline(
   batches,
   (batch, _b, i) => agent(researchPrompt(batch, i), { label: \`research:\${i + 1}/\${batches.length}\`, phase: 'Research', schema: SCHEMA }),
-  (r, _b, i) => r ? agent(checkPrompt(r), { label: \`check:\${i + 1}/\${batches.length}\`, phase: 'Fact-check', schema: SCHEMA }) : null,
+  (r, _b, i) => r ? agent(checkPrompt(r), { label: \`check:\${i + 1}/\${batches.length}\`, phase: 'Fact-check', schema: SCHEMA, effort: 'low' }) : null,
 )
 const all = results.filter(Boolean).flatMap((r) => r.results)
 const stories = all.filter((r) => r.text.trim()).length
