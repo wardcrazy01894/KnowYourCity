@@ -17,7 +17,11 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import prettier from 'prettier'
 import { syncBlurbs } from './sync-blurbs-lib.mjs'
-import { normalizeBlurbResults, MAX_CHARS } from './apply-blurbs-lib.mjs'
+import {
+  normalizeBlurbResults,
+  promotionalHits,
+  MAX_CHARS,
+} from './apply-blurbs-lib.mjs'
 
 const args = process.argv.slice(2)
 const [CITY, RESULTS] = args.filter((a) => !a.startsWith('--'))
@@ -44,6 +48,18 @@ const { accepted, skipped } = normalizeBlurbResults(rows, {
 })
 for (const { id, text, descriptor, sources } of accepted)
   file.blurbs[id] = { ...(file.blurbs[id] ?? {}), text, descriptor, sources }
+
+// Surface promotional language on EVERY run, over what is actually being
+// written. Not a hard reject: a named, independently sourced award is fine.
+const promo = promotionalHits(accepted)
+if (promo.length) {
+  console.log(
+    `\n⚠  ${promo.length} entr${promo.length === 1 ? 'y' : 'ies'} contain promotional language — read each before shipping:`,
+  )
+  for (const { id, terms } of promo)
+    console.log(`   ${id}: ${terms.join(', ')}`)
+  console.log('')
+}
 
 const today = new Date().toISOString().slice(0, 10)
 const { file: out, audit } = syncBlurbs(file, locations, {

@@ -864,6 +864,15 @@ never be seen. `--all` includes them, which is worth doing once a city's
 in-play set is complete: it future-proofs a later cap raise, since a promoted
 row then arrives with its write-up already done.
 
+`apply-blurbs` prints a **promotional-language warning** on every run, listing
+any accepted entry whose text _or descriptor_ contains an unsourced-superlative
+term (`award-winning`, `hidden gem`, `world-class`, …). It is a warning, not a
+reject: a **named, independently sourced** award is fine (a James Beard listing,
+a city stewardship award), while a vague boast with the venue's own site as its
+only source is not. Read the list every run — three such claims shipped in
+earlier cities precisely because the check was run by hand and its output
+skimmed.
+
 `apply-blurbs` keeps a row's **story** only at confidence high/medium (≤ 600
 chars) and its **descriptor** regardless (≤ 100 chars) — a low-confidence story
 is dropped, the descriptor survives, so a researched spot never falls back to
@@ -901,8 +910,9 @@ Rewind St Pete is a different business with its own write-up).
 **State College is complete end to end too — all 229 dataset rows** (200 in
 play plus 29 benched), 190 with a story and every row with a descriptor. That story rate is essentially the
 same as St. Pete's (320 of 373, 86%), so a college town does not obviously
-leave a deeper paper trail than a beach town at this sample size. Seattle (500 in play of 2463 rows) and Chicago (700 of 4198) are the
-remaining runs, one city fully finished before the next.
+leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, 480 with a story. Its 1963
+benched rows are not researched (see `--all` above). Chicago (700 in play of
+4198 rows) is the last run.
 
 ---
 

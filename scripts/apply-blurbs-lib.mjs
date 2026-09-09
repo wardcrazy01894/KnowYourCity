@@ -38,6 +38,36 @@ const JUNK_SOURCE = new RegExp(
 )
 
 /**
+ * Promotional language that needs a human look before shipping. An accolade is
+ * fine when a specific award is NAMED and independently sourced (a James Beard
+ * listing, a city's own stewardship award); it is not fine as a vague boast,
+ * especially with the venue's own site as the only source.
+ *
+ * Checks `text` AND `descriptor`: shipping "award-winning" in a descriptor
+ * while the text read clean is exactly how this slipped through twice.
+ */
+const PROMOTIONAL =
+  /award[- ]winning|best[- ]kept|must[- ]see|renowned|beloved|nestled|hidden[- ]gem|world[- ]class/gi
+
+/**
+ * Pure: rows whose prose contains promotional language, with the matched terms.
+ * apply-blurbs prints these on every run so the check can't be forgotten.
+ * @returns {Array<{id:string, terms:string[]}>}
+ */
+export function promotionalHits(rows) {
+  const out = []
+  for (const r of rows) {
+    if (!r || typeof r.id !== 'string') continue
+    const blob = `${r.text ?? ''} ${r.descriptor ?? ''}`
+    const terms = [
+      ...new Set((blob.match(PROMOTIONAL) ?? []).map((t) => t.toLowerCase())),
+    ]
+    if (terms.length) out.push({ id: r.id, terms })
+  }
+  return out
+}
+
+/**
  * Has this sidecar entry been written? A descriptor-only entry (researched,
  * no story) counts — it is NOT a placeholder, must not be re-researched, and
  * must not be overwritten without --force. Shared by the generator's
