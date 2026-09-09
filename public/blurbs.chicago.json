@@ -1,0 +1,1201 @@
+{
+  "version": 1,
+  "city": "chicago",
+  "blurbs": {
+    "360-chicago": {
+      "text": "The observatory floor sits 1,030 feet above the street in the tower long known as the John Hancock Center. Independently run and rebranded 360 Chicago in 2014, it added TILT that same summer — floor-to-ceiling windows that slowly tilt visitors out to 30 degrees over the street — alongside an open-air SkyWalk and the CloudBar cocktail lounge.",
+      "descriptor": "94th-floor observation deck in the former John Hancock Center",
+      "sources": ["https://en.wikipedia.org/wiki/875_North_Michigan_Avenue"],
+      "writtenFor": {
+        "name": "360 Chicago",
+        "lat": 41.89898,
+        "lng": -87.62318
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "albert-ivar-goodman-theatre": {
+      "text": "The Goodman was founded in 1925 as a memorial to playwright Kenneth Sawyer Goodman, who died in the 1918 flu pandemic, and won the Regional Theatre Tony Award in 1992. It moved in 2000 to 170 N. Dearborn, where its two auditoriums — the Albert and the Owen — sit inside the landmarked 1922 Harris and Selwyn theaters, gutted and rebuilt behind their preserved facades.",
+      "descriptor": "Goodman Theatre mainstage at 170 N Dearborn in the Loop theater district",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Goodman_Theatre",
+        "https://en.wikipedia.org/wiki/Selwyn_Theatre_(Chicago)"
+      ],
+      "writtenFor": {
+        "name": "Albert Ivar Goodman Theatre",
+        "lat": 41.88498,
+        "lng": -87.62993
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "alinea": {
+      "text": "Opened in 2005 by chef Grant Achatz and Nick Kokonas, Alinea built its name on theatrical, maximalist modernist cooking. It won the James Beard award for Outstanding Restaurant in 2016 and held three Michelin stars from 2011 until it was cut to two in November 2025.",
+      "descriptor": "Grant Achatz's modernist tasting-menu restaurant on N Halsted, Lincoln Park",
+      "sources": ["https://en.wikipedia.org/wiki/Alinea_(restaurant)"],
+      "writtenFor": {
+        "name": "Alinea",
+        "lat": 41.91344,
+        "lng": -87.6482
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "als-beef": {
+      "text": "Al's says the Italian beef goes back to Tony Ferreri, who invented it in the 1920s to serve at weddings; his son Al began selling beef sandwiches in 1938 with sister Frances and brother-in-law Chris Pacelli Sr. A grandson of the founder still runs it, and the sandwich is heavily seasoned roast beef in gravy on French bread with sweet or hot peppers. Other origin claims exist — Pasquale Scala among them.",
+      "descriptor": "Italian beef sandwich chain founded in Chicago in 1938",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Italian_beef",
+        "https://en.wikipedia.org/wiki/Al%27s_Beef"
+      ],
+      "writtenFor": {
+        "name": "Al's Beef - River North",
+        "lat": 41.89223,
+        "lng": -87.63428
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "au-cheval": {
+      "text": "Hogsalt's Au Cheval opened in 2012 at 800 W. Randolph in the West Loop, a compact all-day diner with counter and booth seating. Its cheeseburger — American cheese, dijonnaise, pickles, grilled onions — is called by many the best in Chicago, and the room is notoriously hard to get into: once the text says your table is ready, you have ten minutes to claim it.",
+      "descriptor": "West Loop diner on W Randolph known for its cheeseburger, since 2012",
+      "sources": ["https://www.timeout.com/chicago/restaurants/au-cheval"],
+      "writtenFor": {
+        "name": "Au Cheval",
+        "lat": 41.88471,
+        "lng": -87.6476
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "auditorium-theatre": {
+      "text": "Adler and Sullivan's 1889 masterpiece was dedicated by President Benjamin Harrison on December 9, 1889, with opera star Adelina Patti singing that night. It was among the first buildings lit entirely by incandescent bulbs and carried one of the earliest central air-conditioning systems, and it was the first home of the Chicago Symphony Orchestra. Roosevelt University has occupied the building since 1946.",
+      "descriptor": "1889 Adler & Sullivan theater on Michigan Ave, inside Roosevelt University",
+      "sources": ["https://en.wikipedia.org/wiki/Auditorium_Building"],
+      "writtenFor": {
+        "name": "Auditorium Theatre",
+        "lat": 41.87605,
+        "lng": -87.62527
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "bavettes-bar-boeuf": {
+      "text": "Bavette's is Hogsalt's steakhouse at 218 W. Kinzie in River North, done up in jazz-era decor with music to match. Steak frites is the headline, but Time Out's line is that the fried and roasted chicken rival the beef, and the pies — lemon meringue, chocolate cream — have their own following. Reservations open 21 days ahead at 9am; walk-ins may have better odds.",
+      "descriptor": "Jazz-era steakhouse at 218 W Kinzie in River North",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/best-steakhouses-in-chicago",
+        "https://bavettessteakhouse.com/chicago"
+      ],
+      "writtenFor": {
+        "name": "Bavette's Bar & Boeuf",
+        "lat": 41.88929,
+        "lng": -87.63489
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "big-star": {
+      "text": "Big Star is a honky-tonk taqueria modeled on the bars of Bakersfield, California, with executive chef-partner Paul Kahan behind the food: house-made tortillas, tacos al pastor, Baja and panza, a soundtrack running classic country to '70s rock, and 20 exclusive house-barrel bourbons out of Kentucky. It spun off its own label, Big Star Recording Co., in 2016.",
+      "descriptor": "Honky-tonk taqueria and bourbon bar at 1531 N Damen in Wicker Park",
+      "sources": [
+        "https://www.choosechicago.com/listing/big-star/",
+        "https://www.bigstarchicago.com/"
+      ],
+      "writtenFor": {
+        "name": "Big Star - West Town",
+        "lat": 41.90916,
+        "lng": -87.67709
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "billy-goat-tavern": {
+      "text": "William \"Billy Goat\" Sianis opened his first tavern in 1934 and moved the business below street level at 430 N. Michigan in 1964, near the Tribune and Sun-Times offices. He is the source of the Curse of the Billy Goat: ejected with his pet goat from Game 4 of the 1945 World Series at Wrigley, he cursed the Cubs — who won no title until 2016.",
+      "descriptor": "Below-street burger tavern on Lower Michigan Ave since 1964",
+      "sources": ["https://en.wikipedia.org/wiki/Billy_Goat_Tavern"],
+      "writtenFor": {
+        "name": "Billy Goat Tavern - River North",
+        "lat": 41.89025,
+        "lng": -87.62479
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "bloomingdale-trail-park": {
+      "text": "The 606 runs on the Bloomingdale Line, a freight track built in 1873 by the Chicago & Pacific Railroad; the city bought the right-of-way from Canadian Pacific in January 2013 and opened the park on June 6, 2015. At 2.7 miles it's the longest elevated rail-to-trail greenway in the Western Hemisphere — and the name is an homage to 606, the prefix of nearly every Chicago ZIP code.",
+      "descriptor": "The 606: 2.7-mile elevated rail-trail park above Bloomingdale Ave",
+      "sources": ["https://en.wikipedia.org/wiki/606_(Chicago)"],
+      "writtenFor": {
+        "name": "Bloomingdale Trail Park",
+        "lat": 41.91396,
+        "lng": -87.69406
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "buckingham-fountain": {
+      "text": "Kate Sturges Buckingham gave the fountain to Chicago in 1927 as a memorial to her brother Clarence. Architect Edward H. Bennett modeled it on the Latona Fountain at Versailles, and its four sets of seahorses stand for the states bordering Lake Michigan: Illinois, Indiana, Michigan and Wisconsin. The center jet throws water 150 feet, and the fountain opened Married... with Children.",
+      "descriptor": "Rococo fountain in Grant Park with a 150-foot center jet, given in 1927",
+      "sources": ["https://en.wikipedia.org/wiki/Buckingham_Fountain"],
+      "writtenFor": {
+        "name": "Buckingham Fountain",
+        "lat": 41.8758,
+        "lng": -87.61897
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "byline-bank-aragon-ballroom": {
+      "text": "Opened July 15, 1926, the Aragon was given an interior by theater architect John Eberson evoking the courtyard of a Moorish castle around a 21,000-square-foot dance floor. In its heyday crowds topping 18,000 a week danced here to nightly WGN broadcasts heard across the U.S., Canada and reportedly Britain; it's now a 5,000-capacity Live Nation venue, known as the Byline Bank Aragon since 2019.",
+      "descriptor": "1926 Moorish-castle ballroom and concert hall in Uptown",
+      "sources": ["https://en.wikipedia.org/wiki/Aragon_Ballroom_(Chicago)"],
+      "writtenFor": {
+        "name": "Byline Bank Aragon Ballroom",
+        "lat": 41.96943,
+        "lng": -87.65803
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "centennial-wheel": {
+      "text": "Named for Navy Pier's 100th anniversary, the Centennial Wheel debuted May 27, 2016 to replace the pier's 1995 Ferris wheel — 46 feet taller at 196 feet, with a twelve-minute ride of three full revolutions in enclosed, climate-controlled gondolas. It's a Dutch Wheels DW60, the first of its kind in the United States, built to take 115 mph winds.",
+      "descriptor": "196-foot Ferris wheel with enclosed gondolas at Navy Pier",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Navy_Pier",
+        "https://www.navypier.org/attraction/centennial-wheel/"
+      ],
+      "writtenFor": {
+        "name": "Centennial Wheel",
+        "lat": 41.8917,
+        "lng": -87.60747
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "charles-wacker": {
+      "text": "Charles H. Wacker (1856–1929), a brewing and malting executive turned civic booster, chaired the Chicago Plan Commission from 1909 to 1926 and spent those years selling Burnham's Plan of Chicago to the public through speeches, press coverage and Wacker's Manual of the Plan of Chicago. Wacker Drive carries his name, and he's buried here in Graceland, the 1860 cemetery nicknamed the \"Cemetery of Architects.\"",
+      "descriptor": "Grave in Graceland Cemetery of the man Wacker Drive is named for",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Charles_H._Wacker",
+        "https://en.wikipedia.org/wiki/Graceland_Cemetery"
+      ],
+      "writtenFor": {
+        "name": "Charles Wacker",
+        "lat": 41.96108,
+        "lng": -87.65952
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-architecture-center": {
+      "text": "Founded in 1966 as the Chicago School of Architecture Foundation — originally to save H.H. Richardson's Glessner House — it was renamed the Chicago Architecture Foundation in 1979 and moved into Mies van der Rohe's One Illinois Center on the river in 2018. Its centerpiece is the Chicago Model, a 3-D printed scale model of the central city, and it runs the docent-led architecture river cruise and Open House Chicago, the city's largest annual architecture event.",
+      "descriptor": "Architecture museum on the Chicago River with a 3-D scale model of the city",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_Architecture_Center"],
+      "writtenFor": {
+        "name": "Chicago Architecture Center",
+        "lat": 41.88801,
+        "lng": -87.62362
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-childrens-museum": {
+      "text": "The Junior League of Chicago founded the museum in 1982 in response to programming cutbacks in the Chicago Public Schools, starting it inside the Chicago Public Library. It moved to Navy Pier in 1995, and a 2006 plan to relocate to Grant Park drew neighborhood opposition and was rejected by the Park District in 2011; the museum then signed a 90-year Navy Pier lease in late 2012.",
+      "descriptor": "Hands-on children's museum at Navy Pier since 1995",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_Children%27s_Museum"],
+      "writtenFor": {
+        "name": "Chicago Children's Museum",
+        "lat": 41.89147,
+        "lng": -87.6092
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-cultural-center": {
+      "text": "Built in 1897 as Chicago's central public library and a Grand Army of the Republic memorial hall, the building became the nation's first free municipal cultural center in 1978. Preston Bradley Hall's 38-foot Tiffany glass dome, made of more than 60,000 pieces of glass, is billed as the largest in the world, and there's a second stained-glass dome by Healy and Millet. Admission is still free.",
+      "descriptor": "Free city arts venue in the 1897 former public library, 78 E. Washington",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_Cultural_Center"],
+      "writtenFor": {
+        "name": "Chicago Cultural Center",
+        "lat": 41.88388,
+        "lng": -87.62498
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-history-museum": {
+      "text": "Founded in 1856 as the Chicago Historical Society, it lost its original collection — including Lincoln's final draft of the Emancipation Proclamation — in the Great Chicago Fire, and adopted its current public name in 2006. Its roughly 22 million holdings include Lincoln's deathbed and the table on which Lee signed his 1865 surrender to Grant.",
+      "descriptor": "Lincoln Park museum of Chicago history at Clark and North Ave",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_History_Museum"],
+      "writtenFor": {
+        "name": "Chicago History Museum",
+        "lat": 41.91199,
+        "lng": -87.63152
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-pizza-and-oven-grinder-co": {
+      "text": "Open since 1972, it serves a \"pizza pot pie\" — Sicilian dough baked upside down over sauce and cheese in a bowl, then flipped at your table. The garage across Clark Street was the site of the 1929 St. Valentine's Day Massacre, and legend says this building was a lookout for Capone's gunmen, though there's no evidence for it.",
+      "descriptor": "Lincoln Park pizza spot since 1972, known for its upside-down pizza pot pie",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chicago_Pizza_and_Oven_Grinder_Company"
+      ],
+      "writtenFor": {
+        "name": "Chicago Pizza and Oven Grinder Co.",
+        "lat": 41.9208,
+        "lng": -87.63732
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-riverwalk": {
+      "text": "A pedestrian walkway on the south bank of the Chicago River's main branch, begun with the 2001 Wacker Drive reconstruction and expanded in phases through 2016. The expansion laid out six \"rooms\" — Marina Plaza, the Cove, River Theater, Water Plaza, the Jetty, the Boardwalk — with floating wetland gardens, fishing piers and amphitheater steps down to the water.",
+      "descriptor": "Public promenade along the Chicago River's main branch downtown",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_Riverwalk"],
+      "writtenFor": {
+        "name": "Chicago Riverwalk",
+        "lat": 41.88723,
+        "lng": -87.62582
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-theatre": {
+      "text": "Rapp & Rapp built it as the flagship of the Balaban & Katz chain, promoted as the \"Wonder Theatre of the World\"; it opened in 1921 with films, stage shows and a 26-rank Wurlitzer organ, and seats about 3,600. The vertical CHICAGO sign, hung with the Y-shaped municipal device that stands for the forked Chicago River, has become an unofficial emblem of the city.",
+      "descriptor": "1921 State Street movie palace with the landmark CHICAGO marquee",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_Theatre"],
+      "writtenFor": {
+        "name": "Chicago Theatre",
+        "lat": 41.88542,
+        "lng": -87.6273
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-union-station": {
+      "text": "Completed in 1925 from a Daniel Burnham plan and finished by Graham, Anderson, Probst & White after his death, its Great Hall sits under a barrel-vaulted skylight 115 feet up. The travertine staircase is where Brian De Palma shot the baby-carriage shootout in The Untouchables (1987).",
+      "descriptor": "1925 Beaux-Arts rail terminal in the West Loop with a soaring Great Hall",
+      "sources": [
+        "https://www.architecture.org/online-resources/buildings-of-chicago/union-station",
+        "https://en.wikipedia.org/wiki/Chicago_Union_Station"
+      ],
+      "writtenFor": {
+        "name": "Chicago Union Station",
+        "lat": 41.87867,
+        "lng": -87.64041
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "chicago-water-tower": {
+      "text": "Built in 1869 to William W. Boyington's design in yellowing Lemont limestone, it was the only public building in the burned zone to survive the Great Chicago Fire of 1871 — though its roof, not made of limestone, caught fire and the pumps stopped working. It now holds the City Gallery, a free photography space run by the city's tourism office.",
+      "descriptor": "1869 limestone tower on Michigan Ave, now a free city art gallery",
+      "sources": ["https://en.wikipedia.org/wiki/Chicago_Water_Tower"],
+      "writtenFor": {
+        "name": "Chicago Water Tower",
+        "lat": 41.89717,
+        "lng": -87.62444
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "cibc-theatre": {
+      "text": "It opened in 1906 as the Majestic Theatre, a vaudeville house designed by Edmund R. Krause with the Rapp brothers, running a dozen-plus acts a day. Now an 1,800-seat Broadway In Chicago venue, it has cycled through names — Shubert, LaSalle Bank, Bank of America, PrivateBank, then CIBC in 2017 — and hosted the Chicago sit-down of Hamilton from 2016 to 2020.",
+      "descriptor": "1,800-seat Loop Broadway house that opened in 1906 as the Majestic Theatre",
+      "sources": ["https://en.wikipedia.org/wiki/CIBC_Theatre"],
+      "writtenFor": {
+        "name": "CIBC Theatre",
+        "lat": 41.88108,
+        "lng": -87.62858
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "civic-opera-house": {
+      "text": "Utilities magnate Samuel Insull built this 1929 Art Deco house, whose silhouette is seen as a huge chair — earning the nickname \"Insull's Throne.\" It opened on November 4, 1929, days after the stock market crash. The 3,276-seat auditorium has been home to the Lyric Opera of Chicago since 1954, and the Joffrey Ballet since 2021.",
+      "descriptor": "Art Deco opera house at 20 N Wacker, home of the Lyric Opera",
+      "sources": ["https://en.wikipedia.org/wiki/Civic_Opera_House_(Chicago)"],
+      "writtenFor": {
+        "name": "Civic Opera House",
+        "lat": 41.88256,
+        "lng": -87.63749
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "crown-fountain": {
+      "text": "Jaume Plensa's 2004 fountain sets two 50-foot glass-block towers facing each other across a shallow black granite reflecting pool. Each plays video portraits of about 1,000 Chicago residents in random rotation, and water appears to spout from the mouths of the projected faces — a modern take on the gargoyle fountain.",
+      "descriptor": "Millennium Park video fountain with 50-foot glass-block towers",
+      "sources": ["https://en.wikipedia.org/wiki/Crown_Fountain"],
+      "writtenFor": {
+        "name": "Crown Fountain",
+        "lat": 41.88172,
+        "lng": -87.62375
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "cubby-bear": {
+      "text": "Established in 1953 at Addison and Clark across from Wrigley Field, the Cubby Bear is a game-day institution that doubles as a rock club — it built a name on rock and punk bookings, and its stage has hosted Johnny Cash and B.B. King as well as Dave Matthews Band and No Doubt.",
+      "descriptor": "Sports bar and rock club across from Wrigley Field since 1953",
+      "sources": ["https://en.wikipedia.org/wiki/The_Cubby_Bear"],
+      "writtenFor": {
+        "name": "Cubby Bear",
+        "lat": 41.94695,
+        "lng": -87.65665
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "dusable-black-history-museum-and-education-center": {
+      "text": "Chartered on February 16, 1961 by Margaret Taylor-Burroughs, her husband Charles and others, it started in their own home as the Ebony Museum of Negro History and Art before moving to Washington Park in 1973. It is the nation's oldest museum of African American culture, holds some 13,000 artifacts, and is named for Jean Baptiste Point du Sable, Chicago's first non-Native permanent settler.",
+      "descriptor": "Washington Park museum of Black history and culture, founded in 1961",
+      "sources": [
+        "https://en.wikipedia.org/wiki/DuSable_Black_History_Museum_and_Education_Center"
+      ],
+      "writtenFor": {
+        "name": "DuSable Black History Museum and Education Center",
+        "lat": 41.79187,
+        "lng": -87.60726
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "elis-cheesecake": {
+      "text": "Eli Schulman, who ran Eli's The Place for Steak, developed the cream-cheese-and-shortbread recipe in the late 1970s and sold it at the first Taste of Chicago in 1980, where it became the festival's signature dessert. The company moved to this 62,000-square-foot Dunning bakery in 1996 and has baked inaugural cakes for Bill Clinton and Barack Obama.",
+      "descriptor": "Cheesecake bakery and café in Dunning, on the Northwest Side",
+      "sources": ["https://en.wikipedia.org/wiki/Eli%27s_Cheesecake"],
+      "writtenFor": {
+        "name": "Eli’s Cheesecake",
+        "lat": 41.95919,
+        "lng": -87.79452
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "emmett-till-mamie-till-mobley-house": {
+      "text": "This brick two-flat in West Woodlawn was home to Emmett Till and his mother Mamie Till-Mobley in the 1950s, before the 14-year-old's 1955 murder in Mississippi became one of the defining moments of the civil rights movement. It was named a Chicago Landmark in 2021 on the application of the nonprofit Blacks in Green, which now runs it as the Till House Museum.",
+      "descriptor": "West Woodlawn two-flat where Emmett Till lived, now the Till House Museum",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Emmett_Till_and_Mamie_Till-Mobley_House"
+      ],
+      "writtenFor": {
+        "name": "Emmett Till & Mamie Till-Mobley House",
+        "lat": 41.77771,
+        "lng": -87.61044
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "ernie-banks": {
+      "text": "\"Mr. Cub\" spent all 19 of his big-league seasons with the Chicago Cubs (1953-1971), hit 512 home runs, won back-to-back MVPs in 1958 and 1959, and gave the city the line \"It's a beautiful day for a ballgame... let's play two!\" He died in January 2015 and is buried here at Graceland, not far from Wrigley Field.",
+      "descriptor": "Ernie Banks' grave in Graceland Cemetery, 4001 N Clark St",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ernie_Banks",
+        "https://en.wikipedia.org/wiki/Graceland_Cemetery"
+      ],
+      "writtenFor": {
+        "name": "Ernie Banks",
+        "lat": 41.96006,
+        "lng": -87.66038
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "field-museum": {
+      "text": "Incorporated in 1893 as the Columbian Museum of Chicago to keep artifacts from the World's Columbian Exposition, it was renamed in 1905 for department-store magnate Marshall Field, its first major benefactor. It moved to the lakefront site in 1921 and now holds over 24 million specimens, including Sue, the largest T. rex found at the time of her 2000 debut.",
+      "descriptor": "Natural history museum on the Museum Campus, home to Sue the T. rex",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Field_Museum_of_Natural_History"
+      ],
+      "writtenFor": {
+        "name": "Field Museum",
+        "lat": 41.86621,
+        "lng": -87.6169
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "frank-lloyd-wright-home-and-studio": {
+      "text": "Wright built the shingled house in 1889 and added the studio annex in 1898; across the two decades he worked here, he and his draftsmen turned out the Robie House, Unity Temple, the Larkin Building and the Dana-Thomas House. He left in 1909, and the complex has been a National Historic Landmark since 1976 — the Frank Lloyd Wright Preservation Trust runs guided tours today.",
+      "descriptor": "Wright's own 1889 house and 1898 studio in Oak Park, now a house museum",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frank_Lloyd_Wright_Home_and_Studio"
+      ],
+      "writtenFor": {
+        "name": "Frank Lloyd Wright Home and Studio",
+        "lat": 41.89408,
+        "lng": -87.79967
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "frederick-c-robie-house": {
+      "text": "Frank Lloyd Wright designed it for manufacturing executive Frederick C. Robie and finished it in 1910 — the definitive Prairie-style house, with sweeping cantilevered roofs, an open plan and 175 art-glass panels in 29 patterns. It became a National Historic Landmark in 1963 and, in 2019, part of a UNESCO World Heritage listing of eight Wright buildings.",
+      "descriptor": "Frank Lloyd Wright's 1910 Prairie-style landmark in Hyde Park",
+      "sources": ["https://en.wikipedia.org/wiki/Robie_House"],
+      "writtenFor": {
+        "name": "Frederick C. Robie House",
+        "lat": 41.78981,
+        "lng": -87.59593
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "frontera-grill": {
+      "text": "Rick Bayless's first restaurant opened at 445 N. Clark on March 21, 1987, putting regional Mexican cooking on a serious American restaurant stage at a time when few kitchens did. In 2007 the James Beard Foundation named Frontera the Outstanding Restaurant in the United States.",
+      "descriptor": "Rick Bayless's regional Mexican restaurant on N. Clark, open since 1987",
+      "sources": ["https://en.wikipedia.org/wiki/Frontera_Grill"],
+      "writtenFor": {
+        "name": "Frontera Grill",
+        "lat": 41.89054,
+        "lng": -87.63092
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "garfield-park": {
+      "text": "Laid out in the 1870s by William Le Baron Jenney — the engineer later called the father of the skyscraper — it opened in 1874 as Central Park and was renamed in 1881 for the assassinated President James A. Garfield. Jens Jensen reshaped it as West Park System superintendent from 1905, adding the lagoon and designing the 4.5-acre conservatory, one of the largest plant conservatories in the country.",
+      "descriptor": "184-acre West Side park with a golden-domed fieldhouse and conservatory",
+      "sources": ["https://en.wikipedia.org/wiki/Garfield_Park_(Chicago)"],
+      "writtenFor": {
+        "name": "Garfield Park",
+        "lat": 41.88131,
+        "lng": -87.71601
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "garfield-park-conservatory": {
+      "text": "Jens Jensen designed it with Prairie School architects Schmidt, Garden and Martin, and it was built in 1906-07 as a series of naturalistic landscapes under glass rather than the usual rows of potted plants. A hailstorm on June 30, 2011 shattered much of the glass, and phased reopenings ran through January 2012. Admission is free for Chicago residents.",
+      "descriptor": "1906-07 glasshouse on N Central Park Ave, \"landscape art under glass\"",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Garfield_Park_Conservatory",
+        "https://garfieldconservatory.org/visit/"
+      ],
+      "writtenFor": {
+        "name": "Garfield Park Conservatory",
+        "lat": 41.88684,
+        "lng": -87.71791
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "gejas-cafe": {
+      "text": "A dim, candlelit Lincoln Park fondue room that has been a reliable special-occasion date restaurant for decades: cheese fondue, then meat and seafood cooked at the table, then flaming chocolate, with a classical and flamenco guitarist playing live among the tables.",
+      "descriptor": "Candlelit Lincoln Park fondue restaurant with live flamenco guitar",
+      "sources": [
+        "https://www.choosechicago.com/listing/gejas-cafe/",
+        "https://www.timeout.com/chicago/restaurants/gejas-cafe"
+      ],
+      "writtenFor": {
+        "name": "Geja’s Cafe",
+        "lat": 41.91859,
+        "lng": -87.63801
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "gene-georgetti": {
+      "text": "Gene Michelotti and Alfredo Federighi, nicknamed \"Georgetti\" after a celebrated Italian cyclist, opened this Tuscan-Italian steakhouse in 1941, and it bills itself as Chicago's oldest steakhouse. The walls are hung with decades of signed celebrity photos and familiar local faces.",
+      "descriptor": "River North steakhouse at 500 N Franklin St, open since 1941",
+      "sources": ["https://www.geneandgeorgetti.com/"],
+      "writtenFor": {
+        "name": "Gene & Georgetti",
+        "lat": 41.8909,
+        "lng": -87.6358
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "gibsons-bar-steakhouse": {
+      "text": "Gibsons opened on Rush Street in 1989 and was the founding restaurant of what is now Gibsons Restaurant Group. It has been called Chicago's top-grossing independent restaurant, and the group is unusual in holding its own USDA certification for its beef rather than buying to someone else's grade.",
+      "descriptor": "Steakhouse on Rush Street in River North, open since 1989",
+      "sources": [
+        "https://www.grgmc.com/",
+        "https://en.wikipedia.org/wiki/Gibsons_Bar_%26_Steakhouse"
+      ],
+      "writtenFor": {
+        "name": "Gibson's Bar & Steakhouse",
+        "lat": 41.90141,
+        "lng": -87.62801
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "ginos-east": {
+      "text": "Three cab drivers — Sam Levine, Fred Bartoli and George Loverde — opened Gino's East on E. Superior Street in 1966. In the 1970s customers started carving their initials into the tables, so the staff handed out markers and pointed them at the walls instead; graffiti now covers nearly every inch of the flagship. It left the address in 2000 and returned to a new building on the same spot in 2006.",
+      "descriptor": "Deep-dish pizzeria off the Magnificent Mile with graffiti-covered walls, 1966",
+      "sources": ["https://en.wikipedia.org/wiki/Gino%27s_East"],
+      "writtenFor": {
+        "name": "Gino's East",
+        "lat": 41.89601,
+        "lng": -87.62305
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "goodman-theatre-center": {
+      "text": "Founded in 1925 and named for playwright Kenneth Sawyer Goodman, who died in the 1918 flu pandemic, it was built with a $250,000 gift from his parents to the Art Institute of Chicago. The company won the Regional Theatre Tony Award in 1992 and moved to its Dearborn Street home, with the Albert and Owen theaters, in 2000. Its annual \"A Christmas Carol\" is a Chicago holiday fixture.",
+      "descriptor": "Chicago's oldest nonprofit theater, 170 N Dearborn in the Loop",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Goodman_Theatre",
+        "https://www.goodmantheatre.org/about/"
+      ],
+      "writtenFor": {
+        "name": "Goodman Theatre Center",
+        "lat": 41.88511,
+        "lng": -87.62993
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "grant-park": {
+      "text": "Laid out as Lake Park in 1844 and renamed for Ulysses S. Grant in 1901, 'Chicago's front yard' stayed open lakefront largely because merchant Aaron Montgomery Ward fought four court battles to keep buildings out of it. Its 319 acres later hosted the 1968 Democratic convention clashes, Obama's 2008 election-night speech and Lollapalooza.",
+      "descriptor": "319-acre lakefront park downtown, known as 'Chicago's front yard'",
+      "sources": ["https://en.wikipedia.org/wiki/Grant_Park_(Chicago)"],
+      "writtenFor": {
+        "name": "Grant Park",
+        "lat": 41.87659,
+        "lng": -87.6183
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "greek-islands": {
+      "text": "Greek Islands opened at 200 S. Halsted in 1971 and is one of the surviving Greektown tavernas: the Halsted restaurant row lost the Parthenon, Santorini and Pegasus in 2016 and the Pan Hellenic Pastry Shop in 2017. Flaming saganaki — the \"Opa!\" cheese dish now served all over the neighborhood — was invented a few doors away at the Parthenon.",
+      "descriptor": "Greektown taverna on S. Halsted, open since 1971",
+      "sources": [
+        "https://www.choosechicago.com/listing/greek-islands-restaurant/",
+        "https://en.wikipedia.org/wiki/Greektown,_Chicago"
+      ],
+      "writtenFor": {
+        "name": "Greek Islands",
+        "lat": 41.87899,
+        "lng": -87.64751
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "green-mill-cocktail-lounge": {
+      "text": "The bar traces back to a roadhouse from about 1898 and became Green Mill Gardens in 1914, the name a nod to Paris's Moulin Rouge. During Prohibition, Al Capone gunman \"Machine Gun\" Jack McGurn was a part-owner, and the curved booth known as Capone's booth is still in the room. It has been a full-time jazz club since Dave Jemilo took over in 1986 — the same year the Uptown Poetry Slam started here.",
+      "descriptor": "Uptown jazz club and former Prohibition speakeasy on N. Broadway",
+      "sources": ["https://en.wikipedia.org/wiki/Green_Mill_Cocktail_Lounge"],
+      "writtenFor": {
+        "name": "Green Mill Cocktail Lounge",
+        "lat": 41.96918,
+        "lng": -87.65989
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "harold-washington": {
+      "text": "Harold Washington became Chicago's first Black mayor in 1983, spent his first term deadlocked against a 29-alderman council bloc in the fight known as Council Wars, won reelection in 1987 and then died of a heart attack that November, months into his second term. He is buried here at Oak Woods, the 1853 cemetery that also holds Ida B. Wells, Jesse Owens and Enrico Fermi.",
+      "descriptor": "Harold Washington's grave in Oak Woods Cemetery, Greater Grand Crossing",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Harold_Washington",
+        "https://en.wikipedia.org/wiki/Oak_Woods_Cemetery"
+      ],
+      "writtenFor": {
+        "name": "Harold Washington",
+        "lat": 41.76876,
+        "lng": -87.60107
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "home-run-inn-pizzeria": {
+      "text": "Mary and Vincent Grittani's tavern on 31st Street opened in 1923, and legend says a home run from a nearby ballgame came through the window — so the owners renamed it Home Run Inn. Mary's pizza recipe, developed in the 1940s, turned it into a pizzeria in 1947, and the family began selling frozen pies around Chicago in the 1950s; the brand went nationwide in 2023.",
+      "descriptor": "Chicago-style pizzeria on W. 31st St., where Home Run Inn started in 1923",
+      "sources": ["https://en.wikipedia.org/wiki/Home_Run_Inn"],
+      "writtenFor": {
+        "name": "Home Run Inn Pizzeria - South Lawndale",
+        "lat": 41.83706,
+        "lng": -87.73114
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "humboldt-alexander-von-park": {
+      "text": "Opened in 1877 and named for the German naturalist Alexander von Humboldt, the 207-acre park got its prairie-style rework from Jens Jensen between 1905 and 1920 — the winding river, the rose garden, the boathouse and the field house are his. It is a center of Chicago's Puerto Rican community; the National Museum of Puerto Rican Arts and Culture opened in the restored stables and receptory building in 2009.",
+      "descriptor": "207-acre West Side park with lagoons, boathouse and Jens Jensen landscaping",
+      "sources": ["https://en.wikipedia.org/wiki/Humboldt_Park_(Chicago_park)"],
+      "writtenFor": {
+        "name": "Humboldt (Alexander Von) Park",
+        "lat": 41.90425,
+        "lng": -87.70193
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "huntington-bank-pavilion-at-northerly-island": {
+      "text": "This lakefront amphitheater sits on the old runway of Meigs Field. On the night of March 30, 2003 Mayor Richard M. Daley sent crews out to bulldoze X-shaped gouges into the airstrip, stranding aircraft and drawing the FAA's maximum fine of $33,000; the island became parkland and the concert venue opened in 2005. It has since been the Charter One, FirstMerit and Huntington Bank pavilion.",
+      "descriptor": "Seasonal lakefront amphitheater on Northerly Island, facing the skyline",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Northerly_Island",
+        "https://en.wikipedia.org/wiki/Meigs_Field"
+      ],
+      "writtenFor": {
+        "name": "Huntington Bank Pavilion at Northerly Island",
+        "lat": 41.86319,
+        "lng": -87.60869
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "italian-village": {
+      "text": "Alfredo Capitanini, a Tuscan immigrant who reached Chicago in 1924, opened The Village in 1927, and his family still runs it. The Monroe Street building has since grown into several restaurants stacked under one roof: The Village on the second floor for family-style Italian-American, Vivere on the first floor, and Sotto with its bar in the lower level.",
+      "descriptor": "Loop Italian restaurant complex on W Monroe, family-run since 1927",
+      "sources": ["https://italianvillage-chicago.com/"],
+      "writtenFor": {
+        "name": "Italian VIllage",
+        "lat": 41.88036,
+        "lng": -87.63015
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "james-r-thompson": {
+      "text": "The white memorial marks the corner where James Richard Thompson, a 26-year-old from Plainfield, was struck and killed while crossing around 1 a.m. on a Saturday in March 2023. Police said the driver ran a stop sign and fled east on Washington Boulevard; his family called him \"a shining light that brought joy and happiness everywhere he went.\"",
+      "descriptor": "Roadside ghost-bike memorial at Washington and Green in the West Loop",
+      "sources": [
+        "https://abc7chicago.com/amp/hit-and-run-chicago-news-james-thompson-pedestrian-killed/13019363/"
+      ],
+      "writtenFor": {
+        "name": "James R. Thompson",
+        "lat": 41.88306,
+        "lng": -87.64834
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "jay-pritzker-pavilion": {
+      "text": "Frank Gehry's billowing stainless-steel bandshell opened in July 2004 and holds 11,000 between fixed seats and the Great Lawn. The steel trellis arcing overhead is not decoration — it carries a distributed sound system designed to mimic indoor concert-hall acoustics. To get around Grant Park's historic height limits, the city classifies the structure as a work of art rather than a building.",
+      "descriptor": "Frank Gehry bandshell in Millennium Park; free Grant Park Music Festival",
+      "sources": ["https://en.wikipedia.org/wiki/Jay_Pritzker_Pavilion"],
+      "writtenFor": {
+        "name": "Jay Pritzker Pavilion",
+        "lat": 41.88351,
+        "lng": -87.62189
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "jims-original": {
+      "text": "Jimmy Stefanovic, a Macedonian immigrant, took over his aunt and uncle's hot dog stand at Maxwell and Halsted in 1939, and the stand is credited with the Maxwell Street Polish — grilled sausage, grilled onions, yellow mustard and sport peppers on a bun. When UIC's South Campus expansion razed the old market district, Jim's and its longtime neighbor Express Grill both moved to Union Avenue.",
+      "descriptor": "Late-night Maxwell Street Polish stand at Union & Roosevelt, since 1939",
+      "sources": ["https://en.wikipedia.org/wiki/Maxwell_Street_Polish"],
+      "writtenFor": {
+        "name": "Jim's Original - Little Italy",
+        "lat": 41.8657,
+        "lng": -87.64523
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "joes-seafood-prime-steak-stone-crab": {
+      "text": "This is the Chicago branch of Joe's Stone Crab, the Miami Beach institution Joe and Jenny Weiss opened in 1913 on the strength of a dish Joe first dismissed when a scientist suggested it — stone crab claws. Lettuce Entertain You opened this River North version in 1999, the first branch outside Miami Beach; Las Vegas (2005) and Washington, D.C. (2014) followed.",
+      "descriptor": "Steak and stone crab house on E. Grand in River North since 1999",
+      "sources": ["https://en.wikipedia.org/wiki/Joe%27s_Stone_Crab"],
+      "writtenFor": {
+        "name": "Joe's Seafood, Prime Steak & Stone Crab",
+        "lat": 41.89187,
+        "lng": -87.62562
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "kasama": {
+      "text": "Husband-and-wife chefs Tim Flores and Genie Kwon opened Kasama in July 2020 as a casual spot for pastries and lumpia; the pandemic pushed them into a multi-course dinner tasting menu, and in 2022 it became the first Filipino restaurant anywhere in the world to earn a Michelin star. The name is Tagalog for \"together.\"",
+      "descriptor": "Filipino bakery by day, tasting-menu restaurant by night, Ukrainian Village",
+      "sources": ["https://en.wikipedia.org/wiki/Kasama_(restaurant)"],
+      "writtenFor": {
+        "name": "Kasama",
+        "lat": 41.8997,
+        "lng": -87.67565
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "kenneth-c-griffin-museum-of-science-and-industry": {
+      "text": "The building is the surviving Palace of Fine Arts from the 1893 World's Columbian Exposition, the one fair hall given a permanent brick substructure beneath its plaster facade. It opened as a museum in stages beginning in 1933, funded by Sears president Julius Rosenwald, and holds the captured German submarine U-505, the Pioneer Zephyr, the Apollo 8 command module and a full-size coal mine. It was renamed in 2024 after Ken Griffin's $125 million gift.",
+      "descriptor": "Science museum in Jackson Park's 1893 World's Fair Palace of Fine Arts",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Museum_of_Science_and_Industry_(Chicago)"
+      ],
+      "writtenFor": {
+        "name": "Kenneth C. Griffin Museum of Science and Industry",
+        "lat": 41.79076,
+        "lng": -87.58294
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "kingston-mines": {
+      "text": "Open since 1968 and billed as Chicago's oldest continuously operating blues club, Kingston Mines takes its name from the Kingston Mines Theatre Company, which premiered \"Grease\" in 1971 before it went to Broadway. Owner Doc Pellegrino ran two stages so one band starts the moment the other finishes and the music never stops. Koko Taylor and Magic Slim played here; the Rolling Stones turned up in 1978.",
+      "descriptor": "Late-night Lincoln Park blues club with two alternating stages",
+      "sources": ["https://en.wikipedia.org/wiki/Kingston_Mines_(blues_club)"],
+      "writtenFor": {
+        "name": "Kingston Mines",
+        "lat": 41.92871,
+        "lng": -87.64921
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "kumas-corner-belmont": {
+      "text": "Kuma's Corner opened in Avondale in 2005 with a heavy-metal theme, and is credited with helping popularize the pretzel bun. Its Ghost Burger, topped with an unconsecrated communion wafer, drew boycott calls from the Archdiocese of Chicago in 2013 and was later named by TIME one of the most influential burgers of all time.",
+      "descriptor": "Heavy-metal burger bar on W. Belmont in Avondale since 2005",
+      "sources": ["https://en.wikipedia.org/wiki/Kuma%27s_Corner"],
+      "writtenFor": {
+        "name": "Kuma’s Corner - Belmont",
+        "lat": 41.93951,
+        "lng": -87.70044
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "leaning-tower-of-niles": {
+      "text": "Industrialist Robert Ilg had this half-scale copy of the Leaning Tower of Pisa built in 1934 — designed by architect Albert L. Farr — to hide the water tank and pumping equipment for the pools and artificial lake at his employees' recreation park. Niles became a sister city of Pisa in 1991, the village bought the tower from the YMCA for $10 in 2015, and it was added to the National Register of Historic Places in 2020.",
+      "descriptor": "Half-size 1934 replica of the Leaning Tower of Pisa in suburban Niles",
+      "sources": ["https://en.wikipedia.org/wiki/Leaning_Tower_of_Niles"],
+      "writtenFor": {
+        "name": "Leaning Tower of Niles",
+        "lat": 42.01242,
+        "lng": -87.78406
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "lincoln-abraham-park": {
+      "text": "At roughly 1,200 acres running seven miles up the North Side lakefront, this is Chicago's largest park and the second-most-visited city park in the country after Central Park. It began as the municipal burial ground in 1843; the city converted it to parkland by 1864, relocating an estimated 35,000 bodies, and renamed it in June 1865 for the newly assassinated Abraham Lincoln. Lincoln Park Zoo inside is still free.",
+      "descriptor": "Chicago's largest park, seven miles of lakefront with a free zoo",
+      "sources": ["https://en.wikipedia.org/wiki/Lincoln_Park"],
+      "writtenFor": {
+        "name": "Lincoln (Abraham) Park",
+        "lat": 41.94104,
+        "lng": -87.63301
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "lincoln-park-zoo": {
+      "text": "Founded in 1868 with a gift of swans from New York's Central Park, Lincoln Park Zoo is one of the oldest zoos in North America and one of the last big ones you can still walk into for free, open 365 days a year. Its most famous resident was Bushman, a lowland gorilla who drew crowds from 1931 until his death in 1951.",
+      "descriptor": "Free 1868 zoo in Lincoln Park, one of the oldest in North America",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lincoln_Park_Zoo",
+        "https://www.lpzoo.org/"
+      ],
+      "writtenFor": {
+        "name": "Lincoln Park Zoo",
+        "lat": 41.92038,
+        "lng": -87.6335
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "logan-square": {
+      "text": "This green circle is the grand northwest terminus of Chicago's boulevard system, designed by William Le Baron Jenney and landscape architect Jens Jensen among others. At its center is the Illinois Centennial Monument, a 70-foot Tennessee marble Doric column topped by an eagle, raised in 1918 for the state's hundredth birthday and designed by Henry Bacon, the architect of the Lincoln Memorial.",
+      "descriptor": "Boulevard-system plaza with the 1918 Illinois Centennial Monument",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Logan_Square,_Chicago",
+        "https://en.wikipedia.org/wiki/Illinois_Centennial_Monument"
+      ],
+      "writtenFor": {
+        "name": "Logan Square",
+        "lat": 41.92844,
+        "lng": -87.70677
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "lou-malnatis-pizzeria": {
+      "text": "Lou Malnati learned deep dish from the ground up: his father Rudy was making it in the 1940s and Lou co-managed Pizzeria Uno in the 1950s. Lou and his wife Jean opened the first Malnati's in suburban Lincolnwood on St. Patrick's Day 1971; after Lou died in 1978, Jean and sons Marc and Rick kept it going, and the family name is now the city's best-known deep-dish brand.",
+      "descriptor": "Chicago deep-dish pizzeria at 439 N. Wells St. in River North",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lou_Malnati%27s",
+        "https://www.loumalnatis.com/locations"
+      ],
+      "writtenFor": {
+        "name": "Lou Malnati's Pizzeria - River North (North Wells Street)",
+        "lat": 41.89035,
+        "lng": -87.6337
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "lurie-garden": {
+      "text": "Opened in July 2004, Lurie Garden is Millennium Park's answer to Chicago's motto Urbs in Horto, \"city in a garden.\" Dutch plantsman Piet Oudolf and landscape architects GGN filled it with about 35,000 perennials, roughly 60% of them Illinois natives. A 15-foot \"Shoulder Hedge\" keeps crowds leaving the Pritzker Pavilion from trampling it, and a diagonal boardwalk called the Seam traces the old Lake Michigan seawall.",
+      "descriptor": "2.5-acre prairie-style perennial garden inside Millennium Park",
+      "sources": ["https://en.wikipedia.org/wiki/Lurie_Garden"],
+      "writtenFor": {
+        "name": "Lurie Garden",
+        "lat": 41.88143,
+        "lng": -87.62174
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "maggie-daley-park": {
+      "text": "Opened in December 2014, the 20-acre Michael Van Valkenburgh design replaced the old Daley Bicentennial Plaza and is named for Maggie Daley, the city's former first lady, who died of cancer in 2011. Its quarter-mile ice-skating ribbon loops past rock-climbing walls and a three-acre children's Play Garden; the BP Pedestrian Bridge links it back to Millennium Park.",
+      "descriptor": "20-acre lakefront park with an ice-skating ribbon and climbing walls",
+      "sources": ["https://en.wikipedia.org/wiki/Maggie_Daley_Park"],
+      "writtenFor": {
+        "name": "Maggie Daley Park",
+        "lat": 41.88272,
+        "lng": -87.61761
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "mannys-cafeteria-and-delicatessen": {
+      "text": "Manny's dates to 1942, when brothers Jack and Charlie Raskin opened a deli on the Near West Side. After the war Jack bought a place called Sunny's and renamed it for his son Emanuel — a two-letter change that spared him a whole new sign. The deli moved to South Jefferson Street in 1964 and is still run by the Raskins, and its cafeteria tray line has long been an informal clubhouse for Chicago politicians, Barack Obama among them.",
+      "descriptor": "Jewish-style cafeteria deli at 1141 S. Jefferson St., open since 1942",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Manny%27s_Deli",
+        "https://mannysdeli.com/about/"
+      ],
+      "writtenFor": {
+        "name": "Manny’s Cafeteria and Delicatessen",
+        "lat": 41.86792,
+        "lng": -87.64192
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "marina-city": {
+      "text": "Bertrand Goldberg designed the two round 587-foot towers in 1959 and they went up between 1961 and 1968, at the time both the tallest residential buildings and the tallest reinforced-concrete structures in the world. Locals call them the corncobs; Wilco fans call them the Wilco Towers, after the cover of Yankee Hotel Foxtrot.",
+      "descriptor": "Bertrand Goldberg's 1960s \"corncob\" twin towers on the Chicago River",
+      "sources": ["https://en.wikipedia.org/wiki/Marina_City"],
+      "writtenFor": {
+        "name": "Marina City",
+        "lat": 41.88787,
+        "lng": -87.62881
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "marios-italian-lemonade": {
+      "text": "Mario's has been scooping Italian lemonade, shaved ice shot through with lemon rind and zest, from a walk-up window on Taylor Street since 1954. It's open only for the warm months, roughly May into September, and the line down the sidewalk on a hot night is part of the ritual. Flavors run from cantaloupe with real melon chunks to chocolate and piña colada.",
+      "descriptor": "Seasonal Italian ice stand at 1068 W. Taylor St. in Little Italy since 1954",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/marios-italian-lemonade"
+      ],
+      "writtenFor": {
+        "name": "Mario's Italian Lemonade",
+        "lat": 41.86958,
+        "lng": -87.65373
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "marshall-field": {
+      "text": "The department-store magnate's 1906 memorial pairs the two men who would later create the Lincoln Memorial: architect Henry Bacon and sculptor Daniel Chester French, whose seated bronze figure here is titled \"Memory.\" Field is in good company at Graceland, where Louis Sullivan, Daniel Burnham, Potter Palmer and Philip Armour are also buried.",
+      "descriptor": "Marshall Field's tomb in Graceland Cemetery, with the \"Memory\" statue",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Daniel_Chester_French",
+        "https://en.wikipedia.org/wiki/Graceland_Cemetery"
+      ],
+      "writtenFor": {
+        "name": "Marshall Field",
+        "lat": 41.96031,
+        "lng": -87.66129
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "mayor-harold-washington": {
+      "text": "Originally East End Park, on lakefront the city acquired in 1903, this 25-acre Hyde Park green space was renamed in 1992 for Harold Washington, the lawyer, congressman and neighborhood resident who became Chicago's first African-American mayor. The park faces the Hampton House apartments where he lived, and it has had a yacht harbor since about 1930.",
+      "descriptor": "Memorial to Chicago's first Black mayor in Hyde Park's lakefront park",
+      "sources": [
+        "https://www.chicagoparkdistrict.com/parks-facilities/washington-harold-park",
+        "https://en.wikipedia.org/wiki/Harold_Washington"
+      ],
+      "writtenFor": {
+        "name": "Mayor Harold Washington",
+        "lat": 41.80083,
+        "lng": -87.58243
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "metro": {
+      "text": "Joe Shanahan opened Metro in 1982 in a building put up in 1927 as a Swedish community center, a block from Wrigley Field. It became the room Chicago bands broke out of — Smashing Pumpkins and Material Issue among them — and hosted Nirvana and Pearl Jam on the way up; Pearl Jam's 1992 show there became a live album. Smart Bar runs in the basement.",
+      "descriptor": "Rock club above Smart Bar on N. Clark in Wrigleyville, open since 1982",
+      "sources": ["https://en.wikipedia.org/wiki/Metro_(music_venue)"],
+      "writtenFor": {
+        "name": "Metro",
+        "lat": 41.94978,
+        "lng": -87.659
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "michael-jordans-steak-house": {
+      "text": "Michael Jordan launched his steakhouse brand in 1997, and after the Oak Brook location closed in December 2024 this Magnificent Mile room is the one left in the Chicago area. David Rockwell designed it, and it pointedly skips the sports memorabilia — the concept leans on \"Michael Jordan the businessman,\" with USDA Prime steaks doing the talking.",
+      "descriptor": "Prime steakhouse on the Magnificent Mile at 505 N. Michigan Ave.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michael_Jordan%27s_Steak_House"
+      ],
+      "writtenFor": {
+        "name": "Michael Jordan’s Steak House",
+        "lat": 41.89141,
+        "lng": -87.62382
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "millennium-park": {
+      "text": "Built on top of old Illinois Central rail yards and parking lots, the 24.5-acre park opened in 2004, four years late and at $475 million against an original $150 million budget. Anish Kapoor's mirrored Cloud Gate, universally known as The Bean, cost $23 million on a $6 million estimate; Frank Gehry designed the Jay Pritzker Pavilion bandshell.",
+      "descriptor": "Downtown park with Cloud Gate ('The Bean'), Crown Fountain and Gehry's bandshell",
+      "sources": ["https://en.wikipedia.org/wiki/Millennium_Park"],
+      "writtenFor": {
+        "name": "Millennium Park",
+        "lat": 41.88262,
+        "lng": -87.62252
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "millers-pub": {
+      "text": "Opened in 1935 by the Miller brothers, the bar was bought in 1950 by Greek-American brothers Pete, Nick and Jimmy Gallios, who couldn't spare the $500 to redo the sign — so it stayed Miller's. It became the Loop's late-night clubhouse: Bill Veeck and Harry Caray, Bob Fosse's dancers after curtain, Jimmy Durante ordering figs and cream. The family moved it to 134 S. Wabash in 1989 when the old building came down.",
+      "descriptor": "Loop late-night pub and restaurant at 134 S. Wabash",
+      "sources": ["https://www.millerspub.com/our-story"],
+      "writtenFor": {
+        "name": "Miller’s Pub",
+        "lat": 41.87982,
+        "lng": -87.62636
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "monadnock-building": {
+      "text": "The Monadnock is really two buildings. Burnham & Root's 1891 north half is the tallest load-bearing masonry building ever erected — brick walls six feet thick at the sidewalk, tapering to 18 inches at the top — while Holabird & Roche's 1893 south half used a steel frame. It also carried America's first portal wind bracing. Finished, it held 1,200 rooms and some 6,000 occupants, the largest office building in the world.",
+      "descriptor": "1891–93 early skyscraper at 53 W. Jackson Blvd. in the Loop",
+      "sources": ["https://en.wikipedia.org/wiki/Monadnock_Building"],
+      "writtenFor": {
+        "name": "Monadnock Building",
+        "lat": 41.87754,
+        "lng": -87.62955
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "monteverde-restaurant-pastificio": {
+      "text": "Chef Sarah Grueneberg opened Monteverde with partner Meg Sahs in November 2015 and won the James Beard award for Best Chef: Great Lakes in 2017. The pastificio is the whole point — a custom-built pasta lab where cooks make fresh pasta by hand in full view of the dining room. Eater named it one of the 21 best new restaurants in America.",
+      "descriptor": "Handmade-pasta restaurant at 1020 W. Madison St. in the West Loop",
+      "sources": ["https://www.monteverdechicago.com/about"],
+      "writtenFor": {
+        "name": "Monteverde Restaurant & Pastificio",
+        "lat": 41.88196,
+        "lng": -87.65302
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "mr-beef-on-orleans": {
+      "text": "Joe Zucchero opened Mr. Beef in 1979, and the no-frills Orleans Street stand became a Jay Leno favorite and a late-night TV fixture. It is also the inspiration and a filming location for the series The Bear — after the show landed, daily sandwich sales jumped from roughly 300 to more than 800.",
+      "descriptor": "Italian beef counter on N. Orleans in River North since 1979",
+      "sources": ["https://en.wikipedia.org/wiki/Mr._Beef"],
+      "writtenFor": {
+        "name": "Mr. Beef on Orleans",
+        "lat": 41.89442,
+        "lng": -87.63737
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "muddy-waters": {
+      "text": "This bronze sidewalk plaque is one of the Bronzeville Walk of Fame markers running along Martin Luther King Jr. Drive from 25th to 35th, honoring African-American pioneers. Muddy Waters came north from Mississippi in 1943 and went electric because, as he put it, \"couldn't nobody hear you with an acoustic.\" The Rolling Stones took their name from his 1950 recording \"Rollin' Stone.\"",
+      "descriptor": "Bronzeville Walk of Fame plaque on King Drive near 33rd Street",
+      "sources": [
+        "https://en.wikipedia.org/wiki/King_Drive_(Chicago)",
+        "https://en.wikipedia.org/wiki/Muddy_Waters"
+      ],
+      "writtenFor": {
+        "name": "Muddy Waters",
+        "lat": 41.83519,
+        "lng": -87.61691
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "navy-pier": {
+      "text": "It opened in 1916 as Municipal Pier, a 3,300-foot dock for freighters and passenger ships. In World War II the Navy turned it into a training center where roughly 18,000 aviators qualified, and the name stuck; from 1946 it served as a University of Illinois campus for returning GIs. Today it draws over nine million visitors a year.",
+      "descriptor": "3,300-foot lakefront pier with a 196-foot Ferris wheel, open since 1916",
+      "sources": ["https://en.wikipedia.org/wiki/Navy_Pier"],
+      "writtenFor": {
+        "name": "Navy Pier",
+        "lat": 41.89173,
+        "lng": -87.60415
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "obama-presidential-center-museum": {
+      "text": "The Obama Presidential Center opened to the public on Juneteenth 2026, on 19 acres of Jackson Park on the South Side. Its 225-foot museum tower — already nicknamed the \"Obamalisk\" — carries five-foot letters from Obama's 2015 Selma speech. It is the first fully digitized presidential library: the paper records live at a National Archives facility in Hoffman Estates, not on site.",
+      "descriptor": "Presidential museum in Jackson Park on Chicago's South Side, opened June 2026",
+      "sources": ["https://en.wikipedia.org/wiki/Obama_Presidential_Center"],
+      "writtenFor": {
+        "name": "Obama Presidential Center Museum",
+        "lat": 41.78626,
+        "lng": -87.58588
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "pequods-pizzeria": {
+      "text": "Burt Katz opened the first Pequod's in Morton Grove in 1971 and sold it in 1985; the Clybourn Avenue location carries on his signature move — mozzarella packed against the pan's rim so it bakes into a dark, crunchy ring of caramelized cheese around the pie. Katz had worked the technique out years earlier at The Inferno in Evanston, and later took it to Burt's Place.",
+      "descriptor": "Deep-dish with a caramelized cheese crust on Clybourn in Lincoln Park",
+      "sources": [
+        "https://pequodspizza.com/",
+        "https://en.wikipedia.org/wiki/Burt_Katz"
+      ],
+      "writtenFor": {
+        "name": "Pequod’s Pizzeria",
+        "lat": 41.92195,
+        "lng": -87.66434
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "pizzeria-due": {
+      "text": "Ike Sewell, who founded Pizzeria Uno with Ric Riccardo in 1943, opened Due one block away in 1955; the names are simply Italian for one and two. Uno's claim to have invented Chicago deep dish is contested, though: a 1956 Chicago Daily News article credited cook Rudy Malnati Sr. with the original recipe.",
+      "descriptor": "Deep-dish pizzeria in River North, Pizzeria Uno's sibling since 1955",
+      "sources": ["https://en.wikipedia.org/wiki/Uno_Pizzeria_%26_Grill"],
+      "writtenFor": {
+        "name": "Pizzeria Due",
+        "lat": 41.89312,
+        "lng": -87.62645
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "pizzeria-uno": {
+      "text": "Ike Sewell and Ric Riccardo opened Pizzeria Uno in 1943, and it is generally credited with inventing Chicago deep-dish pizza. Credit is contested even inside its own kitchen: original pizza chef Rudy Malnati — father of Lou Malnati — has also been named as the recipe's creator, and cook Alice Mae Redmond later reworked the dough with water and olive oil.",
+      "descriptor": "Near North Side deep-dish pizzeria, open since 1943",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Uno_Pizzeria_%26_Grill",
+        "https://en.wikipedia.org/wiki/Chicago-style_pizza"
+      ],
+      "writtenFor": {
+        "name": "Pizzeria Uno",
+        "lat": 41.89227,
+        "lng": -87.62691
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "ramen-san-river-north": {
+      "text": "Lettuce Entertain You's Ramen-San calls itself a neighborhood noodle joint slinging hot broth, ice-cold beer and the best '90s hip-hop in town. The Streeterville outpost is the \"Deluxe\" version at 165 E. Huron; the house bowl is the 10 Hour Tonkotsu — rich pork broth with pork belly, a molten egg, bamboo and wakame over Tokyo wavy noodles.",
+      "descriptor": "Ramen-San Deluxe at 165 E Huron in Streeterville: tonkotsu and sake bombs",
+      "sources": ["https://www.lettuce.com/restaurants/ramen-san/"],
+      "writtenFor": {
+        "name": "Ramen-San - Streeterville",
+        "lat": 41.89454,
+        "lng": -87.6232
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "rate-field": {
+      "text": "Opened in 1991 as Comiskey Park II, it was the first major sports facility built in Chicago since 1929 and the last big-league park finished before the retro-ballpark wave of the 1990s. It has carried four names since, through U.S. Cellular Field and Guaranteed Rate Field to plain Rate Field in 2024, and it kept one old tradition: an updated version of Bill Veeck's exploding scoreboard from 1960.",
+      "descriptor": "White Sox ballpark on W 35th Street in Armour Square, opened 1991",
+      "sources": ["https://en.wikipedia.org/wiki/Guaranteed_Rate_Field"],
+      "writtenFor": {
+        "name": "Rate Field",
+        "lat": 41.82967,
+        "lng": -87.63379
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "saint-valentines-day-massacre": {
+      "text": "On February 14, 1929, seven men from Bugs Moran's North Side Gang were lined up against the back wall of a garage here and shot with Thompson submachine guns by killers, two of them dressed as police. The murders were pinned on Al Capone's Outfit, though Capone was in Florida at the time. The garage was torn down in 1967 and the site is now a lawn; bricks from the wall ended up in a Las Vegas museum.",
+      "descriptor": "Site of the 1929 gangland massacre at 2122 N. Clark St, Lincoln Park",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Saint_Valentine%27s_Day_Massacre"
+      ],
+      "writtenFor": {
+        "name": "Saint Valentine's Day Massacre",
+        "lat": 41.92086,
+        "lng": -87.63783
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "shedd-aquarium": {
+      "text": "Retail executive John G. Shedd gave the city the aquarium, which opened in 1930 after his death. To fill the saltwater tanks a thousand miles inland, twenty railroad tank cars made eight round trips to Key West that year hauling a million gallons of seawater, making Shedd the first inland aquarium with a permanent saltwater collection.",
+      "descriptor": "Lakefront aquarium on the Museum Campus, opened 1930",
+      "sources": ["https://en.wikipedia.org/wiki/Shedd_Aquarium"],
+      "writtenFor": {
+        "name": "Shedd Aquarium",
+        "lat": 41.86762,
+        "lng": -87.61368
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "skydeck-chicago-willis-tower": {
+      "text": "The Skydeck opened in 1974 on the 103rd floor of what was then the Sears Tower, 1,353 feet up. In 2009 it added The Ledge, all-glass balconies that cantilever about four feet out from the facade, floor included, so you can stand out over Wacker Drive on three layers of laminated glass. There are five of them today, the newest added in 2022.",
+      "descriptor": "103rd-floor observation deck in Willis Tower with the glass Ledge boxes",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Willis_Tower",
+        "https://theskydeck.com/the-experience/the-ledge/"
+      ],
+      "writtenFor": {
+        "name": "SkyDeck Chicago Willis Tower",
+        "lat": 41.8785,
+        "lng": -87.63589
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "soldier-field": {
+      "text": "Opened in 1924 as Grant Park Stadium and renamed a year later for American soldiers who died in World War I, it has been the Bears' home since 1971. A 2003 rebuild dropped a modern bowl inside the original neoclassical colonnades, a move jarring enough that the federal government stripped the stadium of its National Historic Landmark status in 2006.",
+      "descriptor": "Lakefront NFL stadium with Doric colonnades, home of the Chicago Bears",
+      "sources": ["https://en.wikipedia.org/wiki/Soldier_Field"],
+      "writtenFor": {
+        "name": "Soldier Field",
+        "lat": 41.86247,
+        "lng": -87.61672
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "steppenwolf-theatre": {
+      "text": "Steppenwolf started in 1974 in the basement of a Unitarian church in Deerfield, founded by Terry Kinney, Jeff Perry and Gary Sinise, and named for the Hermann Hesse novel one member happened to be reading during the first production. Its ensemble has included John Malkovich, Laurie Metcalf, Joan Allen and Tracy Letts, whose August: Osage County won five Tony Awards.",
+      "descriptor": "Lincoln Park theater company on N. Halsted, founded 1974",
+      "sources": ["https://en.wikipedia.org/wiki/Steppenwolf_Theatre_Company"],
+      "writtenFor": {
+        "name": "Steppenwolf Theatre",
+        "lat": 41.91257,
+        "lng": -87.64868
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "superdawg": {
+      "text": "Maurie and Flaurie Berman opened this drive-in in 1948 and mounted two giant anthropomorphic hot dogs on the roof, Maurie and Flaurie, named for the founders. Carhops still deliver orders on trays that hook onto the car window, and the Superdawg comes in a box with crinkle-cut fries and a pickled green tomato instead of the usual Chicago tomato slice.",
+      "descriptor": "Carhop drive-in at Milwaukee, Devon and Nagle since 1948",
+      "sources": ["https://en.wikipedia.org/wiki/Superdawg"],
+      "writtenFor": {
+        "name": "Superdawg",
+        "lat": 41.99678,
+        "lng": -87.78705
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "symphony-center": {
+      "text": "Daniel Burnham designed Orchestra Hall, which opened December 14, 1904 as the home of the Chicago Symphony Orchestra; the facade still reads \"Theodore Thomas Orchestra Hall\" for the orchestra's first music director. It was made a National Historic Landmark in 1994, and a $110 million expansion completed in 1997 wrapped it into the larger Symphony Center complex. Harry Houdini, Amelia Earhart and Orson Welles all spoke from its stage.",
+      "descriptor": "Chicago Symphony Orchestra's Michigan Avenue concert hall, open since 1904",
+      "sources": ["https://en.wikipedia.org/wiki/Symphony_Center"],
+      "writtenFor": {
+        "name": "Symphony Center",
+        "lat": 41.87898,
+        "lng": -87.6251
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "the-art-institute-of-chicago": {
+      "text": "Founded in 1879, the museum has occupied its Grant Park building since 1893, guarded by Edward Kemeys's two bronze lions unveiled in 1894 (one 'on the prowl,' one 'in an attitude of defiance'). Inside hang Grant Wood's American Gothic, Hopper's Nighthawks, bought nearly new in 1942 for $3,000, and Seurat's A Sunday on La Grande Jatte.",
+      "descriptor": "Encyclopedic art museum on Michigan Ave with the bronze lions, founded 1879",
+      "sources": ["https://en.wikipedia.org/wiki/Art_Institute_of_Chicago"],
+      "writtenFor": {
+        "name": "The Art Institute of Chicago",
+        "lat": 41.87956,
+        "lng": -87.62257
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "the-berghoff-restaurant": {
+      "text": "Herman Joseph Berghoff, an immigrant from Dortmund, opened the place in 1898, and it still serves sauerbraten, schnitzel and creamed spinach. When Prohibition ended in 1933 the Berghoff was issued Chicago's Liquor License No. 1. Its men's-only bar held out until 1969, when members of the National Organization for Women, Gloria Steinem among them, walked in and demanded service.",
+      "descriptor": "German restaurant on W. Adams in the Loop since 1898",
+      "sources": ["https://en.wikipedia.org/wiki/The_Berghoff"],
+      "writtenFor": {
+        "name": "The Berghoff Restaurant",
+        "lat": 41.87935,
+        "lng": -87.62848
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "the-ledge": {
+      "text": "The Ledge is a set of all-glass boxes that opened July 2, 2009, extending about four feet out from the 103rd floor of Willis Tower, 1,353 feet above South Wacker Drive, so you can look straight down at the street between your shoes. The Skydeck is the highest observation deck in the United States. The glass flooring has cracked underfoot twice, in 2014 and 2019.",
+      "descriptor": "Glass-floored balconies on the Willis Tower Skydeck, 103rd floor",
+      "sources": ["https://en.wikipedia.org/wiki/Willis_Tower"],
+      "writtenFor": {
+        "name": "The Ledge",
+        "lat": 41.87889,
+        "lng": -87.63632
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "the-rookery": {
+      "text": "Burnham and Root completed it in 1888, and Frank Lloyd Wright remade the skylit lobby in his Prairie style between 1905 and 1907. The name came from the temporary city hall that stood on the site: crows and pigeons flocked to it, and the nickname doubled as a jab at the politicians inside. The light court's glass skylight is composed of some 5,000 panes.",
+      "descriptor": "1888 Burnham & Root building in the Loop, lobby remodeled by Frank Lloyd Wright",
+      "sources": ["https://en.wikipedia.org/wiki/Rookery_Building"],
+      "writtenFor": {
+        "name": "The Rookery",
+        "lat": 41.87908,
+        "lng": -87.63183
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "the-second-city": {
+      "text": "Chicago's original improv theater opened at 1842 North Wells Street in 1959 and moved to 1616 N. Wells in 1967. Its stage launched John Belushi, Bill Murray, Dan Aykroyd, Tina Fey, Amy Poehler, Steve Carell and Stephen Colbert, and the company produced the sketch series SCTV.",
+      "descriptor": "Improv comedy theater on North Wells in Old Town, since 1959",
+      "sources": ["https://en.wikipedia.org/wiki/The_Second_City"],
+      "writtenFor": {
+        "name": "The Second City",
+        "lat": 41.91161,
+        "lng": -87.63489
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "united-center": {
+      "text": "Opened in 1994 at a cost of $175 million to replace the old Chicago Stadium, it is home to both the Bulls and the Blackhawks and is the largest arena by capacity in the NBA. The Michael Jordan statue 'The Spirit' was dedicated the year it opened and now stands inside a 2017 atrium addition. The arena hosted the Democratic National Convention in 1996 and again in 2024.",
+      "descriptor": "Bulls and Blackhawks arena on the Near West Side since 1994",
+      "sources": ["https://en.wikipedia.org/wiki/United_Center"],
+      "writtenFor": {
+        "name": "United Center",
+        "lat": 41.88068,
+        "lng": -87.67418
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "wrigley-field": {
+      "text": "Opened in 1914 as Weeghman Park for a Federal League club, it is the second-oldest ballpark in the majors after Fenway and the oldest in the National League. The Boston ivy on the outfield brick and the center-field scoreboard both date to 1937, and that scoreboard is still worked by hand from inside.",
+      "descriptor": "Cubs ballpark in Wrigleyville since 1914, ivy walls and hand-turned scoreboard",
+      "sources": ["https://en.wikipedia.org/wiki/Wrigley_Field"],
+      "writtenFor": {
+        "name": "Wrigley Field",
+        "lat": 41.94817,
+        "lng": -87.65556
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "wrigley-field-marquee": {
+      "text": "The marquee went up over Wrigley's main entrance in 1934, and it wasn't always red: the original was green, repainted to the familiar red on March 23, 1960. The ballpark itself opened in 1914 as Weeghman Park. The sign was temporarily removed and restored for the 2016 season, and the CTA paints its image on the wall at the Addison platform to mark the stop.",
+      "descriptor": "Red art deco sign over Wrigley Field's entrance at Clark and Addison",
+      "sources": ["https://en.wikipedia.org/wiki/Wrigley_Field"],
+      "writtenFor": {
+        "name": "Wrigley Field Marquee",
+        "lat": 41.94747,
+        "lng": -87.65642
+      },
+      "writtenOn": "2026-09-09"
+    }
+  }
+}
