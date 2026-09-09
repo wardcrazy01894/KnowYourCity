@@ -3245,11 +3245,9 @@
       "writtenOn": "2026-09-09"
     },
     "james-r-thompson": {
-      "text": "The white memorial marks the corner where James Richard Thompson, a 26-year-old from Plainfield, was struck and killed while crossing around 1 a.m. on a Saturday in March 2023. Police said the driver ran a stop sign and fled east on Washington Boulevard; his family called him \"a shining light that brought joy and happiness everywhere he went.\"",
+      "text": "",
       "descriptor": "Roadside ghost-bike memorial at Washington and Green in the West Loop",
-      "sources": [
-        "https://abc7chicago.com/amp/hit-and-run-chicago-news-james-thompson-pedestrian-killed/13019363/"
-      ],
+      "sources": [],
       "writtenFor": {
         "name": "James R. Thompson",
         "lat": 41.88306,
@@ -4354,8 +4352,8 @@
       "writtenOn": "2026-09-09"
     },
     "mollys-cupcakes": {
-      "text": "Named for founder Johnny's third-grade teacher, Molly, who baked the class cupcakes for every birthday. The shop built its name on center-filled cupcakes and has since spread from Chicago to New York, Iowa, Ohio and Ann Arbor.",
-      "descriptor": "Cupcake bakery on E Illinois St in Streeterville, known for center-filled cakes",
+      "text": "The shop is named for a third-grade teacher: founder Johnny says Molly baked the class cupcakes for every birthday, and he built the bakery around that memory, tying it to supporting local schools. It is known for its center-filled cupcakes.",
+      "descriptor": "Cupcake bakery on South Wabash Ave in the South Loop",
       "sources": ["https://mollyscupcakes.com/"],
       "writtenFor": {
         "name": "Molly’s Cupcakes - Streeterville",
@@ -4804,7 +4802,7 @@
       "writtenOn": "2026-09-09"
     },
     "our-lady-of-the-angels-school-fire-memorial": {
-      "text": "On December 1, 1958, a fire that began in a basement trash barrel at Our Lady of the Angels School killed 92 children and three nuns; smoke and flames poured through the transom windows above classroom doors, and children jumped from windows about 25 feet up. Firefighters pulled more than 160 out. A monument listing all 95 victims stands at Queen of Heaven Cemetery, and a memorial was reinstalled at the OLA church in 2022.",
+      "text": "On December 1, 1958, a fire that began in a basement trash barrel at Our Lady of the Angels School killed 92 children and three nuns. Firefighters pulled more than 160 people out. The disaster drove sweeping changes to school fire-safety codes across the country; a monument listing all 95 victims stands at Queen of Heaven Cemetery, and a memorial was reinstalled at the OLA church in 2022.",
       "descriptor": "Memorial at the site of the 1958 Our Lady of the Angels school fire",
       "sources": [
         "https://en.wikipedia.org/wiki/Our_Lady_of_the_Angels_School_fire"

@@ -864,6 +864,18 @@ never be seen. `--all` includes them, which is worth doing once a city's
 in-play set is complete: it future-proofs a later cap raise, since a promoted
 row then arrives with its write-up already done.
 
+Before applying a researched set, also scan the prose for **risky content** —
+`prison|sentenc|convict|fraud|arrest|lawsuit|guilty|assault|racial|racist|
+segregat|discriminat|encampment|shooting|overdose|controvers|allegation|riot|
+killed|fatal|hit-and-run|murder|died|death|crash` — and judge each hit. Keep
+memorial and naming context (a park named for someone, a business's succession,
+a memorial whose subject IS its reason to exist) and major public history; trim
+a private individual's legal trouble, a live partisan flashpoint used as an
+example, and graphic detail a caption cannot do justice to. The death vocabulary
+was added after a review caught a ghost-bike memorial entry recounting a private
+citizen's 2023 hit-and-run and quoting his family — the earlier scan had no
+death terms at all.
+
 `apply-blurbs` prints a **promotional-language warning** on every run, listing
 any accepted entry whose text _or descriptor_ contains an unsourced-superlative
 term (`award-winning`, `hidden gem`, `world-class`, …). It is a warning, not a
