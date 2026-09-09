@@ -6110,19 +6110,6 @@
       },
       "writtenOn": "2026-09-09"
     },
-    "stellas-diner": {
-      "text": "A Lakeview diner on N Broadway that served the neighborhood for decades under Marvin Barsky, who also owns The Bagel deli across the street. It closed temporarily in mid-2026 after a failed city health inspection, then closed permanently when Barsky sold it to Ann Sather owner Tom Tunney — Lakeview's 44th Ward alderperson for two decades — who plans to renovate and reopen the space as an Ann Sather.",
-      "descriptor": "Longtime Lakeview diner on N Broadway; closed in 2026, becoming an Ann Sather",
-      "sources": [
-        "https://blockclubchicago.org/2026/08/03/ann-sather-taking-over-stellas-diner-in-lakeview/"
-      ],
-      "writtenFor": {
-        "name": "Stella's Diner",
-        "lat": 41.93778,
-        "lng": -87.64447
-      },
-      "writtenOn": "2026-09-09"
-    },
     "steppenwolf-ensemble-theatre": {
       "text": "Jeff Perry, Terry Kinney and Gary Sinise founded Steppenwolf in a Highland Park school basement in 1974; the ensemble now runs to 51 members and has included John Malkovich, Laurie Metcalf, Joan Allen and Tracy Letts. The company holds the National Medal of Arts and 14 Tony Awards, and Letts's \"August: Osage County\" premiered here before winning Best Play on Broadway.",
       "descriptor": "Ensemble theater on N. Halsted in Lincoln Park, founded 1974",
@@ -7380,6 +7367,22 @@
         "lng": -87.62916
       },
       "writtenOn": "2026-09-09"
+    }
+  },
+  "retired": {
+    "stellas-diner": {
+      "text": "A Lakeview diner on N Broadway that served the neighborhood for decades under Marvin Barsky, who also owns The Bagel deli across the street. It closed temporarily in mid-2026 after a failed city health inspection, then closed permanently when Barsky sold it to Ann Sather owner Tom Tunney — Lakeview's 44th Ward alderperson for two decades — who plans to renovate and reopen the space as an Ann Sather.",
+      "descriptor": "Longtime Lakeview diner on N Broadway; closed in 2026, becoming an Ann Sather",
+      "sources": [
+        "https://blockclubchicago.org/2026/08/03/ann-sather-taking-over-stellas-diner-in-lakeview/"
+      ],
+      "writtenFor": {
+        "name": "Stella's Diner",
+        "lat": 41.93778,
+        "lng": -87.64447
+      },
+      "writtenOn": "2026-09-09",
+      "retiredOn": "2026-09-09"
     }
   }
 }
