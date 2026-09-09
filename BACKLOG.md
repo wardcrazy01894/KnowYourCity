@@ -168,18 +168,12 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       compares these to the clock, staleness is name/coords only — but it makes
       the provenance mildly wrong. Use the city's `timeZone` from cities.json
       via `getDateKey`, the way `pin-day` already does.
-- [ ] **Mark Stella's Diner (Chicago) closed.** The blurb research found it
-      shut permanently in 2026 after Marvin Barsky sold it to Ann Sather's
-      owner, who plans to reopen the space under that name (Block Club,
-      2026-08-03). The row is still `inPlay` with a June 2026 `lastVerified`.
-      Needs the usual treatment: `pin-day` first, mark closed in
-      `data/fame-chicago.json`, re-run `apply-difficulty` (which retires the
-      blurb via syncBlurbs).
 - [ ] **Add Barra Barra and Kaixo (2701 Central Ave).** Baba and its sister spot
       Barbouni closed after service on 2026-07-03 and the space reopened as
       these two concepts (St. Pete Rising). Neither is listed on Google Places
-      yet, so there is nothing to geocode or calibrate fame against — re-check
-      in a month or two and add via the `add-location` skill.
+      yet, so there is nothing to geocode or calibrate fame against — re-checked
+      2026-09-09 via Places and still unlisted (only Baba's stale row shows at
+      2701 Central Ave). Re-check again later and add via the `add-location` skill.
 
 - [ ] **Write location blurbs for every city** — the day recap (PLAN §5.13)
       ships with 4 demo St. Pete entries in `public/blurbs.stpete.json`; every

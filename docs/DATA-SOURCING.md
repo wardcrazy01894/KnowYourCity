@@ -371,7 +371,7 @@ stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
 filters to `inPlay !== false`. Current caps: St. Pete 400 (373 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4198).
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4197).
 
 > **Removing a row reshuffles the cap.** Because in-play membership and the
 > 40/40/20 buckets are recomputed from fame rank on every `apply-difficulty` run,
@@ -464,7 +464,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c, post full-vetting + chain-branch re-adds §4e): St. Pete (373 → **373**),
 State College (229 → **200**), Ann Arbor (344 → **300**), Seattle (2463 →
-**500**), Chicago (4198 → **700**) —
+**500**), Chicago (4197 → **700**) —
 all enriched. (Seattle gained back 12 relocated venues re-added at their verified
 current in-bounds location — see `data/seattle-manual.json`.)
 
@@ -923,8 +923,8 @@ Rewind St Pete is a different business with its own write-up).
 play plus 29 benched), 190 with a story and every row with a descriptor. That story rate is essentially the
 same as St. Pete's (320 of 373, 86%), so a college town does not obviously
 leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, 480 with a story. Its 1963
-benched rows are not researched (see `--all` above). **Chicago is partially covered — 589 of its 700 in-play rows**, 570 with a
-story; the remaining 111 and its 3498 benched rows are outstanding. Chicago's
+benched rows are not researched (see `--all` above). **Chicago is partially covered — 588 of its 700 in-play rows**, 568 with a
+story; the remaining 112 and its 3497 benched rows are outstanding. Chicago's
 story rate runs slightly below the other cities for a mechanical reason rather
 than a documentary one: `chicago.eater.com` blocks automated fetches, so
 several entries lost claims (and one its only source) to an unreadable
