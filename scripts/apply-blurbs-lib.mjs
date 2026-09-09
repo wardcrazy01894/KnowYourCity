@@ -47,7 +47,7 @@ const JUNK_SOURCE = new RegExp(
  * while the text read clean is exactly how this slipped through twice.
  */
 const PROMOTIONAL =
-  /award-winning|best[- ]kept|must[- ]see|renowned|beloved|nestled|hidden gem|world[- ]class/gi
+  /award[- ]winning|best[- ]kept|must[- ]see|renowned|beloved|nestled|hidden[- ]gem|world[- ]class/gi
 
 /**
  * Pure: rows whose prose contains promotional language, with the matched terms.

@@ -270,13 +270,34 @@ describe('promotionalHits', () => {
       {
         id: 'a',
         text: 'A Hidden Gem and a must-see, world-class and renowned.',
+        descriptor:
+          'An award-winning, beloved, best-kept secret, nestled here.',
       },
     ]
     expect(promotionalHits(rows)[0].terms.sort()).toEqual([
+      'award-winning',
+      'beloved',
+      'best-kept',
       'hidden gem',
       'must-see',
+      'nestled',
       'renowned',
       'world-class',
+    ])
+  })
+
+  it('catches hyphenated and spaced spellings alike', () => {
+    // Three terms allowed [- ] but "hidden gem" did not, so "hidden-gem"
+    // bypassed the check entirely — caught in review, not by the tests.
+    const rows = [
+      { id: 'a', text: 'A hidden-gem spot.' },
+      { id: 'b', text: 'A best kept secret.' },
+      { id: 'c', text: 'A must see, world class room.' },
+    ]
+    expect(promotionalHits(rows)).toEqual([
+      { id: 'a', terms: ['hidden-gem'] },
+      { id: 'b', terms: ['best kept'] },
+      { id: 'c', terms: ['must see', 'world class'] },
     ])
   })
 
