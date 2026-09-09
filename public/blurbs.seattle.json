@@ -1022,6 +1022,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "chiangs-gourmet": {
+      "text": "",
+      "descriptor": "Sichuan and Taiwanese Chinese restaurant on Lake City Way NE",
+      "sources": [],
+      "writtenFor": {
+        "name": "Chiang's Gourmet",
+        "lat": 47.68635,
+        "lng": -122.31435
+      },
+      "writtenOn": "2026-09-09"
+    },
     "chihuly-garden-and-glass": {
       "text": "It opened on May 21, 2012 on the former site of the Fun Forest amusement park, right at the foot of the Space Needle. The centerpiece is the Glasshouse, where a suspended sculpture roughly 100 feet long — one of Chihuly's largest — hangs beneath the glass roof; the building earned LEED silver certification.",
       "descriptor": "Dale Chihuly glass exhibit at Seattle Center, open since 2012",
@@ -1074,6 +1085,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "chucks-hop-shop": {
+      "text": "Chuck Shin opened Chuck's Hop Shop after looking for a welcoming place where beer enthusiasts with families could drink a good beer — so it pairs 50 beers on tap and communal tables with a dedicated play area for kids and a rotating lineup of food trucks out front, from poke to New Orleans soul food.",
+      "descriptor": "Craft beer bar with 50 taps and rotating food trucks on E Union St",
+      "sources": [
+        "https://intentionalist.com/b/chucks-hop-shop-central-district/"
+      ],
+      "writtenFor": {
+        "name": "Chuck's Hop Shop",
+        "lat": 47.6127,
+        "lng": -122.30576
+      },
+      "writtenOn": "2026-09-09"
+    },
     "clarence-s-hec-edmundson-pavilion": {
       "text": "The Pavilion went up in nine months for $600,000 and opened in December 1927; it was renamed in 1948 for Clarence \"Hec\" Edmundson, a 1912 Olympian who coached Husky basketball for 27 seasons. It hosted the NCAA Final Four in 1949 and 1952, and a $40 million renovation in 1999–2000 removed 20 view-blocking pillars.",
       "descriptor": "UW basketball arena on the Montlake campus, opened in 1927",
@@ -1107,6 +1131,17 @@
         "name": "Cloudburst Brewing",
         "lat": 47.61161,
         "lng": -122.34527
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "coba": {
+      "text": "Côba takes its name from the popular 2017 Vietnamese film \"Cô Ba Sài Gòn,\" and the owners say the kitchen works from family recipes and techniques passed down through generations, plated as modern cuisine with a modern American twist.",
+      "descriptor": "Modern Vietnamese-American restaurant at 530 1st Ave N",
+      "sources": ["https://www.cobaseattle.com/"],
+      "writtenFor": {
+        "name": "Côba",
+        "lat": 47.62413,
+        "lng": -122.35527
       },
       "writtenOn": "2026-09-09"
     },
@@ -1177,6 +1212,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "copperworks-tasting-room-distillery": {
+      "text": "Copperworks makes American single malt the brewer's way: local breweries including Pike, Elysian and Fremont brew it a hop-free wort from locally grown barley, and Copperworks twice-distills that in copper stills handcrafted by the Scottish still maker Forsyths. Co-founder Jason Parker got his start brewing at Pike Brewing in 1989, and the distillery was named Distillery of the Year by the American Distilling Institute in 2018.",
+      "descriptor": "Waterfront single-malt whiskey distillery and tasting room on Alaskan Way",
+      "sources": [
+        "https://www.whiskyadvocate.com/Seattle-s-Copperworks-Distilling-Expands-Business",
+        "https://www.seattlemade.org/manufacturers/copperworks-distilling-company/"
+      ],
+      "writtenFor": {
+        "name": "Copperworks Tasting Room & Distillery",
+        "lat": 47.60601,
+        "lng": -122.33973
+      },
+      "writtenOn": "2026-09-09"
+    },
     "costas": {
       "text": "Costa's opened on University Way in 1975 and has been serving traditional Greek dishes alongside American diner favorites ever since — breakfast through dinner, seven days a week, on a stretch of the Ave where most tenants turn over far faster.",
       "descriptor": "Greek-American diner on the Ave (University Way NE) since 1975",
@@ -1188,6 +1237,19 @@
         "name": "Costa's",
         "lat": 47.66296,
         "lng": -122.31328
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "crepe-de-france": {
+      "text": "A family crêperie that has operated inside Pike Place Market since 1991, making its crêpe recipes with the freshest ingredients purchased within the Market itself. The Market's directory gives the walking directions — head left from the fish throwers, stay right of the stairs — and points you at the crêpe au saumon, France and the Pacific Northwest on one plate.",
+      "descriptor": "Sweet and savory crêperie inside Pike Place Market since 1991",
+      "sources": [
+        "https://www.pikeplacemarket.org/businesses/crepe-de-france/"
+      ],
+      "writtenFor": {
+        "name": "Crêpe de France",
+        "lat": 47.60836,
+        "lng": -122.34008
       },
       "writtenOn": "2026-09-09"
     },
@@ -1212,6 +1274,17 @@
         "name": "Cyclops",
         "lat": 47.61451,
         "lng": -122.34875
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "damn-the-weather": {
+      "text": "",
+      "descriptor": "Cocktail bar and bar-food kitchen on 1st Ave S in Pioneer Square",
+      "sources": [],
+      "writtenFor": {
+        "name": "Damn the Weather",
+        "lat": 47.60111,
+        "lng": -122.33396
       },
       "writtenOn": "2026-09-09"
     },
@@ -1297,6 +1370,17 @@
         "name": "Dick's Drive-In - Wallingford",
         "lat": 47.66106,
         "lng": -122.3278
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "diesel": {
+      "text": "Diesel opened in 2011 to serve Seattle's bear scene, and Thrillist has described its crowd as \"bears, bikers, buddies, bubbas, blue collars, and bad asses.\" Bear World magazine put it on its 2019 list of the world's best bear bars.",
+      "descriptor": "Gay bar serving Seattle's bear, leather and daddy scene in Capitol Hill",
+      "sources": ["https://en.wikipedia.org/wiki/Diesel_(gay_bar)"],
+      "writtenFor": {
+        "name": "Diesel",
+        "lat": 47.61336,
+        "lng": -122.31445
       },
       "writtenOn": "2026-09-09"
     },
@@ -1594,6 +1678,34 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "flatstick-pub-pioneer-square": {
+      "text": "This is the original Flatstick, which started as an underground putt-putt bar in Pioneer Square before the concept spread to Kirkland, South Lake Union, Redmond and Spokane. The nine-hole course spells out S-E-A-T-T-L-E through kegs and tunnels and finishes at a replica Space Needle, and the taps pour only Washington-made beer.",
+      "descriptor": "Indoor mini-golf pub with Washington-only taps on 2nd Ave S",
+      "sources": [
+        "https://www.flatstickpub.com/our-story",
+        "https://www.flatstickpub.com/pioneer-square"
+      ],
+      "writtenFor": {
+        "name": "Flatstick Pub - Pioneer Square",
+        "lat": 47.60016,
+        "lng": -122.331
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "fog-room": {
+      "text": "The Fog Room sits 16 stories above downtown at the Charter Hotel, two blocks from Pike Place Market, with a covered indoor-outdoor terrace looking over the skyline and Puget Sound. It's a fixture on rooftop-bar lists, having been named by Seattle Magazine, Thrillist and BuzzFeed.",
+      "descriptor": "Rooftop cocktail lounge and terrace 16 floors above 2nd Avenue downtown",
+      "sources": [
+        "https://www.fogroomseattle.com/",
+        "https://www.fogroomseattle.com/private-events"
+      ],
+      "writtenFor": {
+        "name": "Fog Room",
+        "lat": 47.61114,
+        "lng": -122.33997
+      },
+      "writtenOn": "2026-09-09"
+    },
     "fogon-cocina-mexicana": {
       "text": "A 110-seat Capitol Hill restaurant that the Seattle Post-Intelligencer called the neighborhood's most popular Mexican spot, with bamboo tables and benches and a tortilla-making station. Seattle Met's verdict on the food: not terribly authentic, but \"so cheap and tasty that nobody cares.\" Its sibling tequila bar, La Josie's, opened in 2020.",
       "descriptor": "Mexican restaurant at 600 E Pine with a tortilla-making station",
@@ -1616,6 +1728,20 @@
         "name": "Fort Lawton Historic District",
         "lat": 47.65901,
         "lng": -122.41496
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "fort-st-george": {
+      "text": "Fort St. George hides upstairs on the second floor above South King Street in the Chinatown-International District, opening only in the evenings. The menu is izakaya drinking food plus Japanese takes on Western dishes — menchi katsu (deep-fried hamburger steak), chicken tempura, geso karaage, pork and kimchi hot pot.",
+      "descriptor": "Second-floor Japanese izakaya on S King St in the Chinatown-ID",
+      "sources": [
+        "https://fortstgeorgeseattle.com/",
+        "https://www.fortstgeorgeseattle.com/food"
+      ],
+      "writtenFor": {
+        "name": "Fort St. George",
+        "lat": 47.59818,
+        "lng": -122.32612
       },
       "writtenOn": "2026-09-09"
     },
@@ -1752,6 +1878,20 @@
         "name": "Georgetown Brewing Company",
         "lat": 47.55526,
         "lng": -122.32568
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "ghostfish-brewing-company": {
+      "text": "Ghostfish brews nothing but gluten-free beer, built from unusual, naturally gluten-free grains rather than barley or wheat — the brewery's stated vision is to be North America's leading supplier of dedicated gluten-free beer. Flagships include Grapefruit IPA and Watchstander Stout, poured at the SoDo taproom and restaurant on 1st Ave S.",
+      "descriptor": "Dedicated gluten-free brewery and taproom on 1st Ave S in SoDo",
+      "sources": [
+        "https://ghostfishbrewing.com/about/",
+        "https://ghostfishbrewing.com/beers/"
+      ],
+      "writtenFor": {
+        "name": "Ghostfish Brewing Company",
+        "lat": 47.57635,
+        "lng": -122.33389
       },
       "writtenOn": "2026-09-09"
     },
@@ -1975,6 +2115,17 @@
         "name": "Hood Famous Cafe and Bar",
         "lat": 47.59806,
         "lng": -122.32751
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "hopvine-pub": {
+      "text": "The Hopvine bills itself as one of the only post-Prohibition taverns left on Capitol Hill: the space has held a tavern license since 1933, the year beer came back, and was fully renovated in 1995 into the beer-and-pizza neighborhood bar it is today. Rotating craft taps, hand-tossed pies, trivia nights and board games.",
+      "descriptor": "Capitol Hill pub with rotating taps and hand-tossed pizza on 15th Ave E",
+      "sources": ["https://www.hopvinepub.com/"],
+      "writtenFor": {
+        "name": "Hopvine Pub",
+        "lat": 47.62337,
+        "lng": -122.31283
       },
       "writtenOn": "2026-09-09"
     },
@@ -2394,6 +2545,31 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "kobuta-and-ookami": {
+      "text": "The name means piglet and wolf — a nod to the Three Little Pigs — and the room is modeled on the cramped sake alleys tucked under Japan's elevated train tracks, which is what the owners set out to recreate. It's a family-owned katsu-and-sake house on 15th Ave E, with a second location in Redmond.",
+      "descriptor": "Family-run Japanese katsu and sake spot on 15th Ave E, Capitol Hill",
+      "sources": ["https://www.kobutaandookami.com/"],
+      "writtenFor": {
+        "name": "Kobuta And Ookami",
+        "lat": 47.61921,
+        "lng": -122.31291
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "kwanjai-thai": {
+      "text": "Kwanjai Thai is run by its namesake, who came to Seattle from Khon Kaen in northeastern Thailand intending to open a restaurant, and staffs the kitchen with her own family from Thailand. It has been feeding Fremont for well over a decade from a storefront on N 36th between Rudy's Barbershop and Fremont Coffee Company.",
+      "descriptor": "Longtime family-run Thai kitchen on N 36th St in Fremont",
+      "sources": [
+        "https://kwanjaithaicuisine.com/kwanjai-thai-cuisine-history/",
+        "https://www.kwanjaithaicuisine.com/"
+      ],
+      "writtenFor": {
+        "name": "Kwanjai Thai",
+        "lat": 47.65167,
+        "lng": -122.35261
+      },
+      "writtenOn": "2026-09-09"
+    },
     "la-carta-de-oaxaca": {
       "text": "Open in Ballard since 2003, La Carta de Oaxaca serves Oaxacan cooking — mole negro over pork ribs, tlayudas with chorizo and carne asada, lamb birria — alongside a deep mezcal and tequila list. Chef Gloria Perez is regarded as a matriarch of Oaxacan cuisine here; the family also runs El Mezcalito on Queen Anne.",
       "descriptor": "Oaxacan restaurant in Ballard known for mole negro, since 2003",
@@ -2402,6 +2578,20 @@
         "name": "La Carta de Oaxaca",
         "lat": 47.66822,
         "lng": -122.38594
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "la-rustica": {
+      "text": "La Rustica has served Italian food on Beach Drive since 1996. When the previous owners retired, longtime regulars the Hoffmans - customers since 2002 - bought it in November 2020 and kept the menu, kitchen staff and service; the West Seattle Blog counted only four changes, one of them a house-made chocolate mousse cake. A September 2007 kitchen fire closed it for about ten days.",
+      "descriptor": "Italian restaurant on Beach Dr SW in West Seattle, open since 1996",
+      "sources": [
+        "https://westseattleblog.com/2021/01/biznote-la-rusticas-quiet-change/",
+        "https://westseattleblog.com/2007/09/fire-at-la-rustica/"
+      ],
+      "writtenFor": {
+        "name": "La Rustica",
+        "lat": 47.56742,
+        "lng": -122.40935
       },
       "writtenOn": "2026-09-09"
     },
@@ -2526,6 +2716,20 @@
         "name": "Lenox",
         "lat": 47.61506,
         "lng": -122.34903
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "life-on-mars": {
+      "text": "Life on Mars opened in June 2019 in Capitol Hill's Pike Flats building as a vegan bar and restaurant wrapped around a record shop, and has been described as a vinyl-record-themed bar. The kitchen sends out jackfruit tacos and cauliflower wings, and Reuben's Brews makes a custom IPA for it. Thrillist put it on its 2022 list of Seattle's best bars.",
+      "descriptor": "Vegan bar, kitchen and record shop on E Pike in Capitol Hill",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Life_on_Mars_(restaurant)",
+        "https://www.lifeonmarsseattle.com/"
+      ],
+      "writtenFor": {
+        "name": "Life on Mars",
+        "lat": 47.61423,
+        "lng": -122.3223
       },
       "writtenOn": "2026-09-09"
     },
@@ -2729,6 +2933,20 @@
         "name": "Madison Pub",
         "lat": 47.61338,
         "lng": -122.31492
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "maggie-bluffs": {
+      "text": "Maggie Bluffs sits at Elliott Bay Marina, the 1,200-slip Magnolia marina that opened in 1991 after 17 years in the planning and permit process. Its white-tablecloth neighbor Palisade, at 2601 W Marina Place, was run by Restaurants Unlimited until Houston-based Landry's picked it up out of the 2019 bankruptcy.",
+      "descriptor": "Casual waterfront grill at Elliott Bay Marina in Magnolia",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Elliott_Bay_Marina",
+        "https://en.wikipedia.org/wiki/Palisade_(restaurant)"
+      ],
+      "writtenFor": {
+        "name": "Maggie Bluffs",
+        "lat": 47.63027,
+        "lng": -122.39113
       },
       "writtenOn": "2026-09-09"
     },
@@ -3950,6 +4168,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "queen-anne-beerhall": {
+      "text": "",
+      "descriptor": "German-style beer hall near Seattle Center with 25+ taps",
+      "sources": [],
+      "writtenFor": {
+        "name": "Queen Anne Beerhall",
+        "lat": 47.62078,
+        "lng": -122.35974
+      },
+      "writtenOn": "2026-09-09"
+    },
     "queen-mary-tea-room": {
       "text": "\"Queen\" Mary Greengo opened the tea room in 1988, and it is now one of the oldest independent tea rooms in the country — it appears in Bruce Richardson's \"The Great Tea Rooms of America,\" and CNN Travel named it one of five great American tea rooms. Greengo's stated aim: \"I want people to feel warm and welcomed here, not stuffy.\"",
       "descriptor": "English afternoon tea room on NE 55th St in Ravenna since 1988",
@@ -4000,6 +4229,20 @@
         "name": "Radiator Whiskey - Downtown",
         "lat": 47.60892,
         "lng": -122.3404
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "ramen-danbo": {
+      "text": "Danbo began in 2000 in Chikushino on Kyushu and grew past 20 shops in Japan before Vancouver became its first location abroad; Seattle and New York followed. You build your own bowl of toppings over thin Kyushu-made noodles in pork-bone broth boiled daily on site. It had the highest Yelp rating in Washington in 2022.",
+      "descriptor": "Fukuoka-style tonkotsu ramen on E Pine in Capitol Hill",
+      "sources": [
+        "https://ramendanbo.com/about/",
+        "https://en.wikipedia.org/wiki/Ramen_Danbo"
+      ],
+      "writtenFor": {
+        "name": "Ramen Danbo",
+        "lat": 47.61542,
+        "lng": -122.31609
       },
       "writtenOn": "2026-09-09"
     },
@@ -4363,6 +4606,20 @@
         "name": "Seattle Fishermen's Memorial",
         "lat": 47.65588,
         "lng": -122.38063
+      },
+      "writtenOn": "2026-09-09"
+    },
+    "seattle-glassblowing-studio": {
+      "text": "Cliff Goodman founded the studio on 5th Avenue in 1991, after training under master glassblower Fritz Driesbach at Pilchuck. Visitors watch live work in the hot shop or blow a piece themselves, and the gallery carries a Blown Away Artists collection alongside more than 100 independent artists. The 2023 finale of The Amazing Race sent teams here to turn molten glass into a glass float.",
+      "descriptor": "Belltown hot shop and gallery, family-owned since 1991",
+      "sources": [
+        "https://seattleglassblowing.com/pages/about",
+        "https://en.wikipedia.org/wiki/The_Amazing_Race_35"
+      ],
+      "writtenFor": {
+        "name": "Seattle Glassblowing Studio",
+        "lat": 47.61561,
+        "lng": -122.34297
       },
       "writtenOn": "2026-09-09"
     },

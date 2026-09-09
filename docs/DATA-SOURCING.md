@@ -910,8 +910,9 @@ Rewind St Pete is a different business with its own write-up).
 **State College is complete end to end too — all 229 dataset rows** (200 in
 play plus 29 benched), 190 with a story and every row with a descriptor. That story rate is essentially the
 same as St. Pete's (320 of 373, 86%), so a college town does not obviously
-leave a deeper paper trail than a beach town at this sample size. Seattle (500 in play of 2463 rows) and Chicago (700 of 4198) are the
-remaining runs, one city fully finished before the next.
+leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, 480 with a story. Its 1963
+benched rows are not researched (see `--all` above). Chicago (700 in play of
+4198 rows) is the last run.
 
 ---
 
