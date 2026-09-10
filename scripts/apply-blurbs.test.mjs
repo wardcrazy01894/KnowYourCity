@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {
   normalizeBlurbResults,
+  promotionalHits,
   isWritten,
   MAX_CHARS,
   MAX_DESCRIPTOR_CHARS,
@@ -242,5 +243,65 @@ describe('normalizeBlurbResults', () => {
         sources: ['https://en.wikipedia.org/wiki/X'],
       },
     ])
+  })
+})
+
+describe('promotionalHits', () => {
+  it('flags unsourced-superlative language in BOTH text and descriptor', () => {
+    // Checking only `text` is how "award-winning" shipped twice: once in a
+    // descriptor, once because the scan output went unread.
+    const rows = [
+      { id: 'a', text: 'An award-winning room.', descriptor: '' },
+      {
+        id: 'b',
+        text: '',
+        descriptor: 'Cafe known for award-winning chowders',
+      },
+      { id: 'c', text: 'A plain factual sentence.', descriptor: 'A cafe' },
+    ]
+    expect(promotionalHits(rows)).toEqual([
+      { id: 'a', terms: ['award-winning'] },
+      { id: 'b', terms: ['award-winning'] },
+    ])
+  })
+
+  it('catches the whole vocabulary, case-insensitively', () => {
+    const rows = [
+      {
+        id: 'a',
+        text: 'A Hidden Gem and a must-see, world-class and renowned.',
+        descriptor:
+          'An award-winning, beloved, best-kept secret, nestled here.',
+      },
+    ]
+    expect(promotionalHits(rows)[0].terms.sort()).toEqual([
+      'award-winning',
+      'beloved',
+      'best-kept',
+      'hidden gem',
+      'must-see',
+      'nestled',
+      'renowned',
+      'world-class',
+    ])
+  })
+
+  it('catches hyphenated and spaced spellings alike', () => {
+    // Three terms allowed [- ] but "hidden gem" did not, so "hidden-gem"
+    // bypassed the check entirely — caught in review, not by the tests.
+    const rows = [
+      { id: 'a', text: 'A hidden-gem spot.' },
+      { id: 'b', text: 'A best kept secret.' },
+      { id: 'c', text: 'A must see, world class room.' },
+    ]
+    expect(promotionalHits(rows)).toEqual([
+      { id: 'a', terms: ['hidden-gem'] },
+      { id: 'b', terms: ['best kept'] },
+      { id: 'c', terms: ['must see', 'world class'] },
+    ])
+  })
+
+  it('returns nothing for clean rows', () => {
+    expect(promotionalHits([{ id: 'a', text: 'Opened in 1954.' }])).toEqual([])
   })
 })
