@@ -327,7 +327,7 @@
     },
     "belize-park": {
       "text": "Dedicated on June 16, 1975, the park is named for Belize City, one of Ann Arbor's sister cities. Words carved into its wooden retaining wall read \"In memory of Essie Logan who resided here,\" honoring residents killed in a 1965 house fire on the site. The rain garden, added in 1992, was rebuilt in 2016 and won a Rain Garden Leadership Award in Public Stewardship.",
-      "descriptor": "Half-acre neighborhood park with a sledding hill and an award-winning rain garden",
+      "descriptor": "Half-acre neighborhood park with a sledding hill and a rain garden",
       "sources": [
         "https://www.a2gov.org/parks-and-recreation/parks-and-places/belize-park/"
       ],
@@ -336,7 +336,7 @@
         "lat": 42.28862,
         "lng": -83.75368
       },
-      "writtenOn": "2026-09-07"
+      "writtenOn": "2026-09-10"
     },
     "bennys-family-dining": {
       "text": "Benny's has been serving breakfast on S. Industrial since 2000, and its most famous regular was Michael Phelps — a server told Current magazine she used to bring the swimmer his morning food while he trained in Ann Arbor with coach Bob Bowman ahead of the 2008 Beijing Olympics.",
@@ -2869,7 +2869,7 @@
       "writtenOn": "2026-09-07"
     },
     "old-town-tavern": {
-      "text": "Open since 1972 at 122 W. Liberty, the Old Town started as a blue-collar bar that opened at 6 a.m. to accommodate third-shift workers from area factories. It calls itself one of downtown Ann Arbor's most beloved townie bars.",
+      "text": "Open since 1972 at 122 W. Liberty, the Old Town started as a blue-collar bar that opened at 6 a.m. to accommodate third-shift workers from area factories.",
       "descriptor": "Townie bar at 122 W. Liberty, established 1972",
       "sources": ["https://www.oldtownaa.com/"],
       "writtenFor": {
@@ -2877,7 +2877,7 @@
         "lat": 42.27973,
         "lng": -83.74971
       },
-      "writtenOn": "2026-09-07"
+      "writtenOn": "2026-09-10"
     },
     "onder-park": {
       "text": "The city bought these 4.2 acres of north-side woods in 2007 from Jan Onder, a local businesswoman who had owned the land with her late husband Ned Shure since 1992; it had been appraised at $480,000 two years earlier. Two small streams and many pockets of wooded wetland make it a green corridor, with trillium and marsh marigolds in the spring.",

@@ -96,6 +96,20 @@ This re-derives difficulty city-wide from the fame cache, enforces the
 audit. Confirm the new ids appear enriched and nothing else changed
 unexpectedly.
 
+**This step is not optional, and skipping it used to be invisible.** `inPlay`
+is a stored flag encoding a fame _rank_, so an add that never gets re-capped
+stays benched however famous it is, while the row it should have displaced
+keeps playing — and the in-play count still equals `playCap`, so nothing looks
+wrong. Ann Arbor (7 rows) and State College (2)
+were found in that state in September 2026, all from chain-branch re-adds.
+(Seattle had 69 misplaced rows at the same time from a different cause — the
+`byFameRank` tie-break landed after its file was written — but the symptom and
+the fix are identical.) `src/lib/locations.test.ts` now fails when a benched row outranks the
+in-play floor, so CI catches it — but run the re-cap rather than relying on the
+guard. Expect it to also **rewrite `fameScore` on sibling branches**: adding a
+branch splits a flagship's review count, and the flagship keeps its pre-split
+score until this runs.
+
 ## 5. Tests + docs (same PR)
 
 - `npm run typecheck && npm run lint && npm run format:check && npm test &&
