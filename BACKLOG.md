@@ -25,8 +25,10 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       College) and the last four in #205. The full sweep — every multi-branch
       family in all five cities, `text` and `descriptor` checked **separately**,
       every flagged row then reverse-geocoded — flagged 34 and resolved to
-      **four real errors**: `als-beef` (Chicago, descriptor put a River North
-      shop on Taylor Street in Little Italy) plus three rows whose **`name`**
+      **six real errors**. Two were wrong descriptors: `als-beef` (Chicago) put
+      a River North shop on Taylor Street in Little Italy, and
+      `stax-cafe-little-italy` named both of the chain's rooms instead of the
+      one the player is looking at. The other four were rows whose **`name`**
       was wrong rather than the blurb (see the id/name item below). Every other
       flag was legitimate origin framing ("the first X opened on Capitol Hill in
       2011"), confirmed by the geocode pass: each row's name matched its real
@@ -36,7 +38,17 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       anything. Two further signatures are needed for full coverage, each of
       which caught a row the others missed — a **bare street name** in the prose
       vs the geocoded road, and a **full numbered address** ("1600 7th Ave"
-      turned out to be a sibling's). Expect heavy false positives: a
+      turned out to be a sibling's). A **fifth** signature is needed and is the
+      one that generalizes the rest: check each row's own descriptor against its
+      own geocode, **independent of any sibling**. Every sibling-based check
+      misses a family where the blurb names a neighborhood matching neither its
+      own name nor any sibling's — which is how
+      `cookies-country-chicken-west-woodland` (named West Woodland, actually
+      Ballard, sibling named Pioneer Square) survived the sweep and was caught
+      in review. **And check the venue's own site**: that row was dismissed
+      because West Woodland is a real adjacent micro-neighborhood and the
+      geocoder was ambiguous, but the business lists exactly two locations,
+      "Ballard" and "Pioneer Square". Expect heavy false positives regardless: a
       street-claim sweep of 303 in-play Ann Arbor / State College rows flagged
       59 and every one checked was correct, because parks are centroids whose
       address is an entrance on a bounding street, and corner buildings and
@@ -61,7 +73,8 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       player-visible `name` errors this produced were fixed in #205
       (`marination-ma-kai` Industrial District → West Seattle,
       `tacos-chukis-greater-duwamish` → Beacon Hill,
-      `tavolata-downtown-2nd-avenue` Downtown → Capitol Hill), each verified by
+      `tavolata-downtown-2nd-avenue` Downtown → Capitol Hill,
+      `cookies-country-chicken-west-woodland` → Ballard), each verified by
       reverse-geocoding and re-accepted through `sync-blurbs --accept`. What
       remains is the id migration itself, which means moving blurb keys and any
       `dailyOverrides` entries, so it is a deliberate pass rather than a
