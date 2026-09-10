@@ -404,9 +404,10 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4195).
 > capped city — and after any change to the ranking rule — re-run
 > `node scripts/apply-difficulty.mjs <city>` for every capped city.** Note that
 > a re-cap also refreshes each row's `fameScore` from the cache, which is how
-> three cities were still carrying pre-split fame on chain flagships (Ann
-> Arbor's `no-thai` held 60, its Kerrytown branch's score, while the flagship's
-> own 260 reviews rate 52).
+> four chain flagships across these two cities were still carrying pre-split
+> fame: Ann Arbor's `no-thai` held 60, its Kerrytown branch's score, while the
+> flagship's own 260 reviews rate 52. (Whether other cities have the same is
+> unchecked — this re-cap only touched Ann Arbor and State College.)
 
 > **Freshness (`lastVerified`).** A periodic Google Places pass stamps each
 > in-play venue with the `YYYY-MM-DD` it was last confirmed current: businesses
