@@ -36,4 +36,12 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'stans-donuts-coffee-streeterville-east-erie-street',
     'navy-pier-beer-garden',
   ],
+  // seattle — pinned 2026-09-09 (pin-day)
+  'seattle:2026-09-09': [
+    'seattle-great-wheel',
+    'biscuit-bitch-belltown',
+    'honeyhole',
+    'chop-suey',
+    'camp-long',
+  ],
 }

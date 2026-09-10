@@ -23851,13 +23851,13 @@
   },
   {
     "id": "purple-cafe",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 52,
     "reviewCount": 3069,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "well-established Downtown Seattle wine bar and restaurant, open at 1225 4th Ave"
+    "statusNote": "Closed: Purple's own Stone Way page announces the Wallingford location has shut — \"we are unable to generate the sales needed for Purple to be a viable business at this location\" — while Woodinville and downtown Seattle stay open (checked 2026-09-09). Google Places returns only the downtown room when searched at these coordinates. Surfaced by the blurb research."
   },
   {
     "id": "purple-cafe-and-wine-bar-seattle",
