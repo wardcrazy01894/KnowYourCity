@@ -47211,13 +47211,13 @@
   },
   {
     "id": "hawthorne-race-course",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 62,
     "reviewCount": 22,
     "hasWikipedia": true,
     "isNationalChain": false,
-    "statusNote": "resumed limited racing April 2026 after bankruptcy filing and brief license suspension"
+    "statusNote": "Closed: licence revoked January 2026, Chapter 11 filing in February, final race run 2026-07-19, and the track sold for $90m to a buyer linked to a data-centre operator (Wikipedia). Confirmed 2026-09-09 via Google Places: CLOSED_PERMANENTLY, ~342m from the pin, 842 ratings. Surfaced by the blurb research."
   },
   {
     "id": "hawthorne-works-tower",
@@ -52421,13 +52421,13 @@
   },
   {
     "id": "wndr-museum",
-    "status": "open",
+    "status": "closed",
     "currentName": "",
     "fameScore": 52,
     "reviewCount": 408,
     "hasWikipedia": false,
     "isNationalChain": false,
-    "statusNote": "open immersive art/experience museum at 1130 W Monroe St as of June 2026"
+    "statusNote": "Closed: the museum's own site announces \"WNDR Museum has closed its doors\", applying across its locations (checked 2026-09-09). Google Places still reads OPERATIONAL with 4664 ratings and is stale — the same lag seen at Baba (St. Pete). A venue's own closure announcement is the authoritative source for whether it is open. Surfaced by the blurb research."
   },
   {
     "id": "wok-cuisine",
