@@ -36,4 +36,20 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'chop-suey',
     'camp-long',
   ],
+  // annarbor — pinned 2026-09-10 (pin-day)
+  'annarbor:2026-09-10': [
+    'university-of-michigan-golf-course',
+    'zingermans-roadhouse',
+    'the-hen',
+    'blm-mead-cider',
+    'hanover-square',
+  ],
+  // statecollege — pinned 2026-09-10 (pin-day)
+  'statecollege:2026-09-10': [
+    'beaver-stadium',
+    'stage-west',
+    'robeson-gallery',
+    'mosul-grill',
+    'east-fairmount-park',
+  ],
 }

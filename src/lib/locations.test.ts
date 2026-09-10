@@ -151,6 +151,32 @@ for (const city of CITIES) {
       expect(playable.length).toBe(expected)
     })
 
+    it('its play set IS the most-famous rows: no benched row outranks an in-play one', () => {
+      // The cap is a top-N-by-fame RANK, not a flag anyone sets by hand, so the
+      // two sets must not interleave. They drift apart silently when rows are
+      // added to a capped city (a new local-chain branch, say) without re-running
+      // `apply-difficulty` — the row lands benched no matter how famous it is.
+      // Ann Arbor benched 7 rows that outranked its in-play floor (fame 59
+      // benched while fame-12 parks played) and State College 2, all from
+      // chain-branch adds; Seattle benched 69 for a different reason — the
+      // `byFameRank` tie-break landed after its file was last written.
+      // Fame is a coarse 0-100 score, so equal-fame rows straddling the cut are
+      // expected — `byFameRank` breaks those ties on review count, which the
+      // shipped dataset does not carry. Only a STRICT inversion is the bug.
+      if (city.playCap == null) return
+      const benched = data.locations.filter((l) => l.inPlay === false)
+      if (benched.length === 0) return
+      const floor = Math.min(...playable.map((l) => l.fameScore ?? 0))
+      const over = benched
+        .filter((l) => (l.fameScore ?? 0) > floor)
+        .map((l) => `${l.id} (${l.fameScore})`)
+      expect(
+        over,
+        `${city.id}: benched rows outrank the in-play floor (fame ${floor}) — ` +
+          `re-run \`node scripts/apply-difficulty.mjs ${city.id}\``,
+      ).toEqual([])
+    })
+
     it('fills a valid daily plan across dates', () => {
       for (const dateKey of ['2026-06-06', '2026-09-01', '2026-12-25']) {
         const picks = selectDailyLocations(

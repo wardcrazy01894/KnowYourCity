@@ -382,6 +382,32 @@ play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4195).
 > flips. Any promoted _business_ gets re-verified + stamped (below); promoted
 > parks/landmarks are stamped as stable.
 
+> **`inPlay` is a stored flag encoding a RANK, so it goes stale silently.**
+> Nothing re-derives it on read: whatever `apply-difficulty` last wrote is what
+> the game plays. Two different changes therefore desynchronize it, and neither
+> shows up in any count — the in-play total still equals `playCap`.
+>
+> 1. **Adding a row.** A row added to a capped city after the last re-cap lands
+>    benched however famous it is, and the row it should have displaced keeps
+>    playing. Ann Arbor was benching a fame-59 restaurant while five fame-12
+>    pocket parks played; State College had two of these. All nine were
+>    local-chain branches added by `add-location` without a re-cap.
+> 2. **Changing the ranking rule.** The `byFameRank` tie-break (fame → review
+>    count → id, see the BACKLOG entry) is applied when `apply-difficulty` runs,
+>    not to files already written. Seattle's committed set predated it and still
+>    reflected the old id-alphabetical order among the ~90 rows tied at fame 44,
+>    leaving **69** benched rows outranking its in-play floor.
+>
+> `src/lib/locations.test.ts` now asserts the two sets don't interleave (no
+> benched row strictly outranks the in-play floor), so CI fails instead of the
+> game quietly playing the wrong locations. **After any add or removal in a
+> capped city — and after any change to the ranking rule — re-run
+> `node scripts/apply-difficulty.mjs <city>` for every capped city.** Note that
+> a re-cap also refreshes each row's `fameScore` from the cache, which is how
+> three cities were still carrying pre-split fame on chain flagships (Ann
+> Arbor's `no-thai` held 60, its Kerrytown branch's score, while the flagship's
+> own 260 reviews rate 52).
+
 > **Freshness (`lastVerified`).** A periodic Google Places pass stamps each
 > in-play venue with the `YYYY-MM-DD` it was last confirmed current: businesses
 > whose `business_status` is OPERATIONAL, and parks/landmarks (no

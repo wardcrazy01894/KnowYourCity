@@ -152,8 +152,8 @@
       "writtenOn": "2026-09-07"
     },
     "bagel-crust-beaver": {
-      "text": "Al Rusinque opened the first Bagel Crust at 332 E. Calder Way in late May 2014, moving to State College partly to be near his son, then a Penn State pre-med student; he had already run bagel shops in Delaware, Florida and Maryland over 22 years. The bagels are made by hand, and Rusinque, a painter, was at work on a canvas of the Corner Room to hang in the shop.",
-      "descriptor": "Hand-made New York-style bagels and breakfast sandwiches downtown",
+      "text": "Al Rusinque opened the first Bagel Crust at 332 E. Calder Way in late May 2014, moving to State College partly to be near his son, then a Penn State pre-med student; he had already run bagel shops in Delaware, Florida and Maryland over 22 years. This W Beaver Ave shop is the second of the pair. The bagels are made by hand, and Rusinque, a painter, was at work on a canvas of the Corner Room to hang in the shop.",
+      "descriptor": "Hand-made New York-style bagels on W Beaver Ave, the newer of the two",
       "sources": [
         "https://www.statecollege.com/articles/local-news/bagels-business-and-family/",
         "https://www.statecollege.com/articles/local-news/bagels-by-day-authentic-latin-american-food-by-night/"
@@ -163,7 +163,7 @@
         "lat": 40.79217,
         "lng": -77.86221
       },
-      "writtenOn": "2026-09-07"
+      "writtenOn": "2026-09-10"
     },
     "bagel-crust-calder": {
       "text": "Bagel Crust runs two downtown State College shops — this one on East Calder Way — turning out bagels, deli sandwiches, omelets and, unusually for a bagel counter, tacos. The morning-after sandwich names are half the appeal: the \"Walk of Shame\" and the \"Hangover.\"",
@@ -711,7 +711,7 @@
       "writtenOn": "2026-09-07"
     },
     "douglas-albert-gallery": {
-      "text": "Doug Albert has sold art in State College since 1981, when he opened in a former ski shop in the alleyway beside The Tavern — a spot regulars called the town's best-kept secret. After 40 years the building's owners declined to renew the lease, and in 2022 the gallery moved to 126 E. College Ave. Albert also runs Uncle Eli's, the artist marketplace he started years before the gallery.",
+      "text": "Doug Albert has sold art in State College since 1981, when he opened in a former ski shop in the alleyway beside The Tavern. After 40 years the building's owners declined to renew the lease, and in 2022 the gallery moved to 126 E. College Ave. Albert also runs Uncle Eli's, the artist marketplace he started years before the gallery.",
       "descriptor": "Art gallery and frame shop on E. College Ave., in business since 1981",
       "sources": [
         "https://onwardstate.com/2017/11/13/the-douglas-albert-gallery-state-colleges-best-kept-secret/",
@@ -722,7 +722,7 @@
         "lat": 40.7956,
         "lng": -77.85945
       },
-      "writtenOn": "2026-09-07"
+      "writtenOn": "2026-09-10"
     },
     "east-fairmount-park": {
       "text": "This block became a borough park in 1976, on land that had belonged to the State College Area School District, and then went decades with few upgrades. A roughly $248,000 overhaul in 2022 — funded by Community Development Block Grant money and a state DCNR grant — added the pavilion, playground, pedestrian path and ADA parking around the central lawn.",
@@ -2960,8 +2960,8 @@
       "writtenOn": "2026-09-07"
     },
     "yallah-taco-mcallister-alley": {
-      "text": "Hitham Hiyajneh opened Yallah Taco in 2016 in a small, easy-to-miss storefront on McAllister Alley, running Mexican flavors through a Mediterranean filter. The oversized burritos are named Godzilla, King Kong, Moby Dick and The Kraken, each wrapped around half a pound of fries. The hidden spot built enough of a following that Yallah opened a bigger College Avenue location in 2020.",
-      "descriptor": "Mediterranean-Mexican taco counter off McAllister Alley since 2016",
+      "text": "Hitham Hiyajneh started Yallah Taco in 2016 as a hole-in-the-wall in a downtown alley, pitching Mexican flavors with a Mediterranean twist. It drew enough of a crowd that in 2020 he opened this much larger room in the former downtown Taco Bell at 310 E. College Ave. The halal menu carries over, oversized burritos included — Godzilla, King Kong, Moby Dick and The Kraken, each wrapped around half a pound of fries.",
+      "descriptor": "Yallah Taco's larger second room, in a former Taco Bell on E. College Ave",
       "sources": [
         "https://www.statecollege.com/articles/local-news/yallah-taco-bringing-expanded-offerings-to-new-college-avenue-location/",
         "https://www.statecollege.com/articles/local-news/taste-of-the-month-yallah-foods-fast-casual-restaurants-offer-an-array-of-choices-in-downtown-state-college/"
@@ -2971,7 +2971,7 @@
         "lat": 40.79678,
         "lng": -77.85807
       },
-      "writtenOn": "2026-09-07"
+      "writtenOn": "2026-09-10"
     },
     "yogurt-express": {
       "text": "",
