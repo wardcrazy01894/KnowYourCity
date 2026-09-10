@@ -4497,8 +4497,8 @@
       "writtenOn": "2026-09-10"
     },
     "portage-bay-cafe-university-district": {
-      "text": "Portage Bay Cafe opened in 1997 around the motto \"eat like you give a damn,\" built on local, organic and sustainable sourcing, and is known for its breakfast toppings bar. It has since grown to five Seattle-area cafes.",
-      "descriptor": "Organic, local breakfast and brunch cafe in the U District",
+      "text": "Portage Bay Cafe opened in 1997 around the motto \"eat like you give a damn,\" built on local, organic and sustainable sourcing, and is known for its breakfast toppings bar. It has since grown to five Seattle-area cafes; this is the Roosevelt one, on NE 65th St.",
+      "descriptor": "Organic breakfast and brunch cafe on NE 65th St in Roosevelt",
       "sources": ["https://www.portagebaycafe.com/"],
       "writtenFor": {
         "name": "Portage Bay Cafe - Roosevelt",
@@ -6320,7 +6320,7 @@
       "writtenOn": "2026-09-09"
     },
     "un-bien-ballard": {
-      "text": "Julian and Lucas Lorenzo, sons of Paseo founder Lorenzo Lorenzo, opened the first Un Bien in Ballard in June 2015 to carry on their father's Caribbean sandwich, and added a second facing Shilshole Bay in 2016. This W Galer St shop is the third and the only one off the Ballard waterfront. The braised-pork Caribbean Roast — sweet onions, pickled jalapenos, romaine and aioli on a Macrina baguette — is the one to order.",
+      "text": "Julian and Lucas Lorenzo, sons of Paseo founder Lorenzo Lorenzo, opened the first Un Bien in Ballard in June 2015 to carry on their father's Caribbean sandwich, and added a second facing Shilshole Bay in 2016. This W Galer St shop is the third, and the only one outside Ballard. The braised-pork Caribbean Roast — sweet onions, pickled jalapenos, romaine and aioli on a Macrina baguette — is the one to order.",
       "descriptor": "Un Bien's Queen Anne shop on W Galer St, third of the three",
       "sources": [
         "https://en.wikipedia.org/wiki/Un_Bien",
