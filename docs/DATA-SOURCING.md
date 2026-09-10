@@ -923,12 +923,7 @@ Rewind St Pete is a different business with its own write-up).
 play plus 29 benched), 190 with a story and every row with a descriptor. That story rate is essentially the
 same as St. Pete's (320 of 373, 86%), so a college town does not obviously
 leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, 480 with a story. Its 1963
-benched rows are not researched (see `--all` above). **Chicago is partially covered — 588 of its 700 in-play rows**, 568 with a
-story; the remaining 112 and its 3497 benched rows are outstanding. Chicago's
-story rate runs slightly below the other cities for a mechanical reason rather
-than a documentary one: `chicago.eater.com` blocks automated fetches, so
-several entries lost claims (and one its only source) to an unreadable
-citation.
+benched rows are not researched (see `--all` above). **Chicago's in-play set is complete too — 700 of 700**, 667 with a story. Its 3497 benched rows are not researched (see `--all` above), and the owner has said they are not a priority. **All five cities are now covered in play.** Chicago's story rate trails the others for a mechanical reason rather than a documentary one: `chicago.eater.com` and several venue sites block automated fetches, so a number of entries lost claims — and a few their only source — to an unreadable citation.
 
 ---
 
