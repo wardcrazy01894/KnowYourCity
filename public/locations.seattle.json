@@ -19788,7 +19788,7 @@
     },
     {
       "id": "marination-ma-kai",
-      "name": "Marination - Industrial District",
+      "name": "Marination - West Seattle",
       "lat": 47.58943,
       "lng": -122.380568,
       "category": "restaurant",
@@ -31747,7 +31747,7 @@
     },
     {
       "id": "tacos-chukis-greater-duwamish",
-      "name": "Tacos Chukis - Greater Duwamish",
+      "name": "Tacos Chukis - Beacon Hill",
       "lat": 47.5795632,
       "lng": -122.3115269,
       "category": "restaurant",
@@ -32226,7 +32226,7 @@
     },
     {
       "id": "tavolata-downtown-2nd-avenue",
-      "name": "Tavolata - Downtown",
+      "name": "Tavolata - Capitol Hill",
       "lat": 47.613961,
       "lng": -122.325318,
       "category": "restaurant",

@@ -3296,7 +3296,7 @@
       "writtenOn": "2026-09-06"
     },
     "porters-stone-soup-cafe": {
-      "text": "Now trading as Stone Soup Cafe & Pub, it is a made-to-order sandwich and homemade-soup counter with a full bar and around 50 beers, and a regular fixture on local hidden-gem roundups.",
+      "text": "Now trading as Stone Soup Cafe & Pub, it is a made-to-order sandwich and homemade-soup counter with a full bar and around 50 beers.",
       "descriptor": "Soup-and-sandwich cafe with a 50-beer pub on 16th Street N",
       "sources": [
         "https://www.stonesoupcafe.com/",
@@ -3307,7 +3307,7 @@
         "lat": 27.80973,
         "lng": -82.65534
       },
-      "writtenOn": "2026-09-06"
+      "writtenOn": "2026-09-10"
     },
     "quan-ngon-bistro": {
       "text": "",

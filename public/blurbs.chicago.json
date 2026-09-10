@@ -166,8 +166,8 @@
       "writtenOn": "2026-09-09"
     },
     "als-beef": {
-      "text": "Al's has been making Italian beef since 1938, when Al Ferreri started it with his sister Frances and brother-in-law Chris Pacelli Sr.; a grandson of the founder still runs the company, which operates a Taylor Street shop in Little Italy. The sandwich is the Chicago template: heavily seasoned roast beef in gravy on soft French bread with sweet or hot peppers.",
-      "descriptor": "Italian beef stand on Taylor Street in Little Italy",
+      "text": "Al's has been making Italian beef since 1938, when Al Ferreri started it with his sister Frances and brother-in-law Chris Pacelli Sr.; a grandson of the founder still runs the company, and the original stands on Taylor Street in Little Italy. This is the River North shop on N Wells St. The sandwich is the Chicago template: heavily seasoned roast beef in gravy on soft French bread with sweet or hot peppers.",
+      "descriptor": "Italian beef stand on N Wells St in River North",
       "sources": [
         "https://en.wikipedia.org/wiki/Al%27s_Beef",
         "https://www.alsbeef.com/"
@@ -177,7 +177,7 @@
         "lat": 41.89223,
         "lng": -87.63428
       },
-      "writtenOn": "2026-09-09"
+      "writtenOn": "2026-09-10"
     },
     "als-beef-lake-view-east": {
       "text": "Al Ferreri, his sister Frances and brother-in-law Chris Pacelli Sr. opened the first Al's as a Taylor Street beef stand in Little Italy in 1938; the company still bills itself as \"the beefstand that launched the national sandwich of Chicago.\" The order is heavily seasoned roast beef in gravy on French bread with sweet or hot peppers.",
@@ -7118,14 +7118,14 @@
     },
     "stax-cafe-little-italy": {
       "text": "Owner Spiro Tsaldaris runs Stax with his wife Heather and their daughters Penelope and Mila. He grew up in his father's Chicago diner, which stayed open 24 hours a day, 365 days a year. The breakfast-focused kitchen — all-day breakfast and breakfast-leaning lunch, with locations in Little Italy and River West — has been Michelin-recommended six years running.",
-      "descriptor": "Family-run all-day breakfast cafe with Little Italy and River West locations",
+      "descriptor": "Family-run all-day breakfast cafe on N Milwaukee Ave in River West",
       "sources": ["https://www.staxcafe.com/about"],
       "writtenFor": {
         "name": "Stax Cafe - West Town",
         "lat": 41.89162,
         "lng": -87.64856
       },
-      "writtenOn": "2026-09-09"
+      "writtenOn": "2026-09-10"
     },
     "steak-n-egger": {
       "text": "Steak 'n Egger has been open around the clock since 1955, when it started as a 20-seat counter in Douglas Park. Three generations of the founding family later it's still running under the motto 'We Doze But Never Close.'",
