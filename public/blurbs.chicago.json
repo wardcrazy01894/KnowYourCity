@@ -2142,6 +2142,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "ellys-pancake-house": {
+      "text": "A 1998 Tribune profile of the family's Elly's said the name came from co-owner George Grekousis' mother — the partners picked it because it sounded good and was easy to remember — and that \"fresh fruit is our thing,\" from strawberry and cinnamon-apple pancakes to a wall of oranges squeezed to order behind the register. Crepes, blintzes and waffles round out the all-day menu.",
+      "descriptor": "Family pancake house on N. Milwaukee Ave. in Gladstone Park, known for crepes",
+      "sources": [
+        "https://www.chicagotribune.com/1998/09/13/every-day-starts-big-at-ellys-pancake-house/"
+      ],
+      "writtenFor": {
+        "name": "Elly's Pancake House",
+        "lat": 41.97665,
+        "lng": -87.76907
+      },
+      "writtenOn": "2026-09-10"
+    },
     "elske": {
       "text": "Chefs David and Anna Posey opened Elske on Randolph Street's restaurant row in December 2016. Bon Appétit ranked it the No. 2 best new restaurant in America in 2017, and it earned a Michelin star in the 2018 Chicago guide.",
       "descriptor": "Danish-inspired New American tasting menu on Randolph St, West Loop",
@@ -2197,6 +2210,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "emporium-logan-square": {
+      "text": "Brothers Danny and Doug Marks opened Emporium in June 2012, pairing more than 30 vintage video games and three pinball machines with craft beer and a long whiskey list. The Tribune's opening-week review found the Street Fighter II machine three deep and noted the house rule: games run on custom tokens, four for a dollar, and no, you can't trade them for beer.",
+      "descriptor": "Vintage arcade bar on N. Milwaukee Ave. in Wicker Park, open since 2012",
+      "sources": [
+        "https://www.chicagotribune.com/2012/06/21/review-emporium-arcade-bar/",
+        "https://blockclubchicago.org/2019/10/29/emporium-arcades-plan-to-turn-barrys-drugs-into-recreational-cannabis-dispensary-hits-road-block-in-wicker-park/"
+      ],
+      "writtenFor": {
+        "name": "Emporium - West Town",
+        "lat": 41.90645,
+        "lng": -87.67185
+      },
+      "writtenOn": "2026-09-10"
+    },
     "emporium-west-town": {
       "text": "Emporium bills itself as Chicago's original arcade bar, and now runs three rooms in the city. The Fulton Market location, at 839 W. Fulton Market, pairs arcade cabinets, pinball and pool tables with a craft beer and cocktail bar, a stage with professional sound and lights, and a 1,500-square-foot patio.",
       "descriptor": "Arcade bar at 839 W. Fulton Market with pinball, pool and a live-music stage",
@@ -2221,6 +2248,19 @@
         "lng": -87.62738
       },
       "writtenOn": "2026-09-09"
+    },
+    "eris-brewery-and-cider-house": {
+      "text": "Co-founder Michelle Foik built Eris inside a 107-year-old four-story Masonic temple that later became a Korean Presbyterian church: the old sanctuary is now the dining room, brewing and cider-making happen in the basement, and a pair of the Masons' safes are still in the building. It opened in February 2018 with a rare combination of house-made beer and cider.",
+      "descriptor": "Brewery and cider house in a century-old Masonic temple on W. Irving Park Rd.",
+      "sources": [
+        "https://www.chicagotribune.com/2018/02/02/eris-brewery-now-open-with-rare-combination-of-beer-and-cider/"
+      ],
+      "writtenFor": {
+        "name": "ERIS Brewery and Cider House",
+        "lat": 41.95385,
+        "lng": -87.73426
+      },
+      "writtenOn": "2026-09-10"
     },
     "ernest-hemingway-birthplace-museum": {
       "text": "Ernest Hemingway was born in this Oak Park house on July 21, 1899. The Queen Anne was designed by architect Wesley Arnold and built in 1890 for his grandparents, and was the first home in Oak Park with electricity; the Ernest Hemingway Foundation of Oak Park bought it in 1992, restored it, and opened it to the public as a museum in 2001.",
@@ -2326,6 +2366,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "fifth-third-arena": {
+      "text": "The Blackhawks built this multi-rink practice facility two blocks south of the United Center in 2017, opening it as MB Ice Arena before renaming it Fifth Third Arena in 2019; it now operates as the Blackhawks Ice Center. It doubles as a community rink — learn-to-skate, youth and adult leagues, open skate and stick-and-puck — and is also home ice for the USHL's Chicago Steel.",
+      "descriptor": "Blackhawks practice rink and public ice center near the United Center",
+      "sources": [
+        "https://www.blackhawksicecenter.com/",
+        "https://en.wikipedia.org/wiki/United_Center"
+      ],
+      "writtenFor": {
+        "name": "Fifth Third Arena",
+        "lat": 41.87706,
+        "lng": -87.67359
+      },
+      "writtenOn": "2026-09-10"
+    },
     "firecakes-donuts": {
       "text": "Firecakes is named for the \"firecakes\" the founder's grandfather, camp baker William \"Billy\" Hobbs, fried in a large cast-iron pot of oil over an open fire in northern Wisconsin logging camps in the 1930s. The shop's recipe descends from his, and the original round dough cutter he used hangs in this Hubbard Street flagship, which opened in 2013 and still makes donuts by hand throughout the day.",
       "descriptor": "Donut shop on W Hubbard St working from a 1930s family logging-camp recipe",
@@ -2368,6 +2422,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "flacos-tacos-rush-division": {
+      "text": "",
+      "descriptor": "Counter-service taqueria on E. Chicago Ave. in Near North",
+      "sources": [],
+      "writtenFor": {
+        "name": "Flaco's Tacos - Rush & Division",
+        "lat": 41.8969,
+        "lng": -87.62631
+      },
+      "writtenOn": "2026-09-10"
+    },
     "flight-club": {
       "text": "Flight Club brought its London social-darts format to the United States for the first time here, opening at 111 W Wacker in May 2018. Groups rent an \"oche\" — the throwing area — by the half hour and play on boards wired to tracking cameras and overhead screens that score multiple game formats automatically, with food and drinks delivered to the playing area.",
       "descriptor": "Social darts bar at 111 W Wacker with auto-scoring boards and screens",
@@ -2408,6 +2473,20 @@
         "lng": -87.79531
       },
       "writtenOn": "2026-09-09"
+    },
+    "formentos": {
+      "text": "Formento's opened in January 2015 from chef Tony Quartaro and the team behind The Bristol and Balena — an 8,000-square-foot throwback to red-sauce Italian-American cooking, with canestri in Sunday gravy, rigatoni alla vodka and a 600-plus-label wine list. It's named for Nonna Formento, the grandmother of one of the owners, and the grab-and-go sandwich shop attached to it is called Nonna's.",
+      "descriptor": "Italian-American restaurant on West Loop's Restaurant Row since 2015",
+      "sources": [
+        "https://www.chicagotribune.com/2015/01/13/formentos-will-open-wednesday-in-the-west-loop/",
+        "https://www.formentos.com/"
+      ],
+      "writtenFor": {
+        "name": "Formento's",
+        "lat": 41.88414,
+        "lng": -87.65072
+      },
+      "writtenOn": "2026-09-10"
     },
     "former-medinah-temple": {
       "text": "Built in 1912 as a Shriners hall by architects Huehl & Schmid, the Moorish Revival building at 600 N Wabash seated about 4,200 and hosted the annual Shrine Circus. Its acoustics turned it into a recording room: many of the Chicago Symphony Orchestra's most famous recordings were made here, including the mid-1990s sessions for Disney's Fantasia 2000. The Shriners left in 2000, Bloomingdale's Home moved in in 2003, and since 2023 it has housed Bally's temporary casino.",
@@ -2455,6 +2534,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "franks-shrimp-house": {
+      "text": "",
+      "descriptor": "Fried-shrimp and seafood counter on W. Irving Park Rd. in Portage Park",
+      "sources": [],
+      "writtenFor": {
+        "name": "Frank's Shrimp House",
+        "lat": 41.95354,
+        "lng": -87.75308
+      },
+      "writtenOn": "2026-09-10"
+    },
     "frederick-c-robie-house": {
       "text": "Frank Lloyd Wright designed it for manufacturing executive Frederick C. Robie and finished it in 1910 — the definitive Prairie-style house, with sweeping cantilevered roofs, an open plan and 175 art-glass panels in 29 patterns. It became a National Historic Landmark in 1963 and, in 2019, part of a UNESCO World Heritage listing of eight Wright buildings.",
       "descriptor": "Frank Lloyd Wright's 1910 Prairie-style landmark in Hyde Park",
@@ -2476,6 +2566,17 @@
         "lng": -87.63092
       },
       "writtenOn": "2026-09-09"
+    },
+    "furama-restaurant": {
+      "text": "",
+      "descriptor": "Chinese restaurant on S. Wentworth Ave. in Chinatown",
+      "sources": [],
+      "writtenFor": {
+        "name": "Furama Restaurant",
+        "lat": 41.84158,
+        "lng": -87.63215
+      },
+      "writtenOn": "2026-09-10"
     },
     "gaijin": {
       "text": "Chef Paul Virant opened Gaijin in November 2019 as Chicago's first restaurant built around okonomiyaki, the savory Japanese pancake, cooking both the mixed Osaka style and the layered Hiroshima style. The name means \"outsider,\" which is how Virant describes himself to Japanese cooking. A custom 12-foot griddle runs along the chef's counter and tables get their own teppan; kakigori shaved ice closes the meal.",
@@ -2546,6 +2647,17 @@
         "lng": -87.65697
       },
       "writtenOn": "2026-09-09"
+    },
+    "garcias-restaurant": {
+      "text": "A 2003 Tribune review described Garcia's as already 13 years old: carved dark-wood tables under Mexican-inspired murals, a deliberately mild kitchen, guacamole built on ripe avocados, and a bar stocked with 25 tequilas. It served until 4 a.m. on Saturdays, and the reviewer said not to miss the flan or the tres leches cake.",
+      "descriptor": "Mexican restaurant on N. Lincoln Ave. in Lincoln Square, open since about 1990",
+      "sources": ["https://www.chicagotribune.com/2003/04/16/garcias-24/"],
+      "writtenFor": {
+        "name": "Garcia's - Lincoln Square",
+        "lat": 41.96809,
+        "lng": -87.68837
+      },
+      "writtenOn": "2026-09-10"
     },
     "garfield-park": {
       "text": "Laid out in the 1870s by William Le Baron Jenney — the engineer later called the father of the skyscraper — it opened in 1874 as Central Park and was renamed in 1881 for the assassinated President James A. Garfield. Jens Jensen reshaped it as West Park System superintendent from 1905, adding the lagoon and designing the 4.5-acre conservatory, one of the largest plant conservatories in the country.",
@@ -2672,6 +2784,34 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "giddings-plaza": {
+      "text": "Lincoln Square's living room: a paved pedestrian square off Lincoln Avenue with a fountain dating to 1999 and a Lombard Lamp installed in 1979 — a nod to the neighborhood's deep German roots. Free Thursday-evening concerts fill it all summer as the Lincoln Square Summer Concert Series.",
+      "descriptor": "Pedestrian plaza on Lincoln Square's Lincoln Ave. mall, with a 1999 fountain",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lincoln_Square,_Chicago",
+        "https://www.lincolnsquare.org/summer-concert-series"
+      ],
+      "writtenFor": {
+        "name": "Giddings Plaza",
+        "lat": 41.96764,
+        "lng": -87.68756
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "gilt-bar": {
+      "text": "Gilt Bar has held down a corner of River North since 2010, a Hogsalt restaurant built on what it calls \"the pleasures of drinking in restaurants and eating in bars.\" Tucked below it is The Library, a concealed bar the owners describe as a hidden nod to Chicago's long speakeasy history.",
+      "descriptor": "River North bar and restaurant on W. Kinzie St., open since 2010",
+      "sources": [
+        "https://www.giltbarchicago.com/",
+        "https://www.timeout.com/chicago/restaurants/gilt-bar"
+      ],
+      "writtenFor": {
+        "name": "Gilt Bar",
+        "lat": 41.88927,
+        "lng": -87.63534
+      },
+      "writtenOn": "2026-09-10"
+    },
     "ginos-east": {
       "text": "Three cab drivers — Sam Levine, Fred Bartoli and George Loverde — opened Gino's East on E. Superior Street in 1966. In the 1970s customers started carving their initials into the tables, so the staff handed out markers and pointed them at the walls instead; graffiti now covers nearly every inch of the flagship. It left the address in 2000 and returned to a new building on the same spot in 2006.",
       "descriptor": "Deep-dish pizzeria off the Magnificent Mile with graffiti-covered walls, 1966",
@@ -2697,6 +2837,31 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "goat": {
+      "text": "The goats live at Farm-in-the-Zoo, the working-barnyard section of Lincoln Park Zoo that opened in 1964 and was renovated in 2002 to give city kids a first close-up with cows, pigs, chickens, ponies and goats. Like the rest of the zoo — founded in 1868 and one of the oldest in the country — it's free every day.",
+      "descriptor": "Goat yard at Farm-in-the-Zoo, the barnyard corner of Lincoln Park Zoo",
+      "sources": [
+        "https://www.lpzoo.org/exhibit/farm-in-the-zoo/",
+        "https://en.wikipedia.org/wiki/Lincoln_Park_Zoo"
+      ],
+      "writtenFor": {
+        "name": "Goat",
+        "lat": 41.91767,
+        "lng": -87.63381
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "goddess-and-the-baker": {
+      "text": "This is the original Goddess and the Baker, opened in spring 2015 on the Wabash corridor a block from Millennium Park — coffee, a pastry case, sandwiches and salads all day. It has since grown into a small chain with locations across Chicago plus Wilmette and Brookfield, Wisconsin.",
+      "descriptor": "Loop cafe-bakery at 33 S. Wabash near Millennium Park, open since 2015",
+      "sources": ["https://www.goddessandthebaker.com/about/"],
+      "writtenFor": {
+        "name": "Goddess and the Baker - Chicago Loop",
+        "lat": 41.88141,
+        "lng": -87.62594
+      },
+      "writtenOn": "2026-09-10"
+    },
     "goddess-and-the-baker-chicago-loop-north-lasalle-street": {
       "text": "Goddess and the Baker opened its first cafe in spring 2015 in the Wabash corridor near Millennium Park and has grown to eight all-day spots across Chicago, Wilmette and Brookfield, Wisconsin, serving coffee drinks and baked goods alongside breakfast, sandwiches and salads. This one sits at Wacker and LaSalle.",
       "descriptor": "All-day cafe and bakery at 225 N. LaSalle, Wacker & LaSalle in the Loop",
@@ -2710,6 +2875,17 @@
         "lng": -87.63223
       },
       "writtenOn": "2026-09-09"
+    },
+    "gold-star-bar": {
+      "text": "A true neighborhood dive on the Division Street strip, Gold Star draws a crowd that couldn't care less if you show up in sweats. Time Out singles out the jukebox — it swings from jazz to heavy metal — plus cheap beer (around $4), a free pool table, and visits from Claudio the tamale guy.",
+      "descriptor": "No-frills dive bar on Division St. in East Village, with a free pool table",
+      "sources": ["https://www.timeout.com/chicago/bars/gold-star-bar"],
+      "writtenFor": {
+        "name": "Gold Star Bar",
+        "lat": 41.9031,
+        "lng": -87.67205
+      },
+      "writtenOn": "2026-09-10"
     },
     "golden-apple": {
       "text": "A Lincoln Avenue diner that has run 24 hours a day since 1970 — \"we never close\" is the house line. Buttermilk pancakes in short and tall stacks are the draw, but it also runs a full dinner menu of steaks, chops, ribs and Greek chicken, plus a bar.",
@@ -2769,6 +2945,34 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "goose-island-shrimp-house-chicago": {
+      "text": "The counter bills itself as Chicago's oldest shrimp house, serving Chicagoland for more than 40 years. It's a cash-only fried-seafood carryout on Division Street — jumbo shrimp, oysters and catfish — closed Sundays and Mondays.",
+      "descriptor": "Cash-only fried-shrimp carryout at 1011 W. Division St.",
+      "sources": [
+        "https://gooseislandshrimphouse.com/",
+        "https://gooseislandshrimphouse.com/about"
+      ],
+      "writtenFor": {
+        "name": "Goose Island Shrimp House Chicago",
+        "lat": 41.90342,
+        "lng": -87.65299
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "gordon-ramsay-burger": {
+      "text": "The celebrity chef's burger concept debuted in Las Vegas in December 2012 and expanded in the 2020s to Chicago, Boston, Seoul and Harrods in London. The Chicago room sits at Ontario and State on the Near North Side and takes walk-ins — the restaurant says they're \"always welcome and encouraged,\" seated first-come, first-served.",
+      "descriptor": "Gordon Ramsay's burger restaurant at Ontario & State in River North",
+      "sources": [
+        "https://www.gordonramsayrestaurants.com/en/us/gordon-ramsay-burger/locations/chicago",
+        "https://en.wikipedia.org/wiki/Gordon_Ramsay"
+      ],
+      "writtenFor": {
+        "name": "Gordon Ramsay Burger",
+        "lat": 41.89345,
+        "lng": -87.62793
+      },
+      "writtenOn": "2026-09-10"
+    },
     "grant-park": {
       "text": "Laid out as Lake Park in 1844 and renamed for Ulysses S. Grant in 1901, 'Chicago's front yard' stayed open lakefront largely because merchant Aaron Montgomery Ward fought four court battles to keep buildings out of it. Its 319 acres later hosted the 1968 Democratic convention clashes, Obama's 2008 election-night speech and Lollapalooza.",
       "descriptor": "319-acre lakefront park downtown, known as 'Chicago's front yard'",
@@ -2779,6 +2983,17 @@
         "lng": -87.6183
       },
       "writtenOn": "2026-09-09"
+    },
+    "great-lawn": {
+      "text": "The Great Lawn is the open heart of the Obama Presidential Center's 19.3-acre campus in Jackson Park — 58,000 square feet built for summer picnics and winter sledding, beside the Wetland Walk and the playground. The grounds are free and open daily, 6 a.m. to 9 p.m.",
+      "descriptor": "58,000-sq-ft lawn on the Obama Presidential Center campus in Jackson Park",
+      "sources": ["https://www.obama.org/visit/campus/"],
+      "writtenFor": {
+        "name": "Great Lawn",
+        "lat": 41.78378,
+        "lng": -87.58503
+      },
+      "writtenOn": "2026-09-10"
     },
     "greek-islands": {
       "text": "Greek Islands opened at 200 S. Halsted in 1971 and is one of the surviving Greektown tavernas: the Halsted restaurant row lost the Parthenon, Santorini and Pegasus in 2016 and the Pan Hellenic Pastry Shop in 2017. Flaming saganaki — the \"Opa!\" cheese dish now served all over the neighborhood — was invented a few doors away at the Parthenon.",
@@ -2844,6 +3059,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "haisous-vietnamese-kitchen": {
+      "text": "Thai and Danielle Dang's Pilsen dining room serves Vietnamese cooking à la carte or as a grand tasting menu tracing the country's culinary history, and has earned Michelin recognition plus a 2026 James Beard nomination. Next door, their Cà Phê Đá café pours Vietnamese coffee, including a signature egg custard coffee.",
+      "descriptor": "Pilsen Vietnamese restaurant from chefs Thai and Danielle Dang",
+      "sources": ["https://haisous.com/"],
+      "writtenFor": {
+        "name": "HaiSous Vietnamese Kitchen",
+        "lat": 41.85788,
+        "lng": -87.65341
+      },
+      "writtenOn": "2026-09-10"
+    },
     "half-acre-beer-co-balmoral-tap-room-garden": {
       "text": "Half Acre started in 2006 and outgrew its original Lincoln Avenue brewhouse, so it built this bigger plant and pub on Balmoral Avenue in Bowmanville in 2015, about a mile and a half away. After the Lincoln Avenue site closed in 2021 this became the brewery's only production facility — including for Daisy Cutter, the West Coast pale ale that made its name.",
       "descriptor": "Half Acre's Bowmanville brewhouse and taproom, home of Daisy Cutter pale ale",
@@ -2865,6 +3091,17 @@
         "lng": -87.64656
       },
       "writtenOn": "2026-09-09"
+    },
+    "handlebar": {
+      "text": "Handlebar has been feeding Wicker Park made-from-scratch vegetarian and vegan comfort food since 2003, with a full bar and a beer garden out back. The week runs on specials: chimichangas Monday, mushroom \"chicken\" and waffles Tuesday, smashburger sliders Wednesday.",
+      "descriptor": "Vegetarian and vegan comfort food in Wicker Park since 2003, with a beer garden",
+      "sources": ["https://www.handlebarchicago.com/"],
+      "writtenFor": {
+        "name": "Handlebar",
+        "lat": 41.91021,
+        "lng": -87.68531
+      },
+      "writtenOn": "2026-09-10"
     },
     "hannahs-bretzel": {
       "text": "Founded in 2005 by Florian Pfahler, a Stuttgart native who opened his first shop in the Loop, and built around organic sandwiches on German-style pretzel bread. The name splices the German \"brezel\" with the American \"pretzel\" — brezel traces back to the Latin \"bracchiola,\" or \"little arms.\"",
@@ -2913,6 +3150,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "harry-carays-7th-inning-stretch": {
+      "text": "Named for Harry Caray, the broadcaster who called White Sox and Cubs games and whose gloriously off-key \"Take Me Out to the Ball Game\" made the seventh-inning stretch a Chicago ritual — a bit Bill Veeck started in 1976 by secretly wiring a PA mic into Caray's booth. The Water Tower Place restaurant shares a 23,000-square-foot complex with the Chicago Sports Museum, and diners get in free.",
+      "descriptor": "Sports bar and grill on level 7 of Water Tower Place, Mag Mile",
+      "sources": [
+        "https://www.harrycarays.com/harry-carays-7th-inning-stretch-mag-mile.html",
+        "https://en.wikipedia.org/wiki/Harry_Caray"
+      ],
+      "writtenFor": {
+        "name": "Harry Caray's 7th Inning Stretch",
+        "lat": 41.8981,
+        "lng": -87.62209
+      },
+      "writtenOn": "2026-09-10"
+    },
     "harry-carays-italian-steakhouse": {
       "text": "Cubs broadcaster Harry Caray lent his name to this 1987 steakhouse in the old Chicago Varnish Company building. In 2003 the restaurant group's Grant DePorter paid $113,824.16 for the Steve Bartman foul ball and had a special-effects expert publicly detonate it on February 26, 2004; fragments are still displayed at the restaurant, and in 2005 the group boiled the remains and worked the captured steam into a pasta sauce.",
       "descriptor": "Steak and Italian-American in River North's old Chicago Varnish Co. building",
@@ -2927,16 +3178,19 @@
       },
       "writtenOn": "2026-09-09"
     },
-    "hawthorne-race-course": {
-      "text": "Edward Corrigan, owner of 1890 Kentucky Derby winner Riley, established Hawthorne in Stickney, and it ran from 1891 under the Carey family for most of its life. It survived grandstand fires in 1902 and 1978 and a 1905 Chicago racing ban, but after its license was revoked in January 2026 and a February Chapter 11 filing, it ran its final race on July 19, 2026 and sold for $90 million to a buyer linked to data-center operator Digital Realty.",
-      "descriptor": "Historic Stickney horse-racing track, 1891 to 2026, now closed",
-      "sources": ["https://en.wikipedia.org/wiki/Hawthorne_Race_Course"],
+    "haymarket-memorial": {
+      "text": "This is where a bomb thrown at police during an 1886 rally for the eight-hour workday set off the Haymarket affair, which killed seven officers and at least four civilians and ended with four anarchists hanged. Mary Brogger's bronze, dedicated in 2004, recreates the speakers' wagon labor leaders stood on; the site was made a Chicago Landmark in 1992.",
+      "descriptor": "Bronze speakers'-wagon monument at Desplaines and Randolph, from 2004",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Haymarket_affair",
+        "https://www.marybrogger.com/artworks/haymarket-memorial-monument/"
+      ],
       "writtenFor": {
-        "name": "Hawthorne Race Course",
-        "lat": 41.82653,
-        "lng": -87.74857
+        "name": "Haymarket Memorial",
+        "lat": 41.88488,
+        "lng": -87.64413
       },
-      "writtenOn": "2026-09-09"
+      "writtenOn": "2026-09-10"
     },
     "haymarket-pub-brewery": {
       "text": "The brewpub opened on Randolph Street in 2010 and is named for the Haymarket Affair of 1886 — the violent clash between workers and police in Chicago that helped establish the eight-hour workday. It added a second brewpub and production brewery in Bridgman, Michigan in 2017.",
@@ -3030,6 +3284,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "hubbard-inn": {
+      "text": "Opened in February 2011 from the team behind English, the bi-level space was decked out in trappings inspired by Ernest Hemingway's sojourns in Europe — right down to a house cocktail called the Hemingway. The Chicago Reader headlined its debut \"A Haunt Fit for Hemingway.\"",
+      "descriptor": "Bi-level \"Continental tavern\" at 110 W. Hubbard St. in River North",
+      "sources": [
+        "https://chicagoreader.com/food/morsels-a-haunt-fit-for-hemingway/",
+        "https://hubbardinn.com/"
+      ],
+      "writtenFor": {
+        "name": "Hubbard Inn - River North",
+        "lat": 41.89026,
+        "lng": -87.6316
+      },
+      "writtenOn": "2026-09-10"
+    },
     "huck-finn-restaurant": {
       "text": "Huck Finn is an all-day-breakfast diner on Archer Avenue that runs a Mark Twain gag straight through the menu — the Becky Thatcher Breakfast, the Tom Sawyer Feast. What locals actually send visitors for is the donuts, which the place bills as \"the size of your head.\"",
       "descriptor": "Mark Twain–themed diner on Archer Ave, known for oversized donuts",
@@ -3062,6 +3330,20 @@
         "lng": -87.70193
       },
       "writtenOn": "2026-09-09"
+    },
+    "hungry-brain": {
+      "text": "Musicians Mike Reed and Josh Berman launched the weekly Sunday Transmission series here in January 2001, and it turned an unassuming bar into an incubator for Chicago's free-improvisation scene — Fred Anderson, Ken Vandermark, Craig Taborn and Wadada Leo Smith all played it. Since 2015 the booking has widened to early jazz and blues, electronic music and singer-songwriters.",
+      "descriptor": "Belmont Avenue bar and live-music venue for jazz and improvised music",
+      "sources": [
+        "https://www.hungrybrainchicago.com/about",
+        "https://www.hungrybrainchicago.com/"
+      ],
+      "writtenFor": {
+        "name": "Hungry Brain",
+        "lat": 41.93932,
+        "lng": -87.68643
+      },
+      "writtenOn": "2026-09-10"
     },
     "huntington-bank-pavilion-at-northerly-island": {
       "text": "This lakefront amphitheater sits on the old runway of Meigs Field. On the night of March 30, 2003 Mayor Richard M. Daley sent crews out to bulldoze X-shaped gouges into the airstrip, stranding aircraft and drawing the FAA's maximum fine of $33,000; the island became parkland and the concert venue opened in 2005. It has since been the Charter One, FirstMerit and Huntington Bank pavilion.",
@@ -3098,6 +3380,20 @@
         "lng": -87.70733
       },
       "writtenOn": "2026-09-09"
+    },
+    "ina-mae-tavern-packaged-goods": {
+      "text": "",
+      "descriptor": "New Orleans po-boys and boiled seafood at Beach and Wood in Wicker Park",
+      "sources": [
+        "https://chicago.eater.com/2018/6/19/17479134/ina-mae-tavern-packaged-goods-wicker-park-new-orleans-opening-date-beachwood",
+        "https://www.inamaetavern.com/"
+      ],
+      "writtenFor": {
+        "name": "Ina Mae Tavern & Packaged Goods",
+        "lat": 41.90766,
+        "lng": -87.67219
+      },
+      "writtenOn": "2026-09-10"
     },
     "indian-boundary-park": {
       "text": "The park takes its name from the boundary line set by the 1816 Treaty of St. Louis with the Odawa, Ojibwe and Potawatomi — the line ran right through these grounds. Its 1929 fieldhouse mixes Tudor Revival with Native American motifs, is a Chicago Landmark, and was restored in 2014 after a fire. A small zoo ran here for decades, starting with a single black bear; it closed in 2013 and the last animals went to Lincoln Park Zoo.",
@@ -3161,6 +3457,20 @@
         "lng": -87.64418
       },
       "writtenOn": "2026-09-09"
+    },
+    "international-museum-of-surgical-science": {
+      "text": "Established in 1954, the museum occupies a 1917 Lake Shore Drive mansion that Howard Van Doren Shaw designed as a replica of the Petit Trianon at Versailles for socialite Eleanor Robinson Countiss. Its 7,000-plus artifacts include a circa-1500 Austrian amputation saw, trephined skulls from ancient Peru, early X-rays by radiology pioneer Emil Grubbe, and the perfusion pump Charles Lindbergh invented with surgeon Alexis Carrel.",
+      "descriptor": "Surgery history museum in a 1917 Lake Shore Drive mansion",
+      "sources": [
+        "https://en.wikipedia.org/wiki/International_Museum_of_Surgical_Science",
+        "https://www.imss.org/about/"
+      ],
+      "writtenFor": {
+        "name": "International Museum of Surgical Science",
+        "lat": 41.91022,
+        "lng": -87.62674
+      },
+      "writtenOn": "2026-09-10"
     },
     "io-theater": {
       "text": "Del Close and Charna Halpern founded ImprovOlympic in 1981, and its house long-form structure, the Harold, shaped generations of performers — Tina Fey, Amy Poehler, Stephen Colbert, Bill Hader and Seth Meyers all came up through it. iO closed in June 2020 under pandemic pressure, but new owners bought the Kingsbury Street complex in July 2021 and reopened it on November 3, 2022.",
@@ -3291,6 +3601,31 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "jean-baptiste-point-du-sable-homesite": {
+      "text": "Jean Baptiste Point du Sable, a trader of African descent married to a Potawatomi woman named Kitihawa, built a farm and trading post near the mouth of the Chicago River in the 1780s — the city's first permanent non-Indigenous settlement. The homesite was designated a National Historic Landmark in 1976, and a bronze bust by Erik Blome was installed at Pioneer Court in 2009.",
+      "descriptor": "National Historic Landmark at Pioneer Court, 401 N. Michigan Ave.",
+      "sources": ["https://en.wikipedia.org/wiki/Jean_Baptiste_Point_du_Sable"],
+      "writtenFor": {
+        "name": "Jean Baptiste Point Du Sable Homesite",
+        "lat": 41.88939,
+        "lng": -87.62389
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "jeong": {
+      "text": "",
+      "descriptor": "Contemporary Korean tasting menu at 1460 W. Chicago Ave. in West Town",
+      "sources": [
+        "https://chicago.eater.com/2019/2/27/18242994/jeong-west-town-korean-dave-park-jennifer-tran-hanbun",
+        "https://www.jeongchicago.com/info"
+      ],
+      "writtenFor": {
+        "name": "Jeong",
+        "lat": 41.89631,
+        "lng": -87.66481
+      },
+      "writtenOn": "2026-09-10"
+    },
     "jerk-taco-man-greater-grand-crossing": {
       "text": "Julius Thomas sold jerk tacos out of the back of his wife's hair salon near Pulaski and Wilcox before opening a Garfield Park storefront in 2014, then adding this 12,000-square-foot South Side restaurant on State Street in 2016. Beyond the jerk there is red snapper, curry goat, oxtail stew and 18-hour smoked brisket. \"I'm not cheap with the spices and I'm not cheap with the meat,\" he told Block Club Chicago.",
       "descriptor": "Jamaican jerk and taco restaurant on S State St, Greater Grand Crossing",
@@ -3374,6 +3709,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "jojos-shake-bar": {
+      "text": "",
+      "descriptor": "Retro two-floor diner bar on W. Hubbard St. known for boozy shakes",
+      "sources": [
+        "https://chicago.eater.com/2019/2/19/18232367/jojos-milk-bar-desserts-boozy-milkshakes-opening-date-river-north-hubbard",
+        "https://chicago.eater.com/venue/74751/jojo-s-shake-bar"
+      ],
+      "writtenFor": {
+        "name": "Jojo's Shake Bar",
+        "lat": 41.88991,
+        "lng": -87.62896
+      },
+      "writtenOn": "2026-09-10"
+    },
     "joy-yee-noodle": {
       "text": "Joy Yee started in Evanston in 1994 and expanded to Chicago's Chinatown in 1996, and says it was among the first places to bring Taiwanese-style bubble tea to the Midwest. The menu is famously sprawling — noodles, shabu shabu, fruit freezes and bubble tea, pulling dishes and styles from across Asia into one book.",
       "descriptor": "Pan-Asian noodle house and bubble tea shop, in Chicago since 1996",
@@ -3398,6 +3747,17 @@
         "lng": -87.70953
       },
       "writtenOn": "2026-09-09"
+    },
+    "kaiser-tiger": {
+      "text": "The back beer garden becomes an outdoor curling rink from mid-November through mid-March, played with real 25-pound Canadian curling stones under a certified curling master — though players stand on non-slip mats rather than ice. Lanes rent in 40-minute blocks, four to a lane.",
+      "descriptor": "Sausage, bacon and beer bar at 1415 W. Randolph in the West Loop",
+      "sources": ["https://www.kaisertiger.com/curling/"],
+      "writtenFor": {
+        "name": "Kaiser Tiger",
+        "lat": 41.88383,
+        "lng": -87.66298
+      },
+      "writtenOn": "2026-09-10"
     },
     "kamehachi": {
       "text": "Marion Konishi opened Kamehachi in 1967 in its Old Town spot across from Second City, and it bills itself as Chicago's first sushi restaurant. It's still family-run, now by her daughter and granddaughter.",
@@ -3447,6 +3807,20 @@
         "lng": -87.58294
       },
       "writtenOn": "2026-09-09"
+    },
+    "king-crab-house": {
+      "text": "",
+      "descriptor": "Casual crab and seafood house at 1816 N. Halsted in Lincoln Park",
+      "sources": [
+        "https://chicago.eater.com/2016/7/18/12215780/lincoln-park-king-crab-comeback",
+        "https://kingcrabchicago.com/about"
+      ],
+      "writtenFor": {
+        "name": "King Crab House",
+        "lat": 41.91437,
+        "lng": -87.64856
+      },
+      "writtenOn": "2026-09-10"
     },
     "kingston-mines": {
       "text": "Open since 1968 and billed as Chicago's oldest continuously operating blues club, Kingston Mines takes its name from the Kingston Mines Theatre Company, which premiered \"Grease\" in 1971 before it went to Broadway. Owner Doc Pellegrino ran two stages so one band starts the moment the other finishes and the music never stops. Koko Taylor and Magic Slim played here; the Rolling Stones turned up in 1978.",
@@ -3522,6 +3896,28 @@
         "lng": -87.6903
       },
       "writtenOn": "2026-09-09"
+    },
+    "l-l-tavern": {
+      "text": "Open since the 1950s — first as the Columbia Tavern & Liquors — and later renamed for previous owners Lefty and Lauretta. Legend says serial killers John Wayne Gacy and Jeffrey Dahmer both drank here, Gacy supposedly turning up in a full clown outfit in the 1970s, though the claims have never been verified. Anthony Bourdain visited for his Travel Channel series.",
+      "descriptor": "Lakeview dive bar at Clark and Belmont, in business since the 1950s",
+      "sources": ["https://en.wikipedia.org/wiki/L%26L_Tavern"],
+      "writtenFor": {
+        "name": "L & L Tavern",
+        "lat": 41.94024,
+        "lng": -87.65068
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "la-creperie": {
+      "text": "A Lakeview mainstay for more than three decades, dressed like an old Parisian café — dim bar, weathered Paris posters, battered leather banquettes — where regulars settle in for hours over sweet and savory crêpes, a trio of pâtés and steak frites.",
+      "descriptor": "French crêperie on N. Clark St in Lakeview",
+      "sources": ["https://www.timeout.com/chicago/restaurants/la-creperie"],
+      "writtenFor": {
+        "name": "La Crêperie",
+        "lat": 41.93404,
+        "lng": -87.64568
+      },
+      "writtenOn": "2026-09-10"
     },
     "la-pasadita": {
       "text": "La Pasadita ran two storefronts on the same East Village block of Ashland, both turning out the same thing to the same standard: plain tacos of meat, chopped onion and cilantro that Time Out rated among the best in the city.",
@@ -3601,6 +3997,41 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "las-tablas-colombian-steakhouse": {
+      "text": "A Colombian restaurant on Lincoln Avenue known for the bandeja paisa — a New York strip, fried pork, a fried egg and beans piled on one plate — and for the arepa chorriada, smothered in melted cheese and onion-and-tomato criolla sauce.",
+      "descriptor": "Colombian restaurant on N. Lincoln Ave in Lakeview",
+      "sources": ["https://www.timeout.com/chicago/restaurants/las-tablas"],
+      "writtenFor": {
+        "name": "Las Tablas Colombian Steakhouse",
+        "lat": 41.93522,
+        "lng": -87.66278
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "laschets-inn": {
+      "text": "A pub since 1971 that turned to German cooking in 1991, Laschet's is the North Center address for rouladen — thin beef rolled around bacon, onions and pickles, served with braised cabbage and spaetzle — plus hackepeter, steak tartare on rye. Meals come with a complimentary shot of fruit schnapps.",
+      "descriptor": "German pub in North Center, a bar since 1971, rouladen and schnitzel",
+      "sources": ["https://www.timeout.com/chicago/restaurants/laschets-inn"],
+      "writtenFor": {
+        "name": "Laschet's Inn",
+        "lat": 41.95392,
+        "lng": -87.68199
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "lawrence-fish-market": {
+      "text": "An easy-to-miss Albany Park storefront, its windows plastered with faded ads, that is both a fish market and a takeout sushi counter. Locals know it for bargain nigiri and maki sold by the piece or by the tray — there is no dining room, and you can also just buy the fish raw to cook at home.",
+      "descriptor": "Takeout sushi counter and fish market on W. Lawrence in Albany Park",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/lawrence-fish-market"
+      ],
+      "writtenFor": {
+        "name": "Lawrence Fish Market - Albany Park",
+        "lat": 41.96842,
+        "lng": -87.72495
+      },
+      "writtenOn": "2026-09-10"
+    },
     "le-bouchon": {
       "text": "One of Chicago's longest-running French bistros, open in Bucktown since 1993 and still packed into a small, crowded room Time Out calls the closest thing Chicago has to a little Paris bistro. The orders that never change: the caramelized onion tart, onion soup under a gluttonous lid of Gruyère, steak frites, and duck for two.",
       "descriptor": "French bistro at 1958 N Damen Ave in Bucktown since 1993",
@@ -3651,6 +4082,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "lena-brava": {
+      "text": "The name means \"ferocious firewood,\" and that is the whole idea: the kitchen cooks Mexican dishes over a live hardwood fire, with a Baja-leaning menu. It shares its Randolph Street corner with sister brewpub Cruz Blanca.",
+      "descriptor": "Live-fire Baja Mexican kitchen on W. Randolph in the West Loop",
+      "sources": ["https://www.lenabrava.com/"],
+      "writtenFor": {
+        "name": "Leña Brava",
+        "lat": 41.88461,
+        "lng": -87.64996
+      },
+      "writtenOn": "2026-09-10"
+    },
     "leonas": {
       "text": "Leona's started in 1950 as a single Lakeview storefront and grew into one of Chicago's best-known family pizza names, serving thin crust, deep dish, Sicilian and pan pizza alongside Italian beef, pasta and fried mozzarella bricks. Three Chicago-area locations remain, including this one on Irving Park Road.",
       "descriptor": "Italian-American pizzeria at 4363 W Irving Park Rd; founded 1950",
@@ -3662,6 +4104,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "lh-rooftop": {
+      "text": "The bar sits on top of the 1923 London Guarantee Building, a Chicago Landmark raised on part of the old Fort Dearborn site, with a crown inspired by Stockholm's city hall. Since 2016 the tower has housed the LondonHouse hotel, and the rooftop runs from an indoor bar on 21 up to an open-air terrace over the Chicago skyline.",
+      "descriptor": "Open-air rooftop bar atop the 1923 LondonHouse on E. Wacker Drive",
+      "sources": [
+        "https://en.wikipedia.org/wiki/London_Guarantee_Building",
+        "https://londonhousechicago.com/rooftop"
+      ],
+      "writtenFor": {
+        "name": "LH Rooftop",
+        "lat": 41.88792,
+        "lng": -87.62525
+      },
+      "writtenOn": "2026-09-10"
+    },
     "lighthouse": {
       "text": "",
       "descriptor": "Ruined lighthouse building on the Oak Street breakwater in Lake Michigan",
@@ -3672,6 +4128,17 @@
         "lng": -87.60754
       },
       "writtenOn": "2026-09-09"
+    },
+    "lil-ba-ba-reeba": {
+      "text": "A River North offshoot of Cafe Ba-Ba-Reeba!, the Lincoln Park room that has billed itself as Chicago's original tapas bar since 1985. Same playbook in a smaller space: Spanish small plates like octopus and paella, sangria and Basque cheesecake.",
+      "descriptor": "Spanish tapas and sangria bar on N. Clark St in River North",
+      "sources": ["https://www.lilbabareeba.com/"],
+      "writtenFor": {
+        "name": "Lil' Ba-Ba-Reeba!",
+        "lat": 41.89043,
+        "lng": -87.63092
+      },
+      "writtenOn": "2026-09-10"
     },
     "lillies-q": {
       "text": "Chef Charlie McKenna opened Lillie's Q in 2010, naming it for his grandmother Lillie — born in 1927 in Beaufort, South Carolina, and known in the family for her barbecue — and the \"Q\" for his father, Quito. A competition pitmaster, McKenna smokes low and slow over peach wood and leans Carolina, with a vinegar-based Carolina sauce among the housemade sauces on the table.",
@@ -3768,6 +4235,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "logan-arcade": {
+      "text": "Logan Arcade fills a former hardware store on Fullerton with more than 80 meticulously maintained pinball machines and video game cabinets — one of the largest pinball collections in Chicago. The 21+ bar runs its own pinball leagues and tournaments, and draws a cult crowd to its Killer Queen cabinet, a 10-player arcade game.",
+      "descriptor": "Pinball and video game barcade on W Fullerton with 80+ cabinets",
+      "sources": [
+        "https://loganarcade.com/",
+        "https://www.timeout.com/chicago/bars/logan-arcade"
+      ],
+      "writtenFor": {
+        "name": "Logan Arcade",
+        "lat": 41.92522,
+        "lng": -87.68813
+      },
+      "writtenOn": "2026-09-10"
+    },
     "logan-square": {
       "text": "This green circle is the grand northwest terminus of Chicago's boulevard system, designed by William Le Baron Jenney and landscape architect Jens Jensen among others. At its center is the Illinois Centennial Monument, a 70-foot Tennessee marble Doric column topped by an eagle, raised in 1918 for the state's hundredth birthday and designed by Henry Bacon, the architect of the Lincoln Memorial.",
       "descriptor": "Boulevard-system plaza with the 1918 Illinois Centennial Monument",
@@ -3781,6 +4262,17 @@
         "lng": -87.70677
       },
       "writtenOn": "2026-09-09"
+    },
+    "lonesome-rose": {
+      "text": "From the crew behind Longman & Eagle, Lost Lake and Parson's Chicken & Fish, this Logan Square Tex-Mex spot pours margaritas by the glass or the pitcher — five on the rocks, three frozen — alongside eight kinds of tacos and an Elote Old Fashioned. Regulars come for the rooftop patio and the horchata soft serve.",
+      "descriptor": "Tex-Mex tacos and margaritas with a rooftop patio in Logan Square",
+      "sources": ["https://www.timeout.com/chicago/restaurants/lonesome-rose"],
+      "writtenFor": {
+        "name": "Lonesome Rose - Logan Square",
+        "lat": 41.9196,
+        "lng": -87.69708
+      },
+      "writtenOn": "2026-09-10"
     },
     "longman-eagle": {
       "text": "Longman & Eagle opened in Logan Square in 2010 as a modern take on the old Chicago inn — eat, drink and sleep in one building, with six guest rooms above the dining room and a deep whiskey list. It held a Michelin star from 2011 through 2017, then moved onto the guide's Bib Gourmand list, where it has stayed.",
@@ -3986,6 +4478,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "luellas-southern-kitchen": {
+      "text": "Chef and owner Darnell Reed named the place for his great-grandmother Luella and built the menu on the southern recipes he learned from her as a child. It shows up in dishes like bourbon chicken and waffles, crispy catfish tacos and shrimp po' boys.",
+      "descriptor": "Southern and soul food kitchen on N. Lincoln Ave in Lincoln Square",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/luellas-southern-kitchen"
+      ],
+      "writtenFor": {
+        "name": "Luella's Southern Kitchen",
+        "lat": 41.96521,
+        "lng": -87.68612
+      },
+      "writtenOn": "2026-09-10"
+    },
     "lula-cafe": {
       "text": "Jason Hammel and Amalea Tshilds opened Lula Cafe on September 2, 1999 in a small Kedzie Boulevard storefront with a four-burner home stove and a dented set of thrifted pots and pans. It now spans three storefronts, Hammel has three James Beard Best Chef: Great Lakes nominations, and the brunch is what locals queue for.",
       "descriptor": "Seasonal market-driven cafe on N Kedzie Blvd in Logan Square since 1999",
@@ -4021,6 +4526,20 @@
         "lng": -87.62758
       },
       "writtenOn": "2026-09-09"
+    },
+    "m-henry": {
+      "text": "Owner-chef JD Voss ran a restaurant in San Francisco for a decade before coming back to their Chicago hometown to open this Andersonville brunch room at 5707 N Clark. It's daytime-only — 8am to 2pm, closed Mondays — built on globally inspired takes on breakfast: jerk chicken empanadas, breakfast bread pudding, and Fannie's Killer Fried Egg Sandwich.",
+      "descriptor": "New American brunch cafe on N Clark St in Andersonville",
+      "sources": [
+        "https://www.mhenry.net/our-story",
+        "https://www.mhenry.net/"
+      ],
+      "writtenFor": {
+        "name": "M Henry",
+        "lat": 41.98564,
+        "lng": -87.6691
+      },
+      "writtenOn": "2026-09-10"
     },
     "maggie-daley-park": {
       "text": "Opened in December 2014, the 20-acre Michael Van Valkenburgh design replaced the old Daley Bicentennial Plaza and is named for Maggie Daley, the city's former first lady, who died of cancer in 2011. Its quarter-mile ice-skating ribbon loops past rock-climbing walls and a three-acre children's Play Garden; the BP Pedestrian Bridge links it back to Millennium Park.",
@@ -4127,6 +4646,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "mariscos-san-pedro": {
+      "text": "Opened in 2024 in the Thalia Hall building on 18th Street, taking over the room that was Dusek's. It's a 16\" on Center project run by chefs out of Le Bouchon, Obelix and Taqueria Chingon — Oliver Poilevey among them — doing sustainably sourced Mexican coastal seafood: scallop aguachile, flounder with corn, crab micheladas.",
+      "descriptor": "Mexican coastal seafood in Thalia Hall's old Dusek's space, Pilsen",
+      "sources": [
+        "https://mariscossanpedro.com/about/",
+        "https://mariscossanpedro.com"
+      ],
+      "writtenFor": {
+        "name": "Mariscos San Pedro",
+        "lat": 41.8578,
+        "lng": -87.65745
+      },
+      "writtenOn": "2026-09-10"
+    },
     "marisol": {
       "text": "Marisol is the restaurant and bar that came out of the Museum of Contemporary Art's 2017 renovation of its public spaces, and the dining room doubles as an artwork: artist Chris Ofili designed the immersive environment around you. Chef Jason Hammel runs the kitchen, alongside chef Sarah Rinkavage.",
       "descriptor": "Restaurant and bar inside the MCA, set in a Chris Ofili art environment",
@@ -4194,6 +4727,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "mckinley-park": {
+      "text": "Dedicated on June 13, 1902 before a crowd of more than 10,000, McKinley Park was the South Park Commission's first large neighborhood park built for the crowded blocks around the Union Stock Yards, laid out on the old Brighton Park Race Track grounds. It's named for President William McKinley, chosen a month after his 1901 assassination; a Charles Mulligan statue of him was unveiled on July 4, 1905.",
+      "descriptor": "72-acre South Side park with a lagoon and a 1916 Burnham fieldhouse",
+      "sources": [
+        "https://en.wikipedia.org/wiki/McKinley_Park_%28Chicago_park%29"
+      ],
+      "writtenFor": {
+        "name": "McKinley Park",
+        "lat": 41.82491,
+        "lng": -87.67968
+      },
+      "writtenOn": "2026-09-10"
+    },
     "medici-on-57th": {
       "text": "Hans Morsbach bought the Medici in 1962 for about a thousand dollars after spotting a for-sale sign on a Hyde Park walk, and hired University of Chicago students for decades afterward. Generations of them carved graffiti into the wooden tables: \"It was not by design, let me tell you that. It just kind of happened, and we discourage it,\" he said. He patches the deepest carvings himself.",
       "descriptor": "Hyde Park pizza café, bakery and deli on 57th St since 1962",
@@ -4218,6 +4764,20 @@
         "lng": -87.63198
       },
       "writtenOn": "2026-09-09"
+    },
+    "mercat-a-la-planxa": {
+      "text": "Iron Chef Jose Garces opened this Barcelona-style tapas room in 2008, and it sits inside the Blackstone Hotel — the S Michigan Avenue landmark where the phrase \"smoke-filled room\" was coined during the 1920 Republican convention, and where a dozen 20th-century U.S. presidents have stayed.",
+      "descriptor": "Catalan tapas in the Blackstone Hotel on S Michigan Ave, South Loop",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jose_Garces",
+        "https://en.wikipedia.org/wiki/The_Blackstone_Hotel"
+      ],
+      "writtenFor": {
+        "name": "Mercat a la Planxa",
+        "lat": 41.87327,
+        "lng": -87.62463
+      },
+      "writtenOn": "2026-09-10"
     },
     "metro": {
       "text": "Joe Shanahan opened Metro in 1982 in a building put up in 1927 as a Swedish community center, a block from Wrigley Field. It became the room Chicago bands broke out of — Smashing Pumpkins and Material Issue among them — and hosted Nirvana and Pearl Jam on the way up; Pearl Jam's 1992 show there became a live album. Smart Bar runs in the basement.",
@@ -4271,6 +4831,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "middle-east-bakery-grocery": {
+      "text": "Serving Chicago since 1981, this Foster Avenue shop bakes pita and other Middle Eastern breads fresh in brick ovens daily and runs a deli counter of pickled vegetables, olives and cheeses alongside imported Turkish, Persian and Middle Eastern groceries. A sibling grill on Clark Street turns out kabobs and other cooked plates.",
+      "descriptor": "Middle Eastern grocery and bakery on W Foster Ave since 1981",
+      "sources": ["https://www.middleeastbakeryandgrocery.com/"],
+      "writtenFor": {
+        "name": "Middle East Bakery & Grocery",
+        "lat": 41.9763,
+        "lng": -87.66858
+      },
+      "writtenOn": "2026-09-10"
+    },
     "midway-plaisance": {
       "text": "Olmsted, Vaux & Co. were hired in 1869 to lay out this mile-long green strip linking Washington and Jackson Parks. In 1893 it became the World's Columbian Exposition's amusement row — home to the original Ferris Wheel and the \"Street in Cairo\" — which is why every fair's ride-and-game strip has been called a midway ever since. The University of Chicago expanded south across it in 1926.",
       "descriptor": "Mile-long Olmsted park joining Washington and Jackson Parks in Hyde Park",
@@ -4281,6 +4852,20 @@
         "lng": -87.59632
       },
       "writtenOn": "2026-09-09"
+    },
+    "mikos-italian-ice": {
+      "text": "Miko's has been refreshing Chicago since 1997, starting from the basement window of a two-story house at 1846 N Damen Ave in Bucktown. The ice is dairy-free, made from real fruit pulverized and frozen seeds and all — somewhere between Hawaiian shave ice and sorbet — with 30-plus flavors rotating through the season.",
+      "descriptor": "Seasonal dairy-free Italian ice shop on N Sacramento, Logan Square",
+      "sources": [
+        "https://mikositalianice.com/",
+        "https://www.timeout.com/chicago/restaurants/mikos-italian-ice"
+      ],
+      "writtenFor": {
+        "name": "Miko's Italian Ice - Logan Square",
+        "lat": 41.92259,
+        "lng": -87.70239
+      },
+      "writtenOn": "2026-09-10"
     },
     "millennium-monument": {
       "text": "The half-circle of fluted columns is a limestone recreation of Edward H. Bennett's concrete peristyle, which stood in Grant Park from 1917 until it was demolished in 1953. Rebuilt in 2002 with 24 columns, it was scaled down to an 80-foot diameter to fit an accessible ramp behind it, and its pedestal lists the 115 donors — Oprah Winfrey among them — who gave $1 million or more toward Millennium Park.",
@@ -4314,6 +4899,20 @@
         "lng": -87.62636
       },
       "writtenOn": "2026-09-09"
+    },
+    "mindys-bakery": {
+      "text": "Mindy Segal, long one of Chicago's best-known pastry chefs, closed her Bucktown restaurant Hot Chocolate in 2020 and opened this Milwaukee Avenue bakery in summer 2022, a few blocks from the old room. It's grab-and-go and cashless, open Wednesday through Sunday until things sell out: sweet and savory Danishes, sticky cinnamon rolls, quiche, cookies, breads, giardiniera cream cheese bagels.",
+      "descriptor": "Pastry chef Mindy Segal's bakery on N Milwaukee Ave, Wicker Park",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/mindys-bakery",
+        "https://www.mindysbakery.com/"
+      ],
+      "writtenFor": {
+        "name": "Mindy's Bakery",
+        "lat": 41.91368,
+        "lng": -87.67719
+      },
+      "writtenOn": "2026-09-10"
     },
     "minghin-cuisine": {
       "text": "MingHin's Chinatown Square flagship is a big, modern dim sum room with service running from breakfast into the small hours — 8am to 4pm, then 9pm to 2am. Beyond the dim sum it's known for Cantonese roast meats — crackling barbecue duck, roast pork belly — and pan-fried rice noodles in XO sauce. It's been a repeat Michelin Bib Gourmand pick.",
@@ -4361,6 +4960,20 @@
         "lng": -87.61667
       },
       "writtenOn": "2026-09-09"
+    },
+    "mollys-cupcakes-streeterville": {
+      "text": "Molly's is named for the founder's third-grade teacher, Miss Molly, who baked cupcakes for all of her students' birthdays — which is why the shops carry a school theme of vintage lunchboxes, lockers and blackboards, and why the company donates cupcakes and gift cards to school fundraisers. The original is in Lincoln Park; the center-filled cupcakes, in flavors like peach cobbler and Samoa, are the calling card.",
+      "descriptor": "Cupcake shop in the South Loop, known for center-filled cupcakes",
+      "sources": [
+        "https://mollyscupcakes.com/pages/about",
+        "https://www.chicagotribune.com/2019/05/02/down-to-business-cupcake-bakery-a-hit-in-downtown-naperville-owners-say/"
+      ],
+      "writtenFor": {
+        "name": "Molly’s Cupcakes - Chicago Loop",
+        "lat": 41.86775,
+        "lng": -87.62605
+      },
+      "writtenOn": "2026-09-10"
     },
     "momotaro": {
       "text": "Boka Restaurant Group's big Fulton Market Japanese room does robata grilling, a sushi counter and Alaskan king crab cooked tableside on the hibachi. Downstairs is a red-lit basement izakaya built around a four-sided bar pouring Japanese whisky, sake and cocktails — half waiting room, half destination in its own right. The namesake momotaro tartare is the signature dish.",
@@ -4461,6 +5074,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "monument-to-the-great-northern-migration": {
+      "text": "Alison Saar's bronze traveler stands on King Drive in Bronzeville, one hand raised in salutation, the other gripping a worn suitcase. It honors the African Americans who migrated from the South to Chicago during the Great Migration.",
+      "descriptor": "Alison Saar bronze on Martin Luther King Jr. Drive, Bronzeville",
+      "sources": ["https://en.wikipedia.org/wiki/King_Drive_(Chicago)"],
+      "writtenFor": {
+        "name": "Monument to the Great Northern Migration",
+        "lat": 41.84703,
+        "lng": -87.61752
+      },
+      "writtenOn": "2026-09-10"
+    },
     "moody-tongue-brewing-company": {
       "text": "Brewmaster Jared Rouben runs Moody Tongue as a culinary brewery — chef-driven beers composed like dishes. Alongside the casual taproom bar, its Dining Room serves a ten-plus-course tasting menu paired entirely with beer instead of wine, and is Michelin-starred, a rarity for a brewery.",
       "descriptor": "Chef-driven brewery with a taproom bar and fine-dining beer pairings",
@@ -4510,6 +5134,17 @@
         "lng": -87.63737
       },
       "writtenOn": "2026-09-09"
+    },
+    "mr-greek-gyros": {
+      "text": "A gyros counter on the stretch of Halsted Street that has been Chicago's Greektown since about 1960, when the original \"Greek Delta\" near Halsted and Harrison was cleared for the UIC campus and the Eisenhower Expressway. It sits on the same few blocks where flaming saganaki was invented, at the Parthenon — which closed in 2016 after 48 years.",
+      "descriptor": "Gyros counter on S Halsted St in Greektown",
+      "sources": ["https://en.wikipedia.org/wiki/Greektown,_Chicago"],
+      "writtenFor": {
+        "name": "Mr Greek Gyros - West Loop",
+        "lat": 41.87807,
+        "lng": -87.6474
+      },
+      "writtenOn": "2026-09-10"
     },
     "muddy-waters": {
       "text": "This bronze sidewalk plaque is one of the Bronzeville Walk of Fame markers running along Martin Luther King Jr. Drive from 25th to 35th, honoring African-American pioneers. Muddy Waters came north from Mississippi in 1943 and went electric because, as he put it, \"couldn't nobody hear you with an acoustic.\" The Rolling Stones took their name from his 1950 recording \"Rollin' Stone.\"",
@@ -4572,6 +5207,20 @@
         "lng": -87.60415
       },
       "writtenOn": "2026-09-09"
+    },
+    "navy-pier-beer-garden": {
+      "text": "A seasonal open-air bar out on Navy Pier — the 3,300-foot Municipal Pier that opened in 1916 and was renamed in 1927 for WWI naval veterans, now Chicago's second most-visited attraction at over nine million people a year. Craft beer, cornhole and lawn games, Thursday trivia and live music with the skyline behind you, plus a view of the pier's Wednesday and Saturday fireworks.",
+      "descriptor": "Seasonal lakefront beer garden on Navy Pier with skyline views",
+      "sources": [
+        "https://navypier.org/pier-locations/navy-pier-beer-garden/",
+        "https://en.wikipedia.org/wiki/Navy_Pier"
+      ],
+      "writtenFor": {
+        "name": "Navy Pier Beer Garden",
+        "lat": 41.89164,
+        "lng": -87.60038
+      },
+      "writtenOn": "2026-09-10"
     },
     "neofuturists": {
       "text": "Greg Allen founded the Neo-Futurists in 1988 on \"an aesthetics of honesty, speed and brevity\" — performers play only themselves, on the stage they are actually standing on. Their late-night \"Too Much Light Makes the Baby Go Blind\" raced through 30 plays in 60 minutes and ran some 28 years before closing on December 31, 2016; its successor, The Infinite Wrench, took over in 2017.",
@@ -4637,6 +5286,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "nicolaus-copernicus-monument": {
+      "text": "The Adler Planetarium commissioned the monument to mark the 500th anniversary of Copernicus's birth, and it was dedicated in 1973. Bronislaw Koniuszy's bronze is a replica of Bertel Thorvaldsen's 1830 Copernicus monument in Warsaw, Poland.",
+      "descriptor": "Bronze Copernicus statue on Solidarity Drive by the Adler Planetarium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nicolaus_Copernicus_Monument_(Chicago)"
+      ],
+      "writtenFor": {
+        "name": "Nicolaus Copernicus Monument",
+        "lat": 41.86635,
+        "lng": -87.6078
+      },
+      "writtenOn": "2026-09-10"
+    },
     "nookies": {
       "text": "The original Nookies opened on Wells Street in 1973 and spawned a small North Side family: Nookies Too in Lincoln Park in 1982, then Nookies Tree in Lakeview three years later. It's a plain family diner built on pancakes and omelets, still going on Wells Street after 50 years.",
       "descriptor": "Old Town breakfast diner on Wells Street since 1973",
@@ -4687,6 +5349,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "novelty-golf-games": {
+      "text": "Open since 1949 at Lincoln and Devon in Lincolnwood and still run by the Klatzco family, now in its fourth generation, it is classic miniature golf: two 18-hole courses built by hand, pedal-activated obstacles, heavy summer flower plantings, and a roughly 60-year-old elephant figure that survived a tornado in the late 1960s.",
+      "descriptor": "Two hand-built 18-hole miniature golf courses at Lincoln and Devon",
+      "sources": [
+        "https://abc7chicago.com/post/classic-mini-golf-course-celebrates-65-years-in-lincolnwood-/226761/"
+      ],
+      "writtenFor": {
+        "name": "Novelty Golf & Games",
+        "lat": 41.99785,
+        "lng": -87.72069
+      },
+      "writtenOn": "2026-09-10"
+    },
     "nuclear-energy": {
       "text": "A Henry Moore bronze — part mushroom cloud, part skull — stands on the Ellis Avenue spot where Enrico Fermi's team achieved the world's first self-sustaining nuclear chain reaction, under the west stands of the old Stagg Field, on December 2, 1942. Moore's sculpture was dedicated on the 25th anniversary of that day at 3:36 p.m., the minute the pile went critical.",
       "descriptor": "Henry Moore bronze on Ellis Ave marking the first nuclear chain reaction",
@@ -4725,6 +5400,19 @@
         "lng": -87.59952
       },
       "writtenOn": "2026-09-09"
+    },
+    "obama-kissing-rock": {
+      "text": "In 2012 the owners of the Dorchester Commons shopping center set a plaque on a boulder outside the former Baskin-Robbins where Barack and Michelle kissed on their 1989 first date. It quotes Obama in O, The Oprah Magazine: \"I kissed her, and it tasted like chocolate.\" The ice cream shop is now a Subway.",
+      "descriptor": "Granite boulder marking the Obamas' first kiss, at 53rd and Dorchester",
+      "sources": [
+        "https://www.nbcchicago.com/news/local/plaque-marks-first-couples-first-kiss-chicago/1935688/"
+      ],
+      "writtenFor": {
+        "name": "Obama Kissing Rock",
+        "lat": 41.79959,
+        "lng": -87.59168
+      },
+      "writtenOn": "2026-09-10"
     },
     "obama-presidential-center-museum": {
       "text": "The Obama Presidential Center opened to the public on Juneteenth 2026, on 19 acres of Jackson Park on the South Side. Its 225-foot museum tower — already nicknamed the \"Obamalisk\" — carries five-foot letters from Obama's 2015 Selma speech. It is the first fully digitized presidential library: the paper records live at a National Archives facility in Hoffman Estates, not on site.",
@@ -4772,6 +5460,20 @@
         "lng": -87.63553
       },
       "writtenOn": "2026-09-09"
+    },
+    "opart-thai-house-restaurant": {
+      "text": "Opart and Mookda opened the first Opart Thai House in Lincoln Square in 1983, and are described as pioneers of Thai food in Chicago — she developed the recipes over 30-plus years there, he worked the room. The next generation still cooks under the \"Original Since 1983\" banner, now on Chicago Avenue in West Town.",
+      "descriptor": "Thai kitchen on Chicago Ave in West Town, offshoot of a 1983 original",
+      "sources": [
+        "https://opartthai.com/?page_id=349",
+        "https://www.opartthai.com/"
+      ],
+      "writtenFor": {
+        "name": "Opart Thai House Restaurant",
+        "lat": 41.89622,
+        "lng": -87.66686
+      },
+      "writtenOn": "2026-09-10"
     },
     "orange-garden": {
       "text": "Orange Garden is widely called the oldest Chinese restaurant in Chicago, serving Cantonese-American food in North Center since 1932. Its ten-foot \"Chop Suey\" neon — which Preservation Chicago called the city's oldest continuously working neon sign — was auctioned off for $17,000 after the family that runs the place found refurbishment, permits and upkeep too costly.",
@@ -4941,6 +5643,31 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "pasta-bowl": {
+      "text": "The Pasta Bowl dates to 1996 and has grown into a small local group with rooms in Lincoln Park, Wicker Park and Lincoln Square. It bills itself as \"Chicago's favorite pasta joint,\" known for outsized portions — pasta bowls bigger than your head.",
+      "descriptor": "Big-portion Italian pasta house, part of a local group founded in 1996",
+      "sources": ["https://www.pastabowl.com"],
+      "writtenFor": {
+        "name": "Pasta Bowl - West Town",
+        "lat": 41.91065,
+        "lng": -87.67469
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "paulie-gees": {
+      "text": "Paulie Gee's, the wood-fired pizzeria Paul Giannone started in Greenpoint, Brooklyn, opened this Logan Square room at 2451 N. Milwaukee Ave. on July 7, 2016. Alongside wood-fired rounds like the Hellboy, the Chicago kitchen makes a rectangular pie of its own — the Logan Square, sold in limited numbers on Sundays, Mondays and Wednesdays.",
+      "descriptor": "Brooklyn wood-fired pizzeria on Milwaukee Ave in Logan Square since 2016",
+      "sources": [
+        "https://www.timeout.com/chicago/blog/paulie-gees-opens-logan-square-location-this-thursday-070516",
+        "https://www.pauliegee.com/"
+      ],
+      "writtenFor": {
+        "name": "Paulie Gee's - Logan Square",
+        "lat": 41.92591,
+        "lng": -87.70175
+      },
+      "writtenOn": "2026-09-10"
+    },
     "paulie-gees-logan-square": {
       "text": "This Paulie Gee's is the Wicker Park slice shop at 1566 N Damen Ave: a New York-style counter turning out 20-inch pies whole or by the slice, including the Hellboy — pepperoni finished with hot honey.",
       "descriptor": "NY-style slice shop at 1566 N Damen Ave in Wicker Park, 20-inch pies",
@@ -4951,6 +5678,17 @@
         "lng": -87.67762
       },
       "writtenOn": "2026-09-09"
+    },
+    "pearls-place-restaurant": {
+      "text": "Pearl's Place has been rooted in Bronzeville for more than 30 years, serving Southern soul food buffet-style at breakfast, lunch and dinner, and has been nominated for Best Buffet Restaurant in USA TODAY 10Best's Readers' Choice Awards.",
+      "descriptor": "Southern soul food buffet restaurant in Bronzeville",
+      "sources": ["https://www.pearlsplacerestaurant.com/about"],
+      "writtenFor": {
+        "name": "Pearl's Place Restaurant",
+        "lat": 41.82361,
+        "lng": -87.62285
+      },
+      "writtenOn": "2026-09-10"
     },
     "pepes-mexican-restaurant": {
       "text": "Pepe's was started in 1967 by Mario Dovalina and Edwin Ptak and grew from a single neighborhood spot into a Chicago-and-Northwest-Indiana chain of more than 25 restaurants. The locations are individually owned and operated, so the person greeting you at the door is often the owner.",
@@ -4987,6 +5725,20 @@
         "lng": -87.62966
       },
       "writtenOn": "2026-09-09"
+    },
+    "phillys-best": {
+      "text": "The pitch is that the cheesesteak ingredients are shipped in from Philadelphia rather than approximated locally — alongside oven-baked grinders, stuffed pizza, wings and salads. It is also one of Greektown's late-night stops, with the counter open to 2 a.m. Monday through Thursday and 4 a.m. Friday and Saturday.",
+      "descriptor": "Late-night Philly cheesesteak counter at 769 W. Jackson Blvd in Greektown",
+      "sources": [
+        "https://www.opachicago.com/greek-owned-business/phillys-best",
+        "https://greektownchicago.org/phillys-best/"
+      ],
+      "writtenFor": {
+        "name": "Philly‘s Best - West Loop",
+        "lat": 41.87783,
+        "lng": -87.64681
+      },
+      "writtenOn": "2026-09-10"
     },
     "pho-777": {
       "text": "Phở 777 sits on the Argyle Street strip in Uptown, where The Infatuation calls its phở one of the best bowls in the city — sweet but balanced with beef and warming spices. The big dining room supplies its own entertainment, with TVs going and a light projecting images of the dishes across the space.",
@@ -5055,6 +5807,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "pick-me-up-cafe": {
+      "text": "Pick Me Up Cafe spent years on this stretch of Clark Street in Wrigleyville as a vegetarian- and vegan-friendly diner before moving a couple of blocks up Clark to Uptown in 2020, keeping its vintage hodgepodge decor. The menu runs to vegan mac and cheeze, vegan mozzarella sticks, eggplant grinders and tofu tostadas alongside regular diner fare.",
+      "descriptor": "Vegan-friendly all-day diner, long a Clark Street fixture in Wrigleyville",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/pick-me-up-cafe"
+      ],
+      "writtenFor": {
+        "name": "Pick Me Up Cafe",
+        "lat": 41.97124,
+        "lng": -87.66794
+      },
+      "writtenOn": "2026-09-10"
+    },
     "piece-brewery-pizzeria": {
       "text": "Bill Jacobs moved to Chicago in 1983 and couldn't find the New Haven thin crust he grew up on, so he recruited high school friend Ray Peck — who had roots at Sally's Apizza in New Haven — and converted a classic bowstring-truss roofing and construction building in Wicker Park into Piece, which opened in July 2001. The brewery has since taken 29 medals, its Golden Arm winning bronze at both the Great American Beer Festival and the World Beer Cup, and Cheap Trick's Rick Nielsen is a co-owner.",
       "descriptor": "New Haven-style thin-crust pizza and brewpub on North Ave, Wicker Park",
@@ -5082,6 +5847,19 @@
         "lng": -87.60724
       },
       "writtenOn": "2026-09-09"
+    },
+    "pierrot-gourmet-at-the-peninsula": {
+      "text": "The casual cafe affiliated with the Peninsula hotel serves simple French fare — flambe and crunchy Alsatian tarts that resemble thin-crust pizzas — at communal tables, with pastries as the standout. Mornings run to cappuccino and buttery croissants; evenings are the quiet half.",
+      "descriptor": "French cafe and bakery at 108 E Superior St in Streeterville",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/pierrot-gourmet"
+      ],
+      "writtenFor": {
+        "name": "Pierrot Gourmet at The Peninsula",
+        "lat": 41.8959,
+        "lng": -87.62527
+      },
+      "writtenOn": "2026-09-10"
     },
     "pioneer-zephyr": {
       "text": "On May 26, 1934 this Burlington streamliner ran Denver to Chicago nonstop — 1,015 miles in 13 hours 5 minutes, averaging 77 mph and touching 112.5 mph — arriving on the opening day of the Century of Progress world's fair. The dash inspired the 1934 film \"The Silver Streak,\" which borrowed the train's nickname. Retired in 1960, it was donated to the museum on the 26th anniversary of the run, to the day.",
@@ -5122,6 +5900,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "pizza-nova-west-elsdon": {
+      "text": "Pizza Nova is a Chicago family pizzeria with five shops; this is the West Elsdon location at 5849 S. Pulaski Rd. The company's own site dates the business to 1982.",
+      "descriptor": "Local pizzeria on S. Pulaski Rd in West Elsdon, one of five Pizza Nova shops",
+      "sources": ["https://www.lapizzanova.com/locations"],
+      "writtenFor": {
+        "name": "Pizza Nova - West Elsdon",
+        "lat": 41.78625,
+        "lng": -87.72259
+      },
+      "writtenOn": "2026-09-10"
+    },
     "pizzeria-due": {
       "text": "Ike Sewell, who founded Pizzeria Uno with Ric Riccardo in 1943, opened Due one block away in 1955; the names are simply Italian for one and two. Uno's claim to have invented Chicago deep dish is contested, though: a 1956 Chicago Daily News article credited cook Rudy Malnati Sr. with the original recipe.",
       "descriptor": "Deep-dish pizzeria in River North, Pizzeria Uno's sibling since 1955",
@@ -5146,6 +5935,20 @@
         "lng": -87.62691
       },
       "writtenOn": "2026-09-09"
+    },
+    "pleasant-house-pub": {
+      "text": "Art and Chelsea Jackson started Pleasant House as a Bridgeport bakery in 2011, then moved to Pilsen and opened this full pub in 2016. Their handmade savory Royal Pies were named by Eater Chicago as one of 25 iconic Chicago foods. Art cooked at Les Nomades and San Francisco's Fifth Floor; both Jacksons attended Kendall College.",
+      "descriptor": "British-style pub in Pilsen known for its savory Royal Pies",
+      "sources": [
+        "https://www.pleasanthousepub.com/about",
+        "https://www.pleasanthousepub.com/"
+      ],
+      "writtenFor": {
+        "name": "Pleasant House Pub",
+        "lat": 41.85358,
+        "lng": -87.64621
+      },
+      "writtenOn": "2026-09-10"
     },
     "polk-bros-park": {
       "text": "Navy Pier's 13-acre front lawn, opened in 2016 after the Polk family — whose foundation was started by appliance retailer Sol Polk — gave $20 million to the pier's redevelopment. The centerpiece fountain is a summer splash pad that freezes into a lighted ice rink in winter, and its City and Lake stages help carry the more than 245 free public programs Navy Pier offers each year.",
@@ -5243,6 +6046,20 @@
         "lng": -87.6323
       },
       "writtenOn": "2026-09-09"
+    },
+    "punch-house": {
+      "text": "Punch House sits in the basement of Thalia Hall, the 1892 Pilsen landmark built by saloonkeeper John Dusek and designated a Chicago Landmark in 1989. The bar builds its menu around punch's maritime history — 17th-century British sailors diluting rum rations with sugar and spices on voyages to India — and the drink's five tenets: strong, weak, bitter, sour and sweet.",
+      "descriptor": "Punch-bowl cocktail bar in the basement of Pilsen's Thalia Hall",
+      "sources": [
+        "https://www.punchhousechicago.com/about",
+        "https://en.wikipedia.org/wiki/Thalia_Hall_(Chicago)"
+      ],
+      "writtenFor": {
+        "name": "Punch House",
+        "lat": 41.8578,
+        "lng": -87.65739
+      },
+      "writtenOn": "2026-09-10"
     },
     "qing-xiang-yuan-dumplings": {
       "text": "A dumpling specialist tucked into the Richland Center mall at 2002 S Wentworth in Chinatown, turning out dumplings across a long list of fillings — lamb and coriander, pork and zucchini, shrimp and leek. Local critics single out the lamb-and-coriander ones, \"bursting with juicy, well-seasoned meat.\"",
@@ -5346,6 +6163,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "ranallis": {
+      "text": "Jerry Ranalli opened the original Ranalli's at 1925 N. Lincoln Ave. in the 1970s and put in outdoor patio seating despite warnings that it would not work in Chicago. It became known for 135 imported beers, double-decker pizzas and the deep-fried panzerotti, which Roger Ebert described as \"an inside-out pizza.\"",
+      "descriptor": "Lincoln Park pizza tavern with a patio at 1925 N. Lincoln Ave.",
+      "sources": [
+        "https://chicago.suntimes.com/2021/4/23/22397255/ranallis-jerry-ranalli-panzerotti-chicago-restaurants-obituary"
+      ],
+      "writtenFor": {
+        "name": "Ranalli's - Old Town Triangle",
+        "lat": 41.91727,
+        "lng": -87.63708
+      },
+      "writtenOn": "2026-09-10"
+    },
     "ranallis-west-loop": {
       "text": "Ranalli's took over the old WestEnd Bar & Grill space on Madison Street in 2021, opened by Four Corners Tavern Group with a redesign by Studio K and Chicago artist Anthony Lewellen. The Ranalli's pizza name goes back to a Lincoln Park original that opened about 45 years earlier, in the mid-1970s.",
       "descriptor": "Pizza and game-day bar at 1326 W. Madison St. in the West Loop",
@@ -5392,6 +6222,34 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "reggies-music-joint": {
+      "text": "Reggies opened on September 8, 2007 in a converted run-down auto bumper repair shop at 2105 S. State St. and grew into a multi-room music complex. The Music Joint is its laid-back bar-and-grill side: live music nightly across rock, blues, jazz and reggae on an intimate stage, exposed old Chicago brick, music and sports memorabilia, 17 flat-screens and a dog-friendly front patio.",
+      "descriptor": "Bar-and-grill live music room in the Reggies complex on S. State St",
+      "sources": [
+        "https://www.reggieslive.com/about/",
+        "https://www.reggieslive.com/about/music-joint/"
+      ],
+      "writtenFor": {
+        "name": "Reggies Music Joint",
+        "lat": 41.85399,
+        "lng": -87.62678
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "replay": {
+      "text": "",
+      "descriptor": "Arcade bar on N. Sheffield Ave in Lincoln Park",
+      "sources": [
+        "https://www.replaylincolnpark.com/about",
+        "https://www.replaylincolnpark.com/"
+      ],
+      "writtenFor": {
+        "name": "Replay - Lake View East (West Wolfram Street)",
+        "lat": 41.93377,
+        "lng": -87.65366
+      },
+      "writtenOn": "2026-09-10"
+    },
     "replay-andersonville": {
       "text": "Replay is an arcade bar on the Northalsted strip: the classic cabinets are free to play, with premium games like pinball and Mario Kart on coin, plus bourbon, a back patio and free popcorn. It belongs to the same local hospitality group as Hydrate nightclub, Elixir and the Andersonville Replay.",
       "descriptor": "Arcade bar on North Halsted with pinball, patio and free popcorn",
@@ -5419,6 +6277,20 @@
         "lng": -87.70829
       },
       "writtenOn": "2026-09-09"
+    },
+    "riccardo-trattoria": {
+      "text": "Riccardo Michi comes from a Milan restaurant family whose Girarrosto dates to 1943, and he helped launch the original Bice in New York before moving to Chicago in 2002 to be executive chef at Bice on Ontario. He and his wife Veronica opened this Lincoln Park trattoria at 2119 N. Clark St. in 2006, and it took Michelin's Bib Gourmand in 2011, 2012 and 2013.",
+      "descriptor": "Italian trattoria on N. Clark St in Lincoln Park, open since 2006",
+      "sources": [
+        "https://riccardotrattoria.com/chicago-lincoln-park-riccardo-trattoria-about",
+        "https://www.riccardotrattoria.com/"
+      ],
+      "writtenFor": {
+        "name": "Riccardo Trattoria",
+        "lat": 41.92072,
+        "lng": -87.63733
+      },
+      "writtenOn": "2026-09-10"
     },
     "rice-amplitheater-abbott-oceanarium": {
       "text": "Opened in 1991 and known since 2010 as the Abbott Oceanarium, it is the largest indoor marine mammal facility in the world — 3 million gallons of water in total, including the 2-million-gallon \"Whale Harbour,\" home to beluga whales and Pacific white-sided dolphins beside Lake Michigan. A 1,000-seat amphitheater inside presents the marine mammal show.",
@@ -5466,6 +6338,17 @@
         "lng": -87.63394
       },
       "writtenOn": "2026-09-09"
+    },
+    "river-roast": {
+      "text": "",
+      "descriptor": "Riverfront tavern at 315 N. LaSalle with roasts carved tableside",
+      "sources": [],
+      "writtenFor": {
+        "name": "River Roast",
+        "lat": 41.88795,
+        "lng": -87.63228
+      },
+      "writtenOn": "2026-09-10"
     },
     "river-shannon": {
       "text": "A Lincoln Park Irish pub going on six decades, with an antique wooden bar, about a dozen Irish whiskeys, theme nights, and photographs of the early-1900s South Side on the walls.",
@@ -5544,6 +6427,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "roka-akor": {
+      "text": "Roka Akor is a Japanese steakhouse in River North at 456 N. Clark St., built around a robata grill in full view of the dining room. The kitchen serves prime steak, rare wagyu from several regions of Japan, grilled seafood and sushi, with counter seating facing the chefs.",
+      "descriptor": "Japanese robata grill and sushi bar at 456 N. Clark St, River North",
+      "sources": ["https://rokaakor.com/chicago/"],
+      "writtenFor": {
+        "name": "Roka Akor",
+        "lat": 41.89068,
+        "lng": -87.63138
+      },
+      "writtenOn": "2026-09-10"
+    },
     "ron-of-japan": {
       "text": "A Streeterville teppanyaki room in the Benihana mold: chefs cook filet mignon, lobster tail, chicken or tofu on a sizzling iron plate set into each table, so dinner doubles as a table-side performance. The shrimp kogane-yaki starter arrives under an egg-yolk sauce.",
       "descriptor": "Teppanyaki steakhouse on E Ontario St in Streeterville, cooked tableside",
@@ -5608,6 +6502,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "rosebud-on-rush": {
+      "text": "Alex Dana's flagship Rosebud opened on Taylor Street in Little Italy in 1976, and this Gold Coast outpost on Rush Street followed in 1992. Actor Tom Hanks said of the baked ziti, \"I have never had a better baked ziti. You guys have set the bar for all else to follow.\" Taylor Street was given the honorary designation Alex Dana Way in 2017.",
+      "descriptor": "Classic Italian restaurant on Rush St in the Gold Coast, open since 1992",
+      "sources": [
+        "https://www.rosebudrestaurants.com/our-story",
+        "https://www.rosebudrestaurants.com/rosebud-on-rush"
+      ],
+      "writtenFor": {
+        "name": "Rosebud on Rush",
+        "lat": 41.8956,
+        "lng": -87.62583
+      },
+      "writtenOn": "2026-09-10"
+    },
     "rosenwald-courts": {
       "text": "Julius Rosenwald, then head of Sears, Roebuck, built these 421 apartments around a large landscaped courtyard in 1929 as privately funded housing for Black residents of Bronzeville, modeled on Harlem's Dunbar Apartments. Gwendolyn Brooks, Nat King Cole, Joe Louis and Quincy Jones all lived here. Emptied in 2000 and left to decay, it reopened in 2016 after a $109 million restoration as mixed-income housing.",
       "descriptor": "1929 Bronzeville garden-apartment complex built by Sears' Julius Rosenwald",
@@ -5634,6 +6542,20 @@
         "lng": -87.62997
       },
       "writtenOn": "2026-09-09"
+    },
+    "rpm-steak": {
+      "text": "The second collaboration between Lettuce Entertain You's Melman siblings and celebrity couple Giuliana and Bill Rancic, this River North steakhouse runs nearly two dozen cuts of beef sourced from around the world — Japanese wagyu, prime dry-aged strip and cowboy steak — alongside Maine lobster, king crab and a black truffle bearnaise.",
+      "descriptor": "Modern steakhouse at 66 W Kinzie in River North, from Lettuce Entertain You",
+      "sources": [
+        "https://www.rpmrestaurants.com/rpm-steak-chicago/",
+        "https://www.lettuce.com/restaurants/rpm-steak/"
+      ],
+      "writtenFor": {
+        "name": "RPM Steak",
+        "lat": 41.88938,
+        "lng": -87.63059
+      },
+      "writtenOn": "2026-09-10"
     },
     "russian-tea-time": {
       "text": "Ukrainian American Vadim Muchnik and his mother Klara, from Tashkent, opened it in September 1993 as the Russian Tea Room, changing the name after a trademark violation. The Loop room serves afternoon tea, caviar, house-infused vodka and dishes from across Eastern Europe and Central Asia; after Russia's 2022 invasion of Ukraine it drew online vitriol despite never being Russian-owned.",
@@ -5687,6 +6609,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "salernos-pizza-at-chicago": {
+      "text": "Salerno's has been a family-owned Italian kitchen since 1966, and the Grand Avenue storefront is its Chicago outpost alongside Oak Park, Lyons and Bolingbrook — pizza first, but also pasta, subs, ribs and seafood.",
+      "descriptor": "Family-run Italian pizzeria and pasta house on W Grand Ave, since 1966",
+      "sources": ["https://www.salernospizza.com/"],
+      "writtenFor": {
+        "name": "Salerno's Pizza at Chicago",
+        "lat": 41.89089,
+        "lng": -87.65756
+      },
+      "writtenOn": "2026-09-10"
+    },
     "san-soo-gab-san": {
       "text": "A Lincoln Square Korean barbecue that grills over real charcoal, which Time Out warns leaves you with \"the essence of ash\" in your clothes. The wang kalbi and dai ji kalbi are marinated rather than drowned, and there is cold bibim naeng myun for anyone dodging the smoke. Michelin gave it a Bib Gourmand in 2011.",
       "descriptor": "Charcoal Korean barbecue on N Western Ave in Lincoln Square, open late",
@@ -5700,6 +6633,19 @@
         "lng": -87.68875
       },
       "writtenOn": "2026-09-09"
+    },
+    "sapori-trattoria": {
+      "text": "",
+      "descriptor": "Lincoln Park trattoria on N Halsted known for housemade pasta",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/sapori-trattoria"
+      ],
+      "writtenFor": {
+        "name": "Sapori Trattoria",
+        "lat": 41.93166,
+        "lng": -87.64854
+      },
+      "writtenOn": "2026-09-10"
     },
     "sawada-coffee": {
       "text": "Founded by champion Japanese latte artist Hiroshi Sawada, who runs five shops in Japan, as his first stateside location — on a raised platform at the back of Green Street Smoked Meats. The signature Military Latte pairs double espresso with matcha and vanilla syrup under latte art in a martial insignia.",
@@ -5756,6 +6702,17 @@
         "lng": -87.7072
       },
       "writtenOn": "2026-09-09"
+    },
+    "seoul-taco": {
+      "text": "Seoul Taco started as a St. Louis food truck in 2011, built by David Choi on his halmoni's recipes; the Korean-Mexican mashup grew into a small chain and reached River North's Clark Street. The bestseller is the gogi bowl — rice, marinated meat, Korean salad, gochujang and a sunny-side-up egg.",
+      "descriptor": "Korean-Mexican counter at 738 N Clark St; gogi bowls and bulgogi tacos",
+      "sources": ["https://seoultaco.com/"],
+      "writtenFor": {
+        "name": "Seoul Taco - River North",
+        "lat": 41.89602,
+        "lng": -87.63144
+      },
+      "writtenOn": "2026-09-10"
     },
     "sepia": {
       "text": "Sepia opened in 2007 in a former 1890s print shop on Jefferson Street, keeping the old wood and exposed brick and adding a custom Art Nouveau tile floor. It has held a Michelin star every year since 2011, and Andrew Zimmerman ran the kitchen for 16 years before handing off to Kyle Cottle at the end of 2025.",
@@ -5823,6 +6780,17 @@
         "lng": -87.65451
       },
       "writtenOn": "2026-09-09"
+    },
+    "shinnicks-pub": {
+      "text": "The Shinnick family has been slinging beer in this Bridgeport corner tavern since 1933 — Time Out says since the day Prohibition ended — and it's still a White Sox and St. Patrick's Day institution, the kind of bar that throws benefit fundraisers when a neighbor gets sick.",
+      "descriptor": "Family-run Irish-American corner bar in Bridgeport, since 1933",
+      "sources": ["https://www.timeout.com/chicago/bars/shinnicks-pub"],
+      "writtenFor": {
+        "name": "Shinnick’s Pub",
+        "lat": 41.82544,
+        "lng": -87.64391
+      },
+      "writtenOn": "2026-09-10"
     },
     "shoreline-sightseeing": {
       "text": "Shoreline started in 1939, when Jim Martin ran twenty-five-cent speedboat rides off the Shedd Aquarium, and it has stayed in the same family ever since — his brother George, then George's nephew Charles Collopy, then Collopy's sons. The red-white-and-blue color scheme dates to a 1960 boat, the Marlyn, and the architecture river tour that now defines the company only launched in 1999.",
@@ -5898,6 +6866,20 @@
         "lng": -87.63589
       },
       "writtenOn": "2026-09-09"
+    },
+    "skylark": {
+      "text": "Bob McHale opened the Skylark in 2003 in a 1910 Birks Brothers brewery tied house — the brewery's ornate 'B' is still over the door — after earlier lives as Kaufman's Tavern, a lunch counter for stockyard workers, and Cozzie's Corner. In early 2024 McHale sold the bar to six longtime employees, who run it today.",
+      "descriptor": "Artsy Lower West Side dive at Halsted & Cermak, known for its tater tots",
+      "sources": [
+        "https://www.skylarkchicago.com/about",
+        "https://www.timeout.com/chicago/bars/skylark"
+      ],
+      "writtenFor": {
+        "name": "Skylark",
+        "lat": 41.85282,
+        "lng": -87.64627
+      },
+      "writtenOn": "2026-09-10"
     },
     "sluggers-world-class-sports-bar": {
       "text": "Steve Strauss opened Sluggers in a former auto body garage on Clark Street in 1985, a couple of blocks from Wrigley Field. The second floor is the real draw — the indoor batting cages the bar built its name on, plus dueling pianos, above the 40-odd TVs downstairs.",
@@ -5999,6 +6981,30 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "soul-veg-city": {
+      "text": "Opened in 1981 as Soul Vegetarian under the vision of Prince Asiel Ben Israel, this Chatham kitchen is one of the country's longest-running vegan soul food restaurants; his son and daughter, Arel Brown and Lori Seay, own it today. Chefs and staff who came up here have gone on to start restaurants and food companies of their own in the US and abroad.",
+      "descriptor": "Vegan soul food on E 75th St in Chatham, open since 1981",
+      "sources": ["https://www.soulvegcity.com/about"],
+      "writtenFor": {
+        "name": "Soul Veg City",
+        "lat": 41.75816,
+        "lng": -87.61959
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "south-side-community-art-center-sscac": {
+      "text": "Opened in 1940 with backing from the WPA, the SSCAC is the only one of more than 100 New Deal community art centers still operating, and the first Black art museum in the US not tied to a historically Black college. Eleanor Roosevelt dedicated it on May 7, 1941 in a ceremony broadcast nationwide on CBS Radio; Gordon Parks, Charles White, Archibald Motley Jr. and Margaret Burroughs all came through its doors.",
+      "descriptor": "1893 Bronzeville mansion housing the first Black art museum in the US",
+      "sources": [
+        "https://en.wikipedia.org/wiki/South_Side_Community_Art_Center"
+      ],
+      "writtenFor": {
+        "name": "South Side Community Art Center (SSCAC)",
+        "lat": 41.82461,
+        "lng": -87.62271
+      },
+      "writtenOn": "2026-09-10"
+    },
     "southport-grocery-cafe": {
       "text": "A from-scratch breakfast-and-lunch cafe and specialty grocery at 3552 N Southport in Lakeview, known for its specialty pancakes and cupcakes. The shelves stock its own preserves, pickles and mustards, and the Southport Cuban is built on house-smoked brisket with ham, gruyère, dijonnaise, giardiniera and arugula.",
       "descriptor": "Lakeview cafe and pantry shop on Southport Ave, known for pancakes and cupcakes",
@@ -6099,6 +7105,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "star-of-siam": {
+      "text": "",
+      "descriptor": "Budget Thai spot at 11 E Illinois St in River North; curries and gyoza",
+      "sources": ["https://www.timeout.com/chicago/restaurants/star-of-siam"],
+      "writtenFor": {
+        "name": "Star of Siam",
+        "lat": 41.89068,
+        "lng": -87.62747
+      },
+      "writtenOn": "2026-09-10"
+    },
     "stax-cafe-little-italy": {
       "text": "Owner Spiro Tsaldaris runs Stax with his wife Heather and their daughters Penelope and Mila. He grew up in his father's Chicago diner, which stayed open 24 hours a day, 365 days a year. The breakfast-focused kitchen — all-day breakfast and breakfast-leaning lunch, with locations in Little Italy and River West — has been Michelin-recommended six years running.",
       "descriptor": "Family-run all-day breakfast cafe with Little Italy and River West locations",
@@ -6109,6 +7126,17 @@
         "lng": -87.64856
       },
       "writtenOn": "2026-09-09"
+    },
+    "steak-n-egger": {
+      "text": "Steak 'n Egger has been open around the clock since 1955, when it started as a 20-seat counter in Douglas Park. Three generations of the founding family later it's still running under the motto 'We Doze But Never Close.'",
+      "descriptor": "24-hour diner on W Cermak Rd; Chicago-area chain since 1955",
+      "sources": ["https://steaknegger.com/"],
+      "writtenFor": {
+        "name": "Steak 'n Egger",
+        "lat": 41.85268,
+        "lng": -87.6558
+      },
+      "writtenOn": "2026-09-10"
     },
     "steppenwolf-ensemble-theatre": {
       "text": "Jeff Perry, Terry Kinney and Gary Sinise founded Steppenwolf in a Highland Park school basement in 1974; the ensemble now runs to 51 members and has included John Malkovich, Laurie Metcalf, Joan Allen and Tracy Letts. The company holds the National Medal of Arts and 14 Tony Awards, and Letts's \"August: Osage County\" premiered here before winning Best Play on Broadway.",
@@ -6157,6 +7185,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "su-casa-mexican-restaurant": {
+      "text": "Su Casa was opened in 1963 by Ike Sewell — the man behind Pizzeria Uno, who had originally set out to open a Mexican restaurant back in 1943 and wound up inventing Chicago deep-dish pizza instead. Twenty years later he finally got his Mexican place, in a converted 1867 carriage house near Uno. It's been called the Chicago area's first upscale Tex-Mex restaurant.",
+      "descriptor": "Tex-Mex in an 1867 carriage house on E Ontario in River North, since 1963",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ike_Sewell",
+        "https://sucasamexican.com/"
+      ],
+      "writtenFor": {
+        "name": "Su Casa Mexican Restaurant",
+        "lat": 41.89313,
+        "lng": -87.62622
+      },
+      "writtenOn": "2026-09-10"
+    },
     "sultans-market": {
       "text": "Started in 1995 as a small family shop in Wicker Park by Shadi Ramli and his mother, who emigrated from Jordan in the 1980s. The falafel made its name — a repeat Chicago Reader Best Falafel winner — and the original counter at 2057 W. North Ave. has since grown to locations in Lincoln Park, Logan Square and Pilsen.",
       "descriptor": "Middle Eastern falafel counter on North Ave in Wicker Park since 1995",
@@ -6204,6 +7246,34 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "superkhana-international": {
+      "text": "Chefs Yoshi Yamada and Zeeshan Shah run Superkhana as an Indian restaurant that refuses to be by-the-book — the calling card is a butter chicken calzone, backed up by chili-cheese naan and French fry Manchurian. Jason Hammel of Lula Cafe is a partner, and the cocktail list runs to things like ghee-washed bourbon.",
+      "descriptor": "Playful modern Indian on W Diversey Ave in Logan Square",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/superkhana-international",
+        "https://www.superkhanachicago.com/"
+      ],
+      "writtenFor": {
+        "name": "Superkhana International",
+        "lat": 41.93191,
+        "lng": -87.70483
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "sushi-san": {
+      "text": "Lettuce Entertain You's answer to a sushi joint: club-volume old-school hip-hop, ice-cold beer, and fish sourced through a partnership with the Yamasaki family at Tokyo's Toyosu market. Upstairs is the Omakase Room, a ten-seat counter where Master Sushi Chef Kaze Chan runs an 18-course menu.",
+      "descriptor": "Loud hip-hop sushi bar at 63 W Grand Ave in River North",
+      "sources": [
+        "https://www.lettuce.com/restaurants/sushi-san/",
+        "https://www.lettuce.com/restaurants/the-omakase-room/"
+      ],
+      "writtenFor": {
+        "name": "Sushi-san - River North",
+        "lat": 41.89147,
+        "lng": -87.63049
+      },
+      "writtenOn": "2026-09-10"
+    },
     "sushi-san-lincoln-park": {
       "text": "The Lincoln Park outpost of Sushi-san, the Lettuce Entertain You sushi group that started in River North and also runs a counter in Willis Tower. Master sushi chef Kaze Chan oversees the menu, and the room is built around a bar with floor-to-ceiling glass that opens onto a patio on Halsted, plus one of the largest sake-by-the-glass lists in the city.",
       "descriptor": "Lettuce Entertain You sushi bar at 1950 N Halsted in Lincoln Park",
@@ -6248,6 +7318,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "sydney-r-marovitz-golf-course": {
+      "text": "Opened in 1932 as Waveland Golf Course on land reclaimed from Lake Michigan, this nine-hole par-36 layout runs parallel to the water the whole way, with the harbors and the downtown skyline in view. The city renamed it in 1991 for Sydney R. Marovitz. Funding trouble during construction is why only nine of the planned holes ever got built.",
+      "descriptor": "Nine-hole lakefront public golf course along the Lakeview shoreline",
+      "sources": [
+        "https://sydneymarovitz.cpdgolf.com/the-course/",
+        "https://urbanmatter.com/chicago/the-history-of-sydney-r-marovitz-golf-course/"
+      ],
+      "writtenFor": {
+        "name": "Sydney R. Marovitz Golf Course",
+        "lat": 41.95645,
+        "lng": -87.64284
+      },
+      "writtenOn": "2026-09-10"
+    },
     "symphony-center": {
       "text": "Daniel Burnham designed Orchestra Hall, which opened December 14, 1904 as the home of the Chicago Symphony Orchestra; the facade still reads \"Theodore Thomas Orchestra Hall\" for the orchestra's first music director. It was made a National Historic Landmark in 1994, and a $110 million expansion completed in 1997 wrapped it into the larger Symphony Center complex. Harry Houdini, Amelia Earhart and Orson Welles all spoke from its stage.",
       "descriptor": "Chicago Symphony Orchestra's Michigan Avenue concert hall, open since 1904",
@@ -6258,6 +7342,17 @@
         "lng": -87.6251
       },
       "writtenOn": "2026-09-09"
+    },
+    "table-donkey-and-stick": {
+      "text": "Matt Sussman built the place around the convivial spirit of Alpine mountain inns — seasonal dishes drawn from the mountain cuisines of France, Italy, Switzerland and Austria, with breads and charcuterie made in house. The name comes from a Brothers Grimm tale about three brothers given a table that sets itself, a donkey that produces gold coins, and a magical stick.",
+      "descriptor": "Alpine-inspired restaurant on W Armitage Ave in Logan Square",
+      "sources": ["https://www.tabledonkeystick.com/about/"],
+      "writtenFor": {
+        "name": "Table, Donkey and Stick",
+        "lat": 41.91769,
+        "lng": -87.6959
+      },
+      "writtenOn": "2026-09-10"
     },
     "taco-burrito-king-west-loop": {
       "text": "Taco Burrito King started in 1992 as a single small stand and grew into a family-run chain of Chicagoland taquerias serving fresh, home-style Mexican food seven days a week, 365 days a year, with several locations open around the clock. This one sits on Jackson Boulevard in Greektown, at the edge of the West Loop.",
@@ -6317,6 +7412,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "taqueria-atotonilco": {
+      "text": "The Muñoz brothers started Atotonilco with one small taquería in Little Village and grew it into a string of Chicago locations. Don Oscar brought nixtamalized, stone-ground corn tortillas to the business — and bought farmland in Illinois to grow the corn for them himself.",
+      "descriptor": "Taquería and tortillería on S Kedzie Ave in Gage Park",
+      "sources": ["https://www.atotonilcochicago.com/about"],
+      "writtenFor": {
+        "name": "Taquería Atotonilco",
+        "lat": 41.79003,
+        "lng": -87.70369
+      },
+      "writtenOn": "2026-09-10"
+    },
     "taqueria-el-milagro": {
       "text": "El Milagro has been making tortillas in Chicago since 1950, founded by Raul Lopez, who was orphaned at 11 and learned the trade from his uncle Miguel, a leading corn miller in Mexico City. The company still grinds carefully selected whole-kernel corn in its own plant instead of using pre-processed corn flour.",
       "descriptor": "Counter taqueria beside the El Milagro tortilla plant on W. 26th St",
@@ -6338,6 +7444,20 @@
         "lng": -87.66559
       },
       "writtenOn": "2026-09-09"
+    },
+    "taqueria-los-comales-3": {
+      "text": "Camerino Gonzalez Valle opened Los Comales on 26th Street in Little Village in 1973. He grew it into a 256-seat restaurant, opened one of the city's first taco drive-thrus, and the chain spread to roughly 25 locations across several states — giving countless Mexican immigrants their first Chicago job along the way.",
+      "descriptor": "Original 1973 Los Comales taquería on W 26th Street",
+      "sources": [
+        "https://chicago.suntimes.com/2021/6/28/22554720/camerino-gonzalez-valle-taqueria-los-comales-mexican-restaurants-obituary",
+        "https://littlevillagechamber.org/honoring-a-legacy-taqueria-los-comales-50th-aniversario/"
+      ],
+      "writtenFor": {
+        "name": "Taqueria Los Comales - Marshall Square",
+        "lat": 41.84432,
+        "lng": -87.70413
+      },
+      "writtenOn": "2026-09-10"
     },
     "taquieria-atotonilco": {
       "text": "Brothers Oscar and Raul Muñoz started Atotonilco in 1972 as a small taco stand in Chicago's Little Village, and Oscar later added an on-site tortillería so the tortillas are made fresh in house. The Pilsen shop on Blue Island Avenue serves tacos, tortas and licuados, and caters meat trays and taco platters.",
@@ -6380,6 +7500,20 @@
         "lng": -87.62766
       },
       "writtenOn": "2026-09-09"
+    },
+    "tempo-cafe": {
+      "text": "A Gold Coast breakfast institution since 1983, Tempo made its name on skillets — eggs piled over hash browns with whatever you want in them — plus thick-cut Greek toast and a large, do-it-your-way menu. It long ran around the clock, closing only for Thanksgiving and Christmas.",
+      "descriptor": "Gold Coast diner on E Chestnut St since 1983, known for skillets",
+      "sources": [
+        "https://tempochicago.com/about-us",
+        "https://www.theinfatuation.com/chicago/reviews/tempo-cafe"
+      ],
+      "writtenFor": {
+        "name": "Tempo Cafe",
+        "lat": 41.89847,
+        "lng": -87.62809
+      },
+      "writtenOn": "2026-09-10"
     },
     "thalia-hall": {
       "text": "Saloonkeeper John Dusek built Thalia Hall in 1892 as a mixed-use block - storefronts, apartments and a grand public hall for Pilsen's Bohemian immigrants - with architects Faber & Pagels modeling the theater on Prague's opera house. It closed in the 1960s and sat dormant until Bruce Finkelman and Craig Golden reopened it in 2013 as a music venue with bars including the basement Punch House.",
@@ -6428,6 +7562,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "the-bad-apple": {
+      "text": "A North Center neighborhood bar built on one pairing: a serious craft beer list against a deep burger menu that runs from a straightforward house burger to elaborate builds like Elvis's Last Supper and the Slow Burn. There's a patio for warm weather.",
+      "descriptor": "Craft-beer bar and burger joint at 4300 N Lincoln Ave in North Center",
+      "sources": ["https://zippicks.com/the-bad-apple-chicago-60618/"],
+      "writtenFor": {
+        "name": "The Bad Apple - North Center",
+        "lat": 41.95972,
+        "lng": -87.68288
+      },
+      "writtenOn": "2026-09-10"
+    },
     "the-berghoff-restaurant": {
       "text": "Herman Joseph Berghoff, an immigrant from Dortmund, opened the place in 1898, and it still serves sauerbraten, schnitzel and creamed spinach. When Prohibition ended in 1933 the Berghoff was issued Chicago's Liquor License No. 1. Its men's-only bar held out until 1969, when members of the National Organization for Women, Gloria Steinem among them, walked in and demanded service.",
       "descriptor": "German restaurant on W. Adams in the Loop since 1898",
@@ -6449,6 +7594,20 @@
         "lng": -87.67484
       },
       "writtenOn": "2026-09-09"
+    },
+    "the-butcher-the-burger": {
+      "text": "You pick the patty — grass-fed beef, salmon or veggie — then the umami spice blend, cheese and toppings, with rotating specials that have run to venison and fried catfish. The small BYOB room is fitted out with antiques to look like an old butcher shop, and dessert is house-made frozen custard or warm beignets.",
+      "descriptor": "Build-your-own burger counter at 1021 W Armitage Ave in Lincoln Park",
+      "sources": [
+        "https://www.chicagofoodmagazine.com/build-your-own-burger-at-butcher-and-the-burger",
+        "https://312eats.com/restaurants/american/butcher-the-burger"
+      ],
+      "writtenFor": {
+        "name": "The Butcher & the Burger",
+        "lat": 41.91791,
+        "lng": -87.65423
+      },
+      "writtenOn": "2026-09-10"
     },
     "the-butterfly-house": {
       "text": "A mesh-walled garden enclosure on Navy Pier's North Lawn holds live butterflies from around the world — stand still and one may land on you. Its chrysalises come from conservation-minded breeders including El Bosque Nuevo in Costa Rica, which has protected over 1,000 acres of rainforest, and Alas de Colombia, a woman-owned Colombian operation.",
@@ -6472,6 +7631,28 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "the-chicago-firehouse-restaurant": {
+      "text": "The building went up in 1905 as a Chicago Fire Department firehouse, designed by architect Charles F. Hermann in Romanesque Revival yellow brick. It became a restaurant in 2000. The tall arched windows were originally the apparatus doors the fire engines rolled out through, and guests still enter on 14th Street.",
+      "descriptor": "Steakhouse in a 1905 South Loop firehouse at 14th & Michigan",
+      "sources": ["https://www.chicagofirehouse.com/about-us/"],
+      "writtenFor": {
+        "name": "The Chicago Firehouse Restaurant",
+        "lat": 41.86396,
+        "lng": -87.6237
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "the-dawson": {
+      "text": "It takes its name from William and Henry Dawson, brothers who ran one of the most successful fireplace-mantel companies in the United States around the turn of the last century, known for intricate craftsmanship. The 1888 building was reimagined as a restaurant and bar in 2013.",
+      "descriptor": "American restaurant and bar at 730 W Grand Ave in River West",
+      "sources": ["https://the-dawson.com/our-history"],
+      "writtenFor": {
+        "name": "The Dawson",
+        "lat": 41.89138,
+        "lng": -87.64732
+      },
+      "writtenOn": "2026-09-10"
+    },
     "the-dearborn": {
       "text": "Irish-born sisters Amy and Clodagh Lawless, who grew up in their family's restaurant in Ireland, opened The Dearborn in 2016 on a Loop corner near the theater district. It's an upscale American tavern run on Irish hospitality, known for its steaks, its burger and its fish 'n' chips.",
       "descriptor": "Upscale American tavern at 145 N. Dearborn in the Loop, opened 2016",
@@ -6482,6 +7663,17 @@
         "lng": -87.62926
       },
       "writtenOn": "2026-09-09"
+    },
+    "the-drifter-chicago": {
+      "text": "The Drifter sits in the cellar of the Green Door Tavern, a wood-frame building put up in 1872 — a year after the Great Chicago Fire, using a construction method soon outlawed in the central business district — and reputedly Chicago's oldest surviving drinking establishment. The Giacomoni family ran the place as a speakeasy during Prohibition; the basement opened as The Drifter in 2015, its rotating cocktail list printed on tarot cards.",
+      "descriptor": "Basement speakeasy under the Green Door Tavern with tarot-card menus",
+      "sources": ["https://en.wikipedia.org/wiki/Green_Door_Tavern"],
+      "writtenFor": {
+        "name": "The Drifter Chicago",
+        "lat": 41.89455,
+        "lng": -87.6374
+      },
+      "writtenOn": "2026-09-10"
     },
     "the-duck-inn": {
       "text": "Kevin Hickey's gastro-tavern occupies a pre-Prohibition-era building on the border of Chicago's Bridgeport and Pilsen neighborhoods, at 2701 S. Eleanor. Its signature rotisserie duck can be reserved in advance. The restaurant holds a Michelin Guide Bib Gourmand and was a 2024 James Beard Outstanding Restaurant semifinalist.",
@@ -6569,6 +7761,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "the-hampton-social-river-north": {
+      "text": "Restaurateur Brad Parker opened the first Hampton Social here on July 28, 2015 — a 7,000-square-foot, 300-seat room done in off-white maritime decor, with hanging hammocks, a white paneled bar and floor-to-ceiling windows that fully retract. A raw bar, a 'Lobster Overload' section and wood-fired brick-oven pizzas anchor the menu, and happy hour runs on half-price rosé by the glass.",
+      "descriptor": "Hamptons-style coastal restaurant and bar at 353 W Hubbard in River North",
+      "sources": [
+        "https://www.chicagofoodmagazine.com/news/the-hampton-social-now-open-in-river-north"
+      ],
+      "writtenFor": {
+        "name": "The Hampton Social - River North",
+        "lat": 41.88979,
+        "lng": -87.63769
+      },
+      "writtenOn": "2026-09-10"
+    },
     "the-hideout": {
       "text": "A balloon-frame house wedged among factories and a city fleet yard at Ada and Wabansia; by the bar's own account bootleggers ran it before it opened legally in 1934. It has since become one of Chicago's essential small music rooms — Jack White, Neko Case and Andrew Bird have all played it — and it throws an annual anniversary block party.",
       "descriptor": "Century-old bar in an industrial corridor; punk, indie and alt-country",
@@ -6603,6 +7808,20 @@
         "lng": -87.61013
       },
       "writtenOn": "2026-09-09"
+    },
+    "the-lobby": {
+      "text": "",
+      "descriptor": "Lounge and afternoon tea room inside The Peninsula, 108 E Superior St",
+      "sources": [
+        "https://www.peninsula.com/en/chicago/special-offers/dining/afternoon-tea",
+        "https://www.peninsula.com/en/chicago/hotel-fine-dining/the-lobby-modern-cuisine"
+      ],
+      "writtenFor": {
+        "name": "The Lobby",
+        "lat": 41.89603,
+        "lng": -87.62512
+      },
+      "writtenOn": "2026-09-10"
     },
     "the-lodge-tavern": {
       "text": "The Lodge opened at 21 W. Division in 1957 and bills itself as the oldest standing establishment in the Gold Coast's Division Street entertainment district. What keeps regulars coming hasn't changed much: beer, a jukebox, and an endless supply of complimentary peanuts.",
@@ -6653,6 +7872,19 @@
         "lng": -87.65485
       },
       "writtenOn": "2026-09-09"
+    },
+    "the-museum-of-contemporary-photography": {
+      "text": "Columbia College Chicago founded the MoCP in 1976 as successor to the Chicago Center for Contemporary Photography. It is accredited by the American Alliance of Museums and holds more than 15,000 objects by over 1,500 artists, and its Midwest Photographers Project keeps a rotating set of portfolios by artists living in the region available to visitors.",
+      "descriptor": "Columbia College photography museum at 600 S Michigan Ave, founded 1976",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Museum_of_Contemporary_Photography"
+      ],
+      "writtenFor": {
+        "name": "The Museum of Contemporary Photography",
+        "lat": 41.87421,
+        "lng": -87.62451
+      },
+      "writtenOn": "2026-09-10"
     },
     "the-office": {
       "text": "The Office sits behind an unmarked door below The Aviary at 955 W. Fulton Market, part of Grant Achatz's Alinea Group. The 21-seat room takes reservations only and pours classic cocktails, vintage spirits and luxury bites; the Aviary upstairs won the James Beard Award for Outstanding Bar Program in 2013.",
@@ -6717,6 +7949,20 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "the-red-lion-pub": {
+      "text": "Founder John Cordwell was a British RAF pilot shot down in WWII and held at Stalag Luft III, where he worked as a forger for the breakout the world knows as the Great Escape; he later worked in Chicago urban planning and opened the Red Lion in 1984. A wall inside is dedicated to his wartime story, and the pub is known for one of the longest ghost-story rosters in the city.",
+      "descriptor": "English pub at 2446 N Lincoln Ave in Lincoln Park, known for ghost stories",
+      "sources": [
+        "https://chibarproject.com/reviews/red-lion/",
+        "https://redlionchicago.com/"
+      ],
+      "writtenFor": {
+        "name": "The Red Lion Pub",
+        "lat": 41.92632,
+        "lng": -87.65046
+      },
+      "writtenOn": "2026-09-10"
+    },
     "the-redhead-piano-bar": {
       "text": "The Redhead has run live piano seven nights a week on Ontario Street since 1993, staying open until 4 a.m. — 5 a.m. on Saturdays. It also keeps a walk-in humidor stocked with more than 150 cigars and a heated, year-round covered smoking patio, and marked its 30th birthday in June 2023 with a public party that ran from 4 p.m. to midnight.",
       "descriptor": "River North piano bar on Ontario St, live piano nightly since 1993",
@@ -6764,6 +8010,28 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "the-stopalong-bucktown": {
+      "text": "Open since August 2016 a few steps from the 606 trail, it leans hard on '80s and '90s nostalgia — arcade cabinets like Ms. Pac-Man and Galaga, retro toys and comic-book artwork. The kitchen makes New York-style thin-crust pizza with ingredients prepped fresh daily, but the griddle-smashed Stop-In burger, with caramelized onions and special sauce, is what most people come for.",
+      "descriptor": "Throwback pizza-and-burger bar at 1812 N Milwaukee Ave by the 606",
+      "sources": ["https://www.thestopalong.com/"],
+      "writtenFor": {
+        "name": "The StopAlong - Bucktown",
+        "lat": 41.91432,
+        "lng": -87.6838
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "the-tonk": {
+      "text": "Opened in 2007 by Willie Wagner, this Pilsen pit smokes Memphis-style brisket, ribs and pulled pork. It doubles as a music room, with jazz, blues, country and rockabilly acts on the calendar.",
+      "descriptor": "Memphis-style barbecue and live music at 1800 S Racine Ave in Pilsen",
+      "sources": ["https://en.wikipedia.org/wiki/The_Tonk_BBQ"],
+      "writtenFor": {
+        "name": "The Tonk",
+        "lat": 41.85784,
+        "lng": -87.65665
+      },
+      "writtenOn": "2026-09-10"
+    },
     "the-vic": {
       "text": "Robert E. Ricksen and Frank Gazzolo spent three years and $300,000 building the Vic as a five-story vaudeville house, opened in 1912 as the Victoria Theatre and designed by theater architect John Eberson. Walt Klein bought and renovated it in 1983, and it later moonlighted as \"Brew & View\" - movies and drinks on nights without a concert - while running as a roughly 1,400-capacity music hall.",
       "descriptor": "1912 vaudeville house on N Sheffield, now a 1,400-capacity concert venue",
@@ -6774,6 +8042,20 @@
         "lng": -87.65374
       },
       "writtenOn": "2026-09-09"
+    },
+    "the-whistler": {
+      "text": "Open since 2008, the Whistler is a bar, art gallery and record label in one small Logan Square room: the stage hosts jazz, rock, DJ sets, film screenings and readings with no cover charge, and the cocktail program rotates between classics and originals. It was named Time Out Chicago's Bar of the Year in 2016 and has made GQ's list of the 25 best cocktail bars in America.",
+      "descriptor": "Logan Square cocktail bar, music venue and gallery at 2421 N Milwaukee Ave",
+      "sources": [
+        "https://whistlerchicago.com/about/",
+        "https://www.timeout.com/chicago/bars/the-whistler"
+      ],
+      "writtenFor": {
+        "name": "The Whistler",
+        "lat": 41.92535,
+        "lng": -87.70105
+      },
+      "writtenOn": "2026-09-10"
     },
     "the-wiener-circle": {
       "text": "The stand opened on Clark Street in Lincoln Park in 1983, but its reputation dates to about 1992, when proprietor Larry Gold started the profane back-and-forth with late-night drunks that became the house style. The routine has since put it on This American Life and Comedy Central's Insomniac with Dave Attell; the actual food is char-grilled Vienna Beef dogs on poppy seed buns.",
@@ -6821,6 +8103,20 @@
         "lng": -87.63059
       },
       "writtenOn": "2026-09-09"
+    },
+    "timothy-otooles-pub": {
+      "text": "Timothy O'Toole's opened in 1992 and is still family-owned three decades on, with sibling pubs in Gurnee and Libertyville. The Streeterville original on Fairbanks Court runs late — 2 or 3 a.m. most nights — and trades on its wings, pub staples and a craft beer list.",
+      "descriptor": "Streeterville sports pub on Fairbanks Court, known for its wings",
+      "sources": [
+        "https://timothyotooles.com/about/",
+        "https://timothyotooles.com/chicago/"
+      ],
+      "writtenFor": {
+        "name": "Timothy O’Toole’s Pub",
+        "lat": 41.89324,
+        "lng": -87.62047
+      },
+      "writtenOn": "2026-09-10"
     },
     "topo-gigio-ristorante": {
       "text": "Topo Gigio is named for the Italian mouse puppet who was a fixture on The Ed Sullivan Show in the 1960s, and it has served Tuscan-leaning Italian on Wells Street since 1988 — the founder brought his family's recipes from Calabria. Anthony Bourdain ate here for Parts Unknown with Bruce Elliott, owner of the nearby Old Town Ale House. The garden patio is first-come, first-served.",
@@ -6886,6 +8182,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "turquoise-restaurant": {
+      "text": "Turquoise has cooked Turkish-Mediterranean food on Roscoe Street since 2002, taking its name from the color of the Mediterranean. Chef Ezgi Bozdas draws on Istanbul roots for mezzes, grilled meats and seafood, and the Sunday brunch is served family-style as an Anatolian spread.",
+      "descriptor": "Turkish-Mediterranean restaurant on W Roscoe St since 2002",
+      "sources": ["https://www.turquoisedining.com/"],
+      "writtenFor": {
+        "name": "Turquoise Restaurant",
+        "lat": 41.9429,
+        "lng": -87.68268
+      },
+      "writtenOn": "2026-09-10"
+    },
     "tuscany": {
       "text": "Tuscany has anchored Taylor Street for more than a quarter century as part of Phil Stefani Signature Restaurants, cooking Tuscan/Northern Italian around a wood-burning pizza oven and a wood-fired rotisserie. The block is what survives of Chicago's Little Italy, where 200 businesses and 800 homes were bulldozed in the 1960s to build the University of Illinois campus.",
       "descriptor": "Northern Italian on Taylor Street in Little Italy, wood-fired oven",
@@ -6913,6 +8220,17 @@
         "lng": -87.63838
       },
       "writtenOn": "2026-09-09"
+    },
+    "tzuco": {
+      "text": "Tzuco is named for Huitzuco, the town in Guerrero where chef Carlos Gaytán was born in 1970. Gaytán was the first Mexican chef to earn a Michelin star — at his earlier Chicago restaurant Mexique, in 2013 and 2014 — and here he runs Mexican cooking through the French haute-cuisine technique he trained in.",
+      "descriptor": "Carlos Gaytán's French-Mexican dining room at 720 N State St, Chicago",
+      "sources": ["https://www.tzuco.com/about"],
+      "writtenFor": {
+        "name": "Tzuco",
+        "lat": 41.89551,
+        "lng": -87.6285
+      },
+      "writtenOn": "2026-09-10"
     },
     "u-505-submarine": {
       "text": "A US Navy task group boarded and captured U-505 off West Africa on June 4, 1944 — the first enemy warship taken at sea by the Navy since 1815. The haul of charts and codebooks was so sensitive that the whole capture was classified, lest Germany tighten Enigma security on the eve of D-Day. The Navy meant to sink her as target practice; the officer who took her got her donated to the museum instead, dedicated in 1954.",
@@ -6970,6 +8288,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "union-sushi-barbeque-bar": {
+      "text": "Union built its River North room around a robata charcoal grill that runs to 600 degrees — charred chicken thigh and jumbo shrimp skewers — next to a sushi menu that plays fast and loose with tradition, such as Wisconsin pepper jack melted over a fish cake. The cocktail list was built with the Bittercube team.",
+      "descriptor": "Robata grill and creative sushi bar on W Erie St in River North",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/union-sushi-barbeque-bar"
+      ],
+      "writtenFor": {
+        "name": "Union Sushi + Barbeque Bar",
+        "lat": 41.89419,
+        "lng": -87.63539
+      },
+      "writtenOn": "2026-09-10"
+    },
     "united-center": {
       "text": "Opened in 1994 at a cost of $175 million to replace the old Chicago Stadium, it is home to both the Bulls and the Blackhawks and is the largest arena by capacity in the NBA. The Michael Jordan statue 'The Spirit' was dedicated the year it opened and now stands inside a 2017 atrium addition. The arena hosted the Democratic National Convention in 1996 and again in 2024.",
       "descriptor": "Bulls and Blackhawks arena on the Near West Side since 1994",
@@ -7014,6 +8345,45 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "vietnam-veterans-memorial": {
+      "text": "",
+      "descriptor": "1983 war memorial in Gage Park at Garfield Blvd (55th St) and Western Ave",
+      "sources": ["https://en.wikipedia.org/wiki/Gage_Park,_Chicago"],
+      "writtenFor": {
+        "name": "Vietnam Veterans Memorial",
+        "lat": 41.79377,
+        "lng": -87.68367
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "village-tap": {
+      "text": "The Village Tap calls itself \"Chicago's Premier Neighborhood Tavern\" and is best known for its beer list — Time Out has called it one of the best places in town to grab a beer, chat with the friendly bartenders and test your vocabulary over a game of Scrabble.",
+      "descriptor": "Roscoe Village beer bar at Roscoe and Hoyne with a deep draft list",
+      "sources": [
+        "https://www.timeout.com/chicago/bars/the-village-tap",
+        "https://www.villagetap.com/home"
+      ],
+      "writtenFor": {
+        "name": "Village Tap",
+        "lat": 41.94298,
+        "lng": -87.6806
+      },
+      "writtenOn": "2026-09-10"
+    },
+    "virtue": {
+      "text": "Chef Erick Williams opened Virtue in Hyde Park in 2018 after nearly two decades at mk in River North, and it landed on both Esquire's and Eater's best-new-restaurant lists in 2019. Williams went on to win the 2022 James Beard Award for Best Chef: Great Lakes, and the restaurant carries a Michelin Bib Gourmand.",
+      "descriptor": "Black Southern cooking on E 53rd St in Hyde Park, open since 2018",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Erick_Williams",
+        "https://www.virtuerestaurant.com/"
+      ],
+      "writtenFor": {
+        "name": "Virtue",
+        "lat": 41.79967,
+        "lng": -87.5893
+      },
+      "writtenOn": "2026-09-10"
+    },
     "volare-ristorante-italiano": {
       "text": "Benny Siddu — who worked in hospitality in Sardinia, mainland Italy, England and on cruise ships before settling in Chicago in 1984 — opened Volare on Grand Avenue in 1997. The name is Italian for \"to fly.\" The kitchen stays traditional with Sardinian touches, and the room seats around 200.",
       "descriptor": "Streeterville Italian on Grand Ave since 1997, Sardinian accents",
@@ -7055,6 +8425,20 @@
         "lng": -87.61111
       },
       "writtenOn": "2026-09-09"
+    },
+    "weber-grill": {
+      "text": "This is the restaurant arm of the family behind the Weber kettle: George Stephen welded the first one in 1951 from two sheet-metal buoy halves at a Chicago shop, and it was nicknamed \"Sputnik\" before it sold as George's Barbecue Kettle. The Weber Grill restaurants, this River North one included, are still owned by the Stephen family separately from the grill company.",
+      "descriptor": "Kettle-grill steakhouse and BBQ at 539 N State St in River North",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Weber-Stephen_Products",
+        "https://www.webergrillrestaurant.com/"
+      ],
+      "writtenFor": {
+        "name": "Weber Grill",
+        "lat": 41.89206,
+        "lng": -87.62787
+      },
+      "writtenOn": "2026-09-10"
     },
     "welles-park": {
       "text": "Created in 1910 by the Lincoln Park Commission and named for Gideon Welles, Abraham Lincoln's Secretary of the Navy. Its European-style gazebo, wired for lights and sound, is the neighborhood's concert and storytelling stage, and in the 1920s a young Abe Saperstein began coaching basketball at the Welles Park fieldhouse before founding the Harlem Globetrotters.",
@@ -7304,6 +8688,19 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "wrigleyville-dogs": {
+      "text": "A cash-only Clark Street counter a block from Wrigley Field, open 10 a.m. to 5 a.m. — Chicago dogs, gyros and Italian beef at a fraction of ballpark prices, which is what makes it a standard postgame and last-call stop.",
+      "descriptor": "Cash-only hot dog, gyro and Italian beef counter on Clark near Wrigley",
+      "sources": [
+        "https://www.timeout.com/chicago/restaurants/wrigleyville-dogs"
+      ],
+      "writtenFor": {
+        "name": "Wrigleyville Dogs",
+        "lat": 41.95003,
+        "lng": -87.6585
+      },
+      "writtenOn": "2026-09-10"
+    },
     "xoco": {
       "text": "Xoco — pronounced \"SHO-ko,\" the Aztec word for \"little sister\" — is the fast, casual counterpart to Rick and Deann Bayless's Frontera Grill and Topolobampo in River North. It opens early and closes late on Mexican street food: crusty tortas, meal-in-a-bowl caldos, flaky empanadas, hot-from-the-fryer churros and frothy Mexican hot chocolate.",
       "descriptor": "Rick Bayless's Mexican street-food café in River North",
@@ -7329,6 +8726,17 @@
       },
       "writtenOn": "2026-09-09"
     },
+    "yak-zies": {
+      "text": "Yak-Zies has been a Clark Street game-day institution for decades — its own site bills it as \"Wrigleyville's #1 Cubs party headquarters for 36 years,\" with 36 years of stories to tell. The draw is cheap bar food a short walk from the ballpark: chicken wings above all, plus Italian beef, burgers, sloppy sliders and cheese curds.",
+      "descriptor": "Wrigleyville sports bar on Clark St known for wings and Cubs game days",
+      "sources": ["https://www.yakzies.com/"],
+      "writtenFor": {
+        "name": "Yak-Zies",
+        "lat": 41.94931,
+        "lng": -87.65849
+      },
+      "writtenOn": "2026-09-10"
+    },
     "yolk": {
       "text": "Yolk started in Chicago's South Loop in 2006, when Taki Kastanis — who opened his first breakfast-and-lunch spot at 20, then detoured through real estate — bet on an upscale breakfast-and-lunch room downtown. It caught on fast, taking Citysearch's \"Best Breakfast\" honors in 2008, and grew into locations across Chicago, Texas and Florida.",
       "descriptor": "Breakfast and lunch at 1120 S Michigan Ave — the first Yolk, opened 2006",
@@ -7342,6 +8750,20 @@
         "lng": -87.62454
       },
       "writtenOn": "2026-09-09"
+    },
+    "yolk-south-loop": {
+      "text": "Yolk is a homegrown Chicago breakfast chain: founder Taki Kastanis opened the first one in the South Loop in 2006 as an \"upscale breakfast and lunch\" concept, then spread it across downtown Chicago and on to Texas and Florida. This branch sits at 355 E. Ohio Street, on the corner of Grand & McClurg in Streeterville.",
+      "descriptor": "Upscale breakfast-and-lunch spot at Grand & McClurg in Streeterville",
+      "sources": [
+        "https://eatyolk.com/about/",
+        "https://eatyolk.com/locations/"
+      ],
+      "writtenFor": {
+        "name": "Yolk - Streeterville",
+        "lat": 41.89216,
+        "lng": -87.6181
+      },
+      "writtenOn": "2026-09-10"
     },
     "yolk-west-loop": {
       "text": "Taki Kastanis, who grew up in his parents' restaurants, opened the first Yolk in the South Loop in 2006; within two years it was taking \"best breakfast\" honors from Citysearch and Fox Chicago viewers, and the brand spread to other cities. The West Loop store is one of four Yolks in Chicago.",
@@ -7370,6 +8792,18 @@
     }
   },
   "retired": {
+    "hawthorne-race-course": {
+      "text": "Edward Corrigan, owner of 1890 Kentucky Derby winner Riley, established Hawthorne in Stickney, and it ran from 1891 under the Carey family for most of its life. It survived grandstand fires in 1902 and 1978 and a 1905 Chicago racing ban, but after its license was revoked in January 2026 and a February Chapter 11 filing, it ran its final race on July 19, 2026 and sold for $90 million to a buyer linked to data-center operator Digital Realty.",
+      "descriptor": "Historic Stickney horse-racing track, 1891 to 2026, now closed",
+      "sources": ["https://en.wikipedia.org/wiki/Hawthorne_Race_Course"],
+      "writtenFor": {
+        "name": "Hawthorne Race Course",
+        "lat": 41.82653,
+        "lng": -87.74857
+      },
+      "writtenOn": "2026-09-09",
+      "retiredOn": "2026-09-10"
+    },
     "stellas-diner": {
       "text": "A Lakeview diner on N Broadway that served the neighborhood for decades under Marvin Barsky, who also owns The Bagel deli across the street. It closed temporarily in mid-2026 after a failed city health inspection, then closed permanently when Barsky sold it to Ann Sather owner Tom Tunney — Lakeview's 44th Ward alderperson for two decades — who plans to renovate and reopen the space as an Ann Sather.",
       "descriptor": "Longtime Lakeview diner on N Broadway; closed in 2026, becoming an Ann Sather",
@@ -7383,6 +8817,21 @@
       },
       "writtenOn": "2026-09-09",
       "retiredOn": "2026-09-09"
+    },
+    "wndr-museum": {
+      "text": "WNDR opened in Chicago's West Loop in September 2018 as an experiential art museum founded by Brad Keywell, and expanded to San Diego, Seattle and Boston. It has since shut: the museum's own site now says \"WNDR Museum has closed its doors.\"",
+      "descriptor": "Immersive art museum in the West Loop, opened 2018 — now closed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/WNDR_Museum",
+        "https://www.wndrmuseum.com/"
+      ],
+      "writtenFor": {
+        "name": "WNDR Museum",
+        "lat": 41.88053,
+        "lng": -87.656
+      },
+      "writtenOn": "2026-09-10",
+      "retiredOn": "2026-09-10"
     }
   }
 }
