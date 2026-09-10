@@ -20,14 +20,6 @@
  * is free to re-pick a venue that an already-expired day used.
  */
 export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
-  // seattle — pinned 2026-09-09 (pin-day)
-  'seattle:2026-09-09': [
-    'seattle-great-wheel',
-    'biscuit-bitch-belltown',
-    'honeyhole',
-    'chop-suey',
-    'camp-long',
-  ],
   // annarbor — pinned 2026-09-10 (pin-day)
   'annarbor:2026-09-10': [
     'university-of-michigan-golf-course',
@@ -43,5 +35,13 @@ export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
     'robeson-gallery',
     'mosul-grill',
     'east-fairmount-park',
+  ],
+  // seattle — pinned 2026-09-10 (pin-day)
+  'seattle:2026-09-10': [
+    'the-seattle-public-library-central-library',
+    'spud-fish-and-chips',
+    'hula-hula',
+    'hood-famous-cafe-and-bar',
+    'jefferson-park',
   ],
 }

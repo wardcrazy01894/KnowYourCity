@@ -5,63 +5,81 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
 
-- [ ] **Ann Arbor + State College play-set drift — fix is open as PR #204,**
-      blocked on #203. Ann Arbor had 7 benched rows outranking its in-play
-      floor and State College 2, all local-chain branches added without a
-      re-cap. The PR also adds the CI guard (`src/lib/locations.test.ts`) that
-      fails whenever a benched row strictly outranks the in-play floor, which
-      is what stops this recurring in any capped city. Tick this off when #204
-      merges.
-- [ ] **Espresso Vivace: two blurbs disagree about whether the original is
-      open.** `espresso-vivace-alley-24` says it is "one of just two Vivace
-      locations left after the original Capitol Hill sidewalk bar closed in
-      2023", while `espresso-vivace` describes a still-in-play "Capitol Hill
-      flagship... founded 1988" with no closure. One of the two is wrong and a
-      player sees whichever they draw. Both predate PR #203 (unchanged since
-      #199, `lastVerified` June 2026), so this needs a source check on which
-      Vivace rooms are actually trading, then either a closure through the fame
-      cache or a correction to the Alley 24 write-up.
-- [ ] **Blurbs that describe a sibling branch instead of their own row.** A
-      multi-branch venue's write-up sometimes tells the _original's_ story with
-      nothing placing the row the player is actually looking at, or names the
-      wrong neighborhood outright. Six were fixed in Seattle (PR #203) and one
-      in State College, all found by reverse-geocoding each row and reading its
-      prose against the real address — the worst called a Ballard Avenue shop
-      "this Capitol Hill location" in the same sentence that placed it
-      correctly. An audit over every multi-branch family still flags **23 rows
-      across St. Pete, State College, Ann Arbor and Chicago** whose prose names
-      a sibling's neighborhood and never its own. Most are ordinary origin
-      framing ("the first X opened in ... in 2011") and are fine; each needs a
-      read against its coordinates to tell which is which. The audit is a short
-      script: group rows by the name before " - ", then flag any row whose
-      blurb matches a sibling's suffix but not its own. **Run it over `text`
-      and `descriptor` separately** — checking only `text` is how
-      `portage-bay-cafe-university-district` ("in the U District" on a
-      Roosevelt row) survived the first sweep. Descriptor-level hits still
-      open, highest-signal first: St. Pete `kahwa-south` (named Waterfront Arts
-      District, descriptor says Downtown South), Chicago `als-beef` (named
-      River North, descriptor says Taylor Street in Little Italy) and
-      `stax-cafe-little-italy` (named West Town). Each needs its coordinates
-      reverse-geocoded before anything is rewritten — in this bug class the
-      _name_ has been right and the blurb wrong every time so far, but that is
-      an observation, not a rule.
+- [x] **Ann Arbor + State College play-set drift — SHIPPED (PR #204).** Ann
+      Arbor had 7 benched rows outranking its in-play floor and State College 2,
+      all local-chain branches added without a re-cap. The PR also added the CI
+      guard (`src/lib/locations.test.ts`) that fails whenever a benched row
+      strictly outranks the in-play floor, which stops this recurring in any
+      capped city.
+- [x] **Espresso Vivace "contradiction" — checked, NOT a bug (2026-09-10).**
+      Flagged in review because `espresso-vivace-alley-24` says the Capitol Hill
+      sidewalk bar closed in 2023 while `espresso-vivace` describes a live
+      Capitol Hill cafe. They are different rooms: `espresso-vivace` geocodes to
+      **532 Broadway East**, the Brix cafe, and the closed sidewalk bar was a
+      third location. "Two locations left" and "Capitol Hill cafe" are both
+      true. No change made; recorded so nobody re-opens it.
+- [x] **Wrong-branch blurb sweep — DONE across all five cities (PR #205).** A
+      multi-branch venue's write-up sometimes told the _original's_ story with
+      nothing placing the row the player is looking at, or named the wrong
+      neighborhood outright. Eleven were fixed in #203/#204 (Seattle, State
+      College) and the last four in #205. The full sweep — every multi-branch
+      family in all five cities, `text` and `descriptor` checked **separately**,
+      every flagged row then reverse-geocoded — flagged 34 and resolved to
+      **six real errors**. Two were wrong descriptors: `als-beef` (Chicago) put
+      a River North shop on Taylor Street in Little Italy, and
+      `stax-cafe-little-italy` named both of the chain's rooms instead of the
+      one the player is looking at. The other four were rows whose **`name`**
+      was wrong rather than the blurb (see the id/name item below). Every other
+      flag was legitimate origin framing ("the first X opened on Capitol Hill in
+      2011"), confirmed by the geocode pass: each row's name matched its real
+      address. **To re-run it:** group rows by the name before `" - "`, flag any
+      row whose blurb matches a sibling's suffix but not its own, run it over
+      `text` and `descriptor` separately, and reverse-geocode before rewriting
+      anything. Two further signatures are needed for full coverage, each of
+      which caught a row the others missed — a **bare street name** in the prose
+      vs the geocoded road, and a **full numbered address** ("1600 7th Ave"
+      turned out to be a sibling's). A **fifth** signature is needed and is the
+      one that generalizes the rest: check each row's own descriptor against its
+      own geocode, **independent of any sibling**. Every sibling-based check
+      misses a family where the blurb names a neighborhood matching neither its
+      own name nor any sibling's — which is how
+      `cookies-country-chicken-west-woodland` (named West Woodland, actually
+      Ballard, sibling named Pioneer Square) survived the sweep and was caught
+      in review. **And check the venue's own site**: that row was dismissed
+      because West Woodland is a real adjacent micro-neighborhood and the
+      geocoder was ambiguous, but the business lists exactly two locations,
+      "Ballard" and "Pioneer Square". Expect heavy false positives regardless: a
+      street-claim sweep of 303 in-play Ann Arbor / State College rows flagged
+      59 and every one checked was correct, because parks are centroids whose
+      address is an entrance on a bounding street, and corner buildings and
+      dense markets return a neighbouring tenant. Normalize ordinals too
+      ("First Avenue" vs "1st Avenue").
 - [ ] **Reconcile blurb-key ids with the row's real name and coordinates.**
       Across several families the id suffix is offset from the display name —
       Ann Arbor's `cottage-inn-pizza-lakewood` is the _Packard Street_ shop,
       Seattle's `portage-bay-cafe-university-district` is the _Roosevelt_ one,
-      `top-pot-doughnuts-downtown` is in Bryant. An id is an opaque key, so an
-      offset id is invisible to the player by itself — but it is exactly what
-      makes the wrong-branch bug above easy to introduce and hard to catch by
-      eyeballing a diff. **And the mismatch is not always confined to the id:**
-      Seattle's `marination-ma-kai` is _named_ "Marination - Industrial
-      District" while sitting at 1660 Harbor Ave SW in West Seattle (its blurb
-      correctly describes Alki, so here the `name` is the wrong field), and
-      `tacos-chukis-greater-duwamish` is named "Greater Duwamish" but
-      reverse-geocodes to Beacon Hill. Those two are player-visible today. So
-      this pass has to reconcile id, `name` and coordinates together, and
-      decide per row which of the three is the one that is wrong. Renaming ids means migrating blurb keys and
-      `dailyOverrides`, so it is a deliberate pass, not a drive-by.
-
+      `top-pot-doughnuts-downtown` is in Bryant. **Root cause (found
+      2026-09-10):** `add-chain-branches.mjs` mints a new branch's id by
+      slugging the name it has at creation (`resolveBranchName`), while existing
+      rows "keep their ORIGINAL id (not a slug of their disambiguated name)" —
+      its own comment. `normalize-chains.mjs` then relabels the _whole brand
+      group_ whenever neighborhoods are recomputed, so names move and frozen ids
+      do not. Each script is self-consistent; they drift apart over time.
+      `NOHOOD_LABEL` in `normalize-chains.mjs` carries the same skew — its
+      `yallah-taco` and `brothers-pizza` entries name the sibling's
+      neighborhood, not that id's. An id is an opaque key, so an offset id is
+      invisible to the player by itself, but it is what makes the wrong-branch
+      bug easy to introduce and hard to catch by eyeballing a diff. The four
+      player-visible `name` errors this produced were fixed in #205
+      (`marination-ma-kai` Industrial District → West Seattle,
+      `tacos-chukis-greater-duwamish` → Beacon Hill,
+      `tavolata-downtown-2nd-avenue` Downtown → Capitol Hill,
+      `cookies-country-chicken-west-woodland` → Ballard), each verified by
+      reverse-geocoding and re-accepted through `sync-blurbs --accept`. What
+      remains is the id migration itself, which means moving blurb keys and any
+      `dailyOverrides` entries, so it is a deliberate pass rather than a
+      drive-by. Re-deriving ids from final names at the end of
+      `normalize-chains.mjs` would stop new ones appearing.
 - [x] **Difficulty rollout — all cities done.** St. Pete (PR #40), **State
       College**, **Ann Arbor**, **Seattle**, and **Chicago** SHIPPED: every
       location has an `easy`/`medium`/`hard` `difficulty` (inverse of local fame,

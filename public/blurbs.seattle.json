@@ -1303,7 +1303,7 @@
       "descriptor": "Fried chicken counter in Ballard — \"fried chicken every way but fancy\"",
       "sources": ["https://www.cookiescountrychicken.com/about/"],
       "writtenFor": {
-        "name": "Cookie's Country Chicken - West Woodland",
+        "name": "Cookie's Country Chicken - Ballard",
         "lat": 47.66279,
         "lng": -122.36923
       },
@@ -3244,11 +3244,11 @@
         "https://kingcounty.gov/en/dept/metro/travel-options/water-taxi/west-seattle"
       ],
       "writtenFor": {
-        "name": "Marination - Industrial District",
+        "name": "Marination - West Seattle",
         "lat": 47.58943,
         "lng": -122.38057
       },
-      "writtenOn": "2026-09-09"
+      "writtenOn": "2026-09-10"
     },
     "maripili": {
       "text": "MariPili is chef Grayson Corrales's debut restaurant, a tapas bar built around the food of Galicia in northwest Spain — patatas bravas, pulpo, lamb and pork albóndigas, roasted Cornish game hen and paella tahdig — with Estrella Galicia to drink alongside it.",
@@ -5594,7 +5594,7 @@
       "descriptor": "Al pastor taqueria on Beacon Hill",
       "sources": ["https://en.wikipedia.org/wiki/Tacos_Chukis"],
       "writtenFor": {
-        "name": "Tacos Chukis - Greater Duwamish",
+        "name": "Tacos Chukis - Beacon Hill",
         "lat": 47.57956,
         "lng": -122.31153
       },
@@ -5714,7 +5714,7 @@
         "https://en.wikipedia.org/wiki/Tavol%C3%A0ta"
       ],
       "writtenFor": {
-        "name": "Tavolata - Downtown",
+        "name": "Tavolata - Capitol Hill",
         "lat": 47.61396,
         "lng": -122.32532
       },
