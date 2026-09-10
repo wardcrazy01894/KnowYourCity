@@ -535,8 +535,8 @@
       "writtenOn": "2026-09-09"
     },
     "big-marios-pizza-fremont": {
-      "text": "Big Mario's began on Capitol Hill in 2010 selling New York-style slices and whole pies alongside off-script versions like macaroni and cheese, potato and pesto, and pear gorgonzola. It added a Lower Queen Anne shop in 2015 plus this Fremont location, and is known as a divey spot with a small backroom bar.",
-      "descriptor": "New York-style pizza by the slice on Fremont Ave N",
+      "text": "Big Mario's began on Capitol Hill in 2010 selling New York-style slices and whole pies alongside off-script versions like macaroni and cheese, potato and pesto, and pear gorgonzola. It added a Lower Queen Anne shop in 2015 plus this one on Leary Way NW, and is known as a divey spot with a small backroom bar.",
+      "descriptor": "New York-style pizza by the slice on Leary Way NW",
       "sources": ["https://en.wikipedia.org/wiki/Big_Mario%27s_Pizza"],
       "writtenFor": {
         "name": "Big Mario's Pizza - Fremont",
@@ -3146,7 +3146,7 @@
     },
     "macrina-bakery-sodo": {
       "text": "Leslie Mackie opened the first Macrina in Belltown in 1993, and it grew into one of Seattle's defining bread bakeries; the Aloha cafe, at 19th Ave E and E Aloha, was the fifth to open, on September 6, 2018. Condé Nast Traveler put Macrina on its 2014 list of 13 destination bakeries in America, singling out the caramel turtle brownies.",
-      "descriptor": "Macrina's Capitol Hill cafe at 19th & Aloha — artisan breads, pastries",
+      "descriptor": "Macrina's cafe at 19th Ave E and E Aloha — artisan breads and pastries",
       "sources": [
         "https://en.wikipedia.org/wiki/Macrina_Bakery",
         "https://www.macrinabakery.com/aloha-cafe"
@@ -5440,8 +5440,8 @@
       "writtenOn": "2026-09-09"
     },
     "storyville-coffee-downtown-pike-street": {
-      "text": "Storyville began roasting on Bainbridge Island in 2006 and announced its Pike Place Market flagship in 2013, taking the Corner Market building space that had previously housed the restaurant Chez Shea. The company still roasts on Bainbridge and offers a \"3 Sip Guarantee\" — love it by the third sip or the coffee is on the house.",
-      "descriptor": "Bainbridge Island roaster's downtown Seattle espresso bar",
+      "text": "Storyville began roasting on Bainbridge Island in 2006 and announced its Pike Place Market flagship in 2013, taking the Corner Market building space that had previously housed the restaurant Chez Shea. This is the separate 1st Avenue cafe a few blocks south. The company still roasts on Bainbridge and offers a \"3 Sip Guarantee\" — love it by the third sip or the coffee is on the house.",
+      "descriptor": "Bainbridge Island roaster's espresso bar at 1001 1st Ave downtown",
       "sources": [
         "https://en.wikipedia.org/wiki/Storyville_Coffee_Company",
         "https://storyville.com/"
@@ -5707,8 +5707,8 @@
       "writtenOn": "2026-09-09"
     },
     "tavolata-downtown-2nd-avenue": {
-      "text": "Chef Ethan Stowell built Tavolàta around handmade pasta and a communal table — \"at Tavolàta, we believe great food is best shared.\" Fodor's described the Belltown original as \"Italian goodness by the plateful in an industrial-chic bi-level space.\" It has since spread to Capitol Hill, Fremont, Redmond, Spokane and Boise.",
-      "descriptor": "Ethan Stowell's handmade-pasta Italian restaurant on 2nd Ave in Belltown",
+      "text": "Chef Ethan Stowell built Tavolata around handmade pasta and a communal table — \"at Tavolata, we believe great food is best shared.\" Fodor's described the Belltown original as \"Italian goodness by the plateful in an industrial-chic bi-level space.\" It has since spread to Capitol Hill, Fremont, Redmond, Spokane and Boise; this is the Capitol Hill room, on E Pike St.",
+      "descriptor": "Ethan Stowell handmade-pasta room on E Pike St, the Capitol Hill one",
       "sources": [
         "https://tavolata.com/",
         "https://en.wikipedia.org/wiki/Tavol%C3%A0ta"

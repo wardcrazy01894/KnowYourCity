@@ -5,6 +5,13 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
 
+- [ ] **Ann Arbor + State College play-set drift — fix is open as PR #204,**
+      blocked on #203. Ann Arbor had 7 benched rows outranking its in-play
+      floor and State College 2, all local-chain branches added without a
+      re-cap. The PR also adds the CI guard (`src/lib/locations.test.ts`) that
+      fails whenever a benched row strictly outranks the in-play floor, which
+      is what stops this recurring in any capped city. Tick this off when #204
+      merges.
 - [ ] **Blurbs that describe a sibling branch instead of their own row.** A
       multi-branch venue's write-up sometimes tells the _original's_ story with
       nothing placing the row the player is actually looking at, or names the
@@ -33,10 +40,17 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       Across several families the id suffix is offset from the display name —
       Ann Arbor's `cottage-inn-pizza-lakewood` is the _Packard Street_ shop,
       Seattle's `portage-bay-cafe-university-district` is the _Roosevelt_ one,
-      `top-pot-doughnuts-downtown` is in Bryant. Ids are opaque keys and the
-      player only ever sees `name`, so nothing is broken today, but it is
-      exactly what makes the wrong-branch bug above easy to introduce and hard
-      to catch by eyeballing a diff. Renaming ids means migrating blurb keys and
+      `top-pot-doughnuts-downtown` is in Bryant. An id is an opaque key, so an
+      offset id is invisible to the player by itself — but it is exactly what
+      makes the wrong-branch bug above easy to introduce and hard to catch by
+      eyeballing a diff. **And the mismatch is not always confined to the id:**
+      Seattle's `marination-ma-kai` is _named_ "Marination - Industrial
+      District" while sitting at 1660 Harbor Ave SW in West Seattle (its blurb
+      correctly describes Alki, so here the `name` is the wrong field), and
+      `tacos-chukis-greater-duwamish` is named "Greater Duwamish" but
+      reverse-geocodes to Beacon Hill. Those two are player-visible today. So
+      this pass has to reconcile id, `name` and coordinates together, and
+      decide per row which of the three is the one that is wrong. Renaming ids means migrating blurb keys and
       `dailyOverrides`, so it is a deliberate pass, not a drive-by.
 
 - [x] **Difficulty rollout — all cities done.** St. Pete (PR #40), **State
