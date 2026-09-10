@@ -20,14 +20,6 @@
  * is free to re-pick a venue that an already-expired day used.
  */
 export const DAILY_OVERRIDES: Record<string, readonly string[]> = {
-  // stpete — pinned 2026-09-06 (pin-day)
-  'stpete:2026-09-06': [
-    'williams-park',
-    'horse-and-jockey',
-    'sushi-sho-rexley',
-    'grassroots-kava',
-    'tritons-pub',
-  ],
   // chicago — pinned 2026-09-09 (pin-day)
   'chicago:2026-09-09': [
     'gallagher-way',
