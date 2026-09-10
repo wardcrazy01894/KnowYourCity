@@ -12,6 +12,15 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       fails whenever a benched row strictly outranks the in-play floor, which
       is what stops this recurring in any capped city. Tick this off when #204
       merges.
+- [ ] **Espresso Vivace: two blurbs disagree about whether the original is
+      open.** `espresso-vivace-alley-24` says it is "one of just two Vivace
+      locations left after the original Capitol Hill sidewalk bar closed in
+      2023", while `espresso-vivace` describes a still-in-play "Capitol Hill
+      flagship... founded 1988" with no closure. One of the two is wrong and a
+      player sees whichever they draw. Both predate PR #203 (unchanged since
+      #199, `lastVerified` June 2026), so this needs a source check on which
+      Vivace rooms are actually trading, then either a closure through the fame
+      cache or a correction to the Alley 24 write-up.
 - [ ] **Blurbs that describe a sibling branch instead of their own row.** A
       multi-branch venue's write-up sometimes tells the _original's_ story with
       nothing placing the row the player is actually looking at, or names the
