@@ -69,7 +69,7 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
       `yallah-taco` and `brothers-pizza` entries name the sibling's
       neighborhood, not that id's. An id is an opaque key, so an offset id is
       invisible to the player by itself, but it is what makes the wrong-branch
-      bug easy to introduce and hard to catch by eyeballing a diff. The three
+      bug easy to introduce and hard to catch by eyeballing a diff. The four
       player-visible `name` errors this produced were fixed in #205
       (`marination-ma-kai` Industrial District → West Seattle,
       `tacos-chukis-greater-duwamish` → Beacon Hill,
