@@ -171,8 +171,9 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 - [ ] **Add Barra Barra and Kaixo (2701 Central Ave).** Baba and its sister spot
       Barbouni closed after service on 2026-07-03 and the space reopened as
       these two concepts (St. Pete Rising). Neither is listed on Google Places
-      yet, so there is nothing to geocode or calibrate fame against — re-check
-      in a month or two and add via the `add-location` skill.
+      yet, so there is nothing to geocode or calibrate fame against — re-checked
+      2026-09-09 via Places and still unlisted (only Baba's stale row shows at
+      2701 Central Ave). Re-check again later and add via the `add-location` skill.
 
 - [ ] **Write location blurbs for every city** — the day recap (PLAN §5.13)
       ships with 4 demo St. Pete entries in `public/blurbs.stpete.json`; every
