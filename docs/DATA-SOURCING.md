@@ -463,7 +463,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 `cities.json` (read by both this script and the app via `src/lib/cities.ts`).
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c, post full-vetting + chain-branch re-adds §4e): St. Pete (373 → **373**),
-State College (229 → **200**), Ann Arbor (344 → **300**), Seattle (2463 →
+State College (229 → **200**), Ann Arbor (344 → **300**), Seattle (2462 →
 **500**), Chicago (4195 → **700**) —
 all enriched. (Seattle gained back 12 relocated venues re-added at their verified
 current in-bounds location — see `data/seattle-manual.json`.)
@@ -931,8 +931,7 @@ Rewind St Pete is a different business with its own write-up).
 **State College is complete end to end too — all 229 dataset rows** (200 in
 play plus 29 benched), 190 with a story and every row with a descriptor. That story rate is essentially the
 same as St. Pete's (320 of 373, 86%), so a college town does not obviously
-leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, 480 with a story. Its 1963
-benched rows are not researched (see `--all` above). **Chicago's in-play set is complete too — 700 of 700**, 667 with a story. Its benched rows are not researched (see `--all` above) and the owner has said they are not a priority. **All five cities are now covered in play.** Chicago's story rate trails the others for a mechanical reason rather than a documentary one: `chicago.eater.com` and several venue sites block automated fetches, so a number of entries lost claims — and a few their only source — to an unreadable citation.
+leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, with 550 blurbs in total (525 carrying a story) because 50 rows that later left the play set keep theirs. Its 1962 benched rows are not researched (see `--all` above). **Chicago's in-play set is complete too — 700 of 700**, 667 with a story. Its benched rows are not researched (see `--all` above) and the owner has said they are not a priority. **All five cities are now covered in play.** Chicago's story rate trails the others for a mechanical reason rather than a documentary one: `chicago.eater.com` and several venue sites block automated fetches, so a number of entries lost claims — and a few their only source — to an unreadable citation.
 
 ---
 

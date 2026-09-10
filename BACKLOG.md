@@ -5,6 +5,63 @@ flow (CI green → squash-merge → branch auto-deleted). See `CLAUDE.md`.
 
 ## In progress / next
 
+- [ ] **Ann Arbor + State College play-set drift — fix is open as PR #204,**
+      blocked on #203. Ann Arbor had 7 benched rows outranking its in-play
+      floor and State College 2, all local-chain branches added without a
+      re-cap. The PR also adds the CI guard (`src/lib/locations.test.ts`) that
+      fails whenever a benched row strictly outranks the in-play floor, which
+      is what stops this recurring in any capped city. Tick this off when #204
+      merges.
+- [ ] **Espresso Vivace: two blurbs disagree about whether the original is
+      open.** `espresso-vivace-alley-24` says it is "one of just two Vivace
+      locations left after the original Capitol Hill sidewalk bar closed in
+      2023", while `espresso-vivace` describes a still-in-play "Capitol Hill
+      flagship... founded 1988" with no closure. One of the two is wrong and a
+      player sees whichever they draw. Both predate PR #203 (unchanged since
+      #199, `lastVerified` June 2026), so this needs a source check on which
+      Vivace rooms are actually trading, then either a closure through the fame
+      cache or a correction to the Alley 24 write-up.
+- [ ] **Blurbs that describe a sibling branch instead of their own row.** A
+      multi-branch venue's write-up sometimes tells the _original's_ story with
+      nothing placing the row the player is actually looking at, or names the
+      wrong neighborhood outright. Six were fixed in Seattle (PR #203) and one
+      in State College, all found by reverse-geocoding each row and reading its
+      prose against the real address — the worst called a Ballard Avenue shop
+      "this Capitol Hill location" in the same sentence that placed it
+      correctly. An audit over every multi-branch family still flags **23 rows
+      across St. Pete, State College, Ann Arbor and Chicago** whose prose names
+      a sibling's neighborhood and never its own. Most are ordinary origin
+      framing ("the first X opened in ... in 2011") and are fine; each needs a
+      read against its coordinates to tell which is which. The audit is a short
+      script: group rows by the name before " - ", then flag any row whose
+      blurb matches a sibling's suffix but not its own. **Run it over `text`
+      and `descriptor` separately** — checking only `text` is how
+      `portage-bay-cafe-university-district` ("in the U District" on a
+      Roosevelt row) survived the first sweep. Descriptor-level hits still
+      open, highest-signal first: St. Pete `kahwa-south` (named Waterfront Arts
+      District, descriptor says Downtown South), Chicago `als-beef` (named
+      River North, descriptor says Taylor Street in Little Italy) and
+      `stax-cafe-little-italy` (named West Town). Each needs its coordinates
+      reverse-geocoded before anything is rewritten — in this bug class the
+      _name_ has been right and the blurb wrong every time so far, but that is
+      an observation, not a rule.
+- [ ] **Reconcile blurb-key ids with the row's real name and coordinates.**
+      Across several families the id suffix is offset from the display name —
+      Ann Arbor's `cottage-inn-pizza-lakewood` is the _Packard Street_ shop,
+      Seattle's `portage-bay-cafe-university-district` is the _Roosevelt_ one,
+      `top-pot-doughnuts-downtown` is in Bryant. An id is an opaque key, so an
+      offset id is invisible to the player by itself — but it is exactly what
+      makes the wrong-branch bug above easy to introduce and hard to catch by
+      eyeballing a diff. **And the mismatch is not always confined to the id:**
+      Seattle's `marination-ma-kai` is _named_ "Marination - Industrial
+      District" while sitting at 1660 Harbor Ave SW in West Seattle (its blurb
+      correctly describes Alki, so here the `name` is the wrong field), and
+      `tacos-chukis-greater-duwamish` is named "Greater Duwamish" but
+      reverse-geocodes to Beacon Hill. Those two are player-visible today. So
+      this pass has to reconcile id, `name` and coordinates together, and
+      decide per row which of the three is the one that is wrong. Renaming ids means migrating blurb keys and
+      `dailyOverrides`, so it is a deliberate pass, not a drive-by.
+
 - [x] **Difficulty rollout — all cities done.** St. Pete (PR #40), **State
       College**, **Ann Arbor**, **Seattle**, and **Chicago** SHIPPED: every
       location has an `easy`/`medium`/`hard` `difficulty` (inverse of local fame,
