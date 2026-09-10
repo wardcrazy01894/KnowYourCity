@@ -371,7 +371,7 @@ stale bucket). This keeps the whole scored set in the file — re-capping to a
 different size is a pure re-run of `apply-difficulty.mjs` off the committed
 `data/fame-<city>.json`, no re-research. Daily selection (`src/lib/daily.ts`)
 filters to `inPlay !== false`. Current caps: St. Pete 400 (373 rows, all in
-play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4198).
+play), Ann Arbor 300, State College 200, Seattle 500, Chicago 700 (of 4197).
 
 > **Removing a row reshuffles the cap.** Because in-play membership and the
 > 40/40/20 buckets are recomputed from fame rank on every `apply-difficulty` run,
@@ -464,7 +464,7 @@ city's `target` — or, when `target` is **`null`**, keeps **everything** in-bou
 Current cities (rows in dataset → **in daily play** after the play cap, see
 §4c, post full-vetting + chain-branch re-adds §4e): St. Pete (373 → **373**),
 State College (229 → **200**), Ann Arbor (344 → **300**), Seattle (2463 →
-**500**), Chicago (4198 → **700**) —
+**500**), Chicago (4197 → **700**) —
 all enriched. (Seattle gained back 12 relocated venues re-added at their verified
 current in-bounds location — see `data/seattle-manual.json`.)
 
@@ -864,6 +864,27 @@ never be seen. `--all` includes them, which is worth doing once a city's
 in-play set is complete: it future-proofs a later cap raise, since a promoted
 row then arrives with its write-up already done.
 
+Before applying a researched set, also scan the prose for **risky content** —
+`prison|sentenc|convict|fraud|arrest|lawsuit|guilty|assault|racial|racist|
+segregat|discriminat|encampment|shooting|overdose|controvers|allegation|riot|
+killed|fatal|hit-and-run|murder|died|death|crash` — and judge each hit. Keep
+memorial and naming context (a park named for someone, a business's succession,
+a memorial whose subject IS its reason to exist) and major public history; trim
+a private individual's legal trouble, a live partisan flashpoint used as an
+example, and graphic detail a caption cannot do justice to. The death vocabulary
+was added after a review caught a ghost-bike memorial entry recounting a private
+citizen's 2023 hit-and-run and quoting his family — the earlier scan had no
+death terms at all.
+
+`apply-blurbs` prints a **promotional-language warning** on every run, listing
+any accepted entry whose text _or descriptor_ contains an unsourced-superlative
+term (`award-winning`, `hidden gem`, `world-class`, …). It is a warning, not a
+reject: a **named, independently sourced** award is fine (a James Beard listing,
+a city stewardship award), while a vague boast with the venue's own site as its
+only source is not. Read the list every run — three such claims shipped in
+earlier cities precisely because the check was run by hand and its output
+skimmed.
+
 `apply-blurbs` keeps a row's **story** only at confidence high/medium (≤ 600
 chars) and its **descriptor** regardless (≤ 100 chars) — a low-confidence story
 is dropped, the descriptor survives, so a researched spot never falls back to
@@ -901,8 +922,13 @@ Rewind St Pete is a different business with its own write-up).
 **State College is complete end to end too — all 229 dataset rows** (200 in
 play plus 29 benched), 190 with a story and every row with a descriptor. That story rate is essentially the
 same as St. Pete's (320 of 373, 86%), so a college town does not obviously
-leave a deeper paper trail than a beach town at this sample size. Seattle (500 in play of 2463 rows) and Chicago (700 of 4198) are the
-remaining runs, one city fully finished before the next.
+leave a deeper paper trail than a beach town at this sample size. **Seattle's in-play set is complete — 500 of 500**, 480 with a story. Its 1963
+benched rows are not researched (see `--all` above). **Chicago is partially covered — 588 of its 700 in-play rows**, 568 with a
+story; the remaining 112 and its 3497 benched rows are outstanding. Chicago's
+story rate runs slightly below the other cities for a mechanical reason rather
+than a documentary one: `chicago.eater.com` blocks automated fetches, so
+several entries lost claims (and one its only source) to an unreadable
+citation.
 
 ---
 
