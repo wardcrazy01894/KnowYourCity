@@ -2313,8 +2313,8 @@
       "writtenOn": "2026-09-09"
     },
     "hot-cakes-capitol-hill": {
-      "text": "Autumn Martin's Hot Cakes started at Seattle farmers markets in 2008, selling raw frozen cake batter in mason jars for people to bake at home; the Ballard Ave shop followed in 2012 and this Capitol Hill location in 2015. The Dark Decadence recipe has not changed since, and the spiked milkshakes — smoked chocolate with bourbon, mezcal with lime and caramel — drew national press.",
-      "descriptor": "Molten chocolate cake shop on Capitol Hill, known for boozy shakes",
+      "text": "Autumn Martin's Hot Cakes started at Seattle farmers markets in 2008, selling raw frozen cake batter in mason jars for people to bake at home; this Ballard Ave shop followed in 2012, and a Capitol Hill location came in 2015. The Dark Decadence recipe has not changed since, and the spiked milkshakes — smoked chocolate with bourbon, mezcal with lime and caramel — drew national press.",
+      "descriptor": "Molten chocolate cake shop on Ballard Ave NW, known for boozy shakes",
       "sources": [
         "https://getyourhotcakes.com/pages/about",
         "https://getyourhotcakes.com/pages/press"
@@ -2488,8 +2488,8 @@
       "writtenOn": "2026-09-09"
     },
     "jacks-bbq-industrial-district": {
-      "text": "Founder Jack Timmons is a Texan who moved to Seattle, then went back to school for barbecue — BBQ Summer Camp at Texas A&M's Meat Science department in 2012 — before running a pop-up called the Seattle Brisket Experience and opening a brick-and-mortar in SoDo. He still has post oak, mesquite and hickory trucked up from Texas for the pits.",
-      "descriptor": "Central Texas-style barbecue smoked over Texas hardwoods",
+      "text": "Founder Jack Timmons is a Texan who moved to Seattle, then went back to school for barbecue — BBQ Summer Camp at Texas A&M's Meat Science department in 2012 — before running a pop-up called the Seattle Brisket Experience and opening the original in SoDo. He still has post oak, mesquite and hickory trucked up from Texas for the pits, and this South Lake Union outpost runs the same smokehouse menu.",
+      "descriptor": "Central Texas barbecue in South Lake Union, smoked over Texas hardwoods",
       "sources": ["https://www.jacksbbq.com/about"],
       "writtenFor": {
         "name": "Jack’s BBQ - SLU",
@@ -2967,8 +2967,8 @@
       "writtenOn": "2026-09-09"
     },
     "lil-woodys-capitol-hill": {
-      "text": "Marcus Lalario opened the first Lil Woody's at 1211 Pine Street on Capitol Hill in 2011. Every February the burger counter hands its menu to guest chefs — J. Kenji López-Alt, Canlis, Cafe Campagne and Spice Waala have all done a run — and the chain now has stands at T-Mobile Park, Sea-Tac and Climate Pledge Arena.",
-      "descriptor": "Griddled burgers and shakes on Capitol Hill, original location since 2011",
+      "text": "Marcus Lalario opened the first Lil Woody's at 1211 Pine Street on Capitol Hill in 2011; this one is the Ballard shop on NW Market St. Every February the burger counter hands its menu to guest chefs — J. Kenji Lopez-Alt, Canlis, Cafe Campagne and Spice Waala have all done a run — and the chain now has stands at T-Mobile Park, Sea-Tac and Climate Pledge Arena.",
+      "descriptor": "Griddled burgers and shakes on NW Market St in Ballard",
       "sources": [
         "https://en.wikipedia.org/wiki/Lil_Woody%27s",
         "https://www.lilwoodys.com/"
@@ -6224,7 +6224,7 @@
     },
     "top-pot-doughnuts-downtown": {
       "text": "Brothers Mark and Michael Klebeck opened the first Top Pot on Capitol Hill in February 2002. The name came from a salvaged neon sign over a shuttered Chinese restaurant called Topspot — the \"S\" fell off during the move, so Mark suggested swapping in a coffee pot. Top Pot's recipes are also behind the doughnuts sold in more than 7,000 Starbucks stores in the US and Canada.",
-      "descriptor": "Hand-forged doughnuts and coffee, downtown Seattle (chain est. 2002)",
+      "descriptor": "Hand-forged doughnuts and coffee on 35th Ave NE (chain est. 2002)",
       "sources": ["https://en.wikipedia.org/wiki/Top_Pot_Doughnuts"],
       "writtenFor": {
         "name": "Top Pot Doughnuts - Ravenna",
@@ -6320,8 +6320,8 @@
       "writtenOn": "2026-09-09"
     },
     "un-bien-ballard": {
-      "text": "Un Bien was opened in June 2015 by Julian and Lucas Lorenzo, sons of the man behind Paseo, to carry on his Caribbean sandwich. The braised-pork Caribbean Roast — sweet onions, pickled jalapeños, romaine and aioli on a Macrina baguette — is the one to order.",
-      "descriptor": "Caribbean pork sandwich counter on W Galer St, Queen Anne",
+      "text": "Julian and Lucas Lorenzo, sons of Paseo founder Lorenzo Lorenzo, opened the first Un Bien in Ballard in June 2015 to carry on their father's Caribbean sandwich, and added a second facing Shilshole Bay in 2016. This W Galer St shop is the third and the only one off the Ballard waterfront. The braised-pork Caribbean Roast — sweet onions, pickled jalapenos, romaine and aioli on a Macrina baguette — is the one to order.",
+      "descriptor": "Un Bien's Queen Anne shop on W Galer St, third of the three",
       "sources": [
         "https://en.wikipedia.org/wiki/Un_Bien",
         "https://www.unbienseattle.com/"
