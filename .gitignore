@@ -26,6 +26,10 @@ data/_*-fame-work/
 # Scratch dir created by scripts during local runs (e.g. node compile cache).
 scripts/tmp/
 
+# JSON reporter output written by `rtk vitest` (the Claude Code RTK hook
+# rewrites `npx vitest run` to it). Local-only test results, never committed.
+.vitest/
+
 # Transient Google Places freshness-sweep results (scripts/places-freshness.mjs).
 # Holds Google-derived fields used only during a run; per Places ToS we don't
 # persist them — the committed artifacts are the lastVerified stamps + status
