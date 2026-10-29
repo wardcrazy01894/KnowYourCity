@@ -118,8 +118,12 @@ score — one human = one competitor.)
 - **Bounded storage.** `scores` older than 90 days are pruned **lazily**: on a
   submit, at most once per UTC day (`pruneIfDue`, marker in the `meta` table,
   migration `0004`). There is no Cron Trigger any more — the account's Workers
-  Free plan allows 5 per account and they were all in use. The `scheduled`
-  handler is kept should a cron ever be wanted again.
+  Free plan allows 5 per account and they were all in use. The toml keeps
+  `[triggers] crons = []` on purpose: an EMPTY list is what makes `wrangler
+deploy` clear the old schedule (deleting the block leaves it registered).
+  Confirm after deploying: `wrangler triggers deploy -c <toml>` must print no
+  schedule, or `GET /accounts/<id>/workers/scripts/<name>/schedules` → `[]`.
+  The `scheduled` handler is kept should a cron ever be wanted again.
 
 - **Per-player streak.** Each submit also advances a consecutive-day streak for
   `(city, client_id)` in a separate `streaks` table (migration `0002`) and
