@@ -2,7 +2,12 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { readFileSync, readdirSync } from 'node:fs'
 // node:sqlite needs Node >= 22.5 (package.json `engines` enforces this).
 import { DatabaseSync } from 'node:sqlite'
-import { upsertAndRank, topScores } from './leaderboard-lib.mjs'
+import {
+  upsertAndRank,
+  topScores,
+  pruneIfDue,
+  updateStreak,
+} from './leaderboard-lib.mjs'
 
 /**
  * SQL-level tests for the standing/board queries against a REAL SQLite with the
@@ -30,7 +35,12 @@ function d1(db) {
     first: () => db.prepare(sql).all(...args)[0] ?? null,
   })
   return {
-    prepare: (sql) => ({ bind: (...args) => wrap(sql, args) }),
+    // Like real D1, an unbound statement can run directly (pruneIfDue's
+    // marker read has no params) or be bound first.
+    prepare: (sql) => ({
+      ...wrap(sql, []),
+      bind: (...args) => wrap(sql, args),
+    }),
     batch: async (stmts) => stmts.map((s) => ({ results: s.all() })),
   }
 }
@@ -112,5 +122,35 @@ describe('topScores board (deduped to per-device best)', () => {
     const { scores, total } = await topScores(db, 'stpete', '2026-07-08', 3)
     expect(scores).toEqual([104, 103, 102])
     expect(total).toBe(5)
+  })
+})
+
+describe('lazy prune (pruneIfDue — replaces the Cron Trigger)', () => {
+  const at = (clientId, date) =>
+    upsertAndRank(
+      db,
+      { city: 'stpete', date, clientId, score: 400, lineup: 'aaaa' },
+      NOW,
+    )
+  it('prunes once per UTC day, is a no-op until the next day, never touches streaks', async () => {
+    const now = new Date('2026-07-08T12:00:00Z')
+    await at('device-A', '2026-01-01') // older than 90 days
+    await at('device-A', '2026-07-08')
+    // A 2-day streak that must survive: if the prune deleted the row, the
+    // same-day replay below would read as a fresh 1/1, not 2/2.
+    const who = { city: 'stpete', clientId: 'device-A' }
+    await updateStreak(db, { ...who, date: '2026-07-07' }, NOW)
+    await updateStreak(db, { ...who, date: '2026-07-08' }, NOW)
+    expect(await pruneIfDue(db, now)).toBe(1)
+    expect(await updateStreak(db, { ...who, date: '2026-07-08' }, NOW)).toEqual(
+      {
+        current: 2,
+        best: 2,
+      },
+    )
+    await at('device-B', '2026-01-02') // another old row…
+    expect(await pruneIfDue(db, now)).toBeNull() // …but today's prune already ran
+    expect(await pruneIfDue(db, new Date('2026-07-09T00:00:01Z'))).toBe(1)
+    expect((await topScores(db, 'stpete', '2026-07-08')).total).toBe(1)
   })
 })
