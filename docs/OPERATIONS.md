@@ -110,7 +110,9 @@ and the server-side per-player streak (#95). It is backed by a **Cloudflare D1**
 database (`kyc-leaderboard`) and shares the bug worker's CORS/origin helpers, so
 keep both worker files together. Submissions are anonymous (a browser-generated
 `client_id`, no PII), size-capped, origin-allowlisted, per-IP rate-limited
-(30/60s), and fail-closed; scores are pruned after **90 days** by a daily cron.
+(30/60s), and fail-closed; scores are pruned after **90 days**, lazily from a
+submit at most once per day (no cron — the free plan's 5 cron slots are
+spoken for; PLAN §11 Retention).
 
 > ⚠️ **Unlike the web app, the workers do NOT auto-deploy.** `deploy.yml` only
 > ships the static site. Worker code **and D1 migrations** are applied **by hand**

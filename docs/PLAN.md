@@ -630,12 +630,17 @@ the residual; Turnstile is plumbed through and documented as the next step
 
 ### Retention (bounded storage)
 
-Old daily boards have no value once the day passes, so a **Cloudflare Cron
-Trigger** on the worker (`scheduled` handler, daily 05:00 UTC) prunes `scores`
-rows older than **`RETENTION_DAYS` (90)**. This keeps the table bounded forever
-regardless of traffic (even 50k players/day stays well within D1 limits), at no
-extra cost. The prune touches **only** `scores` — never the per-player streak
-table — so a long streak survives even after its early daily rows age out.
+Old daily boards have no value once the day passes, so the worker prunes
+`scores` rows older than **`RETENTION_DAYS` (90)** — **lazily, from a submit,
+at most once per UTC day** (`pruneIfDue`, marker in the `meta` table,
+migration `0004`). It was a Cloudflare Cron Trigger until 2026-10-29; the
+account's Workers Free plan allows 5 cron triggers per account and every slot
+was in use, so all of Alex's leaderboard workers moved to the lazy prune (the
+`scheduled` handler is kept for the day a cron is wanted again). A day with no
+submits prunes nothing, which is harmless — nothing new aged out either. This
+keeps the table bounded forever at no extra cost. The prune touches **only**
+`scores` — never the per-player streak table — so a long streak survives even
+after its early daily rows age out.
 
 ### Graceful + optional
 
