@@ -136,11 +136,18 @@ describe('lazy prune (pruneIfDue — replaces the Cron Trigger)', () => {
     const now = new Date('2026-07-08T12:00:00Z')
     await at('device-A', '2026-01-01') // older than 90 days
     await at('device-A', '2026-07-08')
-    const who = { city: 'stpete', clientId: 'device-A', date: '2026-07-08' }
-    await updateStreak(db, who, NOW) // a streak row that must survive
+    // A 2-day streak that must survive: if the prune deleted the row, the
+    // same-day replay below would read as a fresh 1/1, not 2/2.
+    const who = { city: 'stpete', clientId: 'device-A' }
+    await updateStreak(db, { ...who, date: '2026-07-07' }, NOW)
+    await updateStreak(db, { ...who, date: '2026-07-08' }, NOW)
     expect(await pruneIfDue(db, now)).toBe(1)
-    // Same-day replay → unchanged row proves the prune left streaks alone.
-    expect(await updateStreak(db, who, NOW)).toEqual({ current: 1, best: 1 })
+    expect(await updateStreak(db, { ...who, date: '2026-07-08' }, NOW)).toEqual(
+      {
+        current: 2,
+        best: 2,
+      },
+    )
     await at('device-B', '2026-01-02') // another old row…
     expect(await pruneIfDue(db, now)).toBeNull() // …but today's prune already ran
     expect(await pruneIfDue(db, new Date('2026-07-09T00:00:01Z'))).toBe(1)
