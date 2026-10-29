@@ -2,7 +2,12 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { readFileSync, readdirSync } from 'node:fs'
 // node:sqlite needs Node >= 22.5 (package.json `engines` enforces this).
 import { DatabaseSync } from 'node:sqlite'
-import { upsertAndRank, topScores, pruneIfDue } from './leaderboard-lib.mjs'
+import {
+  upsertAndRank,
+  topScores,
+  pruneIfDue,
+  updateStreak,
+} from './leaderboard-lib.mjs'
 
 /**
  * SQL-level tests for the standing/board queries against a REAL SQLite with the
@@ -131,7 +136,11 @@ describe('lazy prune (pruneIfDue — replaces the Cron Trigger)', () => {
     const now = new Date('2026-07-08T12:00:00Z')
     await at('device-A', '2026-01-01') // older than 90 days
     await at('device-A', '2026-07-08')
+    const who = { city: 'stpete', clientId: 'device-A', date: '2026-07-08' }
+    await updateStreak(db, who, NOW) // a streak row that must survive
     expect(await pruneIfDue(db, now)).toBe(1)
+    // Same-day replay → unchanged row proves the prune left streaks alone.
+    expect(await updateStreak(db, who, NOW)).toEqual({ current: 1, best: 1 })
     await at('device-B', '2026-01-02') // another old row…
     expect(await pruneIfDue(db, now)).toBeNull() // …but today's prune already ran
     expect(await pruneIfDue(db, new Date('2026-07-09T00:00:01Z'))).toBe(1)
