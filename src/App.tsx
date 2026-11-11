@@ -29,6 +29,7 @@ import { Game } from './components/Game'
 import { CityPicker } from './components/CityPicker'
 import { DatasetSearch } from './components/DatasetSearch'
 import { BugReport } from './components/BugReport'
+import { SiteFooter } from './components/SiteFooter'
 
 // Generated once per page load; in ?shuffle mode this seeds a fresh random set.
 const SHUFFLE_SEED = Math.random().toString(36).slice(2)
@@ -335,25 +336,7 @@ export function App() {
         locations={today}
         official={mode.official}
       />
-      <footer
-        style={{
-          padding: '10px 16px 20px',
-          fontSize: 11,
-          opacity: 0.55,
-          textAlign: 'center',
-        }}
-      >
-        {attribution ||
-          'Locations © OpenStreetMap contributors (ODbL). Imagery © Esri / Maxar.'}{' '}
-        <a
-          href="https://www.openstreetmap.org/copyright"
-          target="_blank"
-          rel="noreferrer"
-          style={{ color: 'inherit' }}
-        >
-          OSM
-        </a>
-      </footer>
+      <SiteFooter attribution={attribution} />
     </main>
   )
 }
