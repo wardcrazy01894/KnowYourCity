@@ -49,7 +49,7 @@ Secrets and variables → Actions → **Variables** tab — _not_ Secrets):
 
 | Variable                    | Current value                                                       | Purpose                                                                                          |
 | --------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `VITE_BUG_ENDPOINT`         | `https://kyl-bug.wardcrazy01894.workers.dev`                        | bug-report worker (one-click GitHub issues)                                                      |
+| `VITE_BUG_ENDPOINT`         | `https://kyc-bug.wardcrazy01894.workers.dev`                        | bug-report worker (one-click GitHub issues)                                                      |
 | `VITE_TURNSTILE_SITEKEY`    | `0x4AAAAAADgHt68jxl4onK-C`                                          | public Turnstile site key for the bug form's bot check                                           |
 | `VITE_MAPBOX_TOKEN`         | _(unset, on purpose)_                                               | optional Mapbox satellite tiles; unset → free keyless **Esri** tiles                             |
 | `VITE_CF_BEACON_TOKEN`      | `38e507931236442a83feeb410f152878`                                  | Cloudflare Web Analytics beacon — cookieless page-view tracking                                  |
@@ -86,9 +86,13 @@ silently.
 ## Bug-report worker
 
 A Cloudflare Worker (see [`../worker/`](../worker/)) holds the GitHub token
-**server-side** and files issues on the app's behalf. (It keeps its legacy
-`kyl-bug` name on purpose: renaming a Worker changes its `workers.dev` URL and
-drops its secrets, for zero player-visible benefit.) It's hardened (defang
+**server-side** and files issues on the app's behalf. (It was renamed
+`kyl-bug` → `kyc-bug` in November 2026, alongside a `GH_TOKEN` renewal. Changing
+`name` in `wrangler.toml` deploys a **new** Worker with a new `workers.dev` URL
+and no secrets, so a rename means: deploy, re-put both secrets, repoint
+`VITE_BUG_ENDPOINT`, redeploy the site, then delete the old Worker.) The
+`GH_TOKEN` PAT expires — GitHub emails a week ahead; regenerate it and run
+`wrangler secret put GH_TOKEN` from `worker/` (no redeploy needed). It's hardened (defang
 @mentions/code-fences, payload caps, off-site URL drop, per-IP rate limit,
 Turnstile, server-side Origin allowlist). Worker secrets (`GH_TOKEN`,
 `TURNSTILE_SECRET`) live in Wrangler, never in this repo.
@@ -137,7 +141,7 @@ The first deploy also needs the D1 database created once
 (`wrangler d1 create kyc-leaderboard`, then paste the printed `database_id` into
 `wrangler.leaderboard.toml`). `TURNSTILE_SECRET` is optional here (see the toml
 header) — leave it unset unless you also wire an invisible Turnstile execute on
-the client. The bug worker (`kyl-bug`) deploys the same way with
+the client. The bug worker (`kyc-bug`) deploys the same way with
 `wrangler deploy` from `worker/` (its config is the default `wrangler.toml`).
 
 ## New-deploy refresh (stale-tab busting)

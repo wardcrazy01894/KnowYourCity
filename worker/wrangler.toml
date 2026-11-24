@@ -1,4 +1,4 @@
-name = "kyl-bug"
+name = "kyc-bug"
 main = "bug-report.mjs"
 compatibility_date = "2025-11-01"
 

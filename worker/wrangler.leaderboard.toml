@@ -1,4 +1,4 @@
-# Leaderboard Worker — separate from the bug worker (kyl-bug). Deploy with:
+# Leaderboard Worker — separate from the bug worker (kyc-bug). Deploy with:
 #   wrangler deploy -c worker/wrangler.leaderboard.toml
 # It imports the bug worker's cors/origin helpers, so keep both files together.
 

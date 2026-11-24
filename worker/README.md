@@ -27,11 +27,11 @@ wide-open. Turnstile is recommended on top for a public repo.
    wrangler secret put GH_TOKEN      # paste the token when prompted
    wrangler deploy
    ```
-   Wrangler prints a URL like `https://kyl-bug.<you>.workers.dev`.
+   Wrangler prints a URL like `https://kyc-bug.<you>.workers.dev`.
    (`ALLOWED_ORIGIN` and the rate limit are already set in `wrangler.toml`.)
 4. Set the app env and rebuild/redeploy the site:
    ```
-   VITE_BUG_ENDPOINT=https://kyl-bug.<you>.workers.dev
+   VITE_BUG_ENDPOINT=https://kyc-bug.<you>.workers.dev
    ```
    That's the minimum to go live safely (rate-limited + injection-hardened).
 
