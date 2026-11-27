@@ -25,7 +25,16 @@ export function SiteFooter({ attribution }: { attribution: string }) {
           OSM
         </a>
       </div>
-      <div>A Spicy Al Software Solution</div>
+      <div>
+        <a
+          className="studio-credit"
+          href="https://spicyals.com"
+          target="_blank"
+          rel="noopener"
+        >
+          A Spicy Al Software Solution
+        </a>
+      </div>
     </footer>
   )
 }
