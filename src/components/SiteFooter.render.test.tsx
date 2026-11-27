@@ -29,7 +29,12 @@ describe('SiteFooter', () => {
 
   it('ends with the studio credit line', () => {
     render(<SiteFooter attribution="Locations © test" />)
-    const credit = screen.getByText('A Spicy Al Software Solution')
-    expect(credit.closest('footer')?.lastElementChild).toBe(credit)
+    const credit = screen.getByRole('link', {
+      name: 'A Spicy Al Software Solution',
+    })
+    expect(credit.getAttribute('href')).toBe('https://spicyals.com')
+    expect(credit.closest('footer')?.lastElementChild).toBe(
+      credit.parentElement,
+    )
   })
 })

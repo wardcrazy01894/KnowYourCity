@@ -56,3 +56,15 @@ body,
   font-size: 13px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* The studio credit links to the hub but keeps reading as the plain line it
+   always was: no colour change, underline only on hover / keyboard focus. */
+a.studio-credit {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+a.studio-credit:hover,
+a.studio-credit:focus-visible {
+  text-decoration: underline;
+}
